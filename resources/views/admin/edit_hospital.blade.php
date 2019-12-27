@@ -16,7 +16,7 @@
     <tr> 
         <td>医療機関名<br>Medical institution</td>
         <td>{!! Form::text('medical_ins', null , ['class' => 'form-control']) !!}</td>
-    </tr>
+    </tr> 
     <tr>
         <td>医療機関英語名<br>Medical institution English</td>
         <td>{!! Form::text('medical_ins_eng', 'Medical institution English' , ['class' => 'form-control']) !!}</td>
