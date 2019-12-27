@@ -19,11 +19,11 @@
     </tr> 
     <tr>
         <td>医療機関英語名<br>Medical institution English</td>
-        <td>{!! Form::text('medical_ins_eng', 'Medical institution English' , ['class' => 'form-control']) !!}</td>
+        <td>{!! Form::text('medical_ins_eng', null , ['class' => 'form-control']) !!}</td>
     </tr>
     <tr>
         <td><br>Common name</td>
-        <td>{!! Form::text('common_name', 'hospital namessss' , ['class' => 'form-control']) !!}</td>
+        <td>{!! Form::text('common_name', null , ['class' => 'form-control']) !!}</td>
     </tr>
     <tr>
         <td>郵便番号<br>Postal code</td>
