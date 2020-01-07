@@ -97,6 +97,17 @@ class HomeController extends Controller
         $hospital->medsublist       = $medsublist; // should be json | dropdown and input field
         $hospital->save();
 
+        $medical_subj = 'medical_subj sample';
+        $subheading = 'subheading sample';
+        $text_of_subheading = 'subheading text sample';
+
+        $medsub = new MedicalSubj;
+        $medsub->hospital_id            = $hospital_id;
+        $medsub->medical_subj           = $medical_subj;
+        $medsub->subheading             = $subheading;
+        $medsub->text_of_subheading     = $text_of_subheading;
+        $medsub->save();
+
         $accessdet = new Accessdet;
         $accessdet->access_detail_id        = $accessdet_id;
         $accessdet->by_what                 = $details['access_trans'];
