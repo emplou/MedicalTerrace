@@ -165,7 +165,7 @@
     
         <tr>
             <td>医療機関キャッチ<br>Subheading</td>
-            <td>{!! Form::text('subheading', null , ['class' => 'form-control']) !!}</td>
+            <td>{!! Form::text('hosp_subheading', null , ['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
             <td>本文<br>Text of Subheading</td>
