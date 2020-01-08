@@ -73,7 +73,18 @@ class HomeController extends Controller
         $explain_id = str_random(6);
 
         $medinscatchtext = "testing";
-        $medsublist = "testing med sub list";
+        $medsublist = "testing med sub list"; // input name med_sbj_list
+
+
+        /* clinic image */
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('clinic_image');
+
+        $destinationPath = public_path().'/clinic_image';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of clinic image */
         
 
         $hospital = new Hospital;
@@ -86,16 +97,30 @@ class HomeController extends Controller
         $hospital->address          = $details['address'];
         $hospital->address_eng      = $details['address_english']; //end
         $hospital->parking          = $details['p_radio'];
-        $hospital->image            = '/hospital/'.$filename;
+        $hospital->image            = '/clinic_image/'.$filename; //clinic image / hospital image
         $hospital->image_caption    = $details['img_caption'];
         $hospital->image_alt        = $details['img_alt'];
         $hospital->phone_no         = $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'];
         $hospital->fax              = $details['fax'].$details['fax_one'].$details['fax_two'];
         $hospital->email            = $details['email'];
-        $hospital->medinscatchtext  = $medinscatchtext; //should be json 
+        $hospital->medinscatchtext  = $medinscatchtext; //should be json
         $hospital->division         = $details['division']; // added division and medical subject list and field
         $hospital->medsublist       = $medsublist; // should be json | dropdown and input field
+        //recently added
+        $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
+        $hospital->hosp_text_subheading  = $details['text_subheading_hospital']; //it should be json script when added
         $hospital->save();
+
+        $medical_subj = 'medical_subj sample'; // input name medical_subj
+        $subheading = 'subheading sample'; // medical subheading | input name med_subj_subheading 
+        $text_of_subheading = 'subheading text sample'; //medical text subheading | input name med_subj_text_subheading_hospital
+
+        $medsub = new MedicalSubj;
+        $medsub->hospital_id            = $hospital_id;
+        $medsub->medical_subj           = $medical_subj;
+        $medsub->subheading             = $subheading;
+        $medsub->text_of_subheading     = $text_of_subheading;
+        $medsub->save();
 
         $accessdet = new Accessdet;
         $accessdet->access_detail_id        = $accessdet_id;
@@ -156,14 +181,16 @@ class HomeController extends Controller
         $explaindet->image                  = $image;
         $explaindet->save();
 
-        $equipments = new Equipments;
+        //  should separately addeed per department
+
+        /* $equipments = new Equipments;
         $equipments->hospital_id            = $hospital_id ;
         $equipments->title                  = $details['title'];
         $equipments->text                   = $details['text'];
-        $equipments->save();
+        $equipments->save(); */
 
         $staff = new Staff;
-        $staff->hospital_id            = $hospital_id ;
+        $staff->hospital_id            = $hospital_id;
         $staff->title                  = $details['title'];
         $staff->text                   = $details['text'];
         $staff->save();
