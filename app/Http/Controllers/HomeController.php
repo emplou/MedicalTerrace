@@ -183,11 +183,11 @@ class HomeController extends Controller
 
         //  should separately addeed per department
 
-        /* $equipments = new Equipments;
+        $equipments = new Equipments;
         $equipments->hospital_id            = $hospital_id ;
-        $equipments->title                  = $details['title'];
-        $equipments->text                   = $details['text'];
-        $equipments->save(); */
+        $equipments->title                  = $details['equipment_subheading']; // should be json
+        $equipments->text                   = $details['equipment_text_subheading_hospital']; //should be json
+        $equipments->save();
 
         $staff = new Staff;
         $staff->hospital_id            = $hospital_id;

@@ -230,6 +230,8 @@
                     </button>
         </td>
     </tr>
+
+    <?php /* ?>
     <tr>
         <td>診療科目別 外来受付時間<br>Examination date</td>
         <td colspan="2">
@@ -308,7 +310,7 @@
                 </tr>
             </table>
         </td>
-    </tr>
+    </tr> 
     <tr>
         <td>特徴タイトル<br>Subheading</td>
         <td>{!! Form::text('title_subheading', null , ['class' => 'form-control']) !!}</td>
@@ -322,6 +324,9 @@
                     </button>
         </td>
     </tr>
+
+    <?php */ ?>
+
     <tr>
         <td>設備・機器<br>Equipment</td>
         <td>{!! Form::text('equipment_subheading', null , ['class' => 'form-control']) !!}</td>
@@ -337,7 +342,7 @@
     </tr>
     <tr>
 	    <td>メイン画像<br>Image</td>
-	    <td>{!! Form::file('Image', null , ['class' => 'form-control']) !!}</td>
+	    <td>{!! Form::file('equipment_image', null , ['class' => 'form-control']) !!}</td>
 	</tr>
     <tr>
         <td>スタッフリード<br>Staff subheading</td>
