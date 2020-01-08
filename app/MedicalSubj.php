@@ -20,6 +20,6 @@ class MedicalSubj extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','category_name',
+        'id',
     ];
 }

@@ -20,6 +20,6 @@ class Accessdet extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','category_name',
+        'id',
     ];
 }

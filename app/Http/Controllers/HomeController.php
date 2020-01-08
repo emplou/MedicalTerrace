@@ -92,7 +92,7 @@ class HomeController extends Controller
         $hospital->phone_no         = $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'];
         $hospital->fax              = $details['fax'].$details['fax_one'].$details['fax_two'];
         $hospital->email            = $details['email'];
-        $hospital->medinscatchtext  = $medinscatchtext; //should be json 
+        $hospital->medinscatchtext  = $medinscatchtext; //should be json
         $hospital->division         = $details['division']; // added division and medical subject list and field
         $hospital->medsublist       = $medsublist; // should be json | dropdown and input field
         $hospital->save();
@@ -174,7 +174,7 @@ class HomeController extends Controller
         $equipments->save();
 
         $staff = new Staff;
-        $staff->hospital_id            = $hospital_id ;
+        $staff->hospital_id            = $hospital_id;
         $staff->title                  = $details['title'];
         $staff->text                   = $details['text'];
         $staff->save();

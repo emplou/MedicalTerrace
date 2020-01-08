@@ -20,6 +20,6 @@ class Access extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','category_name',
+        'id',
     ];
 }

@@ -18,6 +18,6 @@ class Illness_Category extends Model
      * @var array
      */
     protected $fillable = [
-        'id','category_name',
+        'id',
     ];
 }

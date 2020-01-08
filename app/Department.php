@@ -20,6 +20,6 @@ class Department extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','category_name',
+        'id',
     ];
 }
