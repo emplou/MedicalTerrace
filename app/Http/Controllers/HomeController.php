@@ -85,6 +85,14 @@ class HomeController extends Controller
         $filename        = str_random(6) . '_' . $file->getClientOriginalName();
         $uploadSuccess   = $file->move($destinationPath, $filename);
         /* end of clinic image */
+
+        $certificate = $this->input->post('med_sbj_list'); 
+        $response = array();
+        foreach($certificate as $key => $cert)
+        {
+            $response[$key]['med_sbj_list'] = $cert;
+        }
+        $jsoncertificate = json_encode($response); 
         
 
         $hospital = new Hospital;
@@ -105,7 +113,7 @@ class HomeController extends Controller
         $hospital->email            = $details['email'];
         $hospital->medinscatchtext  = $medinscatchtext; //should be json
         $hospital->division         = $details['division']; // added division and medical subject list and field
-        $hospital->medsublist       = $medsublist; // should be json | dropdown and input field
+        $hospital->medsublist       = $jsoncertificate; // should be json | dropdown and input field
         //recently added
         $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
         $hospital->hosp_text_subheading  = $details['text_subheading_hospital']; //it should be json script when added
@@ -203,6 +211,8 @@ class HomeController extends Controller
         $staff->title                  = $details['title'];
         $staff->text                   = $details['text'];
         $staff->save();
+
+        return redirect::back()->with('message','Successfully Encoded');
     }
 
     public function edit_hospital(){
