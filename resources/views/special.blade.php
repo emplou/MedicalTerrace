@@ -115,15 +115,21 @@
                 
             <div class="form-group">
                 <label class="control-label col-sm-2">特集ショルダー:</label>
-                <div class="col-sm-9">          
-                    <input type="text" class="form-control" id="sts" placeholder="例）いわゆる夏風邪は7月がピーク！" name="sts">
+                <div class="col-sm-8">          
+                    <input type="text" class="form-control sts" id="sts" placeholder="例）いわゆる夏風邪は7月がピーク！" name="sts" maxlength="20">
+                </div>
+                <div class="col-sm-1">          
+                    <span id="rchars">0</span>/20
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">特集タイトル:</label>
-                <div class="col-sm-9">          
-                    <input type="text" class="form-control" id="st" placeholder="例）子どもの夏の感染症" name="st">
+                <div class="col-sm-8">          
+                    <input type="text" class="form-control st" id="st" placeholder="例）子どもの夏の感染症" name="st" maxlength="14">
+                </div>
+                <div class="col-sm-1">          
+                    <span id="rchars2">0</span>/14
                 </div>
             </div>
 
@@ -143,9 +149,12 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-2">医師コメント:</label>
-                <div class="col-sm-9">          
-                    <textarea class="form-control" name="doc_cmnt">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                <div class="col-sm-8">          
+                    <textarea class="form-control cmt" name="doc_cmnt" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
                     </textarea>
+                </div>
+                <div class="col-sm-1">          
+                    <span id="rchars3">0</span>/200
                 </div>
             </div>
 
@@ -292,24 +301,47 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-2">タイトルタグ</label>
-                <div class="col-sm-9">   
+                <div class="col-sm-8">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
                         <input type="checkbox" name="seo"> <span style="color: #F00;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</span>
-                        
                     </div>       
-                    <textarea class="form-control" name="seo_txt">タイトルタグをカスタマイズする場合はこちらに入力ください</textarea>
+                    
+                </div>
+                <div class="col-sm-1">          
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">   
+                    <textarea class="form-control seo" name="seo_txt" maxlength="35">タイトルタグをカスタマイズする場合はこちらに入力ください</textarea>
+                </div>
+                <div class="col-sm-1">          
+                    <span id="rchars4">0</span>/35
                 </div>
             </div>
 
+
             <div class="form-group">
                 <label class="control-label col-sm-2">ディスクリプション</label>
-                <div class="col-sm-9">   
-                    <textarea class="form-control" name="meta_txt1">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
-時分学校の。</textarea><br>
-                    <textarea class="form-control" name="meta_txt1">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
+                <div class="col-sm-8">   
+                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
+時分学校の。</textarea>
+                </div>
+                <div class="col-sm-1">          
+                    <span id="rchars5">0</span>/50
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">ディスクリプション</label>
+                <div class="col-sm-8">   
+                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
                      <div style="border: 1px solid #CCC; padding: 5px; color: #F00;">
                          ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
                      </div>
+                </div>
+                <div class="col-sm-1">          
+                    <span id="rchars6">0</span>/70
                 </div>
             </div>
 
@@ -1126,6 +1158,34 @@
 
         </form>
 </div>
+
+<script type="text/javascript">
+    var cnt = 0;
+    $('input.sts').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars').text(textlen);
+    });
+    $('input.st').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars2').text(textlen);
+    });
+    $('textarea.cmt').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars3').text(textlen);
+    });
+    $('textarea.seo').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars4').text(textlen);
+    });
+    $('textarea.mt1').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars5').text(textlen);
+    });
+    $('textarea.mt2').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars6').text(textlen);
+    });
+</script>
 
 </body>
 </html>

@@ -85,6 +85,14 @@ class HomeController extends Controller
         $filename        = str_random(6) . '_' . $file->getClientOriginalName();
         $uploadSuccess   = $file->move($destinationPath, $filename);
         /* end of clinic image */
+
+        $certificate = $this->input->post('med_sbj_list'); 
+        $response = array();
+        foreach($certificate as $key => $cert)
+        {
+            $response[$key]['med_sbj_list'] = $cert;
+        }
+        $jsoncertificate = json_encode($response); 
         
 
         $hospital = new Hospital;
@@ -105,7 +113,7 @@ class HomeController extends Controller
         $hospital->email            = $details['email'];
         $hospital->medinscatchtext  = $medinscatchtext; //should be json
         $hospital->division         = $details['division']; // added division and medical subject list and field
-        $hospital->medsublist       = $medsublist; // should be json | dropdown and input field
+        $hospital->medsublist       = $jsoncertificate; // should be json | dropdown and input field
         //recently added
         $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
         $hospital->hosp_text_subheading  = $details['text_subheading_hospital']; //it should be json script when added
@@ -183,17 +191,28 @@ class HomeController extends Controller
 
         //  should separately addeed per department
 
-        /* $equipments = new Equipments;
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('equipment_image');
+
+        $destinationPath = public_path().'/equipments';
+        $filename_equip        = str_random(6) . '_' . $fileone->getClientOriginalName();
+        $uploadSuccess   = $fileone->move($destinationPath, $filename);
+
+        $equipments = new Equipments;
         $equipments->hospital_id            = $hospital_id ;
-        $equipments->title                  = $details['title'];
-        $equipments->text                   = $details['text'];
-        $equipments->save(); */
+        $equipments->title                  = $details['equipment_subheading']; // should be json
+        $equipments->text                   = $details['equipment_text_subheading_hospital']; //should be json
+        $equipments->equip_image            = $filename_equip; //should be json
+        $equipments->save();
 
         $staff = new Staff;
         $staff->hospital_id            = $hospital_id;
         $staff->title                  = $details['title'];
         $staff->text                   = $details['text'];
         $staff->save();
+
+        return redirect::back()->with('message','Successfully Encoded');
     }
 
     public function edit_hospital(){
