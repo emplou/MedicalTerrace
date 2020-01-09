@@ -183,10 +183,19 @@ class HomeController extends Controller
 
         //  should separately addeed per department
 
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('equipment_image');
+
+        $destinationPath = public_path().'/equipments';
+        $filename_equip        = str_random(6) . '_' . $fileone->getClientOriginalName();
+        $uploadSuccess   = $fileone->move($destinationPath, $filename);
+
         $equipments = new Equipments;
         $equipments->hospital_id            = $hospital_id ;
         $equipments->title                  = $details['equipment_subheading']; // should be json
         $equipments->text                   = $details['equipment_text_subheading_hospital']; //should be json
+        $equipments->equip_image            = $filename_equip; //should be json
         $equipments->save();
 
         $staff = new Staff;
