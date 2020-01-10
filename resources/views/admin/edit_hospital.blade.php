@@ -7,5 +7,8 @@
 </div>
 
 <a href="#"><img scr="edit_department_image.png"> </a>
+<a href="#"><img scr="edit_department_image.png"> </a>
+<a href="#"><img scr="edit_department_image.png"> </a>
+<a href="#"><img scr="edit_department_image.png"> </a>
 
 @endsection

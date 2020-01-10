@@ -442,6 +442,117 @@ $('#add').click(function(){
            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
       });  
 });
+
+$('.addfields').on('click', addfields);
+    var i=0;
+    function addfields(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+//birthday year
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('b_year');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+select.value = new Date().getFullYear();
+
+var select = document.getElementById('length');    
+
+for (var i = 1; i<= 31; i++){
+
+    var option = document.createElement('option');
+    option.value = i;
+    option.innerHTML = i;
+    select.options.add(option);
+}
+
+//academic
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('aca_year');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('aca_year_to');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+//work exp 
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('work_year');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('work_year_to');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+//awards 
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('awards_year');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('awards_year_to');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
 </script>
 
 
