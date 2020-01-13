@@ -106,8 +106,8 @@ class HomeController extends Controller
         $hospital->address_eng      = $details['address_english']; //end
         $hospital->parking          = $details['p_radio'];
         $hospital->image            = '/clinic_image/'.$filename; //clinic image / hospital image
-        $hospital->image_caption    = $details['img_caption'];
-        $hospital->image_alt        = $details['img_alt'];
+        $hospital->img_caption      = $details['img_caption'];
+        $hospital->img_alt          = $details['img_alt'];
         $hospital->phone_no         = $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'];
         $hospital->fax              = $details['fax'].$details['fax_one'].$details['fax_two'];
         $hospital->email            = $details['email'];
@@ -216,6 +216,35 @@ class HomeController extends Controller
     }
 
     public function edit_hospital(){
+
+        $details = Input::all();
+
+        $guides = DB::table('dv_hospital')
+                            ->where('hospital_id','=', $details['hospitalID'])
+                            ->update([
+                                        'url'          => $details['url_gen'],
+                                        'name'         => $details['medical_ins'],
+                                        'name_phonic'  => $details['medical_ins_eng'],
+                                        'common_name'  => $details['common_name'],
+                                        'postal_code'  => $details['postal_code'],
+                                        'address'      => $details['address'],
+                                        'address_eng'  => $details['address_english'],
+                                        'parking'      => $details['p_radio'],
+                                        // 'image'        => $details['fullname'],
+                                        'img_caption'  => $details['img_caption'],
+                                        'img_alt'      => $details['img_alt'],
+                                        'phone_no'     => $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'],
+                                        'fax'          => $details['fax'].$details['fax_one'].$details['fax_two'],
+                                        'email'        => $details['email'],
+                                        // 'medinscatchtext' => $details['fullname'], 
+                                        // 'division'     => $details['fullname'],
+                                        // 'medsublist'   => $details['fullname'],
+                                        // 'hosp_subheading' => $details['fullname'],
+                                        // 'hosp_text_subheading' => $details['fullname'],
+                                    ]);
+
+        // return redirect('/guides_list');
+
         return view('admin.edit_hospital');
     }
 }

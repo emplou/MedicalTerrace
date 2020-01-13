@@ -25,9 +25,16 @@ class CreateHospitalTable extends Migration
             $table->string('address_eng');
             $table->string('parking');
             $table->string('image');
+            $table->string('img_caption');
+            $table->string('img_alt');
             $table->string('phone_no');
             $table->string('fax');
             $table->string('email');
+            $table->string('medinscatchtext');
+            $table->string('division');
+            $table->string('medsublist');
+            $table->string('hosp_subheading');
+            $table->string('hosp_text_subheading');
             $table->timestamps();
         });
     }

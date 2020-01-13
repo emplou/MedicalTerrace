@@ -6,7 +6,7 @@
   <div class="col-sm-4">col-sm-4</div>
 </div>
 
-{!! Form::open(array('url' => '/', 'method' => 'post')) !!}
+{!! Form::open(array('url' => '/save_hospital', 'method' => 'post')) !!}
 
 <table class="table table-borderless" style="width:100%;background-color:#F7F7F7;" id="dynamic_field">
     <tr>
@@ -32,7 +32,6 @@
     <tr>
         <td>住所<br>Address</td>
         <td>
-        <!-- {!! Form::text('address', null , ['class' => 'form-control']) !!}<button type="submit"><i class="fa fa-search"></i></button>  -->
         <div class="input-group">
             <input type="text" class="form-control" name="address">
             <span class="input-group-btn">
@@ -45,21 +44,6 @@
         <td>住所英語表記<br>Address English</td>
         <td>{!! Form::text('address_english', null , ['class' => 'form-control']) !!}</td>
     </tr>
-    <!-- <tr>
-        <td>分院名・住所<br>Address</td>
-        <td>
-        <div class="input-group">
-            <input type="text" class="form-control" name="branch_address">
-            <span class="input-group-btn">
-                <button class="btn btn-search" type="button"> MAP</button>
-            </span>
-        </div>
-        </td>
-    </tr> -->
-    <!-- <tr>
-        <td>分院名・住所英語表記<br>Address English</td>
-        <td>{!! Form::text('branch_address_english', null , ['class' => 'form-control']) !!}</td>
-    </tr> -->
     <tr>
         <td>アクセス<br>Access</td>
         <td>
@@ -132,17 +116,6 @@
         </td>
         
     </tr>
-    <!-- <tr>
-        <td>URK<br>URL</td>
-        <td>
-        <table>
-                <tr>
-                    <td width="400px">{!! Form::text('url', null , ['class' => 'form-control']) !!}</td>
-                    <td><input type="checkbox"> 非表示 <br> Not show</td>
-                </tr>
-            </table>
-        </td>
-    </tr> -->
     <tr>
         <td>医院外観画像<br>Clinic appearance image</td>
         <td>

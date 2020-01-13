@@ -39,3 +39,6 @@ Route::get('/special_list','HomeController@special_list');
 
 //edit
 Route::get('/edit_hospital','HomeController@edit_hospital');
+
+//post
+Route::post('/save_hospital','HomeController@save_hospital');
