@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style type="text/css">
         textarea{
             min-height: 100px;
@@ -150,7 +148,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">医師コメント:</label>
                 <div class="col-sm-8">          
-                    <textarea class="form-control cmt" name="doc_cmnt" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <textarea class="form-control cmt" name="cmt" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
                     </textarea>
                 </div>
                 <div class="col-sm-1">          
@@ -1213,6 +1211,17 @@
 
         </form>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- CKeditor -->
+<script>
+    CKEDITOR.replace('img_cap');
+</script>
+
 <!-- Count character starts -->
 <script type="text/javascript">
     var cnt = 0;
@@ -1328,9 +1337,14 @@
         });
 
     });
+
+// CKEDITOR.replace( 'text_of_heading' );
+// CKEDITOR.add
     
 </script>
 <!-- Add field ends -->
+
+
 
 </body>
 </html>
