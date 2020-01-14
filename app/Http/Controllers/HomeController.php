@@ -215,7 +215,7 @@ class HomeController extends Controller
         return redirect::back()->with('message','Successfully Encoded');
     }
 
-    public function edit_hospital(){
+    public function save_edit_hospital(){
 
         $details = Input::all();
 
@@ -242,6 +242,42 @@ class HomeController extends Controller
                                         // 'hosp_subheading' => $details['fullname'],
                                         // 'hosp_text_subheading' => $details['fullname'],
                                     ]);
+
+
+        $guides = DB::table('medical_subject')
+                                    ->where('id','=', $details['medsubjID'])
+                                    ->update([
+                                                'medical_subj'          => $details['medical_subj'],
+                                                'subheading'            => $details['subheading'],
+                                                'text_of_subheading'    => $details['text_of_subheading'],
+                                            ]);
+        
+        $guides = DB::table('access_details')
+                                    ->where('access_detail_id','=', $details['accessdetID'])
+                                    ->update([
+                                                'by_what'           => $details['by_what'],
+                                                'from_where'        => $details['from_where'],
+                                                'minutes'           => $details['minutes'],
+                                            ]);
+
+                            //access table no edit for now...
+        
+        $guides = DB::table('department')
+                                    ->where('access_detail_id','=', $details['accessdetID'])
+                                    ->update([
+                                                'dpt_name'           => $details['dpt_name'],
+                                            ]);
+        
+
+        $guides = DB::table('dpt_esp_hours')
+                                    ->where('id','=', $details['dpt_esp_hrs'])
+                                    ->update([
+                                                'from'              => $details['from'],
+                                                'to'                => $details['to'],
+                                                'start'             => $details['start'],
+                                                'weekdays'          => $details['weekdays'],
+                                                'treatment_name'    => $details['treatment_name'],
+                                            ]);
 
         // return redirect('/guides_list');
 
