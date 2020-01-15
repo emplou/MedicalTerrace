@@ -184,7 +184,7 @@
                     <!-- add new textarea here -->
                     <div class="field_wrap2"></div>
                     <div class="col-sm-10">        
-                        <textarea class="form-control" name="lead1">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                        <textarea class="form-control" name="lead1[]" id="lead_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
                         </textarea>
                     </div>
@@ -215,13 +215,12 @@
                     <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
                 </div>
             </div>
-
             <!-- Use CKcreditor -->
             <div class="form-group">
                 <label class="control-label col-sm-2">本文:</label>
                 <div class="col-sm-9"> 
                      
-                    <textarea class="form-control" name="txt1[]">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <textarea class="form-control" name="txt1[]" id="txt_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
                     </textarea>
                 </div>
@@ -290,7 +289,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">本文:</label>
                 <div class="col-sm-9">          
-                    <textarea class="form-control" name="txt2[]">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <textarea class="form-control" name="txt2[]" id="txt2_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
                     </textarea>
                 </div>
@@ -1208,18 +1207,29 @@
                     <textarea class="form-control" name="note"></textarea>
                 </div>
             </div>
+                
 
         </form>
 </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script> -->
+<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('img_cap');
+    CKEDITOR.replace('lead_ckeditor');
+    CKEDITOR.add 
+</script>
+<script>
+    CKEDITOR.replace('txt_ckeditor');
+    CKEDITOR.add 
+</script>
+<script>
+    CKEDITOR.replace('txt2_ckeditor');
+    CKEDITOR.add 
 </script>
 
 <!-- Count character starts -->
@@ -1258,6 +1268,7 @@
         var add_button      = $(".add1"); //Add button ID
         var wrapper2         = $(".field_wrap2"); //Fields wrapper
         var add_button2      = $(".add2"); //Add button ID
+        var i=0;
         var wrapper3         = $(".field_wrap3"); //Fields wrapper
         var add_button3      = $(".add3"); //Add button ID
         var wrapper4         = $(".field_wrap4"); //Fields wrapper
@@ -1277,14 +1288,18 @@
             e.preventDefault();
             
             $(wrapper).append('<div class="form-group"><div class="control-label col-sm-2"></div><div class="col-sm-2"><button type="button" class="btn btn-primary">Insert Image</button></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="col-sm-1"></div></div>'); //add input box
+
             
         });
 
         $(add_button2).click(function(e){ //on add input button click
             e.preventDefault();
-            
-            $(wrapper2).append('<div class="col-sm-10"><textarea class="form-control" name="lead1[]"></textarea></div><div class="col-sm-1"></div><div class="clear"></div>'); //add input box
-            
+            var oneplus=i+1;
+             
+            CKEDITOR.replace("lead_ckeditor['+oneplus+']"
+                );
+            $(wrapper2).append('<div class="col-sm-10"><textarea class="form-control" name="lead1[]" id="lead_ckeditor'+i+'"></textarea></div><div class="col-sm-1"></div><div class="clear"></div>'); //add input box
+            i++;
         });
 
         $(add_button3).click(function(e){ //on add input button click
