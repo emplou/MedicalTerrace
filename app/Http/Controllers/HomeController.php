@@ -244,7 +244,7 @@ class HomeController extends Controller
                                     ]);
 
 
-        $guides = DB::table('medical_subject')
+        $medicalsubj = DB::table('medical_subject')
                                     ->where('id','=', $details['medsubjID'])
                                     ->update([
                                                 'medical_subj'          => $details['medical_subj'],
@@ -252,7 +252,7 @@ class HomeController extends Controller
                                                 'text_of_subheading'    => $details['text_of_subheading'],
                                             ]);
         
-        $guides = DB::table('access_details')
+        $access_det = DB::table('access_details')
                                     ->where('access_detail_id','=', $details['accessdetID'])
                                     ->update([
                                                 'by_what'           => $details['by_what'],
@@ -262,14 +262,14 @@ class HomeController extends Controller
 
                             //access table no edit for now...
         
-        $guides = DB::table('department')
+        $department = DB::table('department')
                                     ->where('access_detail_id','=', $details['accessdetID'])
                                     ->update([
                                                 'dpt_name'           => $details['dpt_name'],
                                             ]);
         
 
-        $guides = DB::table('dpt_esp_hours')
+        $dpt_esp_hours = DB::table('dpt_esp_hours')
                                     ->where('id','=', $details['dpt_esp_hrs'])
                                     ->update([
                                                 'from'              => $details['from'],
@@ -277,6 +277,14 @@ class HomeController extends Controller
                                                 'start'             => $details['start'],
                                                 'weekdays'          => $details['weekdays'],
                                                 'treatment_name'    => $details['treatment_name'],
+                                            ]);
+                                            
+        $feature = DB::table('feature')
+                                    ->where('id','=', $details['dpt_esp_hrs'])
+                                    ->update([
+                                                'title'                 => $details['title'],
+                                                'text'                  => $details['text'],
+                                                'image'                 => $details['image'],
                                             ]);
 
         // return redirect('/guides_list');
