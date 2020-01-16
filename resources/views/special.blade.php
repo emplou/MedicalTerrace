@@ -183,10 +183,12 @@
                 <div class="col-sm-10">   
                     <!-- add new textarea here -->
                     <div class="field_wrap2"></div>
-                    <div class="col-sm-10">        
-                        <textarea class="form-control" name="lead1[]" id="lead_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <div id="addanother1">
+                        <div class="col-sm-10">        
+                            <textarea class="form-control" name="lead_ckeditor[0]" id="lead_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
-                        </textarea>
+                            </textarea>
+                        </div>
                     </div>
                     <div class="col-sm-1"><button type="button" class="btn btn-success add2">+</button></div> 
                 </div>
@@ -196,46 +198,49 @@
             <!-- add new form here -->
             <div class="field_wrap3"></div>
 
-            <div class="form-group">
-                <label class="control-label col-sm-2">小見出し:</label>
-                <div class="col-sm-9">          
-                    <select name="sub_head1a[]" class="form-control">
-                        <option value="">選択してください</option>
-                        <option value="基礎知識">基礎知識</option>
-                        <option value="近年の動向">近年の動向</option>
-                        <option value="注意した方がよい人">注意した方がよい人</option>
-                        <option value="出やすい症状">出やすい症状</option>
-                    </select>
+            <div id="addanother2">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">小見出し:</label>
+                    <div class="col-sm-9">          
+                        <select name="sub_head1a[]" class="form-control">
+                            <option value="">選択してください</option>
+                            <option value="基礎知識">基礎知識</option>
+                            <option value="近年の動向">近年の動向</option>
+                            <option value="注意した方がよい人">注意した方がよい人</option>
+                            <option value="出やすい症状">出やすい症状</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2">画像alt:</label>
+                    <div class="col-sm-9">          
+                        <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                    </div>
+                </div>
+                <!-- Use CKcreditor -->
+                <div class="form-group">
+                    <label class="control-label col-sm-2">本文:</label>
+                    <div class="col-sm-9"> 
+                         
+                        <textarea class="form-control" name="txt_ckeditor[0]" id="txt_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+
+                        </textarea>
+                    </div>
+                    <div class="col-sm-1"><button type="button" class="btn btn-success add3">+</button></div> 
+                    
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="control-label col-sm-2">画像alt:</label>
-                <div class="col-sm-9">          
-                    <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
-                </div>
-            </div>
-            <!-- Use CKcreditor -->
-            <div class="form-group">
-                <label class="control-label col-sm-2">本文:</label>
-                <div class="col-sm-9"> 
-                     
-                    <textarea class="form-control" name="txt1[]" id="txt_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-
-                    </textarea>
-                </div>
-                <div class="col-sm-1"><button type="button" class="btn btn-success add3">+</button></div> 
-                
-            </div>
-            <hr>
-
-            <!-- Insert Image with add field starts -->
             
             <div class="form-group">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-3"><button type="button" class="btn btn-primary">Insert Image</button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary">Insert Graph</button></div>
             </div>
 
+            <hr>
+
+            <!-- Insert Image with add field starts -->
             <div class="form-group">
                 <label class="control-label col-sm-2">考えられる病気:</label>
                 <div class="col-sm-2"><button type="button" class="btn btn-primary">Insert Image</button></div>
@@ -265,35 +270,37 @@
             <!-- add new form here -->
             <div class="field_wrap4"></div>
 
-            <div class="form-group">
-                <label class="control-label col-sm-2">小見出し:</label>
-                <div class="col-sm-9">          
-                    <select name="sub_head2a[]" class="form-control">
-                        <option value="">選択してください</option>
-                        <option value="基礎知識">基礎知識</option>
-                        <option value="近年の動向">近年の動向</option>
-                        <option value="注意した方がよい人">注意した方がよい人</option>
-                        <option value="出やすい症状">出やすい症状</option>
-                    </select>
+            <div id="addanother3">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">小見出し:</label>
+                    <div class="col-sm-9">          
+                        <select name="sub_head2a[]" class="form-control">
+                            <option value="">選択してください</option>
+                            <option value="基礎知識">基礎知識</option>
+                            <option value="近年の動向">近年の動向</option>
+                            <option value="注意した方がよい人">注意した方がよい人</option>
+                            <option value="出やすい症状">出やすい症状</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label class="control-label col-sm-2">画像alt:</label>
-                <div class="col-sm-9">          
-                    <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                <div class="form-group">
+                    <label class="control-label col-sm-2">画像alt:</label>
+                    <div class="col-sm-9">          
+                        <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Use CKcreditor -->
-            <div class="form-group">
-                <label class="control-label col-sm-2">本文:</label>
-                <div class="col-sm-9">          
-                    <textarea class="form-control" name="txt2[]" id="txt2_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                <!-- Use CKcreditor -->
+                <div class="form-group">
+                    <label class="control-label col-sm-2">本文:</label>
+                    <div class="col-sm-9">          
+                        <textarea class="form-control" name="txt2_ckeditor[0]" id="txt2_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
-                    </textarea>
+                        </textarea>
+                    </div>
+                    <div class="col-sm-1"><button type="button" class="btn btn-success add4">+</button></div>
                 </div>
-                <div class="col-sm-1"><button type="button" class="btn btn-success add4">+</button></div>
             </div>
 
             <div class="form-group">
@@ -1261,16 +1268,18 @@
     });
 </script>
 <!-- Count character ends -->
+
+<script type="text/javascript">
+    
+</script>
+
 <!-- Add field starts -->
 <script type="text/javascript">
     $(document).ready(function() {
         var wrapper         = $(".field_wrap1"); //Fields wrapper
         var add_button      = $(".add1"); //Add button ID
         var wrapper2         = $(".field_wrap2"); //Fields wrapper
-        var add_button2      = $(".add2"); //Add button ID
-        var i=0;
         var wrapper3         = $(".field_wrap3"); //Fields wrapper
-        var add_button3      = $(".add3"); //Add button ID
         var wrapper4         = $(".field_wrap4"); //Fields wrapper
         var add_button4      = $(".add4"); //Add button ID
         var wrapper5         = $(".field_wrap5"); //Fields wrapper
@@ -1284,6 +1293,7 @@
         var wrapper9         = $(".field_wrap9"); //Fields wrapper
         var add_button9      = $(".add9"); //Add button ID
         
+
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
@@ -1292,29 +1302,58 @@
             
         });
 
-        $(add_button2).click(function(e){ //on add input button click
+        $('.add2').on('click', add2);
+        var i=0;
+        function add2(e) {
             e.preventDefault();
-            var oneplus=i+1;
-             
-            CKEDITOR.replace("lead_ckeditor['+oneplus+']"
-                );
-            $(wrapper2).append('<div class="col-sm-10"><textarea class="form-control" name="lead1[]" id="lead_ckeditor'+i+'"></textarea></div><div class="col-sm-1"></div><div class="clear"></div>'); //add input box
-            i++;
-        });
+            var copy = $('#addanother1').clone();
 
-        $(add_button3).click(function(e){ //on add input button click
-            e.preventDefault();
-            
-            $(wrapper3).append('<div class="form-group"><label class="control-label col-sm-2">小見出し:</label><div class="col-sm-9"><select name="sub_head1a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div></div><div class="form-group"><label class="control-label col-sm-2">画像alt:</label><div class="col-sm-9"><input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group"><label class="control-label col-sm-2">本文:</label><div class="col-sm-9"><textarea class="form-control" name="txt1[]"></textarea></div><div class="col-sm-1"></div> </div>'); //add input box
-            
-        });
+            var lplus=i+1;
 
-        $(add_button4).click(function(e){ //on add input button click
+            $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+            CKEDITOR.replace('lead_ckeditor['+lplus+']');
+            i++;  
+
+        }
+
+        $('.add3').on('click', add3);
+        var j=0;
+        function add3(e) {
             e.preventDefault();
+            var copy2 = $('#addanother2').clone();
+
+            var tplus=j+1;
+
+
+            $(copy2).find('.add3').remove();
+            $(wrapper3).append($(copy2).html()+ '<div class="clear"></div>');
+            CKEDITOR.replace('txt_ckeditor['+tplus+']');
+            j++;  
+
+        }
+
+        $('.add4').on('click', add4);
+        var k=0;
+        function add4(e) {
+            e.preventDefault();
+            var copy3 = $('#addanother3').clone();
+
+            var kplus=k+1;
+
+
+            $(copy3).find('.add4').remove();
+            $(wrapper4).append($(copy3).html()+ '<div class="clear"></div>');
+            CKEDITOR.replace('txt2_ckeditor['+kplus+']');
+            k++;  
+
+        }
+
+        // $(add_button4).click(function(e){ //on add input button click
+        //     e.preventDefault();
             
-            $(wrapper4).append('<div class="form-group"><label class="control-label col-sm-2">小見出し:</label><div class="col-sm-9"><select name="sub_head2a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div></div><div class="form-group"><label class="control-label col-sm-2">画像alt:</label><div class="col-sm-9"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group"><label class="control-label col-sm-2">本文:</label><div class="col-sm-9"><textarea class="form-control" name="txt2[]"></textarea></div><div class="col-sm-1"></div></div>'); //add input box
+        //     $(wrapper4).append('<div class="form-group"><label class="control-label col-sm-2">小見出し:</label><div class="col-sm-9"><select name="sub_head2a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div></div><div class="form-group"><label class="control-label col-sm-2">画像alt:</label><div class="col-sm-9"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group"><label class="control-label col-sm-2">本文:</label><div class="col-sm-9"><textarea class="form-control" name="txt2[]"></textarea></div><div class="col-sm-1"></div></div>'); //add input box
             
-        });
+        // });
 
         $(add_button5).click(function(e){ //on add input button click
             e.preventDefault();
