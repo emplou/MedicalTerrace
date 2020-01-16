@@ -15,8 +15,11 @@ class CreateHospitalFeature extends Migration
     {
         Schema::create('hospital_feature', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('hospital_id');
             $table->string('feature_id');
+            $table->string('hospital_id');
+            $table->string('title');
+            $table->string('text');
+            $table->string('image');
             $table->timestamps();
         });
     }

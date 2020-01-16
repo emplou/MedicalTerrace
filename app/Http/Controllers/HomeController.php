@@ -291,4 +291,50 @@ class HomeController extends Controller
 
         return view('admin.edit_hospital');
     }
+
+    public function insert_doctor(){
+        // $data = array(
+        //     'url_generation'                => $this->input->post('url_generation'),
+        //     'status'                        => $this->input->post('status'),
+        //     'certificate'                   => $jsoncertificate,
+        //     'name'                          => $this->input->post('name') ,
+        //     'alphabet_name'                 => $this->input->post('alpha_name'),
+        //     'image'                         => $image_path,
+        //     'image_caption'                 => $this->input->post('img_caption'),
+        //     'image_alt'                     => $this->input->post('img_alt'),
+        //     'industry'                      => $this->input->post('industry') ,
+        //     'conference'                    => $this->input->post('conference'),
+        //     'birthday'                      => $birth,
+        //     'place_of_birth'                => $this->input->post('place_of_birth'),
+        //     'career_academic_back'          => $academic_careers,
+        //     'career_work_exp'               => $work_exp,
+        //     'career_awards'                 => $awards,
+        //     'sort_career'                   => $this->input->post('n_order') ,
+        //     'hospital_office'               => $this->input->post('hospital_office'),
+        //     'department'                    => $this->input->post('department'),
+        //     'doctor_comment'                => $this->input->post('doc_comment'),
+        // );
+
+        $doctor = new Doctor;
+        $doctor->url_generation             = $details['url_generation'] ;
+        $doctor->status                     = $details['status'];
+        $doctor->certificate                = $details['text'];//json
+        $doctor->name                       = $details['name'];
+        $doctor->alphabet_name              = $details['alpha_name'] ;
+        $doctor->image                      = $details['title']; //image
+        $doctor->image_caption              = $details['img_caption'];
+        $doctor->image_alt                  = $details['img_alt'];
+        $doctor->industry                   = $details['industry'] ;
+        $doctor->conference                 = $details['conference'];
+        $doctor->birthday                   = $details['text']; //month day year
+        $doctor->place_of_birth             = $details['place_of_birth'];
+        $doctor->career_academic_back       = $details['title'] ; //json
+        $doctor->career_work_exp            = $details['title']; //json
+        $doctor->career_awards              = $details['text']; //json
+        $doctor->sort_career                = $details['n_order'];
+        $doctor->hospital_office            = $details['hospital_office'];
+        $doctor->department                 = $details['department'];
+        $doctor->doctor_comment             = $details['doc_comment'];
+        $doctor->save();
+    }
 }
