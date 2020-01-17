@@ -1348,13 +1348,6 @@
 
         }
 
-        // $(add_button4).click(function(e){ //on add input button click
-        //     e.preventDefault();
-            
-        //     $(wrapper4).append('<div class="form-group"><label class="control-label col-sm-2">小見出し:</label><div class="col-sm-9"><select name="sub_head2a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div></div><div class="form-group"><label class="control-label col-sm-2">画像alt:</label><div class="col-sm-9"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group"><label class="control-label col-sm-2">本文:</label><div class="col-sm-9"><textarea class="form-control" name="txt2[]"></textarea></div><div class="col-sm-1"></div></div>'); //add input box
-            
-        // });
-
         $(add_button5).click(function(e){ //on add input button click
             e.preventDefault();
             
