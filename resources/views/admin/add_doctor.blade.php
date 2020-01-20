@@ -1,190 +1,284 @@
 @extends('layouts.app')
 @section('content')
 
-    
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+    <h4> Add A Hospital</h4>
     {!! Form::open(array('url' => '/', 'method' => 'post')) !!}
-    <table class="table table-borderless" style="width:100%;background-color:#F7F7F7;">
-        <tr>
-            <td>URL自動生成名<br>URL generation</td>
-            <td>{!! Form::text('url_generation', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>病気カテゴリー<br>Position</td>
-            <td>{!! Form::select('position', array('L' => 'Illness_category', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>{!! Form::text('position', null , ['class' => 'form-control']) !!}</td>
-        </tr>
+        <table class="table">
             <tr>
-            <td>専門医・認定医 (取得資格)<br>Certificate</td>
-            <td>{!! Form::text('certificate', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-        </tr>
-        <tr>
-            <td>氏名<br>Name</td>
-            <td>{!! Form::text('name', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>ローマ字(名・氏)<br>Alphabet Name</td>
-            <td>{!! Form::text('alpha_name', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>プロフィール画像<br>Profile image</td>
-            <td>{!! Form::file('profile_img', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>プロフィール ミニ<br>Mini Profile image</td>
-            <td>{!! Form::file('mini_profile_img', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>画像キャプション<br>Image Caption</td>
-            <td>{!! Form::text('img_caption', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>画像alt<br>Image alt</td>
-            <td>{!! Form::text('img_alt', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>業種<br>Job-type</td>
-            <td>{!! Form::select('industry', array('L' => 'industry', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>所属学会<br>Conference</td>
-            <td>{!! Form::text('conference', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-        </tr>
-        <tr>
-            <td>生年月日<br>Birthday</td>
-            <td>{!! Form::selectRange('coverage_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-            <td>{!! Form::selectMonth('coverage_month',null ,['class' => 'form-control']) !!}</td>
-            <td>{!! Form::selectRange('coverage_year', 1, 31,null ,['class' => 'form-control']) !!}</td>
-            <td>表示<br>Display</td>
-            <td>{!! Form::checkbox('ok', null , ['class' => 'form-control']) !!} 可</td>
-            <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
-            <td>{!! Form::checkbox('birthday_ok', null , ['class' => 'form-control']) !!} 生まれ年のみ可</td>
-        </tr>
-        <tr>
-            <td>出生地<br>Place of birth</td>
-            <td>{!! Form::text('place_of_birth', null , ['class' => 'form-control']) !!}</td>
-            <td>出身地</td>
-            <td>{!! Form::text('birthday_place', null , ['class' => 'form-control']) !!}</td>
-            <td>表示</td>
-            <td>{!! Form::checkbox('place_of_birth_ok', null , ['class' => 'form-control']) !!} 出生地可</td>
-            <td>{!! Form::checkbox('birthday_place_ok', null , ['class' => 'form-control']) !!} 出身地可</td>
-            <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
-        </tr>
-        <tr>
-            <td>経歴(学歴)<br>Alma mater</td>
-            <td colspan="3">
-                <table class="table" style="background-color:#F7F7F7;">
-                    <tr>
-                        <td>{!! Form::selectRange('aca_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_ac_month',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_ac_desc', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::selectRange('c_ac_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_ac_month_to',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_ac_desc_to', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>経歴(職歴)<br>Working place</td>
-            <td colspan="3">
-                <table class="table" style="background-color:#F7F7F7;">
-                    <tr>
-                        <td>{!! Form::selectRange('work_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_we_month',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_we_desc', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::selectRange('c_we_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_we_month_to',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_we_desc_to', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>経歴(賞・表彰)<br>Award</td>
-            <td colspan="3">
-                <table class="table" style="background-color:#F7F7F7;">
-                    <tr>
-                        <td>{!! Form::selectRange('c_aw_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_aw_month',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_aw_desc', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::selectRange('c_aw_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_aw_month_to',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_aw_desc_to', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>最後の行に現在に至る<br>Add“現在に至る”at line end</td>
-			<td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 無<br>No</td>
-        </tr>
-        <tr>
-            <td>所属病院・勤務先<br>Hospital・Office</td>
-            <td>{!! Form::select('office', array('L' => 'Hospital office', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>エリア<br>Work location</td>
-            <td>{!! Form::select('Prefectures', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-            <td>{!! Form::select('Prefectures', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td>所属診療科・所属科<br>Department</td>
-            <td>{!! Form::select('department', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-        </tr>
-        <tr>
-            <td>医師コメント<br>Doctor Comment</td>
-            <td colspan="3">{!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}</td>
-            <td colspan="3">
-                <table class="table" style="background-color:#F7F7F7;">
-                    <tr>
-                        <td>{!! Form::button('プレビュー', ['class' => 'btn btn-success']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::button('公開予約', ['class' => 'btn btn-warning']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::button('公開', ['class' => 'btn btn-info']) !!}</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+                <td>URL自動生成名</td>
+                <td><input type="text" class="form-control" name="url_generation"></td>
+            </tr>
+            <tr>
+                <td>ステイタス</td>
+                <td><input type="text" class="form-control" name="status"></td>
+            </tr>
+            <tr>
+                <td>専門医・認定医 <br>（取得資格）</td>
+                <td>
+                    <div id="certificate_div">
+                        <input type="text" class="form-control" name="certificate[]">
+                    </div>
+                    <div id="new_certificate"></div>
+                    <a href="" class="add_certificate"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+            <tr>
+                <td>氏名</td>
+                <td><input type="text" class="form-control" name="name"></td>
+            </tr>
+            <tr>
+                <td>ローマ字（名・氏）</td>
+                <td><input type="text" class="form-control" name="alpha_name"></td>
+            </tr>
+            <tr>
+                <td>顔写真</td>
+                <td>
+                <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">File</span>
+                        <input type="file" name="face_image"/> <!-- rename it -->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>写真キャプション</td>
+                <td><input type="text" class="form-control" name="img_caption"></td>
+            </tr>
+            <tr>
+                <td>写真alt</td>
+                <td><input type="text" class="form-control" name="img_alt"></td>
+            </tr>
+            <tr>
+                <td>業種選択</td>
+                <td>
+                    <div class="form-group">
+                        <label for="sel1">Select list</label>
+                        <select class="form-control" name="industry">
+                            <option>industry one</option>
+                            <option>industry two</option>
+                            <option>industry three</option>
+                            <option>industry four</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>所属学会</td>
+                <td>
+                    <div id="conferencediv">
+                        <input type="text" class="form-control" name="conference">
+                    </div>
+                    <div id="new_conference"></div>
+                    <a href="" class="btn btn-info addconference">+</a>
+                </td>
+            </tr>
+            <tr>
+                <td>生年月日</td>
+                <td>
+                    <!-- <input type="text" id="form-control" name="b_year"> -->
+                    <!-- <input type="text" id="form-control" name="b_month"> -->
+                    <!-- <input type="text" id="form-control" name="b_day"> -->
+                    <select id="b_year" name="b_year"></select>
+                    <select id="" name="b_month">
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select id="length" name="b_day"></select>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>出生地</td>
+                <td><input type="text" class="form-control" name="place_of_birth"></td>
+                <td><input type="text" class="form-control" name="birthplace"></td>
+            </tr> 
+            <tr>
+                <td>経歴（学歴）</td>
+                <td>
+                    <div id="academic">
+                        <select id="aca_year" name="c_ac_year[]"></select>
+                        <select name="c_ac_month[]">
+                            <option>month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="text" id="form-control" name="c_ac_desc[]">
+                        <br>
+                        <select id="aca_year_to" name="c_ac_year_to[]"></select>
+                        <select name="c_ac_month_to[]">
+                            <option>month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="text" id="form-control" name="c_ac_desc_to[]">
+                    </div>
+                    <div id="new_chq"></div>
+                    <a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+            <tr>
+                <td>経歴（職歴）</td>
+                <td>
+                    <!-- <input type="text" id="form-control" name="c_year">
+                    <input type="text" id="form-control" name="c_month">
+                    <input type="text" id="form-control" name="c_desc"> -->
+
+                    <div id="work_exp">
+                        <select id="work_year" name="c_we_year[]"></select>
+                        <select name="c_we_month[]">
+                            <option>month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="text" id="form-control" name="c_we_desc[]">
+                        <br>
+                        <select id="work_year_to" name="c_we_year_to[]"></select>
+                        <select name="c_we_month_to[]">
+                            <option>month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="text" id="form-control" name="c_we_desc_to[]">
+                    </div>
+                    <div id="new_work_exp"></div>
+                    <a href="" class="add_work_exp"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+            <tr>
+                <td>経歴（賞・表彰）</td>
+                <td>
+                    <!-- <input type="text" id="form-control" name="c_year">
+                    <input type="text" id="form-control" name="c_month">
+                    <input type="text" id="form-control" name="c_desc"> -->
+
+                    <div id="awards_div">
+                        <select id="awards_year" name="c_aw_year[]"></select>
+                        <select name="c_aw_month[]">
+                            <option>month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="text" id="form-control" name="c_aw_desc[]">
+                        <br>
+                        <select id="awards_year_to" name="c_aw_year_to[]"></select>
+                        <select name="c_aw_month_to[]">
+                            <option>month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="text" id="form-control" name="c_aw_desc_to[]">
+                    </div>
+                    <div id="new_awards"></div>
+                    <a href="" class="add_awards"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+            <tr>
+                <td>最後の行に現在に至る</td>
+                <td><input type="checkbox" name="n_order" value="1"> OK <input type="checkbox" name="n_order" value="0"> NO </td>
+            </tr>
+            <tr>
+                <td>所属病院・勤務先</td>
+                <td>
+                    <div class="form-group">
+                        <label for="sel1">Select list</label>
+                        <select class="form-control" name="hospital_office">
+                            <option>office one</option>
+                            <option>office two</option>
+                            <option>office three</option>
+                            <option>office four</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>所属診療科・所属科</td>
+                <td><input type="text" class="form-control" name="department"></td>
+                <td><input type="text" class="form-control" name="department"></td>
+                <td><input type="text" class="form-control" name="department"></td>
+            </tr>
+            <tr>
+                <td>医師コメント</td>
+                <td><textarea class="form-control" name="doc_comment"></textarea></td>
+                <td><input type="submit" class="btn btn-success" value="保存" name="savedoc"><br><input type="button" class="btn btn-success" value="プレビュー"><br><input type="button" class="btn btn-info" value="公開"></td>
+            </tr>
+        </form>
+        <table>
+    </div>
+</div>
+
 <table class="table" style="background-color:#aee4e4;">
 	<tr>
 		<td>エディター担当者<br>Editor</td>
@@ -204,9 +298,6 @@
 		<td>{!! Form::textarea('Note', null , ['class' => 'form-control']) !!}</td>
 	</tr>
 </table>
-
-
-
-    {!! Form::close() !!}
+{!! Form::close() !!}
 
 @endsection

@@ -304,11 +304,27 @@ class HomeController extends Controller
 
         $acad = $this->input->post('med_sbj_list'); 
         $res = array();
-        foreach($acad as $key => $cert)
+        foreach($acad as $key => $academic)
         {
-            $res[$key]['med_sbj_list'] = $cert;
+            $res[$key]['med_sbj_list'] = $academic;
         }
         $jsonacad = json_encode($res);
+
+        $workexp = $this->input->post('med_sbj_list'); 
+        $res1 = array();
+        foreach($workexp as $key => $experience)
+        {
+            $res1[$key]['med_sbj_list'] = $experience;
+        }
+        $jsonworkexp = json_encode($res1);
+
+        $awards = $this->input->post('med_sbj_list'); 
+        $res2 = array();
+        foreach($awards as $key => $wards)
+        {
+            $res2[$key]['med_sbj_list'] = $wards;
+        }
+        $jsonawards = json_encode($res2);
 
         $doctor = new Doctor;
         $doctor->url_generation             = $details['url_generation'] ;
@@ -324,7 +340,7 @@ class HomeController extends Controller
         $doctor->birthday                   = $details['text']; //month day year
         $doctor->place_of_birth             = $details['place_of_birth'];
         $doctor->career_academic_back       = $jsonacad; //json
-        $doctor->career_work_exp            = $details['title']; //json
+        $doctor->career_work_exp            = $jsonworkexp; //json
         $doctor->career_awards              = $details['text']; //json
         $doctor->sort_career                = $details['n_order'];
         $doctor->hospital_office            = $details['hospital_office'];
