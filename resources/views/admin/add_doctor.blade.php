@@ -1,88 +1,146 @@
 @extends('layouts.app')
 @section('content')
 
-
+{!! Form::open(array('url' => '/save_doctor', 'method' => 'post')) !!}
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-    <div class="row">
-    <h4> Add A Hospital</h4>
-    {!! Form::open(array('url' => '/', 'method' => 'post')) !!}
-        <table class="table">
-            <tr>
-                <td>URL自動生成名</td>
-                <td><input type="text" class="form-control" name="url_generation"></td>
-            </tr>
-            <tr>
-                <td>ステイタス</td>
-                <td><input type="text" class="form-control" name="status"></td>
-            </tr>
-            <tr>
-                <td>専門医・認定医 <br>（取得資格）</td>
-                <td>
-                    <div id="certificate_div">
-                        <input type="text" class="form-control" name="certificate[]">
-                    </div>
-                    <div id="new_certificate"></div>
-                    <a href="" class="add_certificate"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>氏名</td>
-                <td><input type="text" class="form-control" name="name"></td>
-            </tr>
-            <tr>
-                <td>ローマ字（名・氏）</td>
-                <td><input type="text" class="form-control" name="alpha_name"></td>
-            </tr>
-            <tr>
-                <td>顔写真</td>
-                <td>
-                <div class="btn btn-default image-preview-input">
-                        <span class="glyphicon glyphicon-folder-open"></span>
-                        <span class="image-preview-input-title">File</span>
-                        <input type="file" name="face_image"/> <!-- rename it -->
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>写真キャプション</td>
-                <td><input type="text" class="form-control" name="img_caption"></td>
-            </tr>
-            <tr>
-                <td>写真alt</td>
-                <td><input type="text" class="form-control" name="img_alt"></td>
-            </tr>
-            <tr>
-                <td>業種選択</td>
-                <td>
-                    <div class="form-group">
-                        <label for="sel1">Select list</label>
-                        <select class="form-control" name="industry">
-                            <option>industry one</option>
-                            <option>industry two</option>
-                            <option>industry three</option>
-                            <option>industry four</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>所属学会</td>
-                <td>
-                    <div id="conferencediv">
-                        <input type="text" class="form-control" name="conference">
-                    </div>
-                    <div id="new_conference"></div>
-                    <a href="" class="btn btn-info addconference">+</a>
-                </td>
-            </tr>
-            <tr>
-                <td>生年月日</td>
-                <td>
-                    <!-- <input type="text" id="form-control" name="b_year"> -->
-                    <!-- <input type="text" id="form-control" name="b_month"> -->
-                    <!-- <input type="text" id="form-control" name="b_day"> -->
-                    <select id="b_year" name="b_year"></select>
-                    <select id="" name="b_month">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+            URL自動生成名<br>URL generation
+            </div>
+            <div class="col-10">
+            <input type="text" class="form-control" name="url_generation" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            職位<br>Status
+            </div>
+            <div class="col-10">
+                <!-- <select class="form-control" name="position" style="width:500px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select> -->
+            <input type="text" class="form-control" name="status" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            専門医・認定医<br>（取得資格）<br>Certificate
+            </div>
+            <div class="col-10">
+                <input type="text" class="form- " name="certificate[]" style="width:300px">
+                <input type="text" class="form- " name="certificate[]" style="width:300px"><br>
+                <input type="text" class="form- " name="certificate[]" style="width:300px">
+                <input type="text" class="form- " name="certificate[]" style="width:300px"><br>
+                <input type="text" class="form- " name="certificate[]" style="width:300px">
+                <input type="text" class="form- " name="certificate[]" style="width:300px"><br>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            氏名<br>Name
+            </div>
+            <div class="col-10">
+            <input type="text" class="form-control" name="name" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            ローマ字（名・氏）<br>Alphabet Name 
+            </div>
+            <div class="col-10">
+            <input type="text" class="form-control" name="alpha_name" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            プロフィール画像<br>Profile image 
+            </div>
+            <div class="col-10">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="profile_image">
+                    <span class="input-group-btn">
+                        <button class="btn btn-search" type="button"> 参照... </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- <div class="row">
+            <div class="col-2">
+            プロフィール ミニ<br>Mini Profile image 
+            </div>
+            <div class="col-10">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="mini_profile_image">
+                    <span class="input-group-btn">
+                        <button class="btn btn-search" type="button"> 参照... </button>
+                    </span> &emsp; 顔の部分を正方形に
+                </div>
+            </div>
+        </div>
+        <br> -->
+        <div class="row">
+            <div class="col-2">
+            画像キャプション<br>Image Caption 
+            </div>
+            <div class="col-10">
+            <input type="text" class="form-control" name="img_caption" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            画像alt<br>Image alt
+            </div>
+            <div class="col-10">
+            <input type="text" class="form-control" name="img_alt" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            業種<br>Industry
+            </div>
+            <div class="col-10">
+                <select class="form-control" name="industry" style="width:500px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            所属学会<br>Conference
+            </div>
+            <div class="col-10">
+                <input type="text" class="form- " name="conference[]" style="width:300px">
+                <input type="text" class="form- " name="conference[]" style="width:300px"><br>
+                <input type="text" class="form- " name="conference[]" style="width:300px">
+                <input type="text" class="form- " name="conference[]" style="width:300px"><br>
+                <input type="text" class="form- " name="conference[]" style="width:300px">
+                <input type="text" class="form- " name="conference[]" style="width:300px"><br>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            生年月日<br>Birthday
+            </div>
+            <div class="col-10">
+                <select id="b_year" name="b_year" class="form- " style="width:100px"></select>
+                <select id="" name="b_month" class="form- " style="width:100px">
                         <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
@@ -96,22 +154,45 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                     </select>
-                    <select id="length" name="b_day"></select>
-                    
-                </td>
-            </tr>
-            <tr>
-                <td>出生地</td>
-                <td><input type="text" class="form-control" name="place_of_birth"></td>
-                <td><input type="text" class="form-control" name="birthplace"></td>
-            </tr> 
-            <tr>
-                <td>経歴（学歴）</td>
-                <td>
-                    <div id="academic">
-                        <select id="aca_year" name="c_ac_year[]"></select>
-                        <select name="c_ac_month[]">
-                            <option>month</option>
+                    <select id="length" name="b_day" class="form- " style="width:100px"></select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            出生地<br>Place of birth
+            </div>
+            <div class="col-10">
+                <input type="text" class="form- " name="place_birth" style="width:200px">
+                出身地 | Birthplace
+                <input type="text" class="form- " name="" style="width:200px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            経歴（学歴）<br>Career（学歴）
+            </div>
+            <div class="col-10">
+                <select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"></select>
+                <select name="c_ac_month[]" class="form- " style="width:100px">
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                </select>
+                <input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:500px">
+                <br>
+                        <select id="aca_year_to" name="c_ac_year_to[]" class="form- " style="width:100px"></select>
+                        <select name="c_ac_month_to[]" class="form- " style="width:100px">
                             <option value="01">January</option>
                             <option value="02">February</option>
                             <option value="03">March</option>
@@ -125,11 +206,34 @@
                             <option value="11">November</option>
                             <option value="12">December</option>
                         </select>
-                        <input type="text" id="form-control" name="c_ac_desc[]">
-                        <br>
-                        <select id="aca_year_to" name="c_ac_year_to[]"></select>
-                        <select name="c_ac_month_to[]">
-                            <option>month</option>
+                    <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            経歴（職歴）<br>Career（職歴）
+            </div>
+            <div class="col-10">
+                <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"></select>
+                <select name="c_we_month[]" class="form- " style="width:100px">
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                </select>
+                <input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:500px">
+                <br>
+                        <select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"></select>
+                        <select name="c_we_month_to[]" class="form- " style="width:100px">
                             <option value="01">January</option>
                             <option value="02">February</option>
                             <option value="03">March</option>
@@ -143,147 +247,150 @@
                             <option value="11">November</option>
                             <option value="12">December</option>
                         </select>
-                        <input type="text" id="form-control" name="c_ac_desc_to[]">
-                    </div>
-                    <div id="new_chq"></div>
-                    <a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>経歴（職歴）</td>
-                <td>
-                    <!-- <input type="text" id="form-control" name="c_year">
-                    <input type="text" id="form-control" name="c_month">
-                    <input type="text" id="form-control" name="c_desc"> -->
+                    <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            経歴（賞・表彰）<br>Career（賞・表彰）
+            </div>
+            <div class="col-10">
+                <select id="awards_year" name="c_aw_year[]" class="form- " style="width:100px"></select>
+                <select name="c_aw_month[]" class="form- " style="width:100px">
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                </select>
+                <input type="text" id="form-control" name="c_aw_desc[]" class="form- " style="width:500px">
+                <br>
+                        <select id="awards_year_to" name="c_aw_year_to[]" class="form- " style="width:100px"></select>
+                        <select name="c_aw_month_to[]" class="form- " style="width:100px">
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            最後の行に現在に至る　<br>最後の行に現在に至る
+            </div>
+            <div class="col-10">
+                <input type="checkbox" name="n_order" value="1"> OK <input type="checkbox" name="n_order" value="0"> NO 
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            所属病院・勤務先<br>Hospital・Office
+            </div>
+            <div class="col-10">
+                <select class="form-control" name="hospital_office" style="width:500px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            所属診療科・所属科<br>Department
+            </div>
+            <div class="col-10">
+            <select class="form- " name="department[]" style="width:200px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+                <select class="form- " name="department[]" style="width:200px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+                <select class="form- " name="department[]" style="width:200px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select><br>
+                <select class="form- " name="department[]" style="width:200px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+                <select class="form- " name="department[]" style="width:200px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+                <select class="form- " name="department[]" style="width:200px">
+                    <option>industry one</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+                <!-- <br>
+                <input type="text" class="form- " name="department" style="width:200px">
+                <input type="text" class="form- " name="department" style="width:200px">
+                <input type="text" class="form- " name="department" style="width:200px"> -->
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            医師コメント<br>Doctor Comment
+            </div>
+            <div class="col-10">
+                <textarea class="form- " name="doc_comment" onkeyup="countChar(this)" style="width:90%;height:100%;"></textarea>
+                <div style="float:right;"><b id="charNum">200</b> <b> / 200 </b> </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <input type="submit" value="保存 | SAVE">
+            </div>
+        </div>
 
-                    <div id="work_exp">
-                        <select id="work_year" name="c_we_year[]"></select>
-                        <select name="c_we_month[]">
-                            <option>month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <input type="text" id="form-control" name="c_we_desc[]">
-                        <br>
-                        <select id="work_year_to" name="c_we_year_to[]"></select>
-                        <select name="c_we_month_to[]">
-                            <option>month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <input type="text" id="form-control" name="c_we_desc_to[]">
-                    </div>
-                    <div id="new_work_exp"></div>
-                    <a href="" class="add_work_exp"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>経歴（賞・表彰）</td>
-                <td>
-                    <!-- <input type="text" id="form-control" name="c_year">
-                    <input type="text" id="form-control" name="c_month">
-                    <input type="text" id="form-control" name="c_desc"> -->
 
-                    <div id="awards_div">
-                        <select id="awards_year" name="c_aw_year[]"></select>
-                        <select name="c_aw_month[]">
-                            <option>month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <input type="text" id="form-control" name="c_aw_desc[]">
-                        <br>
-                        <select id="awards_year_to" name="c_aw_year_to[]"></select>
-                        <select name="c_aw_month_to[]">
-                            <option>month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <input type="text" id="form-control" name="c_aw_desc_to[]">
-                    </div>
-                    <div id="new_awards"></div>
-                    <a href="" class="add_awards"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>最後の行に現在に至る</td>
-                <td><input type="checkbox" name="n_order" value="1"> OK <input type="checkbox" name="n_order" value="0"> NO </td>
-            </tr>
-            <tr>
-                <td>所属病院・勤務先</td>
-                <td>
-                    <div class="form-group">
-                        <label for="sel1">Select list</label>
-                        <select class="form-control" name="hospital_office">
-                            <option>office one</option>
-                            <option>office two</option>
-                            <option>office three</option>
-                            <option>office four</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>所属診療科・所属科</td>
-                <td><input type="text" class="form-control" name="department"></td>
-                <td><input type="text" class="form-control" name="department"></td>
-                <td><input type="text" class="form-control" name="department"></td>
-            </tr>
-            <tr>
-                <td>医師コメント</td>
-                <td><textarea class="form-control" name="doc_comment"></textarea></td>
-                <td><input type="submit" class="btn btn-success" value="保存" name="savedoc"><br><input type="button" class="btn btn-success" value="プレビュー"><br><input type="button" class="btn btn-info" value="公開"></td>
-            </tr>
-        </form>
-        <table>
     </div>
 </div>
+
+{!! Form::close() !!}
+<br>
 
 <table class="table" style="background-color:#aee4e4;">
 	<tr>
 		<td>エディター担当者<br>Editor</td>
 		<td>{!! Form::text('Editor', null , ['class' => 'form-control']) !!}</td>
-		<td>{!! Form::button('エディター変更申請', ['class' => 'btn btn-success']) !!}</td>
+		<td><button class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;">エディター変更申請<br>Editor Change Request</button></td>
 	</tr>
 	<tr>
 		<td>アポイント履歴<br>Appointment History</td>
@@ -298,6 +405,5 @@
 		<td>{!! Form::textarea('Note', null , ['class' => 'form-control']) !!}</td>
 	</tr>
 </table>
-{!! Form::close() !!}
 
 @endsection

@@ -42,3 +42,4 @@ Route::get('/save_edit_hospital','HomeController@save_edit_hospital');
 
 //post
 Route::post('/save_hospital','HomeController@save_hospital');
+Route::post('/save_doctor','HomeController@save_doctor');

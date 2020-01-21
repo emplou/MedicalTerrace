@@ -2,11 +2,13 @@
 
 namespace MedicalTerrace\Http\Controllers;
 
-use Illuminate\Support\Facades\Redirect;
-
 use Illuminate\Http\Request;
 use App\Illness_Category;
+use MedicalTerrace\Doctor;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+
 
 class HomeController extends Controller
 {
@@ -292,9 +294,11 @@ class HomeController extends Controller
         return view('admin.edit_hospital');
     }
 
-    public function insert_doctor(){
+    public function save_doctor(){
 
-        $certificate = $this->input->post('med_sbj_list'); 
+        $details = Input::all();
+
+        $certificate = $details['certificate']; 
         $response = array();
         foreach($certificate as $key => $cert)
         {
@@ -302,29 +306,79 @@ class HomeController extends Controller
         }
         $jsoncertificate = json_encode($response);
 
-        $acad = $this->input->post('med_sbj_list'); 
+        $conference = $details['conference']; 
         $res = array();
-        foreach($acad as $key => $academic)
+        foreach($conference as $key => $con)
         {
-            $res[$key]['med_sbj_list'] = $academic;
+            $res[$key]['med_sbj_list'] = $con;
         }
-        $jsonacad = json_encode($res);
+        $jsonconference = json_encode($res);
 
-        $workexp = $this->input->post('med_sbj_list'); 
-        $res1 = array();
-        foreach($workexp as $key => $experience)
-        {
-            $res1[$key]['med_sbj_list'] = $experience;
-        }
-        $jsonworkexp = json_encode($res1);
-
-        $awards = $this->input->post('med_sbj_list'); 
+        $department = $details['department']; 
         $res2 = array();
-        foreach($awards as $key => $wards)
+        foreach($department as $key => $dep)
         {
-            $res2[$key]['med_sbj_list'] = $wards;
+            $res2[$key]['med_sbj_list'] = $dep;
         }
-        $jsonawards = json_encode($res2);
+        $jsondepartment = json_encode($res2);
+
+        // career Academic Background
+        $years = $details['c_ac_year']; 
+        $months = $details['c_ac_month']; 
+        $descs = $details['c_ac_desc']; 
+        $toyears = $details['c_ac_year_to']; 
+        $tomonths = $details['c_ac_month_to']; 
+        $todescs = $details['c_ac_desc_to']; 
+        $response = array();
+        foreach($years as $key => $year)
+        {
+        $response[$key]['from_year'] = $year;
+        $response[$key]['from_month'] = $months[$key];
+        $response[$key]['from_desc'] = $descs[$key];
+        $response[$key]['to_year'] = $toyears[$key];
+        $response[$key]['to_month'] = $tomonths[$key];
+        $response[$key]['to_desc'] = $todescs[$key];
+        }
+        $academic_careers = json_encode($response); 
+
+        // career work experience
+        $weyears = $details['c_we_year']; 
+        $wemonths = $details['c_we_month']; 
+        $wedescs = $details['c_we_desc']; 
+        $wetoyears = $details['c_we_year_to']; 
+        $wetomonths = $details['c_we_month_to']; 
+        $wetodescs = $details['c_we_desc_to']; 
+        $weresponse = array();
+        foreach($weyears as $key => $weyear)
+        {
+        $weresponse[$key]['we_from_year'] = $weyear;
+        $weresponse[$key]['we_from_month'] = $wemonths[$key];
+        $weresponse[$key]['we_from_desc'] = $wedescs[$key];
+        $weresponse[$key]['we_to_year'] = $wetoyears[$key];
+        $weresponse[$key]['we_to_month'] = $wetomonths[$key];
+        $weresponse[$key]['we_to_desc'] = $wetodescs[$key];
+        }
+        $work_exp = json_encode($weresponse); 
+        //exit;
+
+        // career awards
+        $awyears = $details['c_aw_year']; 
+        $awmonths = $details['c_aw_month']; 
+        $awdescs = $details['c_aw_desc']; 
+        $awtoyears = $details['c_aw_year_to']; 
+        $awtomonths = $details['c_aw_month_to']; 
+        $awtodescs = $details['c_aw_desc_to']; 
+        $awresponse = array();
+        foreach($awyears as $key => $awyear)
+        {
+        $awresponse[$key]['from_year'] = $awyear;
+        $awresponse[$key]['from_month'] = $awmonths[$key];
+        $awresponse[$key]['from_desc'] = $awdescs[$key];
+        $awresponse[$key]['to_year'] = $awtoyears[$key];
+        $awresponse[$key]['to_month'] = $awtomonths[$key];
+        $awresponse[$key]['to_desc'] = $awtodescs[$key];
+        }
+        $awards = json_encode($awresponse);
 
         $doctor = new Doctor;
         $doctor->url_generation             = $details['url_generation'] ;
@@ -332,20 +386,22 @@ class HomeController extends Controller
         $doctor->certificate                = $jsoncertificate;//json
         $doctor->name                       = $details['name'];
         $doctor->alphabet_name              = $details['alpha_name'] ;
-        $doctor->image                      = $details['image']; //image
+        $doctor->image                      = $details['profile_image']; //image
         $doctor->image_caption              = $details['img_caption'];
         $doctor->image_alt                  = $details['img_alt'];
         $doctor->industry                   = $details['industry'] ;
-        $doctor->conference                 = $details['conference'];
-        $doctor->birthday                   = $details['text']; //month day year
-        $doctor->place_of_birth             = $details['place_of_birth'];
-        $doctor->career_academic_back       = $jsonacad; //json
-        $doctor->career_work_exp            = $jsonworkexp; //json
-        $doctor->career_awards              = $details['text']; //json
+        $doctor->conference                 = $jsonconference;
+        $doctor->birthday                   = $details['b_month'].'-'.$details['b_day'].'-'.$details['b_year']; //month day year
+        $doctor->place_of_birth             = $details['place_birth'];
+        $doctor->career_academic_back       = $academic_careers; //json
+        $doctor->career_work_exp            = $work_exp; //json
+        $doctor->career_awards              = $awards; //json
         $doctor->sort_career                = $details['n_order'];
         $doctor->hospital_office            = $details['hospital_office'];
-        $doctor->department                 = $details['department'];
+        $doctor->department                 = $jsondepartment;
         $doctor->doctor_comment             = $details['doc_comment'];
         $doctor->save();
+
+        return redirect::back()->with('message','Successfully Encoded');
     }
 }

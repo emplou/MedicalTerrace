@@ -1,7 +1,7 @@
 <?php
 
 namespace MedicalTerrace;
-
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model

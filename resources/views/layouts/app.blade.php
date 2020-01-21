@@ -126,6 +126,27 @@ div.container {
 .image-preview-input-title {
     margin-left:2px;
 }
+
+.form- {
+	width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input.form-  {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    height: 46px;
+}
     </style>
 </head>
 <body>
@@ -579,6 +600,15 @@ for (var i = min; i<=max; i++){
     opt.innerHTML = i;
     select.appendChild(opt);
 }
+
+function countChar(val) {
+        var len = val.value.length;
+        if (len >= 500) {
+          val.value = val.value.substring(0, 500);
+        } else {
+          $('#charNum').text(200 - len);
+        }
+      };
 </script>
 
 
