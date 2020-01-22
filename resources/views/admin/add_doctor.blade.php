@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-{!! Form::open(array('url' => '/save_doctor', 'method' => 'post')) !!}
+<!-- {!! Form::open(array('url' => '/save_doctor', 'method' => 'post', 'files' => true)) !!} -->
+{!! Form::open(['url' => '/save_doctor', 'method' => 'post', 'files' => true]) !!}
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="container">
         <div class="row">
@@ -18,12 +19,6 @@
             職位<br>Status
             </div>
             <div class="col-10">
-                <!-- <select class="form-control" name="position" style="width:500px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select> -->
             <input type="text" class="form-control" name="status" style="width:500px">
             </div>
         </div>
@@ -66,28 +61,15 @@
             </div>
             <div class="col-10">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="profile_image">
+                    <input type="text" class="form-control" name="profile_image_field">
                     <span class="input-group-btn">
-                        <button class="btn btn-search" type="button"> 参照... </button>
+                        <!-- <button class="btn btn-search" type="button"> 参照... </button> -->
+                        <input type="file" value="参照... " class="btn btn-search" name="profile_image">
                     </span>
                 </div>
             </div>
         </div>
         <br>
-        <!-- <div class="row">
-            <div class="col-2">
-            プロフィール ミニ<br>Mini Profile image 
-            </div>
-            <div class="col-10">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="mini_profile_image">
-                    <span class="input-group-btn">
-                        <button class="btn btn-search" type="button"> 参照... </button>
-                    </span> &emsp; 顔の部分を正方形に
-                </div>
-            </div>
-        </div>
-        <br> -->
         <div class="row">
             <div class="col-2">
             画像キャプション<br>Image Caption 
@@ -320,7 +302,7 @@
             所属診療科・所属科<br>Department
             </div>
             <div class="col-10">
-            <select class="form- " name="department[]" style="width:200px">
+                <select class="form- " name="department[]" style="width:200px">
                     <option>industry one</option>
                     <option>industry two</option>
                     <option>industry three</option>
