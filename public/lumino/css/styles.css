@@ -55,7 +55,8 @@ h3, h4 {
 input.form-control {
   border: 1px solid #ddd;
   box-shadow: none;
-  height: 46px; }
+  /* height: 46px;  */
+}
 
 .bootstrap-table input.form-control {
   height: 34px; }
@@ -1037,7 +1038,7 @@ p.back-link {
 header .right {
     width: 450px;
 }
-header .right .doc-link {
+.doc-link {
     float: left;
     color: #fff;
     font-size: 12px;
@@ -1581,3 +1582,405 @@ header img {
     border: 1px solid #c4eaea !important;
 }
 
+
+.form-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.form-horizontal {
+  height: auto;
+}
+.form-horizontal h2 {
+  margin: 0;
+}
+.form-horizontal .form-header {
+  height: 40px;
+  padding: 20px 30px 0;
+  display: block;
+}
+.form-horizontal .form-header title {
+  width: 60%;
+  float: left;
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+  text-align: left;
+}
+.form-horizontal .form-header .dates {
+  width: 40%;
+  float: left;
+}
+.form-horizontal .form-header .dates div {
+  width: 49%;
+  float: left;
+  margin-right: 7px;
+}
+.form-horizontal .form-header .dates div:last-child {
+  margin-right: 0;
+}
+.form-horizontal .form-header .dates div img {
+  width: 20px;
+  margin-right: 3px;
+  margin-bottom: -5px;
+}
+.form-horizontal .form-header .dates div input {
+  max-width: 100px;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #a09595;
+  border-radius: 8px;
+}
+.form-horizontal .form-subheader {
+  height: 40px;
+  padding: 0 30px;
+  display: block;
+  margin-top: 30px;
+}
+.form-horizontal .form-subheader p {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 5px;
+  font-size: 18px;
+  text-align: left;
+}
+.form-horizontal .form-subheader a {
+  color: #fff;
+  float: right;
+  padding: 8px;
+  text-decoration: none;
+  background-color: green;
+}
+.form-horizontal .form-subheader.confirm p {
+  width: 100%;
+  font-size: 18px;
+  text-align: left;
+}
+.form-horizontal .form-subheader.confirm p span {
+  color: #0E2C8A;
+  text-decoration: underline;
+}
+.form-horizontal .form-field {
+  padding: 20px 30px 0;
+}
+.form-horizontal .form-field form div {
+  padding: 5px;
+}
+.form-horizontal .form-field form div label {
+  width: 150px;
+  height: 20px;
+  float: left;
+  display: inline-block;
+}
+.form-horizontal .form-field form div input {
+  min-width: 250px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #a09595;
+  border-radius: 5px;
+}
+.form-horizontal .form-field form div.long {
+  clear: both;
+}
+.form-horizontal .form-field form div.long input {
+  min-width: 450px;
+}
+.form-horizontal .form-field form div ul {
+  margin: 0;
+  padding-left: 170px;
+  list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='-1 -1 2 2'><circle r='1' /></svg>");
+}
+.form-horizontal .form-field form div ul li {
+  font-size: 14px;
+}
+.form-horizontal .form-field form div .lists {
+  padding: 0;
+}
+.form-horizontal .form-field form div .lists.awards {
+  margin-top: 5px;
+}
+.form-horizontal .form-field form div .lists #addmore {
+  display: inline-block;
+  cursor: pointer;
+}
+.form-horizontal .form-field form div .lists input.date {
+  width: 40px;
+  min-width: 60px;
+  margin-right: -5px;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-horizontal .form-field form div .lists input.desc {
+  min-width: 250px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-horizontal .form-field .radio {
+  width: 90px;
+  float: left;
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.form-horizontal .form-field .radio label {
+  width: 50px;
+  margin: 9px 0 6px;
+  font-weight: 400;
+  line-height: 18px;
+  padding-left: 38px;
+}
+.form-horizontal .form-field .radio input {
+  outline: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 5px solid grey;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  float: left;
+  padding: 0;
+  min-width: 21px;
+  padding-left: -20px;
+  margin-top: -2px;
+  margin-left: -33px;
+  background-color: #CBC0BA;
+  border-color: #CBC0BA;
+}
+.form-horizontal .form-field .radio span {
+  color: #000;
+}
+.form-horizontal .form-field input[type=radio]:checked {
+  width: 23px;
+  height: 23px;
+  border-color: #CBC0BA !important;
+  background-color: #fff !important;
+}
+.form-horizontal .form-field .upload-box {
+  width: 600px;
+  padding: 0;
+}
+.form-horizontal .form-field .upload-box #custom-button {
+  outline: 0;
+  margin-left: -5px;
+  padding: 6px 20px;
+  position: absolute;
+  color: #fff;
+  background-color: grey;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+.form-horizontal .form-field .upload-box #custom-button:hover {
+  background-color: green;
+}
+.form-horizontal .form-field .upload-box #custom-text {
+  padding: 5px 10px;
+  font-family: sans-serif;
+  color: #6f6262;
+  width: 255px;
+  font-size: 14px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid grey;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 0;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 900px;
+}
+
+.form-group.editor {
+  position: relative;
+  /* width: 100%; */
+  /* max-width: 100%; */
+}
+.cols-1 {
+  float: left;
+  width: 10%;
+}
+.cols-15 {
+  float: left;
+  width: 15%;
+  min-height: 30px;
+}
+.cols-2 {
+  float: left;
+  width: 20%;
+}
+.cols-3 {
+  float: left;
+  width: 30%;
+}
+.cols-4 {
+  float: left;
+  width: 40%;
+}
+.cols-45 {
+  float: left;
+  width: 45%;
+}
+.cols-5 {
+  float: left;
+  width: 50%;
+}
+.cols-6 {
+  float: left;
+  width: 60%;
+}
+.cols-7 {
+  float: left;
+  width: 70%;
+}
+.cols-8 {
+  float: left;
+  width: 80%;
+}
+.cols-75 {
+  float: left;
+  width: 75%;
+}
+.cols-9 {
+  float: left;
+  width: 90%;
+}
+
+
+.cols-10 {
+  float: left;
+  width: 100%;
+}
+.main-content {
+  width: 85%;
+  padding-left: 40px;
+  background: #ededed;
+}
+.control-label {
+  padding-top: 7px;
+  color: #807b7b;
+  margin-bottom: 0;
+  line-height: 14px;
+  font-weight: 500 !important;
+  text-align: left !important;
+}
+.control-label span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.btn.add1,
+.btn.add2,
+.btn.add3,
+.btn.add4 {
+  position: absolute;
+  color: grey;
+  bottom: 0;
+  border: 0;
+  outline: 0;
+  padding: 5px;
+  margin-top:5px;
+  background-color: transparent !important;
+}
+
+.btn.add1 span,
+.btn.add2 span,
+.btn.add3 span,
+.btn.add4 span {
+  font-size: 22px;
+} 
+
+.btn.add1 span:hover,
+.btn.add2 span:hover,
+.btn.add3 span:hover,
+.btn.add4 span:hover {
+  color: #000;
+}
+
+
+.btn-prime {
+  color: #404040;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 5px 15px 5px 30px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #96d6d5 0%, #8ccccc 50%, #8bb9b8 51%, #99bfbf 84%, #a8cac9 100%);
+}
+
+.btn-prime img {
+  width: 25px;
+  position: absolute;
+  padding-top: 5px;
+}
+
+.btn-prime span {
+  font-size: 10px;
+}
+
+.msg {
+  font-size: 12px; 
+}
+
+
+.custom-file-label::after {
+  color: #fff !important;
+  content: "参照..." !important;
+  background-color: #808080 !important;
+}
+
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+.styled-checkbox + label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  border: 1px solid #808080;
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+.styled-checkbox:hover + label:before {
+  background: #f35429;
+}
+.styled-checkbox:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+.styled-checkbox:checked + label:before {
+  background: #f35429;
+}
+.styled-checkbox:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+.styled-checkbox:disabled + label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+.styled-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  background: #fd1e15;
+  width: 4px;
+  height: 5px;
+  box-shadow: 2px 0 0 #f35429, 4px 0 0 #f35429, 4px -2px 0 #f35429, 4px -4px 0 #ff130f, 4px -6px 0 #f45e36, 4px -8px 0 #ff7f7f;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(50deg);
+}

@@ -8,7 +8,8 @@
 	<link href="{{ asset('lumino/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('lumino/css/datepicker3.css') }}" rel="stylesheet">
 	<link href="{{ asset('lumino/css/styles.css') }}" rel="stylesheet">
-	<link href="{{ asset('lumino/css/bootstrap-glyphicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('lumino/css/bootstrap-glyphicons.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="{{  asset('lumino/dist/timepicker.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -110,6 +111,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <!-- <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script> -->
 <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 
@@ -185,7 +187,7 @@
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
-            $(wrapper).append('<div class="form-group"><div class="control-label col-sm-2"></div><div class="col-sm-2"><button type="button" class="btn btn-primary">Insert Image</button></div><div class="col-sm-6"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="col-sm-1"></div></div>'); //add input box
+            $(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-15"><button type="button" class="btn-prime">画像を挿入する<br><span>Insert image</span></button></div><div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="cols-1"></div></div>'); //add input box
 
             
         });
