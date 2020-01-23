@@ -456,30 +456,150 @@
                 <div class="col-sm-4"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr[]"></div>
             </div>
 
-            <!-- Insert Image with add field ends -->
-            <hr>
+            <!-- Subheading2 -->
+            <div class="form-group">
+                <label class="control-label col-sm-2">小見出し</label>
+                <div class="col-sm-8">   
+                    <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
+                        <span style="color: #F00;">手足口病のリスク度チェック</span>
+                    </div>       
+                    
+                </div>
+                <div class="col-sm-1">          
+                    
+                </div>
+            </div>
 
+            <!-- Text of the subheading2 -->
+            <div class="form-group">
+                <label class="control-label col-sm-2">本文:</label>
+                <div class="col-sm-10">  
+                    <div class="col-sm-8">          
+                        <textarea class="form-control sh_b" name="sh_b[]" maxlength="30"></textarea>
+                    </div>
+                    <div class="col-sm-2"> 
+                        リスク度 
+                        <select name="rl2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+
+                        </select><br>         
+                        <span id="rchars12">0</span>/46
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="col-sm-8">          
+                        <textarea class="form-control sh2_b" name="sh_b[]" maxlength="30"></textarea>
+                    </div>
+                    <div class="col-sm-2"> 
+                        リスク度
+                        <select name="rl2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+
+                        </select><br>                
+                        <span id="rchars13">0</span>/46
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="col-sm-8">          
+                        <textarea class="form-control sh3_b" name="sh_b[]" maxlength="30"></textarea>
+                    </div>
+                    <div class="col-sm-2">  
+                        リスク度
+                        <select name="rl2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+
+                        </select><br>              
+                        <span id="rchars14">0</span>/46
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="col-sm-8">          
+                        <textarea class="form-control sh4_b" name="sh_b[]" maxlength="30"></textarea>
+                    </div>
+                    <div class="col-sm-2">    
+                        リスク度
+                        <select name="rl2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+
+                        </select><br>             
+                        <span id="rchars15">0</span>/46
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="wrapper4"></div>
+
+                    <div class="col-sm-8">          
+                        <textarea class="form-control sh_b" name="sh_b[]" maxlength="30"></textarea>
+                    </div>
+                    <div class="col-sm-2">   
+                        リスク度
+                        <select name="rl2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+
+                        </select><br>       
+                        <button type="button" class="btn btn-success sh-btn2">+</button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <!-- Check Result -->
+            <div class="form-group">
+                <label class="control-label col-sm-2">チェック結果</label>
+                <div class="col-sm-4"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr_b[]"></div>
+                <div class="col-sm-4"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr_b[]"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr_b[]"></div>
+                <div class="col-sm-4"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr_b[]"></div>
+            </div>
+
+            <hr>
+            <!-- Search Keywords -->
             <div class="form-group">
                 <label class="control-label col-sm-2">検索キーワード</label>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword1"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword2" placeholder="例）子どもの病気" name="kword2"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword3"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）夏の感染症" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）子どもの病気" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）手足口病" name="kword"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label col-sm-2"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword4" placeholder="例）ヘルパンギーナ" name="kword4"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword5" placeholder="例）水いぼ" name="kword5"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword6" placeholder="" name="kword6"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）ヘルパンギーナ" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）水いぼ" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label col-sm-2"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword7" placeholder="" name="kword7"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" id="kword8" placeholder="" name="kword8"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword"></div>
                 <div class="col-sm-3">※裏設定。検索させたい関連ワードを表記</div>
             </div>
 
+            <!-- Title for SEO -->
             <div class="form-group">
                 <label class="control-label col-sm-2">タイトルタグ</label>
                 <div class="col-sm-8">   
@@ -497,35 +617,38 @@
                 <div class="col-sm-8">   
                     <textarea class="form-control seo" name="seo_txt" maxlength="35">タイトルタグをカスタマイズする場合はこちらに入力ください</textarea>
                 </div>
-                <div class="col-sm-1">          
-                    <span id="#">0</span>/35
+                <div class="col-sm-1">         
+                    <span id="rchars16">0</span>/35
                 </div>
             </div>
 
-
+            <!-- Meta Description of SEO -->
             <div class="form-group">
                 <label class="control-label col-sm-2">ディスクリプション</label>
                 <div class="col-sm-8">   
-                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
-時分学校の。</textarea>
+                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の。
+                    </textarea>
                 </div>
-                <div class="col-sm-1">          
-                    <span id="#">0</span>/50
+                <div class="col-sm-1">  
+                    スマホ・PC用 重要文章<br>        
+                    <span id="rchars17">0</span>/50
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2">ディスクリプション</label>
+                <div class="col-sm-2"></div>
                 <div class="col-sm-8">   
                     <textarea class="form-control mt2" name="meta_txt2" maxlength="70">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
                      <div style="border: 1px solid #CCC; padding: 5px; color: #F00;">
                          ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
                      </div>
                 </div>
-                <div class="col-sm-1">          
-                    <span id="rchars6">0</span>/70
+                <div class="col-sm-1">     
+                    PC用補足文章<br>      
+                    <span id="rchars18">0</span>/70
                 </div>
             </div>
 
+            <!-- h1 -->
             <div class="form-group">
                 <label class="control-label col-sm-2">h1</label>
                 <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
@@ -534,11 +657,12 @@
                 </div>
             </div>
             
+            <!-- h2 -->
             <div class="form-group">
                 <label class="control-label col-sm-2">h2</label>
                 <div class="col-sm-10">
                     <!-- add h2 fields -->
-                    <div class="field_wrap5"></div>
+                    <div class="wrapper5"></div>
 
                     <div class="col-sm-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div>
                     <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
@@ -547,6 +671,7 @@
                 </div>
             </div>
 
+            <!-- Tag Keyword -->
             <div class="form-group">
                 <label class="control-label col-sm-2">タグ（キーワード）</label>
                 <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
@@ -579,330 +704,321 @@
                 </div>
             </div>
 
+            <!-- Tag(illness name) -->
             <div class="form-group">
                 <label class="control-label col-sm-2">タグ（病名）</label>
-                <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag_b[]"> 考えられる病気より
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag_b[]"> 考えられる病気より
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag_b[]"> 考えられる病気より
-                    </div>
-                    <div class="clear"></div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag_b[]"> 考えられる病気より
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag_b[]"> 考えられる病気より
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag_b[]"> 考えられる病気より
-                    </div>
-                    
+                <div class="col-sm-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
+                    <input type="checkbox" name="tag_b[]"> 考えられる病気より
+                </div>
+                <div class="col-sm-4">
+                    ※上記のキーワードに含まれていればチェック不要
                 </div>
             </div>
 
+            <!-- Tag(department) -->
             <div class="form-group">
                 <label class="control-label col-sm-2">タグ（診療科・所属科）</label>
-                <div class="col-sm-10">   
-                    <div class="col-sm-3">
-                        <select name="tag_dep[]" class="form-control">
-                            <option value="">選択してください</option>
-                            <option value="内科">内科</option>
-                            <option value="呼吸器内科">呼吸器内科</option>
-                            <option value="循環器内科">循環器内科</option>
-                            <option value="消化器内科">消化器内科</option>
-                            <option value="心臓内科">心臓内科</option>
-                            <option value="血液内科">血液内科</option>
-                            <option value="気管食道内科">気管食道内科</option>
-                            <option value="胃腸内科">胃腸内科</option>
-                            <option value="腫瘍内科">腫瘍内科</option>
-                            <option value="糖　尿病内科">糖　尿病内科</option>
-                            <option value="代謝内科">代謝内科</option>
-                            <option value="内分泌内科">内分泌内科</option>
-                            <option value="脂質代謝内科">脂質代謝内科</option>
-                            <option value="腎臓内科">腎臓内科</option>
-                            <option value="神経内科">神経内科</option>
-                            <option value="心療内科">心療内科</option>
-                            <option value="感染症内科">感染症内科</option>
-                            <option value="漢方内科">漢方内科</option>
-                            <option value="老年内科">老年内科</option>
-                            <option value="女性内科">女性内科</option>
-                            <option value="新生児内科">新生児内科</option>
-                            <option value="性感染症内科">性感染症内科</option>
-                            <option value="内視鏡内科">内視鏡内科</option>
-                            <option value="人工透析内科">人工透析内科</option>
-                            <option value="疼痛緩和内科">疼痛緩和内科</option>
-                            <option value="ペインクリニック内科">ペインクリニック内科</option>
-                            <option value="アレルギー疾患内科">アレルギー疾患内科</option>
-                            <option value="内科（ペインクリニック）">内科（ペインクリニック）</option>
-                            <option value="内科（循環器）">内科（循環器）</option>
-                            <option value="内科（薬物療法）">内科（薬物療法）</option>
-                            <option value="内科（感染症）">内科（感染症）</option>
-                            <option value="内科（骨髄移植）">内科（骨髄移植）</option>
-                            <option value="外科">外科</option>
-                            <option value="呼吸器外科">呼吸器外科</option>
-                            <option value="心臓血管外科">心臓血管外科</option>
-                            <option value="心臓外科">心臓外科</option>
-                            <option value="消化器外科">消化器外科</option>
-                            <option value="乳腺外科">乳腺外科</option>
-                            <option value="小児外科">小児外科</option>
-                            <option value="気管食道外科">気管食道外科</option>
-                            <option value="肛門外科">肛門外科</option>
-                            <option value="整形外科">整形外科</option>
-                            <option value="脳神経外科">脳神経外科</option>
-                            <option value="形成外科">形成外科</option>
-                            <option value="美容外科">美容外科</option>
-                            <option value="腫瘍外科">腫瘍外科</option>
-                            <option value="移植外科">移植外科</option>
-                            <option value="頭頸部外科">頭頸部外科</option>
-                            <option value="胸部外科">胸部外科</option>
-                            <option value="腹部外科">腹部外科</option>
-                            <option value="肝臓外科">肝臓外科</option>
-                            <option value="膵臓外科">膵臓外科</option>
-                            <option value="胆のう外科">胆のう外科</option>
-                            <option value="食道外科">食道外科</option>
-                            <option value="大腸外科">大腸外科</option>
-                            <option value="内視鏡外科">内視鏡外科</option>
-                            <option value="ペインクリニック外科">ペインクリニック外科</option>
-                            <option value="外科（内視鏡）">外科（内視鏡）</option>
-                            <option value="外科（がん）">外科（がん）</option>
-                            <option value="精神科">精神科</option>
-                            <option value="アレルギー科">アレルギー科</option>
-                            <option value="リウマチ科">リウマチ科</option>
-                            <option value="小児科">小児科</option>
-                            <option value="皮膚科">皮膚科</option>
-                            <option value="泌尿器科">泌尿器科</option>
-                            <option value="産婦人科">産婦人科</option>
-                            <option value="産科">産科</option>
-                            <option value="婦人科">婦人科</option>
-                            <option value="眼科">眼科</option>
-                            <option value="耳鼻いんこう科">耳鼻いんこう科</option>
-                            <option value="リハビリテーション科">リハビリテーション科</option>
-                            <option value="放射線科">放射線科</option>
-                            <option value="放射線診断科">放射線診断科</option>
-                            <option value="放射線治療科">放射線治療科</option>
-                            <option value="病理診断科">病理診断科</option>
-                            <option value="臨床検査科">臨床検査科</option>
-                            <option value="救急科">救急科</option>
-                            <option value="児童精神科">児童精神科</option>
-                            <option value="老年精神科">老年精神科</option>
-                            <option value="小児眼科">小児眼科</option>
-                            <option value="小児耳鼻いんこう科">小児耳鼻いんこう科</option>
-                            <option value="小児皮膚科">小児皮膚科</option>
-                            <option value="気管食道・耳鼻いんこう科">気管食道・耳鼻いんこう科</option>
-                            <option value="腫瘍放射線科">腫瘍放射線科</option>
-                            <option value="男性泌尿器科">男性泌尿器科</option>
-                            <option value="神経泌尿器科">神経泌尿器科</option>
-                            <option value="小児泌尿器科">小児泌尿器科</option>
-                            <option value="小児科（新生児）">小児科（新生児）</option>
-                            <option value="泌尿器科（不妊治療）">泌尿器科（不妊治療）</option>
-                            <option value="泌尿器科（人工透析）">泌尿器科（人工透析）</option>
-                            <option value="産婦人科（生殖医療）">産婦人科（生殖医療）</option>
-                            <option value="美容皮膚科">美容皮膚科</option>
-                        </select>
+                <div class="col-sm-10"> 
+
+                    <div id="addanother2">
+
+                        <div class="col-sm-3">
+                            <select name="tag_dep[]" class="form-control">
+                                <option value="">選択してください</option>
+                                <option value="内科">内科</option>
+                                <option value="呼吸器内科">呼吸器内科</option>
+                                <option value="循環器内科">循環器内科</option>
+                                <option value="消化器内科">消化器内科</option>
+                                <option value="心臓内科">心臓内科</option>
+                                <option value="血液内科">血液内科</option>
+                                <option value="気管食道内科">気管食道内科</option>
+                                <option value="胃腸内科">胃腸内科</option>
+                                <option value="腫瘍内科">腫瘍内科</option>
+                                <option value="糖　尿病内科">糖　尿病内科</option>
+                                <option value="代謝内科">代謝内科</option>
+                                <option value="内分泌内科">内分泌内科</option>
+                                <option value="脂質代謝内科">脂質代謝内科</option>
+                                <option value="腎臓内科">腎臓内科</option>
+                                <option value="神経内科">神経内科</option>
+                                <option value="心療内科">心療内科</option>
+                                <option value="感染症内科">感染症内科</option>
+                                <option value="漢方内科">漢方内科</option>
+                                <option value="老年内科">老年内科</option>
+                                <option value="女性内科">女性内科</option>
+                                <option value="新生児内科">新生児内科</option>
+                                <option value="性感染症内科">性感染症内科</option>
+                                <option value="内視鏡内科">内視鏡内科</option>
+                                <option value="人工透析内科">人工透析内科</option>
+                                <option value="疼痛緩和内科">疼痛緩和内科</option>
+                                <option value="ペインクリニック内科">ペインクリニック内科</option>
+                                <option value="アレルギー疾患内科">アレルギー疾患内科</option>
+                                <option value="内科（ペインクリニック）">内科（ペインクリニック）</option>
+                                <option value="内科（循環器）">内科（循環器）</option>
+                                <option value="内科（薬物療法）">内科（薬物療法）</option>
+                                <option value="内科（感染症）">内科（感染症）</option>
+                                <option value="内科（骨髄移植）">内科（骨髄移植）</option>
+                                <option value="外科">外科</option>
+                                <option value="呼吸器外科">呼吸器外科</option>
+                                <option value="心臓血管外科">心臓血管外科</option>
+                                <option value="心臓外科">心臓外科</option>
+                                <option value="消化器外科">消化器外科</option>
+                                <option value="乳腺外科">乳腺外科</option>
+                                <option value="小児外科">小児外科</option>
+                                <option value="気管食道外科">気管食道外科</option>
+                                <option value="肛門外科">肛門外科</option>
+                                <option value="整形外科">整形外科</option>
+                                <option value="脳神経外科">脳神経外科</option>
+                                <option value="形成外科">形成外科</option>
+                                <option value="美容外科">美容外科</option>
+                                <option value="腫瘍外科">腫瘍外科</option>
+                                <option value="移植外科">移植外科</option>
+                                <option value="頭頸部外科">頭頸部外科</option>
+                                <option value="胸部外科">胸部外科</option>
+                                <option value="腹部外科">腹部外科</option>
+                                <option value="肝臓外科">肝臓外科</option>
+                                <option value="膵臓外科">膵臓外科</option>
+                                <option value="胆のう外科">胆のう外科</option>
+                                <option value="食道外科">食道外科</option>
+                                <option value="大腸外科">大腸外科</option>
+                                <option value="内視鏡外科">内視鏡外科</option>
+                                <option value="ペインクリニック外科">ペインクリニック外科</option>
+                                <option value="外科（内視鏡）">外科（内視鏡）</option>
+                                <option value="外科（がん）">外科（がん）</option>
+                                <option value="精神科">精神科</option>
+                                <option value="アレルギー科">アレルギー科</option>
+                                <option value="リウマチ科">リウマチ科</option>
+                                <option value="小児科">小児科</option>
+                                <option value="皮膚科">皮膚科</option>
+                                <option value="泌尿器科">泌尿器科</option>
+                                <option value="産婦人科">産婦人科</option>
+                                <option value="産科">産科</option>
+                                <option value="婦人科">婦人科</option>
+                                <option value="眼科">眼科</option>
+                                <option value="耳鼻いんこう科">耳鼻いんこう科</option>
+                                <option value="リハビリテーション科">リハビリテーション科</option>
+                                <option value="放射線科">放射線科</option>
+                                <option value="放射線診断科">放射線診断科</option>
+                                <option value="放射線治療科">放射線治療科</option>
+                                <option value="病理診断科">病理診断科</option>
+                                <option value="臨床検査科">臨床検査科</option>
+                                <option value="救急科">救急科</option>
+                                <option value="児童精神科">児童精神科</option>
+                                <option value="老年精神科">老年精神科</option>
+                                <option value="小児眼科">小児眼科</option>
+                                <option value="小児耳鼻いんこう科">小児耳鼻いんこう科</option>
+                                <option value="小児皮膚科">小児皮膚科</option>
+                                <option value="気管食道・耳鼻いんこう科">気管食道・耳鼻いんこう科</option>
+                                <option value="腫瘍放射線科">腫瘍放射線科</option>
+                                <option value="男性泌尿器科">男性泌尿器科</option>
+                                <option value="神経泌尿器科">神経泌尿器科</option>
+                                <option value="小児泌尿器科">小児泌尿器科</option>
+                                <option value="小児科（新生児）">小児科（新生児）</option>
+                                <option value="泌尿器科（不妊治療）">泌尿器科（不妊治療）</option>
+                                <option value="泌尿器科（人工透析）">泌尿器科（人工透析）</option>
+                                <option value="産婦人科（生殖医療）">産婦人科（生殖医療）</option>
+                                <option value="美容皮膚科">美容皮膚科</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select name="tag_dep[]" class="form-control">
+                                <option value="">選択してください</option>
+                                <option value="内科">内科</option>
+                                <option value="呼吸器内科">呼吸器内科</option>
+                                <option value="循環器内科">循環器内科</option>
+                                <option value="消化器内科">消化器内科</option>
+                                <option value="心臓内科">心臓内科</option>
+                                <option value="血液内科">血液内科</option>
+                                <option value="気管食道内科">気管食道内科</option>
+                                <option value="胃腸内科">胃腸内科</option>
+                                <option value="腫瘍内科">腫瘍内科</option>
+                                <option value="糖　尿病内科">糖　尿病内科</option>
+                                <option value="代謝内科">代謝内科</option>
+                                <option value="内分泌内科">内分泌内科</option>
+                                <option value="脂質代謝内科">脂質代謝内科</option>
+                                <option value="腎臓内科">腎臓内科</option>
+                                <option value="神経内科">神経内科</option>
+                                <option value="心療内科">心療内科</option>
+                                <option value="感染症内科">感染症内科</option>
+                                <option value="漢方内科">漢方内科</option>
+                                <option value="老年内科">老年内科</option>
+                                <option value="女性内科">女性内科</option>
+                                <option value="新生児内科">新生児内科</option>
+                                <option value="性感染症内科">性感染症内科</option>
+                                <option value="内視鏡内科">内視鏡内科</option>
+                                <option value="人工透析内科">人工透析内科</option>
+                                <option value="疼痛緩和内科">疼痛緩和内科</option>
+                                <option value="ペインクリニック内科">ペインクリニック内科</option>
+                                <option value="アレルギー疾患内科">アレルギー疾患内科</option>
+                                <option value="内科（ペインクリニック）">内科（ペインクリニック）</option>
+                                <option value="内科（循環器）">内科（循環器）</option>
+                                <option value="内科（薬物療法）">内科（薬物療法）</option>
+                                <option value="内科（感染症）">内科（感染症）</option>
+                                <option value="内科（骨髄移植）">内科（骨髄移植）</option>
+                                <option value="外科">外科</option>
+                                <option value="呼吸器外科">呼吸器外科</option>
+                                <option value="心臓血管外科">心臓血管外科</option>
+                                <option value="心臓外科">心臓外科</option>
+                                <option value="消化器外科">消化器外科</option>
+                                <option value="乳腺外科">乳腺外科</option>
+                                <option value="小児外科">小児外科</option>
+                                <option value="気管食道外科">気管食道外科</option>
+                                <option value="肛門外科">肛門外科</option>
+                                <option value="整形外科">整形外科</option>
+                                <option value="脳神経外科">脳神経外科</option>
+                                <option value="形成外科">形成外科</option>
+                                <option value="美容外科">美容外科</option>
+                                <option value="腫瘍外科">腫瘍外科</option>
+                                <option value="移植外科">移植外科</option>
+                                <option value="頭頸部外科">頭頸部外科</option>
+                                <option value="胸部外科">胸部外科</option>
+                                <option value="腹部外科">腹部外科</option>
+                                <option value="肝臓外科">肝臓外科</option>
+                                <option value="膵臓外科">膵臓外科</option>
+                                <option value="胆のう外科">胆のう外科</option>
+                                <option value="食道外科">食道外科</option>
+                                <option value="大腸外科">大腸外科</option>
+                                <option value="内視鏡外科">内視鏡外科</option>
+                                <option value="ペインクリニック外科">ペインクリニック外科</option>
+                                <option value="外科（内視鏡）">外科（内視鏡）</option>
+                                <option value="外科（がん）">外科（がん）</option>
+                                <option value="精神科">精神科</option>
+                                <option value="アレルギー科">アレルギー科</option>
+                                <option value="リウマチ科">リウマチ科</option>
+                                <option value="小児科">小児科</option>
+                                <option value="皮膚科">皮膚科</option>
+                                <option value="泌尿器科">泌尿器科</option>
+                                <option value="産婦人科">産婦人科</option>
+                                <option value="産科">産科</option>
+                                <option value="婦人科">婦人科</option>
+                                <option value="眼科">眼科</option>
+                                <option value="耳鼻いんこう科">耳鼻いんこう科</option>
+                                <option value="リハビリテーション科">リハビリテーション科</option>
+                                <option value="放射線科">放射線科</option>
+                                <option value="放射線診断科">放射線診断科</option>
+                                <option value="放射線治療科">放射線治療科</option>
+                                <option value="病理診断科">病理診断科</option>
+                                <option value="臨床検査科">臨床検査科</option>
+                                <option value="救急科">救急科</option>
+                                <option value="児童精神科">児童精神科</option>
+                                <option value="老年精神科">老年精神科</option>
+                                <option value="小児眼科">小児眼科</option>
+                                <option value="小児耳鼻いんこう科">小児耳鼻いんこう科</option>
+                                <option value="小児皮膚科">小児皮膚科</option>
+                                <option value="気管食道・耳鼻いんこう科">気管食道・耳鼻いんこう科</option>
+                                <option value="腫瘍放射線科">腫瘍放射線科</option>
+                                <option value="男性泌尿器科">男性泌尿器科</option>
+                                <option value="神経泌尿器科">神経泌尿器科</option>
+                                <option value="小児泌尿器科">小児泌尿器科</option>
+                                <option value="小児科（新生児）">小児科（新生児）</option>
+                                <option value="泌尿器科（不妊治療）">泌尿器科（不妊治療）</option>
+                                <option value="泌尿器科（人工透析）">泌尿器科（人工透析）</option>
+                                <option value="産婦人科（生殖医療）">産婦人科（生殖医療）</option>
+                                <option value="美容皮膚科">美容皮膚科</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select name="tag_dep[]" class="form-control">
+                                <option value="">選択してください</option>
+                                <option value="内科">内科</option>
+                                <option value="呼吸器内科">呼吸器内科</option>
+                                <option value="循環器内科">循環器内科</option>
+                                <option value="消化器内科">消化器内科</option>
+                                <option value="心臓内科">心臓内科</option>
+                                <option value="血液内科">血液内科</option>
+                                <option value="気管食道内科">気管食道内科</option>
+                                <option value="胃腸内科">胃腸内科</option>
+                                <option value="腫瘍内科">腫瘍内科</option>
+                                <option value="糖　尿病内科">糖　尿病内科</option>
+                                <option value="代謝内科">代謝内科</option>
+                                <option value="内分泌内科">内分泌内科</option>
+                                <option value="脂質代謝内科">脂質代謝内科</option>
+                                <option value="腎臓内科">腎臓内科</option>
+                                <option value="神経内科">神経内科</option>
+                                <option value="心療内科">心療内科</option>
+                                <option value="感染症内科">感染症内科</option>
+                                <option value="漢方内科">漢方内科</option>
+                                <option value="老年内科">老年内科</option>
+                                <option value="女性内科">女性内科</option>
+                                <option value="新生児内科">新生児内科</option>
+                                <option value="性感染症内科">性感染症内科</option>
+                                <option value="内視鏡内科">内視鏡内科</option>
+                                <option value="人工透析内科">人工透析内科</option>
+                                <option value="疼痛緩和内科">疼痛緩和内科</option>
+                                <option value="ペインクリニック内科">ペインクリニック内科</option>
+                                <option value="アレルギー疾患内科">アレルギー疾患内科</option>
+                                <option value="内科（ペインクリニック）">内科（ペインクリニック）</option>
+                                <option value="内科（循環器）">内科（循環器）</option>
+                                <option value="内科（薬物療法）">内科（薬物療法）</option>
+                                <option value="内科（感染症）">内科（感染症）</option>
+                                <option value="内科（骨髄移植）">内科（骨髄移植）</option>
+                                <option value="外科">外科</option>
+                                <option value="呼吸器外科">呼吸器外科</option>
+                                <option value="心臓血管外科">心臓血管外科</option>
+                                <option value="心臓外科">心臓外科</option>
+                                <option value="消化器外科">消化器外科</option>
+                                <option value="乳腺外科">乳腺外科</option>
+                                <option value="小児外科">小児外科</option>
+                                <option value="気管食道外科">気管食道外科</option>
+                                <option value="肛門外科">肛門外科</option>
+                                <option value="整形外科">整形外科</option>
+                                <option value="脳神経外科">脳神経外科</option>
+                                <option value="形成外科">形成外科</option>
+                                <option value="美容外科">美容外科</option>
+                                <option value="腫瘍外科">腫瘍外科</option>
+                                <option value="移植外科">移植外科</option>
+                                <option value="頭頸部外科">頭頸部外科</option>
+                                <option value="胸部外科">胸部外科</option>
+                                <option value="腹部外科">腹部外科</option>
+                                <option value="肝臓外科">肝臓外科</option>
+                                <option value="膵臓外科">膵臓外科</option>
+                                <option value="胆のう外科">胆のう外科</option>
+                                <option value="食道外科">食道外科</option>
+                                <option value="大腸外科">大腸外科</option>
+                                <option value="内視鏡外科">内視鏡外科</option>
+                                <option value="ペインクリニック外科">ペインクリニック外科</option>
+                                <option value="外科（内視鏡）">外科（内視鏡）</option>
+                                <option value="外科（がん）">外科（がん）</option>
+                                <option value="精神科">精神科</option>
+                                <option value="アレルギー科">アレルギー科</option>
+                                <option value="リウマチ科">リウマチ科</option>
+                                <option value="小児科">小児科</option>
+                                <option value="皮膚科">皮膚科</option>
+                                <option value="泌尿器科">泌尿器科</option>
+                                <option value="産婦人科">産婦人科</option>
+                                <option value="産科">産科</option>
+                                <option value="婦人科">婦人科</option>
+                                <option value="眼科">眼科</option>
+                                <option value="耳鼻いんこう科">耳鼻いんこう科</option>
+                                <option value="リハビリテーション科">リハビリテーション科</option>
+                                <option value="放射線科">放射線科</option>
+                                <option value="放射線診断科">放射線診断科</option>
+                                <option value="放射線治療科">放射線治療科</option>
+                                <option value="病理診断科">病理診断科</option>
+                                <option value="臨床検査科">臨床検査科</option>
+                                <option value="救急科">救急科</option>
+                                <option value="児童精神科">児童精神科</option>
+                                <option value="老年精神科">老年精神科</option>
+                                <option value="小児眼科">小児眼科</option>
+                                <option value="小児耳鼻いんこう科">小児耳鼻いんこう科</option>
+                                <option value="小児皮膚科">小児皮膚科</option>
+                                <option value="気管食道・耳鼻いんこう科">気管食道・耳鼻いんこう科</option>
+                                <option value="腫瘍放射線科">腫瘍放射線科</option>
+                                <option value="男性泌尿器科">男性泌尿器科</option>
+                                <option value="神経泌尿器科">神経泌尿器科</option>
+                                <option value="小児泌尿器科">小児泌尿器科</option>
+                                <option value="小児科（新生児）">小児科（新生児）</option>
+                                <option value="泌尿器科（不妊治療）">泌尿器科（不妊治療）</option>
+                                <option value="泌尿器科（人工透析）">泌尿器科（人工透析）</option>
+                                <option value="産婦人科（生殖医療）">産婦人科（生殖医療）</option>
+                                <option value="美容皮膚科">美容皮膚科</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1"></div>
                     </div>
-                    <div class="col-sm-3">
-                        <select name="tag_dep[]" class="form-control">
-                            <option value="">選択してください</option>
-                            <option value="内科">内科</option>
-                            <option value="呼吸器内科">呼吸器内科</option>
-                            <option value="循環器内科">循環器内科</option>
-                            <option value="消化器内科">消化器内科</option>
-                            <option value="心臓内科">心臓内科</option>
-                            <option value="血液内科">血液内科</option>
-                            <option value="気管食道内科">気管食道内科</option>
-                            <option value="胃腸内科">胃腸内科</option>
-                            <option value="腫瘍内科">腫瘍内科</option>
-                            <option value="糖　尿病内科">糖　尿病内科</option>
-                            <option value="代謝内科">代謝内科</option>
-                            <option value="内分泌内科">内分泌内科</option>
-                            <option value="脂質代謝内科">脂質代謝内科</option>
-                            <option value="腎臓内科">腎臓内科</option>
-                            <option value="神経内科">神経内科</option>
-                            <option value="心療内科">心療内科</option>
-                            <option value="感染症内科">感染症内科</option>
-                            <option value="漢方内科">漢方内科</option>
-                            <option value="老年内科">老年内科</option>
-                            <option value="女性内科">女性内科</option>
-                            <option value="新生児内科">新生児内科</option>
-                            <option value="性感染症内科">性感染症内科</option>
-                            <option value="内視鏡内科">内視鏡内科</option>
-                            <option value="人工透析内科">人工透析内科</option>
-                            <option value="疼痛緩和内科">疼痛緩和内科</option>
-                            <option value="ペインクリニック内科">ペインクリニック内科</option>
-                            <option value="アレルギー疾患内科">アレルギー疾患内科</option>
-                            <option value="内科（ペインクリニック）">内科（ペインクリニック）</option>
-                            <option value="内科（循環器）">内科（循環器）</option>
-                            <option value="内科（薬物療法）">内科（薬物療法）</option>
-                            <option value="内科（感染症）">内科（感染症）</option>
-                            <option value="内科（骨髄移植）">内科（骨髄移植）</option>
-                            <option value="外科">外科</option>
-                            <option value="呼吸器外科">呼吸器外科</option>
-                            <option value="心臓血管外科">心臓血管外科</option>
-                            <option value="心臓外科">心臓外科</option>
-                            <option value="消化器外科">消化器外科</option>
-                            <option value="乳腺外科">乳腺外科</option>
-                            <option value="小児外科">小児外科</option>
-                            <option value="気管食道外科">気管食道外科</option>
-                            <option value="肛門外科">肛門外科</option>
-                            <option value="整形外科">整形外科</option>
-                            <option value="脳神経外科">脳神経外科</option>
-                            <option value="形成外科">形成外科</option>
-                            <option value="美容外科">美容外科</option>
-                            <option value="腫瘍外科">腫瘍外科</option>
-                            <option value="移植外科">移植外科</option>
-                            <option value="頭頸部外科">頭頸部外科</option>
-                            <option value="胸部外科">胸部外科</option>
-                            <option value="腹部外科">腹部外科</option>
-                            <option value="肝臓外科">肝臓外科</option>
-                            <option value="膵臓外科">膵臓外科</option>
-                            <option value="胆のう外科">胆のう外科</option>
-                            <option value="食道外科">食道外科</option>
-                            <option value="大腸外科">大腸外科</option>
-                            <option value="内視鏡外科">内視鏡外科</option>
-                            <option value="ペインクリニック外科">ペインクリニック外科</option>
-                            <option value="外科（内視鏡）">外科（内視鏡）</option>
-                            <option value="外科（がん）">外科（がん）</option>
-                            <option value="精神科">精神科</option>
-                            <option value="アレルギー科">アレルギー科</option>
-                            <option value="リウマチ科">リウマチ科</option>
-                            <option value="小児科">小児科</option>
-                            <option value="皮膚科">皮膚科</option>
-                            <option value="泌尿器科">泌尿器科</option>
-                            <option value="産婦人科">産婦人科</option>
-                            <option value="産科">産科</option>
-                            <option value="婦人科">婦人科</option>
-                            <option value="眼科">眼科</option>
-                            <option value="耳鼻いんこう科">耳鼻いんこう科</option>
-                            <option value="リハビリテーション科">リハビリテーション科</option>
-                            <option value="放射線科">放射線科</option>
-                            <option value="放射線診断科">放射線診断科</option>
-                            <option value="放射線治療科">放射線治療科</option>
-                            <option value="病理診断科">病理診断科</option>
-                            <option value="臨床検査科">臨床検査科</option>
-                            <option value="救急科">救急科</option>
-                            <option value="児童精神科">児童精神科</option>
-                            <option value="老年精神科">老年精神科</option>
-                            <option value="小児眼科">小児眼科</option>
-                            <option value="小児耳鼻いんこう科">小児耳鼻いんこう科</option>
-                            <option value="小児皮膚科">小児皮膚科</option>
-                            <option value="気管食道・耳鼻いんこう科">気管食道・耳鼻いんこう科</option>
-                            <option value="腫瘍放射線科">腫瘍放射線科</option>
-                            <option value="男性泌尿器科">男性泌尿器科</option>
-                            <option value="神経泌尿器科">神経泌尿器科</option>
-                            <option value="小児泌尿器科">小児泌尿器科</option>
-                            <option value="小児科（新生児）">小児科（新生児）</option>
-                            <option value="泌尿器科（不妊治療）">泌尿器科（不妊治療）</option>
-                            <option value="泌尿器科（人工透析）">泌尿器科（人工透析）</option>
-                            <option value="産婦人科（生殖医療）">産婦人科（生殖医療）</option>
-                            <option value="美容皮膚科">美容皮膚科</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <select name="tag_dep[]" class="form-control">
-                            <option value="">選択してください</option>
-                            <option value="内科">内科</option>
-                            <option value="呼吸器内科">呼吸器内科</option>
-                            <option value="循環器内科">循環器内科</option>
-                            <option value="消化器内科">消化器内科</option>
-                            <option value="心臓内科">心臓内科</option>
-                            <option value="血液内科">血液内科</option>
-                            <option value="気管食道内科">気管食道内科</option>
-                            <option value="胃腸内科">胃腸内科</option>
-                            <option value="腫瘍内科">腫瘍内科</option>
-                            <option value="糖　尿病内科">糖　尿病内科</option>
-                            <option value="代謝内科">代謝内科</option>
-                            <option value="内分泌内科">内分泌内科</option>
-                            <option value="脂質代謝内科">脂質代謝内科</option>
-                            <option value="腎臓内科">腎臓内科</option>
-                            <option value="神経内科">神経内科</option>
-                            <option value="心療内科">心療内科</option>
-                            <option value="感染症内科">感染症内科</option>
-                            <option value="漢方内科">漢方内科</option>
-                            <option value="老年内科">老年内科</option>
-                            <option value="女性内科">女性内科</option>
-                            <option value="新生児内科">新生児内科</option>
-                            <option value="性感染症内科">性感染症内科</option>
-                            <option value="内視鏡内科">内視鏡内科</option>
-                            <option value="人工透析内科">人工透析内科</option>
-                            <option value="疼痛緩和内科">疼痛緩和内科</option>
-                            <option value="ペインクリニック内科">ペインクリニック内科</option>
-                            <option value="アレルギー疾患内科">アレルギー疾患内科</option>
-                            <option value="内科（ペインクリニック）">内科（ペインクリニック）</option>
-                            <option value="内科（循環器）">内科（循環器）</option>
-                            <option value="内科（薬物療法）">内科（薬物療法）</option>
-                            <option value="内科（感染症）">内科（感染症）</option>
-                            <option value="内科（骨髄移植）">内科（骨髄移植）</option>
-                            <option value="外科">外科</option>
-                            <option value="呼吸器外科">呼吸器外科</option>
-                            <option value="心臓血管外科">心臓血管外科</option>
-                            <option value="心臓外科">心臓外科</option>
-                            <option value="消化器外科">消化器外科</option>
-                            <option value="乳腺外科">乳腺外科</option>
-                            <option value="小児外科">小児外科</option>
-                            <option value="気管食道外科">気管食道外科</option>
-                            <option value="肛門外科">肛門外科</option>
-                            <option value="整形外科">整形外科</option>
-                            <option value="脳神経外科">脳神経外科</option>
-                            <option value="形成外科">形成外科</option>
-                            <option value="美容外科">美容外科</option>
-                            <option value="腫瘍外科">腫瘍外科</option>
-                            <option value="移植外科">移植外科</option>
-                            <option value="頭頸部外科">頭頸部外科</option>
-                            <option value="胸部外科">胸部外科</option>
-                            <option value="腹部外科">腹部外科</option>
-                            <option value="肝臓外科">肝臓外科</option>
-                            <option value="膵臓外科">膵臓外科</option>
-                            <option value="胆のう外科">胆のう外科</option>
-                            <option value="食道外科">食道外科</option>
-                            <option value="大腸外科">大腸外科</option>
-                            <option value="内視鏡外科">内視鏡外科</option>
-                            <option value="ペインクリニック外科">ペインクリニック外科</option>
-                            <option value="外科（内視鏡）">外科（内視鏡）</option>
-                            <option value="外科（がん）">外科（がん）</option>
-                            <option value="精神科">精神科</option>
-                            <option value="アレルギー科">アレルギー科</option>
-                            <option value="リウマチ科">リウマチ科</option>
-                            <option value="小児科">小児科</option>
-                            <option value="皮膚科">皮膚科</option>
-                            <option value="泌尿器科">泌尿器科</option>
-                            <option value="産婦人科">産婦人科</option>
-                            <option value="産科">産科</option>
-                            <option value="婦人科">婦人科</option>
-                            <option value="眼科">眼科</option>
-                            <option value="耳鼻いんこう科">耳鼻いんこう科</option>
-                            <option value="リハビリテーション科">リハビリテーション科</option>
-                            <option value="放射線科">放射線科</option>
-                            <option value="放射線診断科">放射線診断科</option>
-                            <option value="放射線治療科">放射線治療科</option>
-                            <option value="病理診断科">病理診断科</option>
-                            <option value="臨床検査科">臨床検査科</option>
-                            <option value="救急科">救急科</option>
-                            <option value="児童精神科">児童精神科</option>
-                            <option value="老年精神科">老年精神科</option>
-                            <option value="小児眼科">小児眼科</option>
-                            <option value="小児耳鼻いんこう科">小児耳鼻いんこう科</option>
-                            <option value="小児皮膚科">小児皮膚科</option>
-                            <option value="気管食道・耳鼻いんこう科">気管食道・耳鼻いんこう科</option>
-                            <option value="腫瘍放射線科">腫瘍放射線科</option>
-                            <option value="男性泌尿器科">男性泌尿器科</option>
-                            <option value="神経泌尿器科">神経泌尿器科</option>
-                            <option value="小児泌尿器科">小児泌尿器科</option>
-                            <option value="小児科（新生児）">小児科（新生児）</option>
-                            <option value="泌尿器科（不妊治療）">泌尿器科（不妊治療）</option>
-                            <option value="泌尿器科（人工透析）">泌尿器科（人工透析）</option>
-                            <option value="産婦人科（生殖医療）">産婦人科（生殖医療）</option>
-                            <option value="美容皮膚科">美容皮膚科</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-1"></div>
+
                     <div class="clear"></div>
 
-                    <div class="field_wrap6"></div>
+                    <div class="wrapper6"></div>
 
                     <div class="col-sm-3">
                         <select name="tag_dep[]" class="form-control">
@@ -1203,20 +1319,22 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-2">タグ（症状）</label>
-                <div class="col-sm-10">   
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
+                <div class="col-sm-10"> 
+                    <div id="addanother3">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                        </div>
+                        <div class="col-sm-1"></div>
                     </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_sy[]" placeholder="">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_sy[]" placeholder="">
-                    </div>
-                    <div class="col-sm-1"></div>
                     <div class="clear"></div>
 
-                    <div class="field_wrap7"></div>
+                    <div class="wrapper7"></div>
 
                     <div class="col-sm-3">
                         <input type="text" class="form-control" name="tag_sy[]" placeholder="">
@@ -1288,18 +1406,19 @@
 
                     <div class="clear"></div>
 
-                    <div class="field_wrap8"></div>
-
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                    <div class="wrapper8"></div>
+                    <div id="addanother4">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                        </div>
+                        <div class="col-sm-1"><button type="button" class="btn btn-success add8">+</button></div>
                     </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_txt[]" placeholder="">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_txt[]" placeholder="">
-                    </div>
-                    <div class="col-sm-1"><button type="button" class="btn btn-success add8">+</button></div>
                 </div>
             </div>
 
@@ -1307,18 +1426,20 @@
                 <label class="control-label col-sm-2">タグ（フリー入力）</label>
                 <div class="col-sm-10"> 
 
-                    <div class="field_wrap9"></div>
+                    <div class="wrapper9"></div>
 
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                    <div id="addanother5">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                        </div>
+                        <div class="col-sm-1"><button type="button" class="btn btn-success add9">+</button></div>
                     </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_f[]" placeholder="">
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="tag_f[]" placeholder="">
-                    </div>
-                    <div class="col-sm-1"><button type="button" class="btn btn-success add9">+</button></div>
                     
                 </div>
             </div>
@@ -1331,32 +1452,6 @@
                     <input type="text" name="editor" class="form-control" placeholder="Medical T. 編集部 A.Ito">
                 </div>
                 <div class="col-sm-2"><button type="button" class="btn btn-primary">エディター変更申請</button></div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2">取材日</label>
-                <div class="col-sm-3">   
-                    <select class="form-control" name="c1">
-                        <option value="">－－－－年</option>
-                    </select>
-                </div>
-                <div class="col-sm-1">   
-                    <select class="form-control" name="c2">
-                        <option value="">－－月</option>
-                    </select>
-                </div>
-                <div class="col-sm-1">   
-                    <select class="form-control" name="c3">
-                        <option value="">－－日</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label col-sm-2">謝礼</label>
-                <div class="col-sm-7">   
-                    <input type="text" name="hono" class="form-control" placeholder="例）10,000円">
-                </div>
             </div>
 
             <div class="form-group">
