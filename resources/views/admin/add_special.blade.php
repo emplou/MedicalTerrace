@@ -226,7 +226,7 @@
             
             <div class="form-group">
                 <div class="cols-15"></div>
-                <div class="cols-3"><button type="button" class="btn-prime"><img src="images/image-icon.png">画像を挿入する<br><span>Insert Image</span></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn-prime">グラフを挿入する<br><span><span>Insert graph</span></span></button></div>
+                <div class="cols-6"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert Image</span></div></button><button type="button" class="btn-prime"><img src="images/graph-icon.png"><div>グラフを挿入する<br><span>Insert graph</span></div></button></div>
             </div>
 
             <hr>
@@ -234,14 +234,14 @@
             <!-- <span>Insert image</span> with add field starts -->
             <div class="form-group">
                 <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
-                <div class="cols-15"><button type="button" class="btn-prime">画像を挿入する<br><span>Insert image</span></button></div>
+                <div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert image</span></div></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-15"><button type="button" class="btn-prime">画像を挿入する<br><span>Insert image</span></button></div>
+                <div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert image</span></div></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
@@ -250,7 +250,7 @@
         
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-15"><button type="button" class="btn-prime">画像を挿入する<br><span>Insert image</span></button></div>
+                <div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert image</span></div></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
@@ -302,7 +302,7 @@
 
             <div class="form-group">
 				<label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
-				<div class="cols-6">
+				<div class="cols-8">
 					<div class="cols-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword1"></div>
 					<div class="cols-3"><input type="text" class="form-control" id="kword2" placeholder="例）子どもの病気" name="kword2"></div>
 					<div class="cols-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword3"></div>
@@ -310,7 +310,7 @@
 			</div>
             <div class="form-group">
 				<div class="control-label cols-15"></div>
-				<div class="cols-6">
+				<div class="cols-8">
 					<div class="cols-3"><input type="text" class="form-control" id="kword4" placeholder="例）ヘルパンギーナ" name="kword4"></div>
 					<div class="cols-3"><input type="text" class="form-control" id="kword5" placeholder="例）水いぼ" name="kword5"></div>
 					<div class="cols-3"><input type="text" class="form-control" id="kword6" placeholder="" name="kword6"></div>
@@ -355,7 +355,7 @@
                     <textarea class="form-control mt1" name="meta_txt1" maxlength="50">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
 時分学校の。</textarea>
                 </div>
-                <div class="col-sm-1">          
+                <div class="cols-1">          
                     <span id="rchars5">0</span>/50
                 </div>
             </div>
@@ -363,10 +363,15 @@
                 <label class="control-label cols-15">ディスクリプション</label>
                 <div class="cols-5">   
                     <textarea class="form-control mt2" name="meta_txt2" maxlength="70">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
-                     <div style="border: 1px solid #CCC; padding: 5px; color: #F00;">
-                         ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
-                     </div>
-                </div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label cols-15"></label>
+				<div class="cols-5"> 
+					<div style="border: 1px solid #CCC; padding: 5px; color: #F00;">
+						ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
+					</div>
+				</div>
                 <div class="cols-1">          
                     <span id="rchars6">0</span>/70
                 </div>
@@ -393,65 +398,79 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ（キーワード）</label>
-                <div class="cols-7" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
+                <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
+                <div class="cols-5" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                     <div class="cols-4">
-                        <input type="checkbox" name="tag1"> 検索キーワド入力より
+						<input type="checkbox" id="tag1"> 
+						<label for="tag1">検索キーワド入力より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag2"> 検索キーワド入力より
+						<input type="checkbox" id="tag2"> 
+						<label for="tag2">検索キーワド入力より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag3"> 検索キーワド入力より
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-4">
-                        <input type="checkbox" name="tag4"> 検索キーワド入力より
-                    </div>
-                    <div class="cols-4">
-                        <input type="checkbox" name="tag5"> 検索キーワド入力より
-                    </div>
-                    <div class="cols-4">
-                        <input type="checkbox" name="tag6"> 検索キーワド入力より
+						<input type="checkbox" id="tag3"> 
+						<label for="tag3">検索キーワド入力より</label>
                     </div>
                     <div class="clear"></div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag7"> 検索キーワド入力より
+						<input type="checkbox" id="tag4"> 
+						<label for="tag4">検索キーワド入力より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag8"> 検索キーワド入力より
+						<input type="checkbox" id="tag5"> 
+						<label for="tag5">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag6"> 
+						<label for="tag6">検索キーワド入力より</label>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag7"> 
+						<label for="tag7">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag8"> 
+						<label for="tag8">検索キーワド入力より</label>
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ（病名）</label>
-                <div class="cols-7" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
+                <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
+                <div class="cols-5" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                     <div class="cols-4">
-                        <input type="checkbox" name="tag1b"> 考えられる病気より
+						<input type="checkbox" id="tag1b"> 
+						<label for="tag1b">考えられる病気より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag2b"> 考えられる病気より
+						<input type="checkbox" id="tag2b"> 
+						<label for="tag2b">考えられる病気より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag3b"> 考えられる病気より
+						<input type="checkbox" id="tag3b"> 
+						<label for="tag3b">考えられる病気より</label>
                     </div>
                     <div class="clear"></div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag4b"> 考えられる病気より
+						<input type="checkbox" id="tag4b"> 
+						<label for="tag4b">考えられる病気より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag5b"> 考えられる病気より
+						<input type="checkbox" id="tag5b"> 
+						<label for="tag5b">考えられる病気より</label>
                     </div>
                     <div class="cols-4">
-                        <input type="checkbox" name="tag6b"> 考えられる病気より
+						<input type="checkbox" id="tag6b"> 
+						<label for="tag6b">考えられる病気より</label>
                     </div>
                     
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ（診療科・所属科）</label>
+                <label class="control-label cols-15">タグ<br>（診療科・所属科）<span>Tag(department)</span></label>
                 <div class="cols-7">   
                     <div class="cols-3">
                         <select name="tag_dep[]" class="form-control">
@@ -744,7 +763,7 @@
                             <option value="美容皮膚科">美容皮膚科</option>
                         </select>
                     </div>
-                    <div class="col-sm-1"></div>
+                    <div class="cols-1"></div>
                     <div class="clear"></div>
 
                     <div class="field_wrap6"></div>
@@ -1047,7 +1066,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ（症状）</label>
+                <label class="control-label cols-15">タグ(症状) <br> <span>Tag(Symptoms)</span></label>
                 <div class="cols-7">   
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
@@ -1058,7 +1077,7 @@
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_sy[]" placeholder="">
                     </div>
-                    <div class="col-sm-1"></div>
+                    <div class="cols-1"></div>
                     <div class="clear"></div>
 
                     <div class="field_wrap7"></div>
@@ -1079,56 +1098,72 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ（季節）</label>
+                <label class="control-label cols-15">タグ(季節)<br><span>Tag(season)</span></label>
                 <div class="cols-7">   
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s1"> 春
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s1"> 
+						<label for="tag_s1">春</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s2"> 夏
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s2"> 
+						<label for="tag_s2">夏</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s3"> 秋
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s3"> 
+						<label for="tag_s3">秋</label>
                     </div>  
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s4"> 冬
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s4"> 
+						<label for="tag_s4">冬</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s5"> 4月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s5"> 
+						<label for="tag_s5">4月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s6"> 5月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s6"> 
+						<label for="tag_s6">5月</label>
                     </div>  
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s7"> 6月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s7"> 
+						<label for="tag_s7">6月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s8"> 7月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s8">
+						<label for="tag_s8">7月</label>
                     </div>
                     <div class="clear"></div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s9"> 8月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s9">
+						<label for="tag_s9">8月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s10"> 9月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s10">
+						<label for="tag_s10">9月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s11"> 10月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s11">
+						<label for="tag_s11">10月</label>
                     </div>  
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s12"> 11月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s12"> 
+						<label for="tag_s12">11月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s13"> 12月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s13"> 
+						<label for="tag_s14">12月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s14"> 1月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s14"> 
+						<label for="tag_s14">1月</label>
                     </div>  
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s15"> 2月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s15"> 
+						<label for="tag_s15">2月</label>
                     </div>
-                    <div class="col-sm-1">
-                        <input type="checkbox" name="tag_s16"> 3月
+                    <div class="cols-1">
+						<input type="checkbox" id="tag_s16"> 
+						<label for="tag_s16">3月</label>
                     </div>
 
                     <div class="clear"></div>
@@ -1144,12 +1179,12 @@
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_txt[]" placeholder="">
                     </div>
-                    <div class="col-sm-1"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
+                    <div class="cols-1"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ（フリー入力）</label>
+                <label class="control-label cols-15">タグ(フリー入力)<br><span>Tag(free)</span></label>
                 <div class="cols-7"> 
 
                     <div class="field_wrap9"></div>
@@ -1169,47 +1204,49 @@
             </div>
 
             <hr>
-            <!-- Editor Page -->
-            <div class="form-group">
-                <label class="control-label cols-15">エディター担当者</label>
-                <div class="cols-7">   
-                    <input type="text" name="editor" class="form-control" placeholder="Medical T. 編集部 A.Ito">
-                </div>
-                <div class="cols-2"><button type="button" class="btn btn-primary">エディター変更申請</button></div>
-            </div>
+			<!-- Editor Page -->
+			<div class="editor-page">
+				<div class="form-group">
+					<label class="control-label cols-15">エディター担当者</label>
+					<div class="cols-5">   
+						<input type="text" name="editor" class="form-control" placeholder="Medical T. 編集部 A.Ito">
+					</div>
+					<div class="cols-2"><button type="button" class="btn btn-primary">エディター変更申請</button></div>
+				</div>
 
-            <div class="form-group">
-                <label class="control-label cols-15">取材日</label>
-                <div class="cols-3">   
-                    <select class="form-control" name="c1">
-                        <option value="">－－－－年</option>
-                    </select>
-                </div>
-                <div class="col-sm-1">   
-                    <select class="form-control" name="c2">
-                        <option value="">－－月</option>
-                    </select>
-                </div>
-                <div class="col-sm-1">   
-                    <select class="form-control" name="c2">
-                        <option value="">－－日</option>
-                    </select>
-                </div>
-            </div>
+				<div class="form-group">
+					<label class="control-label cols-15">取材日</label>
+					<div class="cols-3">   
+						<select class="form-control" name="c1">
+							<option value="">－－－－年</option>
+						</select>
+					</div>
+					<div class="cols-1">   
+						<select class="form-control" name="c2">
+							<option value="">－－月</option>
+						</select>
+					</div>
+					<div class="cols-1">   
+						<select class="form-control" name="c2">
+							<option value="">－－日</option>
+						</select>
+					</div>
+				</div>
 
-            <div class="form-group">
-                <label class="control-label cols-15">謝礼</label>
-                <div class="cols-7">   
-                    <input type="text" name="hono" class="form-control" placeholder="例）10,000円">
-                </div>
-            </div>
+				<div class="form-group">
+					<label class="control-label cols-15">謝礼</label>
+					<div class="cols-7">   
+						<input type="text" name="hono" class="form-control" placeholder="例）10,000円">
+					</div>
+				</div>
 
-            <div class="form-group">
-                <label class="control-label cols-15">メモ</label>
-                <div class="cols-7">   
-                    <textarea class="form-control" name="note"></textarea>
-                </div>
-            </div>
+				<div class="form-group">
+					<label class="control-label cols-15">メモ</label>
+					<div class="cols-7">   
+						<textarea class="form-control" name="note"></textarea>
+					</div>
+				</div>
+			</div>
                 
 
         </form>

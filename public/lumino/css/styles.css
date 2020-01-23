@@ -1584,7 +1584,6 @@ header img {
 
 
 .form-container {
-  max-width: 900px;
   width: 100%;
 }
 
@@ -1793,6 +1792,10 @@ header img {
   border-right: 0;
 }
 
+
+input.form-control {
+  margin-top: 5px;
+}
 .form-group {
   width: 100%;
   max-width: 900px;
@@ -1806,11 +1809,21 @@ header img {
 .cols-1 {
   float: left;
   width: 10%;
+  height: 35px;
+  position: relative;
+}
+.cols-1 label {
+  color: #404040;
+  font-weight: 500;
 }
 .cols-15 {
   float: left;
   width: 15%;
   min-height: 30px;
+}
+.cols-18 {
+  float: left;
+  width: 18%;
 }
 .cols-2 {
   float: left;
@@ -1879,7 +1892,12 @@ header img {
 .btn.add1,
 .btn.add2,
 .btn.add3,
-.btn.add4 {
+.btn.add4,
+.btn.add5,
+.btn.add6,
+.btn.add7,
+.btn.add8,
+.btn.add9 {
   position: absolute;
   color: grey;
   bottom: 0;
@@ -1893,14 +1911,24 @@ header img {
 .btn.add1 span,
 .btn.add2 span,
 .btn.add3 span,
-.btn.add4 span {
+.btn.add4 span,
+.btn.add5 span,
+.btn.add6 span,
+.btn.add7 span,
+.btn.add8 span,
+.btn.add9 span {
   font-size: 22px;
 } 
 
 .btn.add1 span:hover,
 .btn.add2 span:hover,
 .btn.add3 span:hover,
-.btn.add4 span:hover {
+.btn.add4 span:hover,
+.btn.add5 span:hover,
+.btn.add6 span:hover,
+.btn.add7 span:hover,
+.btn.add8 span:hover,
+.btn.add9 span:hover {
   color: #000;
 }
 
@@ -1909,14 +1937,20 @@ header img {
   color: #404040;
   font-size: 12px;
   line-height: 12px;
-  padding: 5px 15px 5px 30px;
+  padding: 5px 15px;
   border-radius: 5px;
+  margin-right: 10px;
   background: linear-gradient(to bottom, #96d6d5 0%, #8ccccc 50%, #8bb9b8 51%, #99bfbf 84%, #a8cac9 100%);
 }
 
+.btn-prime div {
+  width: 90px;
+  float: left;
+}
 .btn-prime img {
   width: 25px;
-  position: absolute;
+  height: 25px;
+  float: left;
   padding-top: 5px;
 }
 
@@ -1936,51 +1970,71 @@ header img {
 }
 
 
-.styled-checkbox {
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
   position: absolute;
-  opacity: 0;
+  left: -9999px;
 }
-.styled-checkbox + label {
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
   position: relative;
+  padding-left: 1.95em;
   cursor: pointer;
-  padding: 0;
 }
-.styled-checkbox + label:before {
-  content: "";
-  margin-right: 10px;
-  display: inline-block;
-  vertical-align: text-top;
-  border: 1px solid #808080;
-  width: 20px;
-  height: 20px;
-  background: white;
-}
-.styled-checkbox:hover + label:before {
-  background: #f35429;
-}
-.styled-checkbox:focus + label:before {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
-}
-.styled-checkbox:checked + label:before {
-  background: #f35429;
-}
-.styled-checkbox:disabled + label {
-  color: #b8b8b8;
-  cursor: auto;
-}
-.styled-checkbox:disabled + label:before {
-  box-shadow: none;
-  background: #ddd;
-}
-.styled-checkbox:checked + label:after {
-  content: "";
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
   position: absolute;
-  left: 4px;
-  top: 9px;
-  background: #fd1e15;
-  width: 4px;
-  height: 5px;
-  box-shadow: 2px 0 0 #f35429, 4px 0 0 #f35429, 4px -2px 0 #f35429, 4px -4px 0 #ff130f, 4px -6px 0 #f45e36, 4px -8px 0 #ff7f7f;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(50deg);
+  left: 0; top: 0;
+  width: 23px;
+  height: 23px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: 0;
+  left: .22em;
+  font-size: 1.8em;
+  line-height: 0.8;
+  color: #f00;
+  transition: all .2s;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9!important;
+}
+
+.editor-page {
+  /* background-color: #b4dcdc; */
 }
