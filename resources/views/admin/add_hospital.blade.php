@@ -168,7 +168,7 @@
             医療機関キャッチ<br>Subheading
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="hosp_subheading" style="width:500px">
+                <input type="text" class="form-control" name="hosp_subheading" style="width:500px">
             </div>
         </div>
         <br>
@@ -177,7 +177,7 @@
             本文<br>Text of Subheading
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="text_subheading_hospital" style="width:500px">
             </div>
         </div>
         <br>
@@ -186,7 +186,7 @@
             区分<br>Division
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="division" style="width:500px">
+                <input type="text" class="form-control" name="division" style="width:500px">
             </div>
         </div>
         <br>
@@ -236,6 +236,152 @@
                 <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
             </div>
         </div>
+        <!-- Department area -->
+        <br>
+        <div class="row">
+            <div class="col-2">
+            診療科目<br>Medical subject
+            </div>
+            <div class="col-10">
+                <select class="form- " name="department" style="width:200px">
+                    <option>Medical one</option>
+                    <option>Medical two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            診療科目別キャッチ<br>Subheading
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="med_subj_subheading" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            診療科目別キャッチ<br>Subheading
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="med_subj_text_subheading_hospital" style="width:500px">
+                <input type="file" class="btn btn-info" name="department_image">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+            診療科目別 外来受付時間<br>Examination date
+            </div>
+            <div class="col-10">
+                <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+                <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
+                診療 <input type="text" name="to" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                月 <input type="checkbox" name="tag_season[]">
+                火 <input type="checkbox" name="tag_season[]">
+                水 <input type="checkbox" name="tag_season[]">
+                木 <input type="checkbox" name="tag_season[]">
+                金 <input type="checkbox" name="tag_season[]">
+                土 <input type="checkbox" name="tag_season[]">
+                日 <input type="checkbox" name="tag_season[]">
+                祝 <input type="checkbox" name="tag_season[]">
+                <br>
+                <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+                <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
+                診療 <input type="text" name="to" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
+                月 <input type="checkbox" name="tag_season[]">
+                火 <input type="checkbox" name="tag_season[]">
+                水 <input type="checkbox" name="tag_season[]">
+                木 <input type="checkbox" name="tag_season[]">
+                金 <input type="checkbox" name="tag_season[]">
+                土 <input type="checkbox" name="tag_season[]">
+                日 <input type="checkbox" name="tag_season[]">
+                祝 <input type="checkbox" name="tag_season[]">
+                <br>
+                <input type="text" class="form- " name="exam_comment" style="width:200px"> ※受診内容により日・時間が異なる場合に記載
+                <br>
+                <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+                <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
+                診療 <input type="text" name="to" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                月 <input type="checkbox" name="tag_season[]">
+                火 <input type="checkbox" name="tag_season[]">
+                水 <input type="checkbox" name="tag_season[]">
+                木 <input type="checkbox" name="tag_season[]">
+                金 <input type="checkbox" name="tag_season[]">
+                土 <input type="checkbox" name="tag_season[]">
+                日 <input type="checkbox" name="tag_season[]">
+                祝 <input type="checkbox" name="tag_season[]">
+            </div>
+        </div>
+        <!-- End of Department area -->
+        <br>
+        <!-- Feature area -->
+        <div class="row">
+            <div class="col-2">
+            特徴タイトル<br>Subheading
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="feature_title" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            特徴本文<br>Text of Subheading
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="feature_text_subheading_hospital" style="width:500px">
+                <input type="file" class="btn btn-warning" name="feature_image">
+            </div>
+        </div>
+        <!-- End of Feature Area -->
+        <br>
+        <!-- Equipment Area -->
+        <div class="row">
+            <div class="col-2">
+            設備・機器<br>Equipment
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="equipment_subheading" style="width:500px">
+                <input type="text" class="form-control" name="equipment_text_subheading_hospital" style="width:500px">
+                <input type="file" class="btn btn-success" name="equipment_image">
+            </div>
+        </div>
+        <!-- End for equipment area -->
+        <br>
+        <!-- Staff Area -->
+        <div class="row">
+            <div class="col-2">
+            スタッフリード<br>Staff Subheading
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="staff_subheading_hospital" style="width:500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-2">
+            スタッフコメント<br>Staff comment
+            </div>
+            <div class="col-10">
+                <input type="text" class="form-control" name="staff_comment_hospital" style="width:500px">
+            </div>
+        </div>
+        <!-- End of staff area -->
+        <br>
+        <div class="row">
+            <div class="col-2">
+            院内処方の有無<br>In-hospital prescription
+            </div>
+            <div class="col-10">
+                <input type="radio" class=" " name="pres"> 有 
+                <input type="radio" class=" " name="pres"> 一部有 
+                <input type="radio" class=" " name="pres"> 無 
+            </div>
+        </div>
+
+
 
     <input type="submit" value="Save hospital">
 

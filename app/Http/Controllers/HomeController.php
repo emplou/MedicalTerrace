@@ -76,6 +76,7 @@ class HomeController extends Controller
         $dpt_id = rand();
         $feature_id = rand();
         $explain_id = rand();
+        $dpt_exam_id = rand();
 
         // $medinscatchtext = "testing";
         $medsublist = "testing med sub list"; // input name med_sbj_list
@@ -168,42 +169,37 @@ class HomeController extends Controller
         $access = new Access;
         $access->hospital_id      = $hospital_id;
         $access->access_detail_id = $accessdet_id;
-        $access->save();
+        $access->save(); */
 
         $department = new Department;
         $department->hospital_id            = $hospital_id;
         $department->dpt_id                 = $dpt_id;
-        $department->dpt_name               = $details['dpt_name'];
+        $department->dpt_dpt_exam_id        = $dpt_exam_id;
         $department->save();
 
+        
         $dpt_exam = new DepartmentExam;
-        $dpt_exam->hospital_dpt_id          = $dpt_id;
-        // $dpt_exam->examination_id           = $examination_id;
+        $dpt_exam->hospital_id              = $hospital_id;
+        $dpt_exam->department_id            = $details['department'];
+        $dpt_exam->subheading               = $details['med_subj_subheading'];
+        $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
+        $dpt_exam->image                    = $details['department_image'];
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
         $dpt_exam->start                    = $details['start'];
         $dpt_exam->weekdays                 = $details['weekdays'];
+        $dpt_exam->special_hours            = $details['special_hours'];
         $dpt_exam->save();
 
-        $dpt_esp_hrs = new DepartmentEspHours;
-        $dpt_esp_hrs->dpt_id                    = $dpt_id;
-        $dpt_esp_hrs->from                      = $details['from'];
-        $dpt_esp_hrs->to                        = $details['to'];
-        $dpt_esp_hrs->start                     = $details['start'];
-        $dpt_esp_hrs->weekdays                  = $details['weekdays'];
-        $dpt_esp_hrs->treatment_name            = $details['treatment_name'];   
-        $dpt_esp_hrs->save();
+
 
         $feature = new Feature;
         $feature->hospital_id       = $hospital_id;
-        $feature->feature_id        = $feature_id;
+        $feature->feature_title     = $details['feature_title'];
+        $feature->feature_title     = $details['feature_text_subheading_hospital'];
+        $feature->feature_image     = $details['feature_image'];
         $feature->save();
-
-        $featuredet = new FeatureDet;
-        $featuredet->title          = $title;
-        $featuredet->text           = $text;
-        $featuredet->image          = $image;
-        $featuredet->save();
+/*
 
         $explain = new DPTExplain;
         $explain->dpt_id          = $dpt_id;
@@ -218,14 +214,14 @@ class HomeController extends Controller
         $explaindet->save();
 
         //  should separately addeed per department
-
+*/
         $destinationPath = '';
-        $filename        = '';
+        $filename_equip        = '';
         $file            = $request->file('equipment_image');
 
         $destinationPath = public_path().'/equipments';
         $filename_equip        = str_random(6) . '_' . $fileone->getClientOriginalName();
-        $uploadSuccess   = $fileone->move($destinationPath, $filename);
+        $uploadSuccess   = $fileone->move($destinationPath, $filename_equip);
 
         $equipments = new Equipments;
         $equipments->hospital_id            = $hospital_id ;
@@ -236,10 +232,10 @@ class HomeController extends Controller
 
         $staff = new Staff;
         $staff->hospital_id            = $hospital_id;
-        $staff->title                  = $details['title'];
-        $staff->text                   = $details['text'];
+        $staff->title                  = $details['staff_subheading_hospital'];
+        $staff->text                   = $details['staff_comment_hospital'];
         $staff->save();
-        */
+        
         return redirect::back()->with('message','Successfully Encoded');
     }
 

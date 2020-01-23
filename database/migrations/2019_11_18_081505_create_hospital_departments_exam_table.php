@@ -15,12 +15,16 @@ class CreateHospitalDepartmentsExamTable extends Migration
     {
         Schema::create('hospital_departments_exam', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('hospital_dpt_id');
-            // $table->string('examination_id');
+            $table->string('department_id');
+            $table->string('hospital_id');
+            $table->string('subheading');
+            $table->string('text_subheading');
+            $table->string('image');
             $table->string('from');
             $table->string('to');
             $table->string('start');
             $table->string('weekdays');
+            $table->string('special_hours');
             $table->timestamps();
         });
     }
