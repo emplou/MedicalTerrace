@@ -1,12 +1,32 @@
 @extends('layouts.app_sp')
 @section('content')
 
-    <div class="form-container">
-
-        <h2>子どもの夏の感染症</h2>
-
+    
+	<div class="header-wrapper">
+		<div class="left">
+			<h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+			
+		</div>
+		<div class="right">
+			<div>作成日<span>Date</span></div>
+			<div class="select">
+				<select>
+					<option>0000/00/00</option>
+					<option>0000/00/00</option>
+					<option>0000/00/00</option>
+					<option>0000/00/00</option>
+					<option>0000/00/00</option>
+				</select>
+			</div>
+			<div>最終更新日<span>Update</span></div>
+			<div class="select">0000/00/00</div>
+		</div>
+		
+	</div>
+	<hr />
+		<div class="form-container">
         <form class="form-horizontal" action="#">
-
+		<div class="form-pads">
             <div class="form-group">
                 <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
                 <div class="cols-4">
@@ -1202,16 +1222,16 @@
                     
                 </div>
             </div>
-
-            <hr>
+		</div>
+		<div class="form-nopads">
 			<!-- Editor Page -->
 			<div class="editor-page">
 				<div class="form-group">
 					<label class="control-label cols-15">エディター担当者</label>
 					<div class="cols-5">   
-						<input type="text" name="editor" class="form-control" placeholder="Medical T. 編集部 A.Ito">
+						<input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">
 					</div>
-					<div class="cols-2"><button type="button" class="btn btn-primary">エディター変更申請</button></div>
+					<div class="cols-2"><button type="button" class="btn-prime">エディター変更申請<br><span>Editor Change Request</button></div>
 				</div>
 
 				<div class="form-group">
@@ -1247,7 +1267,7 @@
 					</div>
 				</div>
 			</div>
-                
+		</div>
 
         </form>
     </div>
