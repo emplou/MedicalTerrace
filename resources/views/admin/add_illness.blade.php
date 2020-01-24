@@ -346,7 +346,7 @@
                     
                 </div>
                 <div class="col-sm-1">          
-                    
+                    <input type="checkbox" name="shcb" class="form-control">
                 </div>
             </div>
 
@@ -465,8 +465,8 @@
                     </div>       
                     
                 </div>
-                <div class="col-sm-1">          
-                    
+                <div class="col-sm-1">       
+                    <input type="checkbox" name="shcb" class="form-control">
                 </div>
             </div>
 
