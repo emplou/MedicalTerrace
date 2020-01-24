@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 // use App\Illness_Category;
 use MedicalTerrace\Doctor;
 use MedicalTerrace\Hospital;
+use MedicalTerrace\Department;
+use MedicalTerrace\DepartmentExam;
+use MedicalTerrace\Feature;
+use MedicalTerrace\Equipments;
+use MedicalTerrace\Staff;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -146,35 +151,8 @@ class HomeController extends Controller
         $hospital->medsublist       = $jsonsubj_list; // should be json | dropdown and input field
         $hospital->save();
 
-        /*
-        $medical_subj = 'medical_subj sample'; // input name medical_subj
-        $subheading = 'subheading sample'; // medical subheading | input name med_subj_subheading 
-        $text_of_subheading = 'subheading text sample'; //medical text subheading | input name med_subj_text_subheading_hospital
-
-        
-        $medsub = new MedicalSubj;
-        $medsub->hospital_id            = $hospital_id;
-        $medsub->medical_subj           = $medical_subj;
-        $medsub->subheading             = $subheading;
-        $medsub->text_of_subheading     = $text_of_subheading;
-        $medsub->save();
-
-        $accessdet = new Accessdet;
-        $accessdet->access_detail_id        = $accessdet_id;
-        $accessdet->by_what                 = $details['access_trans'];
-        $accessdet->from_where              = $details['access_from'];
-        $accessdet->minutes                 = $details['access_mins'];
-        $accessdet->save();
-
-        $access = new Access;
-        $access->hospital_id      = $hospital_id;
-        $access->access_detail_id = $accessdet_id;
-        $access->save(); */
-
         $department = new Department;
-        $department->hospital_id            = $hospital_id;
-        $department->dpt_id                 = $dpt_id;
-        $department->dpt_dpt_exam_id        = $dpt_exam_id;
+        $department->dpt_name        = $details['med_subj_subheading'];
         $department->save();
 
         
@@ -186,57 +164,60 @@ class HomeController extends Controller
         $dpt_exam->image                    = $details['department_image'];
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
-        $dpt_exam->start                    = $details['start'];
-        $dpt_exam->weekdays                 = $details['weekdays'];
-        $dpt_exam->special_hours            = $details['special_hours'];
+        // $dpt_exam->start                    = $details['start'];
+        // $dpt_exam->weekdays                 = $details['weekdays'];
+        // $dpt_exam->special_hours            = $details['special_hours'];
         $dpt_exam->save();
 
+        
+        $destinationPathfeat = '';
+        $filename_feat        = '';
+        $file_feat            = $request->file('feature_image');
+
+        $destinationPathfeat = public_path().'/features';
+        $filename_feat        = str_random(6) . '_' . $file_feat->getClientOriginalName();
+        $uploadSuccess   = $file_feat->move($destinationPathfeat, $filename_feat);
 
 
         $feature = new Feature;
         $feature->hospital_id       = $hospital_id;
-        $feature->feature_title     = $details['feature_title'];
-        $feature->feature_title     = $details['feature_text_subheading_hospital'];
-        $feature->feature_image     = $details['feature_image'];
+        $feature->title             = $details['feature_title'];
+        $feature->text              = $details['feature_text_subheading_hospital'];
+        $feature->image             = $filename_feat;
         $feature->save();
-/*
 
-        $explain = new DPTExplain;
-        $explain->dpt_id          = $dpt_id;
-        $explain->explain_id      = $explain_id;
-        $featuredet->save();
-
-        $explaindet = new ExplainDet;
-        $explaindet->explain_id             = $explain_id ;
-        $explaindet->title                  = $details['title'];
-        $explaindet->text                   = $details['text'];
-        $explaindet->image                  = $image;
-        $explaindet->save();
-
-        //  should separately addeed per department
-*/
-        $destinationPath = '';
+        $destinationPatheqps = '';
         $filename_equip        = '';
-        $file            = $request->file('equipment_image');
+        $file_equip            = $request->file('equipment_image');
 
-        $destinationPath = public_path().'/equipments';
-        $filename_equip        = str_random(6) . '_' . $fileone->getClientOriginalName();
-        $uploadSuccess   = $fileone->move($destinationPath, $filename_equip);
+        $destinationPatheqps = public_path().'/equipments';
+        $filename_equip        = str_random(6) . '_' . $file_equip->getClientOriginalName();
+        $uploadSuccess   = $file_equip->move($destinationPatheqps, $filename_equip);
 
         $equipments = new Equipments;
         $equipments->hospital_id            = $hospital_id ;
         $equipments->title                  = $details['equipment_subheading']; // should be json
         $equipments->text                   = $details['equipment_text_subheading_hospital']; //should be json
-        $equipments->equip_image            = $filename_equip; //should be json
+        $equipments->image                  = $filename_equip; //should be json
         $equipments->save();
+
+        $destinationPathstfs = '';
+        $filename_staff        = '';
+        $file_staff            = $request->file('staff_image');
+
+        $destinationPathstfs = public_path().'/staffs';
+        $filename_staff        = str_random(6) . '_' . $file_staff->getClientOriginalName();
+        $uploadSuccess   = $file_staff->move($destinationPathstfs, $filename_staff);
 
         $staff = new Staff;
         $staff->hospital_id            = $hospital_id;
         $staff->title                  = $details['staff_subheading_hospital'];
         $staff->text                   = $details['staff_comment_hospital'];
+        $staff->image                   = $filename_staff;
         $staff->save();
         
-        return redirect::back()->with('message','Successfully Encoded');
+        // return redirect::back()->with('message','Successfully Encoded');
+        return redirect('/hospital_list');
     }
 
     public function save_edit_hospital(){
@@ -431,6 +412,40 @@ class HomeController extends Controller
         $doctor->department                 = $jsondepartment;
         $doctor->doctor_comment             = $details['doc_comment'];
         $doctor->save();
+
+        return redirect::back()->with('message','Successfully Encoded');
+    }
+
+    public function modal_edit_doctor(){
+        return view('modals.modal_edit_doctor');
+    }
+
+    public function save_edit_doctor(){
+        $details = Input::all();
+
+        $doctors = DB::table(' dv_doctors')
+                            ->where('id','=', $details['docID'])
+                            ->update([
+                                        'url_generation'            => $details['url_generation'],
+                                        'status'                    => $details['status'],
+                                        'certificate'               => $details['certificate'],
+                                        'name'                      => $details['name'],
+                                        'alphabet_name'             => $details['alphabet_name'],
+                                        'image'                     => $details['image'],
+                                        'image_caption'             => $details['image_caption'],
+                                        'image_alt'                 => $details['image_alt'],
+                                        'industry'                  => $details['industry'],
+                                        'conference'                => $details['conference'],
+                                        'birthday'                  => $details['birthday'],
+                                        'place_of_birth'            => $details['place_of_birth'],
+                                        'career_academic_back'      => $$details['career_academic_back'],
+                                        'career_work_exp'           => $details['career_work_exp'],
+                                        'career_awards'             => $details['career_awards'],
+                                        'sort_career'               => $details['sort_career'],
+                                        'hospital_office'           => $details['hospital_office'],
+                                        'department'                => $details['department'],
+                                        'doctor_comment'            => $details['doctor_comment'],
+                                    ]);
 
         return redirect::back()->with('message','Successfully Encoded');
     }

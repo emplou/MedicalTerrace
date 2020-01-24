@@ -18,6 +18,7 @@ class CreateHospitalStaff extends Migration
             $table->string('hospital_id');
             $table->string('title');
             $table->string('text');
+            $table->string('image');
             $table->timestamps();
         });
     }

@@ -277,7 +277,7 @@
             <div class="col-10">
                 <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
                 <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-                診療 <input type="text" name="to" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
                 月 <input type="checkbox" name="tag_season[]">
                 火 <input type="checkbox" name="tag_season[]">
                 水 <input type="checkbox" name="tag_season[]">
@@ -289,7 +289,7 @@
                 <br>
                 <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
                 <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-                診療 <input type="text" name="to" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
+                診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
                 月 <input type="checkbox" name="tag_season[]">
                 火 <input type="checkbox" name="tag_season[]">
                 水 <input type="checkbox" name="tag_season[]">
@@ -303,7 +303,7 @@
                 <br>
                 <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
                 <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-                診療 <input type="text" name="to" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
                 月 <input type="checkbox" name="tag_season[]">
                 火 <input type="checkbox" name="tag_season[]">
                 水 <input type="checkbox" name="tag_season[]">
@@ -366,6 +366,7 @@
             </div>
             <div class="col-10">
                 <input type="text" class="form-control" name="staff_comment_hospital" style="width:500px">
+                <input type="file" class="btn btn-danger" name="staff_image">
             </div>
         </div>
         <!-- End of staff area -->

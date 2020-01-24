@@ -20,7 +20,7 @@
                 <td>{!! $hosp->common_name !!}</td>
                 <td>{!! $hosp->hospital_id !!}</td>
                 <td>{!! $hosp->created_at !!}</td>
-                <td><a href='{{ url("edit_hospital") }}' class="btn btn-info" style="background-color:#FCB0BC;border-color:#FCB0BC;width:130px;height:70px;">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href='{{ url("edit_hospital") }}' class="btn btn-info" style="background-color:#FCB0BC;border-color:#FCB0BC;width:130px;height:70px;" data-toggle="modal" data-target="#edithospital">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>

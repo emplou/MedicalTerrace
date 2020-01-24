@@ -12,7 +12,7 @@ class Staff extends Authenticatable
 
     use Notifiable;
 
-    protected $table = 'staff';
+    protected $table = 'hospital_staff';
 
     /**
      * The attributes that are mass assignable.

@@ -12,7 +12,7 @@ class Feature extends Authenticatable
 
     use Notifiable;
 
-    protected $table = 'feature';
+    protected $table = 'hospital_feature';
 
     /**
      * The attributes that are mass assignable.

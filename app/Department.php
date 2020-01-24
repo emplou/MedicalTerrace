@@ -12,7 +12,7 @@ class Department extends Authenticatable
 
     use Notifiable;
 
-    protected $table = 'department';
+    protected $table = 'hospital_departments';
 
     /**
      * The attributes that are mass assignable.
