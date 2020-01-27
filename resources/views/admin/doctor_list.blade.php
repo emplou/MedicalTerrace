@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('modals.modal_edit_doctor')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 <br>
@@ -25,15 +26,6 @@
     </table>
 
 
-<div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
-  <div class="modal-dialog modal-lg">
-  
-				
-<!-- Modal content-->
-    <div class="modal-content">
-    
-    </div>
-  </div>
-</div>
+
 
 @endsection

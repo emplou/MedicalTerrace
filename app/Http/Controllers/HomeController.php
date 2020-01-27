@@ -420,11 +420,13 @@ class HomeController extends Controller
         // return view('modals.modal_edit_doctor', compact('id'));
         // $request = Request::all();
         // $data = Doctor::where('id', $request->id )->get();
-        $data = DB::table('dv_doctors')->where('id','=',$id)->get();
+        $value['data'] = DB::table('dv_doctors')->where('id','=',$id)->get();
         // // return $doctor;
         // return response()->json($data);
         // $userData['data'] = Doctor::getuserData($id);
-        echo json_encode($data);
+        $fetch = json_encode($value);
+        return $fetch;
+        // return $value;
     }
 
     public function save_edit_doctor(){

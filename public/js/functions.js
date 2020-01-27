@@ -1,3 +1,9 @@
+$.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  
 $(document).ready(function() {
     $('#list').DataTable( {
         columnDefs: [
@@ -15,6 +21,10 @@ $.ajaxSetup({
     }
   });
 
+  function setObject(name, score) {
+    this.name = name;
+  }
+
 
     $('.overwrite').each(function(e){
         $.ajaxSetup({
@@ -26,19 +36,6 @@ $.ajaxSetup({
         $(this).on('click', function(){
             var id = $(this).attr('doc-id');
             // alert(docId);
-            $.ajax({
-                type : "GET",
-                url  : '/modal_edit_doctor/'+id,
-                // dataType : "JSON",
-                data : { id : id },
-                success: function(response){ // What to do if succeed
-                    if(data == "success")
-                  alert(response); 
-                },
-                    error: function(response){
-                    alert('Error'+response);
-              }
-            });
 
             $.ajax({
                 url: '/modal_edit_doctor/'+id,
@@ -46,55 +43,72 @@ $.ajaxSetup({
                 dataType: 'json',
                 // data : { id : id },
                 success: function(response){
-       
-                //   var len = 0;
-                //   $('#userTable tbody').empty(); // Empty <tbody>
-                //   if(response['data'] != null){
-                //     len = response['data'].length;
-                //   }
-       
-                //   if(len > 0){
-                //     for(var i=0; i<len; i++){
-                //       var id = response['data'][i].id;
-                //       var username = response['data'][i].username;
-                //       var name = response['data'][i].name;
-                //       var email = response['data'][i].email;
-       
-                //       var tr_str = "<tr>" +
-                //           "<td align='center'>" + (i+1) + "</td>" +
-                //           "<td align='center'>" + username + "</td>" +
-                //           "<td align='center'>" + name + "</td>" +
-                //           "<td align='center'>" + email + "</td>" +
-                //       "</tr>";
-       
-                //       $("#userTable tbody").append(tr_str);
-                //     }
-                //   }else if(response['data'] != null){
-                //      var tr_str = "<tr>" +
-                //          "<td align='center'>1</td>" +
-                //          "<td align='center'>" + response['data'].username + "</td>" + 
-                //          "<td align='center'>" + response['data'].name + "</td>" +
-                //          "<td align='center'>" + response['data'].email + "</td>" +
-                //      "</tr>";
-       
-                //      $("#userTable tbody").append(tr_str);
-                //   }else{
-                //      var tr_str = "<tr>" +
-                //          "<td align='center' colspan='4'>No record found.</td>" +
-                //      "</tr>";
-       
-                //      $("#userTable tbody").append(tr_str);
-                //   }
-
-                // alert(data);
+                    console.log(response['data']);
                 if(response == "success")
-                  alert(data); 
+                  console.log(response['data']); 
+                //   alert(response['data'][0].url_generation);
+                //   $('#quantity').val(data.quantity);
+                  $("#editdoctor").modal('show');
+                  $("#url_generation").val(response['data'][0].url_generation);
+                  $("#status").val(response['data'][0].status);
+                  var objJSON = JSON.parse(response['data'][0].certificate);
+                  console.log(objJSON);
+
+                  $.each(objJSON, function(key,value){
+                    // $("#certificate").text(value.med_sbj_list);
+                    // $("#certificate").val(value.med_sbj_list);
+                    console.log('yes '+ value.med_sbj_list);
+
+                    var inputs = document.getElementsByTagID("certificate");
+                    var obj = {};
+                    for(var x=0; x < inputs.length; x++){   
+                        var input = inputs[x];
+                        obj[input.name] = input.value;
+                    }
+                 });
+                
+                  //json inside json
+                  var els = document.querySelectorAll('input[name="certificate[]"],input[name="conference[]"]');
+
+                    var arr = [];
+                    for (var i = 0; i < els.length; i++) {
+                        var setObj = new setObject(els[i].name.slice(0, -2) + i, els[i].value);
+                        arr.push(setObj);
+                    }
+
+                    result1.innerHTML = JSON.stringify(arr, null, 2);
+
+
+                    var arr = [].map.call(els, function(el) {
+                        return new setObject(el.name.slice(0, -2) + i, el.value);
+                    });
+                    result2.innerHTML = JSON.stringify(arr, null, 2);
+                    //end of json inside json
+                    
+                    $("#name").val(response['data'][0].name);
+                    $("#alpha_name").val(response['data'][0].alphabet_name);
+                    //image not included yet
+                    $("#img_caption").val(response['data'][0].image_caption);
+                    $("#img_alt").val(response['data'][0].image_alt);
+                    //industry dropdown not included yet
+                    //conference json not included yet
+                    //birthday not included yet
+                    $("#place_birth").val(response['data'][0].place_of_birth);
+                    //the 3 careers not included yet
+                    //checkbox not included yet
+                    //hospital dropdown not included yet
+                    //department json not included yet
+                    $("#doc_comment").val(response['data'][0].doctor_comment);
+                    
+                    // $.each(object.certificate, function( index, value ) { console.log(value.med_sbj_list); }); 
+
                 },
                     error: function(response){
-                    alert('Error'+data);
+                    alert('Error'+response);
        
                 }
-              });
+
+              });setCookie();
             // location.reload();
         });
     });
