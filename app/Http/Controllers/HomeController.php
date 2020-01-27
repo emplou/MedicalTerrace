@@ -416,8 +416,15 @@ class HomeController extends Controller
         return redirect::back()->with('message','Successfully Encoded');
     }
 
-    public function modal_edit_doctor(){
-        return view('modals.modal_edit_doctor');
+    public function modal_edit_doctor($id){
+        // return view('modals.modal_edit_doctor', compact('id'));
+        // $request = Request::all();
+        // $data = Doctor::where('id', $request->id )->get();
+        $data = DB::table('dv_doctors')->where('id','=',$id)->get();
+        // // return $doctor;
+        // return response()->json($data);
+        // $userData['data'] = Doctor::getuserData($id);
+        echo json_encode($data);
     }
 
     public function save_edit_doctor(){

@@ -2,7 +2,8 @@
 @section('content')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
-    <table id="list" width="100%">
+<br>
+    <table class="table" id="list" width="100%">
         <thead>
             <th>Image</th>
             <th>Alphabet Name</th>
@@ -17,7 +18,7 @@
                 <td>{!! $doc->alphabet_name !!}</td>
                 <td>{!! $doc->status !!}</td>
                 <td>{!! $doc->industry !!}</td>
-                <td><a href="{{url('/modal_edit_doctor')}}" class="btn btn-info" style="background-color:#FCB0BC;border-color:#FCB0BC;width:130px;height:70px;" data-toggle="modal" data-target="#editdoctor">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite" style="background-color:#FCB0BC;border-color:#FCB0BC;width:130px;height:70px;" doc-id="{!! $doc->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>
@@ -26,6 +27,7 @@
 
 <div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog modal-lg">
+  
 				
 <!-- Modal content-->
     <div class="modal-content">

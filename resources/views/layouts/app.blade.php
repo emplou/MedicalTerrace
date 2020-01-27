@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Medical administrator - Dashboard</title>
 	<!-- <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet"> -->
 	<link href="{{ asset('lumino/css/font-awesome.min.css') }}" rel="stylesheet">
@@ -292,7 +293,7 @@ input.form-  {
 
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
-	<!-- <script src="{{ asset('js/modal.js') }}"></script> -->
+	<script src="{{ asset('js/functions.js') }}"></script>
 	<!-- <script src="{{ asset('lumino/dist/wickedpicker.js') }}"></script> -->
    
 	<script>
