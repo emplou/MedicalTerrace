@@ -144,11 +144,14 @@
                         <option value="">選択してください</option>
                     </select>
                 </div>
-                <div class="cols-45">
-                    <input type="radio" name="sprvsn" value="監修"> 監修&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="cc" value="取材協力"> 取材協力&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="scc" value="監修・取材協力"> 監修・取材協力
-                </div>
+                <div class="cols-3 rad-buttons">
+					<input type="radio" id="sprvsn" name="radio-group" checked>
+					<label for="sprvsn">監修</label>
+					<input type="radio" id="cc" name="radio-group">
+					<label for="cc">取材協力</label>
+					<input type="radio" id="scc" name="radio-group">
+					<label for="scc">監修・取材協力</label>
+		        </div>	
             </div>
 
             <div class="form-group full">
@@ -156,11 +159,10 @@
                 <div class="cols-5">          
                     <textarea class="form-control cmt" name="cmt" rows="5" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 					</textarea>
-					<div class="cols-2">          
-						<span id="rchars3">0</span>/200
-					</div>
                 </div>
-                
+                <div class="cols-2">          
+					<span id="rchars3">0</span>/200
+				</div>
             </div>
 
             <div class="form-group">

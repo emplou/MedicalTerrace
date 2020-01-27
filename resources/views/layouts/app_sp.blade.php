@@ -187,7 +187,7 @@
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
-            $(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-15"><button type="button" class="btn-prime">画像を挿入する<br><span>Insert image</span></button></div><div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="cols-1"></div></div>'); //add input box
+            $(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert Image</span></div></button></div><div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="cols-1"></div></div>'); //add input box
 
             
         });
