@@ -34,3 +34,4 @@ $(".push-btn").each(function(){
 		$(".accnt-box").slideToggle();
 	});
 });
+

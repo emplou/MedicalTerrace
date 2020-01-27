@@ -25,7 +25,17 @@
 	</div>
 	<hr />
 		<div class="form-container">
-        <form class="form-horizontal" action="#">
+			<div class="form-progress">
+				<ul>
+					<li class="active">下書き<br><span>Draft</span></li>
+					<li class="active">プレビュー<br><span>Preview</span></li>
+					<li>承認依頼<br><span>Approval Request</span></li>
+					<li>承認済<br><span>Approved</span></li>
+					<li class="rel">公開予約<br><span>Release reservation</span></li>
+					<li>公開中<br><span>Release</span></li>
+				</ul>
+			</div>
+		<form class="form-horizontal" action="#">
 		<div class="form-pads">
             <div class="form-group">
                 <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
@@ -240,7 +250,7 @@
 
                         </textarea>
                     </div>
-                    <div class="cols-1"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
+                    <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
                     
                 </div>
             </div>
@@ -248,7 +258,7 @@
             
             <div class="form-group">
                 <div class="cols-15"></div>
-                <div class="cols-6"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert Image</span></div></button><button type="button" class="btn-prime"><img src="images/graph-icon.png"><div>グラフを挿入する<br><span>Insert graph</span></div></button></div>
+                <div class="cols-6"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
             </div>
 
             <hr>
@@ -256,14 +266,14 @@
             <!-- <span>Insert image</span> with add field starts -->
             <div class="form-group">
                 <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
-                <div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert image</span></div></button></div>
+                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert image</span></div></button></div>
+                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
@@ -272,9 +282,9 @@
         
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert image</span></div></button></div>
+                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
-                <div class="cols-1"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
+                <div class="cols-1 relative"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
             
             <!-- <span>Insert image</span> with add field ends -->
@@ -312,13 +322,13 @@
 
                         </textarea>
                     </div>
-                    <div class="cols-1"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
+                    <div class="cols-1 relative"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="cols-15"></div>
-                <div class="cols-3"><button type="button" class="btn-prime">画像を挿入する<br><span>Insert image</span></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn-prime">グラフを挿入する<br><span>Insert graph</span></button></div>
+                <div class="cols-5"><button type="button" class="btn-prime image"></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn-prime graph"></button></div>
             </div>
             <hr>
 
@@ -363,34 +373,40 @@
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-5">   
-                    <textarea class="form-control seo" name="seo_txt" maxlength="35">タイトルタグをカスタマイズする場合はこちらに入力ください</textarea>
+                    <textarea class="form-control seo" name="seo_txt" maxlength="35">タイトルタグをカスタマイズする場合はこちらに入力ください<br><span>Meta description for SEO</span></textarea>
                 </div>
-                <div class="cols-1">          
+                <div class="cols-1">   
+					<br>
                     <span id="rchars4">0</span>/35
                 </div>
             </div>
 
 
             <div class="form-group">
-                <label class="control-label cols-15">ディスクリプション</label>
+                <label class="control-label cols-15">ディスクリプション<br><span>Meta description for SEO</span></label>
                 <div class="cols-5">   
                     <textarea class="form-control mt1" name="meta_txt1" maxlength="50">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
 時分学校の。</textarea>
                 </div>
-                <div class="cols-1">          
+                <div class="cols-2">   
+				スマホ・PC用 重要文章 <br>       
                     <span id="rchars5">0</span>/50
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label cols-15">ディスクリプション</label>
+                <label class="control-label cols-15"></label>
                 <div class="cols-5">   
                     <textarea class="form-control mt2" name="meta_txt2" maxlength="70">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
 				</div>
+				<div class="cols-1">   
+					PC用補足文章 <br>       
+                    <span id="rchars5">70</span>/70
+                </div>
 			</div>
 			<div class="form-group">
 				<label class="control-label cols-15"></label>
-				<div class="cols-5"> 
-					<div style="border: 1px solid #CCC; padding: 5px; color: #F00;">
+				<div class="cols-7"> 
+					<div style="border: 1px solid #CCC; padding: 5px; color: #ff335a;">
 						ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
 					</div>
 				</div>
@@ -401,27 +417,27 @@
 
             <div class="form-group">
                 <label class="control-label cols-15">h1</label>
-                <div class="cols-5" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
+                <div class="cols-5" style="border: 1px solid #CCC; padding: 5px; color: #ff335a;">   
                     子どもの夏の感染症 いわゆる夏風邪は7月がピーク！
                 </div>
             </div>
             
             <div class="form-group">
                 <label class="control-label cols-15">h2</label>
-                <div class="cols-5">
+                <div class="cols-7">
                     <!-- add h2 fields -->
                     <div class="field_wrap5"></div>
 
                     <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2a[]"></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2b[]"></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2c[]"></div>
-                    <div class="cols-1"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
+                    <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
-                <div class="cols-5" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
+                <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                     <div class="cols-4">
 						<input type="checkbox" id="tag1"> 
 						<label for="tag1">検索キーワド入力より</label>
@@ -461,7 +477,7 @@
 
             <div class="form-group">
                 <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
-                <div class="cols-5" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
+                <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                     <div class="cols-4">
 						<input type="checkbox" id="tag1b"> 
 						<label for="tag1b">考えられる病気より</label>
@@ -492,7 +508,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">タグ<br>（診療科・所属科）<span>Tag(department)</span></label>
+                <label class="control-label cols-15">タグ<br>(診療科・所属科）<span>Tag(department)</span></label>
                 <div class="cols-7">   
                     <div class="cols-3">
                         <select name="tag_dep[]" class="form-control">
@@ -1081,7 +1097,7 @@
                             <option value="美容皮膚科">美容皮膚科</option>
                         </select>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-1 relative">
                         <button type="button" class="btn btn-success add6"><span class="lnr lnr-plus-circle"></span></button>
                     </div>
                 </div>
@@ -1113,7 +1129,7 @@
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_sy[]" placeholder="">
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-1 relative">
                         <button type="button" class="btn btn-success add7"><span class="lnr lnr-plus-circle"></span></button>
                     </div>
                 </div>
@@ -1122,68 +1138,68 @@
             <div class="form-group">
                 <label class="control-label cols-15">タグ(季節)<br><span>Tag(season)</span></label>
                 <div class="cols-7">   
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s1"> 
 						<label for="tag_s1">春</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s2"> 
 						<label for="tag_s2">夏</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s3"> 
 						<label for="tag_s3">秋</label>
                     </div>  
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s4"> 
 						<label for="tag_s4">冬</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s5"> 
 						<label for="tag_s5">4月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s6"> 
 						<label for="tag_s6">5月</label>
                     </div>  
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s7"> 
 						<label for="tag_s7">6月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s8">
 						<label for="tag_s8">7月</label>
                     </div>
                     <div class="clear"></div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s9">
 						<label for="tag_s9">8月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s10">
 						<label for="tag_s10">9月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s11">
 						<label for="tag_s11">10月</label>
                     </div>  
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s12"> 
 						<label for="tag_s12">11月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s13"> 
 						<label for="tag_s14">12月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s14"> 
 						<label for="tag_s14">1月</label>
                     </div>  
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s15"> 
 						<label for="tag_s15">2月</label>
                     </div>
-                    <div class="cols-1">
+                    <div class="cols-11">
 						<input type="checkbox" id="tag_s16"> 
 						<label for="tag_s16">3月</label>
                     </div>
@@ -1201,7 +1217,7 @@
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_txt[]" placeholder="">
                     </div>
-                    <div class="cols-1"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
+                    <div class="cols-1 relative"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
 
@@ -1220,7 +1236,7 @@
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_f[]" placeholder="">
                     </div>
-                    <div class="cols-1"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
+                    <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
                     
                 </div>
             </div>
@@ -1231,9 +1247,9 @@
 				<div class="form-group">
 					<label class="control-label cols-15">エディター担当者</label>
 					<div class="cols-5">   
-						<input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">
+						<input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">&nbsp;&nbsp;&nbsp;
 					</div>
-					<div class="cols-2"><button type="button" class="btn-prime">エディター変更申請<br><span>Editor Change Request</button></div>
+					<div class="cols-2"><button type="button" class="btn-prime editor"></button></div>
 				</div>
 
 				<div class="form-group">
@@ -1270,7 +1286,9 @@
 				</div>
 			</div>
 		</div>
-
+		<div class="save-btn"></div>
+		<div id="totop" class="float-btn"></div>
+		<div id="tobottom" class="float-btn"></div>
         </form>
     </div>
 

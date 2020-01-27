@@ -72,6 +72,130 @@ class HomeController extends Controller
         return view('admin.special_list');
     }
 
+    public function save_illness(Request $request){
+
+        $details = Input::all();
+
+        $illness_id = rand();
+        $ill_img_id = rand();
+        $ill_gr_id = rand();
+
+        /* illness image */
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('img');
+
+        $destinationPath = public_path().'/img';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of illness image */
+
+        // $subj_list = $details['med_sbj_list']; 
+        // $response = array();
+        // foreach($subj_list as $key => $cert)
+        // {
+        //     $response[$key]['med_sbj_list'] = $cert;
+        // }
+        // $jsonsubj_list = json_encode($response); 
+
+        // $subj_list = $details['med_sbj_list']; 
+        // $response = array();
+        // foreach($subj_list as $key => $cert)
+        // {
+        //     $response[$key]['med_sbj_list'] = $cert;
+        // }
+        // $jsonsubj_list = json_encode($response); 
+
+        // career Academic Background
+        // $access_trans   = $details['access_trans']; 
+        // $access_from    = $details['access_from']; 
+        // $access_mins    = $details['access_mins']; 
+        // $resp = array();
+        // foreach($access_trans as $key => $access_tran)
+        // {
+        // $response[$key]['access_tran'] = $access_tran;
+        // $response[$key]['access_from'] = $access_from[$key];
+        // $response[$key]['access_mins'] = $access_mins[$key];
+        // }
+        // $access = json_encode($resp);
+        
+        //Illness
+        $illness = new Illness;
+        $illness->ill_id                = $illness_id;
+        $illness->ill_url               = $details['url'];
+        $illness->ill_cat               = $details['ill_cat'];
+        $illness->ill_shoulder          = $details['ill_shldr'];
+        $illness->ill_name              = $details['ill'];
+        $illness->ill_ph                = $details['ill_ph'];
+        $illness->ill_doc               = $details['doctor'];
+        $illness->ill_doc_role          = $details['role'];
+        $illness->ill_doc_cmt           = $details['doc_cmt']; 
+        $illness->ill_summary           = $details['sm']; //it should be json script when added
+        $illness->ill_img               = '/img/'.$filename; //illness image
+        $illness->ill_img_cap           = $details['img_cap'];
+        $illness->ill_img_alt           = $details['img_alt'];
+        $illness->ill_sh1               = $details['sub_head1a'];//it should be json script when added
+        $illness->ill_sh2               = $details['sub_head1b'];//it should be json script when added
+        $illness->ill_sub_txt           = $details['txt_ckeditor'];//it should be json script when added
+        $illness->ill_kwords            = $details['kword'];
+        $illness->ill_seo               = $details['seo'];
+        $illness->ill_seo_txt           = $details['seo_txt'];
+        $illness->ill_meta_a            = $details['meta_txt1'];
+        $illness->ill_meta_b            = $details['meta_txt2'];
+        $illness->ill_h1                = $details['h1'];
+        $illness->ill_h2                = $details['h2']; //it should be json script when added
+        $illness->ill_tag_kw            = $details['tag']; //it should be json script when added
+        $illness->ill_tag_dep           = $details['tag_dep']; // added division and medical subject list and field
+        $illness->ill_tag_symp          = $details['tag_sy']; // added division and medical subject list and field
+        $illness->ill_tag_season        = $details['tag_s']; // added division and medical subject list and field
+        $illness->ill_tag_season_txt    = $details['tag_txt']; // added division and medical subject list and field
+        $illness->ill_tag_free          = $details['tag_f']; // added division and medical subject list and field
+        $illness->save();
+
+        //newly inserted illness id
+        $id = $illness_id;
+
+
+        $destinationPathImg     = '';
+        $filename_img           = '';
+        $file_img               = $request->file('img');
+
+        $destinationPathImg  = public_path().'/ill_image';
+        $filename_img        = str_random(6) . '_' . $file_feat->getClientOriginalName();
+        $uploadSuccess   = $file_img->move($destinationPathImg, $filename_img);
+        
+        //Illness Image
+        $ill_image = new Ill_image;
+        $ill_image->im_id               = $ill_img_id;
+        $ill_image->im_ill_id           = $id;
+        $ill_image->im_file             = $details['img2'];
+        $ill_image->im_caption          = $details['img_cap2'];
+        $ill_image->im_alt              = $details['img_alt2'];
+        $ill_image->save();
+
+        $destinationPathGraph   = '';
+        $filename_graph         = '';
+        $file_graph             = $request->file('g_img');
+
+        $destinationPathGraph  = public_path().'/ill_graph';
+        $filename_graph        = str_random(6) . '_' . $file_feat->getClientOriginalName();
+        $uploadSuccess   = $file_graph->move($destinationPathGraph, $filename_graph);
+
+        //Illness Graph
+        $ill_graph = new Ill_graph;
+        $ill_graph->ig_id               = $ill_gr_id;
+        $ill_graph->ig_ill_id           = $id;
+        $ill_graph->ig_title            = $details['g_title'];
+        $ill_graph->ig_img              = $details['g_img'];
+        $ill_graph->ig_details          = $details['gd'];  // added division and medical subject list and field
+        $ill_graph->ig_txt              = $details['g_txt'];
+        $ill_graph->im_alt              = $details['g_alt'];
+        $ill_image->save();
+
+        
+        return redirect('/illness_list');
+    }
+
     public function save_hospital(Request $request){
 
         $details = Input::all();

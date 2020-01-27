@@ -187,7 +187,7 @@
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
-            $(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-18"><button type="button" class="btn-prime"><img src="images/image-icon.png"><div>画像を挿入する<br><span>Insert Image</span></div></button></div><div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="cols-1"></div></div>'); //add input box
+            $(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-2"><button type="button" class="btn-prime image"></button></div><div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="cols-1"></div></div>'); //add input box
 
             
         });
@@ -278,6 +278,19 @@
             
             $(wrapper9).append('<div class="cols-3"> <input type="text" class="form-control" name="tag_f[]" placeholder=""></div><div class="cols-3"><input type="text" class="form-control" name="tag_f[]" placeholder=""></div> <div class="cols-3"><input type="text" class="form-control" name="tag_f[]" placeholder=""></div><div class="col-sm-1"></div><div class="clear"></div>'); //add input box
             
+        });
+
+        $('#totop.float-btn').click(function() { 
+        // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0          // Scroll to top of body
+        }, 1000);
+        });
+
+        $('#tobottom.float-btn').click(function() { 
+            $("html, body").animate({ 
+                scrollTop: $(document).height() 
+            }, 1000);
         });
 
     });

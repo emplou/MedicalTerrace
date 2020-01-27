@@ -1824,7 +1824,16 @@ input.form-control {
   float: left;
   width: 10%;
   height: 35px;
-  position: relative;
+  
+}
+.cols-11 {
+  float: left;
+  width: 11%;
+  height: 35px;
+  
+}
+.cols-1.relative {
+  position: relative; 
 }
 .cols-1 label {
   color: #404040;
@@ -1965,7 +1974,7 @@ input.form-control {
   color: grey;
   bottom: 0;
   border: 0;
-  outline: 0;
+  outline: 0 !important;
   padding: 5px;
   margin-top:5px;
   background-color: transparent !important;
@@ -1998,12 +2007,27 @@ input.form-control {
 
 .btn-prime {
   color: #404040;
+  width: 170px;
+  height: 40px;
   font-size: 12px;
   line-height: 12px;
   padding: 5px 15px;
   border-radius: 5px;
   margin-right: 10px;
-  background: linear-gradient(to bottom, #96d6d5 0%, #8ccccc 50%, #8bb9b8 51%, #99bfbf 84%, #a8cac9 100%);
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.btn-prime.image {
+  background-image: url(/images/icon-insertimage.png);
+}
+.btn-prime.graph {
+  background-image: url(/images/icon-insertgraph.png);
+}
+.btn-prime.editor {
+  background-image: url(/images/icon-editorchange.png);
 }
 
 .btn-prime div {
@@ -2162,4 +2186,120 @@ label:hover:before {
 #rchars3 {
   /* bottom: 0;
   position: absolute; */
+}
+
+.save-btn {
+  width: 120px;
+  height: 40px;
+  bottom: 70px;
+  right: 20px;
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/images/icon-save.png);
+}
+
+
+.float-btn {
+  width: 40px;
+  height: 40px;
+  bottom: 25px;
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#totop {
+  right: 20px;
+  background-image: url(/images/top-arrow.png);
+}
+#tobottom {
+  right: 70px;
+  background-image: url(/images/bottom-arrow.png);
+}
+
+.form-progress {
+  width: 100%;
+  max-width: 500px;
+  right: 0;
+  height: 100px;
+  display: block;
+  position: absolute;
+  clear: both;
+}
+.form-progress ul {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+}
+
+.form-progress li {
+  position: relative;
+  float: left;
+  width: 15%;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #000;
+}
+.form-progress li span {
+  font-size: 10px;
+}
+
+.form-progress .active ~ li {
+  color: #555;
+}
+.form-progress li.rel:before {
+  border: 3px solid #46a9aa;
+}
+.form-progress li:before {
+  counter-increment: wizard;
+  content: "";
+  display: block;
+  color: black;
+  background-color: #fff;
+  border: 3px solid #ff9999;
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 2em;
+  position: relative;
+  left: 50%;
+  margin-bottom: 1em;
+  margin-left: -1em;
+  z-index: 1;
+}
+.form-progress li.active:before {
+  color: #555;
+  background-color: #f99;
+  border-color: #f99;
+}
+
+.form-progress li + li:after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #f99;
+  height: 3px;
+  position: absolute;
+  left: -50%;
+  top: 1em;
+  z-index: 0;
+}
+
+.form-progress .active ~ li:after {
+  background-color: #f99;
+}
+
+button, input[type="button"]{
+  outline:none !important;
+}
+input[type="button"]::-moz-focus-inner {
+  border: 0 !important;
 }
