@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">URL自動生成名:</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="url" placeholder="例）Infection_kids" name="url">
+                    <input type="text" class="form-control" placeholder="例）Infection_kids" name="url">
                 </div>
             </div>
 
@@ -97,17 +97,17 @@
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <input type="radio" name="tsk" value="監修"> 監修&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="tsk" value="取材協力"> 取材協力&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="tsk" value="監修・取材協力"> 監修・取材協力
+                    <input type="radio" name="tsk" value="監修" name="role"> 監修&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="tsk" value="取材協力" name="role"> 取材協力&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="tsk" value="監修・取材協力" name="role"> 監修・取材協力
                 </div>
             </div>
 
-            <!-- octor Comment -->
+            <!-- Doctor Comment -->
             <div class="form-group">
                 <label class="control-label col-sm-2">まとめ:</label>
                 <div class="col-sm-8">          
-                    <textarea class="form-control cmt" name="sm" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <textarea class="form-control cmt" name="doc_cmt" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
                     </textarea>
                 </div>
                 <div class="col-sm-1">          
@@ -175,7 +175,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">画像キャプション:</label>
                 <div class="col-sm-9">          
-                    <input type="text" class="form-control" id="img_cap" placeholder="先生からいただいたものなどには必ずつけてください" name="img_cap">
+                    <input type="text" class="form-control" placeholder="先生からいただいたものなどには必ずつけてください" name="img_cap">
                 </div>
             </div>
 
@@ -201,16 +201,16 @@
                             <option value="近年の動向">近年の動向</option>
                             <option value="症状">症状</option>
                             <option value="原因">原因</option>
-                            <option value="">検査方法</option>
-                            <option value="">検診体験記</option>
-                            <option value="">検診から治療まで</option>
-                            <option value=""><option value="">治療方法</option>
-                            <option value="">療養と副作用</option>
-                            <option value="">合併症</option>
-                            <option value="">自宅療法（療養方法・再発防止など）</option>
-                            <option value="">体験記</option>
-                            <option value="">FAQ</option>
-                            <option value="">予防・対策方法</option>
+                            <option value="検査方法">検査方法</option>
+                            <option value="検診体験記">検診体験記</option>
+                            <option value="検診から治療まで">検診から治療まで</option>
+                            <option value="治療方法">治療方法</option>
+                            <option value="療養と副作用">療養と副作用</option>
+                            <option value="合併症<">合併症</option>
+                            <option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option>
+                            <option value="体験記">体験記</option>
+                            <option value="FAQ">FAQ</option>
+                            <option value="予防・対策方法">予防・対策方法</option>
                         </select>
                         
 
@@ -220,7 +220,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2">画像alt:</label>
                     <div class="col-sm-9">          
-                        <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                        <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
                     </div>
                 </div>
                 <!-- Use CKcreditor -->
@@ -235,14 +235,14 @@
                     <div class="col-sm-1"><button type="button" class="btn btn-success add-ck">+</button></div> 
                     
                 </div>
-            </div>
-
             
-            <div class="form-group">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-3"><button type="button" class="btn btn-primary" id="show_img">Insert Image</button></div>
-                <div class="col-sm-3"><button type="button" class="btn btn-primary" id="show_graph">Insert Graph</button></div>
-            </div>            
+                <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3"><button type="button" class="btn btn-primary" id="show_img">Insert Image</button></div>
+                    <div class="col-sm-3"><button type="button" class="btn btn-primary" id="show_graph">Insert Graph</button></div>
+                </div>   
+
+            </div>         
 
             <!-- Insert Image Wrapper -->
             <div id="img-wrapper">
@@ -303,16 +303,16 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2">グラフ詳細:</label>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd1">参考
+                        <input type="checkbox" name="gd[]">参考
                     </div>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd2">引用
+                        <input type="checkbox" name="gd[]">引用
                     </div>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd3">出典
+                        <input type="checkbox" name="gd[]">出典
                     </div>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd4">著作権
+                        <input type="checkbox" name="gd[]">著作権
                     </div>
                     <div class="col-sm-1">          
                         <a href="#">詳しく見る</a>
@@ -321,7 +321,7 @@
                 <div class="form-group">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-7">          
-                        <input type="text" class="form-control" placeholder="例）国際感染症研究所" name="g_alt1">
+                        <input type="text" class="form-control" placeholder="例）国際感染症研究所" name="g_txt">
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
@@ -329,7 +329,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2">グラフalt:</label>
                     <div class="col-sm-7">          
-                        <input type="text" class="form-control" placeholder="例）手足口病の報告数の平均" name="g_alt2">
+                        <input type="text" class="form-control" placeholder="例）手足口病の報告数の平均" name="g_alt">
                     </div>
                     <div class="col-sm-2"><button type="button" class="btn btn-success">Save</button></div>
                 </div>
