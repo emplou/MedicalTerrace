@@ -4,13 +4,13 @@ namespace MedicalTerrace;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Ill_image extends Model
-{
-    //
+use Illuminate\Database\Eloquent\Model;
 
+class Risk_assessment extends Model
+{
     use Notifiable;
 
-    protected $table = 'ill_image';
+    protected $table = 'risk_assessment';
 
     /**
      * The attributes that are mass assignable.
@@ -18,6 +18,6 @@ class Ill_image extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'im_id', 'im_ill_id', 'im_file', 'im_caption', 'im_alt',  
+        'id', 'ra_ill_id', 'ra_title', 'ra_text', 'ra_risk_lvl', 'ra_result',  
     ];
 }
