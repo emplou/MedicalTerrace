@@ -388,12 +388,6 @@ class HomeController extends Controller
 
                             //access table no edit for now...
         
-        $department = DB::table('department')
-                                    ->where('access_detail_id','=', $details['accessdetID'])
-                                    ->update([
-                                                'dpt_name'           => $details['dpt_name'],
-                                            ]);
-        
 
         $dpt_esp_hours = DB::table('hospital_departments_exam')
                                     ->where('id','=', $details['dpt_esp_hrs'])
@@ -415,6 +409,22 @@ class HomeController extends Controller
                                                 'text'                  => $details['text'],
                                                 'image'                 => $details['image'],
                                             ]);
+    }
+
+    public function edit_department($id){
+        $department = DB::table('department')
+                                    ->where('id','=', $details['id'])
+                                    ->update([
+                                                'dpt_name'           => $details['dpt_name'],
+                                            ]);
+    }
+
+    public function save_department(){
+
+        $department = new Department;
+        $department->dpt_name        = $details['med_subj_subheading'];
+        $department->save();
+
     }
 
     public function save_doctor(Request $request){

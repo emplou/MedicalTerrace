@@ -45,9 +45,9 @@ $.ajaxSetup({
                 success: function(response){
                     console.log(response['data']);
                 if(response == "success")
+
                   console.log(response['data']); 
-                //   alert(response['data'][0].url_generation);
-                //   $('#quantity').val(data.quantity);
+
                   $("#editdoctor").modal('show');
                   $("#url_generation").val(response['data'][0].url_generation);
                   $("#status").val(response['data'][0].status);
@@ -55,12 +55,9 @@ $.ajaxSetup({
                   console.log(objJSON);
 
                   $.each(objJSON, function(key,value){
-                    // $("#certificate").text(value.med_sbj_list);
-                    // $("#certificate").val(value.med_sbj_list);
                     console.log('yes '+ value.med_sbj_list);
-
-                    // var inputs = document.getElementsByID("certificate");
-                    var inputs = document.getElementsByTagName("certificate");
+                    
+                    var inputs = document.getElementById()('certificate');
                     var obj = {};
                     for(var x=0; x < inputs.length; x++){   
                         var input = inputs[x];

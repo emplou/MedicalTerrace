@@ -1,7 +1,7 @@
 <!-- Modal -->
-<div id="edithospital" class="modal fade" role="dialog" data-keyboard="true">
+<div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog modal-lg">
-  <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 				
 <!-- Modal content-->
     <div class="modal-content">

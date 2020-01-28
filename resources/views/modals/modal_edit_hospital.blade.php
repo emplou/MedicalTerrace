@@ -163,7 +163,7 @@
             画像alt<br>Image alt
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_alt" style="width:500px">
+            <input type="text" class="form-control" name="img_alt" id="img_alt" style="width:500px">
             </div>
         </div>
         <br>
@@ -172,7 +172,7 @@
             医療機関キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="hosp_subheading" style="width:500px">
+                <input type="text" class="form-control" name="hosp_subheading" id="hosp_subheading" style="width:500px">
             </div>
         </div>
         <br>
@@ -181,7 +181,7 @@
             本文<br>Text of Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="text_subheading_hospital" id="text_subheading_hospital" style="width:500px">
             </div>
         </div>
         <br>
@@ -190,7 +190,7 @@
             区分<br>Division
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="division" style="width:500px">
+                <input type="text" class="form-control" name="division" id="division" style="width:500px">
             </div>
         </div>
         <br>
@@ -247,7 +247,7 @@
             診療科目<br>Medical subject
             </div>
             <div class="col-10">
-                <select class="form- " name="department" style="width:200px">
+                <select class="form- " name="department" id="department" style="width:200px">
                     <option>Medical one</option>
                     <option>Medical two</option>
                     <option>Medical three</option>
@@ -261,7 +261,7 @@
             診療科目別キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="med_subj_subheading" style="width:500px">
+                <input type="text" class="form-control" name="med_subj_subheading" id="med_subj_subheading" style="width:500px">
             </div>
         </div>
         <br>
@@ -270,7 +270,7 @@
             診療科目別キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="med_subj_text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="med_subj_text_subheading_hospital" id="med_subj_text_subheading_hospital" style="width:500px">
                 <input type="file" class="btn btn-info" name="department_image">
             </div>
         </div>
@@ -326,7 +326,7 @@
             特徴タイトル<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="feature_title" style="width:500px">
+                <input type="text" class="form-control" name="feature_title" id="feature_title" style="width:500px">
             </div>
         </div>
         <br>
@@ -335,7 +335,7 @@
             特徴本文<br>Text of Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="feature_text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="feature_text_subheading_hospital" id="feature_text_subheading_hospital" style="width:500px">
                 <input type="file" class="btn btn-warning" name="feature_image">
             </div>
         </div>
@@ -347,8 +347,8 @@
             設備・機器<br>Equipment
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="equipment_subheading" style="width:500px">
-                <input type="text" class="form-control" name="equipment_text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="equipment_subheading" id="equipment_subheading" style="width:500px">
+                <input type="text" class="form-control" name="equipment_text_subheading_hospital" id="equipment_text_subheading_hospital" style="width:500px">
                 <input type="file" class="btn btn-success" name="equipment_image">
             </div>
         </div>
@@ -360,7 +360,7 @@
             スタッフリード<br>Staff Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="staff_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="staff_subheading_hospital" id="staff_subheading_hospital" style="width:500px">
             </div>
         </div>
         <br>
@@ -369,7 +369,7 @@
             スタッフコメント<br>Staff comment
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="staff_comment_hospital" style="width:500px">
+                <input type="text" class="form-control" name="staff_comment_hospital" id="staff_comment_hospital" style="width:500px">
                 <input type="file" class="btn btn-danger" name="staff_image">
             </div>
         </div>
