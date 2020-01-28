@@ -11,6 +11,10 @@ use MedicalTerrace\DepartmentExam;
 use MedicalTerrace\Feature;
 use MedicalTerrace\Equipments;
 use MedicalTerrace\Staff;
+use MedicalTerrace\Illness;
+use MedicalTerrace\Ill_image;
+use MedicalTerrace\Ill_graph;
+use MedicalTerrace\Risk_assessment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -85,39 +89,95 @@ class HomeController extends Controller
         $filename        = '';
         $file            = $request->file('img');
 
-        $destinationPath = public_path().'/img';
+        $destinationPath = public_path().'/illness';
         $filename        = str_random(6) . '_' . $file->getClientOriginalName();
         $uploadSuccess   = $file->move($destinationPath, $filename);
         /* end of illness image */
 
-        // $subj_list = $details['med_sbj_list']; 
-        // $response = array();
-        // foreach($subj_list as $key => $cert)
-        // {
-        //     $response[$key]['med_sbj_list'] = $cert;
-        // }
-        // $jsonsubj_list = json_encode($response); 
+        // description summary
+        $sum_list = $details['sm']; 
+        $response = array();
+        foreach($sum_list as $key => $cert)
+        {
+            $response[$key]['sm'] = $cert;
+        }
+        $jsonsum_list = json_encode($response); 
 
-        // $subj_list = $details['med_sbj_list']; 
-        // $response = array();
-        // foreach($subj_list as $key => $cert)
-        // {
-        //     $response[$key]['med_sbj_list'] = $cert;
-        // }
-        // $jsonsubj_list = json_encode($response); 
+        // h2
+        $h2_list = $details['h2']; 
+        $response2 = array();
+        foreach($h2_list as $key => $cert)
+        {
+            $response2[$key]['h2'] = $cert;
+        }
+        $jsonh2_list = json_encode($response2); 
 
-        // career Academic Background
-        // $access_trans   = $details['access_trans']; 
-        // $access_from    = $details['access_from']; 
-        // $access_mins    = $details['access_mins']; 
-        // $resp = array();
-        // foreach($access_trans as $key => $access_tran)
-        // {
-        // $response[$key]['access_tran'] = $access_tran;
-        // $response[$key]['access_from'] = $access_from[$key];
-        // $response[$key]['access_mins'] = $access_mins[$key];
-        // }
-        // $access = json_encode($resp);
+        // Subhead and Text
+        $sub_head1a       = $details['sub_head1a']; 
+        $sub_head1b       = $details['sub_head1b']; 
+        $txt_ckeditor     = $details['txt_ckeditor']; 
+        $resp = array();
+        foreach($sub_head1a as $key => $sub_head1a)
+        {
+        $response[$key]['sub_head1a'] = $sub_head1a;
+        $response[$key]['sub_head1b'] = $sub_head1b[$key];
+        $response[$key]['txt_ckeditor']  = $txt_ckeditor[$key];
+        }
+        $txt_sum = json_encode($resp);
+
+        // tag
+        $tag_list = $details['tag']; 
+        $response3 = array();
+        foreach($tag_list as $key => $cert)
+        {
+            $response3[$key]['tag'] = $cert;
+        }
+        $jsontag_list = json_encode($response3); 
+
+        // tag department
+        $dep_list = $details['tag_dep']; 
+        $response4 = array();
+        foreach($dep_list as $key => $cert)
+        {
+            $response4[$key]['tag_dep'] = $cert;
+        }
+        $jsondep_list = json_encode($response4); 
+
+        // tag symptoms
+        $sy_list = $details['tag_sy']; 
+        $response5 = array();
+        foreach($sy_list as $key => $cert)
+        {
+            $response5[$key]['tag_sy'] = $cert;
+        }
+        $jsonsy_list = json_encode($response5);
+
+        // tag season
+        $s_list = $details['tag_s']; 
+        $response6 = array();
+        foreach($s_list as $key => $cert)
+        {
+            $response6[$key]['tag_s'] = $cert;
+        }
+        $jsons_list = json_encode($response6); 
+
+        // tag season text
+        $stxt_list = $details['tag_txt']; 
+        $response7 = array();
+        foreach($stxt_list as $key => $cert)
+        {
+            $response7[$key]['tag_txt'] = $cert;
+        }
+        $jsonstxt_list = json_encode($response7); 
+
+        // tag free
+        $f_list = $details['tag_f']; 
+        $response8 = array();
+        foreach($f_list as $key => $cert)
+        {
+            $response8[$key]['tag_f'] = $cert;
+        }
+        $jsonf_list = json_encode($response8); 
         
         //Illness
         $illness = new Illness;
@@ -130,26 +190,24 @@ class HomeController extends Controller
         $illness->ill_doc               = $details['doctor'];
         $illness->ill_doc_role          = $details['role'];
         $illness->ill_doc_cmt           = $details['doc_cmt']; 
-        $illness->ill_summary           = $details['sm']; //it should be json script when added
+        $illness->ill_summary           = $jsonsum_list; //it should be json script when added
         $illness->ill_img               = '/img/'.$filename; //illness image
         $illness->ill_img_cap           = $details['img_cap'];
         $illness->ill_img_alt           = $details['img_alt'];
-        $illness->ill_sh1               = $details['sub_head1a'];//it should be json script when added
-        $illness->ill_sh2               = $details['sub_head1b'];//it should be json script when added
-        $illness->ill_sub_txt           = $details['txt_ckeditor'];//it should be json script when added
+        $illness->ill_sub_txt           = $dtxt_sum;//it should be json script when added
         $illness->ill_kwords            = $details['kword'];
         $illness->ill_seo               = $details['seo'];
         $illness->ill_seo_txt           = $details['seo_txt'];
         $illness->ill_meta_a            = $details['meta_txt1'];
         $illness->ill_meta_b            = $details['meta_txt2'];
         $illness->ill_h1                = $details['h1'];
-        $illness->ill_h2                = $details['h2']; //it should be json script when added
-        $illness->ill_tag_kw            = $details['tag']; //it should be json script when added
-        $illness->ill_tag_dep           = $details['tag_dep']; // added division and medical subject list and field
-        $illness->ill_tag_symp          = $details['tag_sy']; // added division and medical subject list and field
-        $illness->ill_tag_season        = $details['tag_s']; // added division and medical subject list and field
-        $illness->ill_tag_season_txt    = $details['tag_txt']; // added division and medical subject list and field
-        $illness->ill_tag_free          = $details['tag_f']; // added division and medical subject list and field
+        $illness->ill_h2                = $jsonh2_list; //it should be json script when added
+        $illness->ill_tag_kw            = $jsontag_list; //it should be json script when added
+        $illness->ill_tag_dep           = $jsondep_list; // added division and medical subject list and field
+        $illness->ill_tag_symp          = $jsonsy_list; // added division and medical subject list and field
+        $illness->ill_tag_season        = $jsons_list; // added division and medical subject list and field
+        $illness->ill_tag_season_txt    = $jsonstxt_list; // added division and medical subject list and field
+        $illness->ill_tag_free          = $jsonf_list; // added division and medical subject list and field
         $illness->save();
 
         //newly inserted illness id
@@ -160,7 +218,7 @@ class HomeController extends Controller
         $filename_img           = '';
         $file_img               = $request->file('img');
 
-        $destinationPathImg  = public_path().'/ill_image';
+        $destinationPathImg  = public_path().'/illness/image';
         $filename_img        = str_random(6) . '_' . $file_feat->getClientOriginalName();
         $uploadSuccess   = $file_img->move($destinationPathImg, $filename_img);
         
@@ -177,7 +235,7 @@ class HomeController extends Controller
         $filename_graph         = '';
         $file_graph             = $request->file('g_img');
 
-        $destinationPathGraph  = public_path().'/ill_graph';
+        $destinationPathGraph  = public_path().'/illness/graph';
         $filename_graph        = str_random(6) . '_' . $file_feat->getClientOriginalName();
         $uploadSuccess   = $file_graph->move($destinationPathGraph, $filename_graph);
 
@@ -187,10 +245,21 @@ class HomeController extends Controller
         $ill_graph->ig_ill_id           = $id;
         $ill_graph->ig_title            = $details['g_title'];
         $ill_graph->ig_img              = $details['g_img'];
-        $ill_graph->ig_details          = $details['gd'];  // added division and medical subject list and field
+        $ill_graph->ig_details          = $details['gd'];  
         $ill_graph->ig_txt              = $details['g_txt'];
         $ill_graph->im_alt              = $details['g_alt'];
-        $ill_image->save();
+        $ill_graph->save();
+
+        //Risk Assessment
+        $risk_assess = new Risk_assessment;
+        $risk_assess->ig_id               = $ill_gr_id;
+        $risk_assess->ig_ill_id           = $id;
+        $risk_assess->ig_title            = $details['g_title'];
+        $risk_assess->ig_img              = $details['g_img'];
+        $risk_assess->ig_details          = $details['gd'];  
+        $risk_assess->ig_txt              = $details['g_txt'];
+        $risk_assess->im_alt              = $details['g_alt'];
+        $risk_assess->save();
 
         
         return redirect('/illness_list');

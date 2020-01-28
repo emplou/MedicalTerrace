@@ -3,7 +3,7 @@
 
 <!-- <h2>Add Illness</h2> -->
 <br>
-{!! Form::open(array('url' => '/', 'method' => 'post')) !!}
+{!! Form::open(array('url' => '/save_illness', 'method' => 'post', 'files' => true)) !!}
 
     <div class="form-horizontal">
 
@@ -1458,6 +1458,12 @@
                 <label class="control-label col-sm-2">メモ</label>
                 <div class="col-sm-7">   
                     <textarea class="form-control" name="note"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-10">   
+                    <input type="submit" value="Save Illness">
                 </div>
             </div>
                 
