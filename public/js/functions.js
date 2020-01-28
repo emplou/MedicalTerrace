@@ -3,7 +3,7 @@ $.ajaxSetup({
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  
+
 $(document).ready(function() {
     $('#list').DataTable( {
         columnDefs: [
@@ -35,7 +35,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('doc-id');
-            // alert(docId);
+            alert(id);
 
             $.ajax({
                 url: '/modal_edit_doctor/'+id,
@@ -59,7 +59,8 @@ $.ajaxSetup({
                     // $("#certificate").val(value.med_sbj_list);
                     console.log('yes '+ value.med_sbj_list);
 
-                    var inputs = document.getElementsByTagID("certificate");
+                    // var inputs = document.getElementsByID("certificate");
+                    var inputs = document.getElementsByTagName("certificate");
                     var obj = {};
                     for(var x=0; x < inputs.length; x++){   
                         var input = inputs[x];
@@ -108,7 +109,8 @@ $.ajaxSetup({
        
                 }
 
-              });setCookie();
+              });
+              //setCookie();
             // location.reload();
         });
     });

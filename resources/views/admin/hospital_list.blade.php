@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('modals.modal_edit_hospital')
 <br>
     <table class="table" id="list"  width="100%">
         <thead>

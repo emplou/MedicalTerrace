@@ -372,21 +372,18 @@ class HomeController extends Controller
                                         // 'hosp_text_subheading' => $details['fullname'],
                                     ]);
 
+        // return redirect('/guides_list');
 
-        $medicalsubj = DB::table('medical_subject')
-                                    ->where('id','=', $details['medsubjID'])
+        return view('admin.edit_hospital');
+    }
+
+    public function save_edit_medical_subject(){
+        $medicalsubj = DB::table('department')
+                                    ->where('id','=', $details['id'])
                                     ->update([
                                                 'medical_subj'          => $details['medical_subj'],
                                                 'subheading'            => $details['subheading'],
                                                 'text_of_subheading'    => $details['text_of_subheading'],
-                                            ]);
-        
-        $access_det = DB::table('access_details')
-                                    ->where('access_detail_id','=', $details['accessdetID'])
-                                    ->update([
-                                                'by_what'           => $details['by_what'],
-                                                'from_where'        => $details['from_where'],
-                                                'minutes'           => $details['minutes'],
                                             ]);
 
                             //access table no edit for now...
@@ -398,7 +395,7 @@ class HomeController extends Controller
                                             ]);
         
 
-        $dpt_esp_hours = DB::table('dpt_esp_hours')
+        $dpt_esp_hours = DB::table('hospital_departments_exam')
                                     ->where('id','=', $details['dpt_esp_hrs'])
                                     ->update([
                                                 'from'              => $details['from'],
@@ -408,17 +405,16 @@ class HomeController extends Controller
                                                 'treatment_name'    => $details['treatment_name'],
                                             ]);
                                             
-        $feature = DB::table('feature')
+    }
+
+    public function save_update_feature(){
+        $feature = DB::table('hospital_feature')
                                     ->where('id','=', $details['dpt_esp_hrs'])
                                     ->update([
                                                 'title'                 => $details['title'],
                                                 'text'                  => $details['text'],
                                                 'image'                 => $details['image'],
                                             ]);
-
-        // return redirect('/guides_list');
-
-        return view('admin.edit_hospital');
     }
 
     public function save_doctor(Request $request){
