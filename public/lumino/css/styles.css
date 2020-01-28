@@ -1832,7 +1832,11 @@ input.form-control {
   float: left;
   width: 11%;
   height: 35px;
-  
+}
+.cols-12 {
+  float: left;
+  width: 12%;
+  height: 35px;
 }
 .cols-1.relative {
   position: relative; 
@@ -2304,4 +2308,9 @@ button, input[type="button"]{
 }
 input[type="button"]::-moz-focus-inner {
   border: 0 !important;
+}
+
+
+.custom-file-label {
+  font-size: 12px;
 }

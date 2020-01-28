@@ -295,7 +295,10 @@ input.form-  {
 	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
 	<!-- <script src="{{ asset('lumino/dist/wickedpicker.js') }}"></script> -->
-   
+   <!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -392,7 +395,12 @@ $(function() {
             $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
         }        
         reader.readAsDataURL(file);
-    });  
+	});  
+	
+	$("#myBtn").click(function(){
+		$("#myModal").modal();
+	});
+
 });
 
 // $(document).ready(function() {
