@@ -1811,6 +1811,8 @@ input.form-control {
 .form-group {
   width: 100%;
   max-width: 900px;
+  display: block;
+  clear: both;
   margin: 0!important;
   margin-bottom: 10px !important;
 }
