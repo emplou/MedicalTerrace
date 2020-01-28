@@ -3,7 +3,7 @@
 
 <!-- <h2>Add Illness</h2> -->
 <br>
-{!! Form::open(array('url' => '/', 'method' => 'post')) !!}
+{!! Form::open(array('url' => '/save_illness', 'method' => 'post', 'files' => true)) !!}
 
     <div class="form-horizontal">
 
@@ -94,12 +94,14 @@
                 <div class="col-sm-5">          
                     <select name="doctor" class="form-control">
                         <option value="">選択してください</option>
+                        <option value="選択してください">選択してください</option>
+                        <option value="選択してください">選択してください</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <input type="radio" name="tsk" value="監修" name="role"> 監修&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="tsk" value="取材協力" name="role"> 取材協力&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="tsk" value="監修・取材協力" name="role"> 監修・取材協力
+                    <input type="radio" value="監修" name="role"> 監修&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="取材協力" name="role"> 取材協力&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="監修・取材協力" name="role"> 監修・取材協力
                 </div>
             </div>
 
@@ -228,7 +230,7 @@
                     <label class="control-label col-sm-2">本文:</label>
                     <div class="col-sm-9"> 
                          
-                        <textarea class="form-control" name="txt_ckeditor[0]" id="txt_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
                         </textarea>
                     </div>
@@ -303,16 +305,16 @@
                 <div class="form-group">
                     <label class="control-label col-sm-2">グラフ詳細:</label>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd[]">参考
+                        <input type="checkbox" name="gd[]" value="参考">参考
                     </div>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd[]">引用
+                        <input type="checkbox" name="gd[]" value="引用">引用
                     </div>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd[]">出典
+                        <input type="checkbox" name="gd[]" value="出典">出典
                     </div>
                     <div class="col-sm-2">          
-                        <input type="checkbox" name="gd[]">著作権
+                        <input type="checkbox" name="gd[]" value="著作権">著作権
                     </div>
                     <div class="col-sm-1">          
                         <a href="#">詳しく見る</a>
@@ -331,7 +333,7 @@
                     <div class="col-sm-7">          
                         <input type="text" class="form-control" placeholder="例）手足口病の報告数の平均" name="g_alt">
                     </div>
-                    <div class="col-sm-2"><button type="button" class="btn btn-success">Save</button></div>
+                    <div class="col-sm-2"><!-- <button type="button" class="btn btn-success">Save</button> --></div>
                 </div>
             </div>
 
@@ -341,12 +343,13 @@
                 <label class="control-label col-sm-2">小見出し</label>
                 <div class="col-sm-8">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
+                        <input type="hidden" name="ra_title" value="sample">
                         <span style="color: #F00;">手足口病のリスク度チェック</span>
                     </div>       
                     
                 </div>
                 <div class="col-sm-1">          
-                    <input type="checkbox" name="shcb" class="form-control">
+                    <input type="checkbox" name="shcb" class="form-control" value="1">
                 </div>
             </div>
 
@@ -359,12 +362,12 @@
                     </div>
                     <div class="col-sm-2"> 
                         リスク度 
-                        <select name="rl">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="rl[]">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
 
                         </select><br>         
                         <span id="rchars8">0</span>/46
@@ -376,12 +379,12 @@
                     </div>
                     <div class="col-sm-2"> 
                         リスク度
-                        <select name="rl">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="rl[]">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
 
                         </select><br>                
                         <span id="rchars9">0</span>/46
@@ -393,12 +396,12 @@
                     </div>
                     <div class="col-sm-2">  
                         リスク度
-                        <select name="rl">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="rl[]">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
 
                         </select><br>              
                         <span id="rchars10">0</span>/46
@@ -410,12 +413,12 @@
                     </div>
                     <div class="col-sm-2">    
                         リスク度
-                        <select name="rl">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="rl[]">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
 
                         </select><br>             
                         <span id="rchars11">0</span>/46
@@ -429,12 +432,12 @@
                     </div>
                     <div class="col-sm-2">   
                         リスク度
-                        <select name="rl">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="rl[]">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
 
                         </select><br>       
                         <button type="button" class="btn btn-success sh-btn">+</button>
@@ -457,7 +460,7 @@
             </div>
 
             <!-- Subheading2 -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label col-sm-2">小見出し</label>
                 <div class="col-sm-8">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
@@ -468,10 +471,10 @@
                 <div class="col-sm-1">       
                     <input type="checkbox" name="shcb" class="form-control">
                 </div>
-            </div>
+            </div> -->
 
             <!-- Text of the subheading2 -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label col-sm-2">本文:</label>
                 <div class="col-sm-10">  
                     <div class="col-sm-8">          
@@ -561,10 +564,10 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Check Result -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label col-sm-2">チェック結果</label>
                 <div class="col-sm-4"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr_b[]"></div>
                 <div class="col-sm-4"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr_b[]"></div>
@@ -574,28 +577,28 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr_b[]"></div>
                 <div class="col-sm-4"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr_b[]"></div>
-            </div>
+            </div> -->
 
             <hr>
             <!-- Search Keywords -->
             <div class="form-group">
                 <label class="control-label col-sm-2">検索キーワード</label>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）夏の感染症" name="kword"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）子どもの病気" name="kword"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）手足口病" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）夏の感染症" name="kword[]"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）子どもの病気" name="kword[]"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）手足口病" name="kword[]"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label col-sm-2"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）ヘルパンギーナ" name="kword"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）水いぼ" name="kword"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）ヘルパンギーナ" name="kword[]"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="例）水いぼ" name="kword[]"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword[]"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label col-sm-2"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword"></div>
-                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword[]"></div>
+                <div class="col-sm-3"><input type="text" class="form-control" placeholder="" name="kword[]"></div>
                 <div class="col-sm-3">※裏設定。検索させたい関連ワードを表記</div>
             </div>
 
@@ -604,7 +607,7 @@
                 <label class="control-label col-sm-2">タイトルタグ</label>
                 <div class="col-sm-8">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                        <input type="checkbox" name="seo"> <span style="color: #F00;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</span>
+                        <input type="checkbox" name="seo" value="1"> <span style="color: #F00;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</span>
                     </div>       
                     
                 </div>
@@ -653,7 +656,7 @@
                 <label class="control-label col-sm-2">h1</label>
                 <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                     子どもの夏の感染症 いわゆる夏風邪は7月がピーク！
-                    <input type="hidden" name="h1" value="">
+                    <input type="hidden" name="h1" value="Sample">
                 </div>
             </div>
             
@@ -676,30 +679,30 @@
                 <label class="control-label col-sm-2">タグ（キーワード）</label>
                 <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                     <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
                     </div>
                     <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
                     </div>
                     <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
-                    </div>
-                    <div class="clear"></div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
                     </div>
                     <div class="clear"></div>
                     <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
                     </div>
                     <div class="col-sm-4">
-                        <input type="checkbox" name="tag[]"> 検索キーワド入力より
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-sm-4">
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="checkbox" name="tag[]" value="Sample"> 検索キーワド入力より
                     </div>
                 </div>
             </div>
@@ -1458,6 +1461,12 @@
                 <label class="control-label col-sm-2">メモ</label>
                 <div class="col-sm-7">   
                     <textarea class="form-control" name="note"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-10">   
+                    <input type="submit" value="Save Illness">
                 </div>
             </div>
                 

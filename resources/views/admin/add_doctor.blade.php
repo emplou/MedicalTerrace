@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
 <div class="header-wrapper">
     <div class="left">
         <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
@@ -91,7 +90,7 @@
         <div class="form-group">
             <label class="control-label cols-15">ローマ字（名・氏<br><span>Alphabet Name </span></label>
             <div class="cols-4">
-                <input type="text" class="form-control" name="alpha_name">
+                <input type="text" class="form-control" name="alpha_name" placeholder="例)Taro Yamada">
             </div>
         </div>
 
@@ -115,7 +114,6 @@
                 <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
                 </div>
-
             </div>
         </div>
 
@@ -206,40 +204,51 @@
             <div class="cols-15">
             経歴（学歴）<br>Career（学歴）
             </div>
-            <div class="cols-5">
+            <div class="cols-12">
                 <select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"></select>
+            </div>
+            <div class="cols-12">
                 <select name="c_ac_month[]" class="form- " style="width:100px">
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                 </select>
+            </div>
+            <div class="cols-5">
                 <input type="text" id="form-control" name="c_ac_desc[]" class="form- " >
-                <br>
-                        <select id="aca_year_to" name="c_ac_year_to[]" class="form- " style="width:100px"></select>
-                        <select name="c_ac_month_to[]" class="form- " style="width:100px">
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                    <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
+            </div>
+            <div class="cols-15"></div>
+            <div class="cols-12">
+                <select id="aca_year_to" name="c_ac_year_to[]" class="form- " style="width:100px"></select>
+            </div>
+            <div class="cols-12">
+                <select name="c_ac_month_to[]" class="form- " style="width:100px">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="cols-5">
+                <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
+            </div>
             </div>
         </div>
         <br>
@@ -247,40 +256,50 @@
             <div class="cols-15">
             経歴（職歴）<br>Career（職歴）
             </div>
-            <div class="cols-5">
+            <div class="cols-12">
                 <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"></select>
+            </div>
+            <div class="cols-12">
                 <select name="c_we_month[]" class="form- " style="width:100px">
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
                 </select>
+            </div>
+            <div class="cols-5">
                 <input type="text" id="form-control" name="c_we_desc[]" class="form- " >
-                <br>
-                        <select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"></select>
-                        <select name="c_we_month_to[]" class="form- " style="width:100px">
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                    <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
+            </div>
+            <div class="cols-15">
+                <select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"></select>
+            </div>
+            <div class="cols-12">
+                <select name="c_we_month_to[]" class="form- " style="width:100px">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="cols-5">
+                <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
+            </div>
             </div>
         </div>
         <br>
@@ -412,7 +431,7 @@
             </div>
         </div>
 
-
+        <button type="button" class="btn btn-info btn-lg" id="myBtn">Preview</button>
     </div>
 </div>
 
@@ -424,7 +443,7 @@
 	<tr>
 		<td>エディター担当者<br>Editor</td>
 		<td>{!! Form::text('Editor', null , ['class' => 'form-control']) !!}</td>
-		<td><button class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;">エディター変更申請<br>Editor Change Request</button></td>
+		<td><button type="button" class="btn-prime editor"></button></td>
 	</tr>
 	<tr>
 		<td>アポイント履歴<br>Appointment History</td>
@@ -440,4 +459,42 @@
 	</tr>
 </table>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <h2>医師・医療従事者</h2>
+             <p>|岐阜|岐阜市|小児科|アレルギー科|新生児内科|</p>
+             <p>日本小児科学会認定小児科専門医・日本アレルギー学会 認定専門医 医学博士</p>
+             <p>浅野 勉 -Tsutomu Asano-</p>
+             <p>2019.06.21</p>
+             <img src="images/avatar.jpg" alt="">
+             <ul>
+                 <li>所属学会 日本小児科学会・日本アレルギー学会・日本小児アレル ギー学会・日本新生児成育医学会</li>
+                 <li>市立長浜病院小児科・NICU 部長 岐阜大学医学部附属病院新生児集中治療部 臨床講師 2015年9月「のりたけキッズベビークリニック」開院 現在に至る</li>
+                 <li>コメント 医師プロフィールページに掲載されるコメントをお願 いします。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章は ダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大 きさ、量、字間、行間等を確認するために入れています。</li>
+            </ul>
+             <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- Link to open the modal -->
+<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+
+    <div class="save-btn"></div>
+    <div id="totop" class="float-btn"></div>
+    <div id="tobottom" class="float-btn"></div>
 @endsection

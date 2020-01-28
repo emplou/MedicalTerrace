@@ -26,8 +26,6 @@ class CreateIllnessTable extends Migration
             $table->string('ill_img');
             $table->string('ill_img_cap');
             $table->string('ill_img_alt');
-            $table->string('ill_sh1');
-            $table->string('ill_sh2');
             $table->string('ill_kwords');
             $table->string('ill_seo');
             $table->string('ill_seo_txt');
