@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
 @include('modals.modal_edit_doctor')
-<link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
-<script src="lumino/js/bootstrap.min.js"></script>
 <br>
     <table class="table" id="list" width="100%">
         <thead>

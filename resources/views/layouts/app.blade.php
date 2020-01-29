@@ -273,12 +273,15 @@ input.form-  {
 
  </div>
 
-	<script src="lumino/js/jquery-1.11.1.min.js"></script>
+ 	<script src="lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="lumino/js/bootstrap.min.js"></script>
-	<!-- <script src="lumino/js/chart.min.js"></script>
+ 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
+	<script src="{{ asset('js/functions.js') }}"></script>
+	<script src="lumino/js/chart.min.js"></script>
 	<script src="lumino/js/chart-data.js"></script>
 	<script src="lumino/js/easypiechart.js"></script>
-	<script src="lumino/js/easypiechart-data.js"></script> -->
+	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
     <script src="lumino/js/custom.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -291,15 +294,12 @@ input.form-  {
 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
-	<script src="{{ asset('js/functions.js') }}"></script>
 	<!-- <script src="{{ asset('lumino/dist/wickedpicker.js') }}"></script> -->
    <!-- jQuery Modal -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
-<script>
+	<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -323,21 +323,6 @@ $(document).on('click', '#close-preview', function(){
     );    
 });
 
-$(document).ready(function() {
-	$('#totop.float-btn').click(function() { 
-	// When arrow is clicked
-	$('body,html').animate({
-		scrollTop : 0          // Scroll to top of body
-	}, 1000);
-	});
-
-	$('#tobottom.float-btn').click(function() { 
-		$("html, body").animate({ 
-			scrollTop: $(document).height() 
-		}, 1000);
-	});
-
-}
 // $(document).on('click', 'illness_menu', function(e){ 
 // 	alert('hoy!');
 // 	 $('.illness_container').css('display','block');
@@ -412,13 +397,6 @@ $(function() {
         reader.readAsDataURL(file);
 	});  
 	
-	
-
-
-	$("#myBtn").click(function(){
-		$("#myModal").modal();
-	});
-
 });
 
 // $(document).ready(function() {

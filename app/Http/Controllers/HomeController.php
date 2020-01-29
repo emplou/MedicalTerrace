@@ -662,6 +662,12 @@ class HomeController extends Controller
         // return $value;
     }
 
+    public function modal_edit_hospital($id){
+        $value['data'] = DB::table('dv_hospital')->where('id','=',$id)->get();
+        $fetch = json_encode($value);
+        return $fetch;
+    }
+
     public function save_edit_doctor(){
         $details = Input::all();
 
