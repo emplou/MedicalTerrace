@@ -299,7 +299,7 @@ input.form-  {
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
-	<script>
+<script>
 		window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
@@ -323,6 +323,21 @@ $(document).on('click', '#close-preview', function(){
     );    
 });
 
+$(document).ready(function() {
+	$('#totop.float-btn').click(function() { 
+	// When arrow is clicked
+	$('body,html').animate({
+		scrollTop : 0          // Scroll to top of body
+	}, 1000);
+	});
+
+	$('#tobottom.float-btn').click(function() { 
+		$("html, body").animate({ 
+			scrollTop: $(document).height() 
+		}, 1000);
+	});
+
+}
 // $(document).on('click', 'illness_menu', function(e){ 
 // 	alert('hoy!');
 // 	 $('.illness_container').css('display','block');
@@ -397,6 +412,9 @@ $(function() {
         reader.readAsDataURL(file);
 	});  
 	
+	
+
+
 	$("#myBtn").click(function(){
 		$("#myModal").modal();
 	});

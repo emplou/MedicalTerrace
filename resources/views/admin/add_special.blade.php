@@ -1286,7 +1286,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="save-btn"></div>
+		<input class="save-btn" type="submit">
 		<div id="totop" class="float-btn"></div>
 		<div id="tobottom" class="float-btn"></div>
         </form>
