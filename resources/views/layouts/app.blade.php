@@ -296,6 +296,8 @@ input.form-  {
 
 	<!-- <script src="{{ asset('lumino/dist/wickedpicker.js') }}"></script> -->
    <!-- jQuery Modal -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
@@ -323,6 +325,13 @@ $(document).on('click', '#close-preview', function(){
     );    
 });
 
+<<<<<<< HEAD
+=======
+$(document).ready(function() {
+	
+
+}
+>>>>>>> 52a94c078b2beed2cd43f59c7fcdd1449224ac34
 // $(document).on('click', 'illness_menu', function(e){ 
 // 	alert('hoy!');
 // 	 $('.illness_container').css('display','block');
@@ -510,6 +519,63 @@ CKEDITOR.add
 
 /* **************** ON FUNCTIONS **************** */
 $(document).ready(function(){   
+
+var wrapper1         = $(".field_wrap1"); //Fields wrapper
+var wrapper2         = $(".field_wrap2"); //Fields wrapper
+var wrapper3         = $(".field_wrap3"); //Fields wrapper
+var wrapper4         = $(".field_wrap4"); //Fields wrapper
+var wrapper5         = $(".field_wrap5"); //Fields wrapper
+var wrapper6         = $(".field_wrap6"); //Fields wrapper
+var addcert1_button      = $(".addcert1");
+var addcon1_button      = $(".addcon1"); //Add button ID
+var addcar1_button      = $(".addcar1"); //Add button ID
+var addcar2_button      = $(".addcar2"); //Add button ID
+var addcar3_button      = $(".addcar3"); //Add button ID
+var adddept1_button      = $(".adddept1"); //Add button ID
+$(addcert1_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper1).append('<div class="form-group"><label class="control-label sp10 cols-15"></label><div class="cols-7"><div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div><div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div></div></div></div>'); //add input box
+});
+
+$(addcon1_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper2).append('<div class="form-group"><label class="control-label cols-15"></label><div class="sp10 cols-7"><div class="cols-5"><input type="text" class="form- " name="conference[]"></div><div class="cols-5"><input type="text" class="form- " name="conference[]"></div></div></div>'); //add input box
+});
+
+$(addcar1_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper3).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- " style="width:100px"><option>----年</option></select></div><div class="cols-12"><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-5"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addcar2_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper4).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- " style="width:100px"><option>----年</option></select></div><div class="cols-12"><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-5"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addcar3_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper5).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- " style="width:100px"><option>----年</option></select></div><div class="cols-12"><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-5"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+$(adddept1_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"><button type="button" class="btn btn-success adddept3"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
+});
+
+
+
+$('#totop.float-btn').click(function() { 
+// When arrow is clicked
+$('body,html').animate({
+	scrollTop : 0          // Scroll to top of body
+}, 1000);
+});
+
+$('#tobottom.float-btn').click(function() { 
+	$("html, body").animate({ 
+		scrollTop: $(document).height() 
+	}, 1000);
+});
+
 var i=1; 
 $('#add').click(function(){  
 	alert('nisulod');

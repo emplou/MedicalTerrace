@@ -69,9 +69,10 @@
                 <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
         </div>
-        <div class="field_wrapcert1"></div>
+        <div class="field_wrap1"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
+            
             <div class="cols-7">
                 <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
                 <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
@@ -96,7 +97,6 @@
         <div class="form-group">
             <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
             <div class="cols-5">          
-                <!-- <input type="file" class="form-control" name="img"> -->
                 <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
@@ -108,7 +108,6 @@
         <div class="form-group">
             <label class="control-label cols-15">プロフィール ミニ<br><span>Mini Profile image </span></label>
             <div class="cols-5">          
-                <!-- <input type="file" class="form-control" name="img"> -->
                 <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
@@ -158,12 +157,14 @@
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
         </div>
+        <div class="field_wrap2"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
             <div class="sp10 cols-7">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcon1"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
         
     
@@ -176,6 +177,7 @@
             </div>
             <div class="cols-12">
                 <select id="" name="b_month" class="form- " >
+                    <option value="0">--月</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -213,10 +215,13 @@
             経歴（学歴）<br><span>Career（学歴）</span>
             </div>
             <div class="cols-12">
-                <select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"></select>
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
             </div>
             <div class="cols-12">
                 <select name="c_ac_month[]" class="form- " style="width:100px">
+                        <option value="0">--月</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
@@ -235,13 +240,17 @@
                 <input type="text" id="form-control" name="c_ac_desc[]" class="form- " >
             </div>
         </div>
+        <div class="field_wrap3"></div>
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="aca_year_to" name="c_ac_year_to[]" class="form- " style="width:100px"></select>
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
             </div>
             <div class="cols-12">
                 <select name="c_ac_month_to[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -259,16 +268,20 @@
             <div class="cols-5">
                 <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
             </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar1"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
         <div class="form-group">
             <div class="control-label cols-15">
             経歴（職歴）<br><span>Career（職歴）</span>
             </div>
             <div class="cols-12">
-                <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"></select>
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
             </div>
             <div class="cols-12">
                 <select name="c_we_month[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -286,14 +299,18 @@
             <div class="cols-5">
                 <input type="text" id="form-control" name="c_we_desc[]" class="form- " >
             </div>
+            
         </div>
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"></select>
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
             </div>
             <div class="cols-12">
                 <select name="c_we_month_to[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -311,17 +328,21 @@
             <div class="cols-5">
                 <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
             </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar2"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
-
+        <div class="field_wrap4"></div>
         <div class="form-group">
             <div class="control-label cols-15">
             経歴（賞・表彰）<br><span>Career（賞・表彰）</span>
             </div>
             <div class="cols-12">
-                <select id="awards_year" name="c_aw_year[]" class="form- " style="width:100px"></select>
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
             </div>
             <div class="cols-12">
                 <select name="c_aw_month[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -342,10 +363,13 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="awards_year_to" name="c_aw_year_to[]" class="form- " style="width:100px"></select>
+               <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
             </div>   
             <div class="cols-12">
                 <select name="c_aw_month_to[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
                     <option value="03">March</option>
@@ -363,8 +387,10 @@
             <div class="cols-5">
                     <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " >
             </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar3"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
         </div>
+        <div class="field_wrap5"></div>
         <div class="form-group">
             <div class="control-label cols-15">
             最後の行に現在に至る　<br><span>最後の行に現在に至る</span>
@@ -386,60 +412,86 @@
             </div>
             <div class="cols-5">
                 <select class="form-control" name="hospital_office" >
-                    <option>industry one</option>
+                    <option>山田太郎クリニック</option>
                     <option>industry two</option>
                     <option>industry three</option>
                     <option>industry four</option>
                 </select>
             </div>
+            <div class="cols-2"><button type="button" class="btn-prime hospital"></button></div>
         </div>
         <div class="form-group">
             <div class="control-label cols-15">
             所属診療科・所属科<br><span>Department</span>
             </div>
             <div class="cols-5">
-                <select class="form- " name="department[]" style="width:200px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
-                <select class="form- " name="department[]" style="width:200px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
-                <select class="form- " name="department[]" style="width:200px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select><br>
-                <select class="form- " name="department[]" style="width:200px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
-                <select class="form- " name="department[]" style="width:200px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
-                <select class="form- " name="department[]" style="width:200px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
-                <!-- <br>
-                <input type="text" class="form- " name="department" style="width:200px">
-                <input type="text" class="form- " name="department" style="width:200px">
-                <input type="text" class="form- " name="department" style="width:200px"> -->
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
             </div>
         </div>
+        <div class="form-group">
+            <div class="control-label cols-15"></div>
+            <div class="cols-5">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="field_wrap6"></div>
+        <div class="form-group">
+            <div class="control-label cols-15"></div>
+            <div class="cols-5">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success adddept3"><span class="lnr lnr-plus-circle"></span></button></div>
+        </div>
+            <!-- <br>
+            <input type="text" class="form- " name="department" style="width:200px">
+            <input type="text" class="form- " name="department" style="width:200px">
+            <input type="text" class="form- " name="department" style="width:200px"> -->
+
         <div class="form-group">
             <div class="control-label cols-15">
             医師コメント<br><span>Doctor Comment</span>

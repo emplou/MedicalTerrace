@@ -1976,7 +1976,12 @@ input.form-control {
 .btn.add7,
 .btn.add8,
 .btn.add9,
-.btn.addcert1 {
+.btn.addcert1,
+.btn.addcon1,
+.btn.addcar1,
+.btn.addcar2,
+.btn.addcar3,
+.btn.adddept1 {
   position: absolute;
   color: grey;
   bottom: 0;
@@ -1996,7 +2001,12 @@ input.form-control {
 .btn.add7 span,
 .btn.add8 span,
 .btn.add9 span,
-.btn.addcert1 span {
+.btn.addcert1 span,
+.btn.addcon1 span,
+.btn.addcar1 span,
+.btn.addcar2 span,
+.btn.addcar3 span,
+.btn.adddept1 span  {
   font-size: 22px;
 } 
 
@@ -2036,6 +2046,9 @@ input.form-control {
 }
 .btn-prime.editor {
   background-image: url(/images/icon-editorchange.png);
+}
+.btn-prime.hospital {
+  background-image: url(/images/icon-hospital.png);
 }
 
 .btn-prime div {
