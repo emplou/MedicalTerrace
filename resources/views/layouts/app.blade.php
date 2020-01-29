@@ -275,10 +275,10 @@ input.form-  {
 
 	<script src="lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="lumino/js/bootstrap.min.js"></script>
-	<script src="lumino/js/chart.min.js"></script>
+	<!-- <script src="lumino/js/chart.min.js"></script>
 	<script src="lumino/js/chart-data.js"></script>
 	<script src="lumino/js/easypiechart.js"></script>
-	<script src="lumino/js/easypiechart-data.js"></script>
+	<script src="lumino/js/easypiechart-data.js"></script> -->
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
     <script src="lumino/js/custom.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -296,8 +296,13 @@ input.form-  {
 	<script src="{{ asset('js/functions.js') }}"></script>
 	<!-- <script src="{{ asset('lumino/dist/wickedpicker.js') }}"></script> -->
    <!-- jQuery Modal -->
+<<<<<<< HEAD
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+=======
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+>>>>>>> fccaef8bd39c29edea0894084b8da7aab1159099
 
 <script>
 		window.onload = function () {
@@ -518,6 +523,8 @@ CKEDITOR.add
 //   e.preventDefault();
 //   // $('#total_chq').val(new_chq_no);
 // }
+
+/* **************** ON FUNCTIONS **************** */
 $(document).ready(function(){   
 
 var wrapper1         = $(".field_wrap1"); //Fields wrapper
@@ -702,7 +709,9 @@ function countChar(val) {
         } else {
           $('#charNum').text(200 - len);
         }
-      };
+	  };
+	  
+	  /* **************** END **************** */
 </script>
 
 

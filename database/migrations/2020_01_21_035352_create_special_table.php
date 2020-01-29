@@ -27,7 +27,6 @@ class CreateSpecialTable extends Migration
             $table->string('sp_img');
             $table->string('sp_img_cap');
             $table->string('sp_img_alt');
-            $table->string('sp_seo_box');
             $table->string('sp_seo_txt');
             $table->string('sp_seo_desc');
             $table->string('sp_seo_desc2');
@@ -38,12 +37,7 @@ class CreateSpecialTable extends Migration
             $table->string('sp_tag_dep');
             $table->string('sp_tag_symp');
             $table->string('sp_tag_season');
-            $table->string('sp_tag_season_txt');
             $table->string('sp_tag_free');
-            $table->string('sp_editor');
-            $table->string('sp_cov_date');
-            $table->string('sp_hono');
-            $table->string('sp_note');
             $table->timestamps();
         });
     }
