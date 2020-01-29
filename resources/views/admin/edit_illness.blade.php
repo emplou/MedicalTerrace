@@ -3,7 +3,7 @@
 
 <!-- <h2>Add Illness</h2> -->
 <br>
-{!! Form::open(array('url' => '/save_illness', 'method' => 'post', 'files' => true)) !!}
+{!! Form::open(array('url' => '/edit_illness', 'method' => 'post', 'files' => true)) !!}
 
     <div class="form-horizontal">
 
@@ -94,22 +94,15 @@
                 <div class="col-sm-5">          
                     <select name="doctor" class="form-control">
                         <option value="">選択してください</option>
-
-                        @foreach($doctors as $doc)
-                            <option value="{!! $doc->id !!}">{!! $doc->name !!}</option>
-                        @endforeach
-
+                        <option value="選択してください">選択してください</option>
+                        <option value="選択してください">選択してください</option>
                     </select>
                 </div>
-                <div class="cols-3 rad-buttons">
-                    <input type="radio" id="sprvsn" value="監修" name="role">
-                    <label for="sprvsn">監修</label>
-                    <input type="radio" id="cc" value="取材協力" name="role">
-                    <label for="cc">取材協力</label>
-                    <input type="radio" id="scc" value="監修・取材協力" name="role">
-                    <label for="scc">監修・取材協力</label>
-                </div>  
-                
+                <div class="col-sm-4">
+                    <input type="radio" value="監修" name="role"> 監修&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="取材協力" name="role"> 取材協力&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="監修・取材協力" name="role"> 監修・取材協力
+                </div>
             </div>
 
             <!-- Doctor Comment -->

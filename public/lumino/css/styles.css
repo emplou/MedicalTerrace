@@ -1975,7 +1975,8 @@ input.form-control {
 .btn.add6,
 .btn.add7,
 .btn.add8,
-.btn.add9 {
+.btn.add9,
+.btn.addcert1 {
   position: absolute;
   color: grey;
   bottom: 0;
@@ -1994,7 +1995,8 @@ input.form-control {
 .btn.add6 span,
 .btn.add7 span,
 .btn.add8 span,
-.btn.add9 span {
+.btn.add9 span,
+.btn.addcert1 span {
   font-size: 22px;
 } 
 
@@ -2202,6 +2204,9 @@ label:hover:before {
   position: fixed;
   z-index: 999;
   cursor: pointer;
+  border: 0;
+  color: transparent;
+  background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(/images/icon-save.png);
@@ -2313,4 +2318,12 @@ input[type="button"]::-moz-focus-inner {
 
 .custom-file-label {
   font-size: 12px;
+}
+
+input.form- {
+  height: auto !important;
+}
+
+.sp10 {
+  margin-bottom: 10px;  
 }
