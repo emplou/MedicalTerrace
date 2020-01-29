@@ -47,9 +47,8 @@ class HomeController extends Controller
     }
 
     public function add_illness(){
-        $items = DB::table('illness_category')->pluck('category_name')->all();
-        $doctors = DB::table('dv_doctors')->pluck('name')->all();
-        return view('admin.add_illness', compact('id', 'items', 'doctors'));
+        $doctors = DB::table('dv_doctors')->get();
+        return view('admin.add_illness', compact('doctors'));
     }
 
     public function add_hospital(){
