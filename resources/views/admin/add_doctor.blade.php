@@ -40,44 +40,45 @@
     <div class="form-pads">
         <div class="form-group">
             <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
-            <div class="cols-4">
+            <div class="cols-3">
                 <input type="text" class="form-control" id="url" placeholder="例)yamada_taro" name="url_generation">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15">職位<br><span>Position</span></label>
-            <div class="cols-5">          
+            <div class="cols-3">          
                 <select name="sub_head1a[]" class="form-control">
                     <option value="">選択してください</option>
                 </select>
             </div>
+        </div>
+        <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="sp10 cols-5">          
+            <div class="sp10 cols-3">          
                 <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15">専門医・認定医<br>(取得資格)<br><span>Certificate</span></label>
-            <div class="sp10 cols-8">
-                <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
-                <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
+            <div class="sp10 cols-6">
+                <div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
+                <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
-            <div class="sp10 cols-8">
-                <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
-                <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
+            <div class="sp10 cols-6">
+                <div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
+                <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
         </div>
         <div class="field_wrap1"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            
-            <div class="cols-8">
-                <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
-                <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
-                <div class="cols-1 relative"><button type="button" class="btn btn-success addcert1"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-6">
+                <div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
+                <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcert1"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
 
         <div class="form-group">
@@ -96,7 +97,7 @@
 
         <div class="form-group">
             <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
-            <div class="cols-5">          
+            <div class="cols-45">          
                 <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
@@ -107,7 +108,7 @@
 
         <div class="form-group">
             <label class="control-label cols-15">プロフィール ミニ<br><span>Mini Profile image </span></label>
-            <div class="cols-5">          
+            <div class="cols-45">          
                 <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
@@ -118,14 +119,14 @@
 
         <div class="form-group">
             <label class="control-label cols-15"> 画像キャプション<br><span>Image Caption </span></label>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_caption">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15"> 画像alt<br><span>Image Alt </span></label>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_alt">
             </div>
         </div>
@@ -133,8 +134,9 @@
 
         <div class="form-group">
             <label class="control-label cols-15">業種<br><span>Industry</span></label>
-            <div class="sp10 cols-5">          
+            <div class="sp10 cols-4">          
                 <select class="form-control" name="industry" >
+                    <option>選択してください</option>
                     <option>industry one</option>
                     <option>industry two</option>
                     <option>industry three</option>
@@ -145,14 +147,14 @@
 
         <div class="form-group">
             <label class="control-label cols-15">所属学会<br><span>Conference</span></label>
-            <div class="sp10 cols-65">
+            <div class="sp10 cols-6">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="sp10 cols-65">
+            <div class="sp10 cols-6">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
@@ -160,7 +162,7 @@
         <div class="field_wrap2"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="sp10 cols-65">
+            <div class="sp10 cols-6">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
@@ -172,42 +174,86 @@
         <div class="form-group">
             <div class="control-label cols-15">生年月日<br><span>Birthday</span>
             </div>
-            <div class="cols-12">
-                <select id="b_year" name="b_year" class="form- "></select>
-            </div>
-            <div class="cols-12">
-                <select id="" name="b_month" class="form- " >
-                    <option value="0">--月</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+            <div class="cols-1">
+                <select id="b_year" name="b_year" class="form- ">
+                <option value="0">----年</option>
                 </select>
             </div>
-            <div class="cols-5">
-                <select id="length" name="b_day" class="form- " style="width:100px"></select>
+            <div class="cols-1">
+                <select id="" name="b_month" class="form- " >
+                    <option value="0">--月</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
             </div>
-        </div>
+            <div class="cols-1">
+                <select id="length" name="b_day" class="form- ">
+                <option value="0">--日</option>
+                </select>
+            </div>
+            <div class="form-divide cols-4">
+                <div class="formdiv">
+                    <img src="images/icon-datepicker.png" alt="">
+                </div>
+                <div class="formdiv">
+                    表示<br><span>Display</span>
+                </div>
+                <div class="formdiv">
+                    <input type="checkbox" id="yes1"  name="asn" value="1"> 
+                    <label for="yes1">有<br><span>OK<span></label>
+                </div>
+                <div class="formdiv">
+                    <input type="checkbox" id="no1" name="asn" value="0"> 
+                    <label for="no1">無<br><span>NO</span></label>
+                </div>
+                <div class="formdiv">
+                    <input type="checkbox" id="non1" name="asn" value="0"> 
+                    <label for="non1">生まれ年のみ可<br><span>Birth year OK</span></label>
+                </div>
+            </div>
         <div class="form-group">
             <div class="control-label cols-15">
             出生地<br>Place of birth
             </div>
-            <div class="cols-15">
-                <input type="text" class="form- " name="place_birth">
+            <div class="cols-12">
+                <select id="b_year" name="b_year" class="form- ">
+                <option value="0"></option>
+                </select>
             </div>
-            <div class="cols-15">
-                <span>出身地 | Birthplace</span>
+            <div class="tcenter cols-1">
+                <span>出身地 <br>Birthplace</span>
             </div>
-            <div class="cols-2">
-                <input type="text" class="form- " name="">
+            <div class="cols-12">
+                <select id="b_year" name="b_year" class="form- ">
+                <option value="0"></option>
+                </select>
+            </div>
+            <div class="form-divide cols-4">
+                <div class="formdiv">
+                    表示<br><span>Display</span>
+                </div>
+                <div class="formdiv">
+                    <input type="checkbox" id="yes2"  name="asn" value="1"> 
+                    <label for="yes2">出生地可<br><span>Place of birth OK<span></label>
+                </div>
+                <div class="formdiv">
+                    <input type="checkbox" id="no2" name="asn" value="0"> 
+                    <label for="no2">出身地可<br><span>Birthplace OK</span></label>
+                </div>
+                <div class="formdiv">
+                    <input type="checkbox" id="non2" name="asn" value="0"> 
+                    <label for="non2">無<br><span>NO</span></label>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -215,28 +261,28 @@
             経歴（学歴）<br><span>Career（学歴）</span>
             </div>
             <div class="cols-12">
-                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                <select id="aca_year" name="c_ac_year[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
-            <div class="cols-12">
-                <select name="c_ac_month[]" class="form- " style="width:100px">
+            <div class="cols-1">
+                <select name="c_ac_month[]" class="form- ">
                         <option value="0">--月</option>
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="03">March</option>
-                        <option value="04">April</option>
-                        <option value="05">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                 </select>
             </div>
-            <div class="cols-4">
+            <div class="cols-35">
                 <input type="text" id="form-control" name="c_ac_desc[]" class="form- " >
             </div>
         </div>
@@ -244,28 +290,28 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                <select id="aca_year" name="c_ac_year_to" class="form- " >
                     <option>----年</option>
                 </select>
             </div>
-            <div class="cols-12">
-                <select name="c_ac_month_to[]" class="form- " style="width:100px">
+            <div class="cols-1">
+                <select name="c_ac_month_to[]" class="form- ">
                     <option value="0">--月</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
             </div>
-            <div class="cols-4">
+            <div class="cols-35">
                 <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar1"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -275,134 +321,136 @@
             経歴（職歴）<br><span>Career（職歴）</span>
             </div>
             <div class="cols-12">
-                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                <select id="aca_year" name="c_we_year[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
-            <div class="cols-12">
-                <select name="c_we_month[]" class="form- " style="width:100px">
+            <div class="cols-1">
+                <select name="c_we_month[]" class="form- ">
                     <option value="0">--月</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
             </div>
-            <div class="cols-4">
+            <div class="cols-35">
                 <input type="text" id="form-control" name="c_we_desc[]" class="form- " >
             </div>
             
         </div>
+        <div class="field_wrap4"></div>
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                <select id="aca_year" name="c_ac_year_to" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
-            <div class="cols-12">
-                <select name="c_we_month_to[]" class="form- " style="width:100px">
+            <div class="cols-1">
+                <select name="c_we_month_to[]" class="form- ">
                     <option value="0">--月</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
             </div>
-            <div class="cols-4">
+            <div class="cols-35">
                 <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar2"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
-        <div class="field_wrap4"></div>
+        
         <div class="form-group">
             <div class="control-label cols-15">
             経歴（賞・表彰）<br><span>Career（賞・表彰）</span>
             </div>
             <div class="cols-12">
-                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                <select id="aca_year" name="c_ac_year[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
-            <div class="cols-12">
-                <select name="c_aw_month[]" class="form- " style="width:100px">
+            <div class="cols-1">
+                <select name="c_aw_month[]" class="form- ">
                     <option value="0">--月</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
             </div>
-            <div class="cols-4">
+            <div class="cols-35">
                 <input type="text" id="form-control" name="c_aw_desc[]" class="form- " >
             </div>
-        <div class="form-group">
+            <div class="field_wrap5"></div>
+            <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-               <select id="aca_year" name="----年" class="form- " style="width:100px">
+               <select id="aca_year" name="c_ac_year_to[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>   
-            <div class="cols-12">
-                <select name="c_aw_month_to[]" class="form- " style="width:100px">
+            <div class="cols-1">
+                <select name="c_aw_month_to[]" class="form- ">
                     <option value="0">--月</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
             </div>
-            <div class="cols-4">
+            <div class="cols-35">
                     <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar3"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
         </div>
-        <div class="field_wrap5"></div>
+        
         <div class="form-group">
             <div class="control-label cols-15">
             最後の行に現在に至る　<br><span>最後の行に現在に至る</span>
             </div>
             <div class="cols-5">
-                <div class="cols-11">
+                <div class="formdiv cols-11">
                     <input type="checkbox" id="yes"  name="asn" value="1"> 
-                    <label for="yes">OK</label>
+                    <label for="yes">有<br><span>OK<span></label>
                 </div>
-                <div class="cols-11">
+                <div class="formdiv cols-11">
                     <input type="checkbox" id="no" name="asn" value="0"> 
-                    <label for="no">NO</label>
+                    <label for="no">無<br><span>NO</span></label>
                 </div>
             </div>
         </div>
@@ -410,22 +458,24 @@
             <div class="control-label cols-15">
             所属病院・勤務先<br><span>Hospital・Office</span>
             </div>
-            <div class="cols-5">
-                <select class="form-control" name="hospital_office" >
-                    <option>山田太郎クリニック</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
+            <div class="cols-65">
+                <div class="cols-6">
+                    <select class="form-control" name="hospital_office" >
+                        <option>山田太郎クリニック</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-2"><button type="button" class="btn-prime hospital"></button></div>
             </div>
-            <div class="cols-2"><button type="button" class="btn-prime hospital"></button></div>
         </div>
         <div class="form-group">
             <div class="control-label cols-15">
             エリア<br><span>Prefectures</span>
             </div>
-            <div class="cols-5">
-                <div class="cols-5">
+            <div class="cols-65">
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -433,7 +483,7 @@
                         <option>industry four</option>
                     </select>
                 </div>
-                <div class="cols-5">
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -448,7 +498,7 @@
             所属診療科・所属科<br><span>Department</span>
             </div>
             <div class="cols-65">
-                <div class="cols-5">
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -456,7 +506,15 @@
                         <option>industry four</option>
                     </select>
                 </div>
-                <div class="cols-5">
+                <div class="cols-33">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -469,7 +527,7 @@
         <div class="form-group">
             <div class="control-label cols-15"></div>
             <div class="cols-65">
-                <div class="cols-5">
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -477,7 +535,15 @@
                         <option>industry four</option>
                     </select>
                 </div>
-                <div class="cols-5">
+                <div class="cols-33">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -491,7 +557,7 @@
         <div class="form-group">
             <div class="control-label cols-15"></div>
             <div class="cols-65">
-                <div class="cols-5">
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -499,7 +565,15 @@
                         <option>industry four</option>
                     </select>
                 </div>
-                <div class="cols-5">
+                <div class="cols-33">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         <option>industry two</option>
@@ -519,14 +593,16 @@
             <div class="control-label cols-15">
             医師コメント<br><span>Doctor Comment</span>
             </div>
-            <div class="cols-6">
+            <div class="cols-5">
                 <textarea class="" rows="5" cols="70" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
             </div>
-            <div class="cols-2">
-                <div><b id="charNum">200</b> <b> / 200 </b> </div>
-            </div>
-            <div class="cols-15">
-                <button type="button" class="btn btn-info btn-lg" id="myBtn">Preview</button>
+            <div class="sidediv cols-35">
+                <div class="maxnum"><b id="charNum">200</b> <b> / 200 </b> </div>
+                <div class="sidebots">
+                    <button type="button" class="btn-prime preview" id="myBtn">Preview</button>
+                    <button type="button" class="btn-prime release1" id="myBtn">Release</button>
+                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                </div>
             </div>
         </div>
         <div class="form-grey">
@@ -578,7 +654,9 @@
         </div>
     </div>
 </div>
-
+<input class="save-btn" type="submit">
+<div id="totop" class="float-btn"></div>
+<div id="tobottom" class="float-btn"></div>
 {!! Form::close() !!}
 </div>
 
@@ -650,7 +728,5 @@
 <!-- Link to open the modal -->
 <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
 
-    <input class="save-btn" type="submit">
-    <div id="totop" class="float-btn"></div>
-    <div id="tobottom" class="float-btn"></div>
+    
 @endsection

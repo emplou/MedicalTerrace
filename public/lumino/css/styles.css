@@ -1591,6 +1591,7 @@ header img {
 
 .form-container {
   width: 100%;
+  position: relative;
 }
 .form-pads {
  padding: 15px;
@@ -1810,7 +1811,7 @@ input.form-control {
 }
 .form-group {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   display: table;
   clear: both;
   margin: 0!important;
@@ -1862,6 +1863,14 @@ input.form-control {
   float: left;
   width: 30%;
 }
+.cols-33 {
+  float: left;
+  width: 33%;
+}
+.cols-35 {
+  float: left;
+  width: 35%;
+}
 .cols-4 {
   float: left;
   width: 40%;
@@ -1873,6 +1882,10 @@ input.form-control {
 .cols-5 {
   float: left;
   width: 50%;
+}
+.cols-55 {
+  float: left;
+  width: 55%;
 }
 .cols-6 {
   float: left;
@@ -2028,7 +2041,7 @@ input.form-control {
 
 
 .btn-prime {
-  color: #404040;
+  color: transparent;
   width: 170px;
   height: 35px;
   font-size: 12px;
@@ -2054,6 +2067,18 @@ input.form-control {
 .btn-prime.hospital {
   background-image: url(/images/icon-hospital.png);
 }
+.btn-prime.preview {
+  background-image: url(/images/icon-preview.png);
+}
+.btn-prime.release1 {
+  background-image: url(/images/icon-release1.png);
+}
+.btn-prime.release2 {
+  background-image: url(/images/icon-release2.png);
+}
+
+
+
 
 .btn-prime div {
   width: 90px;
@@ -2252,9 +2277,10 @@ label:hover:before {
 
 .form-progress {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
+  top:20px;
   right: 0;
-  height: 100px;
+  height: 80px;
   display: block;
   position: absolute;
   clear: both;
@@ -2358,6 +2384,7 @@ input.form- {
 }
 
 textarea {
+  padding: 10px;
   border: 1px solid #808080;
   border-radius: 8px;
 }
@@ -2365,4 +2392,44 @@ textarea {
 .divtable {
   padding: 15px;
   background-color:#aee4e4;
+}
+
+.form-divide {
+}
+.formdiv {
+  float: left;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  min-width: 47px;
+}
+.formdiv img {
+  max-width: 35px;
+}
+.formdiv span {
+  font-size: 10px;
+}
+.tcenter {
+  text-align: center;
+}
+
+
+.sidediv {
+  height: 50px;
+}
+
+.sidediv .maxnum {
+  width: 100px;
+  height: 100px;
+  padding-left: 30px;
+  float: left;
+}
+.sidediv .sidebots {
+  width: 120px;
+  height: auto;
+  float: right;
+}
+
+.sidebots button {
+  margin-bottom: 10px;
 }
