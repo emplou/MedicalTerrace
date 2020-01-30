@@ -16,134 +16,7 @@ $.ajaxSetup({
     }
   });
 
-  $(document).ready(function(){   
-    var i=1; 
-    $('#add').click(function(){  
-        alert('nisulod');
-               i++;  
-               $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
-          });  
-    });
-    
-    $('.addfields').on('click', addfields);
-        var i=0;
-        function addfields(e) {
-          e.preventDefault();
-          var copy = $('#addanother').clone();
-    
-          var oneplus=i+1;
-    
-          $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
-          $(copy).find('script').remove();
-          $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
-    
-          $('#addnewdiv').append($(copy).html()+ '<br>');
-          CKEDITOR.replace('textheading_lead['+oneplus+']');
-          i++;  
-    
-        }
-    
-    //birthday year
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('b_year');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    select.value = new Date().getFullYear();
-    
-    var select = document.getElementById('length');    
-    
-    for (var i = 1; i<= 31; i++){
-    
-        var option = document.createElement('option');
-        option.value = i;
-        option.innerHTML = i;
-        select.options.add(option);
-    }
-    
-    //academic
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('aca_year');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('aca_year_to');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    //work exp 
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('work_year');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('work_year_to');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    //awards 
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('awards_year');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    var min = 1990,
-        max = 2021,
-        select = document.getElementById('awards_year_to');
-    
-    for (var i = min; i<=max; i++){
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        select.appendChild(opt);
-    }
-    
-    function countChar(val) {
-            var len = val.value.length;
-            if (len >= 500) {
-              val.value = val.value.substring(0, 500);
-            } else {
-              $('#charNum').text(200 - len);
-            }
-          };
+  
 
   function setObject(name, score) {
     this.name = name;
@@ -266,14 +139,29 @@ $.ajaxSetup({
                     var objJSONdpt = JSON.parse(response['data'][0].department);
                     var input_dpt = "";
                     $.each(objJSONdpt, function (i, v) {
+                        console.log(objJSONdpt);
 
                         input_dpt += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.med_sbj_list+'">';
+
+                        input_dpt += '<option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
 
                         $('#sample_one').click(function() {
                             alert('clicked');
                         })
+
+                        $('#DepartmentsDropDownList').empty();
+                    for(var i in objJSONdpt) {
+                            $('#DepartmentsDropDownList').append('<option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>');
+                        }
+                        for(var a in v.med_sbj_list) {
+                            $('#DepartmentsDropDownList').append('<div> <select><option value="'+ v.med_sbj_list[a] +'">'+ v.med_sbj_list[a] +'</option></select> </div>');
+                        }
+
                     });
                     $("#input_department").html(input_dpt);
+                    $("#DepartmentsDropDownList").html(input_dpt);
+
+                    
 
 
                     //department json not included yet
