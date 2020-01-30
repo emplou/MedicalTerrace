@@ -1811,7 +1811,7 @@ input.form-control {
 .form-group {
   width: 100%;
   max-width: 900px;
-  display: block;
+  display: table;
   clear: both;
   margin: 0!important;
   margin-bottom: 10px !important;
@@ -1877,6 +1877,10 @@ input.form-control {
 .cols-6 {
   float: left;
   width: 60%;
+}
+.cols-65 {
+  float: left;
+  width: 65%;
 }
 .cols-7 {
   float: left;
@@ -2026,7 +2030,7 @@ input.form-control {
 .btn-prime {
   color: #404040;
   width: 170px;
-  height: 40px;
+  height: 35px;
   font-size: 12px;
   line-height: 12px;
   padding: 5px 15px;
@@ -2339,4 +2343,26 @@ input.form- {
 
 .sp10 {
   margin-bottom: 10px;  
+}
+
+.form-grey {
+  padding: 15px;
+  display: table;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #e6e6e6;
+}
+
+.form-grey h3 {
+  font-size: 14px;
+}
+
+textarea {
+  border: 1px solid #808080;
+  border-radius: 8px;
+}
+
+.divtable {
+  padding: 15px;
+  background-color:#aee4e4;
 }
