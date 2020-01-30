@@ -101,12 +101,7 @@
             業種<br>Industry
             </div>
             <div class="col-10">
-                <select class="form-control" name="industry" id="industry" style="width:500px">
-                    <option>industry one</option>
-                    <option>industry two</option>
-                    <option>industry three</option>
-                    <option>industry four</option>
-                </select>
+                <div id="input_industry"></div>
             </div>
         </div>
         <br>
@@ -127,18 +122,18 @@
             <div class="col-10">
                 <select id="b_year" name="b_year" class="form- " style="width:100px"></select>
                 <select id="b_month" name="b_month" class="form- " style="width:100px">
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="03">March</option>
-                        <option value="04">April</option>
-                        <option value="05">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="0September9">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                     </select>
                     <select id="length b_day" name="b_day" class="form- " style="width:100px"></select>
             </div>
@@ -224,14 +219,19 @@
             </div>
         </div>
         <br>
-        <select id="DepartmentsDropDownList" class="form-control" name="department[]">
-        <option> -- Loading items...</option>
-        </select>
         <div class="row">
             <div class="col-12">
                 <input type="submit" value="保存 | SAVE">
             </div>
         </div>
+        <br>
+        <select class="form-DepartmentsDropDownList" name="hospital_office" id="hospital_office" style="width:500px">
+            <option value="industry one">industry one</option>
+            <option value="industry two">industry two</option>
+            <option value="industry three">industry three</option>
+            <option value="industry four">industry four</option>
+            <option value="industry five">industry five</option>
+                </select>
           
         </div>
       <!-- Modal -->

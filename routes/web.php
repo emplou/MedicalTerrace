@@ -48,3 +48,6 @@ Route::post('/save_hospital','HomeController@save_hospital');
 Route::post('/save_illness','HomeController@save_illness');
 Route::post('/save_doctor','HomeController@save_doctor');
 Route::post('/save_special','HomeController@save_special');
+
+//get data
+Route::get('/get_all_department','HomeController@get_all_department');

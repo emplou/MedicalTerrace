@@ -270,4 +270,387 @@
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar1"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
+        <div class="form-group">
+            <div class="control-label cols-15">
+            経歴（職歴）<br><span>Career（職歴）</span>
+            </div>
+            <div class="cols-12">
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
+            </div>
+            <div class="cols-12">
+                <select name="c_we_month[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="cols-4">
+                <input type="text" id="form-control" name="c_we_desc[]" class="form- " >
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <div class="cols-15"></div>
+            <div class="cols-12">
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
+            </div>
+            <div class="cols-12">
+                <select name="c_we_month_to[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="cols-4">
+                <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
+            </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar2"><span class="lnr lnr-plus-circle"></span></button></div>
+        </div>
+        <div class="field_wrap4"></div>
+        <div class="form-group">
+            <div class="control-label cols-15">
+            経歴（賞・表彰）<br><span>Career（賞・表彰）</span>
+            </div>
+            <div class="cols-12">
+                <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
+            </div>
+            <div class="cols-12">
+                <select name="c_aw_month[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="cols-4">
+                <input type="text" id="form-control" name="c_aw_desc[]" class="form- " >
+            </div>
+        <div class="form-group">
+            <div class="cols-15"></div>
+            <div class="cols-12">
+               <select id="aca_year" name="----年" class="form- " style="width:100px">
+                    <option>----年</option>
+                </select>
+            </div>   
+            <div class="cols-12">
+                <select name="c_aw_month_to[]" class="form- " style="width:100px">
+                    <option value="0">--月</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="cols-4">
+                    <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " >
+            </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar3"><span class="lnr lnr-plus-circle"></span></button></div>
+        </div>
+        </div>
+        <div class="field_wrap5"></div>
+        <div class="form-group">
+            <div class="control-label cols-15">
+            最後の行に現在に至る　<br><span>最後の行に現在に至る</span>
+            </div>
+            <div class="cols-5">
+                <div class="cols-11">
+                    <input type="checkbox" id="yes"  name="asn" value="1"> 
+                    <label for="yes">OK</label>
+                </div>
+                <div class="cols-11">
+                    <input type="checkbox" id="no" name="asn" value="0"> 
+                    <label for="no">NO</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label cols-15">
+            所属病院・勤務先<br><span>Hospital・Office</span>
+            </div>
+            <div class="cols-5">
+                <select class="form-control" name="hospital_office" >
+                    <option>山田太郎クリニック</option>
+                    <option>industry two</option>
+                    <option>industry three</option>
+                    <option>industry four</option>
+                </select>
+            </div>
+            <div class="cols-2"><button type="button" class="btn-prime hospital"></button></div>
+        </div>
+        <div class="form-group">
+            <div class="control-label cols-15">
+            エリア<br><span>Prefectures</span>
+            </div>
+            <div class="cols-5">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label cols-15">
+            所属診療科・所属科<br><span>Department</span>
+            </div>
+            <div class="cols-65">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label cols-15"></div>
+            <div class="cols-65">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="field_wrap6"></div>
+        <div class="form-group">
+            <div class="control-label cols-15"></div>
+            <div class="cols-65">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success adddept1"><span class="lnr lnr-plus-circle"></span></button></div>
+        </div>
+            <!-- <br>
+            <input type="text" class="form- " name="department" style="width:200px">
+            <input type="text" class="form- " name="department" style="width:200px">
+            <input type="text" class="form- " name="department" style="width:200px"> -->
+
+        <div class="form-group">
+            <div class="control-label cols-15">
+            医師コメント<br><span>Doctor Comment</span>
+            </div>
+            <div class="cols-6">
+                <textarea class="" rows="5" cols="70" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
+            </div>
+            <div class="cols-2">
+                <div><b id="charNum">200</b> <b> / 200 </b> </div>
+            </div>
+            <div class="cols-15">
+                <button type="button" class="btn btn-info btn-lg" id="myBtn">Preview</button>
+            </div>
+        </div>
+        <div class="form-grey">
+            <h3>ここより下部は、web上で公開されません。当社が定める個人情報保護方針に則って厳重に保管いたします。</h3>
+            <div class="form-group">
+                <label class="control-label cols-15">メールアドレス<br><span>Mail Address</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="mail_address">
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">資格免許証(医師等)<br><span>License </span></label>
+                <div class="cols-5">          
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
+                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">登録証(医師会等)<br><span>Registration Certificate </span></label>
+                <div class="cols-5">          
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
+                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">家族構成<br><span>Family Structure</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="family_structure">
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">趣味<br><span>Hobby</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="hobby">
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">座右の銘<br><span>Inscription</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="inscription">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{!! Form::close() !!}
+</div>
+
+<div class="divtable">
+    <div class="form-group">
+        <label class="control-label cols-15">エディター担当者<br><span>Editor</span></label>
+            <div class="cols-4">
+            {!! Form::text('Editor', null , ['class' => 'form-control']) !!}
+            </div>
+            <div class="cols-15">
+                <button type="button" class="btn-prime editor"></button>
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label cols-15">アポイント履歴<br><span>Appointment History</span></label>
+            <div class="cols-4">
+            {!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label cols-15">会話メモ<br><span>Conversation Note</span></label>
+            <div class="cols-4">
+            {!! Form::textarea('Honorarium', null , ['class' => 'form-control']) !!}
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label cols-15">エディターの所見<br><span>Conversation Note</span></label>
+            <div class="cols-4">
+            {!! Form::textarea('Note', null , ['class' => 'form-control']) !!}
+            </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+            <h2>医師・医療従事者</h2>
+             <p>|岐阜|岐阜市|小児科|アレルギー科|新生児内科|</p>
+             <p>日本小児科学会認定小児科専門医・日本アレルギー学会 認定専門医 医学博士</p>
+             <p>浅野 勉 -Tsutomu Asano-</p>
+             <p>2019.06.21</p>
+             <img src="images/avatar.jpg" alt="">
+             <ul>
+                 <li>所属学会 日本小児科学会・日本アレルギー学会・日本小児アレル ギー学会・日本新生児成育医学会</li>
+                 <li>市立長浜病院小児科・NICU 部長 岐阜大学医学部附属病院新生児集中治療部 臨床講師 2015年9月「のりたけキッズベビークリニック」開院 現在に至る</li>
+                 <li>コメント 医師プロフィールページに掲載されるコメントをお願 いします。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章は ダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大 きさ、量、字間、行間等を確認するために入れています。</li>
+            </ul>
+             <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- Link to open the modal -->
+<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+
+    <input class="save-btn" type="submit">
+    <div id="totop" class="float-btn"></div>
+    <div id="tobottom" class="float-btn"></div>
 @endsection

@@ -1005,4 +1005,10 @@ class HomeController extends Controller
 
         return redirect::back()->with('message','Successfully Encoded');
     }
+
+    public function get_all_department(){
+        $value['data'] = DB::table('hospital_departments')->get();
+        $fetch = json_encode($value);
+        return $fetch;
+    }
 }
