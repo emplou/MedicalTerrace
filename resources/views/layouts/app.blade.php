@@ -555,7 +555,7 @@ $(addcar3_button).click(function(e){ //on add input button click
 });
 $(adddept1_button).click(function(e){ //on add input button click
 	e.preventDefault();
-	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"><button type="button" class="btn btn-success adddept3"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
+	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
 });
 
 

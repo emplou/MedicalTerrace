@@ -73,7 +73,8 @@ class HomeController extends Controller
         return view('admin.hospital_list', compact('hospitals'));
     }
     public function special_list(){
-        return view('admin.special_list');
+        $special = DB::table('special')->get();
+        return view('admin.special_list', compact('special'));
     }
 
     public function save_special(Request $request){
@@ -847,6 +848,13 @@ class HomeController extends Controller
         $value['data'] = DB::table('dv_hospital')->where('id','=',$id)->get();
         $fetch = json_encode($value);
         return $fetch;
+    }
+
+    public function modal_edit_special($id){
+        $value['data'] = DB::table('special')->where('id','=',$id)->get();
+        $fetch = json_encode($value);
+        return $fetch;
+        // return $value;
     }
 
     public function save_edit_doctor(){

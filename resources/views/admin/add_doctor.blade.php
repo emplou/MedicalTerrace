@@ -60,11 +60,11 @@
 
         <div class="form-group">
             <label class="control-label cols-15">専門医・認定医<br>(取得資格)<br><span>Certificate</span></label>
-            <div class="sp10 cols-7">
+            <div class="sp10 cols-8">
                 <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
                 <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
-            <div class="sp10 cols-7">
+            <div class="sp10 cols-8">
                 <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
                 <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
@@ -73,7 +73,7 @@
         <div class="form-group">
             <label class="control-label cols-15"></label>
             
-            <div class="cols-7">
+            <div class="cols-8">
                 <div class="cols-4"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
                 <div class="cols-4"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
                 <div class="cols-1 relative"><button type="button" class="btn btn-success addcert1"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -145,14 +145,14 @@
 
         <div class="form-group">
             <label class="control-label cols-15">所属学会<br><span>Conference</span></label>
-            <div class="sp10 cols-7">
+            <div class="sp10 cols-65">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
         </div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="sp10 cols-7">
+            <div class="sp10 cols-65">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
@@ -160,7 +160,7 @@
         <div class="field_wrap2"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="sp10 cols-7">
+            <div class="sp10 cols-65">
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
@@ -236,7 +236,7 @@
                         <option value="12">December</option>
                 </select>
             </div>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" id="form-control" name="c_ac_desc[]" class="form- " >
             </div>
         </div>
@@ -265,7 +265,7 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar1"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -296,7 +296,7 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" id="form-control" name="c_we_desc[]" class="form- " >
             </div>
             
@@ -325,7 +325,7 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar2"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -357,7 +357,7 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="cols-5">
+            <div class="cols-4">
                 <input type="text" id="form-control" name="c_aw_desc[]" class="form- " >
             </div>
         <div class="form-group">
@@ -384,7 +384,7 @@
                     <option value="12">December</option>
                 </select>
             </div>
-            <div class="cols-5">
+            <div class="cols-4">
                     <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcar3"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -422,7 +422,7 @@
         </div>
         <div class="form-group">
             <div class="control-label cols-15">
-            所属診療科・所属科<br><span>Department</span>
+            エリア<br><span>Prefectures</span>
             </div>
             <div class="cols-5">
                 <div class="cols-5">
@@ -444,8 +444,31 @@
             </div>
         </div>
         <div class="form-group">
+            <div class="control-label cols-15">
+            所属診療科・所属科<br><span>Department</span>
+            </div>
+            <div class="cols-65">
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+                <div class="cols-5">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        <option>industry two</option>
+                        <option>industry three</option>
+                        <option>industry four</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
             <div class="control-label cols-15"></div>
-            <div class="cols-5">
+            <div class="cols-65">
                 <div class="cols-5">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
@@ -467,7 +490,7 @@
         <div class="field_wrap6"></div>
         <div class="form-group">
             <div class="control-label cols-15"></div>
-            <div class="cols-5">
+            <div class="cols-65">
                 <div class="cols-5">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
@@ -485,7 +508,7 @@
                     </select>
                 </div>
             </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success adddept3"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success adddept1"><span class="lnr lnr-plus-circle"></span></button></div>
         </div>
             <!-- <br>
             <input type="text" class="form- " name="department" style="width:200px">
@@ -496,42 +519,101 @@
             <div class="control-label cols-15">
             医師コメント<br><span>Doctor Comment</span>
             </div>
-            <div class="cols-4">
-                <textarea class="" rows="5" cols="60" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
+            <div class="cols-6">
+                <textarea class="" rows="5" cols="70" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
             </div>
-            <div class="cols-3">
+            <div class="cols-2">
                 <div><b id="charNum">200</b> <b> / 200 </b> </div>
             </div>
-            <div class="cols-1">
+            <div class="cols-15">
                 <button type="button" class="btn btn-info btn-lg" id="myBtn">Preview</button>
             </div>
         </div>
-        
+        <div class="form-grey">
+            <h3>ここより下部は、web上で公開されません。当社が定める個人情報保護方針に則って厳重に保管いたします。</h3>
+            <div class="form-group">
+                <label class="control-label cols-15">メールアドレス<br><span>Mail Address</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="mail_address">
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">資格免許証(医師等)<br><span>License </span></label>
+                <div class="cols-5">          
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
+                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">登録証(医師会等)<br><span>Registration Certificate </span></label>
+                <div class="cols-5">          
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
+                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">家族構成<br><span>Family Structure</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="family_structure">
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">趣味<br><span>Hobby</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="hobby">
+                    </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label cols-15">座右の銘<br><span>Inscription</span></label>
+                    <div class="cols-4">
+                        <input type="text" class="form-control" id="url" name="inscription">
+                    </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
 {!! Form::close() !!}
 </div>
 
-<table class="table" style="background-color:#aee4e4;">
-	<tr>
-		<td>エディター担当者<br>Editor</td>
-		<td>{!! Form::text('Editor', null , ['class' => 'form-control']) !!}</td>
-		<td><button type="button" class="btn-prime editor"></button></td>
-	</tr>
-	<tr>
-		<td>アポイント履歴<br>Appointment History</td>
-		<td>{!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}</td>
-	</tr>
-	<tr>
-		<td>会話メモ<br>Conversation Note</td>
-		<td>{!! Form::textarea('Honorarium', null , ['class' => 'form-control']) !!}</td>
-	</tr>
-	<tr>
-		<td>エディターの所見<br>Editor Opinion</td>
-		<td>{!! Form::textarea('Note', null , ['class' => 'form-control']) !!}</td>
-	</tr>
-</table>
+<div class="divtable">
+    <div class="form-group">
+        <label class="control-label cols-15">エディター担当者<br><span>Editor</span></label>
+            <div class="cols-4">
+            {!! Form::text('Editor', null , ['class' => 'form-control']) !!}
+            </div>
+            <div class="cols-15">
+                <button type="button" class="btn-prime editor"></button>
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label cols-15">アポイント履歴<br><span>Appointment History</span></label>
+            <div class="cols-4">
+            {!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label cols-15">会話メモ<br><span>Conversation Note</span></label>
+            <div class="cols-4">
+            {!! Form::textarea('Honorarium', null , ['class' => 'form-control']) !!}
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label cols-15">エディターの所見<br><span>Conversation Note</span></label>
+            <div class="cols-4">
+            {!! Form::textarea('Note', null , ['class' => 'form-control']) !!}
+            </div>
+    </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
