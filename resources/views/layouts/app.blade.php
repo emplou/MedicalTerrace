@@ -275,7 +275,7 @@ input.form-  {
 
  	<script src="lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="lumino/js/bootstrap.min.js"></script>
- 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
 	<script src="lumino/js/chart.min.js"></script>
@@ -325,13 +325,10 @@ $(document).on('click', '#close-preview', function(){
     );    
 });
 
-<<<<<<< HEAD
-=======
 $(document).ready(function() {
 	
 
-}
->>>>>>> 52a94c078b2beed2cd43f59c7fcdd1449224ac34
+});
 // $(document).on('click', 'illness_menu', function(e){ 
 // 	alert('hoy!');
 // 	 $('.illness_container').css('display','block');

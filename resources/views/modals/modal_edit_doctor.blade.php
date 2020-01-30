@@ -224,6 +224,9 @@
             </div>
         </div>
         <br>
+        <select id="DepartmentsDropDownList" class="form-control" name="department[]">
+        <option> -- Loading items...</option>
+        </select>
         <div class="row">
             <div class="col-12">
                 <input type="submit" value="保存 | SAVE">
