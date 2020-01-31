@@ -98,9 +98,9 @@
         <div class="form-group">
             <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
             <div class="cols-45">          
-                <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
-                <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                <div class="custom-file-upload doc">
+                <!--<label for="file">File: </label>--> 
+                    <input type="file" id="file" name="myfiles[]" name="profile_image_field" multiple />
                 </div>
 
             </div>
@@ -109,9 +109,9 @@
         <div class="form-group">
             <label class="control-label cols-15">プロフィール ミニ<br><span>Mini Profile image </span></label>
             <div class="cols-45">          
-                <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
-                <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                <div class="custom-file-upload doc">
+                <!--<label for="file">File: </label>--> 
+                    <input type="file" id="file" name="myfiles[]" name="profile_image_field" multiple />
                 </div>
             </div>
         </div>
@@ -290,7 +290,7 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="aca_year" name="c_ac_year_to" class="form- " >
+                <select id="aca_year_to" name="c_ac_year_to" class="form- " >
                     <option>----年</option>
                 </select>
             </div>
@@ -321,7 +321,7 @@
             経歴（職歴）<br><span>Career（職歴）</span>
             </div>
             <div class="cols-12">
-                <select id="aca_year" name="c_we_year[]" class="form- ">
+                <select id="work_year" name="c_we_year[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
@@ -351,7 +351,7 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-                <select id="aca_year" name="c_ac_year_to" class="form- ">
+                <select id="work_year_to" name="c_ac_year_to" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
@@ -383,7 +383,7 @@
             経歴（賞・表彰）<br><span>Career（賞・表彰）</span>
             </div>
             <div class="cols-12">
-                <select id="aca_year" name="c_ac_year[]" class="form- ">
+                <select id="awards_year" name="c_ac_year[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>
@@ -411,7 +411,7 @@
             <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-               <select id="aca_year" name="c_ac_year_to[]" class="form- ">
+               <select id="awards_year_to" name="c_ac_year_to[]" class="form- ">
                     <option>----年</option>
                 </select>
             </div>   
@@ -616,19 +616,19 @@
             <div class="form-group">
                 <label class="control-label cols-15">資格免許証(医師等)<br><span>License </span></label>
                 <div class="cols-5">          
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
-                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                    <div class="custom-file-upload doc">
+                    <!--<label for="file">File: </label>--> 
+                        <input type="file" id="file" name="myfiles[]" name="profile_image_field" multiple />
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label cols-15">登録証(医師会等)<br><span>Registration Certificate </span></label>
                 <div class="cols-5">          
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
-                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
-                    </div>
+                    <div class="custom-file-upload doc">
+                    <!--<label for="file">File: </label>--> 
+                    <input type="file" id="file"  name="profile_image_field"/>
+                </div>
                 </div>
             </div>
 
