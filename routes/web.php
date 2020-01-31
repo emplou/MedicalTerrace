@@ -41,7 +41,7 @@ Route::get('/special_list','HomeController@special_list');
 Route::get('/save_edit_hospital','HomeController@save_edit_hospital');
 Route::get('/modal_edit_doctor/{id}','HomeController@modal_edit_doctor');
 Route::get('/modal_edit_hospital/{id}','HomeController@modal_edit_hospital');
-Route::get('/modal_edit_hospital/{id}','HomeController@modal_edit_hospital');
+Route::get('/modal_edit_special/{id}','HomeController@modal_edit_special');
 
 //post
 Route::post('/save_hospital','HomeController@save_hospital');

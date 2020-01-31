@@ -351,35 +351,65 @@ $.ajaxSetup({
                         // special category dropdown not included
                         $("#sts").val(response['data'][0].sp_title_shldr);
                         $("#st").val(response['data'][0].sp_title);
-                        // doctor dropdown not included               
+                        // doctor dropdown not included            
+                        $("#cmt").val(response['data'][0].sp_doc_cmt);   
 
                         var objJSON = JSON.parse(response['data'][0].sp_seo_kwords);
-                        var inputs = "";
+                        var input_seo = "";
                         $.each(objJSON, function (i, v) {
-                            inputs += '<input type="text" class="form- " name="kword[]" id="kword" style="width:300px" value="'+v.med_sbj_list+'">';
+                            input_seo += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" id="kword" value="'+v.kword+'"></div>';
                         });
-                        $("#input_container").html(inputs);
+                        $("#input_seo").html(input_seo);
                     
-                        $("#name").val(response['data'][0].name);
-                        $("#alpha_name").val(response['data'][0].alphabet_name);
+                        // $("#name").val(response['data'][0].name);
+                        // $("#alpha_name").val(response['data'][0].alphabet_name);
                         //image not included yet
-                        $("#img_caption").val(response['data'][0].image_caption);
-                        $("#img_alt").val(response['data'][0].image_alt);
+                        $("#img_cap").val(response['data'][0].sp_img_cap);
+                        $("#img_alt").val(response['data'][0].sp_img_alt);
                         //industry dropdown not included yet
-                        var objJSON = JSON.parse(response['data'][0].certificate);
+
+                        $("#seo_txt").val(response['data'][0].sp_seo_txt);
+
+                        // Lead Ceditor
+                        var objJSON = JSON.parse(response['data'][0].sp_txt);
+                        var input_lead = "";
+                        $.each(objJSON, function (i, v) {
+                            input_lead += '<div class="cols-10"><textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor">'+v.lead_ckeditor+'</textarea></div>';
+                        });
+                        $("#input_lead").html(input_lead);
+                        
+                        // H2 Retrieval
+                        var objJSON = JSON.parse(response['data'][0].sp_h2);
                         var inputs = "";
                         $.each(objJSON, function (i, v) {
-                            inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:300px" value="'+v.med_sbj_list+'">';
+                            inputs += '<div class="cols-3"><input type="text" class="form-control" placeholder="" value="'+v.h2+'" name="h2[]"></div>';
                         });
-                        $("#input_container").html(inputs);
+                        $("#input_h2").html(inputs);
 
-                        var objJSONconf = JSON.parse(response['data'][0].conference);
-                        var input_conf = "";
+                        // Tag Symptoms Retrieval
+                        var objJSONconf = JSON.parse(response['data'][0].sp_tag_symp);
+                        var input_sy = "";
                         $.each(objJSONconf, function (i, v) {
-                            input_conf += '<input type="text" class="form- " name="conference[]" id="conference" style="width:300px" value="'+v.med_sbj_list+'">';
+                            input_sy += '<div class="cols-3"><input type="text" class="form-control" name="tag_sy[]" id="tag_sy" value="'+v.tag_sy+'"></div>';
                         });
-                        $("#input_conference").html(input_conf);
+                        $("#input_sy").html(input_sy);
 
+                        // Tag Season Text Retrieval
+                        var objJSONconf = JSON.parse(response['data'][0].sp_ta_season_txt);
+                        var input_tst = "";
+                        $.each(objJSONconf, function (i, v) {
+                            input_tst += '<div class="cols-3"><input type="text" class="form-control" name="tag_txt[]" id="tag_txt" value="'+v.tag_txt+'"></div>';
+                        });
+                        $("#input_tst").html(input_tst);
+
+                        // Tag Free
+                        var objJSONconf = JSON.parse(response['data'][0].sp_tag_free);
+                        var input_free = "";
+                        $.each(objJSONconf, function (i, v) {
+                            input_free += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
+                        });
+                        $("#input_free").html(input_free);
+                        
                         //birthday not included yet
                         $("#place_birth").val(response['data'][0].place_of_birth);
                         //the 3 careers not included yet

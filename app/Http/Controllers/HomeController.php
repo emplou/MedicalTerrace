@@ -57,11 +57,8 @@ class HomeController extends Controller
     }
 
     public function add_special(){
-        return view('admin.add_special');
-    }
-
-    public function illness_list(){
-        return view('admin.illness_list');
+        $doctors = DB::table('dv_doctors')->get();
+        return view('admin.add_special', compact('doctors'));
     }
 
     public function doctor_list(){
@@ -72,6 +69,12 @@ class HomeController extends Controller
         $hospitals = DB::table('dv_hospital')->get();
         return view('admin.hospital_list', compact('hospitals'));
     }
+
+    public function illness_list(){
+        $illness = DB::table('illness')->get();
+        return view('admin.illness_list', compact('illness'));
+    }
+
     public function special_list(){
         $special = DB::table('special')->get();
         return view('admin.special_list', compact('special'));
@@ -249,7 +252,7 @@ class HomeController extends Controller
         $special->sp_tag_dep           = $jsondep_list; //it should be json script when added
         $special->sp_tag_symp          = $jsonsy_list; //it should be json script when added
         $special->sp_tag_season        = $jsons_list; //it should be json script when added
-        $special->sp_tag_free          = $jsontxt_list; //it should be json script when added
+        $special->sp_ta_season_txt     = $jsontxt_list; //it should be json script when added
         $special->sp_tag_free          = $jsonf_list; //it should be json script when added
         $special->save();
 

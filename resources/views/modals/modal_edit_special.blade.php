@@ -7,7 +7,7 @@
     <div class="modal-content">
     
 <div class="modal-header" style="color: black; background-color: #7CD5FF">
-<h4 class="modal-title"><b>Edit Doctor</b></h4>
+<h4 class="modal-title"><b>Edit Special</b></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
@@ -17,14 +17,14 @@
                 <div class="form-group">
                     <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
                     <div class="cols-4">
-                        <input type="text" class="form-control" placeholder="例）special_kids" name="url">
+                        <input type="text" class="form-control" id="url" placeholder="例）special_kids" name="url">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label cols-15">掲載誌<br><span>Magazine</span></label>
                     <div class="cols-4">          
-                        <input type="text" class="form-control" placeholder="例）GL1907" name="magazine">
+                        <input type="text" class="form-control" id="magazinef" placeholder="例）GL1907" name="magazine">
                     </div>
                 </div>
 
@@ -145,8 +145,7 @@
                 <div class="form-group full">
                     <label class="control-label cols-15">医師コメント<br><span>Doctor Comment</span></label>
                     <div class="cols-5">          
-                        <textarea class="form-control cmt" name="cmt" rows="5" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-                        </textarea>
+                        <textarea class="form-control cmt" name="cmt" id="cmt" rows="5" maxlength="200"></textarea>
                     </div>
                     <div class="cols-2">          
                         <span id="rchars3">0</span>/200
@@ -184,16 +183,12 @@
                     <label class="control-label cols-15">リード<br><span>Text of Subheading</span></label>
                         <div class="cols-7">   
                             <!-- add new textarea here -->
-                            <div class="field_wrap2"></div>
-                            <div id="addanother1">
-                                <div class="cols-10">        
-                                    <textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-
-                                    </textarea>
-                                </div>
-                            </div>
+                            <!-- <div class="field_wrap2"></div>
+                            <div id="addanother1"> -->
+                            <div id="input_lead"></div>
+                            <!-- </div> -->
                         </div>
-                        <div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div> 
+                       <!--  <div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div>  -->
                         
                 </div>
                 <hr>
@@ -313,12 +308,13 @@
                 <div class="form-group">
                     <label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
                     <div class="cols-8">
-                        <div class="cols-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword[]"></div>
+                        <!-- <div class="cols-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword[]"></div>
                         <div class="cols-3"><input type="text" class="form-control" id="kword2" placeholder="例）子どもの病気" name="kword[]"></div>
-                        <div class="cols-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword[]"></div>
+                        <div class="cols-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword[]"></div> -->
+                        <div id="input_seo"></div>
                     </div>
                 </div>
-                <div class="form-group">
+               <!--  <div class="form-group">
                     <div class="control-label cols-15"></div>
                     <div class="cols-8">
                         <div class="cols-3"><input type="text" class="form-control" id="kword4" placeholder="例）ヘルパンギーナ" name="kword[]"></div>
@@ -334,7 +330,7 @@
                         <div class="cols-3"><input type="text" class="form-control" id="kword8" placeholder="" name="kword[]"></div>
                         <div class="cols-3 msg">※裏設定。検索させたい関連ワードを表記</div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
@@ -351,7 +347,7 @@
                 <div class="form-group">
                     <div class="cols-15"></div>
                     <div class="cols-5">   
-                        <textarea class="form-control seo" name="seo_txt" maxlength="35">タイトルタグをカスタマイズする場合はこちらに入力ください<br><span>Meta description for SEO</span></textarea>
+                        <textarea class="form-control seo" name="seo_txt" maxlength="35" id="seo_txt"></textarea>
                     </div>
                     <div class="cols-1">   
                         <br>
@@ -405,12 +401,12 @@
                     <label class="control-label cols-15">h2</label>
                     <div class="cols-7">
                         <!-- add h2 fields -->
-                        <div class="field_wrap5"></div>
-
-                        <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div>
+                        <!-- <div class="field_wrap5"></div> -->
+                        <div id="input_h2"></div>
+                        <!-- <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div>
                         <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
-                        <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
-                        <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
+                        <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div> -->
+                        <!-- <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div> -->
                     </div>
                 </div>
 
@@ -1085,7 +1081,10 @@
                 <div class="form-group">
                     <label class="control-label cols-15">タグ(症状) <br> <span>Tag(Symptoms)</span></label>
                     <div class="cols-7">   
-                        <div class="cols-3">
+
+                        <div id="input_sy"></div>
+
+                        <!-- <div class="cols-3">
                             <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
                         </div>
                         <div class="cols-3">
@@ -1110,7 +1109,7 @@
                         </div>
                         <div class="cols-1 relative">
                             <button type="button" class="btn btn-success add7"><span class="lnr lnr-plus-circle"></span></button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -1185,9 +1184,9 @@
 
                         <div class="clear"></div>
 
-                        <div class="field_wrap8"></div>
-
-                        <div class="cols-3">
+                        <!-- <div class="field_wrap8"></div> -->
+                        <div id="input_tst"></div>
+                        <!-- <div class="cols-3">
                             <input type="text" class="form-control" name="tag_txt[]" placeholder="">
                         </div>
                         <div class="cols-3">
@@ -1195,8 +1194,8 @@
                         </div>
                         <div class="cols-3">
                             <input type="text" class="form-control" name="tag_txt[]" placeholder="">
-                        </div>
-                        <div class="cols-1 relative"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
+                        </div> -->
+                        <!-- <div class="cols-1 relative"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div> -->
                     </div>
                 </div>
 
@@ -1204,7 +1203,9 @@
                     <label class="control-label cols-15">タグ(フリー入力)<br><span>Tag(free)</span></label>
                     <div class="cols-7"> 
 
-                        <div class="field_wrap9"></div>
+                        <div id="input_free"></div>
+
+                        <!-- <div class="field_wrap9"></div>
 
                         <div class="cols-3">
                             <input type="text" class="form-control" name="tag_f[]" placeholder="">
@@ -1215,56 +1216,12 @@
                         <div class="cols-3">
                             <input type="text" class="form-control" name="tag_f[]" placeholder="">
                         </div>
-                        <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
+                        <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div> -->
                         
                     </div>
                 </div>
             </div>
-            <div class="form-nopads">
-                <!-- Editor Page -->
-                <div class="editor-page">
-                    <div class="form-group">
-                        <label class="control-label cols-15">エディター担当者</label>
-                        <div class="cols-5">   
-                            <input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">&nbsp;&nbsp;&nbsp;
-                        </div>
-                        <div class="cols-2"><button type="button" class="btn-prime editor"></button></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label cols-15">取材日</label>
-                        <div class="cols-3">   
-                            <select class="form-control" name="c1">
-                                <option value="">－－－－年</option>
-                            </select>
-                        </div>
-                        <div class="cols-1">   
-                            <select class="form-control" name="c2">
-                                <option value="">－－月</option>
-                            </select>
-                        </div>
-                        <div class="cols-1">   
-                            <select class="form-control" name="c2">
-                                <option value="">－－日</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label cols-15">謝礼</label>
-                        <div class="cols-7">   
-                            <input type="text" name="hono" class="form-control" placeholder="例）10,000円">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label cols-15">メモ</label>
-                        <div class="cols-7">   
-                            <textarea class="form-control" name="note"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <input type="submit" name="save" value="" class="save-btn">
             <div id="totop" class="float-btn"></div>
             <div id="tobottom" class="float-btn"></div>
