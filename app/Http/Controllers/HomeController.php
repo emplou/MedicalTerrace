@@ -59,6 +59,14 @@ class HomeController extends Controller
     public function add_special(){
         $doctors = DB::table('dv_doctors')->get();
         return view('admin.add_special', compact('doctors'));
+<<<<<<< HEAD
+=======
+    }
+
+    public function illness_list(){
+        $illness = DB::table('illness')->get();
+        return view('admin.illness_list', compact('illness'));
+>>>>>>> e78b6fe0496fa10cf397c4da1e183aa3909715d8
     }
 
     public function doctor_list(){
@@ -1007,5 +1015,11 @@ class HomeController extends Controller
         $doctor->save();
 
         return redirect::back()->with('message','Successfully Encoded');
+    }
+
+    public function get_all_department(){
+        $value['data'] = DB::table('hospital_departments')->get();
+        $fetch = json_encode($value);
+        return $fetch;
     }
 }

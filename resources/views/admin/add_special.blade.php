@@ -185,11 +185,10 @@
                 <label class="control-label cols-15">メイン画像<br><span>Image</span></label>
                 <div class="cols-5">          
 					<!-- <input type="file" class="form-control" name="img"> -->
-					<div class="custom-file">
-					<input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="img">
-					<label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+					<div class="custom-file-upload">
+    				<!--<label for="file">File: </label>--> 
+						<input type="file" id="file" name="myfiles[]" name="img" multiple />
 					</div>
-
                 </div>
             </div>
 
@@ -264,7 +263,7 @@
             
             <div class="form-group">
                 <div class="cols-15"></div>
-                <div class="cols-6"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
+                <div class="cols-55"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
             </div>
 
             <hr>
@@ -272,14 +271,14 @@
             <!-- <span>Insert image</span> with add field starts -->
             <div class="form-group">
                 <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
-                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
+                <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
+                <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
@@ -288,7 +287,7 @@
         
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
+                <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1 relative"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>

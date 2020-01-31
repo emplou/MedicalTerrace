@@ -2,24 +2,58 @@
 @section('content')
 
 <!-- <h2>Add Illness</h2> -->
-<br>
-{!! Form::open(array('url' => '/save_illness', 'method' => 'post', 'files' => true)) !!}
+<div class="header-wrapper">
+    <div class="left">
+        <h2>手足口病<span>ID番号:I00000</span></h2>
+        
+    </div>
+    <div class="right">
+        <div>作成日<span>Date</span></div>
+        <div class="select">
+            <select>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+            </select>
+        </div>
+        <div>最終更新日<span>Update</span></div>
+        <div class="select">0000/00/00</div>
+    </div>
+    
+</div>
+<hr />
+    <div class="form-container">
+        <div class="form-progress">
+            <ul>
+                <li class="active">下書き<br><span>Draft</span></li>
+                <li class="active">プレビュー<br><span>Preview</span></li>
+                <li>承認依頼<br><span>Approval Request</span></li>
+                <li>承認済<br><span>Approved</span></li>
+                <li class="rel">公開予約<br><span>Release reservation</span></li>
+                <li>公開中<br><span>Release</span></li>
+            </ul>
+        </div>
+        {!! Form::open(array('url' => '/save_illness', 'method' => 'post', 'files' => true)) !!}
 
     <div class="form-horizontal">
 
+        <div class="form-pads">
             <!-- URL Generator -->
             <div class="form-group">
-                <label class="control-label col-sm-2">URL自動生成名:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="例）Infection_kids" name="url">
+                <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
+                <div class="cols-4">
+                    <input type="text" class="form-control" placeholder="例）Infection_kid" name="url">
                 </div>
             </div>
-
+            
             <!-- Illness Category -->
             <div class="form-group">
-                <label class="control-label col-sm-2">病気カテゴリー:</label>
-                <div class="col-sm-9">          
+                <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
+                <div class="cols-4">          
                     <select name="ill_cat" class="form-control">
+                        <option value="選択してください">選択してください</option>
                         <option value="選択してください">選択してください</option>
                         <option value="感染症・寄生虫症">感染症・寄生虫症</option>
                         <option value="女性特有のがん＊">女性特有のがん＊</option>
@@ -58,71 +92,95 @@
                 </div>
             </div>
                 
-            <!-- Illness Shoulder -->
             <div class="form-group">
-                <label class="control-label col-sm-2">病名ショルダー:</label>
-                <div class="col-sm-8">          
-                    <input type="text" class="form-control ill_shldr" placeholder="例）手・足・口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
+                <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
+                <div class="cols-5">          
+                    <input type="text" class="form-control ill_shldr"  placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
                 </div>
-                <div class="col-sm-1">          
-                    <span id="rchars">0</span>/20
+                <div class="col-sm-2">          
+                    <span id="rchars">20</span>/20
                 </div>
             </div>
 
-            <!-- Illness -->
             <div class="form-group">
-                <label class="control-label col-sm-2">病名:</label>
-                <div class="col-sm-8">          
-                    <input type="text" class="form-control ill" placeholder="例）手足口病" name="ill" maxlength="14">
+                <label class="control-label cols-15">特集タイトル<br><span>Illness</span></label>
+                <div class="cols-5">          
+                    <input type="text" class="form-control ill"  placeholder="例)手足口病" name="ill" maxlength="14">
                 </div>
-                <div class="col-sm-1">          
+                <div class="col-sm-2">          
                     <span id="rchars2">0</span>/14
                 </div>
             </div>
 
-            <!-- Illness Phonetics -->
             <div class="form-group">
-                <label class="control-label col-sm-2">病名ふりがな:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="例）てあしくちびょう" name="ill_ph">
+                <label class="control-label cols-15">病名ふりがな<br><span>Illness Phonetic</span></label>
+                <div class="cols-5">          
+                    <input type="text" class="form-control" placeholder="例)てあしくちびょう"  name="ill_ph" maxlength="14">
                 </div>
             </div>
 
-            <!-- Doctor  -->
             <div class="form-group">
-                <label class="control-label col-sm-2">監修・協力医師:</label>
-                <div class="col-sm-5">          
-                    <select name="doctor" class="form-control">
+                <label class="control-label cols-15">監修・協力医師<br><span>Doctor</span></label>
+                <div class="cols-5">          
+                     <select name="doctor" class="form-control">
                         <option value="">選択してください</option>
-
                         @foreach($doctors as $doc)
                             <option value="{!! $doc->id !!}">{!! $doc->name !!}</option>
                         @endforeach
-
                     </select>
                 </div>
                 <div class="cols-3 rad-buttons">
-                    <input type="radio" id="sprvsn" value="監修" name="role">
-                    <label for="sprvsn">監修</label>
-                    <input type="radio" id="cc" value="取材協力" name="role">
-                    <label for="cc">取材協力</label>
-                    <input type="radio" id="scc" value="監修・取材協力" name="role">
-                    <label for="scc">監修・取材協力</label>
-                </div>  
-                
+					<input type="radio" id="sprvsn" name="role" value="監修">
+					<label for="sprvsn">監修</label>
+					<input type="radio" id="cc" name="role" value="取材協力">
+					<label for="cc">取材協力</label>
+					<input type="radio" id="scc" name="role" value="監修・取材協力">
+					<label for="scc">監修・取材協力</label>
+		        </div>	
             </div>
 
-            <!-- Doctor Comment -->
-            <div class="form-group">
-                <label class="control-label col-sm-2">まとめ:</label>
-                <div class="col-sm-8">          
-                    <textarea class="form-control cmt" name="doc_cmt" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-                    </textarea>
+            <div class="form-group full">
+                <label class="control-label cols-15">医師コメント<br><span>Doctor Comment</span></label>
+                <div class="cols-5">          
+                    <textarea class="form-control cmt" name="doc_cmt" rows="5" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+					</textarea>
                 </div>
-                <div class="col-sm-1">          
-                    <span id="rchars3">0</span>/200
-                </div>
+                <div class="cols-2">          
+					<span id="rchars3">0</span>/200
+				</div>
             </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
+                <div class="cols-5">          
+                    <textarea class="form-control sm" name="sm[]" rows="２" maxlength="200">
+                    この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+					</textarea>
+                </div>
+                <div class="cols-2">          
+					<span id="rchars4">0</span>/46
+				</div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15"></label>
+                <div class="cols-5">          
+                    <textarea class="form-control sm" name="sm[]" rows="２" maxlength="200">
+                    この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+					</textarea>
+                </div>
+                <div class="cols-2">          
+					<span id="rchars4">0</span>/46
+				</div>
+            </div>
+    </div>
+</div>
+
+ <!-- OLD codes-->
+            
+
+
+           
 
             <!-- Summarize -->
             <div class="form-group">
