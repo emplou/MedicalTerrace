@@ -171,7 +171,7 @@
         
     
 
-        <div class="form-group">
+        <div class="form-group check">
             <div class="control-label cols-15">生年月日<br><span>Birthday</span>
             </div>
             <div class="cols-1">
@@ -221,7 +221,7 @@
                     <label for="non1">生まれ年のみ可<br><span>Birth year OK</span></label>
                 </div>
             </div>
-        <div class="form-group">
+        <div class="form-group check">
             <div class="control-label cols-15">
             出生地<br>Place of birth
             </div>
