@@ -1823,6 +1823,20 @@ input.form-control {
   /* width: 100%; */
   /* max-width: 100%; */
 }
+.cols-05 {
+  float: left;
+  width: 5%;
+  height: 35px;
+  
+}
+.cols-05.center {
+  font-size: 22px;
+  text-align: center;
+}
+.cols-o5 big {
+  font-size: 24px;
+  
+}
 .cols-1 {
   float: left;
   width: 10%;
@@ -2483,6 +2497,9 @@ textarea {
 .custom-file-upload.ill .file-upload-input{
   font-size: 12px;
   width: 88%;
+  border-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .file-upload-input {
@@ -2570,4 +2587,13 @@ textarea {
       #locationField {
         height: 20px;
         margin-bottom: 2px;
+      }
+      .check3 {
+        padding-top: 10px;
+        padding-left: 10px;
+        line-height: 12px;
+      }
+      .check3 label span {
+        font-size: 11px;
+        
       }

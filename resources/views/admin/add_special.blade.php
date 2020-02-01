@@ -364,7 +364,7 @@
 
             <div class="form-group check">
                 <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
-                <div class="cols-7">   
+                <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
                         <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
 					</div>    

@@ -53,7 +53,8 @@ class HomeController extends Controller
     }
 
     public function add_hospital(){
-        return view('admin.add_hospital');
+         $doctors = DB::table('dv_doctors')->get();
+        return view('admin.add_hospital', compact('doctors'));
     }
 
     public function add_special(){
