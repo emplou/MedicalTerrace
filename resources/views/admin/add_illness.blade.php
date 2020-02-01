@@ -284,7 +284,7 @@
                 <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                 <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                        <input type="checkbox" id="a1" name="subheading-chck"/>
+                        <input type="checkbox" id="a1" name="subheading-chck" value="1" />
                         <label for="a1" style="color:red;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
 					</div>    
                 </div>
@@ -396,7 +396,7 @@
 
                 <!-- Subheading -->
 
-            <div class="form-group check">
+           <!--  <div class="form-group check">
                 <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                 <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
@@ -404,10 +404,10 @@
                         <label for="a1" style="color:red;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
 					</div>    
                 </div>
-            </div>
+            </div> -->
 
             <!-- Text of the subheading -->
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                 <div class="cols-8">  
                     <div class="cols-5">          
@@ -490,10 +490,10 @@
                         <span id="rchars9">0</span>/46
                         <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Check Result -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                     <div class="cols-6">
                         <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
@@ -507,7 +507,7 @@
                         <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr[]"></div>
                         <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr[]"></div>
                     </div>
-                </div>
+                </div> -->
 
                 <hr>
             <!-- Search Keywords -->

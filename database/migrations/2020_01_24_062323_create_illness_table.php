@@ -34,7 +34,7 @@ class CreateIllnessTable extends Migration
             $table->string('ill_h1');
             $table->string('ill_h2');
             $table->string('ill_tag_kw');
-            $table->string('ill_tag_dep');
+            $table->longText('ill_tag_dep');
             $table->string('ill_tag_symp');
             $table->string('ill_tag_season');
             $table->string('ill_tag_season_txt');
