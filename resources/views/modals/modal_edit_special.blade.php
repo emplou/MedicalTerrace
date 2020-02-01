@@ -390,7 +390,7 @@
                     <label class="control-label cols-15">h1</label>
                     <div class="cols-5" style="border: 1px solid #CCC; padding: 5px; color: #ff335a;">   
                         子どもの夏の感染症 いわゆる夏風邪は7月がピーク！
-                        <input type="hidden" name="h1" value="sample">
+                        <input type="hidden" name="h1" id="h1">
                     </div>
                 </div>
                 

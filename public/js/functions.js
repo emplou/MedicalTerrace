@@ -61,12 +61,17 @@ $.ajaxSetup({
                 });
                 $("#input_container").html(inputs);
                     
+                    $("#docID").val(response['data'][0].id);
                     $("#name").val(response['data'][0].name);
                     $("#alpha_name").val(response['data'][0].alphabet_name);
                     //image not included yet
                     $("#img_caption").val(response['data'][0].image_caption);
                     $("#img_alt").val(response['data'][0].image_alt);
-                    //industry dropdown not included yet
+
+                    inputsoffice = '<select class="form-control" name="hospital_office" style="width:500px"><option value="'+ response['data'][0].hospital_office +'">'+ response['data'][0].hospital_office +'</option><option value="Hospital one">Hospital one</option><option value="Hospital two">Hospital two</option><option value="Hospital three">Hospital three</option><option value="Hospital four">Hospital four</option></select>';
+                    $("#hospital_off_field").html(inputsoffice);
+
+                    // $("#hospital_office").val(response['data'][0].image_alt);
 
 
                     /* ********** INDUSTRY ************ */
@@ -74,12 +79,12 @@ $.ajaxSetup({
                     $("#input_industry").html(input_ins);
                     
 
-                    var objJSON = JSON.parse(response['data'][0].certificate);
-                    var inputs = "";
-                    $.each(objJSON, function (i, v) {
-                        inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:300px" value="'+v.med_sbj_list+'">';
-                    });
-                    $("#input_container").html(inputs);
+                    // var objJSON = JSON.parse(response['data'][0].certificate);
+                    // var inputs = "";
+                    // $.each(objJSON, function (i, v) {
+                    //     inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:300px" value="'+v.med_sbj_list+'">';
+                    // });
+                    // $("#input_container").html(inputs);
 
                     var objJSONconf = JSON.parse(response['data'][0].conference);
                     var input_conf = "";
@@ -88,7 +93,27 @@ $.ajaxSetup({
                     });
                     $("#input_conference").html(input_conf);
 
-                    //birthday not included yet
+                    //birthday
+                    var foo = response['data'][0].birthday;
+                    var arr = foo.split("-");
+                    // alert(arr[2]);
+
+                    var optionss='';
+                        for(i=1990; i <= 2020; i++){
+                            optionss +='<option value="'+i+'">'+i+'</option>';
+                        }
+                        var optionsss='';
+                        for(i=1; i <= 31; i++){
+                            optionsss +='<option value="'+i+'">'+i+'</option>';
+                        }
+                        // $(yourSelect).append(options);
+
+                        //from day
+                        input_bday = '<select id="" class="form- " name="b_year" style="width:100px"><option value="'+ arr[2] +'">'+ arr[2] +'</option>'+ optionss +'</select><select id="" class="form- " name="b_month" style="width:100px"><option value="'+ arr[0] +'">'+ arr[0] +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><select id="" class="form- " name="b_day" style="width:100px"><option value="'+ arr[1] +'">'+ arr[1] +'</option>'+optionsss+'</select>';
+
+                        $("#bday_input").html(input_bday);
+
+
                     $("#place_birth").val(response['data'][0].place_of_birth);
                     //the 3 careers not included yet
                     
@@ -107,22 +132,22 @@ $.ajaxSetup({
                         // $(yourSelect).append(options);
 
                         //from day
-                        input_careerOne += '<select id="aca_year_from" class="form- " name="aca_year_from[]" style="width:100px"><option value="'+ v.from_year +'">'+ v.from_year +'</option>';
+                        input_careerOne += '<select id="aca_year_from" class="form- " name="c_ac_year[]" style="width:100px"><option value="'+ v.from_year +'">'+ v.from_year +'</option>';
                         input_careerOne += options;
                         input_careerOne += '</select>';
                         //from month
-                        input_careerOne += '<select id="aca_year_to" class="form- " name="aca_year_to[]" style="width:100px"><option value="'+ v.from_month +'">'+ v.from_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
+                        input_careerOne += '<select id="aca_year_to" class="form- " name="c_ac_month[]" style="width:100px"><option value="'+ v.from_month +'">'+ v.from_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
                         //from description
-                        input_careerOne += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_desc+'"><br>'
+                        input_careerOne += '<input type="text" class="form- " name="c_ac_desc[]" id="sample_one" style="width:100px" value="'+v.from_desc+'"><br>';
 
                         //to day
-                        input_careerOne += '<select id="aca_year_from" class="form- " name="aca_year_from[]" style="width:100px"><option value="'+ v.to_year +'">'+ v.to_year +'</option>';
+                        input_careerOne += '<select id="aca_year_from" class="form- " name="c_ac_year_to[]" style="width:100px"><option value="'+ v.to_year +'">'+ v.to_year +'</option>';
                         input_careerOne += options;
                         input_careerOne += '</select>';
                         //to month
-                        input_careerOne += '<select id="aca_year_to" class="form- " name="aca_year_to[]" style="width:100px"><option value="'+ v.to_month +'">'+ v.to_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
+                        input_careerOne += '<select id="aca_year_to" class="form- " name="c_ac_month_to[]" style="width:100px"><option value="'+ v.to_month +'">'+ v.to_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
                         //to description
-                        input_careerOne += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_desc+'"><br>';
+                        input_careerOne += '<input type="text" class="form- " name="c_ac_desc_to[]" id="sample_one" style="width:100px" value="'+v.to_desc+'"><br>';
                     });
                     $("#input_career_one").html(input_careerOne);
 
@@ -139,22 +164,22 @@ $.ajaxSetup({
                         // $(yourSelect).append(options);
 
                         //from day
-                        input_careertwo += '<select id="aca_year_from" class="form- " name="aca_year_from[]" style="width:100px"><option value="'+ v.we_from_year +'">'+ v.we_from_year +'</option>';
+                        input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year[]" style="width:100px"><option value="'+ v.we_from_year +'">'+ v.we_from_year +'</option>';
                         input_careertwo += options;
                         input_careertwo += '</select>';
                         //from month
-                        input_careertwo += '<select id="aca_year_to" class="form- " name="aca_year_to[]" style="width:100px"><option value="'+ v.we_from_month +'">'+ v.we_from_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
+                        input_careertwo += '<select id="aca_year_to" class="form- " name="c_we_month[]" style="width:100px"><option value="'+ v.we_from_month +'">'+ v.we_from_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
                         //from description
-                        input_careertwo += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_from_desc+'"><br>'
+                        input_careertwo += '<input type="text" class="form- " name="c_we_desc[]" id="sample_one" style="width:100px" value="'+v.we_from_desc+'"><br>'
 
                         //to day
-                        input_careertwo += '<select id="aca_year_from" class="form- " name="aca_year_from[]" style="width:100px"><option value="'+ v.we_to_year +'">'+ v.we_to_year +'</option>';
+                        input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ v.we_to_year +'">'+ v.we_to_year +'</option>';
                         input_careertwo += options;
                         input_careertwo += '</select>';
                         //to month
-                        input_careertwo += '<select id="aca_year_to" class="form- " name="aca_year_to[]" style="width:100px"><option value="'+ v.we_to_month +'">'+ v.we_to_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
+                        input_careertwo += '<select id="aca_year_to" class="form- " name="c_we_month_to[]" style="width:100px"><option value="'+ v.we_to_month +'">'+ v.we_to_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
                         //to description
-                        input_careertwo += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_to_desc+'"><br>';
+                        input_careertwo += '<input type="text" class="form- " name="c_we_desc_to[]" id="sample_one" style="width:100px" value="'+v.we_to_desc+'"><br>';
                     });
                     $("#input_career_two").html(input_careertwo);
 
@@ -171,22 +196,22 @@ $.ajaxSetup({
                         // $(yourSelect).append(options);
 
                         //from day
-                        input_careerthree += '<select id="aca_year_from" class="form- " name="aca_year_from[]" style="width:100px"><option value="'+ v.from_year +'">'+ v.from_year +'</option>';
+                        input_careerthree += '<select id="aca_year_from" class="form- " name="c_aw_year[]" style="width:100px"><option value="'+ v.from_year +'">'+ v.from_year +'</option>';
                         input_careerthree += options;
                         input_careerthree += '</select>';
                         //from month
-                        input_careerthree += '<select id="aca_year_to" class="form- " name="aca_year_to[]" style="width:100px"><option value="'+ v.from_month +'">'+ v.from_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
+                        input_careerthree += '<select id="aca_year_to" class="form- " name="c_aw_month[]" style="width:100px"><option value="'+ v.from_month +'">'+ v.from_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
                         //from description
-                        input_careerthree += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_desc+'"><br>'
+                        input_careerthree += '<input type="text" class="form- " name="c_aw_desc[]" id="sample_one" style="width:100px" value="'+v.from_desc+'"><br>'
 
                         //to day
-                        input_careerthree += '<select id="aca_year_from" class="form- " name="aca_year_from[]" style="width:100px"><option value="'+ v.to_year +'">'+ v.to_year +'</option>';
+                        input_careerthree += '<select id="aca_year_from" class="form- " name="c_aw_year_to[]" style="width:100px"><option value="'+ v.to_year +'">'+ v.to_year +'</option>';
                         input_careerthree += options;
                         input_careerthree += '</select>';
                         //to month
-                        input_careerthree += '<select id="aca_year_to" class="form- " name="aca_year_to[]" style="width:100px"><option value="'+ v.to_month +'">'+ v.to_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
+                        input_careerthree += '<select id="aca_year_to" class="form- " name="c_aw_month_to[]" style="width:100px"><option value="'+ v.to_month +'">'+ v.to_month +'</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="0September9">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select>';
                         //to description
-                        input_careerthree += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_desc+'"><br>';
+                        input_careerthree += '<input type="text" class="form- " name="c_aw_desc_to[]" id="sample_one" style="width:100px" value="'+v.to_desc+'"><br>';
 
                         
 
@@ -205,31 +230,45 @@ $.ajaxSetup({
                     /* ********** DEPARTMENT ************ */
                     var objJSONdpt = JSON.parse(response['data'][0].department);
                     var input_dpt = "";
+                    var input_dpt_list = "";
                     $.each(objJSONdpt, function (i, v) {
                         console.log(objJSONdpt);
 
                         // input_dpt += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.med_sbj_list+'">';
 
-                        $.ajax({
-                            url: '/get_all_department/',
-                            type: 'get',
-                            dataType: 'json',
-                            success: function(resp){
-                                console.log(resp['data']);
-                            if(resp == "success")
-                            console.log('department '+resp['data']);
-                                },
-                                error: function(resp){
-                                alert('Error'+resp);
-                
-                            }
-                        });
 
-                        input_dpt += '<select class="form- " name="department[]"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option><option value="department one">department one</option><option value="department two">department two</option><option value="department three">department three</option><option value="department four">department four</option></select>';
+                            input_dpt += '<select class="form- " name="department[]"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
+
+                            $.ajax({
+                                url: '/get_all_department/',
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(resp){
+                                    // console.log(resp['data']);
+                                    // var jsonObj = JSON.parse(resp['data'][0].dpt_name);
+    
+    
+                                $.each(resp['data'], function (i, b) {
+                                    console.log('dpt '+ b.dpt_name)
+                                    input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+    
+                                });
+                                // if(resp == "success")
+                                // console.log('department '+resp['data'][0].dpt_name);
+                                    },
+                                    error: function(resp){
+                                    alert('Error'+resp);
+                    
+                                    }
+                                });
+                            
+                            input_dpt += '</select>';
+                            
                         
 
-                    });
+                    }); //end of department json
                     $("#input_department").html(input_dpt);
+                    // $("#input_department").html(input_dpt_list);
 
 
                     //department json not included yet
@@ -305,7 +344,6 @@ $.ajaxSetup({
                     });
                     $("#input_conference").html(input_conf);
 
-                    //birthday not included yet
                     $("#place_birth").val(response['data'][0].place_of_birth);
                     //the 3 careers not included yet
                     
@@ -531,6 +569,144 @@ $.ajaxSetup({
                     
 
                 },
+                    error: function(response){
+                    alert('Error'+response);
+       
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
+    $('.overwrite_illness').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            // alert(id);
+
+            $.ajax({
+                url: '/modal_edit_illness/'+id,
+                type: 'get',
+                dataType: 'json',
+                // data : { id : id },
+                success: function(response){
+                    console.log(response['data']);
+                
+                    if(response == "success")
+
+                        console.log(response['data']); 
+                        $("#editillness").modal('show');
+                        
+                        
+                        $("#url").val(response['data'][0].ill_url); // url
+
+                        // Illness Category
+                        input_ill = '<select class="form-control" name="ill_cat[]"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
+                        $("#input_ill").html(input_ill);
+
+                        $("#ill_shldr").val(response['data'][0].ill_shoulder); // Illness Shoulder
+
+                        $("#ill").val(response['data'][0].ill_name); // Illness
+
+                        $("#ill_ph").val(response['data'][0].ill_ph); //Illness Phonetics
+                        
+                        // Doctor      
+
+                        // Doctor Role
+                        var role = response['data'][0].ill_doc_role;
+                        if(role == "監修"){
+                            input_rad = '<input type="radio" id="sprvsn" name="role" value="監修" checked><label for="sprvsn">監修</label><input type="radio" id="cc" name="role" value="取材協力"><label for="cc">取材協力</label><input type="radio" id="scc" name="role" value="監修・取材協力"><label for="scc">監修・取材協力</label>';
+                            $("#input_rad").html(input_rad);
+                        }
+                        if(role == "取材協力"){
+                            input_rad = '<input type="radio" id="sprvsn" name="role" value="監修"><label for="sprvsn">監修</label><input type="radio" id="cc" name="role" value="取材協力" checked><label for="cc">取材協力</label><input type="radio" id="scc" name="role" value="監修・取材協力"><label for="scc">監修・取材協力</label>';
+                            $("#input_rad").html(input_rad);
+                        }
+                        if(role == "監修・取材協力"){
+                            input_rad = '<input type="radio" id="sprvsn" name="role" value="監修"><label for="sprvsn">監修</label><input type="radio" id="cc" name="role" value="取材協力"><label for="cc">取材協力</label><input type="radio" id="scc" name="role" value="監修・取材協力" checked><label for="scc">監修・取材協力</label>';
+                            $("#input_rad").html(input_rad);
+                        }   
+
+                        $("#cmt").val(response['data'][0].ill_doc_cmt);  // Doctor's Comment 
+
+                        // Summarize
+                        var objJSON = JSON.parse(response['data'][0].ill_summary);
+                        var inputs = "";
+                        $.each(objJSON, function (i, v) {
+                            inputs += '<textarea class="form-control sm" name="sm[]" rows="3" id="sm" maxlength="200">'+v.sm+'</textarea><br>';
+                        });
+                        $("#input_sum").html(inputs);
+
+                        // image
+                        $("#img_cap").val(response['data'][0].ill_img_cap); // image caption
+                        $("#img_alt").val(response['data'][0].ill_img_alt); // image alt
+
+                        // Search Keywords
+                        var objJSON = JSON.parse(response['data'][0].ill_kwords);
+                        var input_kwords = "";
+                        $.each(objJSON, function (i, v) {
+                            input_kwords += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
+                        });
+                        $("#input_kwords").html(input_kwords);
+
+                        // SEO Title
+                        var seo_title = response['data'][0].ill_seo;
+                        if(seo_title == response['data'][0].ill_name){
+                            input_seo_title = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="'+ response['data'][0].ill_name +'" checked><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].ill_name +'"</label>';
+                            $("#input_seo_title").html(input_seo_title);
+                        } else{
+                            input_seo_title = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value=""><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].ill_name +'"</label>';
+                            $("#input_seo_title").html(input_seo_title);
+                        }
+
+                        $("#seo_txt").val(response['data'][0].ill_seo_txt); // seo text
+                        $("#meta_txt1").val(response['data'][0].ill_meta_a);
+                        $("#meta_txt2").val(response['data'][0].ill_meta_b);
+
+                        // Illness h1
+                        input_h1 = ''+ response['data'][0].ill_shoulder +'<input type="hidden" name="h1" value="'+ response['data'][0].ill_name +'">';
+                        $("#input_h1").html(input_h1);
+                        
+                        // H2 Retrieval
+                        var objJSON = JSON.parse(response['data'][0].ill_h2);
+                        var input_h2 = "";
+                        $.each(objJSON, function (i, v) {
+                            input_h2 += '<div class="cols-3"><input type="text" class="form-control" placeholder="" value="'+v.h2+'" name="h2[]"></div>';
+                        });
+                        $("#input_h2").html(input_h2);
+
+                        // Tag Symptoms Retrieval
+                        var objJSONconf = JSON.parse(response['data'][0].ill_tag_symp);
+                        var input_sy = "";
+                        $.each(objJSONconf, function (i, v) {
+                            input_sy += '<div class="cols-3"><input type="text" class="form-control" name="tag_sy[]" id="tag_sy" value="'+v.tag_sy+'"></div>';
+                        });
+                        $("#input_sy").html(input_sy);
+
+                        // Tag Season Text Retrieval
+                        var objJSONconf = JSON.parse(response['data'][0].ill_tag_season_txt);
+                        var input_tst = "";
+                        $.each(objJSONconf, function (i, v) {
+                            input_tst += '<div class="cols-3"><input type="text" class="form-control" name="tag_txt[]" id="tag_txt" value="'+v.tag_txt+'"></div>';
+                        });
+                        $("#input_tst").html(input_tst);
+
+                        // Tag Free
+                        var objJSONconf = JSON.parse(response['data'][0].ill_tag_free);
+                        var input_free = "";
+                        $.each(objJSONconf, function (i, v) {
+                            input_free += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
+                        });
+                        $("#input_free").html(input_free);
+                    
+
+                    },
                     error: function(response){
                     alert('Error'+response);
        

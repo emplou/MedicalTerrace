@@ -42,12 +42,16 @@ Route::get('/save_edit_hospital','HomeController@save_edit_hospital');
 Route::get('/modal_edit_doctor/{id}','HomeController@modal_edit_doctor');
 Route::get('/modal_edit_hospital/{id}','HomeController@modal_edit_hospital');
 Route::get('/modal_edit_special/{id}','HomeController@modal_edit_special');
+Route::get('/modal_edit_illness/{id}','HomeController@modal_edit_illness');
 
 //post
 Route::post('/save_hospital','HomeController@save_hospital');
 Route::post('/save_illness','HomeController@save_illness');
 Route::post('/save_doctor','HomeController@save_doctor');
 Route::post('/save_special','HomeController@save_special');
+
+//edit post
+Route::post('/save_edit_doctor','HomeController@save_edit_doctor');
 
 //get data
 Route::get('/get_all_department','HomeController@get_all_department');
