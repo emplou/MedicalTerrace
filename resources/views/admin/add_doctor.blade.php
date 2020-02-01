@@ -173,7 +173,7 @@
         
     
 
-        <div class="form-group">
+        <div class="form-group check">
             <div class="control-label cols-15">生年月日<br><span>Birthday</span>
             </div>
             <div class="cols-1">
@@ -223,7 +223,7 @@
                     <label for="non1">生まれ年のみ可<br><span>Birth year OK</span></label>
                 </div>
             </div>
-        <div class="form-group">
+        <div class="form-group check">
             <div class="control-label cols-15">
             出生地<br>Place of birth
             </div>
@@ -615,19 +615,19 @@
             <div class="form-group">
                 <label class="control-label cols-15">資格免許証(医師等)<br><span>License </span></label>
                 <div class="cols-5">          
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
-                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                    <div class="custom-file-upload doc">
+                    <!--<label for="file">File: </label>--> 
+                        <input type="file" id="file" name="myfiles[]" name="profile_image_field" multiple />
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label cols-15">登録証(医師会等)<br><span>Registration Certificate </span></label>
                 <div class="cols-5">          
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image_field">
-                        <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
-                    </div>
+                    <div class="custom-file-upload doc">
+                    <!--<label for="file">File: </label>--> 
+                    <input type="file" id="file"  name="profile_image_field"/>
+                </div>
                 </div>
             </div>
 

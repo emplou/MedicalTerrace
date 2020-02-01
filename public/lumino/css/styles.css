@@ -1858,6 +1858,7 @@ input.form-control {
 .cols-2 {
   float: left;
   width: 20%;
+  
 }
 .cols-3 {
   float: left;
@@ -1998,7 +1999,10 @@ input.form-control {
 .btn.addcar1,
 .btn.addcar2,
 .btn.addcar3,
-.btn.adddept1 {
+.btn.adddept1,
+.btn.addsum1,
+.btn.add-ck,
+.btn.addsub {
   position: absolute;
   color: grey;
   bottom: 0;
@@ -2023,7 +2027,10 @@ input.form-control {
 .btn.addcar1 span,
 .btn.addcar2 span,
 .btn.addcar3 span,
-.btn.adddept1 span  {
+.btn.adddept1 span,
+.btn.addsum1 span,
+.btn.add-ck span,
+.btn.addsub span  {
   font-size: 22px;
 } 
 
@@ -2108,13 +2115,13 @@ input.form-control {
 
 
 /* Base for label styling */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+.check [type="checkbox"]:not(:checked),
+.check [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+.check [type="checkbox"]:not(:checked) + label,
+.check [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 1.95em;
   cursor: pointer;
@@ -2122,7 +2129,7 @@ input.form-control {
 }
 
 /* checkbox aspect */
-[type="checkbox"]:not(:checked) + label:before,
+ [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
@@ -2133,8 +2140,8 @@ input.form-control {
   background: #fff;
 }
 /* checked mark aspect */
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+ [type="checkbox"]:not(:checked) + label:after,
+ [type="checkbox"]:checked + label:after {
   content: '\2713\0020';
   position: absolute;
   top: 0;
@@ -2146,25 +2153,25 @@ input.form-control {
   font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
 }
 /* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + label:after {
+ [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
 }
-[type="checkbox"]:checked + label:after {
+ [type="checkbox"]:checked + label:after {
   opacity: 1;
   transform: scale(1);
 }
 /* disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
+ [type="checkbox"]:disabled:not(:checked) + label:before,
+ [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
-[type="checkbox"]:disabled:checked + label:after {
+ [type="checkbox"]:disabled:checked + label:after {
   color: #999;
 }
-[type="checkbox"]:disabled + label {
+ [type="checkbox"]:disabled + label {
   color: #aaa;
 }
 
@@ -2432,4 +2439,90 @@ textarea {
 
 .sidebots button {
   margin-bottom: 10px;
+}
+
+#list_wrapper {
+  width: 100%;
+  padding: 15px;
+  max-width: 1050px;
+}
+
+.form-control.sm  {
+  height: 70px;
+  border-radius: 5px;
+}
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.custom-file-upload.doc,
+.custom-file-upload.ill {
+  margin-top: 0;
+}
+.custom-file-upload.doc .file-upload-input,
+.custom-file-upload.ill .file-upload-input{
+  font-size: 12px;
+  width: 88%;
+}
+
+.file-upload-input {
+  width: 83%;
+  color: #808080;
+  font-size: 14px;
+  outline: 0;
+  padding: 6px 10px;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  background-color: #ffffff;
+
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left;
+}
+
+
+.file-upload-button {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  content: "参照...";
+  font-size: 12px;
+  text-transform: none;
+  padding: 8px 8px;
+  border: none;
+  margin-left: -1px;
+  background-color: #6f6d6d;
+  float: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.relative {
+  position: relative;
 }

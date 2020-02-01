@@ -185,11 +185,10 @@
                 <label class="control-label cols-15">メイン画像<br><span>Image</span></label>
                 <div class="cols-5">          
 					<!-- <input type="file" class="form-control" name="img"> -->
-					<div class="custom-file">
-					<input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="img">
-					<label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+					<div class="custom-file-upload">
+    				<!--<label for="file">File: </label>--> 
+						<input type="file" id="file" name="myfiles[]" name="img" multiple />
 					</div>
-
                 </div>
             </div>
 
@@ -210,19 +209,18 @@
             <!-- Use CKcreditor -->
             <div class="form-group editor">
 				<label class="control-label cols-15">リード<br><span>Text of Subheading</span></label>
-					<div class="cols-7">   
-						<!-- add new textarea here -->
-						<div class="field_wrap2"></div>
-						<div id="addanother1">
-							<div class="cols-10">        
-								<textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                <div class="cols-7">   
+                    <!-- add new textarea here -->
+                    <div class="field_wrap2"></div>
+                    <div id="addanother1">
+                        <div class="cols-10">        
+                            <textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
-								</textarea>
-							</div>
-						</div>
-					</div>
-					<div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div> 
-					
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div> 
             </div>
             <hr>
 
@@ -264,7 +262,7 @@
             
             <div class="form-group">
                 <div class="cols-15"></div>
-                <div class="cols-6"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
+                <div class="cols-55"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
             </div>
 
             <hr>
@@ -272,14 +270,14 @@
             <!-- <span>Insert image</span> with add field starts -->
             <div class="form-group">
                 <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
-                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
+                <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
 
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
+                <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1"></div>
             </div>
@@ -288,7 +286,7 @@
         
             <div class="form-group">
                 <div class="control-label cols-15"></div>
-                <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
+                <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
                 <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
                 <div class="cols-1 relative"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
@@ -364,18 +362,15 @@
 				</div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group check">
                 <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                 <div class="cols-7">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
                         <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-					</div>       
-                    
-                </div>
-                <div class="cols-1">          
-                    
+					</div>    
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-5">   
@@ -442,7 +437,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group check">
                 <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
                 <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                     <div class="cols-4">
@@ -482,7 +477,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group check">
                 <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
                 <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                     <div class="cols-4">
@@ -1142,7 +1137,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group check">
                 <label class="control-label cols-15">タグ(季節)<br><span>Tag(season)</span></label>
                 <div class="cols-7">   
                     <div class="cols-11">
