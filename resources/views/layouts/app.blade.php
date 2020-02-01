@@ -147,6 +147,74 @@ input.form-  {
     box-shadow: none;
     height: 46px;
 }
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.custom-file-upload.doc {
+  margin-top: 0;
+}
+.custom-file-upload.doc .file-upload-input{
+  width: 70%;
+}
+
+.file-upload-input {
+  width: 83%;
+  color: #808080;
+  font-size: 14px;
+  outline: 0;
+  padding: 6px 10px;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  background-color: #ffffff;
+
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left;
+}
+
+
+.file-upload-button {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  content: "参照...";
+  font-size: 16px;
+  text-transform: none;
+  padding: 5px 20px;
+  border: none;
+  margin-left: -1px;
+  background-color: #6f6d6d;
+  float: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
     </style>
 </head>
 <body>

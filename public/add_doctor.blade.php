@@ -101,9 +101,13 @@
         <div class="form-group">
             <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
             <div class="cols-45">          
-                <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image">
+                <!-- <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_img">
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                </div> -->
+                <div class="custom-file-upload doc">
+                     
+                    <input type="file" id="file" name="profile_img" multiple />
                 </div>
 
             </div>
@@ -118,6 +122,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="form-group">
             <label class="control-label cols-15"> 画像キャプション<br><span>Image Caption </span></label>

@@ -61,7 +61,8 @@ class HomeController extends Controller
     }
 
     public function illness_list(){
-        return view('admin.illness_list');
+        $illness = DB::table('illness')->get();
+        return view('admin.illness_list', compact('illness'));
     }
 
     public function doctor_list(){
@@ -76,6 +77,7 @@ class HomeController extends Controller
         $special = DB::table('special')->get();
         return view('admin.special_list', compact('special'));
     }
+    
 
     public function save_special(Request $request){
 
