@@ -408,41 +408,41 @@ class HomeController extends Controller
         //$id = $illness->ill_id;
 
 
-        $destinationPathImg     = '';
-        $filename_img           = '';
-        $file_img               = $request->file('img2');
+        // $destinationPathImg     = '';
+        // $filename_img           = '';
+        // $file_img               = $request->file('img2');
 
-        $destinationPathImg  = public_path().'/illness/image';
-        $filename_img        = str_random(6) . '_' . $file_img->getClientOriginalName();
-        $uploadSuccess   = $file_img->move($destinationPathImg, $filename_img);
+        // $destinationPathImg  = public_path().'/illness/image';
+        // $filename_img        = str_random(6) . '_' . $file_img->getClientOriginalName();
+        // $uploadSuccess   = $file_img->move($destinationPathImg, $filename_img);
         
         //Illness Image
-        $ill_image = new Ill_image;
-        $ill_image->im_id               = $ill_img_id;
-        $ill_image->im_ill_id           = $illness_id;
-        $ill_image->im_file             = $details['img2'];
-        $ill_image->im_caption          = $details['img_cap2'];
-        $ill_image->im_alt              = $details['img_alt2'];
-        $ill_image->save();
+        // $ill_image = new Ill_image;
+        // $ill_image->im_id               = $ill_img_id;
+        // $ill_image->im_ill_id           = $illness_id;
+        // $ill_image->im_file             = $details['img2'];
+        // $ill_image->im_caption          = $details['img_cap2'];
+        // $ill_image->im_alt              = $details['img_alt2'];
+        // $ill_image->save();
 
-        $destinationPathGraph   = '';
-        $filename_graph         = '';
-        $file_graph             = $request->file('g_img');
+        // $destinationPathGraph   = '';
+        // $filename_graph         = '';
+        // $file_graph             = $request->file('g_img');
 
-        $destinationPathGraph  = public_path().'/illness/graph';
-        $filename_graph        = str_random(6) . '_' . $file_graph->getClientOriginalName();
-        $uploadSuccess   = $file_graph->move($destinationPathGraph, $filename_graph);
+        // $destinationPathGraph  = public_path().'/illness/graph';
+        // $filename_graph        = str_random(6) . '_' . $file_graph->getClientOriginalName();
+        // $uploadSuccess   = $file_graph->move($destinationPathGraph, $filename_graph);
 
         //Illness Graph
-        $ill_graph = new Ill_graph;
-        $ill_graph->ig_id               = $ill_gr_id;
-        $ill_graph->ig_ill_id           = $illness_id;
-        $ill_graph->ig_title            = $details['g_title'];
-        $ill_graph->ig_img              = $details['g_img'];
-        $ill_graph->ig_details          = $details['gd'];  
-        $ill_graph->ig_txt              = $details['g_txt'];
-        $ill_graph->ig_alt              = $details['g_alt'];
-        $ill_graph->save();
+        // $ill_graph = new Ill_graph;
+        // $ill_graph->ig_id               = $ill_gr_id;
+        // $ill_graph->ig_ill_id           = $illness_id;
+        // $ill_graph->ig_title            = $details['g_title'];
+        // $ill_graph->ig_img              = $details['g_img'];
+        // $ill_graph->ig_details          = $details['gd'];  
+        // $ill_graph->ig_txt              = $details['g_txt'];
+        // $ill_graph->ig_alt              = $details['g_alt'];
+        // $ill_graph->save();
 
         // risk assessment text
         $sh_list = $details['sh']; 
@@ -472,7 +472,7 @@ class HomeController extends Controller
         $jsoncr_list = json_encode($response11); 
 
         //Risk Assessment
-        if($details['shcb'] == 1){
+        if($details['subheading-chck'] == 1){
             $risk_assess = new Risk_assessment;
             $risk_assess->ra_ill_id           = $illness_id;
             $risk_assess->ra_title            = $details['ra_title'];
@@ -856,6 +856,13 @@ class HomeController extends Controller
 
     public function modal_edit_special($id){
         $value['data'] = DB::table('special')->where('id','=',$id)->get();
+        $fetch = json_encode($value);
+        return $fetch;
+        // return $value;
+    }
+
+    public function modal_edit_illness($id){
+        $value['data'] = DB::table('illness')->where('id','=',$id)->get();
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
