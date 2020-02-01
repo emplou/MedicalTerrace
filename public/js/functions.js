@@ -205,31 +205,45 @@ $.ajaxSetup({
                     /* ********** DEPARTMENT ************ */
                     var objJSONdpt = JSON.parse(response['data'][0].department);
                     var input_dpt = "";
+                    var input_dpt_list = "";
                     $.each(objJSONdpt, function (i, v) {
                         console.log(objJSONdpt);
 
                         // input_dpt += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.med_sbj_list+'">';
 
-                        $.ajax({
-                            url: '/get_all_department/',
-                            type: 'get',
-                            dataType: 'json',
-                            success: function(resp){
-                                console.log(resp['data']);
-                            if(resp == "success")
-                            console.log('department '+resp['data']);
-                                },
-                                error: function(resp){
-                                alert('Error'+resp);
-                
-                            }
-                        });
 
-                        input_dpt += '<select class="form- " name="department[]"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option><option value="department one">department one</option><option value="department two">department two</option><option value="department three">department three</option><option value="department four">department four</option></select>';
+                            input_dpt += '<select class="form- " name="department[]"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
+
+                            $.ajax({
+                                url: '/get_all_department/',
+                                type: 'get',
+                                dataType: 'json',
+                                success: function(resp){
+                                    // console.log(resp['data']);
+                                    // var jsonObj = JSON.parse(resp['data'][0].dpt_name);
+    
+    
+                                $.each(resp['data'], function (i, b) {
+                                    console.log('dpt '+ b.dpt_name)
+                                    input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+    
+                                });
+                                // if(resp == "success")
+                                // console.log('department '+resp['data'][0].dpt_name);
+                                    },
+                                    error: function(resp){
+                                    alert('Error'+resp);
+                    
+                                    }
+                                });
+                            
+                            input_dpt += '</select>';
+                            
                         
 
-                    });
+                    }); //end of department json
                     $("#input_department").html(input_dpt);
+                    // $("#input_department").html(input_dpt_list);
 
 
                     //department json not included yet

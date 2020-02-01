@@ -80,6 +80,7 @@ class HomeController extends Controller
         $special = DB::table('special')->get();
         return view('admin.special_list', compact('special'));
     }
+    
 
     public function save_special(Request $request){
 
