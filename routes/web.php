@@ -50,5 +50,8 @@ Route::post('/save_illness','HomeController@save_illness');
 Route::post('/save_doctor','HomeController@save_doctor');
 Route::post('/save_special','HomeController@save_special');
 
+//edit post
+Route::post('/save_edit_doctor','HomeController@save_edit_doctor');
+
 //get data
 Route::get('/get_all_department','HomeController@get_all_department');

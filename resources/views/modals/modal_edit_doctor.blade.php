@@ -11,7 +11,8 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
-        
+      {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
+      <input type="hidden" name="docID" id="docID" value=" ">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -59,7 +60,7 @@
             ローマ字（名・氏）<br>Alphabet Name 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="alpha_name" id="alpha_name" style="width:500px">
+            <input type="text" class="form-control" name="alphabet_name" id="alpha_name" style="width:500px">
             </div>
         </div>
         <br>
@@ -120,7 +121,7 @@
             生年月日<br>Birthday
             </div>
             <div class="col-10">
-                <select id="b_year" name="b_year" class="form- " style="width:100px"></select>
+                <!-- <select id="b_year" name="b_year" class="form- " style="width:100px"></select>
                 <select id="b_month" name="b_month" class="form- " style="width:100px">
                         <option value="January">January</option>
                         <option value="February">February</option>
@@ -135,7 +136,8 @@
                         <option value="November">November</option>
                         <option value="December">December</option>
                     </select>
-                    <select id="length b_day" name="b_day" class="form- " style="width:100px"></select>
+                    <select id="length b_day" name="b_day" class="form- " style="width:100px"></select> -->
+                    <div id="bday_input"></div>
             </div>
         </div>
         <br>
@@ -191,12 +193,13 @@
             所属病院・勤務先<br>Hospital・Office
             </div>
             <div class="col-10">
-                <select class="form-control" name="hospital_office" id="hospital_office" style="width:500px">
+                <!-- <select class="form-control" name="hospital_office" id="hospital_office" style="width:500px">
                     <option>industry one</option>
                     <option>industry two</option>
                     <option>industry three</option>
                     <option>industry four</option>
-                </select>
+                </select> -->
+                <div id="hospital_off_field"></div>
             </div>
         </div>
         <br>
@@ -220,22 +223,15 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-12">
-                <input type="submit" value="保存 | SAVE">
+            <div class="col-12" align="center">
+                <input type="submit" value="保存 | UPDATE" class="btn btn-danger">
             </div>
         </div>
         <br>
-        <select class="form-DepartmentsDropDownList" name="hospital_office" id="hospital_office" style="width:500px">
-            <option value="industry one">industry one</option>
-            <option value="industry two">industry two</option>
-            <option value="industry three">industry three</option>
-            <option value="industry four">industry four</option>
-            <option value="industry five">industry five</option>
-                </select>
           
         </div>
       <!-- Modal -->
-
+      {!! Form::close() !!}
 </div>
   </div>
 </div>
