@@ -482,7 +482,7 @@ $(function() {
 //         columnDefs: [
 //             {
 //                 targets: [ 0, 1, 2 ],
-//                 className: 'mdl-data-table__cell--non-numeric'
+//                 className: 'mdl-dapta-table__cell--non-numeric'
 //             }
 //         ]
 //     } );
@@ -621,7 +621,21 @@ $(addcar3_button).click(function(e){ //on add input button click
 	e.preventDefault();
 	$(wrapper5).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
 });
-$(adddept1_button).click(function(e){ //on add input button click
+$(adddept4_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
+});
+
+$(addcar5_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper4).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addcar6_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper5).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+$(adddept7_button).click(function(e){ //on add input button click
 	e.preventDefault();
 	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
 });

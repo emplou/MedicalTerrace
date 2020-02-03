@@ -1410,6 +1410,48 @@ class HomeController extends Controller
 
         return redirect('/doctor_list');
     }
+
+    //Overwrite Special
+    public function overwrite_special(){
+        $details = Input::all();
+        
+        $illness = DB::table('special')
+                                    ->where('id','=', $details['id'])
+                                    ->update([
+                                                'sp_url'                => $details['url'],
+                                                'sp_map'                => $details['map'],
+                                                'sp_ill_cat'            => $details['ill_cat'],
+                                                'sp_cat'                => $details['sp_cat'],
+                                                'sp_title_shldr'        => $details['sp_shldr'],
+                                                'sp_title'              => $details['sp_title'],
+                                                //'sp_doc'              => $details['doctor'],
+                                                'sp_doc_tsk'            => $details['role'],
+                                                'sp_doc_cmt'            => $details['doc_cmt'],
+                                                //'sp_img'              => $details['img'],
+                                                'sp_img_cap'            => $details['img_cap'],
+                                                'sp_img_alt'            => $details['img_alt'],
+                                                'sp_txt'                => $details['sp_txt'],
+                                                'sp_sum'                => $details['sum'],
+                                                //'sp_ill_img'            => $details['ill_img'],
+                                                'sp_sum2'               => $details['sum2'],
+                                                'sp_seo_kwords'         => $details['kword'],
+                                                'seo_title'             => $details['seo'],
+                                                'sp_seo_title'          => $details['seo_title'],
+                                                'sp_seo_txt'            => $details['seo_txt'],
+                                                'sp_seo_desc'           => $details['meta1'],
+                                                'sp_seo_desc2'          => $details['meta2'],
+                                                'sp_h1'                 => $details['h1'],
+                                                'sp_h2'                 => $details['h2'],
+                                                'sp_tag_kw'             => $details['tag_kw'],
+                                                'sp_tag_ill'            => $details['tag_ill'],
+                                                'sp_tag_dep'            => $details['tag_dep'],
+                                                'sp_tag_symp'           => $details['tag_sy'],
+                                                'sp_tag_season'         => $details['tag_s'],
+                                                'sp_ra_season_txt'      => $details['tag_txt'],
+                                                'sp_tag_free'           => $details['tag_f'],
+                                            ]);
+
+    }
 }
 
        
