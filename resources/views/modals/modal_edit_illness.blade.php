@@ -367,7 +367,8 @@
                         <div class="form-group check">
                             <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                             <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                                <div class="cols-3">
+                                <div id="input_kw"></div>
+                                <!-- <div class="cols-3">
                                     <input type="checkbox" id="tag" name="tag[]"/>
                                     <label for="tag">検索キーワド入力より</label>
                                 </div>
@@ -398,7 +399,7 @@
                                 <div class="cols-3">
                                     <input type="checkbox" id="tag7"  name="tag[]"/>
                                     <label for="tag7">検索キーワド入力より</label>
-                                </div>
+                                </div> -->
                                 
                             </div>
                         </div>
