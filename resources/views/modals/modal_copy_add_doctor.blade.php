@@ -1,24 +1,24 @@
 <!-- Modal -->
-<div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
+<div id="copyAdddoctor" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog modal-lg">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 				
 <!-- Modal content-->
     <div class="modal-content">
     
-<div class="modal-header" style="color: black; background-color: #7CD5FF">
-<h4 class="modal-title"><b>Edit Doctor</b></h4>
+<div class="modal-header" style="color: white; background-color: #046C9D">
+<h4 class="modal-title"><b>Copy Add Doctor</b></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
-      {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
-      <input type="hidden" name="docID" id="docID" value=" ">
+      {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
+      <input type="text" name="docID" id="twodocID" value=" ">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="url_generation" id="url_generation" style="width:500px">
+            <input type="text" class="form-control" name="url_generation" id="twourl_generation" style="width:500px">
             </div>
         </div>
         <br>
@@ -27,7 +27,7 @@
             職位<br>Status
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="status" id="status" style="width:500px">
+            <input type="text" class="form-control" name="status" id="twostatus" style="width:500px">
             </div>
         </div>
         <br>
@@ -42,7 +42,7 @@
                 <input type="text" class="form- " name="certificate[]" id="certificate03" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
-                <div id="input_container"></div>
+                <div id="twoinput_container"></div>
             </div>
         </div>
         <br>
@@ -51,7 +51,7 @@
             氏名<br>Name
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="name" id="name" style="width:500px">
+            <input type="text" class="form-control" name="name" id="twoname" style="width:500px">
             </div>
         </div>
         <br>
@@ -60,7 +60,7 @@
             ローマ字（名・氏）<br>Alphabet Name 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="alphabet_name" id="alpha_name" style="width:500px">
+            <input type="text" class="form-control" name="alphabet_name" id="twoalpha_name" style="width:500px">
             </div>
         </div>
         <br>
@@ -84,7 +84,7 @@
             画像キャプション<br>Image Caption 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_caption" id="img_caption" style="width:500px">
+            <input type="text" class="form-control" name="img_caption" id="twoimg_caption" style="width:500px">
             </div>
         </div>
         <br>
@@ -93,7 +93,7 @@
             画像alt<br>Image alt
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_alt" id="img_alt" style="width:500px">
+            <input type="text" class="form-control" name="img_alt" id="twoimg_alt" style="width:500px">
             </div>
         </div>
         <br>
@@ -102,7 +102,7 @@
             業種<br>Industry
             </div>
             <div class="col-10">
-                <div id="input_industry"></div>
+                <div id="twoinput_industry"></div>
             </div>
         </div>
         <br>
@@ -112,7 +112,7 @@
             </div>
             <div class="col-10">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
-                <div id="input_conference"></div>
+                <div id="twoinput_conference"></div>
             </div>
         </div>
         <br>
@@ -137,7 +137,7 @@
                         <option value="December">December</option>
                     </select>
                     <select id="length b_day" name="b_day" class="form- " style="width:100px"></select> -->
-                    <div id="bday_input"></div>
+                    <div id="twobday_input"></div>
             </div>
         </div>
         <br>
@@ -146,7 +146,7 @@
             出生地<br>Place of birth
             </div>
             <div class="col-10">
-                <input type="text" class="form- " name="place_birth" id="place_birth" style="width:200px">
+                <input type="text" class="form- " name="place_birth" id="twoplace_birth" style="width:200px">
                 出身地 | Birthplace
                 <input type="text" class="form- " name="" style="width:200px">
             </div>
@@ -157,7 +157,7 @@
             経歴（学歴）<br>Career（学歴）
             </div>
             <div class="col-10">
-                    <div id="input_career_one"></div>
+                    <div id="twoinput_career_one"></div>
             </div>
         </div>
         <br>
@@ -166,7 +166,7 @@
             経歴（職歴）<br>Career（職歴）
             </div>
             <div class="col-10">
-                <div id="input_career_two"></div>
+                <div id="twoinput_career_two"></div>
             </div>
         </div>
         <br>
@@ -175,7 +175,7 @@
             経歴（賞・表彰）<br>Career（賞・表彰）
             </div>
             <div class="col-10">
-                <div id="input_career_three"></div>
+                <div id="twoinput_career_three"></div>
             </div>
         </div>
         <br>
@@ -184,7 +184,7 @@
             最後の行に現在に至る　<br>最後の行に現在に至る
             </div>
             <div class="col-10">
-                <input type="checkbox" name="n_order" id="n_order_one" value="1"> OK <input type="checkbox" id="n_order" name="n_order" value="0"> NO 
+                <input type="checkbox" name="n_order" id="twon_order_one" value="1"> OK <input type="checkbox" id="twon_order" name="n_order" value="0"> NO 
             </div>
         </div>
         <br>
@@ -199,7 +199,7 @@
                     <option>industry three</option>
                     <option>industry four</option>
                 </select> -->
-                <div id="hospital_off_field"></div>
+                <div id="hospital_off_field_two"></div>
             </div>
         </div>
         <br>
@@ -208,7 +208,7 @@
             所属診療科・所属科<br>Department
             </div>
             <div class="col-10">
-                <div id="input_department"></div>
+                <div id="twoinput_department"></div>
             </div>
         </div>
         <br>
@@ -217,7 +217,7 @@
             医師コメント<br>Doctor Comment
             </div>
             <div class="col-10">
-                <textarea class="form- " id="doc_comment" name="doc_comment" onkeyup="countChar(this)" style="width:90%;height:100%;"></textarea>
+                <textarea class="form- " id="twodoc_comment" name="doc_comment" onkeyup="countChar(this)" style="width:90%;height:100%;"></textarea>
                 <div style="float:right;"><b id="charNum">200</b> <b> / 200 </b> </div>
             </div>
         </div>
