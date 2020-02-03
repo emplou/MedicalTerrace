@@ -222,7 +222,7 @@ input.form-  {
 @if (Request::is('doctor_list') OR Request::is('add_doctor'))
 <div class="content-container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Doctor table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Doctor table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Doctor new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -238,7 +238,7 @@ input.form-  {
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
 <div class="content-container illness_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Illness table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Illness table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Illness new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -254,7 +254,7 @@ input.form-  {
 @if (Request::is('special_list') OR Request::is('add_special'))  
 <div class="content-container special_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Special table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Special table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Special new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -270,7 +270,7 @@ input.form-  {
 @if (Request::is('hospital_list') OR Request::is('add_hospital'))  
 <div class="content-container hospital_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Hospital table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Hospital table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -316,12 +316,12 @@ input.form-  {
 		<div class="navy">
 			<ul class="sidebar-nav">
 				<li class=""><small></small><a class="home_menu" href="home"><span class="icon"><img src="../../images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
-				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="../../images/icon-illness.png"></span><span>病気と知識<br>UI of Illness</span></a></li>
-				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="../../images/icon-special.png"></span><span>特集<br>UI of Special</span></a></li>
+				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="../../images/icon-illness.png"></span><span>病気と知識<br> Illness</span></a></li>
+				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="../../images/icon-special.png"></span><span>特集<br> Special</span></a></li>
 				<li><small class="yellow"></small><a class="yellow"href=""><span class="icon"><img src="../../images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
 				<li><small class="yellow"></small><a class="yellow" href=""><span class="icon"><img src="../../images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
-				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="../../images/icon-doctable.png"></span><span>医師・医療従事者<br>UI of Doctor Table</span></a></li>
-				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="../../images/icon-hosptable.png"></span><span>医療機関<br>UI of Hospital Table</span></a></li>
+				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="../../images/icon-doc.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
+				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="../../images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
 				<li><small class="sky"></small><a class="sky" href=""><span class="icon"><img src="../../images/icon-column.png"></span><span>コラム<br>Column</span></a></li>
 				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="../../images/icon-medequipment.png"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
 				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="../../images/icon-medicine.png"></span><span>薬情報<br>Medicine</span></a></li>
@@ -353,7 +353,7 @@ input.form-  {
 	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
     <script src="lumino/js/custom.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
 	<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
