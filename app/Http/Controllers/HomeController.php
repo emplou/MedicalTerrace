@@ -53,7 +53,8 @@ class HomeController extends Controller
     }
 
     public function add_hospital(){
-        return view('admin.add_hospital');
+         $doctors = DB::table('dv_doctors')->get();
+        return view('admin.add_hospital', compact('doctors'));
     }
 
     public function add_special(){
@@ -1127,6 +1128,7 @@ class HomeController extends Controller
         return $fetch;
     }
 
+<<<<<<< HEAD
     public function save_overwrite_hospital(Request $request){
 
         $details = Input::all();
@@ -1265,5 +1267,43 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
+=======
+    //Overwrite Illness
+    public function overwrite_illness(){
+        $details = Input::all();
+        
+        $illness = DB::table('illness')
+                                    ->where('id','=', $details['id'])
+                                    ->update([
+                                                'ill_url'               => $details['url'],
+                                                'ill_cat'               => $details['ill_cat'],
+                                                'ill_shoulder'          => $details['ill_shldr'],
+                                                'ill_name'              => $details['ill'],
+                                                'ill_ph'                => $details['ill_ph'],
+                                                //'ill_doc'             => $details['doctor'],
+                                                'ill_doc_role'          => $details['role'],
+                                                'ill_doc_cmt'           => $details['doc_cmt'],
+                                                //'ill_summary'         => $details['sm'],
+                                                //'ill_img'             => $details['img'],
+                                                'ill_img_cap'           => $details['img_cap'],
+                                                'ill_img_alt'           => $details['img_alt'],
+                                                //'ill_sub_txt'         => $details['image'],
+                                                'ill_kwords'            => $details['kword'],
+                                                'ill_seo'               => $details['seo'],
+                                                'ill_seo_txt'           => $details['seo_txt'],
+                                                'ill_meta_a'            => $details['meta_txt1'],
+                                                'ill_meta_b'            => $details['meta_txt2'],
+                                                'ill_h1'                => $details['h1'],
+                                                'ill_h2'                => $details['h2'],
+                                                'ill_tag_kw'            => $details['tag'],
+                                                'ill_tag_dep'           => $details['tag_dep'],
+                                                'ill_tag_symp'          => $details['tag_sy'],
+                                                'ill_tag_season'        => $details['tag_s'],
+                                                'ill_tag_season_txt'    => $details['tag_txt'],
+                                                'ill_tag_free'          => $details['tag_f'],
+                                            ]);
+>>>>>>> 750a315d6784b92fd0c17e214fa99829f23062a8
     }
 }
+
+       

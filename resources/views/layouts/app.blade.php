@@ -222,7 +222,7 @@ input.form-  {
 @if (Request::is('doctor_list') OR Request::is('add_doctor'))
 <div class="content-container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Doctor table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Doctor table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Doctor new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -238,7 +238,7 @@ input.form-  {
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
 <div class="content-container illness_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Illness table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Illness table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Illness new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -254,7 +254,7 @@ input.form-  {
 @if (Request::is('special_list') OR Request::is('add_special'))  
 <div class="content-container special_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Special table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Special table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Special new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -270,7 +270,7 @@ input.form-  {
 @if (Request::is('hospital_list') OR Request::is('add_hospital'))  
 <div class="content-container hospital_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Hospital table</small></h1>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Hospital table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
 			<img src="../../images/medical-logo.png" alt="">
@@ -316,12 +316,12 @@ input.form-  {
 		<div class="navy">
 			<ul class="sidebar-nav">
 				<li class=""><small></small><a class="home_menu" href="home"><span class="icon"><img src="../../images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
-				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="../../images/icon-illness.png"></span><span>病気と知識<br>UI of Illness</span></a></li>
-				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="../../images/icon-special.png"></span><span>特集<br>UI of Special</span></a></li>
+				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="../../images/icon-illness.png"></span><span>病気と知識<br> Illness</span></a></li>
+				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="../../images/icon-special.png"></span><span>特集<br> Special</span></a></li>
 				<li><small class="yellow"></small><a class="yellow"href=""><span class="icon"><img src="../../images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
 				<li><small class="yellow"></small><a class="yellow" href=""><span class="icon"><img src="../../images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
-				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="../../images/icon-doctable.png"></span><span>医師・医療従事者<br>UI of Doctor Table</span></a></li>
-				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="../../images/icon-hosptable.png"></span><span>医療機関<br>UI of Hospital Table</span></a></li>
+				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="../../images/icon-doc.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
+				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="../../images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
 				<li><small class="sky"></small><a class="sky" href=""><span class="icon"><img src="../../images/icon-column.png"></span><span>コラム<br>Column</span></a></li>
 				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="../../images/icon-medequipment.png"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
 				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="../../images/icon-medicine.png"></span><span>薬情報<br>Medicine</span></a></li>
@@ -353,7 +353,7 @@ input.form-  {
 	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
     <script src="lumino/js/custom.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
 	<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
@@ -904,127 +904,21 @@ if ( !multipleSupport ) {
 $('input[type=file]').customFile();
 </script>
 
-
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMuK0OUZEPym74iWarEiCnudUSkuA9I6k&libraries=places"></script>
+         
 <script>
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-      var map;
-      var service;
-      var infowindow;
-
-      function initMap() {
-        var sydney = new google.maps.LatLng(-33.867, 151.195);
-
-        infowindow = new google.maps.InfoWindow();
-
-        map = new google.maps.Map(
-            document.getElementById('map'), {center: sydney, zoom: 15});
-
-        var request = {
-          query: 'Museum of Contemporary Art Australia',
-          fields: ['name', 'geometry'],
-        };
-
-        service = new google.maps.places.PlacesService(map);
-
-        service.findPlaceFromQuery(request, function(results, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (var i = 0; i < results.length; i++) {
-              createMarker(results[i]);
-            }
-
-            map.setCenter(results[0].geometry.location);
-          }
-        });
-      }
-
-      function createMarker(place) {
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
-	</script>
-	<script>
-// This sample uses the Autocomplete widget to help the user select a
-// place, then it retrieves the address components associated with that
-// place, and then it populates the form fields with those details.
-// This sample requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script
-// src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-var placeSearch, autocomplete;
-
-var componentForm = {
-  street_number: 'short_name',
-  route: 'long_name',
-  locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  country: 'long_name',
-  postal_code: 'short_name'
-};
-
-function initAutocomplete() {
-  // Create the autocomplete object, restricting the search predictions to
-  // geographical location types.
-  autocomplete = new google.maps.places.Autocomplete(
-      document.getElementById('autocomplete'), {types: ['geocode']});
-
-  // Avoid paying for data that you don't need by restricting the set of
-  // place fields that are returned to just the address components.
-  autocomplete.setFields(['address_component']);
-
-  // When the user selects an address from the drop-down, populate the
-  // address fields in the form.
-  autocomplete.addListener('place_changed', fillInAddress);
-}
-
-function fillInAddress() {
-  // Get the place details from the autocomplete object.
-  var place = autocomplete.getPlace();
-
-  for (var component in componentForm) {
-    document.getElementById(component).value = '';
-    document.getElementById(component).disabled = false;
-  }
-
-  // Get each component of the address from the place details,
-  // and then fill-in the corresponding field on the form.
-  for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      document.getElementById(addressType).value = val;
-    }
-  }
-}
-
-// Bias the autocomplete object to the user's geographical location,
-// as supplied by the browser's 'navigator.geolocation' object.
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle(
-          {center: geolocation, radius: position.coords.accuracy});
-      autocomplete.setBounds(circle.getBounds());
+  google.maps.event.addDomListener(window, 'load', initialize);
+    function initialize() {
+      var input = document.getElementById('autocomplete_search');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener('place_changed', function () {
+      var place = autocomplete.getPlace();
+      // place variable will have all the information you are looking for.
+      $('#lat').val(place.geometry['location'].lat());
+      $('#long').val(place.geometry['location'].lng());
     });
   }
-}
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-5c6mI6Gk7uPNp2purNvjY5nJ4kLp9n0&libraries=places&callback=initAutocomplete"
-        async defer></script>
+</script>
 
 
 
