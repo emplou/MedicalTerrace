@@ -433,7 +433,8 @@
             土 <input type="checkbox" id="tag_season6" name="tag_season[]"><label for="tag_season6"></label>
             日 <input type="checkbox" id="tag_season7" name="tag_season[]"><label for="tag_season7"></label>
             祝 <input type="checkbox" id="tag_season8" name="tag_season[]"><label for="tag_season8"></label>
-            <br>
+        </div>
+        <div class="cols-8">
             <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
             <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
             診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
@@ -445,9 +446,14 @@
             土 <input type="checkbox" id="tag_season14" name="tag_season[]"><label for="tag_season14"></label>
             日 <input type="checkbox" id="tag_season15"name="tag_season[]"><label for="tag_season15"></label>
             祝 <input type="checkbox" id="tag_season16"name="tag_season[]"><label for="tag_season16"></label>
-            <br>
-            <input type="text" class="form- " name="exam_comment" style="width:200px"> ※受診内容により日・時間が異なる場合に記載
-            <br>
+            </div>
+            <div class="cols-15"></div>
+            <div class="cols-8">
+                
+                <div class="cols-6"><input type="text" class="form- " name="exam_comment"> </div>
+            <div class="cols-3">    
+            ※受診内容により日・時間が異なる場合に記載
+            </div>
             <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
             <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
             診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
@@ -462,6 +468,120 @@
         </div>
     </div>
 
+     <!-- Buttons -->
+    <div class="form-group">
+        <div class="cols-15"></div>
+        <div class="cols-55">
+            <button type="button" class="btn-prime addto"></button>
+            <button type="button" class="btn-prime add-duplicate"></button>
+        </div>
+    </div>
+
+    <!-- Subheading 3-->
+    <div class="form-group">
+        <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
+        <div class="cols-5">          
+            <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+            </textarea>
+        </div>
+        <div class="cols-2">          
+            <span id="rchars4">0</span>/46
+        </div>
+    </div>
+
+
+    <!-- Text of Subheading 3-->
+    <div class="form-group editor">
+        <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
+        <div class="cols-6">   
+            <!-- add new textarea here -->
+            <div class="field_wrap2"></div>
+            <div id="addanother1">
+                <div class="cols-10">        
+                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+    </div>
+
+     <!-- Buttons -->
+    <div class="form-group">
+        <div class="cols-15"></div>
+        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
+    </div>
+
+    <!-- Subheading 4-->
+    <div class="form-group">
+        <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
+        <div class="cols-5">          
+            <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+            </textarea>
+        </div>
+        <div class="cols-2">          
+            <span id="rchars4">0</span>/46
+        </div>
+    </div>
+
+    <!-- Text of Subheading 4-->
+    <div class="form-group editor">
+        <label class="control-label cols-15"> </label>
+        <div class="cols-6">   
+            <!-- add new textarea here -->
+            <div class="field_wrap2"></div>
+            <div id="addanother1">
+                <div class="cols-10">        
+                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-group">
+        <div class="cols-15"></div>
+        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
+    </div>
+
+    <!-- Image Alt -->
+    <div class="form-group">
+        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
+        </div>
+    </div>
+
+    <!-- Subheading 4-->
+    <div class="form-group">
+        <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
+        <div class="cols-4">          
+            <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+            </textarea>
+        </div>
+        
+    </div>
+
+    <!-- Text of Subheading 4-->
+    <div class="form-group editor">
+         <label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label>
+        <div class="cols-6">   
+            <!-- add new textarea here -->
+            <div class="field_wrap2"></div>
+            <div id="addanother1">
+                <div class="cols-10">        
+                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+    </div>
+
+    <!-- Buttons -->
+    <div class="form-group">
+        <div class="cols-15"></div>
+        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
+    </div>
 
 <!-- =========================================== -->
         <div class="container">

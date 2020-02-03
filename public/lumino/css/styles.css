@@ -2097,6 +2097,12 @@ input.form-control {
 .btn-prime.release2 {
   background-image: url(/images/icon-release2.png);
 }
+.btn-prime.addto {
+  background-image: url(/images/icon-addto.png);
+}
+.btn-prime.add-duplicate {
+  background-image: url(/images/icon-add-duplicate.png);
+}
 
 
 
