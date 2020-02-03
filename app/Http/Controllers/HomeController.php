@@ -53,7 +53,8 @@ class HomeController extends Controller
     }
 
     public function add_hospital(){
-        return view('admin.add_hospital');
+         $doctors = DB::table('dv_doctors')->get();
+        return view('admin.add_hospital', compact('doctors'));
     }
 
     public function add_special(){
@@ -869,31 +870,138 @@ class HomeController extends Controller
         // return $value;
     }
 
-    public function save_edit_doctor(){
+    public function save_edit_doctor(Request $request){
         $details = Input::all();
 
+        dd($request->all());
+
+        $doctors = DB::table('dv_doctors')->where('id','=',$details['docID'])->get();
+        foreach($doctors as $doc){
+            $image = $doc->image;
+        }
+
+        if(empty($details['profile_image'])){
+            $final = $image;
+            
+        }else{
+            $destinationPath = '';
+            $filename        = '';
+            $file            = $request->file('profile_image');
+
+            $destinationPath = public_path().'/doctor_photos';
+            $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+            $uploadSuccess   = $file->move($destinationPath, $filename);
+
+            $final = '/doctor_photos/'.$filename;
+
+        }
+
+        $certificate = $details['certificate']; 
+        $response = array();
+        foreach($certificate as $key => $cert)
+        {
+            $response[$key]['med_sbj_list'] = $cert;
+        }
+        $jsoncertificate = json_encode($response);
+
+        $conference = $details['conference']; 
+        $res = array();
+        foreach($conference as $key => $con)
+        {
+            $res[$key]['med_sbj_list'] = $con;
+        }
+        $jsonconference = json_encode($res);
+
+        // career Academic Background
+        $years = $details['c_ac_year']; 
+        $months = $details['c_ac_month']; 
+        $descs = $details['c_ac_desc']; 
+        $toyears = $details['c_ac_year_to']; 
+        $tomonths = $details['c_ac_month_to']; 
+        $todescs = $details['c_ac_desc_to']; 
+        $response = array();
+        foreach($years as $key => $year)
+        {
+        $response[$key]['from_year'] = $year;
+        $response[$key]['from_month'] = $months[$key];
+        $response[$key]['from_desc'] = $descs[$key];
+        $response[$key]['to_year'] = $toyears[$key];
+        $response[$key]['to_month'] = $tomonths[$key];
+        $response[$key]['to_desc'] = $todescs[$key];
+        }
+        $academic_careers = json_encode($response); 
+
+        // career work experience
+        $weyears = $details['c_we_year']; 
+        $wemonths = $details['c_we_month']; 
+        $wedescs = $details['c_we_desc']; 
+        $wetoyears = $details['c_we_year_to']; 
+        $wetomonths = $details['c_we_month_to']; 
+        $wetodescs = $details['c_we_desc_to']; 
+        $weresponse = array();
+        foreach($weyears as $key => $weyear)
+        {
+        $weresponse[$key]['we_from_year'] = $weyear;
+        $weresponse[$key]['we_from_month'] = $wemonths[$key];
+        $weresponse[$key]['we_from_desc'] = $wedescs[$key];
+        $weresponse[$key]['we_to_year'] = $wetoyears[$key];
+        $weresponse[$key]['we_to_month'] = $wetomonths[$key];
+        $weresponse[$key]['we_to_desc'] = $wetodescs[$key];
+        }
+        $work_exp = json_encode($weresponse); 
+        //exit;
+
+        // career awards
+        $awyears = $details['c_aw_year']; 
+        $awmonths = $details['c_aw_month']; 
+        $awdescs = $details['c_aw_desc']; 
+        $awtoyears = $details['c_aw_year_to']; 
+        $awtomonths = $details['c_aw_month_to']; 
+        $awtodescs = $details['c_aw_desc_to']; 
+        $awresponse = array();
+        foreach($awyears as $key => $awyear)
+        {
+        $awresponse[$key]['from_year'] = $awyear;
+        $awresponse[$key]['from_month'] = $awmonths[$key];
+        $awresponse[$key]['from_desc'] = $awdescs[$key];
+        $awresponse[$key]['to_year'] = $awtoyears[$key];
+        $awresponse[$key]['to_month'] = $awtomonths[$key];
+        $awresponse[$key]['to_desc'] = $awtodescs[$key];
+        }
+        $awards = json_encode($awresponse);
+
+        $department = $details['department']; 
+        $res2 = array();
+        foreach($department as $key => $dep)
+        {
+            $res2[$key]['med_sbj_list'] = $dep;
+        }
+        $jsondepartment = json_encode($res2);
+
+        $docID = $details['docID'];
+
         $doctors = DB::table(' dv_doctors')
-                            ->where('id','=', $details['docID'])
+                            ->where('id','=', $docID)
                             ->update([
                                         'url_generation'            => $details['url_generation'],
                                         'status'                    => $details['status'],
-                                        'certificate'               => $details['certificate'],
+                                        'certificate'               => $jsoncertificate,
                                         'name'                      => $details['name'],
                                         'alphabet_name'             => $details['alphabet_name'],
-                                        'image'                     => $details['image'],
-                                        'image_caption'             => $details['image_caption'],
-                                        'image_alt'                 => $details['image_alt'],
+                                        'image'                     => $final,
+                                        'image_caption'             => $details['img_caption'],
+                                        'image_alt'                 => $details['img_alt'],
                                         'industry'                  => $details['industry'],
-                                        'conference'                => $details['conference'],
-                                        'birthday'                  => $details['birthday'],
-                                        'place_of_birth'            => $details['place_of_birth'],
-                                        'career_academic_back'      => $$details['career_academic_back'],
-                                        'career_work_exp'           => $details['career_work_exp'],
-                                        'career_awards'             => $details['career_awards'],
-                                        'sort_career'               => $details['sort_career'],
+                                        'conference'                => $jsonconference,
+                                        'birthday'                  => $details['b_month'].'-'.$details['b_day'].'-'.$details['b_year'],
+                                        'place_of_birth'            => $details['place_birth'],
+                                        'career_academic_back'      => $academic_careers,
+                                        'career_work_exp'           => $work_exp,
+                                        'career_awards'             => $awards,
+                                        'sort_career'               => $details['n_order'],
                                         'hospital_office'           => $details['hospital_office'],
                                         'department'                => $details['department'],
-                                        'doctor_comment'            => $details['doctor_comment'],
+                                        'doctor_comment'            => $jsondepartment,
                                     ]);
 
         return redirect::back()->with('message','Successfully Encoded');
