@@ -1342,7 +1342,11 @@ class HomeController extends Controller
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> cb7185337deb7644305e4afc736c4610d7bf8314
     //Overwrite Illness
     public function overwrite_illness(){
         $details = Input::all();
