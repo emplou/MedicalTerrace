@@ -1052,3 +1052,57 @@ $.ajaxSetup({
       i++;  
 
     }
+
+    $('.addcert2').on('click', addfields);
+    var i=0;
+    function addfields(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+    $('.addcert3').on('click', addfields);
+    var i=0;
+    function addfields(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+    $('.addcert4').on('click', addfields);
+    var i=0;
+    function addfields(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
