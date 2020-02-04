@@ -512,21 +512,11 @@ $(document).ready(function() {
         }
      });
 });
-
-CKEDITOR.replace( 'text_of_heading' );
-CKEDITOR.add
-// CKEDITOR.replace( 'Text_of_Subheading_special');
-
-</script>
-
-<!-- <script>
-	CKEDITOR.replace( 'Text_of_Subheading_special' );
-	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'Text_of_Subheading_two_special' );
-	CKEDITOR.add 
-</script> -->
+	CKEDITOR.replace( 'text_of_heading' );
+	CKEDITOR.add
+</script>
 
 <script>
 	CKEDITOR.replace( 'Text_of_Subheading_special' );
@@ -541,9 +531,19 @@ CKEDITOR.add
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'med_subj_text_subheading_hospital' );
+	CKEDITOR.replace( 'equipment_subheading' );
 	CKEDITOR.add 
 </script>
+<script>
+	CKEDITOR.replace( 'equipment_subheading2' );
+	CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'med_text_subheading' );
+	CKEDITOR.add 
+</script>
+
+
 <script>
 	CKEDITOR.replace( 'feature_text_subheading_hospital' ); 
 	CKEDITOR.add 
@@ -554,6 +554,10 @@ CKEDITOR.add
 </script>
 <script>
 	CKEDITOR.replace( 'staff_comment_hospital' );
+	CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'med_subj_text_subheading_hospital' );
 	CKEDITOR.add 
 </script>
 <script>

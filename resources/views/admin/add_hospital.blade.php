@@ -281,7 +281,7 @@
             <div class="field_wrap2"></div>
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control" name="text_subheading_hospital1" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
@@ -386,7 +386,7 @@
     <!-- Subheading 2-->
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
-        <div class="cols-5">          
+        <div class="cols-6">          
             <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
             </textarea>
         </div>
@@ -515,7 +515,7 @@
     <div class="form-group">
         <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
         <div class="cols-5">          
-            <textarea class="form-control sm2" name="equipment_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+            <textarea class="form-control sm2" name="text_equipment_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
             </textarea>
         </div>
         <div class="cols-2">          
@@ -531,7 +531,7 @@
             <div class="field_wrap2"></div>
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control" name="equipment_subheading2" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
@@ -555,7 +555,7 @@
     <!-- Subheading 4-->
     <div class="form-group">
         <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
-        <div class="cols-4">          
+        <div class="cols-5">          
             <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
             </textarea>
         </div>
@@ -570,7 +570,7 @@
             <div class="field_wrap2"></div>
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
@@ -601,91 +601,135 @@
             <div class="field_wrap2"></div>
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
         <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
-<!-- =========================================== -->
-        <div class="container">
 
-            
-            
-            <!-- Feature area -->
-            <div class="row">
-                <div class="col-2">
-                特徴タイトル<br>Subheading
-                </div>
-                <div class="col-10">
-                    <input type="text" class="form-control" name="feature_title" style="width:500px">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-2">
-                特徴本文<br>Text of Subheading
-                </div>
-                <div class="col-10">
-                    <input type="text" class="form-control" name="feature_text_subheading_hospital" style="width:500px">
-                    <input type="file" class="btn btn-warning" name="feature_image">
-                </div>
-            </div>
-            <!-- End of Feature Area -->
-            <br>
-            <!-- Equipment Area -->
-            <div class="row">
-                <div class="col-2">
-                設備・機器<br>Equipment
-                </div>
-                <div class="col-10">
-                    <input type="text" class="form-control" name="equipment_subheading" style="width:500px">
-                    <input type="text" class="form-control" name="equipment_text_subheading_hospital" style="width:500px">
-                    <input type="file" class="btn btn-success" name="equipment_image">
-                </div>
-            </div>
-            <!-- End for equipment area -->
-            <br>
-            <!-- Staff Area -->
-            <div class="row">
-                <div class="col-2">
-                スタッフリード<br>Staff Subheading
-                </div>
-                <div class="col-10">
-                    <input type="text" class="form-control" name="staff_subheading_hospital" style="width:500px">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-2">
-                スタッフコメント<br>Staff comment
-                </div>
-                <div class="col-10">
-                    <input type="text" class="form-control" name="staff_comment_hospital" style="width:500px">
-                    <input type="file" class="btn btn-danger" name="staff_image">
-                </div>
-            </div>
-            <!-- End of staff area -->
-            <br>
-            <div class="row">
-                <div class="col-2">
-                院内処方の有無<br>In-hospital prescription
-                </div>
-                <div class="col-10">
-                    <input type="radio" class=" " name="pres"> 有 
-                    <input type="radio" class=" " name="pres"> 一部有 
-                    <input type="radio" class=" " name="pres"> 無 
-                </div>
-            </div>
+    <!-- Buttons -->
+    <div class="form-group">
+        <div class="cols-15">院内処方の有無<br><span>In-hospital prescription</span></div>
+        <div class="cols-5 rad-buttons">
+            <input type="radio" id="sprvsn" name="pres" value="監修">
+            <label for="sprvsn">有 </label>
+            <input type="radio" id="cc" name="pres" value="取材協力">
+            <label for="cc">一部有</label>
+            <input type="radio" id="cc" name="pres" value="取材協力">
+            <label for="cc">無</label>
+        </div>	
+    </div>
 
+    <!-- Free Medical Expenses -->
+    <div class="form-group">
+        <div class="control-label cols-15">自由診療費用<br><span>Free medical Expenses</span></div>
+        <div class="cols-8 rad-buttons">
+            <div class="cols-2 left">
+                <label for="sprvsn">項目 </label>
+                <input type="text" id="sprvsn" name="pred" placeholder="例)予防接種 インフルエンザ">
+            </div>
+            <div class="cols-2 left">
+                <label for="cc">費用</label>
+                <input type="text" id="cc" name="pres" placeholder="例)3,500円">
+            </div>
+            <div class="cols-2 left">
+                <label for="cc">診療科</label>
+                <select class="form-control" name="pres">
+                    <option>選択してください</option>
+                </select>
+            </div>
+        </div>	
+    </div>
 
-
-        
-
+    <!-- Access -->
+    <div class="form-group">
+        <label class="control-label cols-15">アクセス<br><span>Access</span></label>
+        <div class="cols-4">
+            <input type="text" class="form-control" name="access1">
         </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label cols-15"></label>
+        <div class="cols-4">
+            <input type="text" class="form-control" name="access2">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label cols-15"></label>
+        <div class="cols-4">
+            <input type="text" class="form-control" name="access3">
+        </div>
+    </div>
+
+    <!-- Parking -->
+    <div class="form-group">
+        <div class="cols-15">駐車場<br><span>Parking</span></div>
+        <div class="cols-5 rad-buttons">
+            料金
+            <input type="radio" id="sprvsn" name="pres" value="監修">
+            <label for="sprvsn">無料</label>
+            <input type="radio" id="cc" name="pres" value="取材協力">
+            <label for="cc">有料</label>
+            <input class="form-control" type="text" id="cc" name="pres" value="取材協力">
+        </div>	
+    </div>
+
+    <!-- Hospitalization -->
+    <div class="form-group">
+        <div class="cols-15">入院可否<br><span>Hospitalization</span></div>
+        <div class="cols-5 rad-buttons">
+            <input type="radio" id="sprvsn" name="pres" value="監修">
+            <label for="sprvsn">可</label>
+            <input type="radio" id="cc" name="pres" value="取材協力">
+            <label for="cc">否</label>
+            <input class="form-control" type="text" placeholder="※注意書き自由に">
+        </div>	
+    </div>
+
+    <!-- In-hospital service -->
+    <div class="form-group">
+        <label class="control-label cols-15">院内サービス<br><span>In-hospital service</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" name="hosp_service">
+        </div>
+    </div>
+
+    <!-- Support Languages -->
+    <div class="form-group">
+        <label class="control-label cols-15">対応可能な外国語<br><span>Support Languages</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" name="support_lang">
+        </div>
+    </div>
+
+    <!-- Support Languages -->
+    <div class="form-group">
+        <label class="control-label cols-15">売店・食堂の有無<br><span>Shop, dining room</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" name="support_lang">
+        </div>
+    </div>
+
+    <!-- Credit Card Payment -->
+    <div class="form-group">
+        <div class="cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
+        <div class="cols-5 rad-buttons">
+            <input type="radio" id="sprvsn" name="pres" value="監修">
+            <label for="sprvsn">可</label>
+            <input type="radio" id="cc" name="pres" value="取材協力">
+            <label for="cc">否</label>
+            <input class="form-control" type="text" placeholder="※注意書き自由に">
+        </div>	
+    </div>
+
+    
+
+<!-- =========================================== -->
+
 
 <!-- Button trigger modal -->
-<button type="button" id="mymodal1" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" style="display:none;" id="mymodal1" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
 
@@ -708,7 +752,7 @@
   </div>
 </div>
 <!-- Button trigger modal -->
-<button type="button" id="mymodal2" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" style="display:none;" id="mymodal2" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
 
@@ -730,8 +774,9 @@
     </div>
   </div>
 </div>
+
 <div class="form-nopads">
-    <!-- Editor Page -->
+        <!-- Editor Page -->
         <div class="editor-page">
             <div class="form-group">
                 <label class="control-label cols-15">エディター担当者<br><span>Editor</span></label>
@@ -742,7 +787,14 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label cols-15">メモ<br><span>Note</span></label>
+                <label class="control-label cols-15">会話メモ<br><span>Conversation Note</span></label>
+                <div class="cols-5">   
+                    <textarea class="form-control" rows="10" name="note"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">エディターの所見<br><span>Editor Opinion</span></label>
                 <div class="cols-5">   
                     <textarea class="form-control" rows="10" name="note"></textarea>
                 </div>
@@ -752,8 +804,8 @@
     <input type="submit" name="save" value="" class="save-btn">
     <div id="totop" class="float-btn"></div>
     <div id="tobottom" class="float-btn"></div>
-</div>
+
     {!! Form::close() !!}
 </div>
-    @endsection
+@endsection
 
