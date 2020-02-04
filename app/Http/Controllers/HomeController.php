@@ -60,7 +60,6 @@ class HomeController extends Controller
     public function add_special(){
         $doctors = DB::table('dv_doctors')->get();
         return view('admin.add_special', compact('doctors'));
-
     }
 
     public function illness_list(){
@@ -81,7 +80,6 @@ class HomeController extends Controller
         $special = DB::table('special')->get();
         return view('admin.special_list', compact('special'));
     }
-    
 
     public function save_special(Request $request){
 
@@ -121,6 +119,33 @@ class HomeController extends Controller
         }
         $txt_sum = json_encode($resp);
 
+        // Subhead1
+        $suba_list = $details['sub_head1a']; 
+        $resp_suba = array();
+        foreach($suba_list as $key_suba => $cert_suba)
+        {
+            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        }
+        $jsonsuba_list = json_encode($resp_suba);
+
+        // Subhead2
+        $subb_list = $details['sub_head1b']; 
+        $resp_subb = array();
+        foreach($subb_list as $key_subb => $cert_subb)
+        {
+            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        }
+        $jsonsubb_list = json_encode($resp_subb);
+
+        // Textheading
+        $tc_list = $details['txt_ckeditor']; 
+        $resp_tc = array();
+        foreach($tc_list as $key_tc => $cert_tc)
+        {
+            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        }
+        $jsontc_list = json_encode($resp_tc);
+
         // Ill Image
         $pos_list = $details['pos_ill']; 
         $response2 = array();
@@ -129,6 +154,33 @@ class HomeController extends Controller
             $response2[$key2]['pos_ill'] = $cert2;
         }
         $jsonpos_list = json_encode($response2); 
+
+        // Subhead1
+        $suba_list = $details['sub_head1a']; 
+        $resp_suba = array();
+        foreach($suba_list as $key_suba => $cert_suba)
+        {
+            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        }
+        $jsonsuba_list = json_encode($resp_suba);
+
+        // Subhead2
+        $subb_list = $details['sub_head1b']; 
+        $resp_subb = array();
+        foreach($subb_list as $key_subb => $cert_subb)
+        {
+            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        }
+        $jsonsubb_list = json_encode($resp_subb);
+
+        // Textheading
+        $tc_list = $details['txt_ckeditor']; 
+        $resp_tc = array();
+        foreach($tc_list as $key_tc => $cert_tc)
+        {
+            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        }
+        $jsontc_list = json_encode($resp_tc);
 
         // Subhead and Text2
         $sub_head2a       = $details['sub_head2a']; 
@@ -297,20 +349,34 @@ class HomeController extends Controller
         {
             $response2[$key2]['h2'] = $cert2;
         }
-        $jsonh2_list = json_encode($response2); 
-
-        // Subhead and Text
-        $sub_head1a       = $details['sub_head1a']; 
-        $sub_head1b       = $details['sub_head1b']; 
-        $txt_ckeditor     = $details['txt_ckeditor']; 
-        $resp = array();
-        foreach($sub_head1a as $key => $sub_head1a)
+        $jsonh2_list = json_encode($response2);
+        
+        // Subhead1
+        $suba_list = $details['sub_head1a']; 
+        $resp_suba = array();
+        foreach($suba_list as $key_suba => $cert_suba)
         {
-        $response[$key]['sub_head1a'] = $sub_head1a[$key];
-        $response[$key]['sub_head1b'] = $sub_head1b[$key];
-        $response[$key]['txt_ckeditor']  = $txt_ckeditor[$key];
+            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
         }
-        $txt_sum = json_encode($resp);
+        $jsonsuba_list = json_encode($resp_suba);
+
+        // Subhead2
+        $subb_list = $details['sub_head1b']; 
+        $resp_subb = array();
+        foreach($subb_list as $key_subb => $cert_subb)
+        {
+            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        }
+        $jsonsubb_list = json_encode($resp_subb);
+
+        // Textheading
+        $tc_list = $details['txt_ckeditor']; 
+        $resp_tc = array();
+        foreach($tc_list as $key_tc => $cert_tc)
+        {
+            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        }
+        $jsontc_list = json_encode($resp_tc);
 
         // tag
         $tag_list = $details['tag']; 
@@ -390,7 +456,9 @@ class HomeController extends Controller
         $illness->ill_img               = '/img/'.$filename; //illness image
         $illness->ill_img_cap           = $details['img_cap'];
         $illness->ill_img_alt           = $details['img_alt'];
-        $illness->ill_sub_txt           = $txt_sum;//it should be json script when added
+        $illness->ill_sub1              = $jsonsuba_list;//it should be json script when added
+        $illness->ill_sub2              = $jsonsubb_list;//it should be json script when added
+        $illness->ill_sub_txt           = $jsontc_list;//it should be json script when added
         $illness->ill_kwords            = $jsonk_list;
         $illness->ill_seo               = $details['seo'];
         $illness->ill_seo_txt           = $details['seo_txt'];
@@ -477,7 +545,7 @@ class HomeController extends Controller
         if($details['subheading-chck'] == 1){
             $risk_assess = new Risk_assessment;
             $risk_assess->ra_ill_id           = $illness_id;
-            $risk_assess->ra_title            = $details['ra_title'];
+            $risk_assess->ra_title            = $details['subheading-chck'];
             $risk_assess->ra_text             = $jsonsh_list ;
             $risk_assess->ra_risk_lvl         = $jsonrl_list; 
             $risk_assess->ra_result           = $jsoncr_list;  
@@ -1128,7 +1196,6 @@ class HomeController extends Controller
         return $fetch;
     }
 
-<<<<<<< HEAD
     public function save_overwrite_hospital(Request $request){
 
         $details = Input::all();
@@ -1267,10 +1334,133 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
-=======
+    }
+
     //Overwrite Illness
     public function overwrite_illness(){
         $details = Input::all();
+
+        $illness_id = rand();
+        //$ill_img_id = rand();
+        //$ill_gr_id = rand();
+
+        /* illness image */
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('img');
+
+        $destinationPath = public_path().'/illness';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of illness image */
+
+        // description summary
+        $sum_list = $details['sm']; 
+        $response = array();
+        foreach($sum_list as $key1 => $cert1)
+        {
+            $response[$key1]['sm'] = $cert1;
+        }
+        $jsonsum_list = json_encode($response); 
+
+        // h2
+        $h2_list = $details['h2']; 
+        $response2 = array();
+        foreach($h2_list as $key2 => $cert2)
+        {
+            $response2[$key2]['h2'] = $cert2;
+        }
+        $jsonh2_list = json_encode($response2); 
+
+        // Subhead1
+        $suba_list = $details['sub_head1a']; 
+        $resp_suba = array();
+        foreach($suba_list as $key_suba => $cert_suba)
+        {
+            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        }
+        $jsonsuba_list = json_encode($resp_suba);
+
+        // Subhead2
+        $subb_list = $details['sub_head1b']; 
+        $resp_subb = array();
+        foreach($subb_list as $key_subb => $cert_subb)
+        {
+            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        }
+        $jsonsubb_list = json_encode($resp_subb);
+
+        // Textheading
+        $tc_list = $details['txt_ckeditor']; 
+        $resp_tc = array();
+        foreach($tc_list as $key_tc => $cert_tc)
+        {
+            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        }
+        $jsontc_list = json_encode($resp_tc);
+
+        // tag
+        $tag_list = $details['tag']; 
+        $response3 = array();
+        foreach($tag_list as $key3 => $cert3)
+        {
+            $response3[$key3]['tag'] = $cert3;
+        }
+        $jsontag_list = json_encode($response3); 
+
+        // tag department
+        $dep_list = $details['tag_dep']; 
+        $response4 = array();
+        foreach($dep_list as $key4 => $cert4)
+        {
+            $response4[$key4]['tag_dep'] = $cert4;
+        }
+        $jsondep_list = json_encode($response4); 
+
+        // tag symptoms
+        $sy_list = $details['tag_sy']; 
+        $response5 = array();
+        foreach($sy_list as $key5 => $cert5)
+        {
+            $response5[$key5]['tag_sy'] = $cert5;
+        }
+        $jsonsy_list = json_encode($response5);
+
+        // tag season
+        $s_list = $details['tag_s']; 
+        $response6 = array();
+        foreach($s_list as $key6 => $cert6)
+        {
+            $response6[$key6]['tag_s'] = $cert6;
+        }
+        $jsons_list = json_encode($response6); 
+
+        // tag season text
+        $stxt_list = $details['tag_txt']; 
+        $response7 = array();
+        foreach($stxt_list as $key7 => $cert7)
+        {
+            $response7[$key7]['tag_txt'] = $cert7;
+        }
+        $jsonstxt_list = json_encode($response7); 
+
+        // tag free
+        $f_list = $details['tag_f']; 
+        $response8 = array();
+        foreach($f_list as $key8 => $cert8)
+        {
+            $response8[$key8]['tag_f'] = $cert8;
+        }
+        $jsonf_list = json_encode($response8); 
+
+        // keywords
+        $k_list = $details['kword']; 
+        $response12 = array();
+        foreach($k_list as $key12 => $cert12)
+        {
+            $response12[$key12]['kword'] = $cert12;
+        }
+        $jsonk_list = json_encode($response12); 
         
         $illness = DB::table('illness')
                                     ->where('id','=', $details['id'])
@@ -1283,33 +1473,34 @@ class HomeController extends Controller
                                                 //'ill_doc'             => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
-                                                //'ill_summary'         => $details['sm'],
-                                                //'ill_img'             => $details['img'],
+                                                'ill_summary'           => $jsonsum_list,
+                                                'ill_img'               => $details['img'],
                                                 'ill_img_cap'           => $details['img_cap'],
                                                 'ill_img_alt'           => $details['img_alt'],
-                                                //'ill_sub_txt'         => $details['image'],
-                                                'ill_kwords'            => $details['kword'],
+                                                'ill_sub1'              => $jsonsuba_list,
+                                                'ill_sub2'              => $jsonsubb_list,
+                                                'ill_sub_txt'           => $jsontc_list,
+                                                'ill_kwords'            => $jsonk_list,
                                                 'ill_seo'               => $details['seo'],
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
-                                                'ill_h2'                => $details['h2'],
-                                                'ill_tag_kw'            => $details['tag'],
-                                                'ill_tag_dep'           => $details['tag_dep'],
-                                                'ill_tag_symp'          => $details['tag_sy'],
-                                                'ill_tag_season'        => $details['tag_s'],
-                                                'ill_tag_season_txt'    => $details['tag_txt'],
-                                                'ill_tag_free'          => $details['tag_f'],
+                                                'ill_h2'                => $jsonh2_list,
+                                                'ill_tag_kw'            => $tag_list,
+                                                'ill_tag_dep'           => $jsondep_list,
+                                                'ill_tag_symp'          => $jsonsy_list,
+                                                'ill_tag_season'        => $jsons_list,
+                                                'ill_tag_season_txt'    => $jsonstxt_list,
+                                                'ill_tag_free'          => $jsonf_list,
                                             ]);
->>>>>>> 750a315d6784b92fd0c17e214fa99829f23062a8
     }
 
     //Overwrite Special
     public function overwrite_special(){
         $details = Input::all();
         
-        $illness = DB::table('special')
+        $special = DB::table('special')
                                     ->where('id','=', $details['id'])
                                     ->update([
                                                 'sp_url'                => $details['url'],
