@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @include('modals.modal_edit_doctor')
+@include('modals.modal_copy_add_doctor')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 <br>

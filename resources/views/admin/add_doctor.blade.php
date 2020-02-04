@@ -77,7 +77,7 @@
         <div class="field_wrap1"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="cols-6">
+            <div class="cols-6 addanother">
                 <div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
                 <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
@@ -500,25 +500,25 @@
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -529,25 +529,25 @@
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -559,25 +559,25 @@
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
