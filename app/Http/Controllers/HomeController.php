@@ -107,19 +107,6 @@ class HomeController extends Controller
         }
         $jsonlead_list = json_encode($response); 
 
-        // Subhead and Text
-        $sub_head1a       = $details['sub_head1a']; 
-        $sub_head1b       = $details['sub_head1b']; 
-        $txt_ckeditor     = $details['txt_ckeditor']; 
-        $resp = array();
-        foreach($sub_head1a as $key => $sub_head1a)
-        {
-        $response[$key]['sub_head1a'] = $sub_head1a[$key];
-        $response[$key]['sub_head1b'] = $sub_head1b[$key];
-        $response[$key]['txt_ckeditor']  = $txt_ckeditor[$key];
-        }
-        $txt_sum = json_encode($resp);
-
         // Subhead1
         $suba_list = $details['sub_head1a']; 
         $resp_suba = array();
@@ -183,18 +170,32 @@ class HomeController extends Controller
         }
         $jsontc_list = json_encode($resp_tc);
 
-        // Subhead and Text2
-        $sub_head2a       = $details['sub_head2a']; 
-        $sub_head2b       = $details['sub_head2b']; 
-        $txt2_ckeditor     = $details['txt2_ckeditor']; 
-        $resp2 = array();
-        foreach($sub_head2a as $key => $sub_head2a)
+        // Subhead1
+        $suba2_list = $details['sub_head2a']; 
+        $resp_suba2 = array();
+        foreach($suba2_list as $key2_suba => $cert_suba2)
         {
-        $response[$key]['sub_head2a'] = $sub_head2a[$key];
-        $response[$key]['sub_head2b'] = $sub_head2b[$key];
-        $response[$key]['txt2_ckeditor']  = $txt2_ckeditor[$key];
+            $resp_suba2[$key_suba2]['sub_head2a'] = $cert_suba2;
         }
-        $txt2_sum = json_encode($resp2);
+        $jsonsuba2_list = json_encode($resp_suba2);
+
+        // Subhead2
+        $subb2_list = $details['sub_head2b']; 
+        $resp_subb2 = array();
+        foreach($subb2_list as $key_subb2 => $cert_subb2)
+        {
+            $resp_subb2[$key_subb2]['sub_head2b'] = $cert_subb2;
+        }
+        $jsonsubb2_list = json_encode($resp_subb2);
+
+        // Textheading
+        $tc2_list = $details['txt2_ckeditor']; 
+        $resp_tc2 = array();
+        foreach($tc2_list as $key_tc2 => $cert_tc2)
+        {
+            $resp_tc2[$key_tc2]['txt2_ckeditor'] = $cert_tc2;
+        }
+        $jsontc2_list = json_encode($resp_tc2);
 
         // seo keywords
         $k_list = $details['kword']; 
@@ -277,7 +278,7 @@ class HomeController extends Controller
         }
         $jsonf_list = json_encode($response11);
  
-        //Illness
+        //Special
         $special = new Special;
         $special->sp_id                = $special_id;
         $special->sp_url               = $details['url'];
@@ -293,9 +294,13 @@ class HomeController extends Controller
         $special->sp_img_cap           = $details['img_cap'];
         $special->sp_img_alt           = $details['img_alt'];
         $special->sp_txt               = $jsonlead_list; //it should be json script when added
-        $special->sp_sum               = $txt_sum; //it should be json script when added
+        $special->sp_sub1              = $jsonsuba_list;//it should be json script when added
+        $special->sp_sub2              = $jsonsubb_list;//it should be json script when added
+        $special->sp_sum               = $jsontc_list; //it should be json script when added
         $special->sp_ill_img           = $jsonpos_list;//it should be json script when added
-        $special->sp_sum2              = $txt2_sum; //it should be json script when added
+        $special->sp_sub3              = $jsonsuba2_list;//it should be json script when added
+        $special->sp_sub4              = $jsonsubb2_list;//it should be json script when added
+        $special->sp_sum2              = $jsontc2_list; //it should be json script when added
         $special->sp_seo_kwords        = $jsonk_list; //it should be json script when added
         $special->seo_title            = $details['seo'];
         $special->sp_seo_txt           = $details['seo_txt'];
@@ -1336,11 +1341,145 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
+<<<<<<< HEAD
 
     //Overwrite Illness
     }
     public function overwrite_illness(){
         $details = Input::all();
+=======
+    }
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> cb7185337deb7644305e4afc736c4610d7bf8314
+    //Overwrite Illness
+    public function overwrite_illness(){
+        $details = Input::all();
+
+        $illness_id = rand();
+        //$ill_img_id = rand();
+        //$ill_gr_id = rand();
+
+        /* illness image */
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('img');
+
+        $destinationPath = public_path().'/illness';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of illness image */
+
+        // description summary
+        $sum_list = $details['sm']; 
+        $response = array();
+        foreach($sum_list as $key1 => $cert1)
+        {
+            $response[$key1]['sm'] = $cert1;
+        }
+        $jsonsum_list = json_encode($response); 
+
+        // h2
+        $h2_list = $details['h2']; 
+        $response2 = array();
+        foreach($h2_list as $key2 => $cert2)
+        {
+            $response2[$key2]['h2'] = $cert2;
+        }
+        $jsonh2_list = json_encode($response2); 
+
+        // Subhead1
+        $suba_list = $details['sub_head1a']; 
+        $resp_suba = array();
+        foreach($suba_list as $key_suba => $cert_suba)
+        {
+            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        }
+        $jsonsuba_list = json_encode($resp_suba);
+
+        // Subhead2
+        $subb_list = $details['sub_head1b']; 
+        $resp_subb = array();
+        foreach($subb_list as $key_subb => $cert_subb)
+        {
+            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        }
+        $jsonsubb_list = json_encode($resp_subb);
+
+        // Textheading
+        $tc_list = $details['txt_ckeditor']; 
+        $resp_tc = array();
+        foreach($tc_list as $key_tc => $cert_tc)
+        {
+            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        }
+        $jsontc_list = json_encode($resp_tc);
+
+        // tag
+        $tag_list = $details['tag']; 
+        $response3 = array();
+        foreach($tag_list as $key3 => $cert3)
+        {
+            $response3[$key3]['tag'] = $cert3;
+        }
+        $jsontag_list = json_encode($response3); 
+
+        // tag department
+        $dep_list = $details['tag_dep']; 
+        $response4 = array();
+        foreach($dep_list as $key4 => $cert4)
+        {
+            $response4[$key4]['tag_dep'] = $cert4;
+        }
+        $jsondep_list = json_encode($response4); 
+
+        // tag symptoms
+        $sy_list = $details['tag_sy']; 
+        $response5 = array();
+        foreach($sy_list as $key5 => $cert5)
+        {
+            $response5[$key5]['tag_sy'] = $cert5;
+        }
+        $jsonsy_list = json_encode($response5);
+
+        // tag season
+        $s_list = $details['tag_s']; 
+        $response6 = array();
+        foreach($s_list as $key6 => $cert6)
+        {
+            $response6[$key6]['tag_s'] = $cert6;
+        }
+        $jsons_list = json_encode($response6); 
+
+        // tag season text
+        $stxt_list = $details['tag_txt']; 
+        $response7 = array();
+        foreach($stxt_list as $key7 => $cert7)
+        {
+            $response7[$key7]['tag_txt'] = $cert7;
+        }
+        $jsonstxt_list = json_encode($response7); 
+
+        // tag free
+        $f_list = $details['tag_f']; 
+        $response8 = array();
+        foreach($f_list as $key8 => $cert8)
+        {
+            $response8[$key8]['tag_f'] = $cert8;
+        }
+        $jsonf_list = json_encode($response8); 
+
+        // keywords
+        $k_list = $details['kword']; 
+        $response12 = array();
+        foreach($k_list as $key12 => $cert12)
+        {
+            $response12[$key12]['kword'] = $cert12;
+        }
+        $jsonk_list = json_encode($response12); 
+>>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
         
         $illness = DB::table('illness')
                                     ->where('id','=', $details['id'])
@@ -1353,17 +1492,29 @@ class HomeController extends Controller
                                                 //'ill_doc'             => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
+<<<<<<< HEAD
                                                 //'ill_summary'         => $details['sm'],
                                                 //'ill_img'             => $details['img'],
                                                 'ill_img_cap'           => $details['img_cap'],
                                                 'ill_img_alt'           => $details['img_alt'],
                                                 //'ill_sub_txt'         => $details['image'],
                                                 'ill_kwords'            => $details['kword'],
+=======
+                                                'ill_summary'           => $jsonsum_list,
+                                                'ill_img'               => $details['img'],
+                                                'ill_img_cap'           => $details['img_cap'],
+                                                'ill_img_alt'           => $details['img_alt'],
+                                                'ill_sub1'              => $jsonsuba_list,
+                                                'ill_sub2'              => $jsonsubb_list,
+                                                'ill_sub_txt'           => $jsontc_list,
+                                                'ill_kwords'            => $jsonk_list,
+>>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
                                                 'ill_seo'               => $details['seo'],
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
+<<<<<<< HEAD
                                                 'ill_h2'                => $details['h2'],
                                                 'ill_tag_kw'            => $details['tag'],
                                                 'ill_tag_dep'           => $details['tag_dep'],
@@ -1373,46 +1524,378 @@ class HomeController extends Controller
                                                 'ill_tag_free'          => $details['tag_f'],
                                             ]);
 
+=======
+                                                'ill_h2'                => $jsonh2_list,
+                                                'ill_tag_kw'            => $tag_list,
+                                                'ill_tag_dep'           => $jsondep_list,
+                                                'ill_tag_symp'          => $jsonsy_list,
+                                                'ill_tag_season'        => $jsons_list,
+                                                'ill_tag_season_txt'    => $jsonstxt_list,
+                                                'ill_tag_free'          => $jsonf_list,
+                                            ]);
+    }
+    
+    public function save_copy_doctor(Request $request){
+        $details = Input::all();
+
+
+        $certificate = $details['certificate']; 
+        $response = array();
+        foreach($certificate as $key => $cert)
+        {
+            $response[$key]['med_sbj_list'] = $cert;
+        }
+        $jsoncertificate = json_encode($response);
+
+        $conference = $details['conference']; 
+        $res = array();
+        foreach($conference as $key => $con)
+        {
+            $res[$key]['med_sbj_list'] = $con;
+        }
+        $jsonconference = json_encode($res);
+
+        $department = $details['department']; 
+        $res2 = array();
+        foreach($department as $key => $dep)
+        {
+            $res2[$key]['med_sbj_list'] = $dep;
+        }
+        $jsondepartment = json_encode($res2);
+
+        // career Academic Background
+        $years = $details['c_ac_year']; 
+        $months = $details['c_ac_month']; 
+        $descs = $details['c_ac_desc']; 
+        $toyears = $details['c_ac_year_to']; 
+        $tomonths = $details['c_ac_month_to']; 
+        $todescs = $details['c_ac_desc_to']; 
+        $response = array();
+        foreach($years as $key => $year)
+        {
+        $response[$key]['from_year'] = $year;
+        $response[$key]['from_month'] = $months[$key];
+        $response[$key]['from_desc'] = $descs[$key];
+        $response[$key]['to_year'] = $toyears[$key];
+        $response[$key]['to_month'] = $tomonths[$key];
+        $response[$key]['to_desc'] = $todescs[$key];
+        }
+        $academic_careers = json_encode($response); 
+
+        // career work experience
+        $weyears = $details['c_we_year']; 
+        $wemonths = $details['c_we_month']; 
+        $wedescs = $details['c_we_desc']; 
+        $wetoyears = $details['c_we_year_to']; 
+        $wetomonths = $details['c_we_month_to']; 
+        $wetodescs = $details['c_we_desc_to']; 
+        $weresponse = array();
+        foreach($weyears as $key => $weyear)
+        {
+        $weresponse[$key]['we_from_year'] = $weyear;
+        $weresponse[$key]['we_from_month'] = $wemonths[$key];
+        $weresponse[$key]['we_from_desc'] = $wedescs[$key];
+        $weresponse[$key]['we_to_year'] = $wetoyears[$key];
+        $weresponse[$key]['we_to_month'] = $wetomonths[$key];
+        $weresponse[$key]['we_to_desc'] = $wetodescs[$key];
+        }
+        $work_exp = json_encode($weresponse); 
+        //exit;
+
+        // career awards
+        $awyears = $details['c_aw_year']; 
+        $awmonths = $details['c_aw_month']; 
+        $awdescs = $details['c_aw_desc']; 
+        $awtoyears = $details['c_aw_year_to']; 
+        $awtomonths = $details['c_aw_month_to']; 
+        $awtodescs = $details['c_aw_desc_to']; 
+        $awresponse = array();
+        foreach($awyears as $key => $awyear)
+        {
+        $awresponse[$key]['from_year'] = $awyear;
+        $awresponse[$key]['from_month'] = $awmonths[$key];
+        $awresponse[$key]['from_desc'] = $awdescs[$key];
+        $awresponse[$key]['to_year'] = $awtoyears[$key];
+        $awresponse[$key]['to_month'] = $awtomonths[$key];
+        $awresponse[$key]['to_desc'] = $awtodescs[$key];
+        }
+        $awards = json_encode($awresponse);
+
+        // $destinationPath = '';
+        // $filename        = '';
+        // $file            = $request->file('profile_image');
+
+        // $destinationPath = public_path().'/doctor_photos';
+        // $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        // $uploadSuccess   = $file->move($destinationPath, $filename);
+
+        $doctors = DB::table('dv_doctors')->where('id','=',$details['docID'])->get();
+        foreach($doctors as $doc){
+            $image = $doc->image;
+        }
+
+        if(empty($details['profile_image'])){
+            $final = $image;
+            
+        }else{
+            $destinationPath = '';
+            $filename        = '';
+            $file            = $request->file('profile_image');
+
+            $destinationPath = public_path().'/doctor_photos';
+            $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+            $uploadSuccess   = $file->move($destinationPath, $filename);
+
+            $final = '/doctor_photos/'.$filename;
+
+        }
+
+        $doctor = new Doctor;
+        $doctor->url_generation             = $details['url_generation'] ;
+        $doctor->status                     = $details['status'];
+        $doctor->certificate                = $jsoncertificate;//json
+        $doctor->name                       = $details['name'];
+        $doctor->alphabet_name              = $details['alphabet_name'] ;
+        $doctor->image                      = $final; //image
+        $doctor->image_caption              = $details['img_caption'];
+        $doctor->image_alt                  = $details['img_alt'];
+        $doctor->industry                   = $details['industry'] ;
+        $doctor->conference                 = $jsonconference;
+        $doctor->birthday                   = $details['b_month'].'-'.$details['b_day'].'-'.$details['b_year']; //month day year
+        $doctor->place_of_birth             = $details['place_birth'];
+        $doctor->career_academic_back       = $academic_careers; //json
+        $doctor->career_work_exp            = $work_exp; //json
+        $doctor->career_awards              = $awards; //json
+        $doctor->sort_career                = $details['n_order'];
+        $doctor->hospital_office            = $details['hospital_office'];
+        $doctor->department                 = $jsondepartment;
+        $doctor->doctor_comment             = $details['doc_comment'];
+        $doctor->save();
+
+
+        return redirect('/doctor_list');
+>>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
     }
 
     //Overwrite Special
     public function overwrite_special(){
         $details = Input::all();
+
+        $special_id = rand();
+
+        /* illness image */
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('img');
+
+        $destinationPath = public_path().'/special';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of illness image */
+
+        // lead ckeditor
+        $lead_list = $details['lead_ckeditor']; 
+        $response = array();
+        foreach($lead_list as $key1 => $cert1)
+        {
+            $response[$key1]['lead_ckeditor'] = $cert1;
+        }
+        $jsonlead_list = json_encode($response); 
+
+        // Subhead1
+        $suba_list = $details['sub_head1a']; 
+        $resp_suba = array();
+        foreach($suba_list as $key_suba => $cert_suba)
+        {
+            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        }
+        $jsonsuba_list = json_encode($resp_suba);
+
+        // Subhead2
+        $subb_list = $details['sub_head1b']; 
+        $resp_subb = array();
+        foreach($subb_list as $key_subb => $cert_subb)
+        {
+            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        }
+        $jsonsubb_list = json_encode($resp_subb);
+
+        // Textheading
+        $tc_list = $details['txt_ckeditor']; 
+        $resp_tc = array();
+        foreach($tc_list as $key_tc => $cert_tc)
+        {
+            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        }
+        $jsontc_list = json_encode($resp_tc);
+
+        // Ill Image
+        $pos_list = $details['pos_ill']; 
+        $response2 = array();
+        foreach($pos_list as $key2 => $cert2)
+        {
+            $response2[$key2]['pos_ill'] = $cert2;
+        }
+        $jsonpos_list = json_encode($response2); 
+
+        // Subhead1
+        $suba2_list = $details['sub_head2a']; 
+        $resp_suba2 = array();
+        foreach($suba2_list as $key2_suba => $cert_suba2)
+        {
+            $resp_suba2[$key_suba2]['sub_head2a'] = $cert_suba2;
+        }
+        $jsonsuba2_list = json_encode($resp_suba2);
+
+        // Subhead2
+        $subb2_list = $details['sub_head2b']; 
+        $resp_subb2 = array();
+        foreach($subb2_list as $key_subb2 => $cert_subb2)
+        {
+            $resp_subb2[$key_subb2]['sub_head2b'] = $cert_subb2;
+        }
+        $jsonsubb2_list = json_encode($resp_subb2);
+
+        // Textheading
+        $tc2_list = $details['txt2_ckeditor']; 
+        $resp_tc2 = array();
+        foreach($tc2_list as $key_tc2 => $cert_tc2)
+        {
+            $resp_tc2[$key_tc2]['txt2_ckeditor'] = $cert_tc2;
+        }
+        $jsontc2_list = json_encode($resp_tc2);
+
+        // Subhead and Text2
+        $sub_head2a       = $details['sub_head2a']; 
+        $sub_head2b       = $details['sub_head2b']; 
+        $txt2_ckeditor     = $details['txt2_ckeditor']; 
+        $resp2 = array();
+        foreach($sub_head2a as $key => $sub_head2a)
+        {
+        $response[$key]['sub_head2a'] = $sub_head2a[$key];
+        $response[$key]['sub_head2b'] = $sub_head2b[$key];
+        $response[$key]['txt2_ckeditor']  = $txt2_ckeditor[$key];
+        }
+        $txt2_sum = json_encode($resp2);
+
+        // seo keywords
+        $k_list = $details['kword']; 
+        $response3 = array();
+        foreach($k_list as $key3 => $cert3)
+        {
+            $response3[$key3]['kword'] = $cert3;
+        }
+        $jsonk_list = json_encode($response3); 
+
+        // h2
+        $h2_list = $details['h2']; 
+        $response4 = array();
+        foreach($h2_list as $key4 => $cert4)
+        {
+            $response4[$key4]['h2'] = $cert4;
+        }
+        $jsonh2_list = json_encode($response4); 
+
+        // tag
+        $tag_list = $details['tag_ch']; 
+        $response5 = array();
+        foreach($tag_list as $key5 => $cert5)
+        {
+            $response5[$key5]['tag_ch'] = $cert5;
+        }
+        $jsontag_list = json_encode($response5); 
+
+        // tag illness
+        $till_list = $details['tag_ill']; 
+        $response6 = array();
+        foreach($till_list as $key6 => $cert6)
+        {
+            $response6[$key6]['tag_ill'] = $cert6;
+        }
+        $jsontill_list = json_encode($response6); 
+
+        // tag department
+        $dep_list = $details['tag_dep']; 
+        $response7 = array();
+        foreach($dep_list as $key7 => $cert7)
+        {
+            $response7[$key7]['tag_dep'] = $cert7;
+        }
+        $jsondep_list = json_encode($response7); 
+
+        // tag symptoms
+        $sy_list = $details['tag_sy']; 
+        $response8 = array();
+        foreach($sy_list as $key8 => $cert8)
+        {
+            $response8[$key8]['tag_sy'] = $cert8;
+        }
+        $jsonsy_list = json_encode($response8); 
+
+        // tag season
+        $s_list = $details['tag_s']; 
+        $response9 = array();
+        foreach($s_list as $key9 => $cert9)
+        {
+            $response9[$key9]['tag_s'] = $cert9;
+        }
+        $jsons_list = json_encode($response9); 
+
+        // tag text
+        $txt_list = $details['tag_txt']; 
+        $response10 = array();
+        foreach($txt_list as $key10 => $cert10)
+        {
+            $response10[$key10]['tag_txt'] = $cert10;
+        }
+        $jsontxt_list = json_encode($response10);
+
+        // tag text
+        $f_list = $details['tag_f']; 
+        $response11 = array();
+        foreach($f_list as $key11 => $cert11)
+        {
+            $response11[$key11]['tag_f'] = $cert11;
+        }
+        $jsonf_list = json_encode($response11);
         
         $special = DB::table('special')
                                     ->where('id','=', $details['id'])
                                     ->update([
                                                 'sp_url'                => $details['url'],
-                                                'sp_map'                => $details['map'],
+                                                'sp_mag'                => $details['magazine'],
                                                 'sp_ill_cat'            => $details['ill_cat'],
                                                 'sp_cat'                => $details['sp_cat'],
-                                                'sp_title_shldr'        => $details['sp_shldr'],
-                                                'sp_title'              => $details['sp_title'],
+                                                'sp_title_shldr'        => $details['sts'],
+                                                'sp_title'              => $details['st'],
                                                 //'sp_doc'              => $details['doctor'],
                                                 'sp_doc_tsk'            => $details['role'],
                                                 'sp_doc_cmt'            => $details['doc_cmt'],
-                                                //'sp_img'              => $details['img'],
+                                                'sp_img'                => '/img/'.$filename,
                                                 'sp_img_cap'            => $details['img_cap'],
                                                 'sp_img_alt'            => $details['img_alt'],
-                                                'sp_txt'                => $details['sp_txt'],
-                                                'sp_sum'                => $details['sum'],
-                                                //'sp_ill_img'            => $details['ill_img'],
-                                                'sp_sum2'               => $details['sum2'],
-                                                'sp_seo_kwords'         => $details['kword'],
+                                                'sp_txt'                => $jsonlead_list,
+                                                'sp_sub1'               => $jsonsuba_list,
+                                                'sp_sub2'               => $jsonsubb_list,
+                                                'sp_sum'                => $jsontc_list,
+                                                'sp_ill_img'            => $jsonpos_list,
+                                                'sp_sub3'               => $jsonsuba2_list,
+                                                'sp_sub4'               => $jsonsubb2_list,
+                                                'sp_sum2'               => $jsontc2_list,
+                                                'sp_seo_kwords'         => $jsonk_list,
                                                 'seo_title'             => $details['seo'],
-                                                'sp_seo_title'          => $details['seo_title'],
                                                 'sp_seo_txt'            => $details['seo_txt'],
-                                                'sp_seo_desc'           => $details['meta1'],
-                                                'sp_seo_desc2'          => $details['meta2'],
+                                                'sp_seo_desc'           => $details['meta_txt1'],
+                                                'sp_seo_desc2'          => $details['meta_txt2'],
                                                 'sp_h1'                 => $details['h1'],
-                                                'sp_h2'                 => $details['h2'],
-                                                'sp_tag_kw'             => $details['tag_kw'],
-                                                'sp_tag_ill'            => $details['tag_ill'],
-                                                'sp_tag_dep'            => $details['tag_dep'],
-                                                'sp_tag_symp'           => $details['tag_sy'],
-                                                'sp_tag_season'         => $details['tag_s'],
-                                                'sp_ra_season_txt'      => $details['tag_txt'],
-                                                'sp_tag_free'           => $details['tag_f'],
+                                                'sp_h2'                 => $jsonh2_list,
+                                                'sp_tag_kw'             => $jsontag_list,
+                                                'sp_tag_ill'            => $jsontill_list,
+                                                'sp_tag_dep'            => $jsondep_list,
+                                                'sp_tag_symp'           => $jsonsy_list,
+                                                'sp_tag_season'         => $jsons_list,
+                                                'sp_ra_season_txt'      => $jsontxt_list,
+                                                'sp_tag_free'           => $jsonf_list,
                                             ]);
 
     }

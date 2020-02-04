@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('modals.modal_add_hospital')
 
 <div class="header-wrapper">
     <div class="left">
@@ -153,11 +154,11 @@
         <label class="control-label cols-15">駐車場<br><span>Parking</span></label>
         <div class="cols-18 rad-buttons">
             <label>料金</label>
-            <input type="radio" id="sprvsn" name="p_radio" value="監修">
-            <label for="sprvsn">無料</label>
+            <input type="radio" id="park2a" name="park" value="監修">
+            <label for="park2a">無料</label>
             
-            <input type="radio" id="cc" name="p_radio" value="取材協力">
-            <label for="cc">有料</label>
+            <input type="radio" id="park2b" name="park" value="取材協力">
+            <label for="park2b">有料</label>
         </div>	
         <div class="cols-3">          
             <select name="doctor" class="form-control">
@@ -417,8 +418,8 @@
         <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
     </div>
 
-    <div class="form-group check">
-        <div class="cols-15">
+    <div class="form-group check fix">
+        <div class="control-label cols-15">
         診療科目別<br>外来受付時間<br>Examination date
         </div>
         <div class="cols-8">
@@ -610,12 +611,12 @@
 
     <!-- Buttons -->
     <div class="form-group">
-        <div class="cols-15">院内処方の有無<br><span>In-hospital prescription</span></div>
+        <div class="control-label cols-15">院内処方の有無<br><span>In-hospital prescription</span></div>
         <div class="cols-5 rad-buttons">
-            <input type="radio" id="sprvsn" name="pres" value="監修">
-            <label for="sprvsn">有 </label>
-            <input type="radio" id="cc" name="pres" value="取材協力">
-            <label for="cc">一部有</label>
+            <input type="radio" id="pres1" name="pres" value="監修">
+            <label for="pres1">有 </label>
+            <input type="radio" id="pres2" name="pres" value="取材協力">
+            <label for="pres2">一部有</label>
             <input type="radio" id="cc" name="pres" value="取材協力">
             <label for="cc">無</label>
         </div>	
@@ -626,16 +627,16 @@
         <div class="control-label cols-15">自由診療費用<br><span>Free medical Expenses</span></div>
         <div class="cols-8 rad-buttons">
             <div class="cols-2 left">
-                <label for="sprvsn">項目 </label>
-                <input type="text" id="sprvsn" name="pred" placeholder="例)予防接種 インフルエンザ">
+                <label for="med1">項目 </label>
+                <input type="text" id="med1" name="med" placeholder="例)予防接種 インフルエンザ">
             </div>
             <div class="cols-2 left">
-                <label for="cc">費用</label>
-                <input type="text" id="cc" name="pres" placeholder="例)3,500円">
+                <label for="med2">費用</label>
+                <input type="text" id="med2" name="med" placeholder="例)3,500円">
             </div>
             <div class="cols-2 left">
-                <label for="cc">診療科</label>
-                <select class="form-control" name="pres">
+                <label for="med3">診療科</label>
+                <select class="form-control" name="medi">
                     <option>選択してください</option>
                 </select>
             </div>
@@ -664,28 +665,87 @@
 
     <!-- Parking -->
     <div class="form-group">
-        <div class="cols-15">駐車場<br><span>Parking</span></div>
-        <div class="cols-5 rad-buttons">
+        <div class="control-label cols-15">駐車場<br><span>Parking</span></div>
+        <div class="cols-18 rad-buttons">
             料金
-            <input type="radio" id="sprvsn" name="pres" value="監修">
-            <label for="sprvsn">無料</label>
-            <input type="radio" id="cc" name="pres" value="取材協力">
-            <label for="cc">有料</label>
-            <input class="form-control" type="text" id="cc" name="pres" value="取材協力">
+            <input type="radio" id="park1a" name="park1" value="監修">
+            <label for="park1a">無料</label>
+            <input type="radio" id="park2a" name="park1" value="取材協力">
+            <label for="park2a">有料</label>
+            
         </div>	
+        <div class="cols-4">
+            <input class="form-control" type="text" id="cc" name="pres" placeholder="例)最初の30分無料、以降30分ごとに100円、1日最大1,600円">  
+        </div> 
+    </div>
+    <div class="form-group">
+        <div class="control-label cols-15"></div>
+        <div class="cols-05"><label>台数</label></div>
+        <div class="cols-2">
+            <input class="form-control" type="text" id="cc" name="pres" placeholder="例)000台"> 
+        </div>
     </div>
 
     <!-- Hospitalization -->
     <div class="form-group">
-        <div class="cols-15">入院可否<br><span>Hospitalization</span></div>
-        <div class="cols-5 rad-buttons">
-            <input type="radio" id="sprvsn" name="pres" value="監修">
-            <label for="sprvsn">可</label>
-            <input type="radio" id="cc" name="pres" value="取材協力">
-            <label for="cc">否</label>
+        <div class="control-label cols-15">入院可否<br><span>Hospitalization</span></div>
+        <div class="cols-12 rad-buttons">
+            <input type="radio" id="hosp1" name="hosp" value="監修">
+            <label for="hosp1">可</label>
+            <input type="radio" id="hosp2" name="hosp" value="取材協力">
+            <label for="hosp2">否</label>
+        </div>
+        <div class="cols-5">
             <input class="form-control" type="text" placeholder="※注意書き自由に">
         </div>	
     </div>
+
+    <!-- Number of Beds -->    
+    <div class="form-group">
+        <div class="control-label cols-15">病床種別・病床数<br><span>Number of beds</span></div>
+        <div class="cols-05">
+            <label>種別</label>
+        </div>
+        <div class="cols-2">
+            <select class="form-control">
+                <option>選択してください</option>
+            </select>
+        </div>
+        <div class="cols-05">
+            <label>種別</label>
+        </div>
+        <div class="cols-4">
+            <input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"> 
+        </div>
+    </div>
+
+    <!-- Number of Beds -->    
+    <div class="form-group check fix">
+        <div class="control-label cols-15">面会可能日・時間<br><span>Possible date of visit</span></div>
+        <div class="cols-12">
+            <select class="form-control">
+                <option>14:30</option>
+            </select>
+        </div>
+        <div class="cols-12">
+            <select class="form-control">
+                <option>15:30</option>
+            </select>
+        </div>
+        <div class="cols-6">
+            月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>
+            火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>
+            水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>
+            木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>
+            金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>
+            土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>
+            日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>
+            祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label>
+        </div>
+    </div>
+
+
+
 
     <!-- In-hospital service -->
     <div class="form-group">
@@ -713,66 +773,34 @@
 
     <!-- Credit Card Payment -->
     <div class="form-group">
-        <div class="cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
-        <div class="cols-5 rad-buttons">
-            <input type="radio" id="sprvsn" name="pres" value="監修">
-            <label for="sprvsn">可</label>
-            <input type="radio" id="cc" name="pres" value="取材協力">
-            <label for="cc">否</label>
+        <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
+        <div class="cols-12 rad-buttons">
+            <input type="radio" id="card1" name="card" value="監修">
+            <label for="card1">可</label>
+            <input type="radio" id="card2" name="card" value="取材協力">
+            <label for="card2">否</label>
+        </div>
+        <div class="cols-4">
             <input class="form-control" type="text" placeholder="※注意書き自由に">
         </div>	
+        <div class="sidediv cols-3">
+            <div class="sidebots">
+                <a class="prevbutton" type="button" class="btn-prime preview" href="#previewAddHospital">Preview</a>
+                <button type="button" class="btn-prime release1" id="myBtn">Release</button>
+                <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+            </div>
+        </div>
     </div>
 
     
 
-<!-- =========================================== -->
 
 
-<!-- Button trigger modal -->
-<button type="button" style="display:none;" id="mymodal1" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Button trigger modal -->
-<button type="button" style="display:none;" id="mymodal2" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+
+
+   
 </div>
 
 <div class="form-nopads">
@@ -804,8 +832,6 @@
     <input type="submit" name="save" value="" class="save-btn">
     <div id="totop" class="float-btn"></div>
     <div id="tobottom" class="float-btn"></div>
-
-    {!! Form::close() !!}
-</div>
+ {!! Form::close() !!}
 @endsection
 

@@ -1987,7 +1987,7 @@ input.form-control {
 
 
 .control-label {
-  padding-top: 7px;
+  /* padding-top: 7px; */
   color: #807b7b;
   margin-bottom: 0;
   line-height: 14px;
@@ -2061,7 +2061,7 @@ input.form-control {
 }
 
 
-.btn-prime {
+.btn-prime, .prevbutton {
   color: transparent;
   width: 170px;
   height: 35px;
@@ -2076,6 +2076,16 @@ input.form-control {
   background-repeat: no-repeat;
 }
 
+.prevbutton {
+  color: transparent;
+  margin-bottom: 10px;
+  -webkit-appearance: listbox !important;
+}
+
+.prevbutton:hover {
+  color: transparent; 
+}
+
 .btn-prime.image {
   background-image: url(/images/icon-insertimage.png);
 }
@@ -2088,7 +2098,8 @@ input.form-control {
 .btn-prime.hospital {
   background-image: url(/images/icon-hospital.png);
 }
-.btn-prime.preview {
+.btn-prime.preview,
+.prevbutton {
   background-image: url(/images/icon-preview.png);
 }
 .btn-prime.release1 {
@@ -2452,9 +2463,10 @@ textarea {
   float: left;
 }
 .sidediv .sidebots {
-  width: 120px;
+  width: 75px;
   height: auto;
   float: right;
+  margin-top: -76px;
 }
 
 .sidebots button {
@@ -2606,3 +2618,81 @@ textarea {
       .left label, .left input, .left select {
         float: left;
       }
+
+      .form-group label {
+        margin:0;
+        margin-top: 12px;
+      }
+
+      .check.fix [type="checkbox"]:not(:checked) + label:before, 
+      .check.fix [type="checkbox"]:checked + label:before,
+      .check.fix [type="checkbox"]:checked + label:after {
+        top: -15px;
+      }
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    border-radius: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog img {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 500px;
+    position: relative;
+    margin: 5% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 0;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.modalDialog .modal-panel {
+  width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+  background: #ebf6fd;
+}
+.close {
+    background: #fff;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+    background: #00d9ff;
+}
