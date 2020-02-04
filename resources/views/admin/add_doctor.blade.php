@@ -77,7 +77,7 @@
         <div class="field_wrap1"></div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="cols-6">
+            <div class="cols-6 addanother">
                 <div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div>
                 <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
@@ -500,25 +500,25 @@
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -529,25 +529,25 @@
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -559,25 +559,25 @@
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
-                        <option>industry two</option>
-                        <option>industry three</option>
-                        <option>industry four</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -726,6 +726,28 @@
 
 <!-- Link to open the modal -->
 <p><a href="#ex1" rel="modal:open">Open Modal</a></p>
+<!-- Button trigger modal -->
+<button type="button" id="mymodal1" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     
 @endsection
