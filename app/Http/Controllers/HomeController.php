@@ -1128,7 +1128,7 @@ class HomeController extends Controller
         return $fetch;
     }
 
-<<<<<<< HEAD
+
     public function save_overwrite_hospital(Request $request){
 
         $details = Input::all();
@@ -1267,8 +1267,9 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
-=======
+
     //Overwrite Illness
+    }
     public function overwrite_illness(){
         $details = Input::all();
         
@@ -1302,7 +1303,7 @@ class HomeController extends Controller
                                                 'ill_tag_season_txt'    => $details['tag_txt'],
                                                 'ill_tag_free'          => $details['tag_f'],
                                             ]);
->>>>>>> 750a315d6784b92fd0c17e214fa99829f23062a8
+
     }
 
     //Overwrite Special

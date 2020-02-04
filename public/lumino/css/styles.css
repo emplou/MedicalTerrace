@@ -2603,3 +2603,6 @@ textarea {
         font-size: 11px;
         
       }
+      .left label, .left input, .left select {
+        float: left;
+      }
