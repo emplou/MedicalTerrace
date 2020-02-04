@@ -10,64 +10,28 @@
 <h4 class="modal-title"><b>Edit Special</b></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
-      <div class="modal-body">
-        
+    <div class="modal-body">
+    {!! Form::open(['url' => '/overwrite_special', 'method' => 'post', 'files' => true]) !!}
         <div class="form-horizontal">
             <div class="form-pads">
                 <div class="form-group">
                     <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
                     <div class="cols-4">
-                        <input type="text" class="form-control" id="url" placeholder="例）special_kids" name="url">
+                        <input type="text" class="form-control" id="url" name="url">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label cols-15">掲載誌<br><span>Magazine</span></label>
                     <div class="cols-4">          
-                        <input type="text" class="form-control" id="magazine" placeholder="例）GL1907" name="magazine">
+                        <input type="text" class="form-control" id="magazine" name="magazine">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                     <div class="cols-5">          
-                        <!-- <select name="ill_cat" class="form-control">
-                            <option value="選択してください">選択してください</option>
-                            <option value="選択してください">選択してください</option>
-                            <option value="感染症・寄生虫症">感染症・寄生虫症</option>
-                            <option value="女性特有のがん＊">女性特有のがん＊</option>
-                            <option value="男性特有のがん">男性特有のがん</option>
-                            <option value="消化管のがん">消化管のがん</option>
-                            <option value="胸部のがん">胸部のがん</option>
-                            <option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option>
-                            <option value="泌尿器のがん">泌尿器のがん</option>
-                            <option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option>
-                            <option value="脳・神経・眼のがん">脳・神経・眼のがん</option>
-                            <option value="その他の腹部のがん">その他の腹部のがん</option>
-                            <option value="皮膚のがん">皮膚のがん</option>
-                            <option value="骨・筋肉のがん">骨・筋肉のがん</option>
-                            <option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option>
-                            <option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option>
-                            <option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option>
-                            <option value="血液・リンパの病気">血液・リンパの病気</option>
-                            <option value="内分泌や代謝の病気">内分泌や代謝の病気</option>
-                            <option value="こころ・精神の病気">こころ・精神の病気</option>
-                            <option value="脳・神経系の病気">脳・神経系の病気</option>
-                            <option value="眼の病気">眼の病気</option>
-                            <option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option>
-                            <option value="循環器系の病気">循環器系の病気</option>
-                            <option value="呼吸器系の病気">呼吸器系の病気</option>
-                            <option value="消化器系の病気">消化器系の病気</option>
-                            <option value="歯科・口腔疾患">歯科・口腔疾患</option>
-                            <option value="皮膚の病気">皮膚の病気</option>
-                            <option value="骨や関節の病気">骨や関節の病気</option>
-                            <option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option>
-                            <option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option>
-                            <option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option>
-                            <option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option>
-                            <option value="そのほかの病気">そのほかの病気</option>
-                            <option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option>
-                        </select> -->
+                        
                         <div id="input_ill"></div>
                     </div>
                 </div>
@@ -75,33 +39,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">特集カテゴリー<br><span>Special Category</span></label>
                     <div class="cols-5">          
-                        <!-- <select name="sp_cat" class="form-control">
-                            <option value="">選択してください</option>
-                            <option value="がん">がん</option>
-                            <option value="生活習慣病">生活習慣病</option>
-                            <option value="子どもの病気">子どもの病気</option>
-                            <option value="女性の病気">女性の病気</option>
-                            <option value="老年性の病気">老年性の病気</option>
-                            <option value="アレルギー">アレルギー</option>
-                            <option value="食中毒（食あたり）">食中毒（食あたり）</option>
-                            <option value="春特有の病気">春特有の病気</option>
-                            <option value="夏特有の病気">夏特有の病気</option>
-                            <option value="秋特有の病気">秋特有の病気</option>
-                            <option value="冬特有の病気">冬特有の病気</option>
-                            <option value="内臓の病気">内臓の病気</option>
-                            <option value="脳・神経の病気">脳・神経の病気</option>
-                            <option value="免疫システム">免疫システム</option>
-                            <option value="運動機能の病気">運動機能の病気</option>
-                            <option value="こころの病気">こころの病気</option>
-                            <option value="部位別の病気">部位別の病気</option>
-                            <option value="怪我・応急処置">怪我・応急処置</option>
-                            <option value="救急・救命・緊急">救急・救命・緊急</option>
-                            <option value="スポーツ障害">スポーツ障害</option>
-                            <option value="リハビリテーション">リハビリテーション</option>
-                            <option value="歯と健康">歯と健康</option>
-                            <option value="妊娠と出産">妊娠と出産</option>
-                            <option value="美容と健康">美容と健康</option>
-                        </select> -->
+                        
                         <div id="input_cat"></div>
                     </div>
                 </div>
@@ -109,7 +47,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">特集ショルダー<br><span>Special Title Shoulder</span></label>
                     <div class="cols-5">          
-                        <input type="text" class="form-control sts" id="sts" placeholder="例）いわゆる夏風邪は7月がピーク！" name="sts" maxlength="20">
+                        <input type="text" class="form-control sts" id="sts" name="sts" maxlength="20">
                     </div>
                     <div class="col-sm-2">          
                         <span id="rchars">0</span>/20
@@ -119,7 +57,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">特集タイトル<br><span>Special Title</span></label>
                     <div class="cols-5">          
-                        <input type="text" class="form-control st" id="st" placeholder="例）子どもの夏の感染症" name="st" maxlength="14">
+                        <input type="text" class="form-control st" id="st" name="st" maxlength="14">
                     </div>
                     <div class="col-sm-2">          
                         <span id="rchars2">0</span>/14
@@ -555,8 +493,8 @@
         </div>
           
         </div>
-      <!-- Modal -->
-
+    <!-- Modal -->
+    {!! Form::close() !!}
 </div>
   </div>
 </div>
