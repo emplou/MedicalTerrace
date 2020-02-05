@@ -1,4 +1,4 @@
-<div id="previewAddHospital" class="modalDialog">
+<div id="previewAddIllness" class="modalDialog">
     <div>	
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">

@@ -2115,6 +2115,10 @@ input.form-control {
   background-image: url(/images/icon-add-duplicate.png);
 }
 
+.btn-prime.approval {
+  background-image: url(/images/icon-add-approval.png);
+}
+
 
 
 
