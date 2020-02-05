@@ -2650,6 +2650,10 @@ textarea {
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
+.modalDialog .bg {
+  background-size: contain;
+  background-image: url(images/bg-preview);
+}
 .modalDialog img {
   width: 250px;
   display: block;
