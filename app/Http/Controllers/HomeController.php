@@ -1341,6 +1341,13 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
+<<<<<<< HEAD
+
+    //Overwrite Illness
+    }
+    public function overwrite_illness(){
+        $details = Input::all();
+=======
     }
     
 
@@ -1469,6 +1476,7 @@ class HomeController extends Controller
             $response12[$key12]['kword'] = $cert12;
         }
         $jsonk_list = json_encode($response12); 
+>>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
         
         $illness = DB::table('illness')
                                     ->where('id','=', $details['id'])
@@ -1481,6 +1489,14 @@ class HomeController extends Controller
                                                 //'ill_doc'             => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
+<<<<<<< HEAD
+                                                //'ill_summary'         => $details['sm'],
+                                                //'ill_img'             => $details['img'],
+                                                'ill_img_cap'           => $details['img_cap'],
+                                                'ill_img_alt'           => $details['img_alt'],
+                                                //'ill_sub_txt'         => $details['image'],
+                                                'ill_kwords'            => $details['kword'],
+=======
                                                 'ill_summary'           => $jsonsum_list,
                                                 'ill_img'               => $details['img'],
                                                 'ill_img_cap'           => $details['img_cap'],
@@ -1489,11 +1505,23 @@ class HomeController extends Controller
                                                 'ill_sub2'              => $jsonsubb_list,
                                                 'ill_sub_txt'           => $jsontc_list,
                                                 'ill_kwords'            => $jsonk_list,
+>>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
                                                 'ill_seo'               => $details['seo'],
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
+<<<<<<< HEAD
+                                                'ill_h2'                => $details['h2'],
+                                                'ill_tag_kw'            => $details['tag'],
+                                                'ill_tag_dep'           => $details['tag_dep'],
+                                                'ill_tag_symp'          => $details['tag_sy'],
+                                                'ill_tag_season'        => $details['tag_s'],
+                                                'ill_tag_season_txt'    => $details['tag_txt'],
+                                                'ill_tag_free'          => $details['tag_f'],
+                                            ]);
+
+=======
                                                 'ill_h2'                => $jsonh2_list,
                                                 'ill_tag_kw'            => $tag_list,
                                                 'ill_tag_dep'           => $jsondep_list,
@@ -1643,6 +1671,7 @@ class HomeController extends Controller
 
 
         return redirect('/doctor_list');
+>>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
     }
 
     //Overwrite Special
@@ -1793,6 +1822,139 @@ class HomeController extends Controller
                                     // dd($doctors);
 
         return redirect::back()->with('message','Successfully Encoded');
+    }
+
+    public function save_copy_hospital(Request $request){
+
+        $details = Input::all();
+
+        $hospital_id = rand();
+        $accessdet_id = rand();
+        $dpt_id = rand();
+        $feature_id = rand();
+        $explain_id = rand();
+        $dpt_exam_id = rand();
+
+        /* clinic image */
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('clinic_image');
+
+        $destinationPath = public_path().'/clinic_image';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of clinic image */
+
+        $subj_list = $details['med_sbj_list']; 
+        $response = array();
+        foreach($subj_list as $key => $cert)
+        {
+            $response[$key]['med_sbj_list'] = $cert;
+        }
+        $jsonsubj_list = json_encode($response); 
+
+        // career Academic Background
+        $access_trans   = $details['access_trans']; 
+        $access_from    = $details['access_from']; 
+        $access_mins    = $details['access_mins']; 
+        $resp = array();
+        foreach($access_trans as $key => $access_tran)
+        {
+        $response[$key]['access_tran'] = $access_tran;
+        $response[$key]['access_from'] = $access_from[$key];
+        $response[$key]['access_mins'] = $access_mins[$key];
+        }
+        $access = json_encode($resp);
+        
+
+        $hospital = new Hospital;
+        $hospital->hospital_id      = $hospital_id;
+        $hospital->url              = $details['url_gen'];
+        $hospital->medical_ins      = $details['medical_ins'];
+        $hospital->name_phonic      = $details['medical_ins_eng'];
+        $hospital->common_name      = $details['common_name'];
+        $hospital->postal_code      = $details['postal_code'];
+        $hospital->address          = $details['address'];
+        $hospital->address_eng      = $details['address_english']; 
+        $hospital->access           = $access;
+        $hospital->parking          = $details['p_radio'];
+        $hospital->phone_no         = $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'];
+        $hospital->fax              = $details['fax'].$details['fax_one'].$details['fax_two'];
+        $hospital->email            = $details['email'];
+        $hospital->image            = '/clinic_image/'.$filename; //clinic image / hospital image
+        $hospital->image_caption    = $details['img_caption'];
+        $hospital->image_alt        = $details['img_alt'];
+        $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
+        $hospital->hosp_text_subheading  = $details['text_subheading_hospital']; //it should be json script when added
+        $hospital->division         = $details['division']; // added division and medical subject list and field
+        $hospital->medsublist       = $jsonsubj_list; // should be json | dropdown and input field
+        $hospital->save();
+
+        $department = new Department;
+        $department->dpt_name        = $details['med_subj_subheading'];
+        $department->save();
+
+        
+        $dpt_exam = new DepartmentExam;
+        $dpt_exam->hospital_id              = $hospital_id;
+        $dpt_exam->department_id            = $details['department'];
+        $dpt_exam->subheading               = $details['med_subj_subheading'];
+        $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
+        $dpt_exam->image                    = $details['department_image'];
+        $dpt_exam->from                     = $details['from'];
+        $dpt_exam->to                       = $details['to'];
+        $dpt_exam->start                    = $details['start'];
+        $dpt_exam->weekdays                 = $details['weekdays'];
+        $dpt_exam->special_hours            = $details['special_hours'];
+        $dpt_exam->save();
+
+        
+        $destinationPathfeat = '';
+        $filename_feat        = '';
+        $file_feat            = $request->file('feature_image');
+
+        $destinationPathfeat = public_path().'/features';
+        $filename_feat        = str_random(6) . '_' . $file_feat->getClientOriginalName();
+        $uploadSuccess   = $file_feat->move($destinationPathfeat, $filename_feat);
+
+
+        $feature = new Feature;
+        $feature->hospital_id       = $hospital_id;
+        $feature->title             = $details['feature_title'];
+        $feature->text              = $details['feature_text_subheading_hospital'];
+        $feature->image             = $filename_feat;
+        $feature->save();
+
+        $destinationPatheqps = '';
+        $filename_equip        = '';
+        $file_equip            = $request->file('equipment_image');
+
+        $destinationPatheqps = public_path().'/equipments';
+        $filename_equip        = str_random(6) . '_' . $file_equip->getClientOriginalName();
+        $uploadSuccess   = $file_equip->move($destinationPatheqps, $filename_equip);
+
+        $equipments = new Equipments;
+        $equipments->hospital_id            = $hospital_id ;
+        $equipments->title                  = $details['equipment_subheading']; // should be json
+        $equipments->text                   = $details['equipment_text_subheading_hospital']; //should be json
+        $equipments->image                  = $filename_equip; //should be json
+        $equipments->save();
+
+        $destinationPathstfs = '';
+        $filename_staff        = '';
+        $file_staff            = $request->file('staff_image');
+
+        $destinationPathstfs = public_path().'/staffs';
+        $filename_staff        = str_random(6) . '_' . $file_staff->getClientOriginalName();
+        $uploadSuccess   = $file_staff->move($destinationPathstfs, $filename_staff);
+
+        $staff = new Staff;
+        $staff->hospital_id            = $hospital_id;
+        $staff->title                  = $details['staff_subheading_hospital'];
+        $staff->text                   = $details['staff_comment_hospital'];
+        $staff->image                   = $filename_staff;
+        $staff->save();
+        return redirect('/hospital_list');
     }
 }
 

@@ -74,7 +74,7 @@
                 <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
         </div>
-        <div class="field_wrap1"></div>
+        <!-- <div class="field_wrap1"></div> -->
         <div class="form-group">
             <label class="control-label cols-15"></label>
             <div class="cols-6 addanother">
@@ -82,7 +82,9 @@
                 <div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success addcert1"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div id="certificate"></div>
         </div>
+            
 
         <div class="form-group">
             <label class="control-label cols-15">氏名<br><span>Name</span></label>
@@ -168,7 +170,8 @@
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
                 <div class="cols-5"><input type="text" class="form- " name="conference[]"></div>
             </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success addcon1"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success addcert2"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div id="addconference"></div>
         </div>
         
     
@@ -312,7 +315,8 @@
             <div class="cols-35">
                 <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
             </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar1"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div id="c_ac"></div>
         </div>
         <div class="form-group">
             <div class="control-label cols-15">
@@ -373,7 +377,8 @@
             <div class="cols-35">
                 <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
             </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar2"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div id="c_we"></div>
         </div>
         
         <div class="form-group">
