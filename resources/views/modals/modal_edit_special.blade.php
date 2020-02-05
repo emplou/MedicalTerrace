@@ -12,6 +12,7 @@
 </div>
     <div class="modal-body">
     {!! Form::open(['url' => '/overwrite_special', 'method' => 'post', 'files' => true]) !!}
+    <input type="hidden" name="spID" id="spID">
         <div class="form-horizontal">
             <div class="form-pads">
                 <div class="form-group">
@@ -489,7 +490,7 @@
                 </div>
             </div>
             
-            <input type="submit" name="save" value="" class="save-btn">
+            <input type="submit" value="保存 | UPDATE" class="btn btn-danger">
         </div>
           
         </div>

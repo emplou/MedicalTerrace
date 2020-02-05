@@ -31,13 +31,13 @@ class CreateSpecialTable extends Migration
             $table->string('sp_seo_desc');
             $table->string('sp_seo_desc2');
             $table->string('sp_h1');
-            $table->string('sp_h2');
-            $table->string('sp_tag_kw');
-            $table->string('sp_tag_ill');
-            $table->string('sp_tag_dep');
-            $table->string('sp_tag_symp');
-            $table->string('sp_tag_season');
-            $table->string('sp_tag_free');
+            $table->longText('sp_h2');
+            $table->longText('sp_tag_kw');
+            $table->longText('sp_tag_ill');
+            $table->longText('sp_tag_dep');
+            $table->longText('sp_tag_symp');
+            $table->longText('sp_tag_season');
+            $table->longText('sp_tag_free');
             $table->timestamps();
         });
     }

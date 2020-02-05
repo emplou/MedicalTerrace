@@ -15,7 +15,7 @@ class AddSpSum2ToSpecial extends Migration
     {
         Schema::table('special', function (Blueprint $table) {
             //
-            $table->string('sp_sum2');
+            $table->longText('sp_sum2');
         });
     }
 

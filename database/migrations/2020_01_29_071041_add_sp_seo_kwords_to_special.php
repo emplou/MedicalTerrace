@@ -15,7 +15,7 @@ class AddSpSeoKwordsToSpecial extends Migration
     {
         Schema::table('special', function (Blueprint $table) {
             //
-            $table->string('sp_seo_kwords');
+            $table->longText('sp_seo_kwords');
         });
     }
 

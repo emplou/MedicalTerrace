@@ -15,7 +15,7 @@ class AddSpTagSeasonTxtToSpecial extends Migration
     {
         Schema::table('special', function (Blueprint $table) {
             //
-            $table->string('sp_ta_season_txt');
+            $table->longText('sp_ta_season_txt');
         });
     }
 
