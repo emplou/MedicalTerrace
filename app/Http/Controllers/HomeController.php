@@ -927,6 +927,7 @@ class HomeController extends Controller
 
     public function modal_edit_special($id){
         $value['data'] = DB::table('special')->where('id','=',$id)->get();
+        $value['doc'] = DB::table('dv_doctors')->get();
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
@@ -1341,16 +1342,9 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
-<<<<<<< HEAD
 
-    //Overwrite Illness
-    }
-    public function overwrite_illness(){
-        $details = Input::all();
-=======
     }
     
-
     //Overwrite Illness
     public function overwrite_illness(){
         $details = Input::all();
@@ -1476,7 +1470,6 @@ class HomeController extends Controller
             $response12[$key12]['kword'] = $cert12;
         }
         $jsonk_list = json_encode($response12); 
->>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
         
         $illness = DB::table('illness')
                                     ->where('id','=', $details['id'])
@@ -1489,14 +1482,6 @@ class HomeController extends Controller
                                                 //'ill_doc'             => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
-<<<<<<< HEAD
-                                                //'ill_summary'         => $details['sm'],
-                                                //'ill_img'             => $details['img'],
-                                                'ill_img_cap'           => $details['img_cap'],
-                                                'ill_img_alt'           => $details['img_alt'],
-                                                //'ill_sub_txt'         => $details['image'],
-                                                'ill_kwords'            => $details['kword'],
-=======
                                                 'ill_summary'           => $jsonsum_list,
                                                 'ill_img'               => $details['img'],
                                                 'ill_img_cap'           => $details['img_cap'],
@@ -1505,23 +1490,11 @@ class HomeController extends Controller
                                                 'ill_sub2'              => $jsonsubb_list,
                                                 'ill_sub_txt'           => $jsontc_list,
                                                 'ill_kwords'            => $jsonk_list,
->>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
                                                 'ill_seo'               => $details['seo'],
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
-<<<<<<< HEAD
-                                                'ill_h2'                => $details['h2'],
-                                                'ill_tag_kw'            => $details['tag'],
-                                                'ill_tag_dep'           => $details['tag_dep'],
-                                                'ill_tag_symp'          => $details['tag_sy'],
-                                                'ill_tag_season'        => $details['tag_s'],
-                                                'ill_tag_season_txt'    => $details['tag_txt'],
-                                                'ill_tag_free'          => $details['tag_f'],
-                                            ]);
-
-=======
                                                 'ill_h2'                => $jsonh2_list,
                                                 'ill_tag_kw'            => $tag_list,
                                                 'ill_tag_dep'           => $jsondep_list,
@@ -1671,7 +1644,6 @@ class HomeController extends Controller
 
 
         return redirect('/doctor_list');
->>>>>>> f6d6dbe61219d6ea01cde416b718fe9fe9076155
     }
 
     //Overwrite Special

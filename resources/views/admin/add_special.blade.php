@@ -156,7 +156,7 @@
                     <select name="doctor" class="form-control">
                         <option value="">選択してください</option>
                         @foreach($doctors as $doc)
-                            <option value="{!! $doc->id !!}">{!! $doc->name !!}</option>
+                            <option value="{!! $doc->name !!}">{!! $doc->name !!}</option>
                         @endforeach
                     </select>
                 </div>
