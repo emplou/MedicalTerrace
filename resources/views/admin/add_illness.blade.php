@@ -1,6 +1,6 @@
 @extends('layouts.app_il')
 @section('content')
-
+@include('modals.modal_add_illness')
 <!-- <h2>Add Illness</h2> -->
 <div class="header-wrapper">
     <div class="left">
@@ -383,6 +383,13 @@
                     <div class="cols-6">
                         <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
                         <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div>
+                    </div>
+                    <div class="sidediv cols-3">
+                        <div class="sidebots">
+                            <a class="prevbutton" type="button" class="btn-prime preview" href="#previewAddIllness">Preview</a>
+                            <button type="button" class="btn-prime release1" id="myBtn">Release</button>
+                            <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                        </div>
                     </div>
                 </div>
 
@@ -1499,6 +1506,7 @@
                     </div>
                     <div class="cols-15"><!-- <button type="button" class="btn btn-success">Save</button> --></div>
                 </div>
+                
             </div>
     </div>
 </div>
