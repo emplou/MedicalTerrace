@@ -1342,17 +1342,6 @@ class HomeController extends Controller
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
-
-
-    //Overwrite Illness
-    }
-    public function overwrite_illness(){
-        $details = Input::all();
-
-    }
-
-
-
     }
     
     //Overwrite Illness
@@ -1513,17 +1502,6 @@ class HomeController extends Controller
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
-
-                                                'ill_h2'                => $details['h2'],
-                                                'ill_tag_kw'            => $details['tag'],
-                                                'ill_tag_dep'           => $details['tag_dep'],
-                                                'ill_tag_symp'          => $details['tag_sy'],
-                                                'ill_tag_season'        => $details['tag_s'],
-                                                'ill_tag_season_txt'    => $details['tag_txt'],
-                                                'ill_tag_free'          => $details['tag_f'],
-                                            ]);
-
-
                                                 'ill_h2'                => $jsonh2_list,
                                                 'ill_tag_kw'            => $tag_list,
                                                 'ill_tag_dep'           => $jsondep_list,

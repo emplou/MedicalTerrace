@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('modals.modal_add_doctor')
 
 <div class="header-wrapper">
     <div class="left">
@@ -603,9 +604,9 @@
             <div class="sidediv cols-35">
                 <div class="maxnum"><b id="charNum">200</b> <b> / 200 </b> </div>
                 <div class="sidebots">
-                    <button type="button" class="btn-prime preview" id="myBtn">Preview</button>
-                    <button type="button" class="btn-prime release1" id="myBtn">Release</button>
-                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                    <a class="prevbutton" type="button" class="btn-prime preview" href="#previewAddDoctor">Preview</a>
+                    <button type="button" class="btn-prime release1">Release</button>
+                    <button type="button" class="btn-prime release2">Release</button>
                 </div>
             </div>
         </div>
