@@ -2155,12 +2155,17 @@ input.form-control {
 
 /* Base for label styling */
 .check [type="checkbox"]:not(:checked),
-.check [type="checkbox"]:checked {
+.check [type="checkbox"]:checked,
+.check2 [type="checkbox"]:not(:checked),
+.check2 [type="checkbox"]:checked  {
   position: absolute;
   left: -9999px;
 }
 .check [type="checkbox"]:not(:checked) + label,
-.check [type="checkbox"]:checked + label {
+.check [type="checkbox"]:checked + label,
+.check2 [type="checkbox"]:not(:checked) + label,
+.check2 [type="checkbox"]:checked + label
+ {
   position: relative;
   padding-left: 1.95em;
   cursor: pointer;

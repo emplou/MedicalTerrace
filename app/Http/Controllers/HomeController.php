@@ -175,7 +175,7 @@ class HomeController extends Controller
         $resp_suba2 = array();
         foreach($suba2_list as $key2_suba => $cert_suba2)
         {
-            $resp_suba2[$key_suba2]['sub_head2a'] = $cert_suba2;
+            $resp_suba2[$key2_suba]['sub_head2a'] = $cert_suba2;
         }
         $jsonsuba2_list = json_encode($resp_suba2);
 
@@ -928,6 +928,7 @@ class HomeController extends Controller
     public function modal_edit_special($id){
         $value['data'] = DB::table('special')->where('id','=',$id)->get();
         $value['doc'] = DB::table('dv_doctors')->get();
+        $value['dpt'] = DB::table('hospital_departments')->get();
         $fetch = json_encode($value);
         return $fetch;
         // return $value;

@@ -1059,10 +1059,10 @@ $.ajaxSetup({
                         var seo_title = response['data'][0].seo_title;
                         //var ill_title = response['data'][0].sp_ill_cat;
                         if(seo_title == response['data'][0].sp_ill_cat){
-                            input_seo_title_two = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="'+ response['data'][0].sp_ill_cat +'" checked><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].sp_ill_cat +'"</label>';
+                            input_seo_title_two = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="1" checked><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].sp_ill_cat +'"</label>';
                             $("#input_seo_title_two").html(input_seo_title_two);
                         } else{
-                            input_seo_title_two = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value=""><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].sp_ill_cat +'"</label>';
+                            input_seo_title_two = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="0"><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].sp_ill_cat +'"</label>';
                             $("#input_seo_title_two").html(input_seo_title_two);
                         }
 
@@ -1110,6 +1110,25 @@ $.ajaxSetup({
                         });
                         $("#input_h2_two").html(input_h2_two);
 
+                        // DEPARTMENT
+                        var objJSONdpt = JSON.parse(response['data'][0].sp_tag_dep);
+                        var input_dpt_two = "";
+                        $.each(objJSONdpt, function (i, v) {
+                            console.log(objJSONdpt);
+
+                                input_dpt_two += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
+
+                                $.each(response['dpt'], function (i, b) {
+                                    console.log('dpt '+ b.dpt_name)
+                                    input_dpt_two += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+
+                                });
+                                   
+                                input_dpt_two += '</select></div>';
+                              
+                        }); //end of department json
+                        $("#input_dpt_two").html(input_dpt_two);
+
                         // Tag Symptoms Retrieval
                         var objJSONsy = JSON.parse(response['data'][0].sp_tag_symp);
                         var input_sy_two = "";
@@ -1141,6 +1160,43 @@ $.ajaxSetup({
                             input_free_two += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
                         });
                         $("#input_free_two").html(input_free_two);
+                  
+                },
+                    error: function(response){
+                    alert('Error'+response);
+       
+                }
+
+              });
+            // location.reload();
+        });
+    });
+
+    //copy and add another SPecial data to database
+    $('.overwrite_illness_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('sp-id');
+            // alert(id);
+
+            $.ajax({
+                url: '/modal_edit_illness/'+id,
+                type: 'get',
+                dataType: 'json',
+                // data : { id : id },
+                success: function(response){
+                    console.log(response['data']);
+                    if(response == "success")
+
+                        console.log(response['data']); 
+
+                        $("#copyAddillness").modal('show');
+                        
                   
                 },
                     error: function(response){
