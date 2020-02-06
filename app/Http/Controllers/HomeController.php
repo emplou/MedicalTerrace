@@ -936,6 +936,8 @@ class HomeController extends Controller
 
     public function modal_edit_illness($id){
         $value['data'] = DB::table('illness')->where('id','=',$id)->get();
+        $value['doc'] = DB::table('dv_doctors')->get();
+        $value['dpt'] = DB::table('hospital_departments')->get();
         $fetch = json_encode($value);
         return $fetch;
         // return $value;

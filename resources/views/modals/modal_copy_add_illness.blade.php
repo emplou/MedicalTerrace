@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
                             <div class="cols-4">
-                                <input type="text" class="form-control" id="url" name="url">
+                                <input type="text" class="form-control" id="twourl" name="url">
                             </div>
                         </div>
                         
@@ -29,14 +29,14 @@
                         <div class="form-group">
                             <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                             <div class="cols-4">          
-                                <div id="input_ill"></div>
+                                <div id="input_ill_two"></div>
                             </div>
                         </div>
                         <!-- Illness Shoulder -->
                         <div class="form-group">
                             <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
                             <div class="cols-5">          
-                                <input type="text" class="form-control ill_shldr" id="ill_shldr" name="ill_shldr" maxlength="20">
+                                <input type="text" class="form-control ill_shldr" id="ill_shldr_two" name="ill_shldr" maxlength="20">
                             </div>
                             <div class="cols-2">          
                                 <span id="rchars">20</span>/20
@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">特集タイトル<br><span>Illness</span></label>
                             <div class="cols-5">          
-                                <input type="text" class="form-control ill" id="ill" name="ill" maxlength="14">
+                                <input type="text" class="form-control ill" id="ill_two" name="ill" maxlength="14">
                             </div>
                             <div class="cols-2">          
                                 <span id="rchars2">0</span>/14
@@ -57,27 +57,24 @@
                         <div class="form-group">
                             <label class="control-label cols-15">病名ふりがな<br><span>Illness Phonetic</span></label>
                             <div class="cols-5">          
-                                <input type="text" class="form-control" id="ill_ph"  name="ill_ph" maxlength="14">
+                                <input type="text" class="form-control" id="ill_ph_two"  name="ill_ph" maxlength="14">
                             </div>
                         </div>
                         <!-- Doctor -->
                         <div class="form-group">
                             <label class="control-label cols-15">監修・協力医師<br><span>Doctor</span></label>
                             <div class="cols-5">          
-                                <select name="doctor" class="form-control">
-                                    <option value="">選択してください</option>
-                                    
-                                </select>
+                                <div id="input_doc_two"></div>
                             </div>
                             <div class="cols-3 rad-buttons">
-                                <div id="input_rad"></div>
+                                <div id="input_rad_two"></div>
                             </div>	
                         </div>
                         <!-- Doctor Comment -->
                         <div class="form-group full">
                             <label class="control-label cols-15">医師コメント<br><span>Doctor Comment</span></label>
                             <div class="cols-5">          
-                                <textarea class="form-control cmt" id="cmt" name="doc_cmt" rows="5" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                                <textarea class="form-control cmt" id="twocmt" name="doc_cmt" rows="5" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
                                 </textarea>
                             </div>
                             <div class="cols-2">          
@@ -89,7 +86,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
                             <div class="cols-5">          
-                                <div id="input_sum"></div>
+                                <div id="input_sum_two"></div>
                             </div>
                             <div class="cols-2">          
                                 
@@ -100,8 +97,8 @@
                         <div class="form-group">
                             <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>
                             <div class="cols-45">          
-                                <div class="custom-file-upload ill">
-                                    <input type="file" id="img"  name="img"/>
+                                <div class="custom-file-upload">
+                                    <input type="file" id="twoimg" name="img" />
                                 </div>
                             </div>
                         </div>
@@ -109,14 +106,14 @@
                         <div class="form-group">
                             <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
                             <div class="cols-4">
-                                <input type="text" class="form-control" id="img_cap" name="img_cap">
+                                <input type="text" class="form-control" id="twoimg_cap" name="img_cap">
                             </div>
                         </div>
                         <!-- Image Alt -->
                         <div class="form-group">
                             <label class="control-label cols-15">画像alt<br><span>Image alt</span></label>
                             <div class="cols-4">
-                                <input type="text" class="form-control" id="img_alt" name="img_alt">
+                                <input type="text" class="form-control" id="twoimg_alt" name="img_alt">
                             </div>
                         </div>
                         <br>
@@ -293,7 +290,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
                             <div class="cols-7">
-                                <div id="input_kwords"></div>
+                                <div id="input_kwords_two"></div>
                             </div>
                         </div>
 
@@ -301,7 +298,7 @@
                             <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                             <div class="cols-45">   
                                 <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                                <div id="input_seo_title"></div>
+                                <div id="input_seo_title_two"></div>
                                 </div>    
                             </div>
                         </div>
@@ -309,7 +306,7 @@
                         <div class="form-group">
                             <div class="cols-15"></div>
                             <div class="cols-45">   
-                                <textarea class="form-control seo" id="seo_txt" name="seo_txt" maxlength="35"></textarea>
+                                <textarea class="form-control seo" id="seo_txt_two" name="seo_txt" maxlength="35"></textarea>
                             </div>
                             <div class="cols-1">         
                                 <span id="rchars16">0</span>/35
@@ -320,7 +317,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">ディスクリプション<br><span>Meta description for SEO</span></label>
                             <div class="cols-45">   
-                                <textarea class="form-control mt1" id="meta_txt1" name="meta_txt1" maxlength="50"></textarea>
+                                <textarea class="form-control mt1" id="meta_txt1_two" name="meta_txt1" maxlength="50"></textarea>
                             </div>
                             <div class="cols-3">  
                                 スマホ・PC用 重要文章<br>        
@@ -331,7 +328,7 @@
                         <div class="form-group">
                             <div class="cols-15"></div>
                             <div class="cols-45">   
-                                <textarea class="form-control mt2" id="meta_txt2" name="meta_txt2" maxlength="70"></textarea><br>
+                                <textarea class="form-control mt2" id="meta_txt2_two" name="meta_txt2" maxlength="70"></textarea><br>
                             </div>
                             <div class="cols-3">     
                                 PC用補足文章<br>      
@@ -350,7 +347,7 @@
                         <br>
                             <label class="control-label cols-15">h1</label>
                             <div class="cols-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                                <div id="input_h1"></div>
+                                <div id="input_h1_two"></div>
                             </div>
                         </div>
                         
@@ -358,7 +355,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">h2</label>
                             <div class="cols-7">
-                                <div id="input_h2"></div>
+                                <div id="input_h2_two"></div>
                                 
                             </div>
                         </div>
@@ -367,7 +364,7 @@
                         <div class="form-group check">
                             <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                             <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                                <div id="input_kw"></div>
+                                <div id="input_kw_two"></div>
                                 
                             </div>
                         </div>
@@ -388,14 +385,14 @@
                         <div class="form-group">
                             <label class="control-label cols-15">タグ<br>(診療科・所属科)<br><span>Tag(department)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_dep"></div>
+                                <div id="input_dpt_two"></div>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="control-label cols-15">タグ（症状）<br><span>Tag(Symptoms)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_sy"></div>
+                                <div id="input_sy_two"></div>
                             </div>
                         </div>
 
@@ -403,67 +400,67 @@
                             <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                             <div class="cols-6">   
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga1" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga1" name="tag_s[]" value="1"> 
                                     <label for="taga1">春</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga2" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga2" name="tag_s[]" value="1"> 
                                     <label for="taga2">夏</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga3" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga3" name="tag_s[]" value="1"> 
                                     <label for="taga3">秋</label>
                                 </div>  
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga4" name="tag_s[]">
+                                    <input type="checkbox" id="twotaga4" name="tag_s[]" value="1">
                                     <label for="taga4"> 冬</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga5" name="tag_s[]">
+                                    <input type="checkbox" id="twotaga5" name="tag_s[]" value="1">
                                     <label for="taga5">4月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga6" name="tag_s[]">
+                                    <input type="checkbox" id="twotaga6" name="tag_s[]" value="1">
                                     <label for="taga6">5月</label>
                                 </div>  
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga7" name="tag_s[]">
+                                    <input type="checkbox" id="twotaga7" name="tag_s[]" value="1">
                                     <label for="taga7">6月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga8" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga8" name="tag_s[]" value="1"> 
                                     <label for="taga8">7月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga9" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga9" name="tag_s[]" value="1"> 
                                     <label for="taga9">8月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga10" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga10" name="tag_s[]" value="1"> 
                                     <label for="taga10">9月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga11" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga11" name="tag_s[]" value="1"> 
                                     <label for="taga11">10月</label>
                                 </div>  
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga12" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga12" name="tag_s[]" value="1"> 
                                     <label for="taga12">11月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga13" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga13" name="tag_s[]" value="1"> 
                                     <label for="taga13">12月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga14" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga14" name="tag_s[]" value="1"> 
                                     <label for="taga14">1月</label>
                                 </div>  
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga15" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga15" name="tag_s[]" value="1"> 
                                     <label for="taga15">2月</label>
                                 </div>
                                 <div class="cols-12">
-                                    <input type="checkbox" id="taga16" name="tag_s[]"> 
+                                    <input type="checkbox" id="twotaga16" name="tag_s[]" value="1"> 
                                     <label for="taga16">3月</label>
                                 </div>
                             </div>
@@ -473,7 +470,7 @@
                             <label class="control-label cols-15"></span></label>
                             <div class="cols-7"> 
                                 
-                                <div id="input_tst"></div>
+                                <div id="input_tst_two"></div>
                                 
                             </div>
                         </div>
@@ -481,7 +478,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">タグ（フリー入力)<br><span>Tag(free)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_free"></div>
+                                <div id="input_free_two"></div>
                                 
                             </div>
                         </div>

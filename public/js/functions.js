@@ -1181,7 +1181,7 @@ $.ajaxSetup({
         });
         // e.preventDefault();
         $(this).on('click', function(){
-            var id = $(this).attr('sp-id');
+            var id = $(this).attr('il-id');
             // alert(id);
 
             $.ajax({
@@ -1196,6 +1196,169 @@ $.ajaxSetup({
                         console.log(response['data']); 
 
                         $("#copyAddillness").modal('show');
+
+                        $("#twourl").val(response['data'][0].ill_url); // url
+
+                        // Illness Category
+                        input_ill_two = '<select class="form-control" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
+                        $("#input_ill_two").html(input_ill_two);
+
+                        $("#ill_shldr_two").val(response['data'][0].ill_shoulder); // Illness Shoulder
+
+                        $("#ill_two").val(response['data'][0].ill_name); // Illness
+
+                        $("#ill_ph_two").val(response['data'][0].ill_ph); //Illness Phonetics
+                            
+                        // Doctor
+                        var input_doc_two = "";
+                        input_doc_two += '<select name="doctor" class="form-control"><option value="'+ response['data'][0].ill_doc +'">'+ response['data'][0].ill_doc +'</option>';
+                        
+                        $.each(response['doc'], function (i, b) {
+                            console.log('doc '+ b.name)
+                            input_doc_two += '<option value="'+ b.name +'">'+ b.name +'</option>';
+        
+                        });
+                        input_doc_two += '</select>'; 
+                        $("#input_doc_two").html(input_doc_two); 
+
+                        // Doctor Role
+                        var role = response['data'][0].ill_doc_role;
+                        if(role == "監修"){
+                            input_rad_two = '<input type="radio" id="sprvsn" name="role" value="監修" checked><label for="sprvsn">監修</label><input type="radio" id="cc" name="role" value="取材協力"><label for="cc">取材協力</label><input type="radio" id="scc" name="role" value="監修・取材協力"><label for="scc">監修・取材協力</label>';
+                            $("#input_rad_two").html(input_rad_two);
+                        }
+                        if(role == "取材協力"){
+                            input_rad_two = '<input type="radio" id="sprvsn" name="role" value="監修"><label for="sprvsn">監修</label><input type="radio" id="cc" name="role" value="取材協力" checked><label for="cc">取材協力</label><input type="radio" id="scc" name="role" value="監修・取材協力"><label for="scc">監修・取材協力</label>';
+                            $("#input_rad_two").html(input_rad_two);
+                        }
+                        if(role == "監修・取材協力"){
+                            input_rad_two = '<input type="radio" id="sprvsn" name="role" value="監修"><label for="sprvsn">監修</label><input type="radio" id="cc" name="role" value="取材協力"><label for="cc">取材協力</label><input type="radio" id="scc" name="role" value="監修・取材協力" checked><label for="scc">監修・取材協力</label>';
+                            $("#input_rad_two").html(input_rad_two);
+                        }   
+
+                        $("#twocmt").val(response['data'][0].ill_doc_cmt);  // Doctor's Comment 
+
+                        // Summarize
+                        var objJSONsum = JSON.parse(response['data'][0].ill_summary);
+                        var inputs = "";
+                        $.each(objJSONsum, function (i, v) {
+                            inputs += '<textarea class="form-control sm" name="sm[]" rows="3" maxlength="200">'+v.sm+'</textarea><br>';
+                        });
+                        $("#input_sum_two").html(inputs);
+
+                        // image
+                        $("#twoimg_cap").val(response['data'][0].ill_img_cap); // image caption
+                        $("#twoimg_alt").val(response['data'][0].ill_img_alt); // image alt
+
+                        // Search Keywords
+                        var objJSONkw = JSON.parse(response['data'][0].ill_kwords);
+                        var input_kwords_two = "";
+                        var input_kw_two = "";
+                        var x = 0;
+                        $.each(objJSONkw, function (i, v) {
+                            var xplus=x+1;
+                            
+                            input_kwords_two += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
+
+                            input_kw_two += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag">'+v.kword+'</label></div>';
+                        
+                            x++; 
+                        });
+                        $("#input_kwords_two").html(input_kwords_two);
+                        $("#input_kw_two").html(input_kw_two);
+
+                        // SEO Title
+                        var seo_title = response['data'][0].ill_seo;
+                        if(seo_title == response['data'][0].ill_name){
+                            input_seo_title_two = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="'+ response['data'][0].ill_name +'" checked><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].ill_name +'"</label>';
+                            $("#input_seo_title_two").html(input_seo_title);
+                        } else{
+                            input_seo_title_two = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value=""><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].ill_name +'"</label>';
+                            $("#input_seo_title_two").html(input_seo_title_two);
+                        }
+
+                        $("#seo_txt_two").val(response['data'][0].ill_seo_txt); // seo text
+                        $("#meta_txt1_two").val(response['data'][0].ill_meta_a);
+                        $("#meta_txt2_two").val(response['data'][0].ill_meta_b);
+
+                        // Illness h1
+                        input_h1_two = ''+ response['data'][0].ill_shoulder +'<input type="hidden" name="h1" value="'+ response['data'][0].ill_name +'">';
+                        $("#input_h1_two").html(input_h1_two);
+                        
+                        // H2 Retrieval
+                        var objJSONh2 = JSON.parse(response['data'][0].ill_h2);
+                        var input_h2_two = "";
+                        $.each(objJSONh2, function (i, v) {
+                            input_h2_two += '<div class="cols-3"><input type="text" class="form-control" placeholder="" value="'+v.h2+'" name="h2[]"></div>';
+                        });
+                        $("#input_h2_two").html(input_h2_two);
+
+                        
+      
+                        // Tag Department Retrieval
+                        var objJSONdpt = JSON.parse(response['data'][0].ill_tag_dep);
+                        var input_dpt_two = "";
+                        $.each(objJSONdpt, function (i, v) {
+                            console.log(objJSONdpt);
+
+                                input_dpt_two += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
+
+                                $.each(response['dpt'], function (i, b) {
+                                    console.log('dpt '+ b.department_name)
+                                    input_dpt_two += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+
+                                });
+                                   
+                                input_dpt_two += '</select></div>';
+                              
+                        }); //end of department json
+                        $("#input_dpt_two").html(input_dpt_two);
+
+                        // Tag Symptoms Retrieval
+                        var objJSONsy = JSON.parse(response['data'][0].ill_tag_symp);
+                        var input_sy_two = "";
+                        $.each(objJSONsy, function (i, v) {
+                            input_sy_two += '<div class="cols-3"><input type="text" class="form-control" name="tag_sy[]" id="tag_sy" value="'+v.tag_sy+'"></div>';
+                        });
+                        $("#input_sy_two").html(input_sy_two);
+
+                        // Tag Season Text Retrieval
+                        var objJSONtst = JSON.parse(response['data'][0].ill_tag_season_txt);
+                        var input_tst_two = "";
+                        $.each(objJSONtst, function (i, v) {
+                            input_tst_two += '<div class="cols-3"><input type="text" class="form-control" name="tag_txt[]" id="tag_txt" value="'+v.tag_txt+'"></div>';
+                        });
+                        $("#input_tst_two").html(input_tst_two);
+
+                        // Tag Free
+                        var objJSONfree = JSON.parse(response['data'][0].ill_tag_free);
+                        var input_free_two = "";
+                        $.each(objJSONfree, function (i, v) {
+                            input_free_two += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
+                        });
+                        $("#input_free_two").html(input_free_two);
+
+                        //Tag Keywords
+                        var objJSONitk = JSON.parse(response['data'][0].ill_tag_kw);
+                        var y = 0;
+                        $.each(objJSONitk, function (i, v) {
+                            var yplus=y+1;
+                            if(v.tag == 1){
+                                $("#tag"+yplus).attr( "checked", true );
+                            }
+                            y++;
+                        });
+
+                        // Season
+                        var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
+                        var z = 0;
+                        $.each(objJSONts, function (i, v) {
+                            var zplus=z+1;
+                            if(v.tag_s == 1){
+                                $("#twotaga"+zplus).attr( "checked", true );
+                            }
+                            z++;
+                        });
                         
                   
                 },
