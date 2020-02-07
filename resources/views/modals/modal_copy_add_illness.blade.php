@@ -11,7 +11,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                
+                {!! Form::open(['url' => '/save_illness', 'method' => 'post', 'files' => true]) !!}
                 <!-- Form Starts -->
                 <div class="form-horizontal">
 
@@ -294,7 +294,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                             <div class="cols-45">   
                                 <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
@@ -361,7 +361,7 @@
                         </div>
 
                         <!-- Tag Keyword -->
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                             <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                                 <div id="input_kw_two"></div>
@@ -370,7 +370,7 @@
                         </div>
 
                         <!-- Tag(illness name) -->
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タグ（病名）<br><span>Tag(illness name)</span></label>
                             <div class="col-sm-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                                 <input type="checkbox" id="tag9" name="tag_b[]"> 
@@ -396,7 +396,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                             <div class="cols-6">   
                                 <div class="cols-12">
@@ -489,6 +489,8 @@
                 <!-- Form Ends -->
 
                 <input type="submit" name="save" value="" class="save-btn">
+
+                {!! Form::close() !!}
 
         </div>
         <!-- Modal COntent Ends -->

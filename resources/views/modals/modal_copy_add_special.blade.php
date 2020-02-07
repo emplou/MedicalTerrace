@@ -13,7 +13,7 @@
       
         <div class="modal-body">
             {!! Form::open(['url' => '/save_special', 'method' => 'post', 'files' => true]) !!}
-            <input type="hidden" name="spID" id="twospID" value=" ">
+            <!-- <input type="hidden" name="spID" id="twospID" value=" "> -->
 
             <div class="form-horizontal">
 		        <div class="form-pads">

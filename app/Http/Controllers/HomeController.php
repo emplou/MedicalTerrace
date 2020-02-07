@@ -548,15 +548,15 @@ class HomeController extends Controller
         $jsoncr_list = json_encode($response11); 
 
         //Risk Assessment
-        if($details['subheading-chck'] == 1){
-            $risk_assess = new Risk_assessment;
-            $risk_assess->ra_ill_id           = $illness_id;
-            $risk_assess->ra_title            = $details['subheading-chck'];
-            $risk_assess->ra_text             = $jsonsh_list ;
-            $risk_assess->ra_risk_lvl         = $jsonrl_list; 
-            $risk_assess->ra_result           = $jsoncr_list;  
-            $risk_assess->save();
-        }
+        // if($details['subheading-chck'] == 1){
+        //     $risk_assess = new Risk_assessment;
+        //     $risk_assess->ra_ill_id           = $illness_id;
+        //     $risk_assess->ra_title            = $details['subheading-chck'];
+        //     $risk_assess->ra_text             = $jsonsh_list ;
+        //     $risk_assess->ra_risk_lvl         = $jsonrl_list; 
+        //     $risk_assess->ra_result           = $jsoncr_list;  
+        //     $risk_assess->save();
+        // }
         
         return redirect('/illness_list');
     }
@@ -1348,21 +1348,17 @@ class HomeController extends Controller
     }
     
     //Overwrite Illness
-    public function overwrite_illness(){
+    public function overwrite_illness(Request $request){
         $details = Input::all();
 
-        $illness_id = rand();
-        //$ill_img_id = rand();
-        //$ill_gr_id = rand();
-
         /* illness image */
-        $destinationPath = '';
-        $filename        = '';
-        $file            = $request->file('img');
+        // $destinationPath = '';
+        // $filename        = '';
+        // $file            = $request->file('img');
 
-        $destinationPath = public_path().'/illness';
-        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
-        $uploadSuccess   = $file->move($destinationPath, $filename);
+        // $destinationPath = public_path().'/illness';
+        // $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        // $uploadSuccess   = $file->move($destinationPath, $filename);
         /* end of illness image */
 
         // description summary
@@ -1384,31 +1380,31 @@ class HomeController extends Controller
         $jsonh2_list = json_encode($response2); 
 
         // Subhead1
-        $suba_list = $details['sub_head1a']; 
-        $resp_suba = array();
-        foreach($suba_list as $key_suba => $cert_suba)
-        {
-            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
-        }
-        $jsonsuba_list = json_encode($resp_suba);
+        // $suba_list = $details['sub_head1a']; 
+        // $resp_suba = array();
+        // foreach($suba_list as $key_suba => $cert_suba)
+        // {
+        //     $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        // }
+        // $jsonsuba_list = json_encode($resp_suba);
 
         // Subhead2
-        $subb_list = $details['sub_head1b']; 
-        $resp_subb = array();
-        foreach($subb_list as $key_subb => $cert_subb)
-        {
-            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
-        }
-        $jsonsubb_list = json_encode($resp_subb);
+        // $subb_list = $details['sub_head1b']; 
+        // $resp_subb = array();
+        // foreach($subb_list as $key_subb => $cert_subb)
+        // {
+        //     $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        // }
+        // $jsonsubb_list = json_encode($resp_subb);
 
         // Textheading
-        $tc_list = $details['txt_ckeditor']; 
-        $resp_tc = array();
-        foreach($tc_list as $key_tc => $cert_tc)
-        {
-            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
-        }
-        $jsontc_list = json_encode($resp_tc);
+        // $tc_list = $details['txt_ckeditor']; 
+        // $resp_tc = array();
+        // foreach($tc_list as $key_tc => $cert_tc)
+        // {
+        //     $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        // }
+        // $jsontc_list = json_encode($resp_tc);
 
         // tag
         $tag_list = $details['tag']; 
@@ -1474,44 +1470,39 @@ class HomeController extends Controller
         $jsonk_list = json_encode($response12); 
         
         $illness = DB::table('illness')
-                                    ->where('id','=', $details['id'])
+                                    ->where('id','=', $details['illID'])
                                     ->update([
                                                 'ill_url'               => $details['url'],
                                                 'ill_cat'               => $details['ill_cat'],
                                                 'ill_shoulder'          => $details['ill_shldr'],
                                                 'ill_name'              => $details['ill'],
                                                 'ill_ph'                => $details['ill_ph'],
-                                                //'ill_doc'             => $details['doctor'],
+                                                'ill_doc'               => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
-
-                                                //'ill_summary'         => $details['sm'],
-                                                //'ill_img'             => $details['img'],
+                                                //'ill_img'               => $details['img'],
                                                 'ill_img_cap'           => $details['img_cap'],
                                                 'ill_img_alt'           => $details['img_alt'],
                                                 //'ill_sub_txt'         => $details['image'],
-                                                'ill_kwords'            => $details['kword'],
-                                                'ill_summary'           => $jsonsum_list,
-                                                'ill_img'               => $details['img'],
-                                                'ill_img_cap'           => $details['img_cap'],
-                                                'ill_img_alt'           => $details['img_alt'],
-                                                'ill_sub1'              => $jsonsuba_list,
-                                                'ill_sub2'              => $jsonsubb_list,
-                                                'ill_sub_txt'           => $jsontc_list,
-                                                'ill_kwords'            => $jsonk_list,
-
+                                                //'ill_kwords'            => $details['kword'],
+                                                //'ill_summary'           => $jsonsum_list,
+                                               
+                                                // 'ill_sub1'              => $jsonsuba_list,
+                                                // 'ill_sub2'              => $jsonsubb_list,
+                                                // 'ill_sub_txt'           => $jsontc_list,
+                                                //'ill_kwords'            => $jsonk_list,
                                                 'ill_seo'               => $details['seo'],
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
-                                                'ill_h2'                => $jsonh2_list,
-                                                'ill_tag_kw'            => $tag_list,
-                                                'ill_tag_dep'           => $jsondep_list,
-                                                'ill_tag_symp'          => $jsonsy_list,
-                                                'ill_tag_season'        => $jsons_list,
-                                                'ill_tag_season_txt'    => $jsonstxt_list,
-                                                'ill_tag_free'          => $jsonf_list,
+                                                // 'ill_h2'                => $jsonh2_list,
+                                                // 'ill_tag_kw'            => $tag_list,
+                                                // 'ill_tag_dep'           => $jsondep_list,
+                                                // 'ill_tag_symp'          => $jsonsy_list,
+                                                // 'ill_tag_season'        => $jsons_list,
+                                                // 'ill_tag_season_txt'    => $jsonstxt_list,
+                                                // 'ill_tag_free'          => $jsonf_list,
                                             ]);
     }
     

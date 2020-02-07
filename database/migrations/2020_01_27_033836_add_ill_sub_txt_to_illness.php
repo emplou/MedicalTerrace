@@ -15,7 +15,7 @@ class AddIllSubTxtToIllness extends Migration
     {
         Schema::table('illness', function (Blueprint $table) {
             //
-            $table->string('ill_sub_txt');
+            $table->longText('ill_sub_txt');
         });
     }
 

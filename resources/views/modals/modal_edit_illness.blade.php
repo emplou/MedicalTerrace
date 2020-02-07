@@ -11,7 +11,8 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                
+            {!! Form::open(['url' => '/overwrite_illness', 'method' => 'post', 'files' => true]) !!}
+            <input type="hidden" name="illID" id="illID">
                 <!-- Form Starts -->
                 <div class="form-horizontal">
 
@@ -21,7 +22,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
                             <div class="cols-4">
-                                <input type="text" class="form-control" id="url" name="url">
+                                <input type="text" class="form-control" id="i_url" name="url">
                             </div>
                         </div>
                         
@@ -64,10 +65,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">監修・協力医師<br><span>Doctor</span></label>
                             <div class="cols-5">          
-                                <select name="doctor" class="form-control">
-                                    <option value="">選択してください</option>
-                                    
-                                </select>
+                                <div id="input_doc"></div>
                             </div>
                             <div class="cols-3 rad-buttons">
                                 <div id="input_rad"></div>
@@ -297,11 +295,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                             <div class="cols-45">   
                                 <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                                <div id="input_seo_title"></div>
+                                    <input class="styled-checkbox" id="tts" type="checkbox" name="seo" value="1"><label for="tts" style="color: #F00;font-weight:500;" id="input_seo_title"></label>
                                 </div>    
                             </div>
                         </div>
@@ -364,7 +362,7 @@
                         </div>
 
                         <!-- Tag Keyword -->
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                             <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                                 <div id="input_kw"></div>
@@ -373,10 +371,10 @@
                         </div>
 
                         <!-- Tag(illness name) -->
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タグ（病名）<br><span>Tag(illness name)</span></label>
                             <div class="col-sm-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                                <input type="checkbox" id="tag9" name="tag_b[]"> 
+                                <input type="checkbox" id="tag9" name="tag_b"> 
                                 <label for="tag9">考えられる病気より</label>
                             </div>
                             <div class="col-sm-4">
@@ -388,7 +386,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">タグ<br>(診療科・所属科)<br><span>Tag(department)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_dep"></div>
+                                <div id="input_dpt"></div>
                             </div>
                         </div>
                         
@@ -399,7 +397,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group check">
+                        <div class="form-group check3">
                             <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                             <div class="cols-6">   
                                 <div class="cols-12">

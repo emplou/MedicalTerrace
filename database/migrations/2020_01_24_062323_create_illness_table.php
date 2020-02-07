@@ -26,19 +26,19 @@ class CreateIllnessTable extends Migration
             $table->string('ill_img');
             $table->string('ill_img_cap');
             $table->string('ill_img_alt');
-            $table->string('ill_kwords');
+            $table->longText('ill_kwords');
             $table->string('ill_seo');
             $table->string('ill_seo_txt');
             $table->string('ill_meta_a');
             $table->string('ill_meta_b');
             $table->string('ill_h1');
-            $table->string('ill_h2');
-            $table->string('ill_tag_kw');
+            $table->longText('ill_h2');
+            $table->longText('ill_tag_kw');
             $table->longText('ill_tag_dep');
-            $table->string('ill_tag_symp');
+            $table->longText('ill_tag_symp');
             $table->longText('ill_tag_season');
-            $table->string('ill_tag_season_txt');
-            $table->string('ill_tag_free');
+            $table->longText('ill_tag_season_txt');
+            $table->longText('ill_tag_free');
             $table->timestamps();
         });
     }
