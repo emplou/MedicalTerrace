@@ -559,7 +559,6 @@ $(document).ready(function() {
 	CKEDITOR.replace( 'med_subj_text_subheading_hospital2' );
 	CKEDITOR.add 
 </script>
-<script>
 
 <script>
 	CKEDITOR.replace( 'feature_text_subheading_hospital' ); 
