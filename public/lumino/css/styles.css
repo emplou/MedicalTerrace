@@ -2692,6 +2692,7 @@ textarea {
   margin: 0 auto;
   display: table;
   background: #fff;
+  box-shadow: -1px 22px 28px -11px rgb(183, 178, 178);
 }
 .close {
     background: #fff;
@@ -2719,18 +2720,18 @@ textarea {
 }
 .modalDialog .tags {
   width: 100%;
-  padding: 10px;
   margin-top: 10px;
   display: table;
 }
 .modalDialog .tags span {
-  padding: 10px;
-  color: #50b3ff;
+  padding: 5px 10px;
+  float: left;
+  color: #2E58BD;
   font-weight: 300;
   margin-right: 5px;
   border: 1px solid #c0c4c7;
   border-radius: 5px;
-  background-color: #efe9e9;
+  background-color: #E5E5E5;
 }
 .modalDialog .tags div {
   width: 80%;
@@ -2772,6 +2773,7 @@ ol.link li a{
   background-size: cover;
   background-image: url(../../images/bg-preview.jpg);
 }
+
 .div-bg .heading1 {
   font-size: 18px;
   font-weight: 600;
@@ -2787,6 +2789,7 @@ ol.link li a{
   color: #808080;
   font-size: 18px;
 }
+
 .modal-panel h3 {
   color: #54A8A8;
   font-size: 20px;
@@ -2799,6 +2802,10 @@ ol.link li a{
   color: #54A8A8;
   font-size: 18px;
   font-weight: 500;
+}
+.panel-subhead {
+  font-size: 14px;
+  padding: 5px 15px;
 }
 p span {
   border-bottom: 5px solid #f9e2e8;
@@ -2828,6 +2835,15 @@ p span {
   text-decoration: underline;
 }
 
+.tooltips {
+  height: 50px;
+  padding: 5px;
+  color: #fff;
+  margin-top: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../images/tooltip-bg.png);
+}
 
 ul.breadcrumb {
   padding: 5px 10px;
@@ -2836,6 +2852,9 @@ ul.breadcrumb {
   border-radius: 0;
   background-color: #fff;
   border-bottom: 1px solid #d6d6d6;
+  -webkit-box-shadow: -1px 11px 15px -9px rgba(82,82,82,1);
+  -moz-box-shadow: -1px 11px 15px -9px rgba(82,82,82,1);
+  box-shadow: -1px 13px 9px -11px rgb(183, 178, 178);
 }
 ul.breadcrumb li {
   display: inline;
@@ -2863,9 +2882,21 @@ ul.breadcrumb li a:hover {
   display: table;
   margin: 0 auto;
 }
+.modal-buts.one button {
+  margin: 10px auto;
+  float: none;
+  display: block;
+
+}
 
 .modal-buts button {
   width: 45%;
   float: left;
   margin: 10px;
+}
+
+ul.blk-bullet img {
+  width: 15px;
+  float: left;
+  margin-top: 5px;
 }
