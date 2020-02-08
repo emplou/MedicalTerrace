@@ -439,7 +439,8 @@
             <div class="cols-35">
                     <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " >
             </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success addcar3"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div id="c_aw"></div>
         </div>
         </div>
         
@@ -587,7 +588,8 @@
                     </select>
                 </div>
             </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success adddept1"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success add_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
+            <div id="dpt_div"></div>
         </div>
             <!-- <br>
             <input type="text" class="form- " name="department" style="width:200px">
