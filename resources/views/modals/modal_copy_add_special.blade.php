@@ -310,43 +310,10 @@
                         </div>
                     </div>
 
-                    <div class="form-group check">
+                    <div class="form-group check3">
                         <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
                         <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag1" name="tag_ch[]" value="1"> 
-                                <label for="tag1">検索キーワド入力より</label>
-                            </div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag2" name="tag_ch[]" value="1"> 
-                                <label for="tag2">検索キーワド入力より</label>
-                            </div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag3" name="tag_ch[]" value="1"> 
-                                <label for="tag3">検索キーワド入力より</label>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag4" name="tag_ch[]" value="1"> 
-                                <label for="tag4">検索キーワド入力より</label>
-                            </div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag5" name="tag_ch[]" value="1"> 
-                                <label for="tag5">検索キーワド入力より</label>
-                            </div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag6" name="tag_ch[]" value="1"> 
-                                <label for="tag6">検索キーワド入力より</label>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag7" name="tag_ch[]" value="1"> 
-                                <label for="tag7">検索キーワド入力より</label>
-                            </div>
-                            <div class="cols-4">
-                                <input type="checkbox" id="tag8" name="tag_ch[]" value="1"> 
-                                <label for="tag8">検索キーワド入力より</label>
-                            </div>
+                        <div id="input_kw_two"></div>
                         </div>
                     </div>
 
@@ -410,73 +377,73 @@
                         </div>
                     </div>
 
-                    <div class="form-group check">
+                    <div class="form-group check3">
                         <label class="control-label cols-15">タグ(季節)<br><span>Tag(season)</span></label>
                         <div class="cols-7">   
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s1" name="tag_s[]" value="1"> 
-                                <label for="tag_s1">春</label>
+                                <input type="checkbox" id="tag_s_two1" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two1">春</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s2" name="tag_s[]" value="1"> 
-                                <label for="tag_s2">夏</label>
+                                <input type="checkbox" id="tag_s_two2" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two2">夏</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s3" name="tag_s[]" value="1"> 
-                                <label for="tag_s3">秋</label>
+                                <input type="checkbox" id="tag_s_two3" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two3">秋</label>
                             </div>  
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s4" name="tag_s[]" value="1"> 
-                                <label for="tag_s4">冬</label>
+                                <input type="checkbox" id="tag_s_two4" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two4">冬</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s5" name="tag_s[]" value="1"> 
-                                <label for="tag_s5">4月</label>
+                                <input type="checkbox" id="tag_s_two5" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two5">4月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s6" name="tag_s[]" value="1"> 
-                                <label for="tag_s6">5月</label>
+                                <input type="checkbox" id="tag_s_two6" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two6">5月</label>
                             </div>  
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s7" name="tag_s[]" value="1"> 
-                                <label for="tag_s7">6月</label>
+                                <input type="checkbox" id="tag_s_two7" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two7">6月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s8" name="tag_s[]" value="1">
-                                <label for="tag_s8">7月</label>
+                                <input type="checkbox" id="tag_s_two8" name="tag_s[]" value="1">
+                                <label for="tag_s_two8">7月</label>
                             </div>
                             <div class="clear"></div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s9" name="tag_s[]" value="1">
-                                <label for="tag_s9">8月</label>
+                                <input type="checkbox" id="tag_s_two9" name="tag_s[]" value="1">
+                                <label for="tag_s_two9">8月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s10" name="tag_s[]" value="1">
-                                <label for="tag_s10">9月</label>
+                                <input type="checkbox" id="tag_s_two10" name="tag_s[]" value="1">
+                                <label for="tag_s_two10">9月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s11" name="tag_s[]" value="1">
-                                <label for="tag_s11">10月</label>
+                                <input type="checkbox" id="tag_s_two11" name="tag_s[]" value="1">
+                                <label for="tag_s_two11">10月</label>
                             </div>  
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s12" name="tag_s[]" value="1"> 
-                                <label for="tag_s12">11月</label>
+                                <input type="checkbox" id="tag_s_two12" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two12">11月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s13" name="tag_s[]" value="1"> 
-                                <label for="tag_s14">12月</label>
+                                <input type="checkbox" id="tag_s_two13" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two14">12月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s14" name="tag_s[]" value="1"> 
-                                <label for="tag_s14">1月</label>
+                                <input type="checkbox" id="tag_s_two14" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two14">1月</label>
                             </div>  
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s15" name="tag_s[]" value="1"> 
-                                <label for="tag_s15">2月</label>
+                                <input type="checkbox" id="tag_s_two15" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two15">2月</label>
                             </div>
                             <div class="cols-11">
-                                <input type="checkbox" id="tag_s16" name="tag_s[]" value="1"> 
-                                <label for="tag_s16">3月</label>
+                                <input type="checkbox" id="tag_s_two16" name="tag_s[]" value="1"> 
+                                <label for="tag_s_two16">3月</label>
                             </div>
 
                             <div class="clear"></div>

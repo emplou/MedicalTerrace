@@ -704,7 +704,6 @@ $.ajaxSetup({
 
                         // SEO Title
                         var seo_title = response['data'][0].seo_title;
-                        //var ill_title = response['data'][0].sp_ill_cat;
                         if(seo_title == response['data'][0].sp_ill_cat){
                             input_seo_title = '<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" value="'+ response['data'][0].sp_ill_cat +'" checked><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">"'+ response['data'][0].sp_ill_cat +'"</label>';
                             $("#input_seo_title").html(input_seo_title);
@@ -716,10 +715,17 @@ $.ajaxSetup({
                         // SEO Keywords
                         var objJSON = JSON.parse(response['data'][0].sp_seo_kwords);
                         var input_seo = "";
+                        var input_kw = "";
+                        var x = 0;
                         $.each(objJSON, function (i, v) {
+                            var xplus=x+1;
                             input_seo += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" id="kword" value="'+v.kword+'"></div>';
+                            input_kw += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag"> '+v.kword+'</label></div>';
+                        
+                            x++;
                         });
                         $("#input_seo").html(input_seo);
+                        $("#input_kw").html(input_kw);
                     
                         $("#img").val(response['data'][0].sp_img);
                         $("#img_cap").val(response['data'][0].sp_img_cap);
@@ -756,6 +762,25 @@ $.ajaxSetup({
                         });
                         $("#input_h2").html(inputs);
 
+                        // DEPARTMENT
+                        var objJSONdpt = JSON.parse(response['data'][0].sp_tag_dep);
+                        var input_dpt = "";
+                        $.each(objJSONdpt, function (i, v) {
+                            console.log(objJSONdpt);
+
+                                input_dpt += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
+
+                                $.each(response['dpt'], function (i, b) {
+                                    console.log('dpt '+ b.dpt_name)
+                                    input_dpt += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+
+                                });
+                                   
+                                input_dpt += '</select></div>';
+                              
+                        }); //end of department json
+                        $("#input_dpt").html(input_dpt);
+
                         // Tag Symptoms Retrieval
                         var objJSONconf = JSON.parse(response['data'][0].sp_tag_symp);
                         var input_sy = "";
@@ -763,14 +788,6 @@ $.ajaxSetup({
                             input_sy += '<div class="cols-3"><input type="text" class="form-control" name="tag_sy[]" id="tag_sy" value="'+v.tag_sy+'"></div>';
                         });
                         $("#input_sy").html(input_sy);
-
-                        /******* Tag Season *******/
-                        var objJSONconf = JSON.parse(response['data'][0].sp_tag_season);
-                        var input_s = "";
-                        $.each(objJSONconf, function (i, v) {
-                            input_s += '<div class="cols-3"><input type="checkbox" name="tag_s[]" value="秋"> </div>';
-                        });
-                        $("#input_s").html(input_s);
 
                         // Tag Season Text Retrieval
                         var objJSONconf = JSON.parse(response['data'][0].sp_ta_season_txt);
@@ -787,7 +804,28 @@ $.ajaxSetup({
                             input_free += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
                         });
                         $("#input_free").html(input_free);
-                    
+                        
+                        // Season
+                        var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
+                        var z = 0;
+                        $.each(objJSONts, function (i, v) {
+                            var zplus=z+1;
+                            if(v.tag_s == 1){
+                                $("#tag_s"+zplus).attr( "checked", true );
+                            }
+                            z++;
+                        });
+
+                        //Tag Keywords
+                        var objJSONitk = JSON.parse(response['data'][0].sp_tag_kw);
+                        var y = 0;
+                        $.each(objJSONitk, function (i, v) {
+                            var yplus=y+1;
+                            if(v.tag_ch == 1){
+                                $("#tag"+yplus).attr( "checked", true );
+                            }
+                            y++;
+                        });
 
                 },
                     error: function(response){
@@ -1086,10 +1124,17 @@ $.ajaxSetup({
                         // SEO Keywords
                         var objJSON = JSON.parse(response['data'][0].sp_seo_kwords);
                         var input_seo_two = "";
+                        var input_kw_two = "";
+                        var x = 0;
                         $.each(objJSON, function (i, v) {
+                            var xplus=x+1;
                             input_seo_two += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" id="kword" value="'+v.kword+'"></div>';
+                            input_kw_two += '<div class="cols-3"><input type="checkbox" id="tag_two'+xplus+'" name="tag[]" /><label for="tag"> '+v.kword+'</label></div>';
+                        
+                            x++;
                         });
                         $("#input_seo_two").html(input_seo_two);
+                        $("#input_kw_two").html(input_kw_two);
                     
                         //$("#twoimg").val(response['data'][0].sp_img);
                         $("#twoimg_cap").val(response['data'][0].sp_img_cap);
@@ -1154,14 +1199,6 @@ $.ajaxSetup({
                         });
                         $("#input_sy_two").html(input_sy_two);
 
-                        /******* Tag Season *******/
-                        var objJSONconf = JSON.parse(response['data'][0].sp_tag_season);
-                        var input_s = "";
-                        $.each(objJSONconf, function (i, v) {
-                            input_s += '<div class="cols-3"><input type="checkbox" name="tag_s[]" value="秋"> </div>';
-                        });
-                        $("#input_s").html(input_s);
-
                         // Tag Season Text Retrieval
                         var objJSONtst = JSON.parse(response['data'][0].sp_ta_season_txt);
                         var input_tst_two = "";
@@ -1177,6 +1214,28 @@ $.ajaxSetup({
                             input_free_two += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
                         });
                         $("#input_free_two").html(input_free_two);
+
+                        // Season
+                        var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
+                        var z = 0;
+                        $.each(objJSONts, function (i, v) {
+                            var zplus=z+1;
+                            if(v.tag_s == 1){
+                                $("#tag_s_two"+zplus).attr( "checked", true );
+                            }
+                            z++;
+                        });
+
+                        //Tag Keywords
+                        var objJSONitk = JSON.parse(response['data'][0].sp_tag_kw);
+                        var y = 0;
+                        $.each(objJSONitk, function (i, v) {
+                            var yplus=y+1;
+                            if(v.tag_ch == 1){
+                                $("#tag_two"+yplus).attr( "checked", true );
+                            }
+                            y++;
+                        });
                   
                 },
                     error: function(response){

@@ -493,7 +493,7 @@
 
         </div>
         <!-- Modal COntent Ends -->
-
+        {!! Form::close() !!}
     </div>
 </div>
 </div>
