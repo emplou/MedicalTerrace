@@ -43,6 +43,7 @@ Route::get('/modal_edit_doctor/{id}','HomeController@modal_edit_doctor');
 Route::get('/modal_edit_hospital/{id}','HomeController@modal_edit_hospital');
 Route::get('/modal_edit_special/{id}','HomeController@modal_edit_special');
 Route::get('/modal_edit_illness/{id}','HomeController@modal_edit_illness');
+Route::get('/modal_preview_illness','HomeController@modal_preview_illness');
 
 //post
 Route::post('/save_hospital','HomeController@save_hospital');

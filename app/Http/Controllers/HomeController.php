@@ -1512,6 +1512,8 @@ class HomeController extends Controller
     public function overwrite_illness(Request $request){
         $details = Input::all();
 
+        // dd($request);
+
         /* illness image */
         // $destinationPath = '';
         // $filename        = '';
