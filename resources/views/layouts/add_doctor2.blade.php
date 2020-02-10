@@ -1,9 +1,8 @@
 @extends('layouts.app')
-@section('content')
 
     
     {!! Form::open(array('url' => '/', 'method' => 'post')) !!}
-    <table class="table table-borderless" style="width:100%;">
+    <table class="table-responsive">
         <tr>
             <td>URL自動生成名<br>URL generation</td>
             <td>{!! Form::text('url_generation', null , ['class' => 'form-control']) !!}</td>
@@ -19,10 +18,6 @@
             <tr>
             <td>専門医・認定医 (取得資格)<br>Certificate</td>
             <td>{!! Form::text('certificate', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
         </tr>
         <tr>
             <td>氏名<br>Name</td>
@@ -93,28 +88,6 @@
                         <td>{!! Form::selectRange('c_ac_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
                         <td>{!! Form::selectMonth('c_ac_month_to',null ,['class' => 'form-control']); !!}</td>
                         <td>{!! Form::text('c_ac_desc_to', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>経歴(職歴)<br>Working place</td>
-            <td colspan="3">
-                <table class="table">
-                    <tr>
-                        <td>{!! Form::selectRange('work_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_we_month',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_we_desc', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::selectRange('c_we_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_we_month_to',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_we_desc_to', null , ['class' => 'form-control']) !!}</td>
                     </tr>
                     <tr>
                         <td></td>
