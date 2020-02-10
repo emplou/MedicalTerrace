@@ -16,6 +16,56 @@ $.ajaxSetup({
     }
   });
 
+  // for getting department universal
+
+  $('.add_dpt_doc').on('click', add4);
+    var i=0;
+    function add4(e) {
+    //   e.preventDefault();
+
+    $.ajax({
+        url: '/get_all_department/',
+        type: 'get',
+        dataType: 'json',
+        // data : { id : id },
+        success: function(response){
+            console.log(response['data']);
+        if(response == "success")
+
+            /* ********** DEPARTMENT ************ */
+            var objJSONdpt = JSON.parse(response['data'][0].department);
+            var input_dpt = "";
+            var input_dpt_list = "";
+            $.each(objJSONdpt, function (i, v) {
+                console.log(objJSONdpt);
+                    input_dpt += 'select class="form- " name="department[]"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
+
+                    $.each(response['dpt'], function (i, b) {
+                        console.log('dpt '+ b.dpt_name)
+                        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+
+                    });
+                        // if(resp == "success")
+                        // console.log('department '+resp['data'][0].dpt_name);
+                    
+                    input_dpt += '</select>';
+                    
+                
+
+            });
+
+        $('#c_aw').append(input_dpt);
+
+        },
+        error: function(response){
+        alert('Error'+response);
+
+    }
+
+    });
+
+    }
+
   
 
   function setObject(name, score) {
