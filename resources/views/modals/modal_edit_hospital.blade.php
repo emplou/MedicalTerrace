@@ -7,8 +7,9 @@
     <div class="modal-content">
     
 <div class="modal-header" style="color: black; background-color: #7CD5FF">
+        <h4 class="modal-title"><b>Edit and Overwrite Hospital Details</b></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><b>Edit Doctor</b></h4>
+        
 </div>
       <div class="modal-body">
 
@@ -81,14 +82,14 @@
             アクセス<br>Access
             </div>
             <div class="col-10">
-                <select class="form- " name="access_trans[]" id="access_trans" style="width:200px">
+                <select class="form- " name="access_trans" id="access_trans" style="width:200px">
                     <option>industry one</option>
                     <option>industry two</option>
                     <option>industry three</option>
                     <option>industry four</option>
                 </select>
-                <input type="text" class="form- " name="access_from[]" id="access_from" style="width:200px">
-                <input type="text" class="form- " name="access_mins[]" id="access_mins" style="width:200px">
+                <input type="text" class="form- " name="access_from" id="access_from" style="width:200px">
+                <input type="text" class="form- " name="access_mins" id="access_mins" style="width:200px">
             </div>
         </div>
         <br>
@@ -107,7 +108,7 @@
             問合せ電話番号<br>Inquiry phone number
             </div>
             <div class="col-10">
-                <input type="text" class="form- " name="phone_no" style="width:200px">
+                <input type="text" class="form- " name="phone_no" id="phone_no" style="width:200px">
                 <input type="text" class="form- " name="phone_no_one" style="width:200px">
                 <input type="text" class="form- " name="phone_no_two" style="width:200px">
             </div>
@@ -118,7 +119,7 @@
             FAX<br>Facsimile
             </div>
             <div class="col-10">
-                <input type="text" class="form- " name="fax" style="width:200px">
+                <input type="text" class="form- " name="fax" id="fax" style="width:200px">
                 <input type="text" class="form- " name="fax_one" style="width:200px">
                 <input type="text" class="form- " name="fax_two" style="width:200px">
                 <input type="checkbox"> 非表示 | Not show

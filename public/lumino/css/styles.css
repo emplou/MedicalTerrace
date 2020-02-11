@@ -1934,8 +1934,14 @@ input.form-control {
 }
 .main-content {
   width: 85%;
-  padding: 0 !important;
+  padding: 0 20px!important;
   background: #ededed;
+}
+table#list {
+  width: 97% !important;
+}
+.form-container.add {
+  width: 103%;
 }
 .main-content .header-wrapper {
   width: 100%;

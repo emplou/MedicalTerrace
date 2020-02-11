@@ -315,18 +315,18 @@ input.form-  {
 		</div>
 		<div class="navy">
 			<ul class="sidebar-nav">
-				<li class=""><small></small><a class="home_menu" href="home"><span class="icon"><img src="../../images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
-				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="../../images/icon-illness.png"></span><span>病気と知識<br> Illness</span></a></li>
-				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="../../images/icon-special.png"></span><span>特集<br> Special</span></a></li>
-				<li><small class="yellow"></small><a class="yellow"href=""><span class="icon"><img src="../../images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
-				<li><small class="yellow"></small><a class="yellow" href=""><span class="icon"><img src="../../images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
-				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="../../images/icon-doctor.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
-				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="../../images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
-				<li><small class="sky"></small><a class="sky" href=""><span class="icon"><img src="../../images/icon-column.png"></span><span>コラム<br>Column</span></a></li>
-				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="../../images/icon-medequipment.png"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
-				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="../../images/icon-medicine.png"></span><span>薬情報<br>Medicine</span></a></li>
-				<li><small class="green"></small><a class="green" href=""><span class="icon"><img src="../../images/icon-sakuramagazine.png"></span><span>誌面紹介<br>Sakura Magazine</span></a></li>
-				<li><small></small><a href=""><span class="icon"><img src="../../images/icon-settings.png"></span><span>設定<br>Settings</span></a></li>
+				<li class=""><small></small><a class="home_menu" href="home"><span class="icon"><img src="images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
+				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br> Illness</span></a></li>
+				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="images/icon-special.png"></span><span>特集<br> Special</span></a></li>
+				<li><small class="yellow"></small><a class="yellow"href=""><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
+				<li><small class="yellow"></small><a class="yellow" href=""><span class="icon"><img src="images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
+				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="images/icon-doctor.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
+				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
+				<li><small class="sky"></small><a class="sky" href=""><span class="icon"><img src="images/icon-column.png"></span><span>コラム<br>Column</span></a></li>
+				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="images/icon-medequipment.png"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
+				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="images/icon-medicine.png"></span><span>薬情報<br>Medicine</span></a></li>
+				<li><small class="green"></small><a class="green" href=""><span class="icon"><img src="images/icon-sakuramagazine.png"></span><span>誌面紹介<br>Sakura Magazine</span></a></li>
+				<li><small></small><a href=""><span class="icon"><img src="images/icon-settings.png"></span><span>設定<br>Settings</span></a></li>
 			</ul>
 		</div>
 	</nav>
