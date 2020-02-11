@@ -17,26 +17,26 @@
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 
                     <div class="tags">
-                        <span>子ども</span>
-                        <span>夏</span>
                         <span>感染症</span>
                         <span>夏風邪</span>
                         <span>手足口病</span>
+                        <span>子ども</span>
+                        <span>夏</span>
                     </div>
 
                     <div class="tooltips">この記事をまとめると</div>
                     <ul class="checks">
-                        <li>乳幼児、特に集団生活をしている子どもは注意。</li>
+                        <li>石けんでの手洗い、うがいをして予防します。</li>
                         <li>手と足、口に赤い発疹や水ぶくれができます。</li>
                         <li>７月に流行のピークを迎えます。</li>
                         <li>高熱はあまり出ません。</li>
-                        <li>石けんでの手洗い、うがいをして予防します。</li>
+                        <li>乳幼児、特に集団生活をしている子どもは注意。</li>
                     </ul>
                     <h3>手足口病の基礎知識</h3>
                     </p>主に夏に流行する感染症で、3〜6日の潜伏期の後、手足などに赤い発疹や水ぶくれ、口内炎ができます。高熱が出ることは少なく、1週間ほどで自然に治ります。かかりやすい年齢は5歳以下。毎年、5月頃から患者数が増え、7月に流行のピークを迎えます。一般的には夏風邪と呼ばれることもあります。全身状態が改善すれば、登園・登校が可能になります。<p>
 
                     <strong>[2013年〜2018年の定点当たり報告数の平均] 手足口病</strong>
-                    <img class="graph" src="images/illness-graph.png" alt="">
+                    <img class="graph" src="images/illness-graph.png" alt="Illness Graph">
                     </p>※1 データの週によるばらつきや未報告のデータを修正するために統計処理をしたもの。+1SDの数値 は過去のデータの68 ％、+2SDの数値は過去のデータの95 ％が含まれる。
                     <br>※2 過去5年間の平均：前週、当該週、後週の合計15週の平均<br>◎国立感染症研究所のデータより<p>
                     
@@ -123,18 +123,18 @@
             </div>
             <div class="tags">
                 <div>
-                    <span>子ども</span>
-                    <span>夏</span>
                     <span>感染症</span>
                     <span>夏風邪</span>
                     <span>手足口病</span>
+                    <span>子ども</span>
+                    <span>夏</span>
                 </div>
             </div>
            
             <!-- Buttons -->
             <div class="modal-buts">
-                <button type="button" class="btn-prime approval" id="show_img"></button>
-                <button type="button" class="btn-prime backedit" id="show_img"></button>
+                <button type="button" class="btn-prime approval2" id="show_img"></button>
+                <button type="button" class="btn-prime backedit2" id="show_img"></button>
             </div>
     
         </div>

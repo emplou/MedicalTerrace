@@ -24,7 +24,7 @@
 		
 	</div>
 	<hr />
-		<div class="form-container">
+		<div class="form-container add">
 			<div class="form-progress">
 				<ul>
 					<li class="active">下書き<br><span>Draft</span></li>

@@ -20,7 +20,7 @@
                 <td>{!! $doc->alphabet_name !!}</td>
                 <td>{!! $doc->status !!}</td>
                 <td>{!! $doc->industry !!}</td>
-                <td><a href="#" class="btn btn-info overwrite" style="background-color:#FCB0BC;border-color:#FCB0BC;width:130px;height:70px;" doc-id="{!! $doc->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_add" doc-id="{!! $doc->id !!}" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite" style="background-color:#FCB0BC;border-color:#FCB0BC;min-width:130px;height:70px;" doc-id="{!! $doc->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_add" doc-id="{!! $doc->id !!}" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>

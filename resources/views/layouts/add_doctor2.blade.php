@@ -14,11 +14,6 @@
         <tr>
             <td></td>
             <td>{!! Form::text('position', null , ['class' => 'form-control']) !!}</td>
-        </tr>
-            <tr>
-            <td>専門医・認定医 (取得資格)<br>Certificate</td>
-            <td>{!! Form::text('certificate', null , ['class' => 'form-control']) !!}</td>
-        </tr>
         <tr>
             <td>氏名<br>Name</td>
             <td>{!! Form::text('name', null , ['class' => 'form-control']) !!}</td>
@@ -75,28 +70,7 @@
             <td>{!! Form::checkbox('birthday_place_ok', null , ['class' => 'form-control']) !!} 出身地可</td>
             <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
         </tr>
-        <tr>
-            <td>経歴(学歴)<br>Alma mater</td>
-            <td colspan="3">
-                <table class="table">
-                    <tr>
-                        <td>{!! Form::selectRange('aca_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_ac_month',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_ac_desc', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::selectRange('c_ac_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_ac_month_to',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_ac_desc_to', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+        
         <tr>
             <td>経歴(賞・表彰)<br>Award</td>
             <td colspan="3">
