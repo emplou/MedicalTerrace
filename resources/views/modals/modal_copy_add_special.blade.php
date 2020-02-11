@@ -52,7 +52,7 @@
                             <input type="text" class="form-control sts" id="twosts" name="sts" maxlength="20">
                         </div>
                         <div class="col-sm-2">          
-                            <span id="rchars">0</span>/20
+                            <span id="rchars_b">0</span>/20
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@
                             <input type="text" class="form-control st" id="twost" name="st" maxlength="14">
                         </div>
                         <div class="col-sm-2">          
-                            <span id="rchars2">0</span>/14
+                            <span id="rchars2_b">0</span>/14
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                             </textarea>
                         </div>
                         <div class="cols-2">          
-                            <span id="rchars3">0</span>/200
+                            <span id="rchars3_b">0</span>/200
                         </div>
                     </div>
 
@@ -152,7 +152,7 @@
                             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                             <div class="cols-7"> 
                                 
-                                <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">
+                                <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor_two">
                                 </textarea>
                             </div>
                             <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
@@ -218,7 +218,7 @@
                         <div class="form-group editor">
                             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                             <div class="cols-7">          
-                                <textarea class="form-control" name="txt2_ckeditor[]" id="txt2_ckeditor">
+                                <textarea class="form-control" name="txt2_ckeditor[]" id="txt2_ckeditor_two">
                                 </textarea>
                             </div>
                             <div class="cols-1 relative"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -254,7 +254,7 @@
                         </div>
                         <div class="cols-1">   
                             <br>
-                            <span id="rchars4">0</span>/35
+                            <span id="rchars4_b">0</span>/35
                         </div>
                     </div>
 
@@ -266,7 +266,7 @@
                         </div>
                         <div class="cols-2">   
                         スマホ・PC用 重要文章 <br>       
-                            <span id="rchars5">0</span>/50
+                            <span id="rchars5_b">0</span>/50
                         </div>
                     </div>
                     <div class="form-group">
@@ -276,7 +276,7 @@
                         </div>
                         <div class="cols-1">   
                             PC用補足文章 <br>       
-                            <span id="rchars5">70</span>/70
+                            <span id="rchars6_b">70</span>/70
                         </div>
                     </div>
                     <div class="form-group">
@@ -286,9 +286,7 @@
                                 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
                             </div>
                         </div>
-                        <div class="cols-1">          
-                            <span id="rchars6">0</span>/70
-                        </div>
+                        
                     </div>
 
                     <div class="form-group">

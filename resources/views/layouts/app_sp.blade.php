@@ -138,6 +138,18 @@
     CKEDITOR.replace('txt2_ckeditor');
     CKEDITOR.add 
 </script>
+<script>
+    CKEDITOR.replace('lead_ckeditor_two');
+    CKEDITOR.add 
+</script>
+<script>
+    CKEDITOR.replace('txt_ckeditor_two');
+    CKEDITOR.add 
+</script>
+<script>
+    CKEDITOR.replace('txt2_ckeditor_two');
+    CKEDITOR.add 
+</script>
 
 <!-- Count character starts -->
 <script type="text/javascript">
@@ -165,6 +177,31 @@
     $('textarea.mt2').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars6').text(textlen);
+		});
+		
+		$('input.sts').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars_b').text(textlen);
+    });
+    $('input.st').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars2_b').text(textlen);
+    });
+    $('textarea.cmt').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars3_b').text(textlen);
+    });
+    $('textarea.seo').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars4_b').text(textlen);
+    });
+    $('textarea.mt1').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars5_b').text(textlen);
+    });
+    $('textarea.mt2').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars6_b').text(textlen);
     });
 </script>
 <!-- Count character ends -->

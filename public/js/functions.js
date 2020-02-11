@@ -821,9 +821,12 @@ $.ajaxSetup({
                         // Lead Ceditor
                         var objJSON = JSON.parse(response['data'][0].sp_txt);
                         var input_lead = "";
+                        input_lead += '<div id="addanother1">';
                         $.each(objJSON, function (i, v) {
                             input_lead += '<div class="cols-10"><textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor">'+v.lead_ckeditor+'</textarea></div>';
                         });
+
+                        input_lead += '</div>';
                         $("#input_lead").html(input_lead);
 
                         /******** Illness Image ********/
@@ -1231,7 +1234,7 @@ $.ajaxSetup({
                         var objJSONlead = JSON.parse(response['data'][0].sp_txt);
                         var input_lead_two = "";
                         $.each(objJSONlead, function (i, v) {
-                            input_lead_two += '<div class="cols-10"><textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor">'+v.lead_ckeditor+'</textarea></div>';
+                            input_lead_two += '<div class="cols-10"><textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor_two">'+v.lead_ckeditor+'</textarea></div>';
                         });
                         $("#input_lead_two").html(input_lead_two);
 
@@ -1527,6 +1530,46 @@ $.ajaxSetup({
             // location.reload();
         });
     });
+
+    $(document).ready(function(){ 
+        CKEDITOR.replace('lead_ckeditor');
+        CKEDITOR.add 
+        var wrapper2         = $(".field_wrap2"); //Fields wrapper
+    
+        $('.add2').on('click', add2);
+        var i=0;
+        function add2(e) {
+            e.preventDefault();
+            var copy = $('#addanother1').clone();
+
+            var lplus=i+1;
+
+            $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+            CKEDITOR.replace('lead_ckeditor['+lplus+']');
+            i++;  
+
+        }
+    });
+
+    // $(document).ready(function(){ 
+    //     CKEDITOR.replace('lead_ckeditor_two');
+    //     CKEDITOR.add 
+    //     var wrapper2         = $(".field_wrap2"); //Fields wrapper
+    
+    //     $('.add2').on('click', add2);
+    //     var i=0;
+    //     function add2(e) {
+    //         e.preventDefault();
+    //         var copy = $('#addanother1').clone();
+
+    //         var lplus=i+1;
+
+    //         $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+    //         CKEDITOR.replace('lead_ckeditor_two['+lplus+']');
+    //         i++;  
+
+    //     }
+    // });
 
     $(document).ready(function(){ 
     var min = 1990,
