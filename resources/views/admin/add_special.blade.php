@@ -58,7 +58,13 @@
                 <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                 <div class="cols-5">          
                     <select name="ill_cat" class="form-control">
-                        <option value="選択してください">選択してください</option>
+                        <option value="">選択してください</option>
+
+                        @foreach($illness as $ill)
+                            <option value="{!! $ill->ill_name !!}">{!! $ill->ill_name !!}</option>
+                        @endforeach
+                        
+                        <!-- <option value="選択してください">選択してください</option>
                         <option value="選択してください">選択してください</option>
                         <option value="感染症・寄生虫症">感染症・寄生虫症</option>
                         <option value="女性特有のがん＊">女性特有のがん＊</option>
@@ -92,7 +98,7 @@
                         <option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option>
                         <option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option>
                         <option value="そのほかの病気">そのほかの病気</option>
-                        <option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option>
+                        <option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option> -->
                     </select>
                 </div>
             </div>

@@ -50,7 +50,8 @@ class HomeController extends Controller
 
     public function add_illness(){
         $doctors = DB::table('dv_doctors')->get();
-        return view('admin.add_illness', compact('doctors'));
+        $department = DB::table('hospital_departments')->get();
+        return view('admin.add_illness', compact('doctors', 'department'));
     }
 
     public function add_hospital(){
@@ -60,7 +61,9 @@ class HomeController extends Controller
 
     public function add_special(){
         $doctors = DB::table('dv_doctors')->get();
-        return view('admin.add_special', compact('doctors'));
+        $department = DB::table('hospital_departments')->get();
+        $illness = DB::table('illness')->get();
+        return view('admin.add_special', compact('doctors', 'department', 'illness'));
     }
 
     public function illness_list(){
