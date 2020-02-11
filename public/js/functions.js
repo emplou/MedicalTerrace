@@ -606,115 +606,33 @@ $.ajaxSetup({
                 // data : { id : id },
                 success: function(response){
                     console.log(response['data']);
+                    console.log(response['dpt_exam']);
+                    console.log(response['hosp_feature']);
                 if(response == "success")
 
                   console.log(response['data']); 
 
                   $("#edithospital").modal('show');
-                  $("#url_gen").val(response['data'][0].url_generation);
-                  $("#status").val(response['data'][0].status);
-
-                //  $.each(objJSON, function (i, v) {
-                //     $('#certificate0'+ i).val(v.med_sbj_list); 
-                //     console.log('yes' + v.med_sbj_list);
-                // });
-
-                var objJSON = JSON.parse(response['data'][0].certificate);
-                var inputs = "";
-                $.each(objJSON, function (i, v) {
-                    inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:300px" value="'+v.med_sbj_list+'">';
-                });
-                $("#input_container").html(inputs);
-                    
-                    $("#name").val(response['data'][0].name);
-                    $("#alpha_name").val(response['data'][0].alphabet_name);
-                    //image not included yet
-                    $("#img_caption").val(response['data'][0].image_caption);
-                    $("#img_alt").val(response['data'][0].image_alt);
-                    //industry dropdown not included yet
-                    var objJSON = JSON.parse(response['data'][0].certificate);
-                    var inputs = "";
-                    $.each(objJSON, function (i, v) {
-                        inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:300px" value="'+v.med_sbj_list+'">';
-                    });
-                    $("#input_container").html(inputs);
-
-                    var objJSONconf = JSON.parse(response['data'][0].conference);
-                    var input_conf = "";
-                    $.each(objJSONconf, function (i, v) {
-                        input_conf += '<input type="text" class="form- " name="conference[]" id="conference" style="width:300px" value="'+v.med_sbj_list+'">';
-                    });
-                    $("#input_conference").html(input_conf);
-
-                    $("#place_birth").val(response['data'][0].place_of_birth);
-                    //the 3 careers not included yet
-                    
-
-                    //start for careers side
-
-                    // ********** CAREER ONE ************
-                    var objJSONcareerOne = JSON.parse(response['data'][0].career_academic_back);
-                    var input_careerOne = "";
-                    $.each(objJSONcareerOne, function (i, v) {
-                        // input_careerOne += '<input type="text" class="form- " name="conference[]" id="conference" style="width:300px" value="'+v.med_sbj_list+'">';
-
-                        input_careerOne += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_year+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_month+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_desc+'"><br><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_year+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_month+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_desc+'"><br>';
-
-                        $('#sample_one').click(function() {
-                            alert('clicked');
-                        })
-                    });
-                    $("#input_career_one").html(input_careerOne);
-
-                    // ********** CAREER TWO ************
-                    var objJSONcareertwo = JSON.parse(response['data'][0].career_work_exp);
-                    var input_careertwo = "";
-                    $.each(objJSONcareertwo, function (i, v) {
-                        // input_careerOne += '<input type="text" class="form- " name="conference[]" id="conference" style="width:300px" value="'+v.med_sbj_list+'">';
-
-                        input_careertwo += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_from_year+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_from_month+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_from_desc+'"><br><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_to_year+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_to_month+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.we_to_desc+'"><br>';
-
-                        $('#sample_one').click(function() {
-                            alert('clicked');
-                        })
-                    });
-                    $("#input_career_two").html(input_careertwo);
-
-                    // ********** CAREER THREE ************
-                    var objJSONcareerthree = JSON.parse(response['data'][0].career_awards);
-                    var input_careerthree = "";
-                    $.each(objJSONcareerthree, function (i, v) {
-
-                        input_careerthree += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_year+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_month+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.from_desc+'"><br><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_year+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_month+'"><input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.to_desc+'"><br>';
-
-                        $('#sample_one').click(function() {
-                            alert('clicked');
-                        })
-                    });
-                    $("#input_career_three").html(input_careerthree);
-
-                    //end for careers
-
-
-                    //checkbox not included yet
-                    //hospital dropdown not included yet
-
-                    // ********** CAREER DEPARTMENT ************
-                    var objJSONdpt = JSON.parse(response['data'][0].department);
-                    var input_dpt = "";
-                    $.each(objJSONdpt, function (i, v) {
-
-                        input_dpt += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.med_sbj_list+'">';
-
-                        $('#sample_one').click(function() {
-                            alert('clicked');
-                        })
-                    });
-                    $("#input_department").html(input_dpt);
-
-
-                    //department json not included yet
-                    $("#doc_comment").val(response['data'][0].doctor_comment);
+                  $("#url_gen").val(response['data'][0].url);
+                  $("#medical_ins").val(response['data'][0].medical_ins);
+                  $("#medical_ins_eng").val(response['data'][0].name_phonic);
+                  $("#common_name").val(response['data'][0].common_name);
+                  $("#postal_code").val(response['data'][0].postal_code);
+                  $("#address").val(response['data'][0].address);
+                  $("#address_english").val(response['data'][0].address_eng);
+                  //access not yet
+                  //parking not yet
+                  $("#phone_no").val(response['data'][0].phone_no);
+                  $("#fax").val(response['data'][0].fax);
+                  $("#email").val(response['data'][0].email);
+                  //image not yet
+                  $("#img_caption").val(response['data'][0].image_caption);
+                  $("#img_alt").val(response['data'][0].image_alt);
+                  $("#hosp_subheading").val(response['data'][0].hosp_subheading);
+                  $("#text_subheading_hospital").val(response['data'][0].hosp_text_subheading);
+                  // division dropdown
+                //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
+                  $("#division").val(response['data'][0].division);
                     
 
                 },

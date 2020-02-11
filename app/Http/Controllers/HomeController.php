@@ -921,7 +921,20 @@ class HomeController extends Controller
 
     public function modal_edit_hospital($id){
         $value['data'] = DB::table('dv_hospital')->where('id','=',$id)->get();
+
+        $hospital = DB::table('dv_hospital')->where('id','=',$id)->get();
+        foreach($hospital as $hosp){
+            $hosp_id = $hosp->hospital_id;
+        }
+
+        $value['hosp_dpt'] = DB::table('hospital_departments')->get();
+        $value['dpt_exam'] = DB::table('hospital_departments_exam')->where('hospital_id','=',$hosp_id)->get();
+        $value['hosp_feature'] = DB::table('hospital_feature')->where('hospital_id','=',$hosp_id)->get();
+        $value['equip'] = DB::table('equipments')->where('hospital_id','=',$hosp_id)->get();
+        $value['staff'] = DB::table('hospital_staff')->where('hospital_id','=',$hosp_id)->get();
+
         $fetch = json_encode($value);
+        
         return $fetch;
     }
 
