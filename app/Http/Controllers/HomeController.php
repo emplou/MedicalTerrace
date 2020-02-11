@@ -934,7 +934,7 @@ class HomeController extends Controller
         $value['staff'] = DB::table('hospital_staff')->where('hospital_id','=',$hosp_id)->get();
 
         $fetch = json_encode($value);
-        
+
         return $fetch;
     }
 
@@ -2103,8 +2103,50 @@ class HomeController extends Controller
         $staff->text                   = $details['staff_comment_hospital'];
         $staff->image                   = $filename_staff;
         $staff->save();
+        //     return redirect('/hospital_list');
+        // }
+
+        $feature = new Feature;
+        $feature->hospital_id       = $hospital_id;
+        $feature->title             = $details['feature_title'];
+        $feature->text              = $details['feature_text_subheading_hospital'];
+        $feature->image             = $filename_feat;
+        $feature->save();
+
+        $destinationPatheqps = '';
+        $filename_equip        = '';
+        $file_equip            = $request->file('equipment_image');
+
+        $destinationPatheqps = public_path().'/equipments';
+        $filename_equip        = str_random(6) . '_' . $file_equip->getClientOriginalName();
+        $uploadSuccess   = $file_equip->move($destinationPatheqps, $filename_equip);
+
+        $equipments = new Equipments;
+        $equipments->hospital_id            = $hospital_id ;
+        $equipments->title                  = $details['equipment_subheading']; // should be json
+        $equipments->text                   = $details['equipment_text_subheading_hospital']; //should be json
+        $equipments->image                  = $filename_equip; //should be json
+        $equipments->save();
+
+        $destinationPathstfs = '';
+        $filename_staff        = '';
+        $file_staff            = $request->file('staff_image');
+
+        $destinationPathstfs = public_path().'/staffs';
+        $filename_staff        = str_random(6) . '_' . $file_staff->getClientOriginalName();
+        $uploadSuccess   = $file_staff->move($destinationPathstfs, $filename_staff);
+
+        $staff = new Staff;
+        $staff->hospital_id            = $hospital_id;
+        $staff->title                  = $details['staff_subheading_hospital'];
+        $staff->text                   = $details['staff_comment_hospital'];
+        $staff->image                   = $filename_staff;
+        $staff->save();
+        
         return redirect('/hospital_list');
     }
+
 }
+
 
        
