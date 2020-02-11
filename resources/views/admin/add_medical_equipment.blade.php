@@ -48,49 +48,7 @@
                 </div>
             </div>
             
-            <!-- Illness Category -->
-            <div class="form-group">
-                <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
-                <div class="cols-4">          
-                    <select name="ill_cat" class="form-control">
-                        <option value="選択してください">選択してください</option>
-                        <option value="選択してください">選択してください</option>
-                        <option value="感染症・寄生虫症">感染症・寄生虫症</option>
-                        <option value="女性特有のがん＊">女性特有のがん＊</option>
-                        <option value="男性特有のがん">男性特有のがん</option>
-                        <option value="消化管のがん">消化管のがん</option>
-                        <option value="胸部のがん">胸部のがん</option>
-                        <option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option>
-                        <option value="泌尿器のがん">泌尿器のがん</option>
-                        <option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option>
-                        <option value="脳・神経・眼のがん">脳・神経・眼のがん</option>
-                        <option value="その他の腹部のがん">その他の腹部のがん</option>
-                        <option value="皮膚のがん">皮膚のがん</option>
-                        <option value="骨・筋肉のがん">骨・筋肉のがん</option>
-                        <option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option>
-                        <option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option>
-                        <option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option>
-                        <option value="血液・リンパの病気">血液・リンパの病気</option>
-                        <option value="内分泌や代謝の病気">内分泌や代謝の病気</option>
-                        <option value="こころ・精神の病気">こころ・精神の病気</option>
-                        <option value="脳・神経系の病気">脳・神経系の病気</option>
-                        <option value="眼の病気">眼の病気</option>
-                        <option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option>
-                        <option value="循環器系の病気">循環器系の病気</option>
-                        <option value="呼吸器系の病気">呼吸器系の病気</option>
-                        <option value="消化器系の病気">消化器系の病気</option>
-                        <option value="歯科・口腔疾患">歯科・口腔疾患</option>
-                        <option value="皮膚の病気">皮膚の病気</option>
-                        <option value="骨や関節の病気">骨や関節の病気</option>
-                        <option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option>
-                        <option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option>
-                        <option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option>
-                        <option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option>
-                        <option value="そのほかの病気">そのほかの病気</option>
-                        <option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option>
-                    </select>
-                </div>
-            </div>
+           
              <!-- Illness Shoulder -->
             <div class="form-group">
                 <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
@@ -191,18 +149,7 @@
 					<span id="rchars4">0</span>/46
 				</div>
             </div>
-            <div class="form-group">
-                <label class="control-label cols-15"></label>
-                <div class="cols-5">          
-                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-					</textarea>
-                </div>
-                <div class="cols-2 relative">          
-                    <span id="rchars4">0</span>/46
-                    <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div>
-       
-				</div>
-            </div>
+           
              <!-- Main Image -->
             <div class="form-group">
                 <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>
@@ -258,25 +205,6 @@
                 </div>
             </div>
 
-            <!-- Text of Subheading -->
-            <div class="form-group editor">
-				<label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                <div class="cols-6">   
-                    <!-- add new textarea here -->
-                    <div class="field_wrap2"></div>
-                    <div id="addanother1">
-                        <div class="cols-10">        
-                            <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
-            </div>
-             <!-- Buttons -->
-            <div class="form-group">
-                <div class="cols-15"></div>
-                <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button><button type="button" class="btn-prime graph" id="show_graph"></button></div>
-            </div>
 
              <!-- Subheading -->
 
@@ -291,91 +219,7 @@
                
             </div>
 
-            <!-- Text of the subheading -->
-            <div class="form-group">
-                <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                <div class="cols-8">  
-                    <div class="cols-5">          
-                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                    </div>
-                    <div class="cols-2"> 
-                        リスク度 
-                        <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-
-                        </select><br>         
-                        <span id="rchars8">0</span>/46
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-5">          
-                        <textarea class="form-control sh2" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                    </div>
-                    <div class="cols-2"> 
-                        リスク度
-                        <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-
-                        </select><br>                
-                        <span id="rchars9">0</span>/46
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-5">          
-                        <textarea class="form-control sh3" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                    </div>
-                    <div class="cols-2"> 
-                        リスク度
-                        <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-
-                        </select><br>                
-                        <span id="rchars9">0</span>/46
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-5">          
-                        <textarea class="form-control sh4" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                    </div>
-                    <div class="cols-2"> 
-                        リスク度
-                        <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-
-                        </select><br>                
-                        <span id="rchars9">0</span>/46
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-5">          
-                        <textarea class="form-control sh5" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                    </div>
-                    <div class="cols-2"> 
-                        リスク度
-                        <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-
-                        </select><br>                
-                        <span id="rchars9">0</span>/46
-                        <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                    </div>
-                </div>
+           
                 
                 <!-- Check Result -->
                 <div class="form-group">

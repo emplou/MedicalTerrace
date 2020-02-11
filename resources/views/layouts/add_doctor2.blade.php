@@ -47,10 +47,6 @@
             <td>{!! Form::text('conference', null , ['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
-            <td></td>
-            <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-        </tr>
-        <tr>
             <td>生年月日<br>Birthday</td>
             <td>{!! Form::selectRange('coverage_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
             <td>{!! Form::selectMonth('coverage_month',null ,['class' => 'form-control']) !!}</td>
@@ -71,28 +67,6 @@
             <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
         </tr>
         
-        <tr>
-            <td>経歴(賞・表彰)<br>Award</td>
-            <td colspan="3">
-                <table class="table">
-                    <tr>
-                        <td>{!! Form::selectRange('c_aw_year', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_aw_month',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_aw_desc', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td>{!! Form::selectRange('c_aw_year_to', 1990, 2019,null ,['class' => 'form-control']) !!}</td>
-                        <td>{!! Form::selectMonth('c_aw_month_to',null ,['class' => 'form-control']); !!}</td>
-                        <td>{!! Form::text('c_aw_desc_to', null , ['class' => 'form-control']) !!}</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
         <tr>
             <td>最後の行に現在に至る<br>Add“現在に至る”at line end</td>
 			<td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 無<br>No</td>
