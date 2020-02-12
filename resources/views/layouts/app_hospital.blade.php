@@ -393,5 +393,476 @@ $(document).on('click', '#close-preview', function(){
     );    
 });
 
+//  Count character starts
+<script type="text/javascript">
+    var cnt = 0;
+    $('input.ill_shldr').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars').text(textlen);
+    });
+    $('input.ill').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars2').text(textlen);
+    });
+    $('textarea.cmt').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars3').text(textlen);
+    });
+    $('textarea.sm').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars4').text(textlen);
+    });
+    $('textarea.sm2').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars5').text(textlen);
+    });
+    $('textarea.sm3').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars6').text(textlen);
+    });
+    $('textarea.sm4').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars7').text(textlen);
+    });
+    $('textarea.sh').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars8').text(textlen);
+    });
+    $('textarea.sh2').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars9').text(textlen);
+    });
+    $('textarea.sh3').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars10').text(textlen);
+    });
+    $('textarea.sh4').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars11').text(textlen);
+    });
+    $('textarea.sh_b').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars12').text(textlen);
+    });
+    $('textarea.sh2_b').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars13').text(textlen);
+    });
+    $('textarea.sh3_b').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars14').text(textlen);
+    });
+    $('textarea.sh4_b').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars15').text(textlen);
+    });
+    $('textarea.seo').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars16').text(textlen);
+    });
+    $('textarea.mt1').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars17').text(textlen);
+    });
+    $('textarea.mt2').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars18').text(textlen);
+    });
+</script>
+<!-- Count character ends -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#img-wrapper').hide();
+        $("#show_img").click(function(){
+            $("#img-wrapper").show();
+        });
+
+        $('#graph-wrapper').hide();
+        $("#show_graph").click(function(){
+            $("#graph-wrapper").show();
+        });
+    });
+    
+</script>
+
+<!-- Add field starts -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var wrapper         = $(".wrapper"); //Fields wrapper
+        var add_button      = $(".sm-btn"); //Add button ID
+        var wrapper2         = $(".wrapper2"); //Fields wrapper
+        var add_button3      = $(".sh-btn"); //Add button ID
+        var wrapper3         = $(".wrapper3"); //Fields wrapper
+        var add_button4      = $(".sh-btn2"); //Add button ID
+        var wrapper4         = $(".wrapper4"); //Fields wrapper
+        var add_button5      = $(".add5"); //Add button ID
+        var wrapper5         = $(".wrapper5"); //Fields wrapper
+        var wrapper6         = $(".wrapper6"); //Fields wrapper
+        var wrapper7         = $(".wrapper7"); //Fields wrapper
+        var wrapper8         = $(".wrapper8"); //Fields wrapper
+        var wrapper9         = $(".wrapper9"); //Fields wrapper
+    
+        $(add_button).click(function(e){ //on add input button click
+            e.preventDefault();
+            
+            $(wrapper).append('<div class="col-sm-10"><textarea class="form-control sm" name="sm[]" maxlength="46"></textarea></div><div class="col-sm-1"></div><div class="clear"></div>'); //add input box            
+        });
+
+        $('.add-ck').on('click', add_ck);
+        var i=0;
+        function add_ck(e) {
+            e.preventDefault();
+            var copy = $('#addanother').clone();
+
+            var lplus=i+1;
+
+            $(copy).find('.add-ck').remove();
+            $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+            CKEDITOR.replace('txt_ckeditor['+lplus+']');
+            i++;  
+
+        }
+
+        $(add_button3).click(function(e){ //on add input button click
+            e.preventDefault();
+            
+            $(wrapper3).append('<div class="col-sm-8"><textarea class="form-control sh" name="sh[]" maxlength="30"></textarea></div><div class="col-sm-2"> リスク度<select name="rl"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div><div class="clear"></div>'); //add input box
+            
+        });
+
+        $(add_button4).click(function(e){ //on add input button click
+            e.preventDefault();
+            
+            $(wrapper4).append('<div class="col-sm-8"><textarea class="form-control sh_b" name="sh_b[]" maxlength="30"></textarea></div><div class="col-sm-2"> リスク度<select name="rl2"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div><div class="clear"></div>'); //add input box
+            
+        });
+
+        $(add_button5).click(function(e){ //on add input button click
+            e.preventDefault();
+            
+            $(wrapper5).append('<div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div><div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div><div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>'); //add input box
+            
+        });
+
+        $('.add6').on('click', add6);
+        function add6(e) {
+            e.preventDefault();
+            var copy2 = $('#addanother2').clone();
+
+            $(wrapper6).append($(copy2).html()+ '<div class="clear"></div>');
+
+        }
+
+        $('.add7').on('click', add7);
+        function add7(e) {
+            e.preventDefault();
+            var copy3 = $('#addanother3').clone();
+
+            $(wrapper7).append($(copy3).html()+ '<div class="clear"></div>');
+
+        }
+
+        $('.add8').on('click', add8);
+        function add8(e) {
+            e.preventDefault();
+            var copy4 = $('#addanother4').clone();
+
+            (copy4).find('.add8').remove();
+            $(wrapper8).append($(copy4).html()+ '<div class="clear"></div>');
+
+        }
+
+        $('.add9').on('click', add9);
+        function add9(e) {
+            e.preventDefault();
+            var copy5 = $('#addanother5').clone();
+
+            (copy5).find('.add9').remove();
+            $(wrapper9).append($(copy5).html()+ '<div class="clear"></div>');
+
+        }
+
+        $('#totop.float-btn').click(function() { 
+        // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0          // Scroll to top of body
+        }, 1000);
+        });
+
+        $('#tobottom.float-btn').click(function() { 
+            $("html, body").animate({ 
+                scrollTop: $(document).height() 
+            }, 1000);
+        });
+
+    });
+
+// CKEDITOR.replace( 'text_of_heading' );
+// CKEDITOR.add
+    
+</script>
+<!-- Add field ends -->
+<script type="text/javascript">
+;(function($) {
+
+// Browser supports HTML5 multiple file?
+var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
+	isIE = /msie/i.test( navigator.userAgent );
+
+$.fn.customFile = function() {
+
+  return this.each(function() {
+
+	var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
+		$wrap = $('<div class="file-upload-wrapper">'),
+		$input = $('<input type="text" class="file-upload-input" placeholder="ドラッグ &ドロップ 、または参照で画像を追加してください"/>'),
+		// Button that will be used in non-IE browsers
+		$button = $('<button type="button" class="file-upload-button">参照...</button>'),
+		// Hack for IE
+		$label = $('<label class="file-upload-button" for="'+ $file[0].id +'">参照...</label>');
+
+	// Hide by shifting to the left so we
+	// can still trigger events
+	$file.css({
+	  position: 'absolute',
+	  left: '-9999px'
+	});
+
+	$wrap.insertAfter( $file )
+	  .append( $file, $input, ( isIE ? $label : $button ) );
+
+	// Prevent focus
+	$file.attr('tabIndex', -1);
+	$button.attr('tabIndex', -1);
+
+	$button.click(function () {
+	  $file.focus().click(); // Open dialog
+	});
+
+	$file.change(function() {
+
+	  var files = [], fileArr, filename;
+
+	  // If multiple is supported then extract
+	  // all filenames from the file array
+	  if ( multipleSupport ) {
+		fileArr = $file[0].files;
+		for ( var i = 0, len = fileArr.length; i < len; i++ ) {
+		  files.push( fileArr[i].name );
+		}
+		filename = files.join(', ');
+
+	  // If not supported then just take the value
+	  // and remove the path to just show the filename
+	  } else {
+		filename = $file.val().split('\\').pop();
+	  }
+
+	  $input.val( filename ) // Set the value
+		.attr('title', filename) // Show filename in title tootlip
+		.focus(); // Regain focus
+
+	});
+
+	$input.on({
+	  blur: function() { $file.trigger('blur'); },
+	  keydown: function( e ) {
+		if ( e.which === 13 ) { // Enter
+		  if ( !isIE ) { $file.trigger('click'); }
+		} else if ( e.which === 8 || e.which === 46 ) { // Backspace & Del
+		  // On some browsers the value is read-only
+		  // with this trick we remove the old input and add
+		  // a clean clone with all the original events attached
+		  $file.replaceWith( $file = $file.clone( true ) );
+		  $file.trigger('change');
+		  $input.val('');
+		} else if ( e.which === 9 ){ // TAB
+		  return;
+		} else { // All other keys
+		  return false;
+		}
+	  }
+	});
+
+  });
+
+};
+
+// Old browser fallback
+if ( !multipleSupport ) {
+  $( document ).on('change', 'input.customfile', function() {
+
+	var $this = $(this),
+		// Create a unique ID so we
+		// can attach the label to the input
+		uniqId = 'customfile_'+ (new Date()).getTime(),
+		$wrap = $this.parent(),
+
+		// Filter empty input
+		$inputs = $wrap.siblings().find('.file-upload-input')
+		  .filter(function(){ return !this.value }),
+
+		$file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
+
+	// 1ms timeout so it runs after all other events
+	// that modify the value have triggered
+	setTimeout(function() {
+	  // Add a new input
+	  if ( $this.val() ) {
+		// Check for empty fields to prevent
+		// creating new inputs when changing files
+		if ( !$inputs.length ) {
+		  $wrap.after( $file );
+		  $file.customFile();
+		}
+	  // Remove and reorganize inputs
+	  } else {
+		$inputs.parent().remove();
+		// Move the input so it's always last on the list
+		$wrap.appendTo( $wrap.parent() );
+		$wrap.find('input').focus();
+	  }
+	}, 1);
+
+  });
+}
+
+}(jQuery));
+
+$('input[type=file]').customFile();
+</script>
+
+
+<script type="text/javascript">
+;(function($) {
+
+// Browser supports HTML5 multiple file?
+var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
+	isIE = /msie/i.test( navigator.userAgent );
+
+$.fn.customFile = function() {
+
+  return this.each(function() {
+
+	var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
+		$wrap = $('<div class="file-upload-wrapper">'),
+		$input = $('<input type="text" class="file-upload-input" placeholder="ドラッグ &ドロップ 、または参照で画像を追加してください"/>'),
+		// Button that will be used in non-IE browsers
+		$button = $('<button type="button" class="file-upload-button">参照...</button>'),
+		// Hack for IE
+		$label = $('<label class="file-upload-button" for="'+ $file[0].id +'">参照...</label>');
+
+	// Hide by shifting to the left so we
+	// can still trigger events
+	$file.css({
+	  position: 'absolute',
+	  left: '-9999px'
+	});
+
+	$wrap.insertAfter( $file )
+	  .append( $file, $input, ( isIE ? $label : $button ) );
+
+	// Prevent focus
+	$file.attr('tabIndex', -1);
+	$button.attr('tabIndex', -1);
+
+	$button.click(function () {
+	  $file.focus().click(); // Open dialog
+	});
+
+	$file.change(function() {
+
+	  var files = [], fileArr, filename;
+
+	  // If multiple is supported then extract
+	  // all filenames from the file array
+	  if ( multipleSupport ) {
+		fileArr = $file[0].files;
+		for ( var i = 0, len = fileArr.length; i < len; i++ ) {
+		  files.push( fileArr[i].name );
+		}
+		filename = files.join(', ');
+
+	  // If not supported then just take the value
+	  // and remove the path to just show the filename
+	  } else {
+		filename = $file.val().split('\\').pop();
+	  }
+
+	  $input.val( filename ) // Set the value
+		.attr('title', filename) // Show filename in title tootlip
+		.focus(); // Regain focus
+
+	});
+
+	$input.on({
+	  blur: function() { $file.trigger('blur'); },
+	  keydown: function( e ) {
+		if ( e.which === 13 ) { // Enter
+		  if ( !isIE ) { $file.trigger('click'); }
+		} else if ( e.which === 8 || e.which === 46 ) { // Backspace & Del
+		  // On some browsers the value is read-only
+		  // with this trick we remove the old input and add
+		  // a clean clone with all the original events attached
+		  $file.replaceWith( $file = $file.clone( true ) );
+		  $file.trigger('change');
+		  $input.val('');
+		} else if ( e.which === 9 ){ // TAB
+		  return;
+		} else { // All other keys
+		  return false;
+		}
+	  }
+	});
+
+  });
+
+};
+
+// Old browser fallback
+if ( !multipleSupport ) {
+  $( document ).on('change', 'input.customfile', function() {
+
+	var $this = $(this),
+		// Create a unique ID so we
+		// can attach the label to the input
+		uniqId = 'customfile_'+ (new Date()).getTime(),
+		$wrap = $this.parent(),
+
+		// Filter empty input
+		$inputs = $wrap.siblings().find('.file-upload-input')
+		  .filter(function(){ return !this.value }),
+
+		$file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
+
+	// 1ms timeout so it runs after all other events
+	// that modify the value have triggered
+	setTimeout(function() {
+	  // Add a new input
+	  if ( $this.val() ) {
+		// Check for empty fields to prevent
+		// creating new inputs when changing files
+		if ( !$inputs.length ) {
+		  $wrap.after( $file );
+		  $file.customFile();
+		}
+	  // Remove and reorganize inputs
+	  } else {
+		$inputs.parent().remove();
+		// Move the input so it's always last on the list
+		$wrap.appendTo( $wrap.parent() );
+		$wrap.find('input').focus();
+	  }
+	}, 1);
+
+  });
+}
+
+}(jQuery));
+
+$('input[type=file]').customFile();
+</script>
+
 </body>
 </html>
