@@ -1683,6 +1683,44 @@ class HomeController extends Controller
                                                 // 'ill_tag_season_txt'    => $jsonstxt_list,
                                                 // 'ill_tag_free'          => $jsonf_list,
                                             ]);
+        
+        return redirect('/illness_list');
+    }
+
+    //Approve Illness Preview
+    public function approve_illness(Request $request){
+        $details = Input::all();
+        
+        $illness = DB::table('illness')
+                                    ->where('id','=', $details['illID'])
+                                    ->update([
+                                                'status'               => 'Approved',
+                                            ]);
+        return redirect('/illness_list');
+    }
+
+    //Release Reservation Illness
+    public function release_reservation_illness(Request $request){
+        $details = Input::all();
+        
+        $illness = DB::table('illness')
+                                    ->where('id','=', $details['illID'])
+                                    ->update([
+                                                'status'               => 'Reserved',
+                                            ]);
+        return redirect('/illness_list');
+    }
+
+    //Release Illness
+    public function release_illness(Request $request){
+        $details = Input::all();
+        
+        $illness = DB::table('illness')
+                                    ->where('id','=', $details['illID'])
+                                    ->update([
+                                                'status'               => 'Release',
+                                            ]);
+        return redirect('/illness_list');
     }
     
     public function save_copy_doctor(Request $request){
@@ -1973,7 +2011,7 @@ class HomeController extends Controller
 
                                     // dd($doctors);
 
-        return redirect::back()->with('message','Successfully Encoded');
+        return redirect('/special_list');
     }
 
     public function save_copy_hospital(Request $request){

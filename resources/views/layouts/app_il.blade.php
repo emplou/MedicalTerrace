@@ -701,6 +701,13 @@ $(document).ready(function(){
         // Setting the Div content
         $("#output8").html(kword8);
     });
+    $("#ill").keyup(function(){
+        // Getting the current value of textarea
+        ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
+        
+        // Setting the Div content
+        $("#output_ill").html(ill);
+    });
 });
 </script>
 

@@ -95,7 +95,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill_shldr"  placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
+                    <input type="text" class="form-control ill_shldr" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
                 </div>
                 <div class="cols-2">          
                     <span id="rchars">20</span>/20
@@ -105,7 +105,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集タイトル<br><span>Illness</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill"  placeholder="例)手足口病" name="ill" maxlength="14">
+                    <input type="text" class="form-control ill" id="ill" placeholder="例)手足口病" name="ill" maxlength="14">
                 </div>
                 <div class="cols-2">          
                     <span id="rchars2">0</span>/14
@@ -617,7 +617,7 @@
              <!-- Tag Keyword -->
              <div class="form-group check">
                 <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
-                <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
+                <div class="col-sm-9" style="border: 1px solid #CCC; padding: 0px 5px 5px; color: #F00;">   
                     <!-- <div class="cols-3">
                         <input type="checkbox" id="tag" name="tag[]" value="1"/>
                         <label for="tag">検索キーワド入力より</label>
@@ -665,9 +665,8 @@
              <!-- Tag(illness name) -->
              <div class="form-group check">
                 <label class="control-label cols-15">タグ（病名）<br><span>Tag(illness name)</span></label>
-                <div class="col-sm-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                    <input type="checkbox" id="tag9" name="tag_b[]" value="1"> 
-                    <label for="tag9">考えられる病気より</label>
+                <div class="col-sm-4" style="border: 1px solid #CCC; padding: 0px 5px 5px; color: #F00;">   
+                    <div id="output_ill"></div>
                 </div>
                 <div class="col-sm-4">
                     ※上記のキーワードに含まれていればチェック不要
