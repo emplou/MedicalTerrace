@@ -13,7 +13,6 @@
             <div class="modal-body">
             {!! Form::open(['url' => '/overwrite_illness', 'method' => 'post', 'files' => true]) !!}
             <input type="hidden" name="illID" id="illID">
-            <input type="hidden" name="ill_ID" id="ill_ID">
                 <!-- Form Starts -->
                 <div class="form-horizontal">
 
@@ -123,30 +122,14 @@
                         <div class="form-group">
                             <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
                             <div class="cols-4">          
-                            <select name="sub_head1a[]" class="form-control">
-                                <option value="">選択してください</option>
-                                <option value="基礎知識">基礎知識</option>
-                                <option value="近年の動向">近年の動向</option>
-                                <option value="症状">症状</option>
-                                <option value="原因">原因</option>
-                                <option value="検査方法">検査方法</option>
-                                <option value="検診体験記">検診体験記</option>
-                                <option value="検診から治療まで">検診から治療まで</option>
-                                <option value="治療方法">治療方法</option>
-                                <option value="療養と副作用">療養と副作用</option>
-                                <option value="合併症<">合併症</option>
-                                <option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option>
-                                <option value="体験記">体験記</option>
-                                <option value="FAQ">FAQ</option>
-                                <option value="予防・対策方法">予防・対策方法</option>
-                            </select>
+                                <div id="input_sub1"></div>
                             </div>
                         </div>
                         <!-- Subheading desc-->
                         <div class="form-group">
                             <label class="control-label cols-15"></label>
                             <div class="cols-4">
-                                <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                                <input type="text" class="form-control" placeholder="選択項目にない場合に入力" id="sub_head1b" name="sub_head1b">
                             </div>
                         </div>
 
@@ -158,7 +141,7 @@
                                 <div class="field_wrap2"></div>
                                 <div id="addanother1">
                                     <div class="cols-10">        
-                                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                                        <textarea class="form-control" name="txt_ckeditor" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +170,8 @@
                         <div class="form-group">
                             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                             <div class="cols-8">  
-                                <div class="cols-5">          
+                                <div id="input_ra_txt"></div>
+                                <!-- <div class="cols-5">          
                                     <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                                 </div>
                                 <div class="cols-2"> 
@@ -266,7 +250,7 @@
                                     </select><br>                
                                     <span id="rchars9">0</span>/46
                                     <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
