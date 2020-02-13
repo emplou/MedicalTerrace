@@ -18,7 +18,7 @@
             URL自動生成名<br>URL generation
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="url_gen" id="url_gen" style="width:500px">
+            <input type="text" class="form-control" name="url_gen" id="ovr_url_gen" style="width:500px">
             </div>
         </div>
         <br>
@@ -27,7 +27,7 @@
             医療機関名<br>Medical institution
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="medical_ins" id="medical_ins" style="width:500px">
+            <input type="text" class="form-control" name="medical_ins" id="ovr_medical_ins" style="width:500px">
             </div>
         </div>
         <br>
@@ -36,7 +36,7 @@
             医療機関英語名<br>Medical institution English
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="medical_ins_eng" id="medical_ins_eng" style="width:500px">
+            <input type="text" class="form-control" name="medical_ins_eng" id="ovr_medical_ins_eng" style="width:500px">
             </div>
         </div>
         <br>
@@ -45,7 +45,7 @@
             Common name
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="common_name" id="common_name" style="width:500px">
+            <input type="text" class="form-control" name="common_name" id="ovr_common_name" style="width:500px">
             </div>
         </div>
         <br>
@@ -54,7 +54,7 @@
             郵便番号<br>Postal code
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="postal_code" id="postal_code" style="width:500px">
+            <input type="text" class="form-control" name="postal_code" id="ovr_postal_code" style="width:500px">
             </div>
         </div>
         <br>
@@ -63,7 +63,7 @@
             住所<br>Address
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="address" id="address" style="width:500px">
+            <input type="text" class="form-control" name="address" id="ovr_address" style="width:500px">
             </div>
         </div>
         <br>
@@ -72,7 +72,7 @@
             住所英語表記<br>Address English
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="address_english" id="address_english" style="width:500px">
+            <input type="text" class="form-control" name="address_english" id="ovr_address_english" style="width:500px">
             </div>
         </div>
         <br>
@@ -81,14 +81,14 @@
             アクセス<br>Access
             </div>
             <div class="col-10">
-                <select class="form- " name="access_trans[]" id="access_trans" style="width:200px">
+                <select class="form- " name="access_trans[]" id="ovr_access_trans" style="width:200px">
                     <option>industry one</option>
                     <option>industry two</option>
                     <option>industry three</option>
                     <option>industry four</option>
                 </select>
-                <input type="text" class="form- " name="access_from[]" id="access_from" style="width:200px">
-                <input type="text" class="form- " name="access_mins[]" id="access_mins" style="width:200px">
+                <input type="text" class="form- " name="access_from[]" id="ovr_access_from" style="width:200px">
+                <input type="text" class="form- " name="access_mins[]" id="ovr_access_mins" style="width:200px">
             </div>
         </div>
         <br>
@@ -97,8 +97,8 @@
             駐車場<br>Parking
             </div>
             <div class="col-10">
-                項目 <input type="radio" name="p_radio" id="p_radio" value="料金">
-                費用 <input type="radio" name="p_radio" id="p_radio" value="無料">
+                項目 <input type="radio" name="p_radio" id="ovr_p_radio" value="料金">
+                費用 <input type="radio" name="p_radio" id="ovr_p_radio" value="無料">
             </div>
         </div>
         <br>
@@ -130,7 +130,7 @@
             Email<br>Email address
             </div>
             <div class="col-10">
-            <input type="text" class="form- " name="email" id="email" style="width:500px">
+            <input type="text" class="form- " name="email" id="ovr_email" style="width:500px">
             <input type="checkbox"> 非表示 | Not show
             </div>
         </div>
@@ -154,7 +154,7 @@
             画像キャプション<br>Image Caption 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_caption" id="img_caption" style="width:500px">
+            <input type="text" class="form-control" name="img_caption" id="ovr_img_caption" style="width:500px">
             </div>
         </div>
         <br>
@@ -163,7 +163,7 @@
             画像alt<br>Image alt
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_alt" id="img_alt" style="width:500px">
+            <input type="text" class="form-control" name="img_alt" id="ovr_img_alt" style="width:500px">
             </div>
         </div>
         <br>
@@ -172,7 +172,7 @@
             医療機関キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="hosp_subheading" id="hosp_subheading" style="width:500px">
+                <input type="text" class="form-control" name="hosp_subheading" id="ovr_hosp_subheading" style="width:500px">
             </div>
         </div>
         <br>
@@ -181,7 +181,7 @@
             本文<br>Text of Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="text_subheading_hospital" id="text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="text_subheading_hospital" id="ovr_text_subheading_hospital" style="width:500px">
             </div>
         </div>
         <br>
@@ -190,7 +190,7 @@
             区分<br>Division
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="division" id="division" style="width:500px">
+                <input type="text" class="form-control" name="division" id="ovr_division" style="width:500px">
             </div>
         </div>
         <br>
@@ -247,7 +247,7 @@
             診療科目<br>Medical subject
             </div>
             <div class="col-10">
-                <select class="form- " name="department" id="department" style="width:200px">
+                <select class="form- " name="department" id="ovr_department" style="width:200px">
                     <option>Medical one</option>
                     <option>Medical two</option>
                     <option>Medical three</option>
@@ -261,7 +261,7 @@
             診療科目別キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="med_subj_subheading" id="med_subj_subheading" style="width:500px">
+                <input type="text" class="form-control" name="med_subj_subheading" id="ovr_med_subj_subheading" style="width:500px">
             </div>
         </div>
         <br>
@@ -270,7 +270,7 @@
             診療科目別キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="med_subj_text_subheading_hospital" id="med_subj_text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="med_subj_text_subheading_hospital" id="ovr_med_subj_text_subheading_hospital" style="width:500px">
                 <input type="file" class="btn btn-info" name="department_image">
             </div>
         </div>
@@ -326,7 +326,7 @@
             特徴タイトル<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="feature_title" id="feature_title" style="width:500px">
+                <input type="text" class="form-control" name="feature_title" id="ovr_feature_title" style="width:500px">
             </div>
         </div>
         <br>
@@ -335,7 +335,7 @@
             特徴本文<br>Text of Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="feature_text_subheading_hospital" id="feature_text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="feature_text_subheading_hospital" id="ovr_feature_text_subheading_hospital" style="width:500px">
                 <input type="file" class="btn btn-warning" name="feature_image">
             </div>
         </div>
@@ -347,8 +347,8 @@
             設備・機器<br>Equipment
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="equipment_subheading" id="equipment_subheading" style="width:500px">
-                <input type="text" class="form-control" name="equipment_text_subheading_hospital" id="equipment_text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="equipment_subheading" id="ovr_equipment_subheading" style="width:500px">
+                <input type="text" class="form-control" name="equipment_text_subheading_hospital" id="ovr_equipment_text_subheading_hospital" style="width:500px">
                 <input type="file" class="btn btn-success" name="equipment_image">
             </div>
         </div>
@@ -360,7 +360,7 @@
             スタッフリード<br>Staff Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="staff_subheading_hospital" id="staff_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="staff_subheading_hospital" id="ovr_staff_subheading_hospital" style="width:500px">
             </div>
         </div>
         <br>
@@ -369,7 +369,7 @@
             スタッフコメント<br>Staff comment
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="staff_comment_hospital" id="staff_comment_hospital" style="width:500px">
+                <input type="text" class="form-control" name="staff_comment_hospital" id="ovr_staff_comment_hospital" style="width:500px">
                 <input type="file" class="btn btn-danger" name="staff_image">
             </div>
         </div>
