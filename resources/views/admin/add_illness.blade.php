@@ -231,7 +231,8 @@
             <div class="form-group">
                 <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
                 <div class="cols-4">          
-                <select name="sub_head1a[]" class="form-control">
+                <!-- <select name="sub_head1a[]" class="form-control"> -->
+                <select name="sub_head1a" class="form-control">
                     <option value="">選択してください</option>
                     <option value="基礎知識">基礎知識</option>
                     <option value="近年の動向">近年の動向</option>
@@ -254,7 +255,8 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-4">
-                    <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                    <!-- <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"> -->
+                    <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b">
                 </div>
             </div>
 
@@ -266,11 +268,12 @@
                     <div class="field_wrap2"></div>
                     <div id="addanother1">
                         <div class="cols-10">        
-                            <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                            <!-- <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea> -->
+                            <textarea class="form-control" name="txt_ckeditor" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                         </div>
                     </div>
                 </div>
-                <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+                <!-- <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div>  -->
             </div>
              <!-- Buttons -->
             <div class="form-group">

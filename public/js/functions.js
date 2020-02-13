@@ -654,6 +654,20 @@ $.ajaxSetup({
                             $("#input_rad").html(input_rad);
                         }   
 
+                        // Subheading 1
+                        input_sub1 = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                        $("#input_sub1").html(input_sub1);
+
+                        $("#sub_head1b").val(response['data'][0].sp_sub2);
+                        $("#txt_ckeditor").val(response['data'][0].sp_sum);
+
+                        // Subheading 2
+                        input_sub1_b = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                        $("#input_sub1_b").html(input_sub1_b);
+
+                        $("#sub2_head1b").val(response['data'][0].sp_sub4);
+                        $("#txt2_ckeditor").val(response['data'][0].sp_sum2);
+
                         // SEO Title
                         var seo_title = response['data'][0].seo_title;
                         if(seo_title == response['data'][0].sp_ill_cat){
@@ -868,6 +882,13 @@ $.ajaxSetup({
                         });
                         $("#input_sum").html(inputs);
 
+                        // Subheading 1
+                        input_sub1 = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].ill_sub1 +'">'+ response['data'][0].ill_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                        $("#input_sub1").html(input_sub1);
+
+                        $("#sub_head1b").val(response['data'][0].ill_sub2);
+                        $("#txt_ckeditor").val(response['data'][0].ill_sub_txt);
+
                         // image
                         $("#img_cap").val(response['data'][0].ill_img_cap); // image caption
                         $("#img_alt").val(response['data'][0].ill_img_alt); // image alt
@@ -883,14 +904,13 @@ $.ajaxSetup({
                         var objJSONra_lvl = JSON.parse(response['ra'][0].ra_risk_lvl);
                         var input_ra_txt = "";
                         $.each(objJSONra_txt, function (i, v) {
-                            input_ra_txt += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div>';
+                            input_ra_txt += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
                             
-                            $.each(objJSONra_lvl, function (i, b) {
-                                input_ra_txt += '<div class="cols-2"><select name="rl[]"><option value="'+b.rl+'">'+b.rl+'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br>   </div><div class="clear"></div>';
-
-                            });
-                           
                         });
+                        // $.each(objJSONra_lvl, function (i, b) {
+                        //     input_ra_lvl += '';
+
+                        // });
                         $("#input_ra_txt").html(input_ra_txt);
 
                         // Check Results
@@ -1233,7 +1253,7 @@ $.ajaxSetup({
         });
     });
 
-    //copy and add another SPecial data to database
+    //copy and add another Illness data to database
     $('.overwrite_illness_copy').each(function(e){
         $.ajaxSetup({
             headers: {
@@ -1307,9 +1327,44 @@ $.ajaxSetup({
                         });
                         $("#input_sum_two").html(inputs);
 
+                        // Subheading 1
+                        input_sub1_two = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].ill_sub1 +'">'+ response['data'][0].ill_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                        $("#input_sub1_two").html(input_sub1_two);
+
+                        $("#sub_head1b_two").val(response['data'][0].ill_sub2);
+                        $("#txt_ckeditor_two").val(response['data'][0].ill_sub_txt);
+
                         // image
                         $("#twoimg_cap").val(response['data'][0].ill_img_cap); // image caption
                         $("#twoimg_alt").val(response['data'][0].ill_img_alt); // image alt
+
+                        // Risk Assessment SubTitle
+                        var ra_title = response['ra'][0].ra_title;
+                        if(ra_title == "1"){
+                            $("#a1_two").attr( "checked", true );
+                        }
+
+                        // Text of the subheading
+                        var objJSONra_txt = JSON.parse(response['ra'][0].ra_text);
+                        var objJSONra_lvl = JSON.parse(response['ra'][0].ra_risk_lvl);
+                        var input_ra_txt_two = "";
+                        $.each(objJSONra_txt, function (i, v) {
+                            input_ra_txt_two += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            
+                        });
+                        // $.each(objJSONra_lvl, function (i, b) {
+                        //     input_ra_lvl += '';
+
+                        // });
+                        $("#input_ra_txt_two").html(input_ra_txt_two);
+
+                        // Check Results
+                        var objJSONcr = JSON.parse(response['ra'][0].ra_result);
+                        var input_cr_two = "";
+                        $.each(objJSONcr, function (i, v) {
+                            input_cr_two += '<div class="cols-5"><input type="text" class="form-control" name="cr[]" value="'+v.cr+'"></div>';
+                        });
+                        $("#input_cr_two").html(input_cr_two);
 
                         // Search Keywords
                         var objJSONkw = JSON.parse(response['data'][0].ill_kwords);

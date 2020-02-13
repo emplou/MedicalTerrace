@@ -501,31 +501,31 @@ class HomeController extends Controller
         $jsonh2_list = json_encode($response2);
         
         // Subhead1
-        $suba_list = $details['sub_head1a']; 
-        $resp_suba = array();
-        foreach($suba_list as $key_suba => $cert_suba)
-        {
-            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
-        }
-        $jsonsuba_list = json_encode($resp_suba);
+        // $suba_list = $details['sub_head1a']; 
+        // $resp_suba = array();
+        // foreach($suba_list as $key_suba => $cert_suba)
+        // {
+        //     $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
+        // }
+        // $jsonsuba_list = json_encode($resp_suba);
 
         // Subhead2
-        $subb_list = $details['sub_head1b']; 
-        $resp_subb = array();
-        foreach($subb_list as $key_subb => $cert_subb)
-        {
-            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
-        }
-        $jsonsubb_list = json_encode($resp_subb);
+        // $subb_list = $details['sub_head1b']; 
+        // $resp_subb = array();
+        // foreach($subb_list as $key_subb => $cert_subb)
+        // {
+        //     $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
+        // }
+        // $jsonsubb_list = json_encode($resp_subb);
 
         // Textheading
-        $tc_list = $details['txt_ckeditor']; 
-        $resp_tc = array();
-        foreach($tc_list as $key_tc => $cert_tc)
-        {
-            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
-        }
-        $jsontc_list = json_encode($resp_tc);
+        // $tc_list = $details['txt_ckeditor']; 
+        // $resp_tc = array();
+        // foreach($tc_list as $key_tc => $cert_tc)
+        // {
+        //     $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
+        // }
+        // $jsontc_list = json_encode($resp_tc);
 
         // tag
         $tag_list = $details['tag']; 
@@ -605,9 +605,12 @@ class HomeController extends Controller
         $illness->ill_img               = '/img/'.$filename; //illness image
         $illness->ill_img_cap           = $details['img_cap'];
         $illness->ill_img_alt           = $details['img_alt'];
-        $illness->ill_sub1              = $jsonsuba_list; //it should be json script when added
-        $illness->ill_sub2              = $jsonsubb_list; //it should be json script when added
-        $illness->ill_sub_txt           = $jsontc_list; //it should be json script when added
+        // $illness->ill_sub1              = $jsonsuba_list; //it should be json script when added
+        // $illness->ill_sub2              = $jsonsubb_list; //it should be json script when added
+        // $illness->ill_sub_txt           = $jsontc_list; //it should be json script when added
+        $illness->ill_sub1              = $details['sub_head1a']; 
+        $illness->ill_sub2              = $details['sub_head1b'];
+        $illness->ill_sub_txt           = $details['txt_ckeditor'];
         $illness->ill_kwords            = $jsonk_list;
         $illness->ill_seo               = $details['seo'];
         $illness->ill_seo_txt           = $details['seo_txt'];
