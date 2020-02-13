@@ -866,6 +866,7 @@ $.ajaxSetup({
                         
                         $("#editillness").modal('show');
                         $("#illID").val(response['data'][0].id);
+                        $("#ill_ID").val(response['data'][0].ill_id);
                         $("#url").val(response['data'][0].ill_url); 
 
                         // Illness Category
@@ -918,6 +919,35 @@ $.ajaxSetup({
                         // image
                         $("#img_cap").val(response['data'][0].ill_img_cap); // image caption
                         $("#img_alt").val(response['data'][0].ill_img_alt); // image alt
+
+                        // Risk Assessment SubTitle
+                        var ra_title = response['ra'][0].ra_title;
+                        if(ra_title == "1"){
+                            $("#a1").attr( "checked", true );
+                        }
+
+                        // Text of the subheading
+                        var objJSONra_txt = JSON.parse(response['ra'][0].ra_text);
+                        var objJSONra_lvl = JSON.parse(response['ra'][0].ra_risk_lvl);
+                        var input_ra_txt = "";
+                        $.each(objJSONra_txt, function (i, v) {
+                            input_ra_txt += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div>';
+                            
+                            $.each(objJSONra_lvl, function (i, b) {
+                                input_ra_txt += '<div class="cols-2"><select name="rl[]"><option value="'+b.rl+'">'+b.rl+'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br>   </div><div class="clear"></div>';
+
+                            });
+                           
+                        });
+                        $("#input_ra_txt").html(input_ra_txt);
+
+                        // Check Results
+                        var objJSONcr = JSON.parse(response['ra'][0].ra_result);
+                        var input_cr = "";
+                        $.each(objJSONcr, function (i, v) {
+                            input_cr += '<div class="cols-5"><input type="text" class="form-control" name="cr[]" value="'+v.cr+'"></div>';
+                        });
+                        $("#input_cr").html(input_cr);
 
                         // Search Keywords
                         var objJSON = JSON.parse(response['data'][0].ill_kwords);

@@ -13,6 +13,7 @@
             <div class="modal-body">
             {!! Form::open(['url' => '/overwrite_illness', 'method' => 'post', 'files' => true]) !!}
             <input type="hidden" name="illID" id="illID">
+            <input type="hidden" name="ill_ID" id="ill_ID">
                 <!-- Form Starts -->
                 <div class="form-horizontal">
 
@@ -273,18 +274,19 @@
                         <div class="form-group">
                             <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                             <div class="cols-6">
-                                <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
-                                <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div>
+                                <div id="input_cr"></div>
+                                <!-- <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
+                                <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div> -->
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="cols-15"></div>
                             <div class="cols-6">
                                 <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr[]"></div>
                                 <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr[]"></div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <hr>
                         <!-- Search Keywords -->

@@ -481,6 +481,7 @@ class HomeController extends Controller
         $illness->ill_tag_season        = $jsons_list; // added division and medical subject list and field
         $illness->ill_tag_season_txt    = $jsonstxt_list; // added division and medical subject list and field
         $illness->ill_tag_free          = $jsonf_list; // added division and medical subject list and field
+        $illness->status                = '3';
         $illness->save();
 
         //newly inserted illness id
@@ -551,15 +552,15 @@ class HomeController extends Controller
         $jsoncr_list = json_encode($response11); 
 
         //Risk Assessment
-        // if($details['subheading-chck'] == 1){
-        //     $risk_assess = new Risk_assessment;
-        //     $risk_assess->ra_ill_id           = $illness_id;
-        //     $risk_assess->ra_title            = $details['subheading-chck'];
-        //     $risk_assess->ra_text             = $jsonsh_list ;
-        //     $risk_assess->ra_risk_lvl         = $jsonrl_list; 
-        //     $risk_assess->ra_result           = $jsoncr_list;  
-        //     $risk_assess->save();
-        // }
+        if($details['subheading-chck'] == 1){
+            $risk_assess = new Risk_assessment;
+            $risk_assess->ra_ill_id           = $illness_id;
+            $risk_assess->ra_title            = $details['subheading-chck'];
+            $risk_assess->ra_text             = $jsonsh_list ;
+            $risk_assess->ra_risk_lvl         = $jsonrl_list; 
+            $risk_assess->ra_result           = $jsoncr_list;  
+            $risk_assess->save();
+        }
         
         return redirect('/illness_list');
     }
@@ -951,9 +952,10 @@ class HomeController extends Controller
     }
 
     public function modal_edit_illness($id){
-        $value['data'] = DB::table('illness')->where('id','=',$id)->get();
+        $value['data'] = DB::table('illness')->where('ill_id','=',$id)->get();
         $value['doc'] = DB::table('dv_doctors')->get();
         $value['dpt'] = DB::table('hospital_departments')->get();
+        $value['ra'] = DB::table('risk_assessment')->where('ra_ill_id','=',$id)->get();
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
@@ -1694,7 +1696,7 @@ class HomeController extends Controller
         $illness = DB::table('illness')
                                     ->where('id','=', $details['illID'])
                                     ->update([
-                                                'status'               => 'Approved',
+                                                'status'               => '4',
                                             ]);
         return redirect('/illness_list');
     }
@@ -1706,7 +1708,7 @@ class HomeController extends Controller
         $illness = DB::table('illness')
                                     ->where('id','=', $details['illID'])
                                     ->update([
-                                                'status'               => 'Reserved',
+                                                'status'               => '5',
                                             ]);
         return redirect('/illness_list');
     }
@@ -1718,7 +1720,7 @@ class HomeController extends Controller
         $illness = DB::table('illness')
                                     ->where('id','=', $details['illID'])
                                     ->update([
-                                                'status'               => 'Release',
+                                                'status'               => '6',
                                             ]);
         return redirect('/illness_list');
     }
@@ -2185,6 +2187,42 @@ class HomeController extends Controller
         $staff->save();
         
         return redirect('/hospital_list');
+    }
+
+     //Approve Special Preview
+     public function approve_special(Request $request){
+        $details = Input::all();
+        
+        $special = DB::table('special')
+                                    ->where('id','=', $details['spID'])
+                                    ->update([
+                                                'sp_status'               => '4',
+                                            ]);
+        return redirect('/special_list');
+    }
+
+    //Release Reservation Special
+    public function release_reservation_special(Request $request){
+        $details = Input::all();
+        
+        $special = DB::table('special')
+                                    ->where('id','=', $details['spID'])
+                                    ->update([
+                                                'sp_status'               => '5',
+                                            ]);
+        return redirect('/special_list');
+    }
+
+    //Release Special
+    public function release_special(Request $request){
+        $details = Input::all();
+        
+        $special = DB::table('special')
+                                    ->where('id','=', $details['spID'])
+                                    ->update([
+                                                'status'               => '6',
+                                            ]);
+        return redirect('/special_list');
     }
 
 }

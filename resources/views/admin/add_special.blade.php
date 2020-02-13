@@ -411,40 +411,7 @@
             <div class="form-group check">
                 <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
                 <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
-                    <!-- <div class="cols-4">
-						<input type="checkbox" id="tag1" name="tag_ch[]" value="1"> 
-						<label for="tag1">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag2" name="tag_ch[]" value="1"> 
-						<label for="tag2">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag3" name="tag_ch[]" value="1"> 
-						<label for="tag3">検索キーワド入力より</label>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag4" name="tag_ch[]" value="1"> 
-						<label for="tag4">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag5" name="tag_ch[]" value="1"> 
-						<label for="tag5">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag6" name="tag_ch[]" value="1"> 
-						<label for="tag6">検索キーワド入力より</label>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag7" name="tag_ch[]" value="1"> 
-						<label for="tag7">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-4">
-						<input type="checkbox" id="tag8" name="tag_ch[]" value="1"> 
-						<label for="tag8">検索キーワド入力より</label>
-                    </div> -->
+                    
                     <div id="output"></div>
                     <div id="output2"></div>
                     <div id="output3"></div>
