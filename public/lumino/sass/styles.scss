@@ -1254,40 +1254,6 @@ h1.page-header {
 }
 
 
-//Chat Widget
-
-.chat .panel-body ul {
-	list-style: none;
-	margin: -15px;
-	padding: 15px;
-}
-
-.chat .panel-body  ul li {
-	margin-bottom: 10px;
-	padding: 15px 5px;
-	border-bottom: 1px solid $light-gray;
-}
-
-.chat ul li.left .chat-body {
-	margin-left: 80px;
-}
-
-.chat ul li.right .chat-body {
-	margin-right: 80px;
-}
-
-.chat ul li .chat-body p {
-	margin: 0;
-}
-
-.chat .panel-body {
-	overflow-y: scroll;
-	height: 300px;
-}
-
-.chat-body small {
-	margin-left: 5px;
-}
 
 //Tables
 .table {
@@ -1489,50 +1455,3 @@ a.close:hover {
 
 
 
-.modal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /*Default hide*/
-  opacity: 0;
-  /*Default transparent*/
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background: rgba(0, 0, 0, 0.4);
-  /* Background with opacity*/
-  @include transition(all 0.3s cubic-bezier(0.36, 0.66, 0.04, 1));
-  &.in {
-    opacity: 1;
-    /*Toggle visible*/
-    z-index: 1;
-    /*On top*/
-    .animated-from-top,
-    .animated-from-bottom {
-      @include transform(translateY(0));
-      /*Toggle position*/
-    }
-  }
-}
-
-.modal-content {
-  position: relative;
-  max-width: 40em;
-  margin: 5em auto;
-  padding: 2em;
-  background: $color-white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-  @include transition(all 0.3s cubic-bezier(0.36, 0.66, 0.04, 1));
-}
-
-.animated-from-top {
-  @include transform(translateY(-200%));
-  /*Default over top*/
-}
-
-.animated-from-bottom {
-  @include transform(translateY(200%));
-  /*Default over bottom*/
-}
