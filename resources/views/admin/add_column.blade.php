@@ -18,25 +18,6 @@
 
     {!! Form::open(array('url' => '/save_special', 'method' => 'post', 'files' => true)) !!}
 
-		<div class="form-horizontal">
-		<div class="form-pads">
-            <div class="form-group">
-                <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
-                <div class="cols-4">
-                    <input type="text" class="form-control" placeholder="例）special_kids" name="url">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="control-label cols-15">掲載誌<br><span>Magazine</span></label>
-                <div class="cols-4">          
-                    <input type="text" class="form-control" placeholder="例）GL1907" name="magazine">
-                </div>
-            </div>
-
-           
-            
-
             <div class="form-group check">
                 <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
                 <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
@@ -209,51 +190,7 @@
                 </div>
             </div>
 		</div>
-		<div class="form-nopads">
-			<!-- Editor Page -->
-			<div class="editor-page">
-				<div class="form-group">
-					<label class="control-label cols-15">エディター担当者</label>
-					<div class="cols-5">   
-						<input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">&nbsp;&nbsp;&nbsp;
-					</div>
-					<div class="cols-2"><button type="button" class="btn-prime editor"></button></div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label cols-15">取材日</label>
-					<div class="cols-3">   
-						<select class="form-control" name="c1">
-							<option value="">－－－－年</option>
-						</select>
-					</div>
-					<div class="cols-1">   
-						<select class="form-control" name="c2">
-							<option value="">－－月</option>
-						</select>
-					</div>
-					<div class="cols-1">   
-						<select class="form-control" name="c2">
-							<option value="">－－日</option>
-						</select>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label cols-15">謝礼</label>
-					<div class="cols-7">   
-						<input type="text" name="hono" class="form-control" placeholder="例）10,000円">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label cols-15">メモ</label>
-					<div class="cols-7">   
-						<textarea class="form-control" name="note"></textarea>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<input type="submit" name="save" value="" class="save-btn">
 		<div id="totop" class="float-btn"></div>
 		<div id="tobottom" class="float-btn"></div>

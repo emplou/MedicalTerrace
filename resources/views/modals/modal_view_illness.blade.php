@@ -35,11 +35,7 @@
                     <h3>手足口病の基礎知識</h3>
                     </p>主に夏に流行する感染症で、3〜6日の潜伏期の後、手足などに赤い発疹や水ぶくれ、口内炎ができます。高熱が出ることは少なく、1週間ほどで自然に治ります。かかりやすい年齢は5歳以下。毎年、5月頃から患者数が増え、7月に流行のピークを迎えます。一般的には夏風邪と呼ばれることもあります。全身状態が改善すれば、登園・登校が可能になります。<p>
 
-                    <strong>[2013年〜2018年の定点当たり報告数の平均] 手足口病</strong>
-                    <img class="graph" src="images/illness-graph.png" alt="Illness Graph">
-                    </p>※1 データの週によるばらつきや未報告のデータを修正するために統計処理をしたもの。+1SDの数値 は過去のデータの68 ％、+2SDの数値は過去のデータの95 ％が含まれる。
-                    <br>※2 過去5年間の平均：前週、当該週、後週の合計15週の平均<br>◎国立感染症研究所のデータより<p>
-                    
+                       
                     <h3>手足口病の近年の動向</h3>
                     </p>国立感染症研究所がまとめた患者報告によると、2019年6月は、過去10年の同期と比べて最多になりました。<p>
 
@@ -75,22 +71,7 @@
                     </div>
                 </div>
                 <div class="panel-pink">
-                    <strong>予防・対策はしっかりできていますか？</strong>
-                    <div class="form-group check">
-                        <ul>    
-                            <li>
-                                <input class="styled-checkbox" id="1b" type="checkbox" name="1b" >
-                                <label for="1b" style="font-weight:500;">おむつ替えなどの処理を適正に行っている</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="2b" type="checkbox" name="2b" >
-                                <label for="2b" style="font-weight:500;">子どもの排便、</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="3b" type="checkbox" name="3b" >
-                                <label for="3b" style="font-weight:500;">タオルは共用していない</label>
-                            </li>
-                        </ul>
+                    
                         <strong>下記のような症状はありますか？</strong>
                         <ul>
                             <li>
