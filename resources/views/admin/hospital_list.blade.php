@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_hospital')
 @section('content')
 @include('modals.modal_edit_hospital')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
