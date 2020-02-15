@@ -59,18 +59,6 @@ $(function () {
 });
 
 
-$('#input').on('keypress', function (e) {
-	var count = $(this).val().length;
-	$('#span').text(count);
-} 
-
-
-
-function updateCount() {
-	var cs = $(this).val().length;
-	$('#characters').text(cs);
-}
-
 
 
 

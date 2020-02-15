@@ -1,14 +1,12 @@
-<div id="previewAddDoctor" class="modalDialog">
+<div id="previewAddIllness" class="modalDialog">
     <div>	
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
             <h2>医師・医療従事者</h2>
              <p>|岐阜|岐阜市|小児科|アレルギー科|新生児内科|</p>
-             <div class="bg">
-                <p>日本小児科学会認定小児科専門医・日本アレルギー学会 認定専門医 医学博士</p>
-                <p>浅野 勉 -Tsutomu Asano-</p>
-                <p>2019.06.21</p>
-            </div>
+             <p>日本小児科学会認定小児科専門医・日本アレルギー学会 認定専門医 医学博士</p>
+             <p>浅野 勉 -Tsutomu Asano-</p>
+             <p>2019.06.21</p>
              <img src="images/avatar.jpg" alt="">
              <ul>
                  <li>所属学会 日本小児科学会・日本アレルギー学会・日本小児アレル ギー学会・日本新生児成育医学会</li>
