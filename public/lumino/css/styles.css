@@ -1945,17 +1945,17 @@ table#list {
 }
 .main-content .header-wrapper {
   width: 100%;
-  height: 65px;
+  height: 85px;
 }
 .main-content .header-wrapper .left,
 .main-content .header-wrapper .right {
   float: left !important;
 }
 .main-content .header-wrapper .left {
-  width: 55%;
+  width: 50%;
 }
 .main-content .header-wrapper .left h2 {
-  padding: 15px;
+  padding: 0;
 }
 .main-content .header-wrapper .left h2 span {
   width: 100%;
@@ -1967,13 +1967,13 @@ table#list {
 
 
 .main-content .header-wrapper .right {
-  width: 40%;
+  width: 50%;
   padding-top: 20px;
 }
 .main-content .header-wrapper .right div {
   width: 17%;
   height: 40px;
-  min-width: 70px;
+  min-width: 74px;
   float: left;
 }
 .main-content .header-wrapper .right div.select {
@@ -2990,4 +2990,62 @@ ul.blk-bullet img {
 
 .sidebar-nav li.active:nth-child(11) small{
     border-left-color: #7fbd00;
+}
+
+
+.editor .cols-1.relative {
+  height: 310px;
+}
+
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper .btn {
+  width: 160px;
+  height: 40px;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image:url("../../images/icon-insertimage.png");
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#list .overwrite_hospital,
+#list .overwrite,
+#list .overwrite_illness,
+#list .overwrite_special {
+  background-color: #FCB0BC;
+  border-color: #FCB0BC;
+  padding: 10px 0;
+  width: 94px;
+  height: 50px;
+  font-size: 11px;
+}
+
+#list .btn-success,
+#list .overwrite_add,
+#list .overwrite_illness_copy,
+#list .overwrite_add_special {
+  background-color: #6ebaba;
+  border-color: #6ebaba;
+  padding: 10px 0;
+  width: 100px;
+  height: 50px;
+  font-size: 11px;
 }

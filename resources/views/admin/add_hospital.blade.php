@@ -2,26 +2,10 @@
 @section('content')
 @include('modals.modal_add_hospital')
 
-<div class="header-wrapper">
-    <div class="left">
-        <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
-        
-    </div>
-    <div class="right">
-        <div>作成日<span>Date</span></div>
-        <div class="select">
-            <select>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-            </select>
-        </div>
-        <div>最終更新日<span>Update</span></div>
-        <div class="select">0000/00/00</div>
-    </div>
-</div>
+
+
+
+
 <hr />
 <div class="form-container add">
     <div class="form-progress">
@@ -98,8 +82,8 @@
     </div>
 
     <!-- Branch Address -->
-    <!-- <div class="form-group">
-        <label class="control-label cols-15">住所<br><span>Address</span></label>
+    <div class="form-group">
+        <label class="control-label cols-15">住所<br><span>Branch Address</span></label>
         <div class="cols-2">
             <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code">
         </div>
@@ -108,11 +92,11 @@
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
-    </div> -->
+    </div>
 
     <!-- Branch Address English -->
-    <!-- <div class="form-group">
-        <label class="control-label cols-15">住所英語表記<br><span>Address English</span></label>
+    <div class="form-group">
+        <label class="control-label cols-15">住所英語表記<br><span>Branch Address English</span></label>
         <div class="cols-2">
             <input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code">
         </div>
@@ -121,54 +105,37 @@
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
-    </div> -->
-
-    <!-- Access -->
-    <div class="form-group check">
-        <label class="control-label cols-15">アクセス<br><span>Access</span></label>
-        <div class="cols-5">   
-            <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                <input class="styled-checkbox" id="styled-checkbox-1a" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1a" style="font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-            </div>    
-        </div>
     </div>
-     <div class="form-group check">
-        <label class="control-label cols-15"></label>
-        <div class="cols-5">   
-            <div style="border: 1px solid #CCC; padding: 5px; ">
-                <input class="styled-checkbox" id="styled-checkbox-1b" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1b" style="font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-            </div>    
-        </div>
-    </div>
-     <div class="form-group check">
-        <label class="control-label cols-15"></label>
-        <div class="cols-5">   
-            <div style="border: 1px solid #CCC; padding: 5px; ">
-                <input class="styled-checkbox" id="styled-checkbox-1c" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1c" style="font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-            </div>    
-        </div>
-        </div>
 
-    <!-- Parking -->
+
+    <!-- Clinic Appearance image -->
     <div class="form-group">
-        <label class="control-label cols-15">駐車場<br><span>Parking</span></label>
-        <div class="cols-18 rad-buttons">
-            <label>料金</label>
-            <input type="radio" id="park2a" name="park" value="監修">
-            <label for="park2a">無料</label>
-            
-            <input type="radio" id="park2b" name="park" value="取材協力">
-            <label for="park2b">有料</label>
-        </div>	
-        <div class="cols-3">          
-            <select name="doctor" class="form-control">
-                <option value="">選択してください</option>
-                @foreach($doctors as $doc)
-                    <option value="{!! $doc->id !!}">{!! $doc->name !!}</option>
-                @endforeach
-            </select>
+        <label class="control-label cols-15">医院外観画像<br><span>Clinic Appearance image </span></label>
+        <div class="cols-45">          
+            <!-- <div class="upload-btn-wrapper">
+                <button class="btn"></button>
+                <input type="file" id="file" name="clinic_image" name="clinic_image_field" multiple />
+            </div> -->
+
         </div>
     </div>
+
+    <!-- Image Caption -->
+    <div class="form-group">
+        <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption">
+        </div>
+    </div>
+
+     <!-- Image Alt -->
+    <div class="form-group">
+        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
+        </div>
+    </div>
+
 
     <!-- Inquiry Phone number -->
     <div class="form-group">
@@ -234,33 +201,7 @@
         </div>
     </div>
 
-    <!-- Clinic Appearance image -->
-    <div class="form-group">
-        <label class="control-label cols-15">医院外観画像<br><span>Clinic Appearance image </span></label>
-        <div class="cols-45">          
-            <div class="custom-file-upload doc">
-            <!--<label for="file">File: </label>--> 
-                <input type="file" id="file" name="clinic_image" name="clinic_image_field" multiple />
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Image Caption -->
-    <div class="form-group">
-        <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
-        <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption">
-        </div>
-    </div>
-
-     <!-- Image Alt -->
-    <div class="form-group">
-        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
-        <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
-        </div>
-    </div>
+    
 
     <!-- Subheading -->
     <div class="form-group">
@@ -547,7 +488,7 @@
 
     <!-- Image Alt -->
     <div class="form-group">
-        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
+        <label class="control-label cols-15">画像alt<br><span>Image</span></label>
         <div class="cols-5">
             <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
         </div>
