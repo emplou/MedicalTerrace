@@ -1,13 +1,3 @@
-$('#calendar').datepicker({
-		});
-
-!function ($) {
-    $(document).on("click","ul.nav li.parent > a ", function(){          
-        $(this).find('em').toggleClass("fa-minus");      
-    }); 
-    $(".sidebar span.icon").find('em:first').addClass("fa-plus");
-}
-
 (window.jQuery);
 	$(window).on('resize', function () {
   if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
@@ -68,19 +58,6 @@ $(function () {
 
 });
 
-
-$('#input').on('keypress', function (e) {
-	var count = $(this).val().length;
-	$('#span').text(count);
-} 
-
-$('#textarea').keyup(updateCount);
-$('#textarea').keydown(updateCount);
-
-function updateCount() {
-	var cs = $(this).val().length;
-	$('#characters').text(cs);
-}
 
 
 

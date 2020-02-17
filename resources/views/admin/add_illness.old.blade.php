@@ -199,32 +199,7 @@
             <!-- add new form here -->
             <div class="wrapper2"></div>
 
-            <div id="addanother">
-                <!-- Subheading -->
-                <div class="form-group">
-                    <label class="control-label col-sm-2">小見出し:</label>
-                    <div class="col-sm-9">          
-                        <select name="sub_head1a[]" class="form-control">
-                            <option value="">選択してください</option>
-                            <option value="基礎知識">基礎知識</option>
-                            <option value="近年の動向">近年の動向</option>
-                            <option value="症状">症状</option>
-                            <option value="原因">原因</option>
-                            <option value="検査方法">検査方法</option>
-                            <option value="検診体験記">検診体験記</option>
-                            <option value="検診から治療まで">検診から治療まで</option>
-                            <option value="治療方法">治療方法</option>
-                            <option value="療養と副作用">療養と副作用</option>
-                            <option value="合併症<">合併症</option>
-                            <option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option>
-                            <option value="体験記">体験記</option>
-                            <option value="FAQ">FAQ</option>
-                            <option value="予防・対策方法">予防・対策方法</option>
-                        </select>
-                        
-
-                    </div>
-                </div>
+            
                 <!-- Text of the Subheading -->
                 <div class="form-group">
                     <label class="control-label col-sm-2">画像alt:</label>
@@ -327,13 +302,7 @@
                         <a href="#">詳しく見る</a>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-7">          
-                        <input type="text" class="form-control" placeholder="例）国際感染症研究所" name="g_txt">
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
+               
                 <!-- Graph Alt -->
                 <div class="form-group">
                     <label class="control-label col-sm-2">グラフalt:</label>

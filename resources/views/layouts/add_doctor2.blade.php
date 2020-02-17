@@ -27,12 +27,12 @@
             <td>{!! Form::file('profile_img', null , ['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
-            <td>プロフィール ミニ<br>Mini Profile image</td>
+            <td>{!! Form::text('img_caption', null , ['class' => 'form-control']) !!}</td>
             <td>{!! Form::file('mini_profile_img', null , ['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
             <td>画像キャプション<br>Image Caption</td>
-            <td>{!! Form::text('img_caption', null , ['class' => 'form-control']) !!}</td>
+            
         </tr>
         <tr>
             <td>画像alt<br>Image alt</td>
@@ -84,10 +84,7 @@
             <td>所属診療科・所属科<br>Department</td>
             <td>{!! Form::select('department', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
         </tr>
-        <tr>
-            <td></td>
-            <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
-        </tr>
+
         <tr>
             <td>医師コメント<br>Doctor Comment</td>
             <td colspan="3">{!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}</td>

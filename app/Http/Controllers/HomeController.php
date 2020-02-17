@@ -16,6 +16,7 @@ use MedicalTerrace\Ill_image;
 use MedicalTerrace\Ill_graph;
 use MedicalTerrace\Risk_assessment;
 use MedicalTerrace\Special;
+use MedicalTerrace\Illness_archive;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -1710,6 +1711,11 @@ class HomeController extends Controller
                                                 // 'ill_tag_season_txt'    => $jsonstxt_list,
                                                 // 'ill_tag_free'          => $jsonf_list,
                                             ]);
+        
+        $ill_arch = new Illness_archive;
+        $ill_arch->illness_id            = $details['illID'];
+        $ill_arch->date_release          = date('Y-m-d H:i');
+        $ill_arch->save();
         
         return redirect('/illness_list');
     }

@@ -187,66 +187,7 @@ input.form-control {
 	background: none;
 }
 
-.dropdown-messages {
-	border: 1px solid #fff;
-	width: 360px;
-	background: rgba(255, 255, 255, .9);
-	color: #444;
-	font-size: 0.9em;
-}
 
-.dropdown-messages img {
-	margin: 5px 10px;
-	float: left;
-}
-
-.dropdown-messages .message-body {
-	margin: 5px;
-	float: left;
-	width: 280px;
-}
-
-.dropdown small {
-	color: #999;
-}
-
-.dropdown em {
-	margin: 0 5px;
-}
-
-.dropdown-menu>li>a {
-	padding: 5px 10px;
-}
-
-.dropdown-menu li .message-body a {
-	color: #444;
-}
-
-.dropdown-menu li a:hover {
-	color: $primary-color;
-	text-decoration: none;
-	background: none;
-}
-
-.divider, .clear {
-	clear: both;
-}
-
-.dropdown-alerts {
-	border: 1px solid #fff;
-	width: 260px;
-	background: rgba(255, 255, 255, .9);
-	color: #444;
-	font-size: 0.9em;
-}
-
-.all-button a {
-	text-align: center;
-	color: #444;
-	font-size: 12px;
-	text-transform: uppercase;
-	display: block;
-}
 
 //Buttons
 

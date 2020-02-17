@@ -621,38 +621,7 @@
              <div class="form-group check">
                 <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                 <div class="col-sm-9" style="border: 1px solid #CCC; padding: 0px 5px 5px; color: #F00;">   
-                    <!-- <div class="cols-3">
-                        <input type="checkbox" id="tag" name="tag[]" value="1"/>
-                        <label for="tag">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag2"  name="tag[]" value="1"/>
-                        <label for="tag2">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag3"  name="tag[]" value="1"/>
-                        <label for="tag3">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag8"  name="tag[]" value="1"/>
-                        <label for="tag8">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag4"  name="tag[]" value="1"/>
-                        <label for="tag4">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag5"  name="tag[]" value="1"/>
-                        <label for="tag5">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag6"  name="tag[]" value="1"/>
-                        <label for="tag6">検索キーワド入力より</label>
-                    </div>
-                    <div class="cols-3">
-                        <input type="checkbox" id="tag7"  name="tag[]" value="1"/>
-                        <label for="tag7">検索キーワド入力より</label>
-                    </div> -->
+                    
                     <div id="output"></div>
                     <div id="output2"></div>
                     <div id="output3"></div>
@@ -685,7 +654,7 @@
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
-                                    <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -693,7 +662,7 @@
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
-                                    <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -701,7 +670,7 @@
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
-                                    <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -716,7 +685,7 @@
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
-                                <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
                     </div>
@@ -724,7 +693,7 @@
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
-                                <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
                     </div>
@@ -732,7 +701,7 @@
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
-                                <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
                     </div>

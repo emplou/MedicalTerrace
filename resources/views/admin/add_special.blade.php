@@ -158,7 +158,11 @@
 					<!-- <input type="file" class="form-control" name="img"> -->
 					<div class="custom-file-upload">
     				<!--<label for="file">File: </label>--> 
-						<input type="file" id="file" name="myfiles[]" name="img" multiple />
+<<<<<<< HEAD
+						<input type="file" id="file" name="img" multiple />
+=======
+						<input type="file" id="file" name="img" />
+>>>>>>> 0f9564df630cc077cb54edd76efdb685b66e0fcc
 					</div>
                 </div>
             </div>
@@ -463,7 +467,7 @@
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
-                                    <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -471,7 +475,7 @@
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
-                                    <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -479,7 +483,7 @@
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
-                                    <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -494,7 +498,7 @@
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
-                                <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
                     </div>
@@ -502,7 +506,7 @@
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
-                                <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
                     </div>
@@ -510,7 +514,7 @@
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
-                                <option value="{!! $dpt->department_name !!}">{!! $dpt->department_name !!}</option>
+                                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
                     </div>

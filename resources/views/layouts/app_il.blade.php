@@ -130,7 +130,7 @@
         <div class="navy">
             <ul class="sidebar-nav">
                 <li class=""><small></small><a class="home_menu" href="home"><span class="icon"><img src="images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
-                <li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br>UI of Illness</span></a></li>
+                <li class="active" id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br>UI of Illness</span></a></li>
                 <li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="images/icon-special.png"></span><span>特集<br>UI of Special</span></a></li>
                 <li><small class="yellow"></small><a class="yellow"href=""><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
                 <li><small class="yellow"></small><a class="yellow" href=""><span class="icon"><img src="images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
