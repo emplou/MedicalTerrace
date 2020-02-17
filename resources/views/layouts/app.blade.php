@@ -339,7 +339,7 @@ input.form-  {
 	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
     <script src="lumino/js/custom.js"></script>
-    <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
 	<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>

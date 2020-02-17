@@ -1750,7 +1750,7 @@ $.ajaxSetup({
       $('#c_we').append(' <div class="form-group"><div class="control-label cols-15"><span></span></div><div class="cols-12"><select id="work_year" name="c_we_year[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_we_month[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_we_desc[]" class="form- " ></div></div><div class="field_wrap4"></div><div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="work_year_to" name="c_we_year_to[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_we_month_to[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " ></div>');
     }
 
-    $('.add5').on('click', add4);
+    $('.add55').on('click', add4);
     var i=0;
     function add4(e) {
       e.preventDefault();
@@ -1810,5 +1810,85 @@ $.ajaxSetup({
         }
 
     });
+
+    }
+
+    // hospital ckEditor (first)
+
+    $('.add-ck1').on('click', addfields1);
+    var i=0;
+    function addfields1(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital department ckEditor (second)
+
+    $('.add-ck2').on('click', addfields2);
+    var i=0;
+    function addfields2(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital equipment ckEditor (third)
+
+    $('.add-ck3').on('click', addfields3);
+    var i=0;
+    function addfields3(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital staff ckEditor (fourth)
+
+    $('.add-ck4').on('click', addfields4);
+    var i=0;
+    function addfields4(e) {
+      e.preventDefault();
+      var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
 
     }

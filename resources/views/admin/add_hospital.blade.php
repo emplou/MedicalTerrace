@@ -450,7 +450,8 @@
      <!-- Buttons -->
     <div class="form-group">
         <div class="cols-15"></div>
-        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
+        <div class="cols-55"><button type="button" class="btn-prime image" name="show_img"></button></div>
+        <!-- <div class="cols-55"><input type="file" class="btn-prime image" name="show_img"></button></div> -->
     </div>
 
     <!-- Subheading 4-->
