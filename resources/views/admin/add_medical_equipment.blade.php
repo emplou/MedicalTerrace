@@ -218,7 +218,67 @@
                 </div>
                
             </div>
+             
+            <div class="form-group">
+                <label class="control-label cols-15">h1</label>
+                <div class="cols-5" style="border: 1px solid #CCC; padding: 5px; color: #ff335a;">   
+                    子どもの夏の感染症 いわゆる夏風邪は7月がピーク！
+                    <input type="hidden" name="h1" value="sample">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label cols-15">h2</label>
+                <div class="cols-7">
+                    <!-- add h2 fields -->
+                    <div class="field_wrap5"></div>
 
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
+                    <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
+                </div>
+            </div>
+
+            <div class="form-group check">
+                <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
+                <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
+                    <div class="cols-4">
+						<input type="checkbox" id="tag1" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag1">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag2" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag2">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag3" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag3">検索キーワド入力より</label>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag4" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag4">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag5" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag5">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag6" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag6">検索キーワド入力より</label>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag7" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag7">検索キーワド入力より</label>
+                    </div>
+                    <div class="cols-4">
+						<input type="checkbox" id="tag8" name="tag_ch[]" value="考えられる病気より"> 
+						<label for="tag8">検索キーワド入力より</label>
+                    </div>
+                </div>
+            </div>
            
                 
                 <!-- Check Result -->
