@@ -501,32 +501,18 @@ class HomeController extends Controller
         }
         $jsonh2_list = json_encode($response2);
         
-        // Subhead1
-        // $suba_list = $details['sub_head1a']; 
-        // $resp_suba = array();
-        // foreach($suba_list as $key_suba => $cert_suba)
-        // {
-        //     $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
-        // }
-        // $jsonsuba_list = json_encode($resp_suba);
-
-        // Subhead2
-        // $subb_list = $details['sub_head1b']; 
-        // $resp_subb = array();
-        // foreach($subb_list as $key_subb => $cert_subb)
-        // {
-        //     $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
-        // }
-        // $jsonsubb_list = json_encode($resp_subb);
-
-        // Textheading
-        // $tc_list = $details['txt_ckeditor']; 
-        // $resp_tc = array();
-        // foreach($tc_list as $key_tc => $cert_tc)
-        // {
-        //     $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
-        // }
-        // $jsontc_list = json_encode($resp_tc);
+        // subheading and Text
+        $sub_head1a = $details['sub_head1a']; 
+        $sub_head1b = $details['sub_head1b']; 
+        $txt_ckeditor = $details['txt_ckeditor'];  
+        $response_txt = array();
+        foreach($sub_head1a as $key => $sub_head)
+        {
+        $response_txt[$key]['heading'] = $sub_head;
+        $response_txt[$key]['sub'] = $sub_head1b[$key];
+        $response_txt[$key]['txt_ckeditor'] = $txt_ckeditor[$key];
+        }
+        $jsoncontent = json_encode($response_txt); 
 
         // tag
         $tag_list = $details['tag']; 
@@ -608,10 +594,10 @@ class HomeController extends Controller
         $illness->ill_img_alt           = $details['img_alt'];
         // $illness->ill_sub1              = $jsonsuba_list; //it should be json script when added
         // $illness->ill_sub2              = $jsonsubb_list; //it should be json script when added
-        // $illness->ill_sub_txt           = $jsontc_list; //it should be json script when added
-        $illness->ill_sub1              = $details['sub_head1a']; 
-        $illness->ill_sub2              = $details['sub_head1b'];
-        $illness->ill_sub_txt           = $details['txt_ckeditor'];
+        $illness->ill_sub_txt           = $jsoncontent; //it should be json script when added
+        // $illness->ill_sub1              = $details['sub_head1a']; 
+        // $illness->ill_sub2              = $details['sub_head1b'];
+        // $illness->ill_sub_txt           = $details['txt_ckeditor'];
         $illness->ill_kwords            = $jsonk_list;
         $illness->ill_seo               = $details['seo'];
         $illness->ill_seo_txt           = $details['seo_txt'];
@@ -703,6 +689,43 @@ class HomeController extends Controller
             $risk_assess->ra_text             = $jsonsh_list ;
             $risk_assess->ra_risk_lvl         = $jsonrl_list; 
             $risk_assess->ra_result           = $jsoncr_list;  
+            $risk_assess->save();
+        }
+
+        // risk assessment text
+        $sh_list2 = $details['sh2']; 
+        $response12 = array();
+        foreach($sh_list2 as $key12 => $cert12)
+        {
+            $response12[$key12]['sh2'] = $cert12;
+        }
+        $jsonsh_list2 = json_encode($response12); 
+
+        // risk assessment level
+        $rl_list2 = $details['rl2']; 
+        $response13 = array();
+        foreach($rl_list2 as $key13 => $cert13)
+        {
+            $response13[$key13]['rl2'] = $cert13;
+        }
+        $jsonrl_list2 = json_encode($response13); 
+
+        // check result
+        $cr_list2 = $details['cr2']; 
+        $response14 = array();
+        foreach($cr_list2 as $key14 => $cert14)
+        {
+            $response14[$key14]['cr2'] = $cert14;
+        }
+        $jsoncr_list2 = json_encode($response14); 
+
+        if($details['subheading-chck2'] == 1){
+            $risk_assess = new Risk_assessment;
+            $risk_assess->ra_ill_id           = $illness_id;
+            $risk_assess->ra_title            = $details['subheading-chck2'];
+            $risk_assess->ra_text             = $jsonsh_list2;
+            $risk_assess->ra_risk_lvl         = $jsonrl_list2; 
+            $risk_assess->ra_result           = $jsoncr_list2;  
             $risk_assess->save();
         }
         

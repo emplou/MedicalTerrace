@@ -295,6 +295,10 @@
 
             var lplus=i+1;
 
+            $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
+            $(copy).find('script').remove();
+            $(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
+
             $(copy).find('.add-ck').remove();
             $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
             CKEDITOR.replace('txt_ckeditor['+lplus+']');
@@ -654,49 +658,49 @@ $(document).ready(function(){
     });
     $("#kword2").keyup(function(){
         // Getting the current value of textarea
-        kword2 = '<div class="cols-3"><input type="checkbox" id="tag2" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword2 = '<div class="cols-3"><input type="checkbox" id="tag2" name="tag[]" value="1"><label for="tag2">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output2").html(kword2);
     });
     $("#kword3").keyup(function(){
         // Getting the current value of textarea
-        kword3 = '<div class="cols-3"><input type="checkbox" id="tag3" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword3 = '<div class="cols-3"><input type="checkbox" id="tag3" name="tag[]" value="1"><label for="tag3">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output3").html(kword3);
     });
     $("#kword4").keyup(function(){
         // Getting the current value of textarea
-        kword4 = '<div class="cols-3"><input type="checkbox" id="tag4" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword4 = '<div class="cols-3"><input type="checkbox" id="tag4" name="tag[]" value="1"><label for="tag4">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output4").html(kword4);
     });
     $("#kword5").keyup(function(){
         // Getting the current value of textarea
-        kword5 = '<div class="cols-3"><input type="checkbox" id="tag5" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword5 = '<div class="cols-3"><input type="checkbox" id="tag5" name="tag[]" value="1"><label for="tag5">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output5").html(kword5);
     });
     $("#kword6").keyup(function(){
         // Getting the current value of textarea
-        kword6 = '<div class="cols-3"><input type="checkbox" id="tag6" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword6 = '<div class="cols-3"><input type="checkbox" id="tag6" name="tag[]" value="1"><label for="tag6">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output6").html(kword6);
     });
     $("#kword7").keyup(function(){
         // Getting the current value of textarea
-        kword7 = '<div class="cols-3"><input type="checkbox" id="tag7" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword7 = '<div class="cols-3"><input type="checkbox" id="tag7" name="tag[]" value="1"><label for="tag7">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output7").html(kword7);
     });
     $("#kword8").keyup(function(){
         // Getting the current value of textarea
-        kword8 = '<div class="cols-3"><input type="checkbox" id="tag8" name="tag[]" value="1"><label for="tag1">'+ $(this).val()+'</label></div>';
+        kword8 = '<div class="cols-3"><input type="checkbox" id="tag8" name="tag[]" value="1"><label for="tag8">'+ $(this).val()+'</label></div>';
         
         // Setting the Div content
         $("#output8").html(kword8);
@@ -704,9 +708,13 @@ $(document).ready(function(){
     $("#ill").keyup(function(){
         // Getting the current value of textarea
         ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
+        ill2 = ''+ $(this).val()+'';
+        ill3 = ''+ $(this).val()+'';
         
         // Setting the Div content
         $("#output_ill").html(ill);
+        $("#output_ill2").html(ill2);
+        $("#output_ill3").html(ill3);
     });
 });
 </script>

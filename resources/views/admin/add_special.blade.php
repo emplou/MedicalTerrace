@@ -158,11 +158,7 @@
 					<!-- <input type="file" class="form-control" name="img"> -->
 					<div class="custom-file-upload">
     				<!--<label for="file">File: </label>--> 
-<<<<<<< HEAD
 						<input type="file" id="file" name="img" multiple />
-=======
-						<input type="file" id="file" name="img" />
->>>>>>> 0f9564df630cc077cb54edd76efdb685b66e0fcc
 					</div>
                 </div>
             </div>
