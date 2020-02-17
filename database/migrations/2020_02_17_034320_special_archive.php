@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArchieveTable extends Migration
+class SpecialArchive extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateArchieveTable extends Migration
      */
     public function up()
     {
-        Schema::create('archieve', function (Blueprint $table) {
+        Schema::create('special_archive', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('source');
-            $table->string('module');
-            $table->string('mod_id');
-            $table->string('type');
-            $table->string('arc_date');
+            $table->string('special_id');
+            $table->string('date_release');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateArchieveTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('archieve');
+        Schema::dropIfExists('special_archive');
     }
 }

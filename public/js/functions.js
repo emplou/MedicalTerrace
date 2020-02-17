@@ -789,7 +789,7 @@ $.ajaxSetup({
 
                                 $.each(response['dpt'], function (i, b) {
                                     console.log('dpt '+ b.dpt_name)
-                                    input_dpt += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+                                    input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
 
                                 });
                                    
@@ -1028,8 +1028,8 @@ $.ajaxSetup({
                                 input_dpt += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
 
                                 $.each(response['dpt'], function (i, b) {
-                                    console.log('dpt '+ b.department_name)
-                                    input_dpt += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+                                    console.log('dpt '+ b.dpt_name)
+                                    input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
 
                                 });
                                    
@@ -1235,7 +1235,7 @@ $.ajaxSetup({
 
                                 $.each(response['dpt'], function (i, b) {
                                     console.log('dpt '+ b.dpt_name)
-                                    input_dpt_two += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+                                    input_dpt_two += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
 
                                 });
                                    
@@ -1466,8 +1466,8 @@ $.ajaxSetup({
                                 input_dpt_two += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
 
                                 $.each(response['dpt'], function (i, b) {
-                                    console.log('dpt '+ b.department_name)
-                                    input_dpt_two += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+                                    console.log('dpt '+ b.dpt_name)
+                                    input_dpt_two += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
 
                                 });
                                    
