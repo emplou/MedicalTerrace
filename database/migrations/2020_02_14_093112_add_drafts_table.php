@@ -13,13 +13,13 @@ class AddDraftsTable extends Migration
      */
     public function up()
     {
-        Schema::table('dv_drafts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('source_name');
-            $table->string('source_description');
-            $table->string('date_drafts');
-            $table->timestamps();
-        });
+        // Schema::table('dv_drafts', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->string('source_name');
+        //     $table->string('source_description');
+        //     $table->string('date_drafts');
+        //     $table->timestamps();
+        // });
     }
 
     /**

@@ -157,17 +157,28 @@ class HomeController extends Controller
         $department->save();
 
         
+        /* department image */
+        $destinationPath = '';
+        $filenamedpt        = '';
+        $file_dpt            = $request->file('show_img');
+
+        $destinationPath = public_path().'/department_photos';
+        $filenamedpt        = str_random(6) . '_' . $file_dpt->getClientOriginalName();
+        $uploadSuccess   = $file_dpt->move($destinationPath, $filenamedpt);
+        /* end of department image */
+
+        
         $dpt_exam = new DepartmentExam;
         $dpt_exam->hospital_id              = $hospital_id;
         $dpt_exam->department_id            = $details['department'];
         $dpt_exam->subheading               = $details['med_subj_subheading'];
         $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
-        $dpt_exam->image                    = $details['department_image'];
+        $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
-        // $dpt_exam->start                    = $details['start'];
-        // $dpt_exam->weekdays                 = $details['weekdays'];
-        // $dpt_exam->special_hours            = $details['special_hours'];
+        $dpt_exam->start                    = $details['start'];
+        $dpt_exam->weekdays                 = $details['weekdays'];
+        $dpt_exam->special_hours            = $details['special_hours'];
         $dpt_exam->save();
 
         
@@ -1489,17 +1500,28 @@ class HomeController extends Controller
         $department->save();
 
         
+        /* department image */
+        $destinationPath = '';
+        $filenamedpt        = '';
+        $file_dpt            = $request->file('show_img');
+
+        $destinationPath = public_path().'/department_photos';
+        $filenamedpt        = str_random(6) . '_' . $file_dpt->getClientOriginalName();
+        $uploadSuccess   = $file_dpt->move($destinationPath, $filenamedpt);
+        /* end of department image */
+
+        
         $dpt_exam = new DepartmentExam;
         $dpt_exam->hospital_id              = $hospital_id;
         $dpt_exam->department_id            = $details['department'];
         $dpt_exam->subheading               = $details['med_subj_subheading'];
         $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
-        $dpt_exam->image                    = $details['department_image'];
+        $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
-        // $dpt_exam->start                    = $details['start'];
-        // $dpt_exam->weekdays                 = $details['weekdays'];
-        // $dpt_exam->special_hours            = $details['special_hours'];
+        $dpt_exam->start                    = $details['start'];
+        $dpt_exam->weekdays                 = $details['weekdays'];
+        $dpt_exam->special_hours            = $details['special_hours'];
         $dpt_exam->save();
 
         

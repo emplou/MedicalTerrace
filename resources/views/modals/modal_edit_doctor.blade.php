@@ -10,7 +10,28 @@
 <h4 class="modal-title"><b>Edit Doctor</b></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
-      <div class="modal-body">
+    <div class="modal-body">
+    <div class="header-wrapper">
+        <div class="left">
+            <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+            
+        </div>
+        <div class="right">
+            <div>作成日<span>Date</span></div>
+            <div class="select">
+                <select>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                </select>
+            </div>
+            <div>最終更新日<span>Update</span></div>
+            <div class="select">0000/00/00</div>
+        </div>
+    </div>
+    <hr />
       {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
       <input type="hidden" name="docID" id="docID" value=" ">
       <div class="row">

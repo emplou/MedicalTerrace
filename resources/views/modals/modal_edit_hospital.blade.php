@@ -7,13 +7,31 @@
     <div class="modal-content">
     
 <div class="modal-header" style="color: black; background-color: #7CD5FF">
-        <h4 class="modal-title"><b>Edit and Overwrite Hospital Details</b></h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        
+    <h4 class="modal-title"><b>Edit and Overwrite Hospital Details</b></h4>
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
-
-
+        <div class="header-wrapper">
+            <div class="left">
+                <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+                
+            </div>
+            <div class="right">
+                <div>作成日<span>Date</span></div>
+                <div class="select">
+                    <select>
+                        <option>0000/00/00</option>
+                        <option>0000/00/00</option>
+                        <option>0000/00/00</option>
+                        <option>0000/00/00</option>
+                        <option>0000/00/00</option>
+                    </select>
+                </div>
+                <div>最終更新日<span>Update</span></div>
+                <div class="select">0000/00/00</div>
+            </div>
+        </div>
+        <hr />
         <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation

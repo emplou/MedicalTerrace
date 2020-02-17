@@ -1,6 +1,7 @@
 <?php
 
 namespace MedicalTerrace\Http\Controllers;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 use Illuminate\Http\Request;
 // use App\Illness_Category;
@@ -179,11 +180,6 @@ class HospitalController extends Controller
         return redirect('/hospital_list');
     }
 
-    public function add_hospital(){
-         $doctors = DB::table('dv_doctors')->get();
-        return view('admin.add_hospital', compact('doctors'));
-    }
-
     public function add_special(){
         $doctors = DB::table('dv_doctors')->get();
         $department = DB::table('hospital_departments')->get();
@@ -271,18 +267,28 @@ class HospitalController extends Controller
         $department->dpt_name        = $details['med_subj_subheading'];
         $department->save();
 
+        /* department image */
+        $destinationPath = '';
+        $filenamedpt        = '';
+        $file_dpt            = $request->file('show_img');
+
+        $destinationPath = public_path().'/department_photos';
+        $filenamedpt        = str_random(6) . '_' . $file_dpt->getClientOriginalName();
+        $uploadSuccess   = $file_dpt->move($destinationPath, $filenamedpt);
+        /* end of department image */
+
         
         $dpt_exam = new DepartmentExam;
         $dpt_exam->hospital_id              = $hospital_id;
         $dpt_exam->department_id            = $details['department'];
         $dpt_exam->subheading               = $details['med_subj_subheading'];
         $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
-        $dpt_exam->image                    = $details['department_image'];
+        $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
-        // $dpt_exam->start                    = $details['start'];
-        // $dpt_exam->weekdays                 = $details['weekdays'];
-        // $dpt_exam->special_hours            = $details['special_hours'];
+        $dpt_exam->start                    = $details['start'];
+        $dpt_exam->weekdays                 = $details['weekdays'];
+        $dpt_exam->special_hours            = $details['special_hours'];
         $dpt_exam->save();
 
         
