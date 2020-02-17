@@ -41,14 +41,14 @@
     <div class="form-pads">
         <div class="form-group">
             <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
-            <div class="cols-3">
+            <div class="cols-4">
                 <input type="text" class="form-control" id="url" placeholder="例)yamada_taro" name="url_generation">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15">職位<br><span>Position</span></label>
-            <div class="cols-3">          
+            <div class="cols-4">          
                 <select name="status" class="form-control">
                     <option value="">選択してください</option>
                     <option value="Position One">Position One</option>
@@ -59,7 +59,7 @@
         </div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-            <div class="sp10 cols-3">          
+            <div class="sp10 cols-4">          
                 <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_position">
             </div>
         </div>
@@ -732,30 +732,6 @@
     </div>
   </div>
 
-<!-- Link to open the modal -->
-<p><a href="#ex1" rel="modal:open">Open Modal</a></p>
-<!-- Button trigger modal -->
-<button type="button" id="mymodal1" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
     
 @endsection

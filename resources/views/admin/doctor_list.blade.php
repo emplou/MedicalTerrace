@@ -1,4 +1,4 @@
-@extends('layouts.app_doctor')
+@extends('layouts.app')
 @section('content')
 @include('modals.modal_edit_doctor')
 @include('modals.modal_copy_add_doctor')

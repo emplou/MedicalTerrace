@@ -1590,7 +1590,7 @@ header img {
 
 
 .form-container {
-  width: 100%;
+  width: 103%;
   position: relative;
 }
 .form-pads {
@@ -2308,7 +2308,7 @@ label:hover:before {
   background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(/images/icon-save.png);
+  background-image: url(../../images/icon-save.png);
 }
 
 
@@ -2325,11 +2325,11 @@ label:hover:before {
 
 #totop {
   right: 20px;
-  background-image: url(/images/top-arrow.png);
+  background-image: url(../../images/top-arrow.png);
 }
 #tobottom {
   right: 70px;
-  background-image: url(/images/bottom-arrow.png);
+  background-image: url(../../images/bottom-arrow.png);
 }
 
 .form-progress {
@@ -2713,6 +2713,16 @@ ol.link li a{
   font-weight: 600;
   line-height: 20px;
 }
+.div-bg .heading1.hosp{
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.div-bg .heading1.hosp span{
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
 .div-bg span {
   font-size: 10px;
   font-weight: 300;
@@ -2817,7 +2827,7 @@ ul.breadcrumb li a:hover {
   margin: 0 auto;
 }
 .modal-buts.one button {
-  margin: 10px auto;
+  margin: 30px auto ;
   float: none;
   display: block;
 

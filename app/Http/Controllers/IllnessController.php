@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Special;
 use App\il_lead;
 
-class Special extends Controller
+class Illness extends Controller
 {
     //add
     public function index(){
