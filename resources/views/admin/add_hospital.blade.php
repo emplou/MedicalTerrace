@@ -226,7 +226,7 @@
     <div class="form-group check">
         <label class="control-label cols-15">URL<br><span>URL</span></label>
         <div class="cols-35">
-            <input type="text" class="form-control" placeholder="" name="email">
+            <input type="text" class="form-control" placeholder="" name="url">
         </div>
          <div class="cols-2 check3">
             <input type="checkbox" id="non4" name="asn" value="0"> 
@@ -282,7 +282,7 @@
             <div class="field_wrap2"></div>
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="text_subheading_hospital1" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control" name="text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
@@ -405,7 +405,7 @@
             <div class="field_wrap2"></div>
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="med_text_subheading" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control" name="med_subj_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
@@ -426,32 +426,32 @@
             <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
             <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
             診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
-            月 <input type="checkbox" id="tag_season1" name="tag_season[]"><label for="tag_season1"></label>
-            火 <input type="checkbox" id="tag_season2" name="tag_season[]"><label for="tag_season2"></label>
-            水 <input type="checkbox" id="tag_season3" name="tag_season[]"><label for="tag_season3"></label>
-            木 <input type="checkbox" id="tag_season4" name="tag_season[]"><label for="tag_season4"></label>
-            金 <input type="checkbox" id="tag_season5" name="tag_season[]"><label for="tag_season5"></label>
-            土 <input type="checkbox" id="tag_season6" name="tag_season[]"><label for="tag_season6"></label>
-            日 <input type="checkbox" id="tag_season7" name="tag_season[]"><label for="tag_season7"></label>
-            祝 <input type="checkbox" id="tag_season8" name="tag_season[]"><label for="tag_season8"></label>
+            月 <input type="checkbox" id="tag_season1" name="weekdays"><label for="tag_season1"></label>
+            火 <input type="checkbox" id="tag_season2" name="weekdays"><label for="tag_season2"></label>
+            水 <input type="checkbox" id="tag_season3" name="weekdays"><label for="tag_season3"></label>
+            木 <input type="checkbox" id="tag_season4" name="weekdays"><label for="tag_season4"></label>
+            金 <input type="checkbox" id="tag_season5" name="weekdays"><label for="tag_season5"></label>
+            土 <input type="checkbox" id="tag_season6" name="weekdays"><label for="tag_season6"></label>
+            日 <input type="checkbox" id="tag_season7" name="weekdays"><label for="tag_season7"></label>
+            祝 <input type="checkbox" id="tag_season8" name="weekdays"><label for="tag_season8"></label>
         </div>
         <div class="cols-8">
             <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
             <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
             診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
-            月 <input type="checkbox" id="tag_season9" name="tag_season[]"><label for="tag_season9"></label>
-            火 <input type="checkbox" id="tag_season10" name="tag_season[]"><label for="tag_season10"></label>
-            水 <input type="checkbox" id="tag_season11" name="tag_season[]"><label for="tag_season11"></label>
-            木 <input type="checkbox" id="tag_season12" name="tag_season[]"><label for="tag_season12"></label>
-            金 <input type="checkbox" id="tag_season13" name="tag_season[]"><label for="tag_season13"></label>
-            土 <input type="checkbox" id="tag_season14" name="tag_season[]"><label for="tag_season14"></label>
-            日 <input type="checkbox" id="tag_season15"name="tag_season[]"><label for="tag_season15"></label>
-            祝 <input type="checkbox" id="tag_season16"name="tag_season[]"><label for="tag_season16"></label>
+            月 <input type="checkbox" id="tag_season9" name="weekdays"><label for="tag_season9"></label>
+            火 <input type="checkbox" id="tag_season10" name="weekdays"><label for="tag_season10"></label>
+            水 <input type="checkbox" id="tag_season11" name="weekdays"><label for="tag_season11"></label>
+            木 <input type="checkbox" id="tag_season12" name="weekdays"><label for="tag_season12"></label>
+            金 <input type="checkbox" id="tag_season13" name="weekdays"><label for="tag_season13"></label>
+            土 <input type="checkbox" id="tag_season14" name="weekdays"><label for="tag_season14"></label>
+            日 <input type="checkbox" id="tag_season15"name="weekdays"><label for="tag_season15"></label>
+            祝 <input type="checkbox" id="tag_season16"name="weekdays"><label for="tag_season16"></label>
             </div>
             <div class="cols-15"></div>
             <div class="cols-8">
                 
-                <div class="cols-6"><input type="text" class="form- " name="exam_comment"> </div>
+                <div class="cols-6"><input type="text" class="form- " name="special_hours"> </div>
             <div class="cols-3">    
             ※受診内容により日・時間が異なる場合に記載
             </div>
@@ -647,19 +647,19 @@
     <div class="form-group">
         <label class="control-label cols-15">アクセス<br><span>Access</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" name="access1">
+            <input type="text" class="form-control" name="access_trans[]">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label cols-15"></label>
         <div class="cols-4">
-            <input type="text" class="form-control" name="access2">
+            <input type="text" class="form-control" name="access_from[]">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label cols-15"></label>
         <div class="cols-4">
-            <input type="text" class="form-control" name="access3">
+            <input type="text" class="form-control" name="access_mins[]">
         </div>
     </div>
 
@@ -668,9 +668,9 @@
         <div class="control-label cols-15">駐車場<br><span>Parking</span></div>
         <div class="cols-18 rad-buttons">
             料金
-            <input type="radio" id="park1a" name="park1" value="監修">
+            <input type="radio" id="park1a" name="p_radio" value="監修">
             <label for="park1a">無料</label>
-            <input type="radio" id="park2a" name="park1" value="取材協力">
+            <input type="radio" id="park2a" name="p_radio" value="取材協力">
             <label for="park2a">有料</label>
             
         </div>	

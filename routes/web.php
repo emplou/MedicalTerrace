@@ -56,6 +56,7 @@ Route::post('/save_edit_doctor','HomeController@save_edit_doctor');
 Route::post('/save_copy_doctor', 'HomeController@save_copy_doctor');
 Route::post('/overwrite_special', 'HomeController@overwrite_special');
 Route::post('/overwrite_illness', 'HomeController@overwrite_illness');
+Route::post('/save_overwrite_hospital', 'HomeController@save_overwrite_hospital');
 
 //get data
 Route::get('/get_all_department','HomeController@get_all_department');

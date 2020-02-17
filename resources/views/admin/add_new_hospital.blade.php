@@ -1,19 +1,42 @@
-<!-- Modal -->
-<div id="overwritehospital" class="modal fade" role="dialog" data-keyboard="true">
-  <div class="modal-dialog modal-lg">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-				
-<!-- Modal content-->
-    <div class="modal-content">
-    
-<div class="modal-header" style="color: black; background-color: #7CD5FF">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><b>Edit Doctor</b></h4>
+@extends('layouts.app')
+@section('content')
+
+<div class="header-wrapper">
+    <div class="left">
+        <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+        
+    </div>
+    <div class="right">
+        <div>作成日<span>Date</span></div>
+        <div class="select">
+            <select>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+            </select>
+        </div>
+        <div>最終更新日<span>Update</span></div>
+        <div class="select">0000/00/00</div>
+    </div>
 </div>
-      <div class="modal-body">
+<hr />
+<div class="form-container add">
+    <div class="form-progress">
+        <ul>
+            <li class="active">下書き<br><span>Draft</span></li>
+            <li class="active">プレビュー<br><span>Preview</span></li>
+            <li>承認依頼<br><span>Approval Request</span></li>
+            <li>承認済<br><span>Approved</span></li>
+            <li class="rel">公開予約<br><span>Release reservation</span></li>
+            <li>公開中<br><span>Release</span></li>
+        </ul>
+    </div>
+<div class="form-pads">
+    {!! Form::open(['url' => '/save_hospital', 'method' => 'post', 'files' => true]) !!}
 
-
-        <!-- URL Generator -->
+    <!-- URL Generator -->
     <div class="form-group">
         <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
         <div class="cols-4">
@@ -72,32 +95,6 @@
             <input type="hidden" name="long">
         </div> 
     </div>
-
-    <!-- Branch Address -->
-    <!-- <div class="form-group">
-        <label class="control-label cols-15">住所<br><span>Address</span></label>
-        <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code">
-        </div>
-        <div class="cols-4">
-            <input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" />
-            <input type="hidden" name="lat">
-            <input type="hidden" name="long">
-        </div> 
-    </div> -->
-
-    <!-- Branch Address English -->
-    <!-- <div class="form-group">
-        <label class="control-label cols-15">住所英語表記<br><span>Address English</span></label>
-        <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code">
-        </div>
-        <div class="cols-4">
-            <input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search" />
-            <input type="hidden" name="lat">
-            <input type="hidden" name="long">
-        </div> 
-    </div> -->
 
     <!-- Access -->
     <div class="form-group check">
@@ -768,14 +765,46 @@
         </div>
     </div>
 
+    
 
 
-    <input type="submit" value="Save hospital">
 
+
+
+
+
+   
+</div>
+
+<div class="form-nopads">
+        <!-- Editor Page -->
+        <div class="editor-page">
+            <div class="form-group">
+                <label class="control-label cols-15">エディター担当者<br><span>Editor</span></label>
+                <div class="cols-5">   
+                    <input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="cols-2"><button type="button" class="btn-prime editor"></button></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">会話メモ<br><span>Conversation Note</span></label>
+                <div class="cols-5">   
+                    <textarea class="form-control" rows="10" name="note"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">エディターの所見<br><span>Editor Opinion</span></label>
+                <div class="cols-5">   
+                    <textarea class="form-control" rows="10" name="note"></textarea>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+    <input type="submit" name="save" value="" class="save-btn">
+    <div id="totop" class="float-btn"></div>
+    <div id="tobottom" class="float-btn"></div>
+ {!! Form::close() !!}
+@endsection
 
-<!-- end of body -->
-</div>
-  </div>
-</div>
