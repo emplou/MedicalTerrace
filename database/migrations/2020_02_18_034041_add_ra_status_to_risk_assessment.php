@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRiskAssessmentTable extends Migration
+class AddRaStatusToRiskAssessment extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateRiskAssessmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('risk_assessment', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('ra_ill_id');
-            $table->string('ra_title');
-            $table->longText('ra_text');
-            $table->timestamps();
+        Schema::table('risk_assessment', function (Blueprint $table) {
+            //
+
+            $table->string('ra_status');
         });
     }
 
@@ -29,6 +27,8 @@ class CreateRiskAssessmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('risk_assessment');
+        Schema::table('risk_assessment', function (Blueprint $table) {
+            //
+        });
     }
 }

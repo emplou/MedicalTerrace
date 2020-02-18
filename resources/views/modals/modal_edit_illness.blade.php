@@ -140,42 +140,22 @@
                         </div>
                         <br>
                         <!-- Subheading -->
-                        <div class="form-group">
-                            <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
-                            <div class="cols-4">          
-                                <div id="input_sub1"></div>
-                            </div>
-                        </div>
-                        <!-- Subheading desc-->
-                        <div class="form-group">
-                            <label class="control-label cols-15"></label>
-                            <div class="cols-4">
-                                <input type="text" class="form-control" placeholder="選択項目にない場合に入力" id="sub_head1b" name="sub_head1b">
-                            </div>
+                        <div id="addanother">
+                            
+                            <div class="input_content"></div>
+                            
                         </div>
 
-                        <!-- Text of Subheading -->
-                        <div class="form-group editor">
-                            <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                            <div class="cols-6">   
-                                <!-- add new textarea here -->
-                                <div class="field_wrap2"></div>
-                                <div id="addanother1">
-                                    <div class="cols-10">        
-                                        <textarea class="form-control" name="txt_ckeditor" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
-                        </div>
+                        <!-- Add subheading form -->
+                        <div class="wrapper2"></div>
+
                         <!-- Buttons -->
                         <div class="form-group">
                             <div class="cols-15"></div>
                             <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button><button type="button" class="btn-prime graph" id="show_graph"></button></div>
                         </div>
 
-                         <!-- Subheading -->
-
+                        <!-- Subheading -->
                         <div class="form-group check">
                             <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                             <div class="cols-5">   
@@ -192,86 +172,7 @@
                             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                             <div class="cols-8">  
                                 <div id="input_ra_txt"></div>
-                                <!-- <div class="cols-5">          
-                                    <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                                </div>
-                                <div class="cols-2"> 
-                                    リスク度 
-                                    <select name="rl[]">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-
-                                    </select><br>         
-                                    <span id="rchars8">0</span>/46
-                                </div>
-                                <div class="clear"></div>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sh2" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                                </div>
-                                <div class="cols-2"> 
-                                    リスク度
-                                    <select name="rl[]">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-
-                                    </select><br>                
-                                    <span id="rchars9">0</span>/46
-                                </div>
-                                <div class="clear"></div>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sh3" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                                </div>
-                                <div class="cols-2"> 
-                                    リスク度
-                                    <select name="rl[]">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-
-                                    </select><br>                
-                                    <span id="rchars9">0</span>/46
-                                </div>
-                                <div class="clear"></div>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sh4" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                                </div>
-                                <div class="cols-2"> 
-                                    リスク度
-                                    <select name="rl[]">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-
-                                    </select><br>                
-                                    <span id="rchars9">0</span>/46
-                                </div>
-                                <div class="clear"></div>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sh5" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
-                                </div>
-                                <div class="cols-2"> 
-                                    リスク度
-                                    <select name="rl[]">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-
-                                    </select><br>                
-                                    <span id="rchars9">0</span>/46
-                                    <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                                </div> -->
+                                
                             </div>
                         </div>
 
@@ -280,18 +181,37 @@
                             <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                             <div class="cols-6">
                                 <div id="input_cr"></div>
-                                <!-- <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
-                                <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div> -->
                             </div>
                         </div>
 
-                        <!-- <div class="form-group">
-                            <div class="cols-15"></div>
-                            <div class="cols-6">
-                                <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr[]"></div>
-                                <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr[]"></div>
+                        <!-- Subheading 2 -->
+                        <div class="form-group check">
+                            <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
+                            <div class="cols-5">   
+                                <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
+                                    <input type="checkbox" id="b1" name="subheading-chck2" value="1" />
+                                    <label for="b1" style="color:red;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
+                                </div>    
                             </div>
-                        </div> -->
+                        
+                        </div>
+
+                        <!-- Text of the subheading 2 -->
+                        <div class="form-group">
+                            <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
+                            <div class="cols-8">  
+                                <div id="input_ra_txt2"></div>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Check Result 2 -->
+                        <div class="form-group">
+                            <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
+                            <div class="cols-6">
+                                <div id="input_cr2"></div>
+                            </div>
+                        </div>
 
                         <hr>
                         <!-- Search Keywords -->
@@ -302,7 +222,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group check3">
+                        <div class="form-group check">
                             <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                             <div class="cols-45">   
                                 <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
@@ -369,7 +289,7 @@
                         </div>
 
                         <!-- Tag Keyword -->
-                        <div class="form-group check3">
+                        <div class="form-group check">
                             <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                             <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                                 <div id="input_kw"></div>
@@ -378,7 +298,7 @@
                         </div>
 
                         <!-- Tag(illness name) -->
-                        <div class="form-group check3">
+                        <div class="form-group check">
                             <label class="control-label cols-15">タグ（病名）<br><span>Tag(illness name)</span></label>
                             <div class="col-sm-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                                 <input type="checkbox" id="tag9" name="tag_b"> 
@@ -404,7 +324,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group check3">
+                        <div class="form-group check">
                             <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                             <div class="cols-6">   
                                 <div class="cols-12">

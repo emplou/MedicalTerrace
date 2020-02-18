@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_il')
 @section('content')
 @include('modals.modal_edit_illness')
 @include('modals.modal_copy_add_illness')

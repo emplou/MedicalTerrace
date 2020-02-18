@@ -831,8 +831,8 @@ $.ajaxSetup({
                         console.log(response['data']); 
                         
                         $("#editillness").modal('show');
-                        $("#illID").val(response['data'][0].id);
-                        $("#ill_ID").val(response['data'][0].ill_id);
+                        //$("#illID").val(response['data'][0].id);
+                        $("#illID").val(response['data'][0].ill_id);
                         $("#url").val(response['data'][0].ill_url); 
 
                         // Illness Category
@@ -882,12 +882,28 @@ $.ajaxSetup({
                         });
                         $("#input_sum").html(inputs);
 
-                        // Subheading 1
-                        input_sub1 = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].ill_sub1 +'">'+ response['data'][0].ill_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
-                        $("#input_sub1").html(input_sub1);
+                        // Subheading and Content
+                        var objJSONtxtCnt = JSON.parse(response['data'][0].ill_sub_txt);
+                        var input_content = "";
+                        $.each(objJSONtxtCnt, function (i, v) {
 
-                        $("#sub_head1b").val(response['data'][0].ill_sub2);
-                        $("#txt_ckeditor").val(response['data'][0].ill_sub_txt);
+                            input_content += '<div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"> ';
+                            //from heading
+                            input_content += '<select name="sub_head1a[]" class="form-control"><option value="">選択してください</option><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                            input_content += '</div></div>';
+
+                            input_content += '<div class="form-group"><label class="control-label cols-15"></label><div class="cols-4">';
+                            //from subheading
+                            input_content += '<input type="text" class="form-control" name="sub_head1b[]" value="'+ v.sub +'">';
+                            input_content += '</div></div>';
+
+                            input_content += '<div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10">  ';
+                            //to content
+                            input_content += '<textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">'+ v.txt_ckeditor +'</textarea>';
+                            input_content += '</div></div></div>';
+                        });
+                        $(".input_content").html(input_content);
+
 
                         // image
                         $("#img_cap").val(response['data'][0].ill_img_cap); // image caption
@@ -899,19 +915,15 @@ $.ajaxSetup({
                             $("#a1").attr( "checked", true );
                         }
 
-                        // Text of the subheading
-                        var objJSONra_txt = JSON.parse(response['ra'][0].ra_text);
-                        var objJSONra_lvl = JSON.parse(response['ra'][0].ra_risk_lvl);
-                        var input_ra_txt = "";
-                        $.each(objJSONra_txt, function (i, v) {
-                            input_ra_txt += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                        // Subheading and Risk Level
+                        var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
+                        var input_risk = "";
+                        $.each(objJSONrskCnt, function (i, v) {
+
+                            input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
                             
                         });
-                        // $.each(objJSONra_lvl, function (i, b) {
-                        //     input_ra_lvl += '';
-
-                        // });
-                        $("#input_ra_txt").html(input_ra_txt);
+                        $("#input_ra_txt").html(input_risk);
 
                         // Check Results
                         var objJSONcr = JSON.parse(response['ra'][0].ra_result);
@@ -920,6 +932,30 @@ $.ajaxSetup({
                             input_cr += '<div class="cols-5"><input type="text" class="form-control" name="cr[]" value="'+v.cr+'"></div>';
                         });
                         $("#input_cr").html(input_cr);
+
+                        // Risk Assessment SubTitle 2
+                        var ra_title2 = response['ra2'][0].ra_title;
+                        if(ra_title2 == "1"){
+                            $("#b1").attr( "checked", true );
+                        }
+
+                        // Subheading and Risk Level 2
+                        var objJSONrskCnt2 = JSON.parse(response['ra2'][0].ra_text);
+                        var input_risk2 = "";
+                        $.each(objJSONrskCnt2, function (i, v) {
+
+                            input_risk2 += '<div class="cols-5"><textarea class="form-control sh" name="sh2[]" maxlength="30">'+v.sh2+'</textarea></div><div class="cols-2"> リスク度 <select name="rl2[]"><option value="'+ v.rl2 +'">'+ v.rl2 +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            
+                        });
+                        $("#input_ra_txt2").html(input_risk2);
+
+                        // Check Results 2
+                        var objJSONcr2 = JSON.parse(response['ra2'][0].ra_result);
+                        var input_cr2 = "";
+                        $.each(objJSONcr2, function (i, v) {
+                            input_cr2 += '<div class="cols-5"><input type="text" class="form-control" name="cr2[]" value="'+v.cr2+'"></div>';
+                        });
+                        $("#input_cr2").html(input_cr2);
 
                         // Search Keywords
                         var objJSON = JSON.parse(response['data'][0].ill_kwords);
@@ -956,20 +992,20 @@ $.ajaxSetup({
 
                         // Search Keywords
                         var objJSONkw = JSON.parse(response['data'][0].ill_kwords);
-                        var input_kwords_two = "";
-                        var input_kw_two = "";
+                        var input_kwords = "";
+                        var input_kw = "";
                         var x = 0;
                         $.each(objJSONkw, function (i, v) {
                             var xplus=x+1;
                             
-                            input_kwords_two += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
+                            input_kwords += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
 
-                            input_kw_two += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag">'+v.kword+'</label></div>';
+                            input_kw += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag'+xplus+'">'+v.kword+'</label></div>';
                         
                             x++; 
                         });
-                        $("#input_kwords").html(input_kwords_two);
-                        $("#input_kw").html(input_kw_two);
+                        $("#input_kwords").html(input_kwords);
+                        $("#input_kw").html(input_kw);
 
                         // Tag Department Retrieval
                         var objJSONdpt = JSON.parse(response['data'][0].ill_tag_dep);

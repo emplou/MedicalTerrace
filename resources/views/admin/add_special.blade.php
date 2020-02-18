@@ -285,10 +285,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="form-group">
-                    <label class="control-label cols-15">画像alt:</label>
-                </div> -->
-
                 <!-- Use CKcreditor -->
                 <div class="form-group editor">
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
