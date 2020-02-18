@@ -587,9 +587,10 @@
                         @endforeach
                     </select>
                 </div>
+                <div id="dpt_div"></div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
-            <div id="dpt_div"></div>
+            
         </div>
             <!-- <br>
             <input type="text" class="form- " name="department" style="width:200px">

@@ -220,7 +220,21 @@ input.form-  {
     </style>
 </head>
 <body>
-
+@if (Request::is('doctor_list') OR Request::is('add_doctor'))  
+<div class="content-container illness_container">
+	<header>
+		<h1 class="dashboard">医師・医療従事者 <br><small> Doctor table</small></h1>
+		<div class="right">
+			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録<br> Doctor new registration</button>
+			<img src="images/medical-logo.png" alt="">
+		</div>
+	</header>	
+	<div class="sub-header">
+		<div class="red">公開速報</div>
+		<p>2019/07/18 Special 子どもの夏の感染症が投稿されました。</p>
+	</div>
+</div>
+@endif
 
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
 <div class="content-container illness_container">
