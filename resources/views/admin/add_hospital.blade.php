@@ -2,26 +2,7 @@
 @section('content')
 @include('modals.modal_add_hospital')
 
-<div class="header-wrapper">
-    <div class="left">
-        <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
-        
-    </div>
-    <div class="right">
-        <div>作成日<span>Date</span></div>
-        <div class="select">
-            <select>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-            </select>
-        </div>
-        <div>最終更新日<span>Update</span></div>
-        <div class="select">0000/00/00</div>
-    </div>
-</div>
+
 <hr />
 <div class="form-container add">
     <div class="form-progress">
@@ -98,8 +79,8 @@
     </div>
 
     <!-- Branch Address -->
-    <!-- <div class="form-group">
-        <label class="control-label cols-15">住所<br><span>Address</span></label>
+    <div class="form-group">
+        <label class="control-label cols-15">住所<br><span>Branch Address</span></label>
         <div class="cols-2">
             <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code">
         </div>
@@ -108,11 +89,11 @@
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
-    </div> -->
+    </div>
 
     <!-- Branch Address English -->
-    <!-- <div class="form-group">
-        <label class="control-label cols-15">住所英語表記<br><span>Address English</span></label>
+    <div class="form-group">
+        <label class="control-label cols-15">住所英語表記<br><span>Branch Address English</span></label>
         <div class="cols-2">
             <input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code">
         </div>
@@ -121,54 +102,37 @@
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
-    </div> -->
-
-    <!-- Access -->
-    <div class="form-group check">
-        <label class="control-label cols-15">アクセス<br><span>Access</span></label>
-        <div class="cols-5">   
-            <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                <input class="styled-checkbox" id="styled-checkbox-1a" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1a" style="font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-            </div>    
-        </div>
     </div>
-     <div class="form-group check">
-        <label class="control-label cols-15"></label>
-        <div class="cols-5">   
-            <div style="border: 1px solid #CCC; padding: 5px; ">
-                <input class="styled-checkbox" id="styled-checkbox-1b" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1b" style="font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-            </div>    
-        </div>
-    </div>
-     <div class="form-group check">
-        <label class="control-label cols-15"></label>
-        <div class="cols-5">   
-            <div style="border: 1px solid #CCC; padding: 5px; ">
-                <input class="styled-checkbox" id="styled-checkbox-1c" type="checkbox" name="seo" value="Sample"><label for="styled-checkbox-1c" style="font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
-            </div>    
-        </div>
-        </div>
 
-    <!-- Parking -->
+    <hr />
+
+    <!-- Clinic Appearance image -->
     <div class="form-group">
-        <label class="control-label cols-15">駐車場<br><span>Parking</span></label>
-        <div class="cols-18 rad-buttons">
-            <label>料金</label>
-            <input type="radio" id="park2a" name="park" value="監修">
-            <label for="park2a">無料</label>
-            
-            <input type="radio" id="park2b" name="park" value="取材協力">
-            <label for="park2b">有料</label>
-        </div>	
-        <div class="cols-3">          
-            <select name="doctor" class="form-control">
-                <option value="">選択してください</option>
-                @foreach($doctors as $doc)
-                    <option value="{!! $doc->id !!}">{!! $doc->name !!}</option>
-                @endforeach
-            </select>
+        <label class="control-label cols-15">医院外観画像<br><span>Clinic Appearance image </span></label>
+        <div class="cols-5">  
+            <div class="upload-image">        
+                <input type="file" name="clinic_image" id="file-7" class="inputfile" >
+                <label for="file-7"><span class="archive-name">ドラッグ&ドロップ、または参照で画像を追加してください</span><span class="btn-inputfile"> 参照...</span></label>
+            </div>
         </div>
     </div>
+
+    <!-- Image Caption -->
+    <div class="form-group">
+        <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption">
+        </div>
+    </div>
+
+     <!-- Image Alt -->
+    <div class="form-group">
+        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
+        <div class="cols-5">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
+        </div>
+    </div>
+
 
     <!-- Inquiry Phone number -->
     <div class="form-group">
@@ -187,6 +151,11 @@
             </div>
         </div>
     </div>
+
+
+   
+
+    
 
     <!-- Fax -->
     <div class="form-group check">
@@ -234,33 +203,7 @@
         </div>
     </div>
 
-    <!-- Clinic Appearance image -->
-    <div class="form-group">
-        <label class="control-label cols-15">医院外観画像<br><span>Clinic Appearance image </span></label>
-        <div class="cols-45">          
-            <div class="custom-file-upload doc">
-            <!--<label for="file">File: </label>--> 
-                <input type="file" id="file" name="clinic_image" name="clinic_image_field" multiple />
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Image Caption -->
-    <div class="form-group">
-        <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
-        <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption">
-        </div>
-    </div>
-
-     <!-- Image Alt -->
-    <div class="form-group">
-        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
-        <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
-        </div>
-    </div>
+    
 
     <!-- Subheading -->
     <div class="form-group">
@@ -279,15 +222,17 @@
         <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap2"></div>
+            <div class="field_wrap1_hosp"></div>
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp1"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
+
+    <hr />
 
     <!-- Division -->
     <div class="form-group">
@@ -358,6 +303,9 @@
                         <option>Medical four</option>
                     </select>
                 </div>
+                <div class="cols-1 relative">
+                    <button type="button" class="btn btn-success add6"><span class="lnr lnr-plus-circle"></span></button>
+                </div>
                 <div class="cols-3">
                     <input type="text" class="form- " placeholder="選択項目にない場合に入力" name="med_sbj_list_add[]">
                 </div>
@@ -402,22 +350,28 @@
         <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap2"></div>
+            <div class="field_wrap2_hosp"></div>
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="med_subj_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
 
      <!-- Buttons -->
     <div class="form-group">
         <div class="cols-15"></div>
-        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
+        <div class="cols-55">
+            <div class="upload-btn-wrapper">
+                <button class="bton"></button>
+                <input type="file" name="subject_image" name="insert_img_subject" />
+            </div>
+            
+        </div>
     </div>
 
+   
     <div class="form-group check fix">
         <div class="control-label cols-15">
         診療科目別<br>外来受付時間<br>Examination date
@@ -451,33 +405,37 @@
             <div class="cols-15"></div>
             <div class="cols-8">
                 
-                <div class="cols-6"><input type="text" class="form- " name="special_hours"> </div>
+            <div class="cols-6"><input type="text" class="form- " name="special_hours"> </div>
             <div class="cols-3">    
             ※受診内容により日・時間が異なる場合に記載
             </div>
-            <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
-            月 <input type="checkbox" name="tag_season[]">
-            火 <input type="checkbox" name="tag_season[]">
-            水 <input type="checkbox" name="tag_season[]">
-            木 <input type="checkbox" name="tag_season[]">
-            金 <input type="checkbox" name="tag_season[]">
-            土 <input type="checkbox" name="tag_season[]">
-            日 <input type="checkbox" name="tag_season[]">
-            祝 <input type="checkbox" name="tag_season[]">
+                <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+                <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
+                診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                月 <input type="checkbox" name="tag_season[]">
+                火 <input type="checkbox" name="tag_season[]">
+                水 <input type="checkbox" name="tag_season[]">
+                木 <input type="checkbox" name="tag_season[]">
+                金 <input type="checkbox" name="tag_season[]">
+                土 <input type="checkbox" name="tag_season[]">
+                日 <input type="checkbox" name="tag_season[]">
+                祝 <input type="checkbox" name="tag_season[]">
         </div>
     </div>
 
      <!-- Buttons -->
     <div class="form-group">
         <div class="cols-15"></div>
-        <div class="cols-55">
+        <div class="cols-75">
             <button type="button" class="btn-prime addto"></button>
             <button type="button" class="btn-prime add-duplicate"></button>
         </div>
+        <div class="cols-1 relative">
+            <button type="button" class="btn btn-success addhosp2"><span class="lnr lnr-plus-circle"></span></button>
+        </div>
     </div>
 
+     <hr /> 
     <!-- Subheading 3-->
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
@@ -496,23 +454,29 @@
         <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap2"></div>
+            <div class="field_wrap3_hosp"></div>
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="feature_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp3"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
 
      <!-- Buttons -->
     <div class="form-group">
         <div class="cols-15"></div>
-        <div class="cols-55"><button type="button" class="btn-prime image" name="show_img"></button></div>
-        <!-- <div class="cols-55"><input type="file" class="btn-prime image" name="show_img"></button></div> -->
+        <div class="cols-55">
+            <div class="upload-btn-wrapper">
+                <button class="bton" id="show_img"></button>
+                <input type="file" name="subject_image" name="insert_img_subject" />
+            </div>
+            <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
+        </div>
     </div>
 
+    <hr />
     <!-- Subheading 4-->
     <div class="form-group">
         <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
@@ -530,30 +494,39 @@
         <label class="control-label cols-15"> </label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap2"></div>
+            <div class="field_wrap4_hosp"></div>
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="equipment_subheading2" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp4"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
 
     <!-- Buttons -->
     <div class="form-group">
         <div class="cols-15"></div>
-        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
+        <div class="cols-55">
+            <div class="upload-btn-wrapper">
+                <button class="bton"></button>
+                <input type="file" name="equipment_image" name="insert_equipment_subject" />
+            </div>
+        </div>
     </div>
 
     <!-- Image Alt -->
     <div class="form-group">
         <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
+            <div class="upload-image">        
+                <input type="file" name="image-alt" id="file-7" class="inputfile" >
+                <label for="file-7"><span class="archive-name">ドラッグ&ドロップ、または参照で画像を追加してください</span><span class="btn-inputfile"> 参照...</span></label>
+            </div>
         </div>
     </div>
 
+    <hr />
     <!-- Subheading 4-->
     <div class="form-group">
         <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
@@ -569,46 +542,28 @@
          <label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap2"></div>
+            <div class="field_wrap5_hosp"></div>
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
+        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp5"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
 
     <!-- Buttons -->
     <div class="form-group">
         <div class="cols-15"></div>
-        <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button></div>
-    </div>
-
-    <!-- Subheading 4-->
-    <div class="form-group">
-        <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
-        <div class="cols-4">          
-            <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-            </textarea>
-        </div>
-        
-    </div>
-
-    <!-- Text of Subheading 4-->
-    <div class="form-group editor">
-         <label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label>
-        <div class="cols-6">   
-            <!-- add new textarea here -->
-            <div class="field_wrap2"></div>
-            <div id="addanother1">
-                <div class="cols-10">        
-                    <textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
-                </div>
+        <div class="cols-55">
+           <div class="upload-btn-wrapper">
+                <button class="bton"></button>
+                <input type="file" name="staff_image" />
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
+
+
 
     <!-- Buttons -->
     <div class="form-group">
@@ -715,25 +670,26 @@
         <div class="cols-05">
             <label>種別</label>
         </div>
-        <div class="cols-4">
+        <div class="cols-3">
             <input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"> 
         </div>
+        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp6"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
 
     <!-- Number of Beds -->    
     <div class="form-group check fix">
         <div class="control-label cols-15">面会可能日・時間<br><span>Possible date of visit</span></div>
-        <div class="cols-12">
+        <div class="cols-1">
             <select class="form-control">
                 <option>14:30</option>
             </select>
         </div>
-        <div class="cols-12">
+        <div class="cols-1">
             <select class="form-control">
                 <option>15:30</option>
             </select>
         </div>
-        <div class="cols-6">
+        <div class="cols-4">
             月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>
             火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>
             水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>
@@ -743,6 +699,8 @@
             日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>
             祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label>
         </div>
+        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp7"><span class="lnr lnr-plus-circle"></span></button></div> 
+  
     </div>
 
 

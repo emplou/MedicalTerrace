@@ -20,7 +20,7 @@
                 <td>{!! $sp->sp_title_shldr !!}</td>
                 <td>{!! $sp->sp_ill_cat !!}</td>
                 <td>{!! $sp->sp_cat !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_special" style="background-color:#FCB0BC;border-color:#FCB0BC;" sp-id="{!! $sp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_add_special" sp-id="{!! $sp->id !!}" style="background-color:#6ebaba;border-color:#6ebaba;">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite_special" sp-id="{!! $sp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_add_special" sp-id="{!! $sp->id !!}" >コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>

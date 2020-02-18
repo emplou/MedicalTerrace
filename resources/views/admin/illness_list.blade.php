@@ -20,7 +20,7 @@
                 <td>{!! $ill->ill_cat !!}</td>
                 <td>{!! $ill->ill_shoulder !!}</td>
                 <td>{!! $ill->ill_ph !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_illness" style="background-color:#FCB0BC;border-color:#FCB0BC;" il-id="{!! $ill->ill_id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->ill_id !!}" style="background-color:#6ebaba;border-color:#6ebaba;">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite_illness" il-id="{!! $ill->ill_id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->ill_id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>

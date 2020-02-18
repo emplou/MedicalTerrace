@@ -1486,15 +1486,15 @@ $.ajaxSetup({
         });
     });
 
-    $('.preview_illness').each(function(e){
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+    $('.preview').each(function(e){
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
         // e.preventDefault();
         $(this).on('click', function(){
-            var id = $(this).attr('il-id');
+            //var id = $(this).attr('il-id');
             // alert(id);
 
             $.ajax({
@@ -1503,13 +1503,13 @@ $.ajaxSetup({
                 dataType: 'json',
                 // data : { id : id },
                 success: function(response){
-                    console.log(response['data']);
+                    //console.log(response['data']);
                 
                     if(response == "success")
                     
                         console.log(response['data']); 
                         
-                        $("#previewillness").modal('show');
+                        $("#previewAddIllness").modal('show');
                         var url = response['ill_url'][0];
                         $("#url").html(url); 
 
