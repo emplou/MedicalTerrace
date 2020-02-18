@@ -42,7 +42,7 @@
         <div class="form-group">
             <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
             <div class="cols-4">
-                <input type="text" class="form-control" id="url" placeholder="例)yamada_taro" name="url_generation">
+                <input type="text" class="form-control" id="url one" placeholder="例)yamada_taro" name="url_generation">
             </div>
         </div>
 
@@ -60,7 +60,7 @@
         <div class="form-group">
             <label class="control-label cols-15"></label>
             <div class="sp10 cols-4">          
-                <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_position">
+                <input type="text" class="form-control" id="sub_head1b two" placeholder="選択項目にない場合に入力" name="sub_position">
             </div>
         </div>
 
@@ -90,14 +90,14 @@
         <div class="form-group">
             <label class="control-label cols-15">氏名<br><span>Name</span></label>
             <div class="cols-4">
-                <input type="text" class="form-control" id="url" placeholder="例)山田 太郎" name="name">
+                <input type="text" class="form-control" id="name three" placeholder="例)山田 太郎" name="name">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15">ローマ字（名・氏<br><span>Alphabet Name </span></label>
             <div class="cols-4">
-                <input type="text" class="form-control" name="alpha_name" placeholder="例)Taro Yamada">
+                <input type="text" class="form-control" name="alpha_name" id="alpha_name" placeholder="例)Taro Yamada">
             </div>
         </div>
 
@@ -125,14 +125,14 @@
         <div class="form-group">
             <label class="control-label cols-15"> 画像キャプション<br><span>Image Caption </span></label>
             <div class="cols-4">
-                <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_caption">
+                <input type="text" class="form-control" placeholder="院長 山田太郎" id="img_caption" name="img_caption">
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15"> 画像alt<br><span>Image Alt </span></label>
             <div class="cols-4">
-                <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_alt">
+                <input type="text" class="form-control" placeholder="院長 山田太郎" id="img_alt" name="img_alt">
             </div>
         </div>
         
@@ -232,13 +232,13 @@
             出生地<br>Place of birth
             </div>
             <div class="cols-12">
-                <input type="text" id="form-control" name="place_birth" class="form- " >
+                <input type="text" id="form-control place_birth" name="place_birth" class="form- " >
             </div>
             <div class="tcenter cols-1">
                 <span>出身地 <br>Birthplace</span>
             </div>
             <div class="cols-12">
-                <input type="text" id="form-control" name="birthplace" class="form- " >
+                <input type="text" id="form-control birthplace" name="birthplace" class="form- " >
             </div>
             <div class="form-divide cols-4">
                 <div class="formdiv">
@@ -314,7 +314,7 @@
                 </select>
             </div>
             <div class="cols-35">
-                <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " >
+                <input type="text" id="form-control c_ac_desc_to" name="c_ac_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div>
             <div id="c_ac"></div>
@@ -376,7 +376,7 @@
                 </select>
             </div>
             <div class="cols-35">
-                <input type="text" id="form-control" name="c_we_desc_to[]" class="form- " >
+                <input type="text" id="form-control c_we_desc_to" name="c_we_desc_to[]" class="form- " >
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add44"><span class="lnr lnr-plus-circle"></span></button></div>
             <div id="c_we"></div>
@@ -450,11 +450,11 @@
             </div>
             <div class="cols-5">
                 <div class="formdiv cols-11">
-                    <input type="checkbox" id="yes"  name="n_order" value="1"> 
+                    <input type="checkbox" id="yes n_order"  name="n_order" value="1"> 
                     <label for="yes">有<br><span>OK<span></label>
                 </div>
                 <div class="formdiv cols-11">
-                    <input type="checkbox" id="no" name="n_order" value="0"> 
+                    <input type="checkbox" id="no n_order" name="n_order" value="0"> 
                     <label for="no">無<br><span>NO</span></label>
                 </div>
             </div>
@@ -465,7 +465,7 @@
             </div>
             <div class="cols-65">
                 <div class="cols-6">
-                    <select class="form-control" name="hospital_office">
+                    <select class="form-control" name="hospital_office" id="hospital_office">
                         <option>山田太郎クリニック</option>
                         <option value="Hospital office one">Hospital office one</option>
                         <option value="Hospital office one">Hospital office two</option>
@@ -534,7 +534,7 @@
             <div class="control-label cols-15"></div>
             <div class="cols-65">
                 <div class="cols-33">
-                    <select class="form- " name="department[]">
+                    <select class="form- " id="department" name="department[]">
                         <option>選択してください</option>
                         @foreach($department as $dpt)
                         <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -564,7 +564,7 @@
             <div class="control-label cols-15"></div>
             <div class="cols-65">
                 <div class="cols-33">
-                    <select class="form- " name="department[]">
+                    <select class="form- " id="department" name="department[]">
                         <option>選択してください</option>
                         @foreach($department as $dpt)
                         <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -601,10 +601,10 @@
             医師コメント<br><span>Doctor Comment</span>
             </div>
             <div class="cols-5">
-                <textarea class="" rows="5" cols="70" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
+                <textarea class="" rows="5" cols="70" id="doc_comment" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
             </div>
             <div class="sidediv cols-35">
-                <div class="maxnum"><b id="charNum">200</b> <b> / 200 </b> </div>
+                <div class="maxnum"><b id="charNum">&emsp;200</b> <b> / 200 </b> </div>
                 <div class="sidebots">
                     <a class="prevbutton" type="button" class="btn-prime preview" href="#previewAddDoctor">Preview</a>
                     <button type="button" class="btn-prime release1">Release</button>

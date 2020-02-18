@@ -1399,6 +1399,7 @@ class HomeController extends Controller
         $value['data'] = DB::table('hospital_departments')->get();
         $fetch = json_encode($value);
         return $fetch;
+        // return Response::json($fetch);
     }
 
     public function save_overwrite_hospital(Request $request){
