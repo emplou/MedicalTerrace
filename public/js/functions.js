@@ -1788,17 +1788,20 @@ $.ajaxSetup({
             // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
 
             // alert(objJSONdept);
-            
-            var input_dpt = "";
-            $.each(objJSONdept, function (i, v) {
-                console.log(objJSONdept);
-                    input_dpt += 'select class="form- " name="department[]"><option value="'+ v.dpt_name +'">'+ v.dpt_name +'</option>';
-                    
-                    input_dpt += '</select>';
 
-            });
+            var tr_str = "";
+            var len = response['data'].length;
 
-        $('#dpt_div').append(input_dpt);
+            tr_str += '<div class="cols-33"><select class="form- " name="department[]"><option>選択してください</option>';
+
+            for(var i=0; i<len; i++){
+                var dptname = response['data'][i].dpt_name;
+
+                tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+                }
+                 tr_str += '</select></div>';
+                
+            $("#dpt_div").append(tr_str);
 
         }
 

@@ -34,6 +34,7 @@ class CreateDvDoctorsTable extends Migration
             $table->string('hospital_office');
             $table->string('department');
             $table->longText('doctor_comment');
+            $table->string('tracking_status');
             // $table->string('email');
             // $table->string('license_file');
             // $table->string('registration_certificate');

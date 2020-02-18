@@ -2021,7 +2021,8 @@ table#list {
 .btn.adddept1,
 .btn.addsum1,
 .btn.add-ck,
-.btn.addsub {
+.btn.addsub,
+.editor .btn {
   position: absolute;
   color: grey;
   bottom: 0;
@@ -2049,7 +2050,8 @@ table#list {
 .btn.adddept1 span,
 .btn.addsum1 span,
 .btn.add-ck span,
-.btn.addsub span  {
+.btn.addsub span,
+.editor .btn span  {
   font-size: 22px;
 } 
 
