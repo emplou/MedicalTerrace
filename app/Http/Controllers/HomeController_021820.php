@@ -1532,20 +1532,7 @@ class HomeController extends Controller
         {
             $response2[$key2]['h2'] = $cert2;
         }
-        $jsonh2_list = json_encode($response2);
-        
-        // subheading and Text
-        $sub_head1a = $details['sub_head1a']; 
-        $sub_head1b = $details['sub_head1b']; 
-        $txt_ckeditor = $details['txt_ckeditor'];  
-        $response_txt = array();
-        foreach($sub_head1a as $key => $sub_head)
-        {
-        $response_txt[$key]['heading'] = $sub_head;
-        $response_txt[$key]['sub'] = $sub_head1b[$key];
-        $response_txt[$key]['txt_ckeditor'] = $txt_ckeditor[$key];
-        }
-        $jsoncontent = json_encode($response_txt); 
+        $jsonh2_list = json_encode($response2); 
 
         // tag
         $tag_list = $details['tag']; 
@@ -1621,88 +1608,36 @@ class HomeController extends Controller
                                                 'ill_doc'               => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
-                                                'ill_summary'           => $jsonsum_list,
                                                 //'ill_img'               => $details['img'],
                                                 'ill_img_cap'           => $details['img_cap'],
                                                 'ill_img_alt'           => $details['img_alt'],
-                                                'ill_sub_txt'           => $jsoncontent,
-                                                'ill_kwords'            => $jsonk_list,
-                                                //'ill_seo'               => $details['seo'],
+                                                //'ill_sub_txt'         => $details['image'],
+                                                //'ill_kwords'            => $details['kword'],
+                                                //'ill_summary'           => $jsonsum_list,
+                                               
+                                                // 'ill_sub1'              => $jsonsuba_list,
+                                                // 'ill_sub2'              => $jsonsubb_list,
+                                                // 'ill_sub_txt'           => $jsontc_list,
+                                                //'ill_kwords'            => $jsonk_list,
+                                                'ill_seo'               => $details['seo'],
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
                                                 'ill_h1'                => $details['h1'],
-                                                'ill_h2'                => $jsonh2_list,
-                                                'ill_tag_kw'            => $jsontag_list,
-                                                'ill_tag_dep'           => $jsondep_list,
-                                                'ill_tag_symp'          => $jsonsy_list,
-                                                'ill_tag_season'        => $jsons_list,
-                                                'ill_tag_season_txt'    => $jsonstxt_list,
-                                                'ill_tag_free'          => $jsonf_list,
+                                                // 'ill_h2'                => $jsonh2_list,
+                                                // 'ill_tag_kw'            => $tag_list,
+                                                // 'ill_tag_dep'           => $jsondep_list,
+                                                // 'ill_tag_symp'          => $jsonsy_list,
+                                                // 'ill_tag_season'        => $jsons_list,
+                                                // 'ill_tag_season_txt'    => $jsonstxt_list,
+                                                // 'ill_tag_free'          => $jsonf_list,
                                             ]);
         
-        // text and risk level
-        $sh = $details['sh']; 
-        $rl = $details['rl']; 
-        $response_risk = array();
-        foreach($sh as $key => $sh)
-        {
-        $response_risk[$key]['sh'] = $sh;
-        $response_risk[$key]['rl'] = $rl[$key];
-        }
-        $jsonrskTxt = json_encode($response_risk); 
-
-        // check result
-        $cr_list = $details['cr']; 
-        $response11 = array();
-        foreach($cr_list as $key11 => $cert11)
-        {
-            $response11[$key11]['cr'] = $cert11;
-        }
-        $jsoncr_list = json_encode($response11); 
-
-        //Risk Assessment
-        if($details['subheading-chck'] == 1){
-            $risk = DB::table('risk_assessment')
-                            ->where('ra_ill_id','=', $details['illID'])
-                            ->where('ra_status','=', '1')
-                            ->update([
-                                    'ra_text'        => $jsonrskTxt,
-                                    'ra_result'      => $jsoncr_list,
-                            ]);
-        }
-
-        // text and risk level
-        $sh2 = $details['sh2']; 
-        $rl2 = $details['rl2']; 
-        $response_risk2 = array();
-        foreach($sh2 as $key => $sh2)
-        {
-        $response_risk2[$key]['sh2'] = $sh2;
-        $response_risk2[$key]['rl2'] = $rl2[$key];
-        }
-        $jsonrskTxt2 = json_encode($response_risk2); 
-
-        // check result
-        $cr_list2 = $details['cr2']; 
-        $response14 = array();
-        foreach($cr_list2 as $key14 => $cert14)
-        {
-            $response14[$key14]['cr2'] = $cert14;
-        }
-        $jsoncr_list2 = json_encode($response14); 
-
-        if($details['subheading-chck2'] == 1){
-            $risk2 = DB::table('risk_assessment')
-                            ->where('ra_ill_id','=', $details['illID'])
-                            ->where('ra_status','=', '2')
-                            ->update([
-                                    'ra_text'        => $jsonrskTxt2,
-                                    'ra_result'      => $jsoncr_list2,
-                            ]);
-        }
-
-
+        $ill_arch = new Illness_archive;
+        $ill_arch->illness_id            = $details['illID'];
+        $ill_arch->date_release          = date('Y-m-d H:i');
+        $ill_arch->save();
+        
         return redirect('/illness_list');
     }
 
