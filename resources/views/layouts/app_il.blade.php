@@ -156,14 +156,32 @@
 
  </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <!-- <script src="lumino/js/jquery-1.11.1.min.js"></script> -->
+	<!-- <script src="lumino/js/bootstrap.min.js"></script> -->
+ 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
+	<script src="{{ asset('js/functions.js') }}"></script>
+	<script src="lumino/js/chart.min.js"></script>
+	<script src="lumino/js/chart-data.js"></script>
+	<script src="lumino/js/easypiechart.js"></script>
+	<script src="lumino/js/easypiechart-data.js"></script>
+	<script src="lumino/js/bootstrap-datepicker.js"></script>
+  <script src="lumino/js/custom.js"></script>
+  <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
+  <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
 <!-- <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script> -->
-<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<!-- <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script> -->
 <!-- jQuery Modal -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
 
 <!-- CKeditor -->
 <script>

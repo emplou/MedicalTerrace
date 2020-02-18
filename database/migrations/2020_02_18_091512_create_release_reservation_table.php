@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArchiveTable extends Migration
+class CreateReleaseReservationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateArchiveTable extends Migration
      */
     public function up()
     {
-        Schema::create('dv_archive', function (Blueprint $table) {
+        Schema::create('dv_release_reservation', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type'); //types
+            $table->string('type');
             $table->string('type_id');
-            $table->string('tracking_type'); //tracking numbers
-            $table->string('archived_date');
+            $table->string('date_release_reservation');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateArchiveTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dv_archive');
+        Schema::dropIfExists('dv_release_reservation');
     }
 }
