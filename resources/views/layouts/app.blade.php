@@ -176,7 +176,8 @@ input.form-  {
   margin-top: 0;
 }
 .custom-file-upload.doc .file-upload-input{
-  width: 70%;
+	width: 70%;
+	height: 35px;
 }
 
 .file-upload-input {
@@ -597,12 +598,35 @@ var wrapper3         = $(".field_wrap3"); //Fields wrapper
 var wrapper4         = $(".field_wrap4"); //Fields wrapper
 var wrapper5         = $(".field_wrap5"); //Fields wrapper
 var wrapper6         = $(".field_wrap6"); //Fields wrapper
-var addcert1_button      = $(".addcert1");
+var wrapper1h         = $(".field_wrap1_hosp"); //Fields wrapper
+var wrapper2h         = $(".field_wrap2_hosp"); //Fields wrapper
+var wrapper3h         = $(".field_wrap3_hosp"); //Fields wrapper
+var wrapper4h         = $(".field_wrap4_hosp"); //Fields wrapper
+var wrapper5h         = $(".field_wrap5_hosp"); //Fields wrapper
+var wrapper6h         = $(".field_wrap6_hosp"); //Fields wrapper
+var wrapper7h         = $(".field_wrap7_hosp"); //Fields wrapper
+
+var addcert1_button     = $(".addcert1");
 var addcon1_button      = $(".addcon1"); //Add button ID
 var addcar1_button      = $(".addcar1"); //Add button ID
 var addcar2_button      = $(".addcar2"); //Add button ID
 var addcar3_button      = $(".addcar3"); //Add button ID
-var adddept1_button      = $(".adddept1"); //Add button ID
+var addcar3_button      = $(".addcar4"); //Add button ID
+var addcar3_button      = $(".addcar5"); //Add button ID
+var addcar3_button      = $(".addcar6"); //Add button ID
+var addcar3_button      = $(".addcar7"); //Add button ID
+var addcar3_button      = $(".addcar8"); //Add button ID
+
+var addhosp1_button      = $(".addhosp1"); //Add button ID
+var addhosp2_button      = $(".addhosp2"); //Add button ID
+var addhosp3_button      = $(".addhosp3"); //Add button ID
+var addhosp4_button      = $(".addhosp4"); //Add button ID
+var addhosp5_button      = $(".addhosp5"); //Add button ID
+var addhosp6_button      = $(".addhosp6"); //Add button ID
+var addhosp7_button      = $(".addhosp7"); //Add button ID
+
+var adddept1_button     = $(".adddept1"); //Add button ID
+
 $(addcert1_button).click(function(e){ //on add input button click
 	e.preventDefault();
 	$(wrapper1).append('<div class="form-group"><label class="control-label sp10 cols-15"></label><div class="cols-6"><div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div><div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div></div></div></div>'); //add input box
@@ -629,21 +653,57 @@ $(addcar3_button).click(function(e){ //on add input button click
 });
 $(adddept4_button).click(function(e){ //on add input button click
 	e.preventDefault();
-	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
+	$(wrapper4).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
 });
 
 $(addcar5_button).click(function(e){ //on add input button click
 	e.preventDefault();
-	$(wrapper4).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+	$(wrapper5).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
 });
 
 $(addcar6_button).click(function(e){ //on add input button click
 	e.preventDefault();
-	$(wrapper5).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+	$(wrapper6).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
 });
+
+$(addhosp1_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper1h).append(''); //add input box
+});
+
+$(addhosp2_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper2h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addhosp3_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper3h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addhosp4_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper4h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addhosp5_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper5h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addhosp6_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper6h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
+$(addhosp7_button).click(function(e){ //on add input button click
+	e.preventDefault();
+	$(wrapper7h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
+});
+
 $(adddept7_button).click(function(e){ //on add input button click
 	e.preventDefault();
-	$(wrapper6).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
+	$(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
 });
 
 
@@ -668,6 +728,7 @@ $('#add').click(function(){
            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
       });  
 });
+
 
 $('.addfields').on('click', addfields);
     var i=0;
@@ -795,137 +856,41 @@ function countChar(val) {
 	  /* **************** END **************** */
 </script>
 <script type="text/javascript">
-;(function($) {
+'use strict';
 
-// Browser supports HTML5 multiple file?
-var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
-	isIE = /msie/i.test( navigator.userAgent );
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
 
-$.fn.customFile = function() {
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
 
-  return this.each(function() {
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
 
-	var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
-		$wrap = $('<div class="file-upload-wrapper">'),
-		$input = $('<input type="text" class="file-upload-input" placeholder="ドラッグ &ドロップ 、または参照で画像を追加してください"/>'),
-		// Button that will be used in non-IE browsers
-		$button = $('<button type="button" class="file-upload-button">参照...</button>'),
-		// Hack for IE
-		$label = $('<label class="file-upload-button" for="'+ $file[0].id +'">参照...</label>');
+			if( fileName )
+				$label.find( '.archive-name' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
 
-	// Hide by shifting to the left so we
-	// can still trigger events
-	$file.css({
-	  position: 'absolute',
-	  left: '-9999px'
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
 	});
-
-	$wrap.insertAfter( $file )
-	  .append( $file, $input, ( isIE ? $label : $button ) );
-
-	// Prevent focus
-	$file.attr('tabIndex', -1);
-	$button.attr('tabIndex', -1);
-
-	$button.click(function () {
-	  $file.focus().click(); // Open dialog
-	});
-
-	$file.change(function() {
-
-	  var files = [], fileArr, filename;
-
-	  // If multiple is supported then extract
-	  // all filenames from the file array
-	  if ( multipleSupport ) {
-		fileArr = $file[0].files;
-		for ( var i = 0, len = fileArr.length; i < len; i++ ) {
-		  files.push( fileArr[i].name );
-		}
-		filename = files.join(', ');
-
-	  // If not supported then just take the value
-	  // and remove the path to just show the filename
-	  } else {
-		filename = $file.val().split('\\').pop();
-	  }
-
-	  $input.val( filename ) // Set the value
-		.attr('title', filename) // Show filename in title tootlip
-		.focus(); // Regain focus
-
-	});
-
-	$input.on({
-	  blur: function() { $file.trigger('blur'); },
-	  keydown: function( e ) {
-		if ( e.which === 13 ) { // Enter
-		  if ( !isIE ) { $file.trigger('click'); }
-		} else if ( e.which === 8 || e.which === 46 ) { // Backspace & Del
-		  // On some browsers the value is read-only
-		  // with this trick we remove the old input and add
-		  // a clean clone with all the original events attached
-		  $file.replaceWith( $file = $file.clone( true ) );
-		  $file.trigger('change');
-		  $input.val('');
-		} else if ( e.which === 9 ){ // TAB
-		  return;
-		} else { // All other keys
-		  return false;
-		}
-	  }
-	});
-
-  });
-
-};
-
-// Old browser fallback
-if ( !multipleSupport ) {
-  $( document ).on('change', 'input.customfile', function() {
-
-	var $this = $(this),
-		// Create a unique ID so we
-		// can attach the label to the input
-		uniqId = 'customfile_'+ (new Date()).getTime(),
-		$wrap = $this.parent(),
-
-		// Filter empty input
-		$inputs = $wrap.siblings().find('.file-upload-input')
-		  .filter(function(){ return !this.value }),
-
-		$file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
-
-	// 1ms timeout so it runs after all other events
-	// that modify the value have triggered
-	setTimeout(function() {
-	  // Add a new input
-	  if ( $this.val() ) {
-		// Check for empty fields to prevent
-		// creating new inputs when changing files
-		if ( !$inputs.length ) {
-		  $wrap.after( $file );
-		  $file.customFile();
-		}
-	  // Remove and reorganize inputs
-	  } else {
-		$inputs.parent().remove();
-		// Move the input so it's always last on the list
-		$wrap.appendTo( $wrap.parent() );
-		$wrap.find('input').focus();
-	  }
-	}, 1);
-
-  });
-}
-
-}(jQuery));
-
-$('input[type=file]').customFile();
+})( jQuery, window, document );
 </script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMuK0OUZEPym74iWarEiCnudUSkuA9I6k&libraries=places"></script>
-         
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMuK0OUZEPym74iWarEiCnudUSkuA9I6k&libraries=places&region=JP"></script>
+       
 <script>
   google.maps.event.addDomListener(window, 'load', initialize);
     function initialize() {
@@ -953,135 +918,6 @@ $('input[type=file]').customFile();
 	});
 </script>
 
-<script type="text/javascript">
-;(function($) {
-
-// Browser supports HTML5 multiple file?
-var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
-	isIE = /msie/i.test( navigator.userAgent );
-
-$.fn.customFile = function() {
-
-  return this.each(function() {
-
-	var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
-		$wrap = $('<div class="file-upload-wrapper">'),
-		$input = $('<input type="text" class="file-upload-input" placeholder="ドラッグ &ドロップ 、または参照で画像を追加してください"/>'),
-		// Button that will be used in non-IE browsers
-		$button = $('<button type="button" class="file-upload-button">参照...</button>'),
-		// Hack for IE
-		$label = $('<label class="file-upload-button" for="'+ $file[0].id +'">参照...</label>');
-
-	// Hide by shifting to the left so we
-	// can still trigger events
-	$file.css({
-	  position: 'absolute',
-	  left: '-9999px'
-	});
-
-	$wrap.insertAfter( $file )
-	  .append( $file, $input, ( isIE ? $label : $button ) );
-
-	// Prevent focus
-	$file.attr('tabIndex', -1);
-	$button.attr('tabIndex', -1);
-
-	$button.click(function () {
-	  $file.focus().click(); // Open dialog
-	});
-
-	$file.change(function() {
-
-	  var files = [], fileArr, filename;
-
-	  // If multiple is supported then extract
-	  // all filenames from the file array
-	  if ( multipleSupport ) {
-		fileArr = $file[0].files;
-		for ( var i = 0, len = fileArr.length; i < len; i++ ) {
-		  files.push( fileArr[i].name );
-		}
-		filename = files.join(', ');
-
-	  // If not supported then just take the value
-	  // and remove the path to just show the filename
-	  } else {
-		filename = $file.val().split('\\').pop();
-	  }
-
-	  $input.val( filename ) // Set the value
-		.attr('title', filename) // Show filename in title tootlip
-		.focus(); // Regain focus
-
-	});
-
-	$input.on({
-	  blur: function() { $file.trigger('blur'); },
-	  keydown: function( e ) {
-		if ( e.which === 13 ) { // Enter
-		  if ( !isIE ) { $file.trigger('click'); }
-		} else if ( e.which === 8 || e.which === 46 ) { // Backspace & Del
-		  // On some browsers the value is read-only
-		  // with this trick we remove the old input and add
-		  // a clean clone with all the original events attached
-		  $file.replaceWith( $file = $file.clone( true ) );
-		  $file.trigger('change');
-		  $input.val('');
-		} else if ( e.which === 9 ){ // TAB
-		  return;
-		} else { // All other keys
-		  return false;
-		}
-	  }
-	});
-
-  });
-
-};
-
-// Old browser fallback
-if ( !multipleSupport ) {
-  $( document ).on('change', 'input.customfile', function() {
-
-	var $this = $(this),
-		// Create a unique ID so we
-		// can attach the label to the input
-		uniqId = 'customfile_'+ (new Date()).getTime(),
-		$wrap = $this.parent(),
-
-		// Filter empty input
-		$inputs = $wrap.siblings().find('.file-upload-input')
-		  .filter(function(){ return !this.value }),
-
-		$file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
-
-	// 1ms timeout so it runs after all other events
-	// that modify the value have triggered
-	setTimeout(function() {
-	  // Add a new input
-	  if ( $this.val() ) {
-		// Check for empty fields to prevent
-		// creating new inputs when changing files
-		if ( !$inputs.length ) {
-		  $wrap.after( $file );
-		  $file.customFile();
-		}
-	  // Remove and reorganize inputs
-	  } else {
-		$inputs.parent().remove();
-		// Move the input so it's always last on the list
-		$wrap.appendTo( $wrap.parent() );
-		$wrap.find('input').focus();
-	  }
-	}, 1);
-
-  });
-}
-
-}(jQuery));
-
-$('input[type=file]').customFile();
-</script>
 
 
 

@@ -1822,20 +1822,19 @@ $.ajaxSetup({
         // data : { id : id },
         success: function(response){
             console.log(response['data']);
+
         // if(response == "success")
 
             /* ********** DEPARTMENT ************ */
-            var objJSONdpt = JSON.parse(response['data'][0].department);
-            var input_dpt = "";
-            var input_dpt_list = "";
-            $.each(objJSONdpt, function (i, v) {
-                console.log(objJSONdpt);
-                    input_dpt += 'select class="form- " name="department[]"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
+            var objJSONdept = JSON.stringify(response['data']);
+            // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
 
-                    $.each(response['dpt'], function (i, b) {
-                        console.log('dpt '+ b.dpt_name)
-                        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
-                    });
+            // alert(objJSONdept);
+            
+            var input_dpt = "";
+            $.each(objJSONdept, function (i, v) {
+                console.log(objJSONdept);
+                    input_dpt += 'select class="form- " name="department[]"><option value="'+ v.dpt_name +'">'+ v.dpt_name +'</option>';
                     
                     input_dpt += '</select>';
 
