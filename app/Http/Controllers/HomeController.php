@@ -629,6 +629,7 @@ class HomeController extends Controller
             $risk_assess->ra_title            = $details['subheading-chck'];
             $risk_assess->ra_text             = $jsonrskTxt;
             $risk_assess->ra_result           = $jsoncr_list;  
+            $risk_assess->ra_status           = '1';  
             $risk_assess->save();
         }
 
@@ -658,6 +659,7 @@ class HomeController extends Controller
             $risk_assess->ra_title            = $details['subheading-chck2'];
             $risk_assess->ra_text             = $jsonrskTxt2;
             $risk_assess->ra_result           = $jsoncr_list2;  
+            $risk_assess->ra_status           = '2';  
             $risk_assess->save();
         }
         
@@ -1907,6 +1909,41 @@ class HomeController extends Controller
         }
         $jsonlead_list = json_encode($response); 
 
+        // subheading and Text
+        $sub_head1a = $details['sub_head1a']; 
+        $sub_head1b = $details['sub_head1b']; 
+        $txt_ckeditor = $details['txt_ckeditor'];  
+        $response_txt = array();
+        foreach($sub_head1a as $key => $sub_head)
+        {
+        $response_txt[$key]['heading'] = $sub_head;
+        $response_txt[$key]['sub'] = $sub_head1b[$key];
+        $response_txt[$key]['txt_ckeditor'] = $txt_ckeditor[$key];
+        }
+        $jsoncontent = json_encode($response_txt); 
+
+        // Ill Image
+        $pos_list = $details['pos_ill']; 
+        $response2 = array();
+        foreach($pos_list as $key2 => $cert2)
+        {
+            $response2[$key2]['pos_ill'] = $cert2;
+        }
+        $jsonpos_list = json_encode($response2); 
+
+        // subheading and Text
+        $sub_head2a = $details['sub_head2a']; 
+        $sub_head2b = $details['sub_head2b']; 
+        $txt2_ckeditor = $details['txt2_ckeditor'];  
+        $response_txt2 = array();
+        foreach($sub_head2a as $key => $sub_head)
+        {
+        $response_txt2[$key]['heading'] = $sub_head;
+        $response_txt2[$key]['sub'] = $sub_head2b[$key];
+        $response_txt2[$key]['txt_ckeditor'] = $txt2_ckeditor[$key];
+        }
+        $jsoncontent2 = json_encode($response_txt2); 
+
         // seo keywords
         $k_list = $details['kword']; 
         $response3 = array();
@@ -1926,22 +1963,22 @@ class HomeController extends Controller
         $jsonh2_list = json_encode($response4); 
 
         // tag
-        // $tag_list = $details['tag_ch']; 
-        // $response5 = array();
-        // foreach($tag_list as $key5 => $cert5)
-        // {
-        //     $response5[$key5]['tag_ch'] = $cert5;
-        // }
-        // $jsontag_list = json_encode($response5); 
+        $tag_list = $details['tag']; 
+        $response5 = array();
+        foreach($tag_list as $key5 => $cert5)
+        {
+            $response5[$key5]['tag'] = $cert5;
+        }
+        $jsontag_list = json_encode($response5); 
 
         // tag illness
-        // $till_list = $details['tag_ill']; 
-        // $response6 = array();
-        // foreach($till_list as $key6 => $cert6)
-        // {
-        //     $response6[$key6]['tag_ill'] = $cert6;
-        // }
-        // $jsontill_list = json_encode($response6); 
+        $till_list = $details['tag_ill']; 
+        $response6 = array();
+        foreach($till_list as $key6 => $cert6)
+        {
+            $response6[$key6]['tag_ill'] = $cert6;
+        }
+        $jsontill_list = json_encode($response6); 
 
         // tag department
         $dep_list = $details['tag_dep']; 
@@ -1979,7 +2016,7 @@ class HomeController extends Controller
         }
         $jsontxt_list = json_encode($response10);
 
-        // tag f
+        // tag text
         $f_list = $details['tag_f']; 
         $response11 = array();
         foreach($f_list as $key11 => $cert11)
@@ -1987,7 +2024,6 @@ class HomeController extends Controller
             $response11[$key11]['tag_f'] = $cert11;
         }
         $jsonf_list = json_encode($response11);
-
         $spID = $details['spID'];
 
         $special = DB::table('special')
@@ -1999,20 +2035,16 @@ class HomeController extends Controller
                                                 'sp_cat'                => $details['sp_cat'],
                                                 'sp_title_shldr'        => $details['sts'],
                                                 'sp_title'              => $details['st'],
-                                                //'sp_doc'              => $details['doctor'],
+                                                'sp_doc'                => $details['doctor'],
                                                 'sp_doc_tsk'            => $details['role'],
                                                 'sp_doc_cmt'            => $details['cmt'],
                                                 //'sp_img'                => '/img/'.$filename,
                                                 'sp_img_cap'            => $details['img_cap'],
                                                 'sp_img_alt'            => $details['img_alt'],
                                                 'sp_txt'                => $jsonlead_list,
-                                                // 'sp_sub1'               => $jsonsuba_list,
-                                                // 'sp_sub2'               => $jsonsubb_list,
-                                                // 'sp_sum'                => $jsontc_list,
-                                                //'sp_ill_img'            => $jsonpos_list,
-                                                // 'sp_sub3'               => $jsonsuba2_list,
-                                                // 'sp_sub4'               => $jsonsubb2_list,
-                                                // 'sp_sum2'               => $jsontc2_list,
+                                                'sp_sum'                => $jsoncontent,
+                                                'sp_ill_img'            => $jsonpos_list,
+                                                'sp_sum2'               => $jsoncontent2,
                                                 'sp_seo_kwords'         => $jsonk_list,
                                                 'seo_title'             => $details['seo'],
                                                 'sp_seo_txt'            => $details['seo_txt'],
@@ -2020,16 +2052,14 @@ class HomeController extends Controller
                                                 'sp_seo_desc2'          => $details['meta_txt2'],
                                                 'sp_h1'                 => $details['h1'],
                                                 'sp_h2'                 => $jsonh2_list,
-                                                //'sp_tag_kw'             => $jsontag_list,
-                                                //'sp_tag_ill'            => $jsontill_list,
+                                                'sp_tag_kw'             => $jsontag_list,
+                                                'sp_tag_ill'            => $jsontill_list,
                                                 'sp_tag_dep'            => $jsondep_list,
                                                 'sp_tag_symp'           => $jsonsy_list,
                                                 'sp_tag_season'         => $jsons_list,
                                                 'sp_ta_season_txt'      => $jsontxt_list,
                                                 'sp_tag_free'           => $jsonf_list,
                                             ]);
-
-                                    // dd($doctors);
 
         return redirect('/special_list');
     }
