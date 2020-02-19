@@ -1663,13 +1663,66 @@ $.ajaxSetup({
         });
         // e.preventDefault();
         $(this).on('click', function(){
-            $("#previewAddIllness").modal('show');
+            //$("#previewAddIllness").modal('show');
 
-            ill_name = $("#ill").val(); // Illness
-            $(".panel-head").html(ill_name);
+            ill_cat = $("#ill_cat").val(); // Illness Category
+            $(".ill_cat").html(ill_cat);
+            ill_name = $("#ill").val(); // Illness Name
+            $(".ill_name").html(ill_name);
+            ill_sh = $("#ill_sh").val(); // Illness SHoulder
+            $(".ill_sh").html(ill_sh);
 
-            
+            //Keywords
+            var key_value = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value").html(key_value);
 
+            //Summarize
+            var sum_value = "";
+            $("textarea[name='sm[]']").each(function() {
+                sum_value += '<li>'+ $(this).val() +'</li>';
+            });
+            $("#summary").html(sum_value);
+
+            //Risk Assessment
+            var z = 0;
+            if($("#a1").is(':checked')) {
+
+                var input_risk = "";
+                input_risk += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
+                $("textarea[name='sh[]']").each(function() {
+                    var zplus=z+1;
+
+                    if($(this).val() != '') {
+                        input_risk += '<li><input class="styled-checkbox" id="a'+zplus+'" type="checkbox" name="check1[]" ><label for="a'+zplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    z++;
+                });
+                input_risk += '</ul></div></div>';
+                $("#input_risk_one").html(input_risk);
+            }
+
+            //Risk Assessment 2
+            var x = 0;
+            if($("#a2").is(':checked')) {
+
+                var input_risk_two = "";
+                input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
+                $("textarea[name='sh2[]']").each(function() {
+                    var xplus=x+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two += '<li><input class="styled-checkbox" id="b'+xplus+'" type="checkbox" name="check2[]" ><label for="b'+xplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    x++;
+                });
+                input_risk_two += '</ul></div></div>';
+                $("#input_risk_two").html(input_risk_two);
+            }
         });
     });
 
