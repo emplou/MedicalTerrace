@@ -413,10 +413,18 @@ class HomeController extends Controller
         $special->sp_tag_symp          = $jsonsy_list; //it should be json script when added
         $special->sp_tag_season        = $jsons_list; //it should be json script when added
         $special->sp_ta_season_txt     = $jsontxt_list; //it should be json script when added
-        $special->sp_tag_free          = $jsonf_list; //it should be json script when added$illness->status                = '3';
-        $special->sp_status            = '3';
+        $special->sp_tag_free          = $jsonf_list; //it should be json script when added$illness->status    
+        $special->tracking_status      = '1';
         $special->save();
 
+        $now = date('Y-m-d H:i'); //Fomat Date and time
+
+        $archive = new Archive;
+        $archive->type              = '3';
+        $archive->type_id           = $special->id;
+        $archive->tracking_type     = '1';
+        $archive->archived_date     = $now;  
+        $archive->save();
         
         return redirect('/special_list');
     }
@@ -425,6 +433,7 @@ class HomeController extends Controller
 
         $details = Input::all();
 
+        //dd($details);
         $illness_id = rand();
         $ill_img_id = rand();
         $ill_gr_id = rand();
@@ -562,8 +571,17 @@ class HomeController extends Controller
         $illness->ill_tag_season        = $jsons_list; // added division and medical subject list and field
         $illness->ill_tag_season_txt    = $jsonstxt_list; // added division and medical subject list and field
         $illness->ill_tag_free          = $jsonf_list; // added division and medical subject list and field
-        $illness->status                = '3';
+        $illness->tracking_status      = '1';
         $illness->save();
+
+        $now = date('Y-m-d H:i'); //Fomat Date and time
+
+        $archive = new Archive;
+        $archive->type              = '4';
+        $archive->type_id           = $illness->id;
+        $archive->tracking_type     = '1';
+        $archive->archived_date     = $now;  
+        $archive->save();
 
         //newly inserted illness id
         //$id = $illness->ill_id;
@@ -664,6 +682,8 @@ class HomeController extends Controller
             $risk_assess->ra_result           = $jsoncr_list2;  
             $risk_assess->ra_status           = '2';  
             $risk_assess->save();
+        } else{
+            echo "";
         }
         
         return redirect('/illness_list');

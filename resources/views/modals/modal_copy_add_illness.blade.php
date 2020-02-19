@@ -160,6 +160,13 @@
                             <div class="cols-6">
                                 <div id="input_cr_two"></div>
                             </div>
+                            <div class="sidediv cols-3">
+                                <div class="sidebots">
+                                    <a class="prevbutton btn-prime preview_copy" type="button" href="#previewCopyIllness">Preview</a>
+                                    <button type="button" class="btn-prime release1" id="myBtn">Release</button>
+                                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Subheading 2 -->
