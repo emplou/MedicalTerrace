@@ -15,9 +15,9 @@ class CreateApprovedTable extends Migration
     {
         Schema::create('dv_approved', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('source_name');
-            $table->string('source_description');
-            $table->string('date_approved');
+            $table->string('type');
+            $table->string('type_id');
+            $table->string('date_approval_request');
             $table->timestamps();
         });
     }

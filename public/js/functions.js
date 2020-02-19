@@ -24,6 +24,12 @@ $.ajaxSetup({
     this.name = name;
   }
 
+  $('.previewEditDoc').on('click', function(){
+    //   alert('yeah');
+      var docID = $('#docID').val();
+      $('#docIDappreq').val(docID);
+  });
+
 
     $('.overwrite').each(function(e){
         $.ajaxSetup({

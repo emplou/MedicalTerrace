@@ -17,6 +17,9 @@ use MedicalTerrace\Ill_graph;
 use MedicalTerrace\Risk_assessment;
 use MedicalTerrace\Special;
 use MedicalTerrace\Illness_archive;
+use MedicalTerrace\Drafts;
+use MedicalTerrace\ApprovalRequest;
+use MedicalTerrace\Archive;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -1867,7 +1870,7 @@ class HomeController extends Controller
         $doctor->image                      = $final; //image
         $doctor->image_caption              = $details['img_caption'];
         $doctor->image_alt                  = $details['img_alt'];
-        $doctor->industry                   = $details['industry'] ;
+        $doctor->industry                   = $details['industry'];
         $doctor->conference                 = $jsonconference;
         $doctor->birthday                   = $details['b_month'].'-'.$details['b_day'].'-'.$details['b_year']; //month day year
         $doctor->place_of_birth             = $details['place_birth'];
@@ -1878,6 +1881,7 @@ class HomeController extends Controller
         $doctor->hospital_office            = $details['hospital_office'];
         $doctor->department                 = $jsondepartment;
         $doctor->doctor_comment             = $details['doc_comment'];
+        $doctor->tracking_status            = '1';
         $doctor->save();
 
 
@@ -2241,6 +2245,31 @@ class HomeController extends Controller
                                                 'status'               => '6',
                                             ]);
         return redirect('/special_list');
+    }
+
+    public function doc_approve_request(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_doctors')
+                                    ->where('id','=', $details['docIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '3',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ApprovalRequest;
+        $appReq->type                   = '2';
+        $appReq->type_id                = $details['docIDappreq'];
+        $appReq->date_approval_request  = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '2';
+        $archive->type_id               = $details['docIDappreq'];
+        $archive->tracking_type         = '3';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/doctor_list');
     }
 
 }
