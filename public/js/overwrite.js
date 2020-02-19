@@ -195,6 +195,40 @@ $(this).on('click', function(){
 });
 // });
 
+$(document).ready(function(){ 
+    CKEDITOR.replace('lead_ckeditor');
+    CKEDITOR.add 
+    var wrapper2         = $(".field_wrap2"); //Fields wrapper
+
+    $('.add2').on('click', add2);
+    var i=0;
+    function add2(e) {
+        e.preventDefault();
+        var copy = $('#addanother1').clone();
+
+        var lplus=i+1;
+
+        $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+        CKEDITOR.replace('lead_ckeditor['+lplus+']');
+        i++;  
+
+    }
+});
+
+$(document).ready(function(){ 
+var min = 1990,
+max = 2021,
+select = document.getElementById('aca_year_from');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+} 
+});
+
+
 $('.overwrite_illness').each(function(e){
     $.ajaxSetup({
         headers: {
@@ -495,6 +529,7 @@ $('.overwrite_hospital').each(function(e){
     });
 });
 
+
 // hospital ckEditor (first)
 
 $('.add-ck1').on('click', addfields1);
@@ -767,6 +802,65 @@ $('.overwrite_special').each(function(e){
         // location.reload();
     });
 });
+
+// hospital ckEditor (first)
+
+$('.add-ck1').on('click', addfields1);
+var i=0;
+function addfields1(e) {
+  e.preventDefault();
+    var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+
+  $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+  $(copy).find('script').remove();
+  $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+  $('#addnewdiv').append($(copy).html()+ '<br>');
+  CKEDITOR.replace('textheading_lead['+oneplus+']');
+  i++;  
+
+}
+
+// hospital department ckEditor (second)
+
+$('.add-ck2').on('click', addfields2);
+var i=0;
+function addfields2(e) {
+  e.preventDefault();
+  var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+
+  $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+  $(copy).find('script').remove();
+  $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+  $('#addnewdiv').append($(copy).html()+ '<br>');
+  CKEDITOR.replace('textheading_lead['+oneplus+']');
+  i++;  
+}
+
+// hospital equipment ckEditor (third)
+
+$('.add-ck3').on('click', addfields3);
+var i=0;
+function addfields3(e) {
+  e.preventDefault();
+  var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+
+  $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+  $(copy).find('script').remove();
+  $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+  $('#addnewdiv').append($(copy).html()+ '<br>');
+  CKEDITOR.replace('textheading_lead['+oneplus+']');
+  i++;  
+
+}
 
     $(this).on('click', function(){
         var id = $(this).attr('il-id');

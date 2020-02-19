@@ -1,3 +1,4 @@
+@include('modals.modal_add_doctor')
 <!-- Modal -->
 <div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog modal-lg">
@@ -13,7 +14,9 @@
     <div class="modal-body">
     <div class="header-wrapper">
         <div class="left">
-            <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+            <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+            <!-- <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2> -->
+            <div id="authorID"></div>
             
         </div>
         <div class="right">
@@ -33,7 +36,7 @@
     </div>
     <hr />
       {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
-      <input type="hidden" name="docID" id="docID" value=" ">
+      <input type="hidden" name="docID" id="docID" value="">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -64,6 +67,9 @@
                 <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
                 <div id="input_container"></div>
+                <div id="editcertificate"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
+            
             </div>
         </div>
         <br>
@@ -134,6 +140,8 @@
             <div class="col-10">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
                 <div id="input_conference"></div>
+                <div id="editaddconference"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddconf2"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -179,6 +187,8 @@
             </div>
             <div class="col-10">
                     <div id="input_career_one"></div>
+                    <div id="editc_ac"></div>
+                    <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd3"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -188,6 +198,8 @@
             </div>
             <div class="col-10">
                 <div id="input_career_two"></div>
+                <div id="editc_we"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd44"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -197,6 +209,8 @@
             </div>
             <div class="col-10">
                 <div id="input_career_three"></div>
+                <div id="c_aw"></div>
+                <div class="cols-1 relative"><button type="button" class="btn btn-success add55"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -206,6 +220,15 @@
             </div>
             <div class="col-10">
                 <input type="checkbox" name="n_order" id="n_order_one" value="1"> OK <input type="checkbox" id="n_order" name="n_order" value="0"> NO 
+            </div>
+
+            <div class="sidediv cols-35">
+                <!-- <div class="maxnum"><b id="charNum">&emsp;200</b> <b> / 200 </b> </div> -->
+                <div class="sidebots">
+                    <a class="prevbutton previewEditDoc" type="button" class="btn-prime" href="#previewAddDoctor">Preview</a>
+                    <button type="button" class="btn-prime release1">Release</button>
+                    <button type="button" class="btn-prime release2">Release</button>
+                </div>
             </div>
         </div>
         <br>

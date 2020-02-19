@@ -52,9 +52,8 @@
             <div class="form-group">
                 <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                 <div class="cols-4">          
-                    <select name="ill_cat" class="form-control">
-                        <option value="選択してください">選択してください</option>
-                        <option value="選択してください">選択してください</option>
+                    <select name="ill_cat" id="ill_cat" class="form-control">
+                        <option value="">選択してください</option>
                         <option value="感染症・寄生虫症">感染症・寄生虫症</option>
                         <option value="女性特有のがん＊">女性特有のがん＊</option>
                         <option value="男性特有のがん">男性特有のがん</option>
@@ -95,7 +94,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill_shldr" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
+                    <input type="text" class="form-control ill_shldr" id="ill_sh" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
                 </div>
                 <div class="cols-2">          
                     <span id="rchars">20</span>/20
@@ -153,8 +152,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm" name="sm[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-					</textarea>
+                    <textarea class="form-control sm" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -164,8 +162,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-					</textarea>
+                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -174,8 +171,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-					</textarea>
+                    <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -184,8 +180,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-					</textarea>
+                    <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -194,8 +189,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-					</textarea>
+                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2 relative">          
                     <span id="rchars4">0</span>/46
@@ -234,7 +228,6 @@
                     <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
                     <div class="cols-4">          
                     <select name="sub_head1a[]" class="form-control">
-                    <!-- <select name="sub_head1a" class="form-control"> -->
                         <option value="">選択してください</option>
                         <option value="基礎知識">基礎知識</option>
                         <option value="近年の動向">近年の動向</option>
@@ -258,7 +251,6 @@
                     <label class="control-label cols-15"></label>
                     <div class="cols-4">
                         <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
-                        <!-- <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b"> -->
                     </div>
                 </div>
 
