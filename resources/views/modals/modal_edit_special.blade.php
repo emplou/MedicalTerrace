@@ -68,10 +68,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">監修・協力医師<br><span>Doctor</span></label>
                     <div class="cols-5">          
-                        <select name="doctor" class="form-control">
-                            <option value="">選択してください</option>
-                           
-                        </select>
+                        <div id="input_doc"></div>
                     </div>
                     <div class="cols-3 rad-buttons">
                         <div id="input_rad"></div>
@@ -120,49 +117,24 @@
                         <div class="cols-7">   
                             <!-- add new textarea here -->
                             <div class="wrapper2"></div>
-                            
-                            <div id="input_lead"></div>
-                            
+                            <div class="cols-10">
+                                <div id="input_lead"></div>
+                            </div>
                         </div>
                         <div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div> 
                         
                 </div>
                 <hr>
 
+                <!-- Subheading -->
+                <div id="addanother">
+                            
+                    <div class="input_content"></div>
+                    
+                </div>
+
                 <!-- add new form here -->
                 <div class="field_wrap3"></div>
-
-                <div id="addanother2">
-                    <div class="form-group">
-                        <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
-                        <div class="cols-5">          
-                            <select name="sub_head1a[]" class="form-control">
-                                <option value="">選択してください</option>
-                                <option value="基礎知識">基礎知識</option>
-                                <option value="近年の動向">近年の動向</option>
-                                <option value="注意した方がよい人">注意した方がよい人</option>
-                                <option value="出やすい症状">出やすい症状</option>
-                            </select>
-                        </div>
-                        <label class="control-label cols-15"></label>
-                        <div class="cols-5">          
-                            <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
-                        </div>
-                    </div>
-
-                    <!-- Use CKcreditor -->
-                    <div class="form-group editor">
-                        <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                        <div class="cols-7"> 
-                             
-                            <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-
-                            </textarea>
-                        </div>
-                        <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
-                        
-                    </div>
-                </div>
 
                 
                 <div class="form-group">
@@ -175,69 +147,30 @@
                 <!-- <span>Insert image</span> with add field starts -->
                 <div class="form-group">
                     <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
-                    <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
-                    <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
-                    <div class="cols-1"></div>
-                </div>
+                    <div class="cols-6">
+                        <div id="input_ill_img"></div>
 
-                <div class="form-group">
-                    <div class="control-label cols-15"></div>
-                    <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
-                    <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
-                    <div class="cols-1"></div>
-                </div>
-                <!-- Add fields here -->
-                <div class="field_wrap1"></div>
-            
-                <div class="form-group">
-                    <div class="control-label cols-15"></div>
-                    <div class="cols-2"><button type="button" class="btn-prime image"></button></div>
-                    <div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div>
+                        <!-- Add fields here -->
+                        <div class="field_wrap1"></div>
+                    </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
-                
-                <!-- <span>Insert image</span> with add field ends -->
+             
                 <hr>
+
+                <!-- Subheading -->
+                <div id="addanother3">
+                            
+                    <div class="input_content2"></div>
+                    
+                </div>
 
                 <!-- add new form here -->
                 <div class="field_wrap4"></div>
 
-                <div id="addanother3">
-                    <div class="form-group">
-                        <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
-                        <div class="cols-5">          
-                            <select name="sub_head2a[]" class="form-control">
-                                <option value="">選択してください</option>
-                                <option value="基礎知識">基礎知識</option>
-                                <option value="近年の動向">近年の動向</option>
-                                <option value="注意した方がよい人">注意した方がよい人</option>
-                                <option value="出やすい症状">出やすい症状</option>
-                            </select>
-                        </div>
-                        <div class="cols-5">          
-                            <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head2b[]">
-                        </div>
-                    </div>
-
-                    <!-- <div class="form-group">
-                        <label class="control-label cols-15">画像alt:</label>
-                    </div> -->
-
-                    <!-- Use CKcreditor -->
-                    <div class="form-group editor">
-                        <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                        <div class="cols-7">          
-                            <textarea class="form-control" name="txt2_ckeditor[]" id="txt2_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-
-                            </textarea>
-                        </div>
-                        <div class="cols-1 relative"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <div class="cols-15"></div>
-                    <div class="cols-5"><button type="button" class="btn-prime image"></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn-prime graph"></button></div>
+                    <div class="cols-6"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
                 </div>
                 <hr>
 
@@ -248,11 +181,11 @@
                     </div>
                 </div>
                
-                <div class="form-group">
+                <div class="form-group check">
                     <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                     <div class="cols-7">   
                         <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                            <div id="input_seo_title"></div>
+                            <input class="styled-checkbox" id="tts" type="checkbox" name="seo" value="1"><label for="tts" id="input_seo_title" style="color: #F00;font-weight:500;"></label>
                         </div>       
                         
                     </div>
@@ -322,14 +255,14 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group check">
                     <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
                     <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                         <div id="input_kw"></div>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group check">
                     <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
                     <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                         <div class="cols-4">
@@ -386,7 +319,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group check">
                     <label class="control-label cols-15">タグ(季節)<br><span>Tag(season)</span></label>
                     <div class="cols-7">   
                         <div class="cols-11">

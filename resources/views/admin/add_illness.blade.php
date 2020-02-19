@@ -395,7 +395,7 @@
                     </div>
                     <div class="sidediv cols-3">
                         <div class="sidebots">
-                            <a class="prevbutton" type="button" class="btn-prime preview" href="#previewAddIllness">Preview</a>
+                            <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness">Preview</a>
                             <button type="button" class="btn-prime release1" id="myBtn">Release</button>
                             <button type="button" class="btn-prime release2" id="myBtn">Release</button>
                         </div>
