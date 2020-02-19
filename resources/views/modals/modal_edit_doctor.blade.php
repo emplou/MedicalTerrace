@@ -1,3 +1,4 @@
+@include('modals.modal_add_doctor')
 <!-- Modal -->
 <div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog modal-lg">
@@ -33,7 +34,7 @@
     </div>
     <hr />
       {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
-      <input type="hidden" name="docID" id="docID" value=" ">
+      <input type="hidden" name="docID" id="docID" value="">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -206,6 +207,15 @@
             </div>
             <div class="col-10">
                 <input type="checkbox" name="n_order" id="n_order_one" value="1"> OK <input type="checkbox" id="n_order" name="n_order" value="0"> NO 
+            </div>
+
+            <div class="sidediv cols-35">
+                <!-- <div class="maxnum"><b id="charNum">&emsp;200</b> <b> / 200 </b> </div> -->
+                <div class="sidebots">
+                    <a class="prevbutton previewEditDoc" type="button" class="btn-prime" href="#previewAddDoctor">Preview</a>
+                    <button type="button" class="btn-prime release1">Release</button>
+                    <button type="button" class="btn-prime release2">Release</button>
+                </div>
             </div>
         </div>
         <br>

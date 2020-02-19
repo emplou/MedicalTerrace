@@ -13,7 +13,7 @@ class AddPreviewTable extends Migration
      */
     public function up()
     {
-        Schema::table('dv_preview', function (Blueprint $table) {
+        Schema::create('dv_preview', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
             $table->string('type_id');

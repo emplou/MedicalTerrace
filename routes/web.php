@@ -60,3 +60,6 @@ Route::post('/save_overwrite_hospital', 'HomeController@save_overwrite_hospital'
 
 //get data
 Route::get('/get_all_department','HomeController@get_all_department');
+
+//approval request
+Route::post('/doc_approve_request','HomeController@doc_approve_request');
