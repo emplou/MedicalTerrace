@@ -2021,7 +2021,9 @@ table#list {
 .btn.adddept1,
 .btn.addsum1,
 .btn.add-ck,
-.btn.addsub {
+.btn.addsub,
+.editor .btn,
+.cols-1 .btn {
   position: absolute;
   color: grey;
   bottom: 0;
@@ -2049,7 +2051,9 @@ table#list {
 .btn.adddept1 span,
 .btn.addsum1 span,
 .btn.add-ck span,
-.btn.addsub span  {
+.btn.addsub span,
+.editor .btn span,
+.cols-1 .btn span  {
   font-size: 22px;
 } 
 
@@ -2709,7 +2713,7 @@ ol.link li a{
 
 .div-bg .heading1 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
 }
 .div-bg .heading1.hosp{
@@ -2719,7 +2723,7 @@ ol.link li a{
 }
 .div-bg .heading1.hosp span{
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   margin-left: 10px;
 }
 .div-bg span {

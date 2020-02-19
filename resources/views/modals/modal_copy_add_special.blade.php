@@ -118,7 +118,8 @@
                         <div class="cols-7">   
                             <!-- add new textarea here -->
                             <div class="field_wrap2"></div>
-                            <div id="addanother1">
+                            <!-- <div id="addanother1"> </div>-->
+                            <div class="cols-10">
                                 <div id="input_lead_two"></div>
                             </div>
                         </div>
@@ -126,39 +127,13 @@
                     </div>
                     <hr>
 
+                    <!-- Subheading -->
+                    <div id="addanother2">
+                        <div class="input_content_two"></div>
+                    </div>
+
                     <!-- add new form here -->
                     <div class="field_wrap3"></div>
-
-                    <div id="addanother2">
-                        <div class="form-group">
-                            <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
-                            <div class="cols-5">          
-                                <select name="sub_head1a[]" class="form-control">
-                                    <option value="">選択してください</option>
-                                    <option value="基礎知識">基礎知識</option>
-                                    <option value="近年の動向">近年の動向</option>
-                                    <option value="注意した方がよい人">注意した方がよい人</option>
-                                    <option value="出やすい症状">出やすい症状</option>
-                                </select>
-                            </div>
-                            <label class="control-label cols-15"></label>
-                            <div class="cols-5">          
-                                <input type="text" class="form-control" id="sub_head1b" name="sub_head1b[]">
-                            </div>
-                        </div>
-
-                        <!-- Use CKcreditor -->
-                        <div class="form-group editor">
-                            <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                            <div class="cols-7"> 
-                                
-                                <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor_two">
-                                </textarea>
-                            </div>
-                            <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
-                            
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <div class="cols-15"></div>
@@ -170,64 +145,30 @@
                     <!-- <span>Insert image</span> with add field starts -->
                     <div class="form-group">
                         <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
-                        <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
-                        <div class="cols-4"><input type="text" class="form-control" name="pos_ill[]"></div>
-                        <div class="cols-1"></div>
-                    </div>
+                        <div class="cols-6">
+                            <div id="input_ill_img_two"></div>
 
-                    <div class="form-group">
-                        <div class="control-label cols-15"></div>
-                        <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
-                        <div class="cols-4"><input type="text" class="form-control" name="pos_ill[]"></div>
-                        <div class="cols-1"></div>
-                    </div>
-                    <!-- Add fields here -->
-                    <div class="field_wrap1"></div>
-                
-                    <div class="form-group">
-                        <div class="control-label cols-15"></div>
-                        <div class="cols-15"><button type="button" class="btn-prime image"></button></div>
-                        <div class="cols-4"><input type="text" class="form-control" name="pos_ill[]"></div>
+                            <!-- Add fields here -->
+                            <div class="field_wrap1"></div>
+                        </div>
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add1"><span class="lnr lnr-plus-circle"></span></button></div>
                     </div>
                     
-                    <!-- <span>Insert image</span> with add field ends -->
                     <hr>
 
+                    <!-- Subheading -->
+                    <div id="addanother3">
+                            
+                        <div class="input_content2_two"></div>
+                            
+                    </div>
+        
                     <!-- add new form here -->
                     <div class="field_wrap4"></div>
 
-                    <div id="addanother3">
-                        <div class="form-group">
-                            <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
-                            <div class="cols-5">          
-                                <select name="sub_head2a[]" class="form-control">
-                                    <option value="">選択してください</option>
-                                    <option value="基礎知識">基礎知識</option>
-                                    <option value="近年の動向">近年の動向</option>
-                                    <option value="注意した方がよい人">注意した方がよい人</option>
-                                    <option value="出やすい症状">出やすい症状</option>
-                                </select>
-                            </div>
-                            <div class="cols-5">          
-                                <input type="text" class="form-control" name="sub_head2b[]">
-                            </div>
-                        </div>
-
-                        <!-- Use CKcreditor -->
-                        <div class="form-group editor">
-                            <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-                            <div class="cols-7">          
-                                <textarea class="form-control" name="txt2_ckeditor[]" id="txt2_ckeditor_two">
-                                </textarea>
-                            </div>
-                            <div class="cols-1 relative"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
-                        </div>
-                    </div>
-
                     <div class="form-group">
-                        <div class="cols-15"></div>
-                        <div class="cols-5"><button type="button" class="btn-prime image"></button>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn-prime graph"></button></div>
+                    <div class="cols-15"></div>
+                        <div class="cols-6"><button type="button" class="btn-prime image"></button><button type="button" class="btn-prime graph"></button></div>
                     </div>
                     <hr>
 
@@ -242,8 +183,8 @@
                         <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                         <div class="cols-5">   
                             <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                                <div id="input_seo_title_two"></div>
-                            </div>    
+                                <input class="styled-checkbox" id="tts_two" type="checkbox" name="seo" value="1"><label for="tts_two" id="input_seo_title_two" style="color: #F00;font-weight:500;"></label>
+                            </div>   
                         </div>
                     </div>
 
@@ -308,40 +249,40 @@
                         </div>
                     </div>
 
-                    <div class="form-group check3">
+                    <div class="form-group check">
                         <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
                         <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                         <div id="input_kw_two"></div>
                         </div>
                     </div>
 
-                    <div class="form-group check3">
+                    <div class="form-group check">
                         <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
                         <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
                             <div class="cols-4">
-                                <input type="checkbox" id="tag1b" name="tag_ill[]" value="1"> 
-                                <label for="tag1b">考えられる病気より</label>
+                                <input type="checkbox" id="tag1b_two" name="tag_ill[]" value="1"> 
+                                <label for="tag1b_two">考えられる病気より</label>
                             </div>
                             <div class="cols-4">
-                                <input type="checkbox" id="tag2b" name="tag_ill[]" value="1"> 
-                                <label for="tag2b">考えられる病気より</label>
+                                <input type="checkbox" id="tag2b_two" name="tag_ill[]" value="1"> 
+                                <label for="tag2b_two">考えられる病気より</label>
                             </div>
                             <div class="cols-4">
-                                <input type="checkbox" id="tag3b" name="tag_ill[]" value="1"> 
-                                <label for="tag3b">考えられる病気より</label>
+                                <input type="checkbox" id="tag3b_two" name="tag_ill[]" value="1"> 
+                                <label for="tag3b_two">考えられる病気より</label>
                             </div>
                             <div class="clear"></div>
                             <div class="cols-4">
-                                <input type="checkbox" id="tag4b" name="tag_ill[]" value="1"> 
-                                <label for="tag4b">考えられる病気より</label>
+                                <input type="checkbox" id="tag4b_two" name="tag_ill[]" value="1"> 
+                                <label for="tag4b_two">考えられる病気より</label>
                             </div>
                             <div class="cols-4">
-                                <input type="checkbox" id="tag5b" name="tag_ill[]" value="1"> 
-                                <label for="tag5b">考えられる病気より</label>
+                                <input type="checkbox" id="tag5b_two" name="tag_ill[]" value="1"> 
+                                <label for="tag5b_two">考えられる病気より</label>
                             </div>
                             <div class="cols-4">
-                                <input type="checkbox" id="tag6b" name="tag_ill[]" value="1"> 
-                                <label for="tag6b">考えられる病気より</label>
+                                <input type="checkbox" id="tag6b_two" name="tag_ill[]" value="1"> 
+                                <label for="tag6b_two">考えられる病気より</label>
                             </div>
                             
                         </div>
@@ -375,7 +316,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group check3">
+                    <div class="form-group check">
                         <label class="control-label cols-15">タグ(季節)<br><span>Tag(season)</span></label>
                         <div class="cols-7">   
                             <div class="cols-11">

@@ -204,33 +204,32 @@
     </div>
 
     
-
-    <!-- Subheading -->
-    <div class="form-group">
-        <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
-        <div class="cols-5">          
-            <textarea class="form-control sm2" name="hosp_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-            </textarea>
-        </div>
-        <div class="cols-2">          
-            <span id="rchars4">0</span>/46
-        </div>
-    </div>
-
-    <!-- Text of Subheading -->
-    <div class="form-group editor">
-        <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-        <div class="cols-6">   
-            <!-- add new textarea here -->
-            <div class="field_wrap1_hosp"></div>
-            <div id="addanother1">
-                <div class="cols-10">        
-                    <textarea class="form-control" name="text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
-                </div>
+    <div id="addanother">
+        <!-- Subheading -->
+        <div class="form-group">
+            <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
+            <div class="cols-5">          
+                <textarea class="form-control sm2" name="hosp_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                </textarea>
+            </div>
+            <div class="cols-2">          
+                <span id="rchars4">0</span>/46
             </div>
         </div>
-        <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp1"><span class="lnr lnr-plus-circle"></span></button></div> 
+
+        <!-- Text of Subheading -->
+        <div class="form-group editor">
+            <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
+            <div class="cols-6">   
+                <!-- add new textarea here -->
+                <div class="cols-10">        
+                    <textarea class="form-control ck" name="textheading_lead[]" id="textheading_lead">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                </div>
+            </div>
+            <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck1"><span class="lnr lnr-plus-circle"></span></button></div> 
+        </div>
     </div>
+    <div id="addnewdiv"></div>
 
     <hr />
 
@@ -276,52 +275,58 @@
                         <option>Medical four</option>
                     </select>
                 </div>
-                <div class="cols-3">
-                    <select class="form- " name="med_sbj_list[]">
-                        <option>選択してください</option>
-                        <option>Medical one</option>
-                        <option>Medical two</option>
-                        <option>Medical three</option>
-                        <option>Medical four</option>
-                    </select>
-                </div>
-                <div class="cols-3">
-                    <select class="form- " name="med_sbj_list[]">
-                        <option>選択してください</option>
-                        <option>Medical one</option>
-                        <option>Medical two</option>
-                        <option>Medical three</option>
-                        <option>Medical four</option>
-                    </select>
-                </div>
-                <div class="cols-3">
-                    <select class="form- " name="med_sbj_list[]">
-                        <option>選択してください</option>
-                        <option>Medical one</option>
-                        <option>Medical two</option>
-                        <option>Medical three</option>
-                        <option>Medical four</option>
-                    </select>
+                <div id="mednewdiv1"></div>
+                <div id="addanothermed1">
+                    <div class="cols-3">
+                        <select class="form- " name="med_sbj_list[]">
+                            <option>選択してください</option>
+                            <option>Medical one</option>
+                            <option>Medical two</option>
+                            <option>Medical three</option>
+                            <option>Medical four</option>
+                        </select>
+                    </div>
+                    <div class="cols-3">
+                        <select class="form- " name="med_sbj_list[]">
+                            <option>選択してください</option>
+                            <option>Medical one</option>
+                            <option>Medical two</option>
+                            <option>Medical three</option>
+                            <option>Medical four</option>
+                        </select>
+                    </div>
+                    <div class="cols-3">
+                        <select class="form- " name="med_sbj_list[]">
+                            <option>選択してください</option>
+                            <option>Medical one</option>
+                            <option>Medical two</option>
+                            <option>Medical three</option>
+                            <option>Medical four</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="cols-1 relative">
-                    <button type="button" class="btn btn-success add6"><span class="lnr lnr-plus-circle"></span></button>
+                    <button type="button" class="btn btn-success addmed1"><span class="lnr lnr-plus-circle"></span></button>
                 </div>
-                <div class="cols-3">
-                    <input type="text" class="form- " placeholder="選択項目にない場合に入力" name="med_sbj_list_add[]">
+                 <div id="mednewdiv2"></div>
+                <div id="addanothermed2">
+                    <div class="cols-3">
+                        <input type="text" class="form- " placeholder="選択項目にない場合に入力" name="med_sbj_list_add[]">
+                    </div>
+                    <div class="cols-3">
+                        <input type="text" class="form- " name="med_sbj_list_add[]">
+                    </div>
+                    <div class="cols-3">
+                        <input type="text" class="form- " name="med_sbj_list_add[]">
+                    </div>
                 </div>
-                <div class="cols-3">
-                    <input type="text" class="form- " name="med_sbj_list_add[]">
-                </div>
-                <div class="cols-3">
-                    <input type="text" class="form- " name="med_sbj_list_add[]">
-                </div>
-
                 <div class="cols-1 relative">
-                    <button type="button" class="btn btn-success add6"><span class="lnr lnr-plus-circle"></span></button>
+                    <button type="button" class="btn btn-success addmed2"><span class="lnr lnr-plus-circle"></span></button>
                 </div>
         </div>
     </div>
 
+    <div class="field_wrap2_hosp"></div>
     <!-- Medical Subject -->
     <div class="form-group">
         <label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label>
@@ -350,7 +355,7 @@
         <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap2_hosp"></div>
+            
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="med_subj_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
@@ -437,6 +442,7 @@
 
      <hr /> 
     <!-- Subheading 3-->
+    <div class="field_wrap3_hosp"></div>
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-5">          
@@ -448,13 +454,11 @@
         </div>
     </div>
 
-
     <!-- Text of Subheading 3-->
     <div class="form-group editor">
         <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap3_hosp"></div>
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="feature_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
@@ -462,7 +466,9 @@
             </div>
         </div>
         <div class="cols-1 relative"><button type="button" class="btn btn-success addhosp3"><span class="lnr lnr-plus-circle"></span></button></div> 
+   
     </div>
+    
 
      <!-- Buttons -->
     <div class="form-group">
@@ -478,6 +484,7 @@
 
     <hr />
     <!-- Subheading 4-->
+    <div class="field_wrap4_hosp"></div>
     <div class="form-group">
         <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
         <div class="cols-5">          
@@ -494,7 +501,7 @@
         <label class="control-label cols-15"> </label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap4_hosp"></div>
+            
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="equipment_subheading2" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
@@ -527,6 +534,8 @@
     </div>
 
     <hr />
+
+    <div class="field_wrap5_hosp"></div>
     <!-- Subheading 4-->
     <div class="form-group">
         <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
@@ -537,12 +546,13 @@
         
     </div>
 
+    
     <!-- Text of Subheading 4-->
     <div class="form-group editor">
          <label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label>
         <div class="cols-6">   
             <!-- add new textarea here -->
-            <div class="field_wrap5_hosp"></div>
+            
             <div id="addanother1">
                 <div class="cols-10">        
                     <textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
@@ -657,6 +667,7 @@
     </div>
 
     <!-- Number of Beds -->    
+    <div class="field_wrap6_hosp"></div>
     <div class="form-group">
         <div class="control-label cols-15">病床種別・病床数<br><span>Number of beds</span></div>
         <div class="cols-05">
@@ -677,6 +688,7 @@
     </div>
 
     <!-- Number of Beds -->    
+    <div class="field_wrap7_hosp"></div>
     <div class="form-group check fix">
         <div class="control-label cols-15">面会可能日・時間<br><span>Possible date of visit</span></div>
         <div class="cols-1">

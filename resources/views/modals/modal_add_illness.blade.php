@@ -1,4 +1,5 @@
 <div id="previewAddIllness" class="modalDialog">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	
 
         <a href="#close" title="Close" class="close">X</a>

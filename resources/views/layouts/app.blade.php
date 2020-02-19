@@ -532,6 +532,10 @@ $(document).ready(function() {
 	CKEDITOR.add 
 </script>
 <script>
+	CKEDITOR.replace( 'textheading_lead' );
+	CKEDITOR.add 
+</script>
+<script>
 	CKEDITOR.replace( 'equipment_subheading' );
 	CKEDITOR.add 
 </script>
@@ -605,6 +609,7 @@ $(document).ready(function() {
 
 /* **************** ON FUNCTIONS **************** */
 $(document).ready(function(){   
+	
 
 var wrapper1         = $(".field_wrap1"); //Fields wrapper
 var wrapper2         = $(".field_wrap2"); //Fields wrapper
@@ -612,13 +617,7 @@ var wrapper3         = $(".field_wrap3"); //Fields wrapper
 var wrapper4         = $(".field_wrap4"); //Fields wrapper
 var wrapper5         = $(".field_wrap5"); //Fields wrapper
 var wrapper6         = $(".field_wrap6"); //Fields wrapper
-var wrapper1h         = $(".field_wrap1_hosp"); //Fields wrapper
-var wrapper2h         = $(".field_wrap2_hosp"); //Fields wrapper
-var wrapper3h         = $(".field_wrap3_hosp"); //Fields wrapper
-var wrapper4h         = $(".field_wrap4_hosp"); //Fields wrapper
-var wrapper5h         = $(".field_wrap5_hosp"); //Fields wrapper
-var wrapper6h         = $(".field_wrap6_hosp"); //Fields wrapper
-var wrapper7h         = $(".field_wrap7_hosp"); //Fields wrapper
+
 
 var addcert1_button     = $(".addcert1");
 var addcon1_button      = $(".addcon1"); //Add button ID
@@ -631,13 +630,7 @@ var addcar3_button      = $(".addcar6"); //Add button ID
 var addcar3_button      = $(".addcar7"); //Add button ID
 var addcar3_button      = $(".addcar8"); //Add button ID
 
-var addhosp1_button      = $(".addhosp1"); //Add button ID
-var addhosp2_button      = $(".addhosp2"); //Add button ID
-var addhosp3_button      = $(".addhosp3"); //Add button ID
-var addhosp4_button      = $(".addhosp4"); //Add button ID
-var addhosp5_button      = $(".addhosp5"); //Add button ID
-var addhosp6_button      = $(".addhosp6"); //Add button ID
-var addhosp7_button      = $(".addhosp7"); //Add button ID
+
 
 var adddept1_button     = $(".adddept1"); //Add button ID
 
@@ -680,40 +673,7 @@ $(addcar6_button).click(function(e){ //on add input button click
 	$(wrapper6).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
 });
 
-$(addhosp1_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper1h).append(''); //add input box
-});
 
-$(addhosp2_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper2h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
-});
-
-$(addhosp3_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper3h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
-});
-
-$(addhosp4_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper4h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
-});
-
-$(addhosp5_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper5h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
-});
-
-$(addhosp6_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper6h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
-});
-
-$(addhosp7_button).click(function(e){ //on add input button click
-	e.preventDefault();
-	$(wrapper7h).append('<div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year" name="----年" class="form- "><option>----年</option></select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="0">--月</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div></div>'); //add input box
-});
 
 $(adddept7_button).click(function(e){ //on add input button click
 	e.preventDefault();
