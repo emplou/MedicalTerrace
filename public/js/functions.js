@@ -1857,7 +1857,7 @@ $.ajaxSetup({
     var i=0;
     function addfields1(e) {
       e.preventDefault();
-      var copy = $('#addanother').clone();
+        var copy = $('#addanother').clone();
 
       var oneplus=i+1;
 
@@ -1888,7 +1888,6 @@ $.ajaxSetup({
       $('#addnewdiv').append($(copy).html()+ '<br>');
       CKEDITOR.replace('textheading_lead['+oneplus+']');
       i++;  
-
     }
 
     // hospital equipment ckEditor (third)
@@ -1930,3 +1929,54 @@ $.ajaxSetup({
       i++;  
 
     }
+
+
+
+//HOSPITAL PAGE ADD BUTTON
+    var addhosp1_button = $(".addhosp1"); //Add button ID
+    var addhosp2_button = $(".addmed1"); //Add button ID
+    var addhosp3_button = $(".addmed2"); //Add button ID
+    var addhosp4_button = $(".addhosp4"); //Add button ID
+    var addhosp5_button = $(".addhosp5"); //Add button ID
+    var addhosp6_button = $(".addhosp6"); //Add button ID
+    var addhosp7_button = $(".addhosp7"); //Add button ID
+
+    var wrapper1h = $(".field_wrap1_hosp"); //Fields wrapper
+    var wrapper2h = $(".mednewdiv1"); //Fields wrapper
+    var wrapper3h = $(".mednewdiv2"); //Fields wrapper
+    var wrapper4h = $(".field_wrap4_hosp"); //Fields wrapper
+    var wrapper5h = $(".field_wrap5_hosp"); //Fields wrapper
+    var wrapper6h = $(".field_wrap6_hosp"); //Fields wrapper
+    var wrapper7h = $(".field_wrap7_hosp"); //Fields wrapper
+    
+
+    
+
+    $(".addmed1").click(function () {
+        $(wrapper2h).append('<div class="form-group"><label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label><div class="cols-4"><select class="form-control" name="department"><option value="0">選択してください</option></select></div></div><!-- Subheading 2--><div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-6"><textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><!-- Text of Subheading 2--><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="med_subj_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div><!-- Buttons --><div class="form-group"><div class="cols-15"></div><div class="cols-55"><div class="upload-btn-wrapper"><button class="bton"></button><input type="file" name="subject_image" name="insert_img_subject" /></div></div></div><div class="form-group check fix"><div class="control-label cols-15">診療科目別<br>外来受付時間<br>Examination date</div> <div class="cols-8"><input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~月 <input type="checkbox" id="tag_season1" name="weekdays"><label for="tag_season1"></label>火 <input type="checkbox" id="tag_season2" name="weekdays"><label for="tag_season2"></label>水 <input type="checkbox" id="tag_season3" name="weekdays"><label for="tag_season3"></label>木 <input type="checkbox" id="tag_season4" name="weekdays"><label for="tag_season4"></label>金 <input type="checkbox" id="tag_season5" name="weekdays"><label for="tag_season5"></label>土 <input type="checkbox" id="tag_season6" name="weekdays"><label for="tag_season6"></label>日 <input type="checkbox" id="tag_season7" name="weekdays"><label for="tag_season7"></label>祝 <input type="checkbox" id="tag_season8" name="weekdays"><label for="tag_season8"></label></div><div class="cols-8"><input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~ 月 <input type="checkbox" id="tag_season9" name="weekdays"><label for="tag_season9"></label>火 <input type="checkbox" id="tag_season10" name="weekdays"><label for="tag_season10"></label>水 <input type="checkbox" id="tag_season11" name="weekdays"><label for="tag_season11"></label>木 <input type="checkbox" id="tag_season12" name="weekdays"><label for="tag_season12"></label>金 <input type="checkbox" id="tag_season13" name="weekdays"><label for="tag_season13"></label>土 <input type="checkbox" id="tag_season14" name="weekdays"><label for="tag_season14"></label>日 <input type="checkbox" id="tag_season15"name="weekdays"><label for="tag_season15"></label>祝 <input type="checkbox" id="tag_season16"name="weekdays"><label for="tag_season16"></label></div><div class="cols-15"></div><div class="cols-8"><div class="cols-6"><input type="text" class="form- " name="special_hours"> </div><div class="cols-3">※受診内容により日・時間が異なる場合に記載</div><input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~<input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px">診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~月 <input type="checkbox" name="tag_season[]">火 <input type="checkbox" name="tag_season[]">水 <input type="checkbox" name="tag_season[]">木 <input type="checkbox" name="tag_season[]">金 <input type="checkbox" name="tag_season[]">土 <input type="checkbox" name="tag_season[]">日 <input type="checkbox" name="tag_season[]">祝 <input type="checkbox" name="tag_season[]"></div></div><!-- Buttons --><div class="form-group"><div class="cols-15"></div><div class="cols-75"><button type="button" class="btn-prime addto"></button><button type="button" class="btn-prime add-duplicate"></button></div></div>'); //add input box
+    });
+
+    $(addhosp3_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        $(wrapper3h).append('<div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="feature_title" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><!-- Text of Subheading 3--><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6">   <!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="feature_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div>'); //add input box
+    });
+
+    $(addhosp4_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        $(wrapper4h).append('<!-- Subheading 4--><div class="field_wrap4_hosp"></div><div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"><textarea class="form-control sm2" name="text_equipment_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><!-- Text of Subheading 4--><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div>'); //add input box
+    });
+
+    $(addhosp5_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        $(wrapper5h).append('<!-- Subheading 4--><div class="form-group"><label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div></div><!-- Text of Subheading 4--><div class="form-group editor"><label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label><div class="cols-6">   <!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div>'); //add input box
+    });
+
+    $(addhosp6_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        $(wrapper6h).append('<div class="form-group"><div class="control-label cols-15">病床種別・病床数<br><span>Number of beds</span></div><div class="cols-05"><label>種別</label></div><div class="cols-2"><select class="form-control"><option>選択してください</option></select></div><div class="cols-05"><label>種別</label></div><div class="cols-3"><input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"> </div></div>'); //add input box
+    });
+
+    $(addhosp7_button).click(function (e) { //on add input button click
+        e.preventDefault();
+        $(wrapper7h).append('<div class="form-group check fix"><div class="control-label cols-15">面会可能日・時間<br><span>Possible date of visit</span></div><div class="cols-1"><select class="form-control"><option>14:30</option></select></div><div class="cols-1"><select class="form-control"><option>15:30</option></select></div><div class="cols-4">月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label></div></div>'); //add input box
+    });
