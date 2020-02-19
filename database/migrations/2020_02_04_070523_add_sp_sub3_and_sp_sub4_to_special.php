@@ -15,8 +15,8 @@ class AddSpSub3AndSpSub4ToSpecial extends Migration
     {
         Schema::table('special', function (Blueprint $table) {
             //
-            $table->longText('sp_sub3');
-            $table->longText('sp_sub4');
+            //$table->longText('sp_sub3');
+            //$table->longText('sp_sub4');
         });
     }
 

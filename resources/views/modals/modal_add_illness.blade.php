@@ -6,32 +6,35 @@
         <div class="modal-panel">
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
-                <li><a href="#">感染症・寄生虫  </a></li>
-                <li>手足口病</a></li>
+                <li><a href="#" class="ill_cat"><!-- 感染症・寄生虫 --></a></li>
+                <li class="ill_name">手足口病</a></li>
             </ul>
-            <div class="panel-head">感染症・寄生虫</div>
+            <div class="panel-head ill_cat"><!-- 感染症・寄生虫 --></div>
             <div class="div-bg">
-                <div class="heading1">手・足・口に赤い発疹やみずぶくれが出ます<br>
-                <span>てあしくちびょう</span><br>手足口病</div>
+                <div class="heading1 ill_sh"><!-- 手・足・口に赤い発疹やみずぶくれが出ます --></div>
+                <div class="heading1"><span>てあしくちびょう</span></div>
+                <div class="heading1 ill_name"><!-- 手足口病 --></div>
             </div>
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 
-                    <div class="tags">
-                        <span>子ども</span>
+                    <div class="tags" id="tag_value">
+                        <!-- <span>子ども</span>
                         <span>夏</span>
                         <span>感染症</span>
                         <span>夏風邪</span>
-                        <span>手足口病</span>
+                        <span>手足口病</span> -->
+                        
                     </div>
 
                     <div class="tooltips">この記事をまとめると</div>
-                    <ul class="checks">
-                        <li>乳幼児、特に集団生活をしている子どもは注意。</li>
+                    <ul class="checks" id="summary">
+                        <!-- <li>乳幼児、特に集団生活をしている子どもは注意。</li>
                         <li>手と足、口に赤い発疹や水ぶくれができます。</li>
                         <li>７月に流行のピークを迎えます。</li>
                         <li>高熱はあまり出ません。</li>
-                        <li>石けんでの手洗い、うがいをして予防します。</li>
+                        <li>石けんでの手洗い、うがいをして予防します。</li> -->
+                        <!-- <div ></div> -->
                     </ul>
                     <ol class="link">
                         <li><a href="">手足口病の基礎知識</a></li>
@@ -70,8 +73,10 @@
 
                     <h3>手足口病の予防・対策方法</h3>
                     </p>有効なワクチンはありません。発病を予防する薬もありません。接触感染を予防するために、しっかり手洗いをすること、うがいをすることなどが基本の対策になります。手洗いは石けんを使い、流水で洗いましょう。治った後も2〜4週間ほど、ウイルスが便中に排泄されることがあるため、感染を広げないために、排泄物を適切に処理することが必要です。おむつ交換をする時は特に気をつけ、しっかり手を洗います。タオルの共用もしません。家庭では兄弟への感染に気をつけること、乳幼児の保育施設などの集団生活では、職員と子どもがしっかり対策をすることが大切です。<p>
-                </div>   
-                <div class="panel-pink">
+                </div>  
+                
+                <div id="input_risk_one"></div>
+                <!-- <div class="panel-pink">
                     <h3>手足口病のリスク度チェック</h3>
                 
                     <div class="form-group check">
@@ -94,8 +99,9 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="panel-pink">
+                </div> -->
+                <div id="input_risk_two"></div>
+                <!-- <div class="panel-pink">
                     <h3>手足口病のセルフチェック</h3>
                     <strong>予防・対策はしっかりできていますか？</strong>
                     <div class="form-group check">
@@ -129,7 +135,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="panel-blue">
                     <div class="id-tag">
                         監修・取材協力<br>

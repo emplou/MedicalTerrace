@@ -15,8 +15,8 @@ class AddIllSub1AndIllSub2ToIllness extends Migration
     {
         Schema::table('illness', function (Blueprint $table) {
             //
-            $table->string('ill_sub1');
-            $table->string('ill_sub2');
+            //$table->string('ill_sub1');
+            //$table->string('ill_sub2');
         });
     }
 
