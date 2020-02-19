@@ -14,7 +14,9 @@
     <div class="modal-body">
     <div class="header-wrapper">
         <div class="left">
-            <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+            <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+            <!-- <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2> -->
+            <div id="authorID"></div>
             
         </div>
         <div class="right">
@@ -65,6 +67,9 @@
                 <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
                 <div id="input_container"></div>
+                <div id="editcertificate"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
+            
             </div>
         </div>
         <br>
@@ -135,6 +140,8 @@
             <div class="col-10">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
                 <div id="input_conference"></div>
+                <div id="editaddconference"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddconf2"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -180,6 +187,8 @@
             </div>
             <div class="col-10">
                     <div id="input_career_one"></div>
+                    <div id="editc_ac"></div>
+                    <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd3"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -189,6 +198,8 @@
             </div>
             <div class="col-10">
                 <div id="input_career_two"></div>
+                <div id="editc_we"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd44"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -198,6 +209,8 @@
             </div>
             <div class="col-10">
                 <div id="input_career_three"></div>
+                <div id="c_aw"></div>
+                <div class="cols-1 relative"><button type="button" class="btn btn-success add55"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>

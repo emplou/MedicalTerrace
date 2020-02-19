@@ -57,11 +57,9 @@ $.ajaxSetup({
                   $("#editdoctor").modal('show');
                   $("#url_generation").val(response['data'][0].url_generation);
                   $("#status").val(response['data'][0].status);
-
-                //  $.each(objJSON, function (i, v) {
-                //     $('#certificate0'+ i).val(v.med_sbj_list); 
-                //     console.log('yes' + v.med_sbj_list);
-                // });
+                  
+                  author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                  $("#authorID").html(author);
 
                 var objJSON = JSON.parse(response['data'][0].certificate);
                 var inputs = "";
@@ -1708,6 +1706,54 @@ $.ajaxSetup({
     } 
   });
 
+  //edit doctor modal
+
+  $('.editaddcert1').on('click', editaddcert1);
+    var i=0;
+    function editaddcert1(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    //   var copy = $('#addanother').html();
+      $('#editcertificate').append('<input type="text" class="form- " id="kword1" name="certificate[]" style="width:300px"></div><input type="text" class="form- " id="kword2" name="certificate[]" style="width:300px">');
+    }
+
+    $('.editaddconf2').on('click', editaddconf2);
+    var i=0;
+    function editaddconf2(e) {
+      e.preventDefault();
+    //   alert('yes!');
+      $('#editaddconference').append('<input type="text" class="form- " name="conference[]" style="width:300px"><input type="text" class="form- " name="conference[]" style="width:300px">');
+    }
+
+    $('.editadd3').on('click', editadd3);
+    var i=0;
+    function editadd3(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    var options='';
+        for(i=1990; i <= 2020; i++){
+            options+='<option value="'+i+'">'+i+'</option>';
+        }
+      $('#editc_ac').append('<select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month[]" style="width:100px" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:100px"><br><select id="aca_year_to" name="c_ac_year_to[]" class="form- "  style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  style="width:100px">');
+    }
+
+    $('.editadd44').on('click', editadd44);
+    var i=0;
+    function editadd44(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    var options='';
+        for(i=1990; i <= 2020; i++){
+            options+='<option value="'+i+'">'+i+'</option>';
+        }
+      $('#editc_we').append(' <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:100px"><br><select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">Decmber</option></select><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:100px"></div>');
+    }
+
+
+
+
+
+    //end edit doctor modal details
 
   $('.addcert1').on('click', addfields);
     var i=0;
@@ -1718,9 +1764,9 @@ $.ajaxSetup({
       $('#certificate').append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-6 addanother"><div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div><div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div></div></div>');
     }
 
-    $('.addcert2').on('click', addfields2);
+    $('.addcert2').on('click', addfields22);
     var i=0;
-    function addfields2(e) {
+    function addfields22(e) {
       e.preventDefault();
     //   alert('yes!');
       $('#addconference').append('<div class="form-group"><label class="control-label cols-15"></label><div class="sp10 cols-6"><div class="cols-5"><input type="text" class="form- " name="conference[]"></div><div class="cols-5"><input type="text" class="form- " name="conference[]"></div></div></div>');

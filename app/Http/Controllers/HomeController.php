@@ -4,6 +4,7 @@ namespace MedicalTerrace\Http\Controllers;
 
 use Illuminate\Http\Request;
 // use App\Illness_Category;
+use Auth;
 use MedicalTerrace\Doctor;
 use MedicalTerrace\Hospital;
 use MedicalTerrace\Department;
@@ -756,7 +757,7 @@ class HomeController extends Controller
 
         $details = Input::all();
 
-        // dd($request->all());
+        // dd($details);
 
         $certificate = $details['certificate']; 
         $response = array();
@@ -848,6 +849,8 @@ class HomeController extends Controller
         $filename        = str_random(6) . '_' . $file->getClientOriginalName();
         $uploadSuccess   = $file->move($destinationPath, $filename);
 
+        $author = Auth::user()->id;
+
         $doctor = new Doctor;
         $doctor->url_generation             = $details['url_generation'] ;
         $doctor->status                     = $details['status'];
@@ -864,21 +867,31 @@ class HomeController extends Controller
         $doctor->career_academic_back       = $academic_careers; //json
         $doctor->career_work_exp            = $work_exp; //json
         $doctor->career_awards              = $awards; //json
+        // $doctor->sort_career                = '1';
         $doctor->sort_career                = $details['n_order'];
         $doctor->hospital_office            = $details['hospital_office'];
         $doctor->department                 = $jsondepartment;
         $doctor->doctor_comment             = $details['doc_comment'];
+        $doctor->tracking_status            = '1';
+        $doctor->author                     = $author;
         $doctor->save();
 
-        return redirect::back()->with('message','Successfully Encoded');
+        // return redirect::back()->with('message','Successfully Encoded');
+        return redirect('/doctor_list');
     }
 
     public function modal_edit_doctor($id){
         // return view('modals.modal_edit_doctor', compact('id'));
         // $request = Request::all();
         // $data = Doctor::where('id', $request->id )->get();
+        $doctor = DB::table('dv_doctors')->where('id','=',$id)->get();
+        foreach($doctor as $doc){
+                $authorID = $doc->author;
+        }
+
         $value['data'] = DB::table('dv_doctors')->where('id','=',$id)->get();
         $value['dpt'] = DB::table('hospital_departments')->get();
+        $value['auth'] = DB::table('users')->where('id','=',$authorID)->get();
         // // return $doctor;
         // return response()->json($data);
         // $userData['data'] = Doctor::getuserData($id);

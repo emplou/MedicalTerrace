@@ -195,195 +195,39 @@ $(this).on('click', function(){
 });
 // });
 
+$(document).ready(function(){ 
+    CKEDITOR.replace('lead_ckeditor');
+    CKEDITOR.add 
+    var wrapper2         = $(".field_wrap2"); //Fields wrapper
 
-$('.preview').each(function(e){
-    // $.ajaxSetup({
-    //     headers: {
-    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //     }
-    // });
-    // e.preventDefault();
-    $(this).on('click', function(){
-        //var id = $(this).attr('il-id');
-        // alert(id);
+    $('.add2').on('click', add2);
+    var i=0;
+    function add2(e) {
+        e.preventDefault();
+        var copy = $('#addanother1').clone();
 
-        $.ajax({
-            url: '/modal_preview_illness/',
-            type: 'get',
-            dataType: 'json',
-            // data : { id : id },
-            success: function(response){
-                //console.log(response['data']);
-            
-                if(response == "success")
-                
-                    console.log(response['data']); 
-                    
-                    $("#previewAddIllness").modal('show');
-                    var url = response['ill_url'][0];
-                    $("#url").html(url); 
+        var lplus=i+1;
 
-                    // Illness Category
-                    var ill_cat = response['ill_cat'][0];
-                    $("#input_ill").html(ill_cat); 
-                    
-                    var ill_shoulder = response['ill_shoulder'][0];
-                    $("#ill_shldr").html(ill_shoulder); // Illness Shoulder
+        $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+        CKEDITOR.replace('lead_ckeditor['+lplus+']');
+        i++;  
 
-                    var ill = response['ill_name'][0];
-                    $("#ill").html(ill); // Illness
-
-                    var ill_ph = response['ill_ph'][0];
-                    $("#ill_ph").html(ill_ph); //Illness Phonetics
-                        
-                    // Doctor
-                    var doctor = response['doctor'][0];
-                    $("#input_doc").html(doctor);  
-
-                    // Doctor Role
-                    var role = response['role'][0];
-                    $("#input_rad").html(role);
-
-                    var cmt = response['doc_cmt'][0];
-                    $("#cmt").val(response['cmt'][0]);  // Doctor's Comment 
-
-                    // Summarize
-                    var objJSONsum = JSON.parse(response['ill_summary'][0]);
-                    var input_sum = "";
-                    $.each(objJSONsum, function (i, v) {
-                        input_sum += '<li>'+v.objJSONsum+'</li>';
-                    });
-                    $("#input_sum").html(input_sum);
-
-                    // image
-                    var cap = response['ill_img_cap'][0];
-                    var alt = response['ill_img_alt'][0];
-                    $("#img_cap").html(cap); // image caption
-                    $("#img_alt").html(alt); // image alt
-
-                    // Search Keywords
-                    var objJSON = JSON.parse(response['data'][0].ill_kwords);
-                    var input_kwords = "";
-                    $.each(objJSON, function (i, v) {
-                        input_kwords += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
-                    });
-                    $("#input_kwords").html(input_kwords);
-
-                    // SEO Title
-                    var seo_title = response['ill_seo'][0];
-                    $("#input_seo_title").html(seo_title);
-                    
-                    var seo_txt = response['ill_seo_txt'][0];
-                    var seo_meta1 = response['ill_meta_a'][0];
-                    var seo_meta2 = response['ill_meta_b'][0];
-                    $("#seo_txt").html(seo_txt); // seo text
-                    $("#meta_txt1").html(seo_meta1);
-                    $("#meta_txt2").html(seo_meta2);
-
-                    // Illness h1
-                    input_h1 = ''+ response['data'][0].ill_shoulder +'<input type="hidden" name="h1" value="'+ response['data'][0].ill_name +'">';
-                    $("#input_h1").html(input_h1);
-                    
-                    // H2 Retrieval
-                    var objJSON = JSON.parse(response['data'][0].ill_h2);
-                    var input_h2 = "";
-                    $.each(objJSON, function (i, v) {
-                        input_h2 += '<div class="cols-3"><input type="text" class="form-control" placeholder="" value="'+v.h2+'" name="h2[]"></div>';
-                    });
-                    $("#input_h2").html(input_h2);
-
-                    // Search Keywords
-                    var objJSONkw = JSON.parse(response['data'][0].ill_kwords);
-                    var input_kwords_two = "";
-                    var input_kw_two = "";
-                    var x = 0;
-                    $.each(objJSONkw, function (i, v) {
-                        var xplus=x+1;
-                        
-                        input_kwords_two += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
-
-                        input_kw_two += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag">'+v.kword+'</label></div>';
-                    
-                        x++; 
-                    });
-                    $("#input_kwords").html(input_kwords_two);
-                    $("#input_kw").html(input_kw_two);
-
-                    // Tag Department Retrieval
-                    var objJSONdpt = JSON.parse(response['data'][0].ill_tag_dep);
-                    var input_dpt = "";
-                    $.each(objJSONdpt, function (i, v) {
-                        console.log(objJSONdpt);
-
-                            input_dpt += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
-
-                            $.each(response['dpt'], function (i, b) {
-                                console.log('dpt '+ b.department_name)
-                                input_dpt += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
-
-                            });
-                               
-                            input_dpt += '</select></div>';
-                          
-                    }); //end of department json
-                    $("#input_dpt").html(input_dpt);
-
-                    // Tag Symptoms Retrieval
-                    var objJSONsy = JSON.parse(response['data'][0].ill_tag_symp);
-                    var input_sy = "";
-                    $.each(objJSONsy, function (i, v) {
-                        input_sy += '<div class="cols-3"><input type="text" class="form-control" name="tag_sy[]" id="tag_sy" value="'+v.tag_sy+'"></div>';
-                    });
-                    $("#input_sy").html(input_sy);
-
-                    // Tag Season Text Retrieval
-                    var objJSONconf = JSON.parse(response['data'][0].ill_tag_season_txt);
-                    var input_tst = "";
-                    $.each(objJSONconf, function (i, v) {
-                        input_tst += '<div class="cols-3"><input type="text" class="form-control" name="tag_txt[]" id="tag_txt" value="'+v.tag_txt+'"></div>';
-                    });
-                    $("#input_tst").html(input_tst);
-
-                    // Tag Free
-                    var objJSONconf = JSON.parse(response['data'][0].ill_tag_free);
-                    var input_free = "";
-                    $.each(objJSONconf, function (i, v) {
-                        input_free += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
-                    });
-                    $("#input_free").html(input_free);
-
-                    //Tag Keywords
-                    var objJSONitk = JSON.parse(response['data'][0].ill_tag_kw);
-                    var y = 0;
-                    $.each(objJSONitk, function (i, v) {
-                        var yplus=y+1;
-                        if(v.tag == 1){
-                            $("#tag"+yplus).attr( "checked", true );
-                        }
-                        y++;
-                    });
-
-                    // Season
-                    var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
-                    var z = 0;
-                    $.each(objJSONts, function (i, v) {
-                        var zplus=z+1;
-                        if(v.tag_s == 1){
-                            $("#taga"+zplus).attr( "checked", true );
-                        }
-                        z++;
-                    });
-
-                },
-                error: function(response){
-                alert('Error'+response);
-   
-            }
-
-        });
-        // location.reload();
-    });
+    }
 });
+
+$(document).ready(function(){ 
+var min = 1990,
+max = 2021,
+select = document.getElementById('aca_year_from');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+} 
+});
+
 
 $('.overwrite_illness').each(function(e){
     $.ajaxSetup({
@@ -685,6 +529,7 @@ $('.overwrite_hospital').each(function(e){
     });
 });
 
+
 // hospital ckEditor (first)
 
 $('.add-ck1').on('click', addfields1);
@@ -957,6 +802,65 @@ $('.overwrite_special').each(function(e){
         // location.reload();
     });
 });
+
+// hospital ckEditor (first)
+
+$('.add-ck1').on('click', addfields1);
+var i=0;
+function addfields1(e) {
+  e.preventDefault();
+    var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+
+  $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+  $(copy).find('script').remove();
+  $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+  $('#addnewdiv').append($(copy).html()+ '<br>');
+  CKEDITOR.replace('textheading_lead['+oneplus+']');
+  i++;  
+
+}
+
+// hospital department ckEditor (second)
+
+$('.add-ck2').on('click', addfields2);
+var i=0;
+function addfields2(e) {
+  e.preventDefault();
+  var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+
+  $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+  $(copy).find('script').remove();
+  $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+  $('#addnewdiv').append($(copy).html()+ '<br>');
+  CKEDITOR.replace('textheading_lead['+oneplus+']');
+  i++;  
+}
+
+// hospital equipment ckEditor (third)
+
+$('.add-ck3').on('click', addfields3);
+var i=0;
+function addfields3(e) {
+  e.preventDefault();
+  var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+
+  $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+  $(copy).find('script').remove();
+  $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+  $('#addnewdiv').append($(copy).html()+ '<br>');
+  CKEDITOR.replace('textheading_lead['+oneplus+']');
+  i++;  
+
+}
 
     $(this).on('click', function(){
         var id = $(this).attr('il-id');

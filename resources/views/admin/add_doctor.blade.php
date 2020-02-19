@@ -4,7 +4,8 @@
 
 <div class="header-wrapper">
     <div class="left">
-        <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+        <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+        <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2>
         
     </div>
     <div class="right">
@@ -451,11 +452,11 @@
             <div class="cols-5">
                 <div class="formdiv cols-11">
                     <input type="checkbox" id="yes n_order"  name="n_order" value="1"> 
-                    <label for="yes">有<br><span>OK<span></label>
+                    <label for="yes n_order">有<br><span>OK<span></label>
                 </div>
                 <div class="formdiv cols-11">
                     <input type="checkbox" id="no n_order" name="n_order" value="0"> 
-                    <label for="no">無<br><span>NO</span></label>
+                    <label for="no n_order">無<br><span>NO</span></label>
                 </div>
             </div>
         </div>
