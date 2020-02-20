@@ -211,6 +211,13 @@
                             <div class="cols-6">
                                 <div id="input_cr2"></div>
                             </div>
+                            <div class="sidediv cols-3">
+                                <div class="sidebots">
+                                    <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness">Preview</a>
+                                    <button type="button" class="btn-prime release1" id="myBtn">Release</button>
+                                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                                </div>
+                            </div>
                         </div>
 
                         <hr>

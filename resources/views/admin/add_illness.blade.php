@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                 <div class="cols-4">          
-                    <select name="ill_cat" id="ill_cat" class="form-control">
+                    <select name="ill_cat" id="ill_cat" class="form-control ill_cat">
                         <option value="">選択してください</option>
                         <option value="感染症・寄生虫症">感染症・寄生虫症</option>
                         <option value="女性特有のがん＊">女性特有のがん＊</option>
