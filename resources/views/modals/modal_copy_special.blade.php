@@ -1,4 +1,4 @@
-<div id="previewAddSpecial" class="modalDialog">
+<div id="previewCopySpecial" class="modalDialog">
 <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	
 
@@ -157,7 +157,7 @@
                     <span>手足口病</span>
                 </div>
             </div>
-           <input type="hidden" id="id_sp" name="id_sp" />
+           <input type="hidden" id="id_sp_two" name="id_sp" />
            
             <!-- Buttons -->
             @if (Request::is('special_list'))  

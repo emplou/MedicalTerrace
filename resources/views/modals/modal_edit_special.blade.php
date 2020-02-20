@@ -11,8 +11,42 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
     <div class="modal-body">
+    <div class="header-wrapper">
+                <div class="left">
+                    <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+                    
+                </div>
+                <div class="right">
+                    <div>作成日<span>Date</span></div>
+                    <div class="select" id="sp_arch">
+                        <!-- <select>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                        </select> -->
+                    </div>
+                    <div>最終更新日<span>Update</span></div>
+                    <div class="select">0000/00/00</div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-container add">
+                <div class="form-progress">
+                    <ul>
+                        <li class="active">下書き<br><span>Draft</span></li>
+                        <li class="active">プレビュー<br><span>Preview</span></li>
+                        <li id="sp_appreq">承認依頼<br><span>Approval Request</span></li>
+                        <li id="sp_approve">承認済<br><span>Approved</span></li>
+                        <li id="sp_relres">公開予約<br><span>Release reservation</span></li>
+                        <li id="sp_release">公開中<br><span>Release</span></li>
+                    </ul>
+                </div>
     {!! Form::open(['url' => '/overwrite_special', 'method' => 'post', 'files' => true]) !!}
     <input type="hidden" name="spID" id="spID">
+    <input type="hidden" name="sp_iD" id="sp_iD">
+    <input type="hidden" name="sp_track_stat" id="sp_track_stat">
         <div class="form-horizontal">
             <div class="form-pads">
                 <div class="form-group">
@@ -410,6 +444,13 @@
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
                         
                     </div>
+                    <div class="sidediv cols-3">
+                        <div class="sidebots">
+                            <a class="prevbutton btn-prime sp_preview" type="button" href="#previewAddSpecial">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1 sp_release1" id="myBtn">Reserve</button>
+                            <button type="button" class="btn-prime relservehalf2 sp_release2" id="myBtn">Release</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -419,6 +460,7 @@
         </div>
     <!-- Modal -->
     {!! Form::close() !!}
+</div>
 </div>
   </div>
 </div>
