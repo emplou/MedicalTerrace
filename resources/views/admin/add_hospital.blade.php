@@ -531,7 +531,7 @@
     </div>
 
     <!-- Image Alt -->
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
         <div class="cols-5">
             <div class="upload-image">        
@@ -539,7 +539,7 @@
                 <label for="file-7"><span class="archive-name">ドラッグ&ドロップ、または参照で画像を追加してください</span><span class="btn-inputfile"> 参照...</span></label>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <hr />
 

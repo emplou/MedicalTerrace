@@ -312,6 +312,9 @@ $.ajaxSetup({
                   $("#twourl_generation").val(response['data'][0].url_generation);
                   $("#twostatus").val(response['data'][0].status);
 
+                  author2 = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                  $("#copyauthorID").html(author2);
+
                 //  $.each(objJSON, function (i, v) {
                 //     $('#certificate0'+ i).val(v.med_sbj_list); 
                 //     console.log('yes' + v.med_sbj_list);
