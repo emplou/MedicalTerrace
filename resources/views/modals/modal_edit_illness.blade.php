@@ -32,8 +32,21 @@
                 </div>
             </div>
             <hr />
+            <div class="form-container add">
+                <div class="form-progress">
+                    <ul>
+                        <li class="active">下書き<br><span>Draft</span></li>
+                        <li class="active">プレビュー<br><span>Preview</span></li>
+                        <li id="appreq">承認依頼<br><span>Approval Request</span></li>
+                        <li id="approve">承認済<br><span>Approved</span></li>
+                        <li id="relres">公開予約<br><span>Release reservation</span></li>
+                        <li id="release">公開中<br><span>Release</span></li>
+                    </ul>
+                </div>
             {!! Form::open(['url' => '/overwrite_illness', 'method' => 'post', 'files' => true]) !!}
             <input type="hidden" name="illID" id="illID">
+            <input type="hidden" name="iD" id="iD">
+            <input type="hidden" name="track_stat" id="track_stat">
                 <!-- Form Starts -->
                 <div class="form-horizontal">
 
@@ -182,6 +195,13 @@
                             <div class="cols-6">
                                 <div id="input_cr"></div>
                             </div>
+                            <div class="sidediv cols-3">
+                                <div class="sidebots">
+                                    <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness">Preview</a>
+                                    <button type="button" class="btn-prime release1" id="myBtn">Reserve</button>
+                                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Subheading 2 -->
@@ -211,13 +231,7 @@
                             <div class="cols-6">
                                 <div id="input_cr2"></div>
                             </div>
-                            <div class="sidediv cols-3">
-                                <div class="sidebots">
-                                    <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness">Preview</a>
-                                    <button type="button" class="btn-prime release1" id="myBtn">Release</button>
-                                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
-                                </div>
-                            </div>
+                            
                         </div>
 
                         <hr>
@@ -428,6 +442,7 @@
         </div>
         <!-- Modal COntent Ends -->
         {!! Form::close() !!}
+        </div>
     </div>
 </div>
 </div>
