@@ -895,7 +895,7 @@ $.ajaxSetup({
                         $("#url").val(response['data'][0].ill_url); 
 
                         // Illness Category
-                        input_ill = '<select class="form-control" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
+                        input_ill = '<select class="form-control ill_cat" id="ill_cat" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
                         $("#input_ill").html(input_ill);
 
                         $("#ill_shldr").val(response['data'][0].ill_shoulder); // Illness Shoulder
@@ -1417,7 +1417,7 @@ $.ajaxSetup({
                         $("#twourl").val(response['data'][0].ill_url); // url
 
                         // Illness Category
-                        input_ill_two = '<select class="form-control" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
+                        input_ill_two = '<select class="form-control ill_cat_two" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
                         $("#input_ill_two").html(input_ill_two);
 
                         $("#ill_shldr_two").val(response['data'][0].ill_shoulder); // Illness Shoulder
@@ -1665,11 +1665,11 @@ $.ajaxSetup({
         $(this).on('click', function(){
             //$("#previewAddIllness").modal('show');
 
-            ill_cat = $("#ill_cat").val(); // Illness Category
+            ill_cat = $(".ill_cat").val(); // Illness Category
             $(".ill_cat").html(ill_cat);
             ill_name = $("#ill").val(); // Illness Name
             $(".ill_name").html(ill_name);
-            ill_sh = $("#ill_sh").val(); // Illness SHoulder
+            ill_sh = $("#ill_shldr").val(); // Illness SHoulder
             $(".ill_sh").html(ill_sh);
 
             //Keywords
@@ -1723,6 +1723,111 @@ $.ajaxSetup({
                 input_risk_two += '</ul></div></div>';
                 $("#input_risk_two").html(input_risk_two);
             }
+            
+            //Sub head and Text
+            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
+             
+            var sub_value = "";
+            //var cnt_value = "";
+            // $.each(objJSONcontent, function (i, v) { 
+            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
+            //     cnt_value += 'p'+ v.text +'p';
+            // });
+            $("select[name='sub_head1a[]']").each(function() {
+                sub_value += '<h3>'+ $(this).val() +'</h3>';
+                $("textarea[name='txt_ckeditor[]']").each(function() {
+                    sub_value += '<p>'+ $(this).val() +'</p>';
+                });
+            });
+            $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.preview_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+
+            ill_cat_two = $(".ill_cat_two").val(); // Illness Category
+            $(".ill_cat").html(ill_cat_two);
+            ill_name = $("#ill_two").val(); // Illness Name
+            $(".ill_name").html(ill_name);
+            ill_sh = $("#ill_shldr_two").val(); // Illness SHoulder
+            $(".ill_sh").html(ill_sh);
+
+            //Keywords
+            var key_value_two = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value_two += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value_two").html(key_value_two);
+
+            //Summarize
+            var sum_value_two = "";
+            $("textarea[name='sm[]']").each(function() {
+                sum_value_two += '<li>'+ $(this).val() +'</li>';
+            });
+            $("#summary_two").html(sum_value_two);
+
+            //Risk Assessment
+            var z = 0;
+            if($("#a1_two").is(':checked')) {
+
+                var input_risk_two = "";
+                input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
+                $("textarea[name='sh[]']").each(function() {
+                    var zplus=z+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two += '<li><input class="styled-checkbox" id="a'+zplus+'" type="checkbox" name="check1[]" ><label for="a'+zplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    z++;
+                });
+                input_risk_two += '</ul></div></div>';
+                $("#input_risk_one_a").html(input_risk_two);
+            }
+
+            //Risk Assessment 2
+            var x = 0;
+            if($("#b1_two").is(':checked')) {
+
+                var input_risk_two_b = "";
+                input_risk_two_b += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
+                $("textarea[name='sh2[]']").each(function() {
+                    var xplus=x+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two_b += '<li><input class="styled-checkbox" id="b'+xplus+'" type="checkbox" name="check2[]" ><label for="b'+xplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    x++;
+                });
+                input_risk_two_b += '</ul></div></div>';
+                $("#input_risk_two_b").html(input_risk_two_b);
+            }
+            
+            //Sub head and Text
+            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
+             
+            var sub_value = "";
+            //var cnt_value = "";
+            // $.each(objJSONcontent, function (i, v) { 
+            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
+            //     cnt_value += 'p'+ v.text +'p';
+            // });
+            $("select[name='sub_head1a[]']").each(function() {
+                sub_value += '<h3>'+ $(this).val() +'</h3>';
+                $("textarea[name='txt_ckeditor[]']").each(function() {
+                    sub_value += '<p>'+ $(this).val() +'</p>';
+                });
+            });
+            $(".input_content").html(sub_value);
         });
     });
 
@@ -2087,7 +2192,7 @@ $.ajaxSetup({
     var i=0;
     function addfields2(e) {
       e.preventDefault();
-      var copy = $('#addanother').clone();
+      var copy = $('#addanother4').clone();
 
       var oneplus=i+1;
 
@@ -2095,98 +2200,96 @@ $.ajaxSetup({
       $(copy).find('script').remove();
       $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
 
-      $('#addnewdiv').append($(copy).html()+ '<br>');
+      $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
       CKEDITOR.replace('textheading_lead['+oneplus+']');
       i++;  
     }
 
-    // hospital equipment ckEditor (third)
+    // hospital subject ckEditor (third)
 
     $('.add-ck3').on('click', addfields3);
     var i=0;
     function addfields3(e) {
       e.preventDefault();
-      var copy = $('#addanother').clone();
+      var copy = $('#addanother3').clone();
 
       var oneplus=i+1;
 
       $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
       $(copy).find('script').remove();
-      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+        $(copy).find('textarea[name=feature_text_subheading_hospital\\[0\\]]').attr('name', 'feature_text_subheading_hospital['+oneplus+']');
 
-      $('#addnewdiv').append($(copy).html()+ '<br>');
-      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      $('#addnewdiv3').append($(copy).html()+ '<br>');
+        CKEDITOR.replace('feature_text_subheading_hospital['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital equipment ckEditor (fourth)
+
+    $('.add-ck4').on('click', addfields4);
+    var i=0;
+    function addfields4(e) {
+      e.preventDefault();
+      var copy = $('#addanother5').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+        $(copy).find('textarea[name=equipment_subheading2\\[0\\]]').attr('name', 'equipment_subheading2['+oneplus+']');
+
+      $('#addnewdiv5').append($(copy).html()+ '<br>');
+        CKEDITOR.replace('equipment_subheading2['+oneplus+']');
       i++;  
 
     }
 
     // hospital staff ckEditor (fourth)
 
-    $('.add-ck4').on('click', addfields4);
-    var i=0;
-    function addfields4(e) {
-      e.preventDefault();
-      var copy = $('#addanother').clone();
+    $('.add-ck5').on('click', addfields5);
+    var i = 0;
+    function addfields5(e) {
+        e.preventDefault();
+        var copy = $('#addanother6').clone();
 
-      var oneplus=i+1;
+        var oneplus = i + 1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
-      $(copy).find('script').remove();
-      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+        $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+        $(copy).find('script').remove();
+        $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead[' + oneplus + ']');
 
-      $('#addnewdiv').append($(copy).html()+ '<br>');
-      CKEDITOR.replace('textheading_lead['+oneplus+']');
-      i++;  
+        $('#addnewdiv6').append($(copy).html() + '<br>');
+        CKEDITOR.replace('textheading_lead[' + oneplus + ']');
+        i++;
 
     }
 
 
 
-//HOSPITAL PAGE ADD BUTTON
-    var addhosp1_button = $(".addhosp1"); //Add button ID
-    var addhosp2_button = $(".addmed1"); //Add button ID
-    var addhosp3_button = $(".addmed2"); //Add button ID
-    var addhosp4_button = $(".addhosp4"); //Add button ID
-    var addhosp5_button = $(".addhosp5"); //Add button ID
-    var addhosp6_button = $(".addhosp6"); //Add button ID
-    var addhosp7_button = $(".addhosp7"); //Add button ID
-
-    var wrapper1h = $(".field_wrap1_hosp"); //Fields wrapper
-    var wrapper2h = $(".mednewdiv1"); //Fields wrapper
-    var wrapper3h = $(".mednewdiv2"); //Fields wrapper
-    var wrapper4h = $(".field_wrap4_hosp"); //Fields wrapper
-    var wrapper5h = $(".field_wrap5_hosp"); //Fields wrapper
-    var wrapper6h = $(".field_wrap6_hosp"); //Fields wrapper
-    var wrapper7h = $(".field_wrap7_hosp"); //Fields wrapper
+    //HOSPITAL PAGE ADD BUTTON
     
-
-    
-
     $(".addmed1").click(function () {
-        $(wrapper2h).append('<div class="form-group"><label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label><div class="cols-4"><select class="form-control" name="department"><option value="0">選択してください</option></select></div></div><!-- Subheading 2--><div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-6"><textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><!-- Text of Subheading 2--><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="med_subj_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div><!-- Buttons --><div class="form-group"><div class="cols-15"></div><div class="cols-55"><div class="upload-btn-wrapper"><button class="bton"></button><input type="file" name="subject_image" name="insert_img_subject" /></div></div></div><div class="form-group check fix"><div class="control-label cols-15">診療科目別<br>外来受付時間<br>Examination date</div> <div class="cols-8"><input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~月 <input type="checkbox" id="tag_season1" name="weekdays"><label for="tag_season1"></label>火 <input type="checkbox" id="tag_season2" name="weekdays"><label for="tag_season2"></label>水 <input type="checkbox" id="tag_season3" name="weekdays"><label for="tag_season3"></label>木 <input type="checkbox" id="tag_season4" name="weekdays"><label for="tag_season4"></label>金 <input type="checkbox" id="tag_season5" name="weekdays"><label for="tag_season5"></label>土 <input type="checkbox" id="tag_season6" name="weekdays"><label for="tag_season6"></label>日 <input type="checkbox" id="tag_season7" name="weekdays"><label for="tag_season7"></label>祝 <input type="checkbox" id="tag_season8" name="weekdays"><label for="tag_season8"></label></div><div class="cols-8"><input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~ 月 <input type="checkbox" id="tag_season9" name="weekdays"><label for="tag_season9"></label>火 <input type="checkbox" id="tag_season10" name="weekdays"><label for="tag_season10"></label>水 <input type="checkbox" id="tag_season11" name="weekdays"><label for="tag_season11"></label>木 <input type="checkbox" id="tag_season12" name="weekdays"><label for="tag_season12"></label>金 <input type="checkbox" id="tag_season13" name="weekdays"><label for="tag_season13"></label>土 <input type="checkbox" id="tag_season14" name="weekdays"><label for="tag_season14"></label>日 <input type="checkbox" id="tag_season15"name="weekdays"><label for="tag_season15"></label>祝 <input type="checkbox" id="tag_season16"name="weekdays"><label for="tag_season16"></label></div><div class="cols-15"></div><div class="cols-8"><div class="cols-6"><input type="text" class="form- " name="special_hours"> </div><div class="cols-3">※受診内容により日・時間が異なる場合に記載</div><input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~<input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px">診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~月 <input type="checkbox" name="tag_season[]">火 <input type="checkbox" name="tag_season[]">水 <input type="checkbox" name="tag_season[]">木 <input type="checkbox" name="tag_season[]">金 <input type="checkbox" name="tag_season[]">土 <input type="checkbox" name="tag_season[]">日 <input type="checkbox" name="tag_season[]">祝 <input type="checkbox" name="tag_season[]"></div></div><!-- Buttons --><div class="form-group"><div class="cols-15"></div><div class="cols-75"><button type="button" class="btn-prime addto"></button><button type="button" class="btn-prime add-duplicate"></button></div></div>'); //add input box
+        $("#mednewdiv1").append('<div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select ></div ><div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select></div><div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select></div>'); //add input box
     });
 
-    $(addhosp3_button).click(function (e) { //on add input button click
-        e.preventDefault();
-        $(wrapper3h).append('<div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="feature_title" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><!-- Text of Subheading 3--><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6">   <!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="feature_text_subheading_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div>'); //add input box
+
+    $(".addmed2").click(function () {
+        $("#mednewdiv2").append('<div class="cols-3"><input type = "text" class= "form- " placeholder = "選択項目にない場合に入力" name = "med_sbj_list_add[]"></div ><div class="cols-3"><input type="text" class="form- " name="med_sbj_list_add[]"></div><div class="cols-3"><input type="text" class="form- " name="med_sbj_list_add[]"></div>'); //add input box
     });
 
-    $(addhosp4_button).click(function (e) { //on add input button click
-        e.preventDefault();
-        $(wrapper4h).append('<!-- Subheading 4--><div class="field_wrap4_hosp"></div><div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"><textarea class="form-control sm2" name="text_equipment_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><!-- Text of Subheading 4--><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div>'); //add input box
+
+    $(".addnumbed").click(function () {
+        $("#numbed").append('<div class="form-group"><div class="control-label cols-15"></div><div class= "cols-05"><label>種別</label></div><div class="cols-2"><select class="form-control"><option>選択してください</option></select></div><div class="cols-05"><label>種別</label></div><div class="cols-3"><input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"></div></div>'); //add input box
     });
 
-    $(addhosp5_button).click(function (e) { //on add input button click
-        e.preventDefault();
-        $(wrapper5h).append('<!-- Subheading 4--><div class="form-group"><label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は</textarea></div></div><!-- Text of Subheading 4--><div class="form-group editor"><label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label><div class="cols-6">   <!-- add new textarea here --><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="staff_comment_hospital" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea></div></div></div></div>'); //add input box
+    $(".addvisits").click(function () {
+        $("#visit").append('<div class="form-group check fix"><div class="control-label cols-15" ></div><div class="cols-1"><select class="form-control"><option>14:30</option></select></div><div class="cols-1"><select class="form-control"><option>15:30</option></select></div><div class="cols-4">月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label></div></div>'); //add input box
     });
 
-    $(addhosp6_button).click(function (e) { //on add input button click
-        e.preventDefault();
-        $(wrapper6h).append('<div class="form-group"><div class="control-label cols-15">病床種別・病床数<br><span>Number of beds</span></div><div class="cols-05"><label>種別</label></div><div class="cols-2"><select class="form-control"><option>選択してください</option></select></div><div class="cols-05"><label>種別</label></div><div class="cols-3"><input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"> </div></div>'); //add input box
+    $(".addaccess").click(function () {
+        $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
     });
 
-    $(addhosp7_button).click(function (e) { //on add input button click
-        e.preventDefault();
-        $(wrapper7h).append('<div class="form-group check fix"><div class="control-label cols-15">面会可能日・時間<br><span>Possible date of visit</span></div><div class="cols-1"><select class="form-control"><option>14:30</option></select></div><div class="cols-1"><select class="form-control"><option>15:30</option></select></div><div class="cols-4">月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label></div></div>'); //add input box
-    });
+    
+    

@@ -1,4 +1,4 @@
-<div id="previewAddIllness" class="modalDialog">
+<div id="previewCopyIllness" class="modalDialog">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	
 
@@ -18,7 +18,7 @@
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 
-                    <div class="tags" id="tag_value">
+                    <div class="tags" id="tag_value_two">
                         <!-- <span>子ども</span>
                         <span>夏</span>
                         <span>感染症</span>
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="tooltips">この記事をまとめると</div>
-                    <ul class="checks" id="summary">
+                    <ul class="checks" id="summary_two">
                         <!-- <li>乳幼児、特に集団生活をしている子どもは注意。</li>
                         <li>手と足、口に赤い発疹や水ぶくれができます。</li>
                         <li>７月に流行のピークを迎えます。</li>
@@ -77,7 +77,7 @@
                     </p>有効なワクチンはありません。発病を予防する薬もありません。接触感染を予防するために、しっかり手洗いをすること、うがいをすることなどが基本の対策になります。手洗いは石けんを使い、流水で洗いましょう。治った後も2〜4週間ほど、ウイルスが便中に排泄されることがあるため、感染を広げないために、排泄物を適切に処理することが必要です。おむつ交換をする時は特に気をつけ、しっかり手を洗います。タオルの共用もしません。家庭では兄弟への感染に気をつけること、乳幼児の保育施設などの集団生活では、職員と子どもがしっかり対策をすることが大切です。<p> -->
                 </div>  
                 
-                <div id="input_risk_one"></div>
+                <div id="input_risk_one_a"></div>
                 <!-- <div class="panel-pink">
                     <h3>手足口病のリスク度チェック</h3>
                 
@@ -102,7 +102,7 @@
                         </ul>
                     </div>
                 </div> -->
-                <div id="input_risk_two"></div>
+                <div id="input_risk_two_b"></div>
                 <!-- <div class="panel-pink">
                     <h3>手足口病のセルフチェック</h3>
                     <strong>予防・対策はしっかりできていますか？</strong>

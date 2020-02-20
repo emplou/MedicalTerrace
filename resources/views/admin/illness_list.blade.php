@@ -2,6 +2,8 @@
 @section('content')
 @include('modals.modal_edit_illness')
 @include('modals.modal_copy_add_illness')
+@include('modals.modal_add_illness')
+@include('modals.modal_copy_illness')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 
