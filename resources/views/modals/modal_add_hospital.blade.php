@@ -20,10 +20,21 @@
                         <li><img src="images/bullet-blk.jpg" alt="">コメント<br>医師プロフィールページに掲載されるコメントをお願 いします。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章は ダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大 きさ、量、字間、行間等を確認するために入れています。</li>
                 </u>
            
+            @if (Request::is('hospital_list'))  
             <!-- Buttons -->
             <div class="modal-buts one">
                 <button type="button" class="btn-prime approval" id="show_img"></button>
             </div>
+            <div class="modal-buts two">
+                <button type="button" class="btn-prime approved" id="show_img"></button>
+            </div>
+            <div class="modal-buts three">
+                <button type="button" class="btn-prime release-reserve" id="show_img"></button>
+            </div>
+            <div class="modal-buts four">
+                <button type="button" class="btn-prime released" id="show_img"></button>
+            </div>
+            @endif
     
         </div>
     </div>

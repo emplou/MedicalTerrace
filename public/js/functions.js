@@ -893,8 +893,26 @@ $.ajaxSetup({
                         console.log(response['data']); 
                         
                         $("#editillness").modal('show');
-                        //$("#illID").val(response['data'][0].id);
+
+                        //Tracking
+                        track = response['data'][0].tracking_status; 
+                        if(track == '3') {
+                            $( "li#appreq" ).addClass("rel");
+                        } else if(track == '4') {
+                            $( "li#approve" ).addClass("rel");
+                        } else if(track == '5') {
+                            $( "li#relres" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#release" ).addClass("rel");
+                        } else { }
+                        
+                        //Add Attribute
+
+                        $(".release1").attr("il-id", response['data'][0].id);
+                        $(".release2").attr("il-id", response['data'][0].id);
+                        $("#iD").val(response['data'][0].id);
                         $("#illID").val(response['data'][0].ill_id);
+                        $("#track_stat").val(response['data'][0].tracking_status);
                         $("#url").val(response['data'][0].ill_url); 
 
                         // Illness Category
@@ -1667,7 +1685,10 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             //$("#previewAddIllness").modal('show');
-
+            
+            iD = $("#iD").val(); // ID
+            $("#id_ill").val($("#iD").val());
+            $("#iD").html(iD);
             ill_cat = $(".ill_cat").val(); // Illness Category
             $(".ill_cat").html(ill_cat);
             ill_name = $("#ill").val(); // Illness Name
@@ -1831,6 +1852,54 @@ $.ajaxSetup({
                 });
             });
             $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.release1').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            
+            $.ajax({
+                url: '/release_reservation_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
+    $('.release2').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            
+            $.ajax({
+                url: '/release_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
         });
     });
 
@@ -2201,10 +2270,10 @@ $.ajaxSetup({
 
       $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
       $(copy).find('script').remove();
-      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+        $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
 
       $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
-      CKEDITOR.replace('textheading_lead['+oneplus+']');
+        CKEDITOR.replace('med_subj_text_subheading_hospital['+oneplus+']');
       i++;  
     }
 
@@ -2260,10 +2329,10 @@ $.ajaxSetup({
 
         $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
         $(copy).find('script').remove();
-        $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead[' + oneplus + ']');
+        $(copy).find('textarea[name=staff_comment_hospital\\[0\\]]').attr('name', 'staff_comment_hospital[' + oneplus + ']');
 
         $('#addnewdiv6').append($(copy).html() + '<br>');
-        CKEDITOR.replace('textheading_lead[' + oneplus + ']');
+        CKEDITOR.replace('staff_comment_hospital[' + oneplus + ']');
         i++;
 
     }
@@ -2292,6 +2361,10 @@ $.ajaxSetup({
 
     $(".addaccess").click(function () {
         $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
+    });
+
+    $(".addbranch").click(function () {
+        $("#branch").append('<div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div><div class="cols-1 relative"><button type="button" class="btn btn-success addbranch"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
     });
 
     

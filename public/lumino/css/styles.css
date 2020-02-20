@@ -2107,15 +2107,8 @@ table#list {
 .btn-prime.hospital {
   background-image: url(../../images/icon-hospital.png);
 }
-.btn-prime.preview,
 .prevbutton {
   background-image: url(../../images/icon-preview.png);
-}
-.btn-prime.release1 {
-  background-image: url(../../images/icon-release1.png);
-}
-.btn-prime.release2 {
-  background-image: url(../../images/icon-release2.png);
 }
 .btn-prime.addto {
   background-image: url(../../images/icon-addto.png);
@@ -2123,11 +2116,21 @@ table#list {
 .btn-prime.add-duplicate {
   background-image: url(../../images/icon-add-duplicate.png);
 }
-
-.btn-prime.approval {
-  background-image: url(../../images/icon-approval.png);
+.btn-prime.approved {
+  background-image: url(../../images/icon-approve.png);
 }
-
+.btn-prime.release-reserve {
+  background-image: url(../../images/icon-relreserve.png);
+}
+.btn-prime.released {
+  background-image: url(../../images/icon-release.png);
+}
+.btn-prime.release1 {
+  background-image: url(../../images/icon-relreserve.png);
+}
+.btn-prime.release2 {
+  background-image: url(../../images/icon-release2.png);
+}
 .btn-prime.backedit {
   background-image: url(../../images/icon-backedit.png);
 }

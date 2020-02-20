@@ -577,7 +577,7 @@ class HomeController extends Controller
         $illness->tracking_status      = '1';
         $illness->save();
 
-        $now = date('Y-m-d H:i'); //Fomat Date and time
+        $now = date('Y-m-d'); //Fomat Date and time
 
         $archive = new Archive;
         $archive->type              = '4';
@@ -963,167 +963,6 @@ class HomeController extends Controller
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
-    }
-
-    public function modal_preview_illness(Request $request){
-        $details = Input::all();
-       
-        $illness_id = rand();
-        $ill_img_id = rand();
-        $ill_gr_id = rand();
-
-        /* illness image */
-        $destinationPath = '';
-        $filename        = '';
-        $file            = $request->file('img');
-
-        $destinationPath = public_path().'/illness';
-        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
-        $uploadSuccess   = $file->move($destinationPath, $filename);
-        /* end of illness image */
-
-        // description summary
-        $sum_list = $details['sm']; 
-        $response = array();
-        foreach($sum_list as $key1 => $cert1)
-        {
-            $response[$key1]['sm'] = $cert1;
-        }
-        $jsonsum_list = json_encode($response); 
-
-        // h2
-        $h2_list = $details['h2']; 
-        $response2 = array();
-        foreach($h2_list as $key2 => $cert2)
-        {
-            $response2[$key2]['h2'] = $cert2;
-        }
-        $jsonh2_list = json_encode($response2);
-        
-        // Subhead1
-        $suba_list = $details['sub_head1a']; 
-        $resp_suba = array();
-        foreach($suba_list as $key_suba => $cert_suba)
-        {
-            $resp_suba[$key_suba]['sub_head1a'] = $cert_suba;
-        }
-        $jsonsuba_list = json_encode($resp_suba);
-
-        // Subhead2
-        $subb_list = $details['sub_head1b']; 
-        $resp_subb = array();
-        foreach($subb_list as $key_subb => $cert_subb)
-        {
-            $resp_subb[$key_subb]['sub_head1b'] = $cert_subb;
-        }
-        $jsonsubb_list = json_encode($resp_subb);
-
-        // Textheading
-        $tc_list = $details['txt_ckeditor']; 
-        $resp_tc = array();
-        foreach($tc_list as $key_tc => $cert_tc)
-        {
-            $resp_tc[$key_tc]['txt_ckeditor'] = $cert_tc;
-        }
-        $jsontc_list = json_encode($resp_tc);
-
-        // tag
-        $tag_list = $details['tag']; 
-        $response3 = array();
-        foreach($tag_list as $key3 => $cert3)
-        {
-            $response3[$key3]['tag'] = $cert3;
-        }
-        $jsontag_list = json_encode($response3); 
-
-        // tag department
-        $dep_list = $details['tag_dep']; 
-        $response4 = array();
-        foreach($dep_list as $key4 => $cert4)
-        {
-            $response4[$key4]['tag_dep'] = $cert4;
-        }
-        $jsondep_list = json_encode($response4); 
-
-        // tag symptoms
-        $sy_list = $details['tag_sy']; 
-        $response5 = array();
-        foreach($sy_list as $key5 => $cert5)
-        {
-            $response5[$key5]['tag_sy'] = $cert5;
-        }
-        $jsonsy_list = json_encode($response5);
-
-        // tag season
-        $s_list = $details['tag_s']; 
-        $response6 = array();
-        foreach($s_list as $key6 => $cert6)
-        {
-            $response6[$key6]['tag_s'] = $cert6;
-        }
-        $jsons_list = json_encode($response6); 
-
-        // tag season text
-        $stxt_list = $details['tag_txt']; 
-        $response7 = array();
-        foreach($stxt_list as $key7 => $cert7)
-        {
-            $response7[$key7]['tag_txt'] = $cert7;
-        }
-        $jsonstxt_list = json_encode($response7); 
-
-        // tag free
-        $f_list = $details['tag_f']; 
-        $response8 = array();
-        foreach($f_list as $key8 => $cert8)
-        {
-            $response8[$key8]['tag_f'] = $cert8;
-        }
-        $jsonf_list = json_encode($response8); 
-
-        // keywords
-        $k_list = $details['kword']; 
-        $response12 = array();
-        foreach($k_list as $key12 => $cert12)
-        {
-            $response12[$key12]['kword'] = $cert12;
-        }
-        $jsonk_list = json_encode($response12); 
-        
-        //Illness
-        $value['ill_id']                = $illness_id;
-        $value['ill_url']               = $details['url'];
-        $value['ill_cat']               = $details['ill_cat'];
-        $value['ill_shoulder']          = $details['ill_shldr'];
-        $value['ill_name']              = $details['ill'];
-        $value['ill_ph']                = $details['ill_ph'];
-        $value['ill_doc']               = $details['doctor'];
-        $value['ill_doc_role']          = $details['role'];
-        $value['ill_doc_cmt']           = $details['doc_cmt']; 
-        $value['ill_summary']           = $jsonsum_list; //it should be json script when added
-        $value['ill_img']               = '/img/'.$filename; //illness image
-        $value['ill_img_cap']           = $details['img_cap'];
-        $value['ill_img_alt']           = $details['img_alt'];
-        $value['ill_sub1']              = $jsonsuba_list; //it should be json script when added
-        $value['ill_sub2']              = $jsonsubb_list; //it should be json script when added
-        $value['ill_sub_txt']           = $jsontc_list; //it should be json script when added
-        $value['ill_kwords']            = $jsonk_list;
-        $value['ill_seo']               = $details['seo'];
-        $value['ill_seo_txt']           = $details['seo_txt'];
-        $value['ill_meta_a']            = $details['meta_txt1'];
-        $value['ill_meta_b']            = $details['meta_txt2'];
-        $value['ill_h1']                = $details['h1'];
-        $value['ill_h2']                = $jsonh2_list; //it should be json script when added
-        $value['ill_tag_kw']            = $jsontag_list; //it should be json script when added
-        $value['ill_tag_dep']           = $jsondep_list; // added division and medical subject list and field
-        $value['ill_tag_symp']          = $jsonsy_list; // added division and medical subject list and field
-        $value['ill_tag_season']        = $jsons_list; // added division and medical subject list and field
-        $value['ill_tag_season_txt']    = $jsonstxt_list; // added division and medical subject list and field
-        $value['ill_tag_free']          = $jsonf_list; // added division and medical subject list and field
-        //$illness->save();
-
-        $fetch = json_encode($value);
-        return $fetch;
     }
 
     public function save_edit_doctor(Request $request){
@@ -1747,39 +1586,109 @@ class HomeController extends Controller
         return redirect('/illness_list');
     }
 
+    //Approve Request Illness Preview
+    public function approve_request_illness(Request $request){
+        $details = Input::all();
+
+        $illness = DB::table('illness')
+                                    ->where('id','=', $details['id_ill'])
+                                    ->update([
+                                                'tracking_status'               => '3',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ApprovalRequest;
+        $appReq->type                   = '4';
+        $appReq->type_id                = $details['id_ill'];
+        $appReq->date_approval_request  = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '4';
+        $archive->type_id               = $details['id_ill'];
+        $archive->tracking_type         = '3';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/illness_list');
+       
+    }
+
     //Approve Illness Preview
     public function approve_illness(Request $request){
         $details = Input::all();
-        
+
         $illness = DB::table('illness')
-                                    ->where('id','=', $details['illID'])
+                                    ->where('id','=', $details['id_ill'])
                                     ->update([
-                                                'status'               => '4',
+                                                'tracking_status'               => '4',
                                             ]);
+        $date = date('Y-m-d');
+        $approve = new ApprovalRequest;
+        $approve->type                   = '4';
+        $approve->type_id                = $details['id_ill'];
+        $approve->date_approval_request  = $date;
+        $approve->save();
+
+        $archive = new Archive;
+        $archive->type                  = '4';
+        $archive->type_id               = $details['id_ill'];
+        $archive->tracking_type         = '4';
+        $archive->archived_date         = $date;
+        $archive->save();
+
         return redirect('/illness_list');
+       
     }
 
     //Release Reservation Illness
     public function release_reservation_illness(Request $request){
         $details = Input::all();
-        
+
         $illness = DB::table('illness')
-                                    ->where('id','=', $details['illID'])
+                                    ->where('id','=', $details['id'])
                                     ->update([
-                                                'status'               => '5',
+                                                'tracking_status'               => '5',
                                             ]);
+        $date = date('Y-m-d');
+        $relres = new ApprovalRequest;
+        $relres->type                   = '4';
+        $relres->type_id                = $details['id'];
+        $relres->date_approval_request  = $date;
+        $relres->save();
+
+        $archive = new Archive;
+        $archive->type                  = '4';
+        $archive->type_id               = $details['id'];
+        $archive->tracking_type         = '5';
+        $archive->archived_date         = $date;
+        $archive->save();
+
         return redirect('/illness_list');
     }
 
     //Release Illness
     public function release_illness(Request $request){
         $details = Input::all();
-        
+
         $illness = DB::table('illness')
-                                    ->where('id','=', $details['illID'])
+                                    ->where('id','=', $details['id'])
                                     ->update([
-                                                'status'               => '6',
+                                                'tracking_status'               => '6',
                                             ]);
+        $date = date('Y-m-d');
+        $release = new ApprovalRequest;
+        $release->type                   = '4';
+        $release->type_id                = $details['id'];
+        $release->date_approval_request  = $date;
+        $release->save();
+
+        $archive = new Archive;
+        $archive->type                  = '4';
+        $archive->type_id               = $details['id'];
+        $archive->tracking_type         = '6';
+        $archive->archived_date         = $date;
+        $archive->save();
+
         return redirect('/illness_list');
     }
     
