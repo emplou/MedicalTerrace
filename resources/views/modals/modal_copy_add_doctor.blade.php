@@ -12,7 +12,7 @@
 </div>
       <div class="modal-body">
       {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
-      <input type="text" name="docID" id="twodocID" value=" ">
+      <input type="hidden" name="docID" id="twodocID" value=" ">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -43,6 +43,8 @@
                 <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
                 <div id="twoinput_container"></div>
+                <div id="copycertificate"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -113,6 +115,8 @@
             <div class="col-10">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
                 <div id="twoinput_conference"></div>
+                <div id="copyaddconference"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyaddconf2"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -158,6 +162,8 @@
             </div>
             <div class="col-10">
                     <div id="twoinput_career_one"></div>
+                    <div id="copyc_ac"></div>
+                    <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd3"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -167,6 +173,8 @@
             </div>
             <div class="col-10">
                 <div id="twoinput_career_two"></div>
+                <div id="copyc_we"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd44"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -176,6 +184,8 @@
             </div>
             <div class="col-10">
                 <div id="twoinput_career_three"></div>
+                <div id="copyc_aw"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd55"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -209,6 +219,8 @@
             </div>
             <div class="col-10">
                 <div id="twoinput_department"></div>
+                <div id="copydpt_div"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>

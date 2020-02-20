@@ -2107,16 +2107,11 @@ table#list {
 .btn-prime.hospital {
   background-image: url(../../images/icon-hospital.png);
 }
-.btn-prime.preview,
+
 .prevbutton {
   background-image: url(../../images/icon-preview.png);
 }
-.btn-prime.release1 {
-  background-image: url(../../images/icon-release1.png);
-}
-.btn-prime.release2 {
-  background-image: url(../../images/icon-release2.png);
-}
+
 .btn-prime.addto {
   background-image: url(../../images/icon-addto.png);
 }

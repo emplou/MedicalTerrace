@@ -664,7 +664,7 @@
     </div>
     <div class="form-group">
         <div class="control-label cols-15"></div>
-        <div class="cols-05"><label>台数</label></div>
+        <div class="cols-05"><label>台数</label></div>    
         <div class="cols-2">
             <input class="form-control" type="text" id="cc" name="pres" placeholder="例)000台"> 
         </div>
