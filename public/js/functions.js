@@ -890,8 +890,26 @@ $.ajaxSetup({
                         console.log(response['data']); 
                         
                         $("#editillness").modal('show');
-                        //$("#illID").val(response['data'][0].id);
+
+                        //Tracking
+                        track = response['data'][0].tracking_status; 
+                        if(track == '3') {
+                            $( "li#appreq" ).addClass("rel");
+                        } else if(track == '4') {
+                            $( "li#approve" ).addClass("rel");
+                        } else if(track == '5') {
+                            $( "li#relres" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#release" ).addClass("rel");
+                        } else { }
+                        
+                        //Add Attribute
+
+                        $(".release1").attr("il-id", response['data'][0].id);
+                        $(".release2").attr("il-id", response['data'][0].id);
+                        $("#iD").val(response['data'][0].id);
                         $("#illID").val(response['data'][0].ill_id);
+                        $("#track_stat").val(response['data'][0].tracking_status);
                         $("#url").val(response['data'][0].ill_url); 
 
                         // Illness Category
@@ -1664,7 +1682,10 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             //$("#previewAddIllness").modal('show');
-
+            
+            iD = $("#iD").val(); // ID
+            $("#id_ill").val($("#iD").val());
+            $("#iD").html(iD);
             ill_cat = $(".ill_cat").val(); // Illness Category
             $(".ill_cat").html(ill_cat);
             ill_name = $("#ill").val(); // Illness Name
@@ -1828,6 +1849,54 @@ $.ajaxSetup({
                 });
             });
             $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.release1').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            
+            $.ajax({
+                url: '/release_reservation_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
+    $('.release2').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            
+            $.ajax({
+                url: '/release_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
         });
     });
 

@@ -63,3 +63,13 @@ Route::get('/get_all_department','HomeController@get_all_department');
 
 //approval request
 Route::post('/doc_approve_request','HomeController@doc_approve_request');
+Route::post('/approve_request_illness','HomeController@approve_request_illness');
+
+//approve
+Route::post('/approve_illness','HomeController@approve_illness');
+
+//release reservation
+Route::post('/release_reservation_illness','HomeController@release_reservation_illness');
+
+//release
+Route::post('/release_illness','HomeController@release_illness');

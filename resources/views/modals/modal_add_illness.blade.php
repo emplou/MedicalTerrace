@@ -4,6 +4,7 @@
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
+        {!! Form::open(['url' => '/approve_request_illness', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
                 <li><a href="#" class="ill_cat"><!-- 感染症・寄生虫 --></a></li>
@@ -160,9 +161,11 @@
                     <span>手足口病</span>
                 </div>
             </div>
+           <input type="hidden" id="id_ill" name="id_ill" />
            
             @if (Request::is('illness_list'))  
             <!-- Buttons -->
+<<<<<<< HEAD
             <div class="modal-buts one">
                 <button type="button" class="btn-prime approval" id="show_img"></button>
             </div>
@@ -177,6 +180,15 @@
             </div>
             @endif
     
+=======
+            @if (Request::is('illness_list'))  
+                <div class="modal-buts"><br>
+                    <input type="submit" class="btn-prime approval" id="show_img">
+                    <!-- <input type="button" class="btn-prime backedit" id="show_img"> -->
+                </div>
+            @endif
+>>>>>>> 6921c0be4f62c3c2f7a2403a022e657c82d040e2
         </div>
+        {!! Form::close() !!}
     </div>
 </div>
