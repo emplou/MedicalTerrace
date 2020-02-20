@@ -11,8 +11,42 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
+      <div class="header-wrapper">
+      <div class="left">
+        <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+        <div id="authorID"></div>
+        
+    </div>
+    <div class="right">
+        <div>作成日<span>Date</span></div>
+        <div class="select">
+            <select>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+            </select>
+        </div>
+        <div>最終更新日<span>Update</span></div>
+        <div class="select">0000/00/00</div>
+    </div>
+</div>
+<hr />
+<div class="form-container">
+    <div class="form-progress">
+        <ul>
+            <li class="active">下書き<br><span>Draft</span></li>
+            <li class="active">プレビュー<br><span>Preview</span></li>
+            <li>承認依頼<br><span>Approval Request</span></li>
+            <li>承認済<br><span>Approved</span></li>
+            <li class="rel">公開予約<br><span>Release reservation</span></li>
+            <li>公開中<br><span>Release</span></li>
+        </ul>
+    </div>
       {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
       <input type="hidden" name="docID" id="twodocID" value=" ">
+      <input type="hidden" name="statusAuth" id="statusAuth" value="">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -246,4 +280,6 @@
       {!! Form::close() !!}
 </div>
   </div>
+</div>
+</div>
 </div>

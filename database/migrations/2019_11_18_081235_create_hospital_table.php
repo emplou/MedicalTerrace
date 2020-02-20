@@ -35,6 +35,8 @@ class CreateHospitalTable extends Migration
             $table->string('hosp_text_subheading');
             $table->string('division');
             $table->string('medsublist');
+            $table->integer('tracking_status');
+            $table->integer('author');
             $table->timestamps();
         });
     }

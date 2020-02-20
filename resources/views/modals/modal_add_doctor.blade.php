@@ -26,6 +26,15 @@
             <div class="modal-buts one">
                 <button type="button" class="btn-prime approval" id="show_img"></button>
             </div>
+            <div class="modal-buts two">
+                <button type="button" class="btn-prime approved" id="show_img"></button>
+            </div>
+            <div class="modal-buts three">
+                <button type="button" class="btn-prime release-reserve" id="show_img"></button>
+            </div>
+            <div class="modal-buts four">
+                <button type="button" class="btn-prime released" id="show_img"></button>
+            </div>
             @endif
         {!! Form::close() !!}
         </div>

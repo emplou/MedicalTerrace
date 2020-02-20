@@ -20,7 +20,9 @@ use MedicalTerrace\Special;
 use MedicalTerrace\Illness_archive;
 use MedicalTerrace\Drafts;
 use MedicalTerrace\ApprovalRequest;
-use MedicalTerrace\Archive;
+use MedicalTerrace\Approved;
+use MedicalTerrace\ReleaseReservation;
+use MedicalTerrace\Release;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -143,8 +145,8 @@ class HomeController extends Controller
         $hospital->address_eng      = $details['address_english']; 
         $hospital->access           = $access;
         $hospital->parking          = $details['p_radio'];
-        $hospital->phone_no         = $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'];
-        $hospital->fax              = $details['fax'].$details['fax_one'].$details['fax_two'];
+        $hospital->phone_no         = $details['phone_no'].'-'.$details['phone_no_one'].'-'.$details['phone_no_two'];
+        $hospital->fax              = $details['fax'].'-'.$details['fax_one'].'-'.$details['fax_two'];
         $hospital->email            = $details['email'];
         $hospital->image            = '/clinic_image/'.$filename; //clinic image / hospital image
         $hospital->image_caption    = $details['img_caption'];
@@ -2293,6 +2295,46 @@ class HomeController extends Controller
         return redirect('/hospital_list');
     }
 
+<<<<<<< HEAD
+=======
+     //Approve Special Preview
+     public function approve_special(Request $request){
+        $details = Input::all();
+        
+        $special = DB::table('special')
+                                    ->where('id','=', $details['spID'])
+                                    ->update([
+                                                'sp_status'               => '4',
+                                            ]);
+        return redirect('/special_list');
+    }
+
+    //Release Reservation Special
+    public function release_reservation_special(Request $request){
+        $details = Input::all();
+        
+        $special = DB::table('special')
+                                    ->where('id','=', $details['spID'])
+                                    ->update([
+                                                'sp_status'               => '5',
+                                            ]);
+        return redirect('/special_list');
+    }
+
+    //Release Special
+    public function release_special(Request $request){
+        $details = Input::all();
+        
+        $special = DB::table('special')
+                                    ->where('id','=', $details['spID'])
+                                    ->update([
+                                                'status'               => '6',
+                                            ]);
+        return redirect('/special_list');
+    }
+
+    // DOCTOR PROCESS
+>>>>>>> 747309fbf03ad8d47e7af75303741b51cb4ac7e6
     public function doc_approve_request(Request $request){
         $details = Input::all();
 
@@ -2316,6 +2358,183 @@ class HomeController extends Controller
         $archive->save();
 
         return redirect('/doctor_list');
+    }
+
+    public function doc_approve(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_doctors')
+                                    ->where('id','=', $details['docIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '4',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new Approved;
+        $appReq->type                   = '2';
+        $appReq->type_id                = $details['docIDappreq'];
+        $appReq->date_approval          = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '2';
+        $archive->type_id               = $details['docIDappreq'];
+        $archive->tracking_type         = '4';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/doctor_list');
+    }
+
+    public function doc_release_reservation(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_doctors')
+                                    ->where('id','=', $details['docIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '5',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ReleaseReservation;
+        $appReq->type                               = '2';
+        $appReq->type_id                            = $details['docIDappreq'];
+        $appReq->date_release_reservation           = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '2';
+        $archive->type_id               = $details['docIDappreq'];
+        $archive->tracking_type         = '5';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/doctor_list');
+    }
+
+    public function doc_release(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_doctors')
+                                    ->where('id','=', $details['docIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '6',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ReleaseReservation;
+        $appReq->type                               = '2';
+        $appReq->type_id                            = $details['docIDappreq'];
+        $appReq->date_release                       = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '2';
+        $archive->type_id               = $details['docIDappreq'];
+        $archive->tracking_type         = '6';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/doctor_list');
+    }
+
+    // HOSPITAL PROCESS
+
+    public function hosp_approve_request(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_hospital')
+                                    ->where('id','=', $details['hospIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '3',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ApprovalRequest;
+        $appReq->type                   = '1';
+        $appReq->type_id                = $details['hospIDappreq'];
+        $appReq->date_approval_request  = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '1';
+        $archive->type_id               = $details['hospIDappreq'];
+        $archive->tracking_type         = '3';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/hospital_list');
+    }
+
+    public function hosp_approve(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_hospital')
+                                    ->where('id','=', $details['hospIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '4',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new Approved;
+        $appReq->type                   = '1';
+        $appReq->type_id                = $details['hospIDappreq'];
+        $appReq->date_approval          = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '1';
+        $archive->type_id               = $details['hospIDappreq'];
+        $archive->tracking_type         = '4';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/hospital_list');
+    }
+
+    public function hosp_release_reservation(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_hospital')
+                                    ->where('id','=', $details['hospIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '5',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ReleaseReservation;
+        $appReq->type                               = '1';
+        $appReq->type_id                            = $details['hospIDappreq'];
+        $appReq->date_release_reservation           = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '1';
+        $archive->type_id               = $details['hospIDappreq'];
+        $archive->tracking_type         = '5';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/hospital_list');
+    }
+
+    public function hosp_release(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('dv_hospital')
+                                    ->where('id','=', $details['hospIDappreq'])
+                                    ->update([
+                                                'tracking_status'               => '6',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ReleaseReservation;
+        $appReq->type                               = '1';
+        $appReq->type_id                            = $details['hospIDappreq'];
+        $appReq->date_release                       = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '1';
+        $archive->type_id               = $details['hospIDappreq'];
+        $archive->tracking_type         = '6';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/hospital_list');
     }
 
 }
