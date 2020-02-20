@@ -385,13 +385,7 @@
                         <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
                         <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div>
                     </div>
-                    <div class="sidediv cols-3">
-                        <div class="sidebots">
-                            <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness">Preview</a>
-                            <button type="button" class="btn-prime release1" id="myBtn">Release</button>
-                            <button type="button" class="btn-prime release2" id="myBtn">Release</button>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div class="form-group">
@@ -854,6 +848,25 @@
                     </div>
                     
                 </div>
+                <div class="sidediv cols-3">
+                        <div class="sidebots">
+                            <!-- Full buttons -->
+                            <!-- <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime release1" id="myBtn" style="background-image: url(../../images/icon-preview.png);">Release</button>
+                            <button type="button" class="btn-prime release2" id="myBtn" style="background-image: url(../../images/icon-preview.png);">Release</button> -->
+
+                            <!-- Red buttons -->
+                            <!-- <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-pink-relreserve.png);">Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-pink-release.png);">Release</button> -->
+
+                            <!-- Half buttons -->
+                            <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);">Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);">Release</button>
+                        
+                        </div>
+                    </div>
             </div>
 
     </div>
