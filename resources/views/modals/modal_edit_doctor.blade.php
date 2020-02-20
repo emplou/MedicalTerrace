@@ -209,8 +209,8 @@
             </div>
             <div class="col-10">
                 <div id="input_career_three"></div>
-                <div id="c_aw"></div>
-                <div class="cols-1 relative"><button type="button" class="btn btn-success add55"><span class="lnr lnr-plus-circle"></span></button></div>
+                <div id="editc_aw"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd55"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -253,6 +253,8 @@
             </div>
             <div class="col-10">
                 <div id="input_department"></div>
+                <div id="editdpt_div"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>

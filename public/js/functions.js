@@ -1759,9 +1759,107 @@ $.ajaxSetup({
     } 
   });
 
-  //edit doctor modal
+  //copy edit doctor modal
 
-  $('.editaddcert1').on('click', editaddcert1);
+  $('.copyaddcert1').on('click', copyaddcert1);
+    var i=0;
+    function copyaddcert1(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    //   var copy = $('#addanother').html();
+      $('#copycertificate').append('<input type="text" class="form- " id="kword1" name="certificate[]" style="width:300px"></div><input type="text" class="form- " id="kword2" name="certificate[]" style="width:300px">');
+    }
+
+    $('.copyaddconf2').on('click', copyaddconf2);
+    var i=0;
+    function copyaddconf2(e) {
+      e.preventDefault();
+    //   alert('yes!');
+      $('#copyaddconference').append('<input type="text" class="form- " name="conference[]" style="width:300px"><input type="text" class="form- " name="conference[]" style="width:300px">');
+    }
+
+    $('.copyadd3').on('click', copyadd3);
+    var i=0;
+    function copyadd3(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    var options='';
+        for(i=1990; i <= 2020; i++){
+            options+='<option value="'+i+'">'+i+'</option>';
+        }
+      $('#copyc_ac').append('<select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month[]" style="width:100px" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:100px"><br><select id="aca_year_to" name="c_ac_year_to[]" class="form- "  style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  style="width:100px"><br>');
+    }
+
+    $('.copyadd44').on('click', copyadd44);
+    var i=0;
+    function copyadd44(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    var options='';
+        for(i=1990; i <= 2020; i++){
+            options+='<option value="'+i+'">'+i+'</option>';
+        }
+      $('#copyc_we').append(' <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:100px"><br><select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">Decmber</option></select><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:100px"><br>');
+    }
+
+    $('.copyadd55').on('click', copyadd55);
+    var i=0;
+    function copyadd55(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    var options='';
+        for(i=1990; i <= 2020; i++){
+            options+='<option value="'+i+'">'+i+'</option>';
+        }
+      $('#copyc_aw').append('<select id="awards_year" name="c_aw_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc[]" class="form- "  style="width:100px"><br><select id="awards_year_to" name="c_aw_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc_to[]" class="form- "  style="width:100px"><br>');
+    }
+
+    $('.copyadd_dpt_doc').on('click', copyadd_dpt_doc);
+    var i=0;
+    function copyadd_dpt_doc(e) {
+    //   e.preventDefault();
+
+    $.ajax({
+        url: '/get_all_department/',
+        type: 'get',
+        dataType: 'json',
+        // data : { id : id },
+        success: function(response){
+            console.log(response['data']);
+
+        // if(response == "success")
+
+            /* ********** DEPARTMENT ************ */
+            var objJSONdept = JSON.stringify(response['data']);
+            // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+            // alert(objJSONdept);
+
+            var tr_str = "";
+            var len = response['data'].length;
+
+            tr_str += '<select style="width:150px" class="form- " name="department[]"><option>選択してください</option>';
+
+            for(var i=0; i<len; i++){
+                var dptname = response['data'][i].dpt_name;
+
+                tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+                }
+                 tr_str += '</select>';
+                
+            $("#copydpt_div").append(tr_str);
+
+        }
+
+    });
+
+    }
+    //end copy edit doctor modal details
+
+
+    //edit add doctor
+
+    $('.editaddcert1').on('click', editaddcert1);
     var i=0;
     function editaddcert1(e) {
       e.preventDefault();
@@ -1787,7 +1885,7 @@ $.ajaxSetup({
         for(i=1990; i <= 2020; i++){
             options+='<option value="'+i+'">'+i+'</option>';
         }
-      $('#editc_ac').append('<select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month[]" style="width:100px" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:100px"><br><select id="aca_year_to" name="c_ac_year_to[]" class="form- "  style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  style="width:100px">');
+      $('#editc_ac').append('<select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month[]" style="width:100px" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:100px"><br><select id="aca_year_to" name="c_ac_year_to[]" class="form- "  style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  style="width:100px"><br>');
     }
 
     $('.editadd44').on('click', editadd44);
@@ -1799,14 +1897,63 @@ $.ajaxSetup({
         for(i=1990; i <= 2020; i++){
             options+='<option value="'+i+'">'+i+'</option>';
         }
-      $('#editc_we').append(' <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:100px"><br><select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">Decmber</option></select><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:100px"></div>');
+      $('#editc_we').append(' <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:100px"><br><select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">Decmber</option></select><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:100px"><br>');
     }
 
+    $('.editadd55').on('click', editadd55);
+    var i=0;
+    function editadd55(e) {
+      e.preventDefault();
+    //   alert('yes!');
+    var options='';
+        for(i=1990; i <= 2020; i++){
+            options+='<option value="'+i+'">'+i+'</option>';
+        }
+      $('#editc_aw').append('<select id="awards_year" name="c_aw_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc[]" class="form- "  style="width:100px"><br><select id="awards_year_to" name="c_aw_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc_to[]" class="form- "  style="width:100px"><br>');
+    }
 
+    $('.editadd_dpt_doc').on('click', editadd_dpt_doc);
+    var i=0;
+    function editadd_dpt_doc(e) {
+    //   e.preventDefault();
 
+    $.ajax({
+        url: '/get_all_department/',
+        type: 'get',
+        dataType: 'json',
+        // data : { id : id },
+        success: function(response){
+            console.log(response['data']);
 
+        // if(response == "success")
 
-    //end edit doctor modal details
+            /* ********** DEPARTMENT ************ */
+            var objJSONdept = JSON.stringify(response['data']);
+            // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+            // alert(objJSONdept);
+
+            var tr_str = "";
+            var len = response['data'].length;
+
+            tr_str += '<select style="width:150px" class="form- " name="department[]"><option>選択してください</option>';
+
+            for(var i=0; i<len; i++){
+                var dptname = response['data'][i].dpt_name;
+
+                tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+                }
+                 tr_str += '</select>';
+                
+            $("#editdpt_div").append(tr_str);
+
+        }
+
+    });
+
+    }
+
+    // end edit add doctor
 
   $('.addcert1').on('click', addfields);
     var i=0;
