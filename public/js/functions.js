@@ -643,6 +643,9 @@ $.ajaxSetup({
                         sp_arch+= '</select>'; 
                         $("#sp_arch").html(sp_arch);  
 
+                        author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                        $("#authorID").html(author);
+
                         //Tracking
                         track = response['data'][0].tracking_status; 
                         if(track == '1') {
@@ -1284,6 +1287,9 @@ $.ajaxSetup({
                             sp_arch_two += '<option value="'+ b.archived_date +'">'+ b.archived_date +'</option>';
         
                         });
+                        author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                        $("#authorID").html(author); 
+
                         sp_arch_two+= '</select>'; 
                         $("#sp_arch_two").html(sp_arch_two);  
 

@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div id="copyAddspecial" class="modal fade" role="dialog" data-keyboard="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog edit">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 				
     <!-- Modal content-->

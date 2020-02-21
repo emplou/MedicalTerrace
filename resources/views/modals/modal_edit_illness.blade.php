@@ -13,7 +13,8 @@
             <div class="modal-body">
             <div class="header-wrapper">
                 <div class="left">
-                    <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+                    <div id="authorID"></div>
+                    <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
                     
                 </div>
                 <div class="right">

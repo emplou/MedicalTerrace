@@ -2295,46 +2295,6 @@ class HomeController extends Controller
         return redirect('/hospital_list');
     }
 
-<<<<<<< HEAD
-=======
-     //Approve Special Preview
-     public function approve_special(Request $request){
-        $details = Input::all();
-        
-        $special = DB::table('special')
-                                    ->where('id','=', $details['spID'])
-                                    ->update([
-                                                'sp_status'               => '4',
-                                            ]);
-        return redirect('/special_list');
-    }
-
-    //Release Reservation Special
-    public function release_reservation_special(Request $request){
-        $details = Input::all();
-        
-        $special = DB::table('special')
-                                    ->where('id','=', $details['spID'])
-                                    ->update([
-                                                'sp_status'               => '5',
-                                            ]);
-        return redirect('/special_list');
-    }
-
-    //Release Special
-    public function release_special(Request $request){
-        $details = Input::all();
-        
-        $special = DB::table('special')
-                                    ->where('id','=', $details['spID'])
-                                    ->update([
-                                                'status'               => '6',
-                                            ]);
-        return redirect('/special_list');
-    }
-
-    // DOCTOR PROCESS
->>>>>>> 747309fbf03ad8d47e7af75303741b51cb4ac7e6
     public function doc_approve_request(Request $request){
         $details = Input::all();
 
