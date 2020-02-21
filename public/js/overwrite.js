@@ -2364,6 +2364,247 @@ $(document).ready(function(){
 
     //copy edit doctor modal
 
+
+    $('.sp_preview').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            sp_iD = $("#sp_iD").val(); // ID
+            $("#id_sp").val($("#sp_iD").val());
+            $("#sp_iD").html(sp_iD);
+           
+        });
+    });
+
+    $('.sp_preview_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            sp_iD_two = $("#sp_iD_two").val(); // ID
+            $("#id_sp_two").val($("#sp_iD_two").val());
+            $("#sp_iD_two").html(sp_iD_two);
+           
+        });
+    });
+
+    $('.preview').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            iD = $("#iD").val(); // ID
+            $("#id_ill").val($("#iD").val());
+            $("#iD").html(iD);
+            ill_cat = $(".ill_cat").val(); // Illness Category
+            $(".ill_cat").html(ill_cat);
+            ill_name = $("#ill").val(); // Illness Name
+            $(".ill_name").html(ill_name);
+            ill_sh = $("#ill_shldr").val(); // Illness SHoulder
+            $(".ill_sh").html(ill_sh);
+
+            //Keywords
+            var key_value = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value").html(key_value);
+
+            //Summarize
+            var sum_value = "";
+            $("textarea[name='sm[]']").each(function() {
+                sum_value += '<li>'+ $(this).val() +'</li>';
+            });
+            $("#summary").html(sum_value);
+
+            //Risk Assessment
+            var z = 0;
+            if($("#a1").is(':checked')) {
+
+                var input_risk = "";
+                input_risk += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
+                $("textarea[name='sh[]']").each(function() {
+                    var zplus=z+1;
+
+                    if($(this).val() != '') {
+                        input_risk += '<li><input class="styled-checkbox" id="a'+zplus+'" type="checkbox" name="check1[]" ><label for="a'+zplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    z++;
+                });
+                input_risk += '</ul></div></div>';
+                $("#input_risk_one").html(input_risk);
+            }
+
+            //Risk Assessment 2
+            var x = 0;
+            if($("#a2").is(':checked')) {
+
+                var input_risk_two = "";
+                input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
+                $("textarea[name='sh2[]']").each(function() {
+                    var xplus=x+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two += '<li><input class="styled-checkbox" id="b'+xplus+'" type="checkbox" name="check2[]" ><label for="b'+xplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    x++;
+                });
+                input_risk_two += '</ul></div></div>';
+                $("#input_risk_two").html(input_risk_two);
+            }
+            
+            //Sub head and Text
+            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
+             
+            var sub_value = "";
+            //var cnt_value = "";
+            // $.each(objJSONcontent, function (i, v) { 
+            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
+            //     cnt_value += 'p'+ v.text +'p';
+            // });
+            $("select[name='sub_head1a[]']").each(function() {
+                sub_value += '<h3>'+ $(this).val() +'</h3>';
+                $("textarea[name='txt_ckeditor[]']").each(function() {
+                    sub_value += '<p>'+ $(this).val() +'</p>';
+                });
+            });
+            $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.preview_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            iD = $("#iD_two").val(); // ID
+            $("#id_ill_two").val($("#iD_two").val());
+            $("#iD_two").html(iD_two);
+
+            ill_cat_two = $(".ill_cat_two").val(); // Illness Category
+            $(".ill_cat").html(ill_cat_two);
+            ill_name = $("#ill_two").val(); // Illness Name
+            $(".ill_name").html(ill_name);
+            ill_sh = $("#ill_shldr_two").val(); // Illness SHoulder
+            $(".ill_sh").html(ill_sh);
+
+            //Keywords
+            var key_value_two = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value_two += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value_two").html(key_value_two);
+
+            //Summarize
+            var sum_value_two = "";
+            $("textarea[name='sm[]']").each(function() {
+                sum_value_two += '<li>'+ $(this).val() +'</li>';
+            });
+            $("#summary_two").html(sum_value_two);
+
+            //Risk Assessment
+            var z = 0;
+            if($("#a1_two").is(':checked')) {
+
+                var input_risk_two = "";
+                input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
+                $("textarea[name='sh[]']").each(function() {
+                    var zplus=z+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two += '<li><input class="styled-checkbox" id="a'+zplus+'" type="checkbox" name="check1[]" ><label for="a'+zplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    z++;
+                });
+                input_risk_two += '</ul></div></div>';
+                $("#input_risk_one_a").html(input_risk_two);
+            }
+
+            //Risk Assessment 2
+            var x = 0;
+            if($("#b1_two").is(':checked')) {
+
+                var input_risk_two_b = "";
+                input_risk_two_b += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
+                $("textarea[name='sh2[]']").each(function() {
+                    var xplus=x+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two_b += '<li><input class="styled-checkbox" id="b'+xplus+'" type="checkbox" name="check2[]" ><label for="b'+xplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    x++;
+                });
+                input_risk_two_b += '</ul></div></div>';
+                $("#input_risk_two_b").html(input_risk_two_b);
+            }
+            
+            //Sub head and Text
+            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
+             
+            var sub_value = "";
+            //var cnt_value = "";
+            // $.each(objJSONcontent, function (i, v) { 
+            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
+            //     cnt_value += 'p'+ v.text +'p';
+            // });
+            $("select[name='sub_head1a[]']").each(function() {
+                sub_value += '<h3>'+ $(this).val() +'</h3>';
+                $("textarea[name='txt_ckeditor[]']").each(function() {
+                    sub_value += '<p>'+ $(this).val() +'</p>';
+                });
+            });
+            $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.release1').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            
+            $.ajax({
+                url: '/release_reservation_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
   $('.copyaddcert1').on('click', copyaddcert1);
   var i=0;
   function copyaddcert1(e) {
@@ -2458,3 +2699,75 @@ $(document).ready(function(){
 
   }
   //end copy edit doctor modal details
+
+  $('.release2').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('il-id');
+        
+        $.ajax({
+            url: '/release_illness',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.sp_release1').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('sp-id');
+        
+        $.ajax({
+            url: '/release_reservation_special',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.sp_release2').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('sp-id');
+        
+        $.ajax({
+            url: '/release_special',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});

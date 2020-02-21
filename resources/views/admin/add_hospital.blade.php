@@ -82,10 +82,10 @@
     <div class="form-group">
         <label class="control-label cols-15">住所<br><span>Branch Address</span></label>
         <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code">
+            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="branch_name[]">
         </div>
         <div class="cols-4">
-            <input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" />
+            <input id="autocomplete_search" name="branch_address[]" type="text" class="form-control" placeholder="Search" />
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -95,10 +95,10 @@
     <div class="form-group">
         <label class="control-label cols-15">住所英語表記<br><span>Branch Address English</span></label>
         <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code">
+            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="branch_name_eng[]">
         </div>
         <div class="cols-4">
-            <input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search" />
+            <input id="autocomplete_search" name="branch_address_eng[]" type="text" class="form-control" placeholder="Search" />
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -197,7 +197,7 @@
     <div class="form-group check">
         <label class="control-label cols-15">URL<br><span>URL</span></label>
         <div class="cols-35">
-            <input type="text" class="form-control" placeholder="" name="url">
+            <input type="text" class="form-control" placeholder="" name="url_hosp">
         </div>
          <div class="cols-2 check3">
             <input type="checkbox" id="non4" name="asn" value="0"> 
@@ -758,7 +758,7 @@
     <div class="form-group">
         <label class="control-label cols-15">売店・食堂の有無<br><span>Shop, dining room</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="support_lang">
+            <input type="text" class="form-control" name="shop_dining_room">
         </div>
     </div>
 

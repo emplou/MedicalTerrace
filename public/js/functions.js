@@ -58,7 +58,7 @@ $.ajaxSetup({
                   $("#url_generation").val(response['data'][0].url_generation);
                   $("#status").val(response['data'][0].status);
                   
-                  author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                  var author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
                   $("#authorID").html(author);
 
                 var objJSON = JSON.parse(response['data'][0].certificate);

@@ -120,18 +120,48 @@ class HomeController extends Controller
         }
         $jsonsubj_list = json_encode($response); 
 
-        // career Academic Background
+        // access
         $access_trans   = $details['access_trans']; 
         $access_from    = $details['access_from']; 
         $access_mins    = $details['access_mins']; 
         $resp = array();
         foreach($access_trans as $key => $access_tran)
         {
-        $response[$key]['access_tran'] = $access_tran;
-        $response[$key]['access_from'] = $access_from[$key];
-        $response[$key]['access_mins'] = $access_mins[$key];
+        $resp[$key]['access_tran'] = $access_tran;
+        $resp[$key]['access_from'] = $access_from[$key];
+        $resp[$key]['access_mins'] = $access_mins[$key];
         }
         $access = json_encode($resp);
+
+        // branch address with english
+        $branch_name            = $details['branch_name']; 
+        $branch_address         = $details['branch_address']; 
+        $branch_name_eng        = $details['branch_name_eng']; 
+        $branch_address_eng     = $details['branch_address_eng'];
+        $branchresp = array();
+        foreach($branch_name as $key => $branch)
+        {
+        $branchresp[$key]['branch_name']          = $branch;
+        $branchresp[$key]['branch_address']       = $branch_address[$key];
+        $branchresp[$key]['branch_name_eng']      = $branch_name_eng[$key];
+        $branchresp[$key]['branch_address_eng']   = $branch_address_eng[$key];
+        }
+        $branch_json = json_encode($branchresp);
+
+        // branch address with english
+        $branch_name            = $details['branch_name']; 
+        $branch_address         = $details['branch_address']; 
+        $branch_name_eng        = $details['branch_name_eng']; 
+        $branch_address_eng     = $details['branch_address_eng'];
+        $branchresp = array();
+        foreach($branch_name as $key => $branch)
+        {
+        $branchresp[$key]['branch_name']          = $branch;
+        $branchresp[$key]['branch_address']       = $branch_address[$key];
+        $branchresp[$key]['branch_name_eng']      = $branch_name_eng[$key];
+        $branchresp[$key]['branch_address_eng']   = $branch_address_eng[$key];
+        }
+        $branch_json = json_encode($branchresp);
         
 
         $hospital = new Hospital;
@@ -143,6 +173,7 @@ class HomeController extends Controller
         $hospital->postal_code      = $details['postal_code'];
         $hospital->address          = $details['address'];
         $hospital->address_eng      = $details['address_english']; 
+        $hospital->branch_address_w_eng      = $branch_json; // branch address
         $hospital->access           = $access;
         $hospital->parking          = $details['p_radio'];
         $hospital->phone_no         = $details['phone_no'].'-'.$details['phone_no_one'].'-'.$details['phone_no_two'];
@@ -156,6 +187,17 @@ class HomeController extends Controller
         //$hospital->medinscatchtext  = $medinscatchtext; //should be json
         $hospital->division         = $details['division']; // added division and medical subject list and field
         $hospital->medsublist       = $jsonsubj_list; // should be json | dropdown and input field
+
+        $hospital->url_hosp         = $details['url_hosp'];
+        $hospital->in_hospital_pres = $details['pres'];
+        $hospital->free_med_exp     = $details['pres']; //json
+        $hospital->hospitalization  = $details['pres']; //json
+        $hospital->no_of_beds       = $details['pres']; //json
+        $hospital->possible_date_of_visit = $details['pres']; //json
+        $hospital->in_hospital_services   = $details['hosp_service']; 
+        $hospital->support_lang     = $details['support_lang'];
+        $hospital->shop_dining_room = $details['shop_dining_room']; 
+        $hospital->credit_card_payment    = $details['pres']; //json
         $hospital->save();
 
         $department = new Department;
@@ -231,7 +273,7 @@ class HomeController extends Controller
         $staff->hospital_id            = $hospital_id;
         $staff->title                  = $details['staff_subheading_hospital'];
         $staff->text                   = $details['staff_comment_hospital'];
-        $staff->image                   = $filename_staff;
+        $staff->image                  = $filename_staff;
         $staff->save();
         
         // return redirect::back()->with('message','Successfully Encoded');
@@ -2295,46 +2337,6 @@ class HomeController extends Controller
         return redirect('/hospital_list');
     }
 
-<<<<<<< HEAD
-=======
-     //Approve Special Preview
-     public function approve_special(Request $request){
-        $details = Input::all();
-        
-        $special = DB::table('special')
-                                    ->where('id','=', $details['spID'])
-                                    ->update([
-                                                'sp_status'               => '4',
-                                            ]);
-        return redirect('/special_list');
-    }
-
-    //Release Reservation Special
-    public function release_reservation_special(Request $request){
-        $details = Input::all();
-        
-        $special = DB::table('special')
-                                    ->where('id','=', $details['spID'])
-                                    ->update([
-                                                'sp_status'               => '5',
-                                            ]);
-        return redirect('/special_list');
-    }
-
-    //Release Special
-    public function release_special(Request $request){
-        $details = Input::all();
-        
-        $special = DB::table('special')
-                                    ->where('id','=', $details['spID'])
-                                    ->update([
-                                                'status'               => '6',
-                                            ]);
-        return redirect('/special_list');
-    }
-
-    // DOCTOR PROCESS
->>>>>>> 747309fbf03ad8d47e7af75303741b51cb4ac7e6
     public function doc_approve_request(Request $request){
         $details = Input::all();
 

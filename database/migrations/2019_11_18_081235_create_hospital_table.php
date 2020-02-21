@@ -23,6 +23,7 @@ class CreateHospitalTable extends Migration
             $table->string('postal_code');
             $table->string('address');
             $table->string('address_eng');
+            $table->longText('branch_address_w_eng');
             $table->string('access');
             $table->string('parking');
             $table->string('phone_no');
@@ -35,6 +36,15 @@ class CreateHospitalTable extends Migration
             $table->string('hosp_text_subheading');
             $table->string('division');
             $table->string('medsublist');
+            $table->string('url_hosp');
+            $table->string('in_hospital_pres');
+            $table->longText('free_med_exp');
+            $table->longText('hospitalization');
+            $table->longText('no_of_beds');
+            $table->longText('possible_date_of_visit');
+            $table->integer('support_lang');
+            $table->integer('shop_dining_room');
+            $table->longText('credit_card_payment');
             $table->integer('tracking_status');
             $table->integer('author');
             $table->timestamps();
