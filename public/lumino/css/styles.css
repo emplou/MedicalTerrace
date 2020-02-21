@@ -2123,7 +2123,7 @@ table#list {
   background-image: url(../../images/icon-relreserve.png);
 }
 .btn-prime.released {
-  background-image: url(../../images/icon-release.png);
+  background-image: url(../../images/icon-release2.png);
 }
 .btn-prime.release1 {
   background-image: url(../../images/icon-relreserve.png);
@@ -3055,7 +3055,7 @@ ul.blk-bullet img {
   background-color: #FCB0BC;
   border-color: #FCB0BC;
   padding: 10px 0;
-  width: 85px;
+  width: 100px;
   height: 50px;
   font-size: 11px;
   margin-top: 3px;
@@ -3068,7 +3068,7 @@ ul.blk-bullet img {
   background-color: #6ebaba;
   border-color: #6ebaba;
   padding: 10px 0;
-  width: 100px;
+  width: 110px;
   height: 50px;
   font-size: 11px;
   margin-top: 3px;
@@ -3079,18 +3079,32 @@ ul.blk-bullet img {
 }
 
 
-.modal-dialog.edit {
+.modal-dialog.edit,
+.modal-dialog.modal-lg {
   width: 1000px;
   max-width: 1000px;
 }
 
-.modal-dialog.edit .form-progress {
+.modal-dialog.edit .form-progress,
+.modal-dialog.modal-lg .form-progress {
   max-width: 450px;
 }
-.modal-dialog.edit .modal-body {
+.modal-dialog.edit .modal-body,
+.modal-dialog.modal-lg .modal-body {
   padding: 0 15px;
 }
-.modal-dialog.edit .main-content .header-wrapper {
+
+.modal-dialog.edit .form-group label,
+.modal-dialog.modal-lg .form-group label {
+  margin-top: 0;
+}
+.modal-dialog.edit .header-wrapper,
+.modal-dialog.modal-lg .header-wrapper {
     width: 100%;
     height: 55px;
+}
+
+.modal-dialog.edit .form-control,
+.modal-dialog.modal-lg .form-control {
+  width: 75%;
 }

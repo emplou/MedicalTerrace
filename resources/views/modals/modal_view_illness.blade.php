@@ -3,11 +3,6 @@
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
-            <ul class="breadcrumb">
-                <li><a href="#"><img src="images/icon-home-green.png"></a></li>
-                <li><a href="#">感染症・寄生虫  </a></li>
-                <li>手足口病</a></li>
-            </ul>
             
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
@@ -51,25 +46,6 @@
                     </p>有効なワクチンはありません。発病を予防する薬もありません。接触感染を予防するために、しっかり手洗いをすること、うがいをすることなどが基本の対策になります。手洗いは石けんを使い、流水で洗いましょう。治った後も2〜4週間ほど、ウイルスが便中に排泄されることがあるため、感染を広げないために、排泄物を適切に処理することが必要です。おむつ交換をする時は特に気をつけ、しっかり手を洗います。タオルの共用もしません。家庭では兄弟への感染に気をつけること、乳幼児の保育施設などの集団生活では、職員と子どもがしっかり対策をすることが大切です。<p>
                 </div>   
                 
-                <div class="panel-pink">
-                    
-                        <strong>下記のような症状はありますか？</strong>
-                        <ul>
-                            <li>
-                                <input class="styled-checkbox" id="4b" type="checkbox" name="4b" >
-                                <label for="4b" style="font-weight:500;">手のひらや足の裏に赤い湿疹、または水ぶくれができている</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="5b" type="checkbox" name="5b" >
-                                <label for="5b" style="font-weight:500;">口内炎がある</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="6b" type="checkbox" name="6b" >
-                                <label for="6b" style="font-weight:500;">全身がだるい</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="panel-blue">
                     <div class="id-tag">
                         監修・取材協力<br>
@@ -78,8 +54,6 @@
                         医学博士 浅野 勉<br>
                         <a href="">詳しくはこちら</a>
                     </div>
-
-                    
                     <p></p>
                 </div>
             </div>
