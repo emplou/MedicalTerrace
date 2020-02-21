@@ -64,12 +64,16 @@ Route::get('/get_all_department','HomeController@get_all_department');
 //approval request
 Route::post('/doc_approve_request','HomeController@doc_approve_request');
 Route::post('/approve_request_illness','HomeController@approve_request_illness');
+Route::post('/approve_request_special','HomeController@approve_request_special');
 
 //approve
 Route::post('/approve_illness','HomeController@approve_illness');
+Route::post('/approve_special','HomeController@approve_special');
 
 //release reservation
 Route::post('/release_reservation_illness','HomeController@release_reservation_illness');
+Route::post('/release_reservation_special','HomeController@release_reservation_special');
 
 //release
 Route::post('/release_illness','HomeController@release_illness');
+Route::post('/release_special','HomeController@release_special');

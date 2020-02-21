@@ -2,7 +2,7 @@
 @section('content')
 @include('modals.modal_add_illness')
 <!-- <h2>Add Illness</h2> -->
-<div class="header-wrapper">
+<!-- <div class="header-wrapper">
     <div class="left">
         <h2>手足口病<span>ID番号:I00000</span></h2>
         
@@ -23,7 +23,7 @@
     </div>
     
 </div>
-<hr />
+<hr /> -->
     <div class="form-container add">
         <div class="form-progress">
             <ul>
@@ -31,7 +31,7 @@
                 <li class="active">プレビュー<br><span>Preview</span></li>
                 <li>承認依頼<br><span>Approval Request</span></li>
                 <li>承認済<br><span>Approved</span></li>
-                <li class="rel">公開予約<br><span>Release reservation</span></li>
+                <li>公開予約<br><span>Release reservation</span></li>
                 <li>公開中<br><span>Release</span></li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
                 <div class="cols-4">
-                    <input type="text" class="form-control" placeholder="例）Infection_kid" name="url">
+                    <input type="text" class="form-control" placeholder="例）Infection_kid" name="url" required>
                 </div>
             </div>
             
@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                 <div class="cols-4">          
-                    <select name="ill_cat" id="ill_cat" class="form-control ill_cat">
+                    <select name="ill_cat" id="ill_cat" class="form-control ill_cat" >
                         <option value="">選択してください</option>
                         <option value="感染症・寄生虫症">感染症・寄生虫症</option>
                         <option value="女性特有のがん＊">女性特有のがん＊</option>
@@ -94,7 +94,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill_shldr" id="ill_sh" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20">
+                    <input type="text" class="form-control ill_shldr" id="ill_sh" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20"  required>
                 </div>
                 <div class="cols-2">          
                     <span id="rchars">20</span>/20
@@ -104,7 +104,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集タイトル<br><span>Illness</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill" id="ill" placeholder="例)手足口病" name="ill" maxlength="14">
+                    <input type="text" class="form-control ill" id="ill" placeholder="例)手足口病" name="ill" maxlength="14"  required>
                 </div>
                 <div class="cols-2">          
                     <span id="rchars2">0</span>/14
@@ -114,7 +114,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">病名ふりがな<br><span>Illness Phonetic</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control" placeholder="例)てあしくちびょう"  name="ill_ph" maxlength="14">
+                    <input type="text" class="form-control" placeholder="例)てあしくちびょう"  name="ill_ph" maxlength="14"  required>
                 </div>
             </div>
              <!-- Doctor -->
@@ -129,11 +129,11 @@
                     </select>
                 </div>
                 <div class="cols-3 rad-buttons">
-					<input type="radio" id="sprvsn" name="role" value="監修">
+					<input type="radio" id="sprvsn" name="role" value="監修"  required>
 					<label for="sprvsn">監修</label>
-					<input type="radio" id="cc" name="role" value="取材協力">
+					<input type="radio" id="cc" name="role" value="取材協力" required>
 					<label for="cc">取材協力</label>
-					<input type="radio" id="scc" name="role" value="監修・取材協力">
+					<input type="radio" id="scc" name="role" value="監修・取材協力"> required
 					<label for="scc">監修・取材協力</label>
 		        </div>	
             </div>
@@ -152,7 +152,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                    <textarea class="form-control sm" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -162,7 +162,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -171,7 +171,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                    <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -180,7 +180,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                    <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -189,7 +189,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2 relative">          
                     <span id="rchars4">0</span>/46
@@ -202,7 +202,7 @@
                 <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>
                 <div class="cols-45">          
                     <div class="custom-file-upload ill">
-                        <input type="file" id="file"  name="img"/>
+                        <input type="file" id="file"  name="img" required/>
                     </div>
                 </div>
             </div>
@@ -210,14 +210,14 @@
             <div class="form-group">
                 <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
                 <div class="cols-4">
-                    <input type="text" class="form-control" placeholder="例)院長 山田太(郎 やまだたろう)" name="img_cap">
+                    <input type="text" class="form-control" placeholder="例)院長 山田太(郎 やまだたろう)" name="img_cap" required>
                 </div>
             </div>
              <!-- Image Alt -->
             <div class="form-group">
                 <label class="control-label cols-15">画像alt<br><span>Image alt</span></label>
                 <div class="cols-4">
-                    <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック院長山田太郎" name="img_alt">
+                    <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック院長山田太郎" name="img_alt" required>
                 </div>
             </div>
             <br>
@@ -250,7 +250,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15"></label>
                     <div class="cols-4">
-                        <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                        <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required>
                     </div>
                 </div>
 
@@ -284,7 +284,7 @@
                 <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                 <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                        <input type="checkbox" id="a1" name="subheading-chck" value="1" />
+                        <input type="checkbox" id="a1" name="subheading-chck" value="1"  required/>
                         <label for="a1" style="color:red;" id="output_ill2"></label>
                         <div class="clear"></div>
 					</div>    
@@ -297,7 +297,7 @@
                 <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                 <div class="cols-8">  
                     <div class="cols-5">          
-                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度 
@@ -313,7 +313,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
-                        <textarea class="form-control sh2" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh2" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度
@@ -329,7 +329,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
-                        <textarea class="form-control sh3" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh3" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度
@@ -345,7 +345,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
-                        <textarea class="form-control sh4" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh4" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度
@@ -361,7 +361,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
-                        <textarea class="form-control sh5" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh5" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度
@@ -414,7 +414,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-8">  
                         <div class="cols-5">          
-                            <textarea class="form-control sh" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度 
@@ -430,7 +430,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh2" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh2" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -446,7 +446,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh3" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh3" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -462,7 +462,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh4" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh4" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -478,7 +478,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh5" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh5" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -545,7 +545,7 @@
                 <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                 <div class="cols-45">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" ><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
+                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" ><label for="styled-checkbox-1" style="color: #F00;font-weight:500;" required>子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
 					</div>    
                 </div>
             </div>
@@ -675,7 +675,7 @@
                     <div class="wrapper6"></div>
 
                     <div class="cols-3">
-                        <select name="tag_dep[]" class="form-control">
+                        <select name="tag_dep[]" class="form-control" required>
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
                                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -683,7 +683,7 @@
                         </select>
                     </div>
                     <div class="cols-3">
-                        <select name="tag_dep[]" class="form-control">
+                        <select name="tag_dep[]" class="form-control" required>
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
                                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -691,7 +691,7 @@
                         </select>
                     </div>
                     <div class="cols-3">
-                        <select name="tag_dep[]" class="form-control">
+                        <select name="tag_dep[]" class="form-control" required>
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
                                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -709,13 +709,13 @@
                 <div class="cols-7"> 
                     <div id="addanother3">
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状" required>
                         </div>
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="" required>
                         </div>
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="" required>
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
@@ -724,13 +724,13 @@
                     <div class="wrapper7"></div>
 
                     <div class="cols-3">
-                        <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                        <input type="text" class="form-control" name="tag_sy[]" placeholder="" required>
                     </div>
                     <div class="cols-3">
-                        <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                        <input type="text" class="form-control" name="tag_sy[]" placeholder="" required>
                     </div>
                     <div class="cols-3">
-                        <input type="text" class="form-control" name="tag_sy[]" placeholder="">
+                        <input type="text" class="form-control" name="tag_sy[]" placeholder="" required>
                     </div>
                     <div class="col-sm-1">
                         <button type="button" class="btn btn-success add7"><span class="lnr lnr-plus-circle"></span></button>
@@ -742,67 +742,67 @@
                 <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                 <div class="cols-6">   
                     <div class="cols-12">
-                        <input type="checkbox" id="taga1" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga1" name="tag_s[]" value="1" required> 
                         <label for="taga1">春</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga2" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga2" name="tag_s[]" value="1" required> 
                         <label for="taga2">夏</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga3" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga3" name="tag_s[]" value="1" required> 
                         <label for="taga3">秋</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga4" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga4" name="tag_s[]" value="1" required>
                         <label for="taga4"> 冬</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga5" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga5" name="tag_s[]" value="1" required>
                         <label for="taga5">4月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga6" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga6" name="tag_s[]" value="1" required>
                         <label for="taga6">5月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga7" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga7" name="tag_s[]" value="1" required>
                         <label for="taga7">6月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga8" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga8" name="tag_s[]" value="1" required> 
                         <label for="taga8">7月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga9" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga9" name="tag_s[]" value="1" required> 
                         <label for="taga9">8月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga10" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga10" name="tag_s[]" value="1" required> 
                         <label for="taga10">9月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga11" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga11" name="tag_s[]" value="1" required> 
                         <label for="taga11">10月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga12" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga12" name="tag_s[]" value="1" required> 
                         <label for="taga12">11月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga13" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga13" name="tag_s[]" value="1" required> 
                         <label for="taga13">12月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga14" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga14" name="tag_s[]" value="1" required> 
                         <label for="taga14">1月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga15" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga15" name="tag_s[]" value="1" required> 
                         <label for="taga15">2月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga16" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga16" name="tag_s[]" value="1" required> 
                         <label for="taga16">3月</label>
                     </div>
                 
@@ -815,13 +815,13 @@
                         <div id="addanother4">
                             
                             <div class="cols-3">
-                                <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                                <input type="text" class="form-control" name="tag_txt[]" placeholder="" required>
                             </div>
                             <div class="cols-3">
-                                <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                                <input type="text" class="form-control" name="tag_txt[]" placeholder="" required>
                             </div>
                             <div class="cols-3">
-                                <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                                <input type="text" class="form-control" name="tag_txt[]" placeholder="" required>
                             </div>
                             <div class="cols-1 relative"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
                         </div>
@@ -836,13 +836,13 @@
 
                     <div id="addanother5">
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                            <input type="text" class="form-control" name="tag_f[]" placeholder="" required>
                         </div>
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                            <input type="text" class="form-control" name="tag_f[]" placeholder="" required>
                         </div>
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
+                            <input type="text" class="form-control" name="tag_f[]" placeholder="" required>
                         </div>
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
                     </div>
@@ -862,8 +862,8 @@
 
                             <!-- Half buttons -->
                             <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
-                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);">Release</button>
-                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);">Release</button>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
                         
                         </div>
                     </div>
@@ -889,7 +889,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">画像キャプション:</label>
                     <div class="col-sm-9">          
-                        <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_cap2">
+                        <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_cap2" required>
                     </div>
                 </div>
 
@@ -897,7 +897,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">画像alt:</label>
                     <div class="col-sm-9">          
-                        <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_alt2">
+                        <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_alt2" required>
                     </div>
                 </div>
             </div>
@@ -909,7 +909,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">グラフタイトル:</label>
                     <div class="col-sm-9">          
-                        <input type="text" class="form-control" placeholder="例）手足口病の2013年〜2018年の定点当たり報告数の平均" name="g_title">
+                        <input type="text" class="form-control" placeholder="例）手足口病の2013年〜2018年の定点当たり報告数の平均" name="g_title" required>
                     </div>
                 </div>
 
@@ -917,7 +917,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">グラフ画像:</label>
                     <div class="col-sm-9">          
-                        <input type="file" class="form-control" name="g_img">
+                        <input type="file" class="form-control" name="g_img" required>
                     </div>
                 </div>
 
@@ -925,7 +925,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">グラフキャプション:</label>
                     <div class="col-sm-9">          
-                        <input type="text" class="form-control" placeholder="例）※1グラフの説明...などもここで記載出来ます" name="g_cap">
+                        <input type="text" class="form-control" placeholder="例）※1グラフの説明...などもここで記載出来ます" name="g_cap" required>
                     </div>
                 </div>
 
@@ -933,16 +933,16 @@
                 <div class="form-group">
                     <label class="control-label cols-15">グラフ詳細:</label>
                     <div class="cols-15">          
-                        <input type="checkbox" name="gd[]" value="参考">参考
+                        <input type="checkbox" name="gd[]" value="参考" required>参考
                     </div>
                     <div class="cols-15">          
-                        <input type="checkbox" name="gd[]" value="引用">引用
+                        <input type="checkbox" name="gd[]" value="引用" required>引用
                     </div>
                     <div class="cols-15">          
-                        <input type="checkbox" name="gd[]" value="出典">出典
+                        <input type="checkbox" name="gd[]" value="出典" required>出典
                     </div>
                     <div class="cols-15">          
-                        <input type="checkbox" name="gd[]" value="著作権">著作権
+                        <input type="checkbox" name="gd[]" value="著作権" required>著作権
                     </div>
                     <div class="cols-1">          
                         <a href="#">詳しく見る</a>
@@ -951,7 +951,7 @@
                 <div class="form-group">
                     <div class="cols-15"></div>
                     <div class="col-sm-7">          
-                        <input type="text" class="form-control" placeholder="例）国際感染症研究所" name="g_txt">
+                        <input type="text" class="form-control" placeholder="例）国際感染症研究所" name="g_txt" required>
                     </div>
                     <div class="cols-15"></div>
                 </div>
@@ -959,7 +959,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">グラフalt:</label>
                     <div class="col-sm-7">          
-                        <input type="text" class="form-control" placeholder="例）手足口病の報告数の平均" name="g_alt">
+                        <input type="text" class="form-control" placeholder="例）手足口病の報告数の平均" name="g_alt" required>
                     </div>
                     <div class="cols-15"><!-- <button type="button" class="btn btn-success">Save</button> --></div>
                 </div>
@@ -974,7 +974,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">エディター担当者<br><span>Editor</span></label>
                 <div class="cols-5">   
-                    <input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito" required>&nbsp;&nbsp;&nbsp;
                 </div>
                 <div class="cols-2"><button type="button" class="btn-prime editor"></button></div>
             </div>

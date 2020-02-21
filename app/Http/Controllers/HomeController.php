@@ -647,7 +647,7 @@ class HomeController extends Controller
         $jsoncr_list = json_encode($response11); 
 
         //Risk Assessment
-        if($details['subheading-chck'] == 1){
+        if($details['subheading-chck'] === 1){
             $risk_assess = new Risk_assessment;
             $risk_assess->ra_ill_id           = $illness_id;
             $risk_assess->ra_title            = $details['subheading-chck'];
@@ -685,9 +685,7 @@ class HomeController extends Controller
             $risk_assess->ra_result           = $jsoncr_list2;  
             $risk_assess->ra_status           = '2';  
             $risk_assess->save();
-        } else{
-            echo "";
-        }
+        } 
         
         return redirect('/illness_list');
     }
@@ -945,13 +943,16 @@ class HomeController extends Controller
         $value['data'] = DB::table('special')->where('id','=',$id)->get();
         $value['doc'] = DB::table('dv_doctors')->get();
         $value['dpt'] = DB::table('hospital_departments')->get();
+        $value['arch'] = DB::table('dv_archive')->where('type_id','=',$id)
+                                                    ->where('type','=','3')
+                                                    ->get();
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
     }
 
     public function modal_edit_illness($id){
-        $value['data'] = DB::table('illness')->where('ill_id','=',$id)->get();
+        $value['data'] = DB::table('illness')->where('id','=',$id)->get();
         $value['doc'] = DB::table('dv_doctors')->get();
         $value['dpt'] = DB::table('hospital_departments')->get();
         $value['ra'] = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
@@ -959,7 +960,10 @@ class HomeController extends Controller
                                                     ->get();
         $value['ra2'] = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
                                                     ->where('ra_status','=','2')
-                                                    ->get();                                            
+                                                    ->get();                                                 
+        $value['arch'] = DB::table('dv_archive')->where('type','=','4')
+                                                ->where('type_id','=',$id)
+                                                ->get();                                       
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
@@ -1691,6 +1695,112 @@ class HomeController extends Controller
 
         return redirect('/illness_list');
     }
+
+    //Approve Request Special Preview
+    public function approve_request_special(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('special')
+                                    ->where('id','=', $details['id_sp'])
+                                    ->update([
+                                                'tracking_status'               => '3',
+                                            ]);
+        $date = date('Y-m-d');
+        $appReq = new ApprovalRequest;
+        $appReq->type                   = '3';
+        $appReq->type_id                = $details['id_sp'];
+        $appReq->date_approval_request  = $date;
+        $appReq->save();
+
+        $archive = new Archive;
+        $archive->type                  = '3';
+        $archive->type_id               = $details['id_sp'];
+        $archive->tracking_type         = '3';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/special_list');
+       
+    }
+
+    //Approve Special Preview
+    public function approve_special(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('special')
+                                    ->where('id','=', $details['id_sp'])
+                                    ->update([
+                                                'tracking_status'               => '4',
+                                            ]);
+        $date = date('Y-m-d');
+        $approve = new ApprovalRequest;
+        $approve->type                   = '3';
+        $approve->type_id                = $details['id_sp'];
+        $approve->date_approval_request  = $date;
+        $approve->save();
+
+        $archive = new Archive;
+        $archive->type                  = '3';
+        $archive->type_id               = $details['id_sp'];
+        $archive->tracking_type         = '4';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/special_list');
+       
+    }
+
+    //Release Reservation Special
+    public function release_reservation_special(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('special')
+                                    ->where('id','=', $details['id'])
+                                    ->update([
+                                                'tracking_status'               => '5',
+                                            ]);
+        $date = date('Y-m-d');
+        $relres = new ApprovalRequest;
+        $relres->type                   = '3';
+        $relres->type_id                = $details['id'];
+        $relres->date_approval_request  = $date;
+        $relres->save();
+
+        $archive = new Archive;
+        $archive->type                  = '3';
+        $archive->type_id               = $details['id'];
+        $archive->tracking_type         = '5';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/special_list');
+    }
+
+    //Release Special
+    public function release_special(Request $request){
+        $details = Input::all();
+
+        $special = DB::table('special')
+                                    ->where('id','=', $details['id'])
+                                    ->update([
+                                                'tracking_status'               => '6',
+                                            ]);
+        $date = date('Y-m-d');
+        $release = new ApprovalRequest;
+        $release->type                   = '3';
+        $release->type_id                = $details['id'];
+        $release->date_approval_request  = $date;
+        $release->save();
+
+        $archive = new Archive;
+        $archive->type                  = '3';
+        $archive->type_id               = $details['id'];
+        $archive->tracking_type         = '6';
+        $archive->archived_date         = $date;
+        $archive->save();
+
+        return redirect('/special_list');
+    }
     
     public function save_copy_doctor(Request $request){
         $details = Input::all();
@@ -2185,6 +2295,8 @@ class HomeController extends Controller
         return redirect('/hospital_list');
     }
 
+<<<<<<< HEAD
+=======
      //Approve Special Preview
      public function approve_special(Request $request){
         $details = Input::all();
@@ -2222,6 +2334,7 @@ class HomeController extends Controller
     }
 
     // DOCTOR PROCESS
+>>>>>>> 747309fbf03ad8d47e7af75303741b51cb4ac7e6
     public function doc_approve_request(Request $request){
         $details = Input::all();
 

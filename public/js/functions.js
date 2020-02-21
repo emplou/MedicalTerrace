@@ -630,8 +630,60 @@ $.ajaxSetup({
                         console.log(response['data']); 
 
                         $("#editspecial").modal('show');
+
+                        // Archive
+                        var sp_arch = "";
+                        sp_arch += '<select><option value="">0000/00/00</option>';
+                        
+                        $.each(response['arch'], function (i, b) {
+                            //console.log('doc '+ b.name)
+                            sp_arch += '<option value="'+ b.archived_date +'">'+ b.archived_date +'</option>';
+        
+                        });
+                        sp_arch+= '</select>'; 
+                        $("#sp_arch").html(sp_arch);  
+
+                        //Tracking
+                        track = response['data'][0].tracking_status; 
+                        if(track == '1') {
+                            $(".sp_release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '2') {
+                            $(".sp_release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '3') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#sp_appreq" ).addClass("rel");
+                        } else if(track == '4') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#sp_approve" ).addClass("rel");
+                        } else if(track == '5') {
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
+                            $( "li#sp_relres" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#sp_release" ).addClass("rel");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
+                        } else { }
+
+                        $(".sp_release1").attr("sp-id", response['data'][0].id);
+                        $(".sp_release2").attr("sp-id", response['data'][0].id);
+                        $("#sp_iD").val(response['data'][0].id);
                         $("#spID").val(response['data'][0].id);
+                        $("#sp_track_stat").val(response['data'][0].tracking_status);
                         $("#url").val(response['data'][0].sp_url);
+
                         $("#magazine").val(response['data'][0].sp_mag);
                         $("#sts").val(response['data'][0].sp_title_shldr);
                         $("#st").val(response['data'][0].sp_title);
@@ -894,16 +946,50 @@ $.ajaxSetup({
                         
                         $("#editillness").modal('show');
 
+                        // Archive
+                        var input_arch = "";
+                        input_arch += '<select><option value="">0000/00/00</option>';
+                        
+                        $.each(response['arch'], function (i, b) {
+                            //console.log('doc '+ b.name)
+                            input_arch += '<option value="'+ b.archived_date +'">'+ b.archived_date +'</option>';
+        
+                        });
+                        input_arch+= '</select>'; 
+                        $("#input_arch").html(input_arch);  
+
                         //Tracking
                         track = response['data'][0].tracking_status; 
-                        if(track == '3') {
+                        if(track == '1') {
+                            $(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '2') {
+                            $(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '3') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#appreq" ).addClass("rel");
                         } else if(track == '4') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#approve" ).addClass("rel");
                         } else if(track == '5') {
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
                             $( "li#relres" ).addClass("rel");
                         } else if(track == '6') {
                             $( "li#release" ).addClass("rel");
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
                         } else { }
                         
                         //Add Attribute
@@ -911,7 +997,7 @@ $.ajaxSetup({
                         $(".release1").attr("il-id", response['data'][0].id);
                         $(".release2").attr("il-id", response['data'][0].id);
                         $("#iD").val(response['data'][0].id);
-                        $("#illID").val(response['data'][0].ill_id);
+                        $("#illID").val(response['data'][0].id);
                         $("#track_stat").val(response['data'][0].tracking_status);
                         $("#url").val(response['data'][0].ill_url); 
 
@@ -1152,6 +1238,7 @@ $.ajaxSetup({
                             z++;
                         });
 
+
                     },
                     error: function(response){
                     alert('Error'+response);
@@ -1187,6 +1274,58 @@ $.ajaxSetup({
                         console.log(response['data']); 
 
                         $("#copyAddspecial").modal('show');
+
+                        // Archive
+                        var sp_arch_two = "";
+                        sp_arch_two += '<select><option value="">0000/00/00</option>';
+                        
+                        $.each(response['arch'], function (i, b) {
+                            //console.log('doc '+ b.name)
+                            sp_arch_two += '<option value="'+ b.archived_date +'">'+ b.archived_date +'</option>';
+        
+                        });
+                        sp_arch_two+= '</select>'; 
+                        $("#sp_arch_two").html(sp_arch_two);  
+
+                        //Tracking
+                        track = response['data'][0].tracking_status; 
+                        if(track == '1') {
+                            $(".sp_release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '2') {
+                            $(".sp_release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '3') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#sp_appreq_two" ).addClass("rel");
+                        } else if(track == '4') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("disabled", "disabled");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#sp_approve_two" ).addClass("rel");
+                        } else if(track == '5') {
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
+                            $( "li#sp_relres_two" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#sp_release_two" ).addClass("rel");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
+                        } else { }
+
+                        $(".sp_release1").attr("sp-id", response['data'][0].id);
+                        $(".sp_release2").attr("sp-id", response['data'][0].id);
+                        $("#sp_iD_two").val(response['data'][0].id);
+                        $("#sp_track_stat_two").val(response['data'][0].tracking_status);
+
                         $("#twospID").val(response['data'][0].id);
                         $("#twourl").val(response['data'][0].sp_url);
                         $("#twomagazine").val(response['data'][0].sp_mag);
@@ -1435,7 +1574,60 @@ $.ajaxSetup({
 
                         $("#copyAddillness").modal('show');
 
+                        // Archive
+                        var input_arch_two = "";
+                        input_arch_two += '<select><option value="">0000/00/00</option>';
+                        
+                        $.each(response['arch'], function (i, b) {
+                            //console.log('doc '+ b.name)
+                            input_arch_two += '<option value="'+ b.archived_date +'">'+ b.archived_date +'</option>';
+        
+                        });
+                        input_arch_two+= '</select>'; 
+                        $("#input_arch_two").html(input_arch_two);  
+
+                        //Tracking
+                        track = response['data'][0].tracking_status; 
+                        if(track == '1') {
+                            $(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '2') {
+                            $(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                        } else if(track == '3') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#appreq_two" ).addClass("rel");
+                        } else if(track == '4') {
+                            //$(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("disabled", "disabled");
+                            $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#approve_two" ).addClass("rel");
+                        } else if(track == '5') {
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
+                            $( "li#relres_two" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#release_two" ).addClass("rel");
+                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
+                        } else { }
+                        
+                        //Add Attribute
+
+                        $(".release1").attr("il-id", response['data'][0].id);
+                        $(".release2").attr("il-id", response['data'][0].id);
+                        $("#iD_two").val(response['data'][0].id);
                         $("#twourl").val(response['data'][0].ill_url); // url
+
+                        $("#track_stat_two").val(response['data'][0].tracking_status);
 
                         // Illness Category
                         input_ill_two = '<select class="form-control ill_cat_two" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
@@ -1676,6 +1868,40 @@ $.ajaxSetup({
         });
     });
 
+    $('.sp_preview').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            sp_iD = $("#sp_iD").val(); // ID
+            $("#id_sp").val($("#sp_iD").val());
+            $("#sp_iD").html(sp_iD);
+           
+        });
+    });
+
+    $('.sp_preview_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            sp_iD_two = $("#sp_iD_two").val(); // ID
+            $("#id_sp_two").val($("#sp_iD_two").val());
+            $("#sp_iD_two").html(sp_iD_two);
+           
+        });
+    });
+
     $('.preview').each(function(e){
         $.ajaxSetup({
             headers: {
@@ -1776,6 +2002,9 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             //$("#previewAddIllness").modal('show');
+            iD = $("#iD_two").val(); // ID
+            $("#id_ill_two").val($("#iD_two").val());
+            $("#iD_two").html(iD_two);
 
             ill_cat_two = $(".ill_cat_two").val(); // Illness Category
             $(".ill_cat").html(ill_cat_two);
@@ -1891,6 +2120,54 @@ $.ajaxSetup({
             
             $.ajax({
                 url: '/release_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
+    $('.sp_release1').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('sp-id');
+            
+            $.ajax({
+                url: '/release_reservation_special',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
+    $('.sp_release2').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('sp-id');
+            
+            $.ajax({
+                url: '/release_special',
                 type: 'POST',
                 data : { id : id },
                 success: function(response){

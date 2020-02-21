@@ -2,6 +2,8 @@
 @section('content')
 @include('modals.modal_edit_special')
 @include('modals.modal_copy_add_special')
+@include('modals.modal_add_special')
+@include('modals.modal_copy_special')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 

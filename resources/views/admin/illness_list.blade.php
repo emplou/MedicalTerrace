@@ -7,7 +7,7 @@
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 
-    <table id="list" class="table table-striped table-bordered" style="width:100%">
+    <table id="list" class="table table-striped table-bordered" width="100%">
         <thead>
             <th>Illness</th>
             <th>Illness Category</th>
@@ -22,7 +22,7 @@
                 <td>{!! $ill->ill_cat !!}</td>
                 <td>{!! $ill->ill_shoulder !!}</td>
                 <td>{!! $ill->ill_ph !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_illness" il-id="{!! $ill->ill_id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->ill_id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite_illness" il-id="{!! $ill->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>

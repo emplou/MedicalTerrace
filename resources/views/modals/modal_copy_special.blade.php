@@ -1,37 +1,62 @@
-<div id="previewViewIllness" class="modalDialog">
+<div id="previewCopySpecial" class="modalDialog">
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
+        {!! Form::open(['url' => '/approve_request_special', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
-                <li><a href="#">感染症・寄生虫  </a></li>
+                <li><a href="#">感染症・寄生虫</a></li>
                 <li>手足口病</a></li>
             </ul>
-            
+            <div class="panel-head">感染症・寄生虫</div>
+            <div class="div-bg">
+                <div class="heading1">手・足・口に赤い発疹やみずぶくれが出ます<br>
+                <span>てあしくちびょう</span>手足口病 </div>
+            </div>
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 
                     <div class="tags">
+                        <span>子ども</span>
+                        <span>夏</span>
                         <span>感染症</span>
                         <span>夏風邪</span>
                         <span>手足口病</span>
-                        <span>子ども</span>
-                        <span>夏</span>
+                        
                     </div>
 
                     <div class="tooltips">この記事をまとめると</div>
                     <ul class="checks">
-                        <li>石けんでの手洗い、うがいをして予防します。</li>
+                        <li>乳幼児、特に集団生活をしている子どもは注意。</li>
                         <li>手と足、口に赤い発疹や水ぶくれができます。</li>
                         <li>７月に流行のピークを迎えます。</li>
                         <li>高熱はあまり出ません。</li>
-                        <li>乳幼児、特に集団生活をしている子どもは注意。</li>
+                        <li>石けんでの手洗い、うがいをして予防します。</li>
+                        
                     </ul>
+                    <ol class="link">
+                        <li><a href="">手足口病の基礎知識</a></li>
+                        <li><a href="">手足口病の近年の動向</a></li>
+                        <li><a href="">手足口病の症状</a></li>
+                        <li><a href="">手足口病の原因</a></li>
+                        <li><a href="">手足口病の治療方法</a></li>
+                        <li><a href="">手足口病の合併症</a></li>
+                        <li><a href="">手足口病の自宅療法（療養方法、再発防止など)</a></li>
+                        <li><a href="">手足口病の予防・対策方法</a></li>
+                        <li><a href="">手足口病のリスク度チェック</a></li>
+                        <li><a href="">手足口病のセルフチェック</a></li>
+                    </ol>
+
                     <h3>手足口病の基礎知識</h3>
                     </p>主に夏に流行する感染症で、3〜6日の潜伏期の後、手足などに赤い発疹や水ぶくれ、口内炎ができます。高熱が出ることは少なく、1週間ほどで自然に治ります。かかりやすい年齢は5歳以下。毎年、5月頃から患者数が増え、7月に流行のピークを迎えます。一般的には夏風邪と呼ばれることもあります。全身状態が改善すれば、登園・登校が可能になります。<p>
 
-                       
+                    <strong>[2013年〜2018年の定点当たり報告数の平均] 手足口病</strong>
+                    <img class="graph" src="images/illness-graph.png" alt="">
+                    </p>※1 データの週によるばらつきや未報告のデータを修正するために統計処理をしたもの。+1SDの数値 は過去のデータの68 ％、+2SDの数値は過去のデータの95 ％が含まれる。
+                    <br>※2 過去5年間の平均：前週、当該週、後週の合計15週の平均<br>◎国立感染症研究所のデータより<p>
+                    
                     <h3>手足口病の近年の動向</h3>
                     </p>国立感染症研究所がまとめた患者報告によると、2019年6月は、過去10年の同期と比べて最多になりました。<p>
 
@@ -49,10 +74,50 @@
 
                     <h3>手足口病の予防・対策方法</h3>
                     </p>有効なワクチンはありません。発病を予防する薬もありません。接触感染を予防するために、しっかり手洗いをすること、うがいをすることなどが基本の対策になります。手洗いは石けんを使い、流水で洗いましょう。治った後も2〜4週間ほど、ウイルスが便中に排泄されることがあるため、感染を広げないために、排泄物を適切に処理することが必要です。おむつ交換をする時は特に気をつけ、しっかり手を洗います。タオルの共用もしません。家庭では兄弟への感染に気をつけること、乳幼児の保育施設などの集団生活では、職員と子どもがしっかり対策をすることが大切です。<p>
-                </div>   
+                </div>  
                 
                 <div class="panel-pink">
-                    
+                    <h3>手足口病のリスク度チェック</h3>
+                
+                    <div class="form-group check">
+                        <ul>    
+                            <li>
+                                <input class="styled-checkbox" id="1a" type="checkbox" name="1a" >
+                                <label for="1a" style="font-weight:500;">5歳以下の乳幼児</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="2a" type="checkbox" name="2a" >
+                                <label for="2a" style="font-weight:500;">乳幼児の保育施設などで、普段から集団生活をしている</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="3a" type="checkbox" name="3a" >
+                                <label for="3a" style="font-weight:500;">手洗いやうがいはあまりしない</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="4a" type="checkbox" name="4a" >
+                                <label for="4a" style="font-weight:500;">周囲で手足口病やヘルパンギーナにかかった子ども、人がいる</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-pink">
+                    <h3>手足口病のセルフチェック</h3>
+                    <strong>予防・対策はしっかりできていますか？</strong>
+                    <div class="form-group check">
+                        <ul>    
+                            <li>
+                                <input class="styled-checkbox" id="1b" type="checkbox" name="1b" >
+                                <label for="1b" style="font-weight:500;">手洗いうがいをしっかり行う</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="2b" type="checkbox" name="2b" >
+                                <label for="2b" style="font-weight:500;">子どもの排便、おむつ替えなどの処理を適正に行っている</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="3b" type="checkbox" name="3b" >
+                                <label for="3b" style="font-weight:500;">タオルは共用していない</label>
+                            </li>
+                        </ul>
                         <strong>下記のような症状はありますか？</strong>
                         <ul>
                             <li>
@@ -85,26 +150,23 @@
             </div>
             <div class="tags">
                 <div>
+                    <span>子ども</span>
+                    <span>夏</span>
                     <span>感染症</span>
                     <span>夏風邪</span>
                     <span>手足口病</span>
-                    <span>子ども</span>
-                    <span>夏</span>
                 </div>
             </div>
+           <input type="hidden" id="id_sp_two" name="id_sp" />
            
             <!-- Buttons -->
-            <div class="modal-buts">
-                <button type="button" class="btn-prime approval2" id="show_img"></button>
-                <button type="button" class="btn-prime backedit2" id="show_img"></button>
-            </div>
-    
+            @if (Request::is('special_list'))  
+                <div class="modal-buts"><br>
+                    <input type="submit" class="btn-prime approval" id="show_img">
+                    <!-- <input type="button" class="btn-prime backedit" id="show_img"> -->
+                </div>
+            @endif
         </div>
+        {!! Form::close() !!}
     </div>
-</div>
-
-
-
-  </div>
-</div>
 </div>

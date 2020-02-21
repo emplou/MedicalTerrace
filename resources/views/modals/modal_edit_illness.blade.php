@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div id="editillness" class="modal fade" role="dialog" data-keyboard="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog edit">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 				
         <!-- Modal content Starts-->
@@ -18,14 +18,14 @@
                 </div>
                 <div class="right">
                     <div>作成日<span>Date</span></div>
-                    <div class="select">
-                        <select>
+                    <div class="select" id="input_arch">
+                        <!-- <select>
                             <option>0000/00/00</option>
                             <option>0000/00/00</option>
                             <option>0000/00/00</option>
                             <option>0000/00/00</option>
                             <option>0000/00/00</option>
-                        </select>
+                        </select> -->
                     </div>
                     <div>最終更新日<span>Update</span></div>
                     <div class="select">0000/00/00</div>
@@ -198,8 +198,8 @@
                             <div class="sidediv cols-3">
                                 <div class="sidebots">
                                     <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness">Preview</a>
-                                    <button type="button" class="btn-prime release1" id="myBtn">Reserve</button>
-                                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                                    <button type="button" class="btn-prime relservhalf1 release1" id="myBtn">Reserve</button>
+                                    <button type="button" class="btn-prime relservehalf2 release2" id="myBtn">Release</button>
                                 </div>
                             </div>
                         </div>
@@ -444,5 +444,4 @@
         {!! Form::close() !!}
         </div>
     </div>
-</div>
 </div>
