@@ -1,8 +1,9 @@
 @extends('layouts.app_sp')
 @section('content')
+@include('modals.modal_add_special')
 
     
-	<div class="header-wrapper">
+	<!-- <div class="header-wrapper">
 		<div class="left">
 			<h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
 			
@@ -23,7 +24,7 @@
 		</div>
 		
 	</div>
-	<hr />
+	<hr /> -->
 		<div class="form-container add">
 			<div class="form-progress">
 				<ul>
@@ -31,7 +32,7 @@
 					<li class="active">プレビュー<br><span>Preview</span></li>
 					<li>承認依頼<br><span>Approval Request</span></li>
 					<li>承認済<br><span>Approved</span></li>
-					<li class="rel">公開予約<br><span>Release reservation</span></li>
+					<li>公開予約<br><span>Release reservation</span></li>
 					<li>公開中<br><span>Release</span></li>
 				</ul>
 			</div>
@@ -652,6 +653,25 @@
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
                     
                 </div>
+                <div class="sidediv cols-3">
+                        <div class="sidebots">
+                            <!-- Full buttons -->
+                            <!-- <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime release1" id="myBtn" style="background-image: url(../../images/icon-preview.png);">Release</button>
+                            <button type="button" class="btn-prime release2" id="myBtn" style="background-image: url(../../images/icon-preview.png);">Release</button> -->
+
+                            <!-- Red buttons -->
+                            <!-- <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-pink-relreserve.png);">Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-pink-release.png);">Release</button> -->
+
+                            <!-- Half buttons -->
+                            <a class="prevbutton btn-prime sp_preview" type="button" href="#previewAddSpecial" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
+                        
+                        </div>
+                    </div>
             </div>
 		</div>
 		<div class="form-nopads">

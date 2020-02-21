@@ -11,7 +11,43 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+            <div class="header-wrapper">
+                <div class="left">
+                    <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
+                    
+                </div>
+                <div class="right">
+                    <div>作成日<span>Date</span></div>
+                    <div class="select" id="input_arch_two">
+                        <!-- <select>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                            <option>0000/00/00</option>
+                        </select> -->
+                    </div>
+                    <div>最終更新日<span>Update</span></div>
+                    <div class="select">0000/00/00</div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-container add">
+                <div class="form-progress">
+                    <ul>
+                        <li class="active">下書き<br><span>Draft</span></li>
+                        <li class="active">プレビュー<br><span>Preview</span></li>
+                        <li id="appreq_two">承認依頼<br><span>Approval Request</span></li>
+                        <li id="approve_two">承認済<br><span>Approved</span></li>
+                        <li id="relres_two">公開予約<br><span>Release reservation</span></li>
+                        <li id="release_two">公開中<br><span>Release</span></li>
+                    </ul>
+                </div>
                 {!! Form::open(['url' => '/save_illness', 'method' => 'post', 'files' => true]) !!}
+
+                <input type="hidden" name="twoiD" id="ill_iD_two">
+                <input type="hidden" name="iD" id="iD_two">
+                <input type="hidden" name="track_stat" id="track_stat_two">
                 <!-- Form Starts -->
                 <div class="form-horizontal">
 
@@ -163,8 +199,8 @@
                             <div class="sidediv cols-3">
                                 <div class="sidebots">
                                     <a class="prevbutton btn-prime preview_copy" type="button" href="#previewCopyIllness">Preview</a>
-                                    <button type="button" class="btn-prime release1" id="myBtn">Release</button>
-                                    <button type="button" class="btn-prime release2" id="myBtn">Release</button>
+                                    <button type="button" class="btn-prime relservhalf1 release1" id="myBtn">Reserve</button>
+                                    <button type="button" class="btn-prime relservehalf2 release2" id="myBtn">Release</button>
                                 </div>
                             </div>
                         </div>
@@ -398,13 +434,13 @@
 
                     </div>
                     <!-- Form Pads -->
-                </div>
+                <!-- </div> -->
                 <!-- Form Ends -->
 
                 <input type="submit" name="save" value="" class="save-btn">
 
                 {!! Form::close() !!}
-
+            </div>
         </div>
         <!-- Modal COntent Ends -->
 

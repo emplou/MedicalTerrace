@@ -2,7 +2,7 @@
 @section('content')
 @include('modals.modal_add_illness')
 <!-- <h2>Add Illness</h2> -->
-<div class="header-wrapper">
+<!-- <div class="header-wrapper">
     <div class="left">
         <h2>手足口病<span>ID番号:I00000</span></h2>
         
@@ -23,7 +23,7 @@
     </div>
     
 </div>
-<hr />
+<hr /> -->
     <div class="form-container add">
         <div class="form-progress">
             <ul>
@@ -31,7 +31,7 @@
                 <li class="active">プレビュー<br><span>Preview</span></li>
                 <li>承認依頼<br><span>Approval Request</span></li>
                 <li>承認済<br><span>Approved</span></li>
-                <li class="rel">公開予約<br><span>Release reservation</span></li>
+                <li>公開予約<br><span>Release reservation</span></li>
                 <li>公開中<br><span>Release</span></li>
             </ul>
         </div>
@@ -862,8 +862,8 @@
 
                             <!-- Half buttons -->
                             <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
-                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);">Release</button>
-                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);">Release</button>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
                         
                         </div>
                     </div>

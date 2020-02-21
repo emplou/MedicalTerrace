@@ -16,7 +16,7 @@
         <div class="left">
             <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
             <!-- <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2> -->
-            <div id="authorID"></div>
+            <div id="copyauthorID"></div>
             
         </div>
         <div class="right">
@@ -35,8 +35,21 @@
         </div>
     </div>
     <hr />
+    <div class="form-container  add">
+        <div class="form-progress" width="100px">
+            <ul>
+                <li class="active">下書き<br><span>Draft</span></li>
+                <li class="active">プレビュー<br><span>Preview</span></li>
+                <li>承認依頼<br><span>Approval Request</span></li>
+                <li>承認済<br><span>Approved</span></li>
+                <li class="rel">公開予約<br><span>Release reservation</span></li>
+                <li>公開中<br><span>Release</span></li>
+            </ul>
+        </div>
+    <div class="form-pads">
       {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
       <input type="hidden" name="docID" id="docID" value="">
+      <input type="hidden" name="statusAuth" id="statusAuth" value="">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -60,12 +73,6 @@
             専門医・認定医<br>（取得資格）<br>Certificate
             </div>
             <div class="col-10">
-                <!-- <input type="text" class="form- " name="certificate[]" id="certificate00" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate01" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate02" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate03" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
                 <div id="input_container"></div>
                 <div id="editcertificate"></div>
                 <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -278,6 +285,8 @@
         </div>
       <!-- Modal -->
       {!! Form::close() !!}
+      </div>
 </div>
   </div>
+</div>
 </div>
