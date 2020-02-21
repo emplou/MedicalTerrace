@@ -7,7 +7,7 @@
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 
-    <table id="list" class="table table-striped table-bordered" style="width:100%">
+    <table id="list" class="table table-striped table-bordered" width="100%">
         <thead>
             <th>Illness</th>
             <th>Illness Category</th>

@@ -8,11 +8,7 @@
                 <li><a href="#">感染症・寄生虫  </a></li>
                 <li>手足口病</a></li>
             </ul>
-            <div class="panel-head">感染症・寄生虫</div>
-            <div class="div-bg">
-                <div class="heading1">手・足・口に赤い発疹やみずぶくれが出ます<br>
-                <span>てあしくちびょう</span><br>手足口病</div>
-            </div>
+            
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 

@@ -2361,7 +2361,7 @@ $.ajaxSetup({
     });
 
     $(".addbranch").click(function () {
-        $("#branch").append('<div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div><div class="cols-1 relative"><button type="button" class="btn btn-success addbranch"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
+        $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box
     });
 
     
