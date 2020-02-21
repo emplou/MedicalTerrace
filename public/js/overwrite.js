@@ -2088,6 +2088,40 @@ $(document).ready(function(){
     }
 
 
+
+    //HOSPITAL PAGE ADD BUTTON
+    
+    $(".addmed1").click(function () {
+        $("#mednewdiv1").append('<div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select ></div ><div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select></div><div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select></div>'); //add input box
+    });
+
+
+    $(".addmed2").click(function () {
+        $("#mednewdiv2").append('<div class="cols-3"><input type = "text" class= "form- " placeholder = "選択項目にない場合に入力" name = "med_sbj_list_add[]"></div ><div class="cols-3"><input type="text" class="form- " name="med_sbj_list_add[]"></div><div class="cols-3"><input type="text" class="form- " name="med_sbj_list_add[]"></div>'); //add input box
+    });
+
+
+    $(".addnumbed").click(function () {
+        $("#numbed").append('<div class="form-group"><div class="control-label cols-15"></div><div class= "cols-05"><label>種別</label></div><div class="cols-2"><select class="form-control"><option>選択してください</option></select></div><div class="cols-05"><label>種別</label></div><div class="cols-3"><input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"></div></div>'); //add input box
+    });
+
+    $(".addvisits").click(function () {
+        $("#visit").append('<div class="form-group check fix"><div class="control-label cols-15" ></div><div class="cols-1"><select class="form-control"><option>14:30</option></select></div><div class="cols-1"><select class="form-control"><option>15:30</option></select></div><div class="cols-4">月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label></div></div>'); //add input box
+    });
+
+    $(".addaccess").click(function () {
+        $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
+    });
+
+    // $(".addbranch").click(function () {
+    //     $("#branch").append('<div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div><div class="cols-1 relative"><button type="button" class="btn btn-success addbranch"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
+    // });
+
+    $(".addbranch").click(function () {
+        $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box
+    });
+
+
     $('.overwrite_illness').each(function(e){
         $.ajaxSetup({
             headers: {
@@ -2327,3 +2361,100 @@ $(document).ready(function(){
             // location.reload();
         });
     });
+
+    //copy edit doctor modal
+
+  $('.copyaddcert1').on('click', copyaddcert1);
+  var i=0;
+  function copyaddcert1(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  //   var copy = $('#addanother').html();
+    $('#copycertificate').append('<input type="text" class="form- " id="kword1" name="certificate[]" style="width:300px"></div><input type="text" class="form- " id="kword2" name="certificate[]" style="width:300px">');
+  }
+
+  $('.copyaddconf2').on('click', copyaddconf2);
+  var i=0;
+  function copyaddconf2(e) {
+    e.preventDefault();
+  //   alert('yes!');
+    $('#copyaddconference').append('<input type="text" class="form- " name="conference[]" style="width:300px"><input type="text" class="form- " name="conference[]" style="width:300px">');
+  }
+
+  $('.copyadd3').on('click', copyadd3);
+  var i=0;
+  function copyadd3(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  var options='';
+      for(i=1990; i <= 2020; i++){
+          options+='<option value="'+i+'">'+i+'</option>';
+      }
+    $('#copyc_ac').append('<select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month[]" style="width:100px" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:100px"><br><select id="aca_year_to" name="c_ac_year_to[]" class="form- "  style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  style="width:100px"><br>');
+  }
+
+  $('.copyadd44').on('click', copyadd44);
+  var i=0;
+  function copyadd44(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  var options='';
+      for(i=1990; i <= 2020; i++){
+          options+='<option value="'+i+'">'+i+'</option>';
+      }
+    $('#copyc_we').append(' <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:100px"><br><select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">Decmber</option></select><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:100px"><br>');
+  }
+
+  $('.copyadd55').on('click', copyadd55);
+  var i=0;
+  function copyadd55(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  var options='';
+      for(i=1990; i <= 2020; i++){
+          options+='<option value="'+i+'">'+i+'</option>';
+      }
+    $('#copyc_aw').append('<select id="awards_year" name="c_aw_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc[]" class="form- "  style="width:100px"><br><select id="awards_year_to" name="c_aw_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc_to[]" class="form- "  style="width:100px"><br>');
+  }
+
+  $('.copyadd_dpt_doc').on('click', copyadd_dpt_doc);
+  var i=0;
+  function copyadd_dpt_doc(e) {
+  //   e.preventDefault();
+
+  $.ajax({
+      url: '/get_all_department/',
+      type: 'get',
+      dataType: 'json',
+      // data : { id : id },
+      success: function(response){
+          console.log(response['data']);
+
+      // if(response == "success")
+
+          /* ********** DEPARTMENT ************ */
+          var objJSONdept = JSON.stringify(response['data']);
+          // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+          // alert(objJSONdept);
+
+          var tr_str = "";
+          var len = response['data'].length;
+
+          tr_str += '<select style="width:150px" class="form- " name="department[]"><option>選択してください</option>';
+
+          for(var i=0; i<len; i++){
+              var dptname = response['data'][i].dpt_name;
+
+              tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+              }
+               tr_str += '</select>';
+              
+          $("#copydpt_div").append(tr_str);
+
+      }
+
+  });
+
+  }
+  //end copy edit doctor modal details
