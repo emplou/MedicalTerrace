@@ -615,7 +615,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('sp-id');
-            // alert(id);
+            alert(id);
 
             $.ajax({
                 url: '/modal_edit_special/'+id,
@@ -623,7 +623,7 @@ $.ajaxSetup({
                 dataType: 'json',
                 // data : { id : id },
                 success: function(response){
-                    console.log(response['data']);
+                    console.log('asd'+response);
                 
                     if(response == "success")
 
