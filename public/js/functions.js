@@ -556,7 +556,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('hosp-id');
-            alert(id);
+            // alert(id);
 
             $.ajax({
                 url: '/modal_edit_hospital/'+id,
@@ -615,7 +615,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('sp-id');
-            alert(id);
+            // alert(id);
 
             $.ajax({
                 url: '/modal_edit_special/'+id,

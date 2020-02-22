@@ -225,7 +225,7 @@
             <div class="cols-6">   
                 <!-- add new textarea here -->
                 <div class="cols-10">        
-                    <textarea class="form-control ck" name="textheading_lead[0]" id="textheading_lead">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                    <textarea class="form-control ck" name="textheading_lead" id="textheading_lead">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck1"><span class="lnr lnr-plus-circle"></span></button></div> 
@@ -375,7 +375,7 @@
         <div class="cols-55">
             <div class="upload-btn-wrapper">
                 <button class="bton"></button>
-                <input type="file" name="subject_image" name="insert_img_subject" />
+                <input type="file" name="dpt_subject_image" />
             </div>
             
         </div>
@@ -400,17 +400,17 @@
             祝 <input type="checkbox" id="tag_season8" name="weekdays[]"><label for="tag_season8"></label>
         </div>
         <div class="cols-8">
-            <input type="text" name="from2[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to2[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start2[]" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
-            月 <input type="checkbox" id="tag_season9" name="weekdays2[]"><label for="tag_season9"></label>
-            火 <input type="checkbox" id="tag_season10" name="weekdays2[]"><label for="tag_season10"></label>
-            水 <input type="checkbox" id="tag_season11" name="weekdays2[]"><label for="tag_season11"></label>
-            木 <input type="checkbox" id="tag_season12" name="weekdays2[]"><label for="tag_season12"></label>
-            金 <input type="checkbox" id="tag_season13" name="weekdays2[]"><label for="tag_season13"></label>
-            土 <input type="checkbox" id="tag_season14" name="weekdays2[]"><label for="tag_season14"></label>
-            日 <input type="checkbox" id="tag_season15"name="weekdays2[]"><label for="tag_season15"></label>
-            祝 <input type="checkbox" id="tag_season16"name="weekdays2[]"><label for="tag_season16"></label>
+            <input type="text" name="from[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+            <input type="text" name="to[]" data-toggle="timepicker" class="form- " style="width:100px"> 
+            診療 <input type="text" name="start[]" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
+            月 <input type="checkbox" id="tag_season9" name="weekdays[]"><label for="tag_season9"></label>
+            火 <input type="checkbox" id="tag_season10" name="weekdays[]"><label for="tag_season10"></label>
+            水 <input type="checkbox" id="tag_season11" name="weekdays[]"><label for="tag_season11"></label>
+            木 <input type="checkbox" id="tag_season12" name="weekdays[]"><label for="tag_season12"></label>
+            金 <input type="checkbox" id="tag_season13" name="weekdays[]"><label for="tag_season13"></label>
+            土 <input type="checkbox" id="tag_season14" name="weekdays[]"><label for="tag_season14"></label>
+            日 <input type="checkbox" id="tag_season15"name="weekdays[]"><label for="tag_season15"></label>
+            祝 <input type="checkbox" id="tag_season16"name="weekdays[]"><label for="tag_season16"></label>
             </div>
             <div class="cols-15"></div>
             <div class="cols-8">
@@ -448,45 +448,45 @@
 
      <hr /> 
     <!-- Subheading 3-->
-    <!-- <div id="addnewdiv3"></div>
+    <div id="addnewdiv3"></div>
     <div id="addanother3">
         <div class="form-group">
             <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="feature_title" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                <textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
                 </textarea>
             </div>
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
             </div>
-        </div> -->
+        </div>
 
         <!-- Text of Subheading 3-->
-        <!-- <div class="form-group editor">
+        <div class="form-group editor">
             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
             <div class="cols-6">   
                 <div id="addanother1">
                     <div class="cols-10">        
-                        <textarea class="form-control" name="feature_text_subheading_hospital[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                        <textarea class="form-control" name="feature_text_subheading_hospital[0]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                     </div>
                 </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck3"><span class="lnr lnr-plus-circle"></span></button></div> 
             </div>
-        </div> -->
+        </div>
 
         <!-- Buttons -->
-        <!-- <div class="form-group">
+        <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-btn-wrapper">
                     <button class="bton" id="show_img"></button>
-                    <input type="file" name="subject_image" name="insert_img_subject" />
-                </div> -->
+                    <input type="file" name="feature_image[]"  />
+                </div>
                 <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
-            <!-- </div>
+            </div>
         </div>
-    </div> -->
+    </div>
         
 
      
@@ -498,7 +498,7 @@
         <div class="form-group">
             <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="text_equipment_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
                 </textarea>
             </div>
             <div class="cols-2">          
@@ -527,7 +527,7 @@
             <div class="cols-55">
                 <div class="upload-btn-wrapper">
                     <button class="bton"></button>
-                    <input type="file" name="equipment_image" name="insert_equipment_subject" />
+                    <input type="file" name="equipment_image[]" name="insert_equipment_subject" />
                 </div>
             </div>
         </div>
@@ -553,7 +553,7 @@
         <div class="form-group">
             <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                <textarea class="form-control sm2" name="med_subj_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
                 </textarea>
             </div>
         </div>
@@ -577,7 +577,7 @@
             <div class="cols-55">
             <div class="upload-btn-wrapper">
                     <button class="bton"></button>
-                    <input type="file" name="staff_image" />
+                    <input type="file" name="staff_image[]" />
                 </div>
             </div>
         </div>
@@ -603,15 +603,15 @@
         <div class="cols-8 rad-buttons">
             <div class="cols-2 left">
                 <label for="med1">項目 </label>
-                <input type="text" id="med1" name="med_item" placeholder="例)予防接種 インフルエンザ"> 
+                <input type="text" id="med1" name="med_item[]" placeholder="例)予防接種 インフルエンザ"> 
             </div>
             <div class="cols-2 left">
                 <label for="med2">費用</label>
-                <input type="text" id="med2" name="med_cost" placeholder="例)3,500円"> 
+                <input type="text" id="med2" name="med_cost[]" placeholder="例)3,500円"> 
             </div>
             <div class="cols-2 left">
                 <label for="med3">診療科</label>
-                <select class="form-control" name="free_med_exp">
+                <select class="form-control" name="free_med_exp[]">
                     <option value="">選択してください</option>
                     <option value="one">One</option>
                     <option value="two">Two</option>
@@ -672,7 +672,7 @@
         <div class="control-label cols-15"></div>
         <div class="cols-05"><label>台数</label></div>    
         <div class="cols-2">
-            <input class="form-control" type="text" id="cc" name="parking_units" placeholder="例)000台"> 
+            <input class="form-control" type="text" id="cc" name="parking_units[]" placeholder="例)000台"> 
         </div>
     </div>
 
@@ -680,13 +680,13 @@
     <div class="form-group">
         <div class="control-label cols-15">入院可否<br><span>Hospitalization</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="hosp1" name="hospitalization" value="監修">
+            <input type="radio" id="hosp1" name="hospitalization[]" value="監修">
             <label for="hosp1">可</label>
-            <input type="radio" id="hosp2" name="hospitalization" value="取材協力">
+            <input type="radio" id="hosp2" name="hospitalization[]" value="取材協力">
             <label for="hosp2">否</label>
         </div>
         <div class="cols-5">
-            <input class="form-control" type="text" name="hospitalization_text" placeholder="※注意書き自由に">
+            <input class="form-control" type="text" name="hospitalization_text[]" placeholder="※注意書き自由に">
         </div>	
     </div>
 
@@ -794,13 +794,13 @@
     <div class="form-group">
         <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="card1" name="card" value="監修">
+            <input type="radio" id="card1" name="card[]" value="監修">
             <label for="card1">可</label>
-            <input type="radio" id="card2" name="card" value="取材協力">
+            <input type="radio" id="card2" name="card[]" value="取材協力">
             <label for="card2">否</label>
         </div>
         <div class="cols-4">
-            <input class="form-control" type="text" name="credit_card" placeholder="※注意書き自由に">
+            <input class="form-control" type="text" name="credit_card[]" placeholder="※注意書き自由に">
         </div>	
         <div class="sidediv cols-3">
             <div class="sidebots">

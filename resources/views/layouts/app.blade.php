@@ -532,7 +532,7 @@ $(document).ready(function() {
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'textheading_lead[0]' );
+	CKEDITOR.replace( 'textheading_lead' );
 	CKEDITOR.add 
 </script>
 <script>
@@ -566,8 +566,8 @@ $(document).ready(function() {
 </script>
 
 <script>
-	CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
-	CKEDITOR.add 
+	// CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
+	// CKEDITOR.add 
 </script>
 <script>
 	CKEDITOR.replace( 'equipment_text_subheading_hospital[0]' );
