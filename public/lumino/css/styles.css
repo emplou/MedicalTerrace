@@ -3109,6 +3109,13 @@ ul.blk-bullet img {
   width: 100%;
 }
 
+.modal-dialog .mod {
+  padding: 3px;
+  min-height: 30px;
+  max-width: 400px;
+  /* border: 1px solid #ccc; */
+}
+
 #rchars, 
 #rchars2, 
 #rchars3,

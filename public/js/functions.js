@@ -1016,7 +1016,7 @@ $.ajaxSetup({
                         input_doc += '<select name="doctor" class="form-control"><option value="'+ response['data'][0].ill_doc +'">'+ response['data'][0].ill_doc +'</option>';
                         
                         $.each(response['doc'], function (i, b) {
-                            console.log('doc '+ b.name)
+                            console.log('doc ' + b.name);
                             input_doc += '<option value="'+ b.name +'">'+ b.name +'</option>';
         
                         });
@@ -1082,14 +1082,16 @@ $.ajaxSetup({
                         }
 
                         // Subheading and Risk Level
-                        var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
-                        var input_risk = "";
+                    var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
+                    console.log('yeahbaywega' + response['ra']);
+                        var input_risk = '';
                         $.each(objJSONrskCnt, function (i, v) {
 
-                            input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            // input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            input_risk += '<input type="text">';
                             
                         });
-                        $("#input_ra_txt").html(input_risk);
+                    $("#input_ra_txt").html(input_risk);
 
                         // Check Results
                         var objJSONcr = JSON.parse(response['ra'][0].ra_result);
