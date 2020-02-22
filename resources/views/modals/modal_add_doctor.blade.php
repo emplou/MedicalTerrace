@@ -1,3 +1,4 @@
+<!-- modal_add_doctor -->
 <div id="previewAddDoctor" class="modalDialog">
 <div>	
         <a href="#close" title="Close" class="close">X</a>

@@ -1,3 +1,4 @@
+<!-- modal_add_illness -->
 <div id="previewAddIllness" class="modalDialog">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	

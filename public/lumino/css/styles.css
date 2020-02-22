@@ -3106,5 +3106,28 @@ ul.blk-bullet img {
 
 .modal-dialog.edit .form-control,
 .modal-dialog.modal-lg .form-control {
-  width: 75%;
+  width: 100%;
+}
+
+.modal-dialog .mod {
+  padding: 3px;
+  min-height: 30px;
+  max-width: 400px;
+  /* border: 1px solid #ccc; */
+}
+
+#rchars, 
+#rchars2, 
+#rchars3,
+#rchars4, 
+#rchars5, 
+#rchars6,
+#rchars7, 
+#rchars8, 
+#rchars9,
+#rchars10, 
+#rchars11, 
+#rchars12,
+ {
+  margin-left: 5px;
 }

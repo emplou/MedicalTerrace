@@ -615,7 +615,11 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('sp-id');
+<<<<<<< HEAD
             // alert(id);
+=======
+            //alert(id);
+>>>>>>> 1cd04c733f5fbf8b058b3c473f431eb8466b1d7e
 
             $.ajax({
                 url: '/modal_edit_special/'+id,
@@ -1016,7 +1020,7 @@ $.ajaxSetup({
                         input_doc += '<select name="doctor" class="form-control"><option value="'+ response['data'][0].ill_doc +'">'+ response['data'][0].ill_doc +'</option>';
                         
                         $.each(response['doc'], function (i, b) {
-                            console.log('doc '+ b.name)
+                            console.log('doc ' + b.name);
                             input_doc += '<option value="'+ b.name +'">'+ b.name +'</option>';
         
                         });
@@ -1082,14 +1086,16 @@ $.ajaxSetup({
                         }
 
                         // Subheading and Risk Level
-                        var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
-                        var input_risk = "";
+                    var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
+                    console.log('yeahbaywega' + response['ra']);
+                        var input_risk = '';
                         $.each(objJSONrskCnt, function (i, v) {
 
-                            input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            // input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            input_risk += '<input type="text">';
                             
                         });
-                        $("#input_ra_txt").html(input_risk);
+                    $("#input_ra_txt").html(input_risk);
 
                         // Check Results
                         var objJSONcr = JSON.parse(response['ra'][0].ra_result);
@@ -2738,10 +2744,6 @@ $.ajaxSetup({
     $(".addaccess").click(function () {
         $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
     });
-
-    // $(".addbranch").click(function () {
-    //     $("#branch").append('<div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div><div class="cols-1 relative"><button type="button" class="btn btn-success addbranch"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
-    // });
 
     $(".addbranch").click(function () {
         $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box

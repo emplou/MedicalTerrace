@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- modal_edit_special -->
 <div id="editspecial" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog edit">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,8 +13,8 @@
     <div class="modal-body">
     <div class="header-wrapper">
                 <div class="left">
-                    <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
-                    
+                    <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+                    <div id="authorID"></div>
                 </div>
                 <div class="right">
                     <div>作成日<span>Date</span></div>
@@ -67,7 +67,7 @@
                     <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                     <div class="cols-5">          
                         
-                        <div id="input_ill"></div>
+                        <div class="mod" id="input_ill"></div>
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@
                     <label class="control-label cols-15">特集カテゴリー<br><span>Special Category</span></label>
                     <div class="cols-5">          
                         
-                        <div id="input_cat"></div>
+                        <div class="mod" id="input_cat"></div>
                     </div>
                 </div>
                     
@@ -102,10 +102,10 @@
                 <div class="form-group">
                     <label class="control-label cols-15">監修・協力医師<br><span>Doctor</span></label>
                     <div class="cols-5">          
-                        <div id="input_doc"></div>
+                        <div class="mod" id="input_doc"></div>
                     </div>
                     <div class="cols-3 rad-buttons">
-                        <div id="input_rad"></div>
+                        <div class="mod" id="input_rad"></div>
                     </div>  
                 </div>
 
@@ -152,7 +152,7 @@
                             <!-- add new textarea here -->
                             <div class="wrapper2"></div>
                             <div class="cols-10">
-                                <div id="input_lead"></div>
+                                <div class="mod" id="input_lead"></div>
                             </div>
                         </div>
                         <div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div> 
@@ -182,7 +182,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">考えられる病気<br><span>Illness</span></label>
                     <div class="cols-6">
-                        <div id="input_ill_img"></div>
+                        <div class="mod" id="input_ill_img"></div>
 
                         <!-- Add fields here -->
                         <div class="field_wrap1"></div>
@@ -195,7 +195,7 @@
                 <!-- Subheading -->
                 <div id="addanother3">
                             
-                    <div class="input_content2"></div>
+                    <div class="mod" class="input_content2"></div>
                     
                 </div>
 
@@ -211,7 +211,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
                     <div class="cols-8">
-                        <div id="input_seo"></div>
+                        <div class="mod" id="input_seo"></div>
                     </div>
                 </div>
                
@@ -283,7 +283,7 @@
                     <div class="cols-7">
                         <!-- add h2 fields -->
                         <div class="field_wrap5"></div>
-                        <div id="input_h2"></div>
+                        <div class="mod" id="input_h2"></div>
                         
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
                     </div>
@@ -292,7 +292,7 @@
                 <div class="form-group check">
                     <label class="control-label cols-15">タグ(キーワード) <br><span> Tag(key word)</span></label>
                     <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
-                        <div id="input_kw"></div>
+                        <div class="mod" id="input_kw"></div>
                     </div>
                 </div>
 
@@ -333,7 +333,7 @@
                     <div class="cols-7">   
                         
                         <div class="field_wrap6"></div>
-                        <div id="input_dpt"></div>
+                        <div class="mod" id="input_dpt"></div>
                         <div class="cols-1 relative">
                             <button type="button" class="btn btn-success add6"><span class="lnr lnr-plus-circle"></span></button>
                         </div>
@@ -346,7 +346,7 @@
                     <div class="cols-7">   
 
                         <div class="field_wrap7"></div>
-                        <div id="input_sy"></div>
+                        <div class="mod" id="input_sy"></div>
                         <div class="cols-1 relative">
                             <button type="button" class="btn btn-success add7"><span class="lnr lnr-plus-circle"></span></button>
                         </div>
@@ -426,7 +426,7 @@
 
                         <div class="field_wrap8"></div>
 
-                        <div id="input_tst"></div>
+                        <div class="mod" id="input_tst"></div>
 
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
                 
@@ -439,7 +439,7 @@
 
                         <div class="field_wrap9"></div>
 
-                        <div id="input_free"></div>
+                        <div class="mod" id="input_free"></div>
 
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
                         
