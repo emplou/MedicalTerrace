@@ -333,8 +333,11 @@
     <div class="form-group">
         <label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label>
         <div class="cols-4">
-            <select class="form-control" name="department">
+            <select class="form-control" name="department[]">
                 <option value="0">選択してください</option>
+                @foreach($department as $dpt)
+                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -343,7 +346,7 @@
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-6">          
-            <textarea class="form-control sm2" name="med_subj_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
             </textarea>
         </div>
         <div class="cols-2">          
@@ -384,49 +387,49 @@
         診療科目別<br>外来受付時間<br><span>Examination date</span>
         </div>
         <div class="cols-8">
-            <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
-            月 <input type="checkbox" id="tag_season1" name="weekdays"><label for="tag_season1"></label>
-            火 <input type="checkbox" id="tag_season2" name="weekdays"><label for="tag_season2"></label>
-            水 <input type="checkbox" id="tag_season3" name="weekdays"><label for="tag_season3"></label>
-            木 <input type="checkbox" id="tag_season4" name="weekdays"><label for="tag_season4"></label>
-            金 <input type="checkbox" id="tag_season5" name="weekdays"><label for="tag_season5"></label>
-            土 <input type="checkbox" id="tag_season6" name="weekdays"><label for="tag_season6"></label>
-            日 <input type="checkbox" id="tag_season7" name="weekdays"><label for="tag_season7"></label>
-            祝 <input type="checkbox" id="tag_season8" name="weekdays"><label for="tag_season8"></label>
+            <input type="text" name="from[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+            <input type="text" name="to[]" data-toggle="timepicker" class="form- " style="width:100px"> 
+            診療 <input type="text" name="start[]" data-toggle="timepicker" class="form-" style="width:100px"> ~
+            月 <input type="checkbox" id="tag_season1" name="weekdays[]"><label for="tag_season1"></label>
+            火 <input type="checkbox" id="tag_season2" name="weekdays[]"><label for="tag_season2"></label>
+            水 <input type="checkbox" id="tag_season3" name="weekdays[]"><label for="tag_season3"></label>
+            木 <input type="checkbox" id="tag_season4" name="weekdays[]"><label for="tag_season4"></label>
+            金 <input type="checkbox" id="tag_season5" name="weekdays[]"><label for="tag_season5"></label>
+            土 <input type="checkbox" id="tag_season6" name="weekdays[]"><label for="tag_season6"></label>
+            日 <input type="checkbox" id="tag_season7" name="weekdays[]"><label for="tag_season7"></label>
+            祝 <input type="checkbox" id="tag_season8" name="weekdays[]"><label for="tag_season8"></label>
         </div>
         <div class="cols-8">
-            <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
-            月 <input type="checkbox" id="tag_season9" name="weekdays"><label for="tag_season9"></label>
-            火 <input type="checkbox" id="tag_season10" name="weekdays"><label for="tag_season10"></label>
-            水 <input type="checkbox" id="tag_season11" name="weekdays"><label for="tag_season11"></label>
-            木 <input type="checkbox" id="tag_season12" name="weekdays"><label for="tag_season12"></label>
-            金 <input type="checkbox" id="tag_season13" name="weekdays"><label for="tag_season13"></label>
-            土 <input type="checkbox" id="tag_season14" name="weekdays"><label for="tag_season14"></label>
-            日 <input type="checkbox" id="tag_season15"name="weekdays"><label for="tag_season15"></label>
-            祝 <input type="checkbox" id="tag_season16"name="weekdays"><label for="tag_season16"></label>
+            <input type="text" name="from2[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+            <input type="text" name="to2[]" data-toggle="timepicker" class="form- " style="width:100px"> 
+            診療 <input type="text" name="start2[]" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
+            月 <input type="checkbox" id="tag_season9" name="weekdays2[]"><label for="tag_season9"></label>
+            火 <input type="checkbox" id="tag_season10" name="weekdays2[]"><label for="tag_season10"></label>
+            水 <input type="checkbox" id="tag_season11" name="weekdays2[]"><label for="tag_season11"></label>
+            木 <input type="checkbox" id="tag_season12" name="weekdays2[]"><label for="tag_season12"></label>
+            金 <input type="checkbox" id="tag_season13" name="weekdays2[]"><label for="tag_season13"></label>
+            土 <input type="checkbox" id="tag_season14" name="weekdays2[]"><label for="tag_season14"></label>
+            日 <input type="checkbox" id="tag_season15"name="weekdays2[]"><label for="tag_season15"></label>
+            祝 <input type="checkbox" id="tag_season16"name="weekdays2[]"><label for="tag_season16"></label>
             </div>
             <div class="cols-15"></div>
             <div class="cols-8">
                 
-            <div class="cols-6"><input type="text" class="form- " name="special_hours"> </div>
+            <div class="cols-6"><input type="text" class="form- " name="special_hours[]"> </div>
             <div class="cols-3">    
             ※受診内容により日・時間が異なる場合に記載
             </div>
-                <input type="text" name="from" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-                <input type="text" name="to" data-toggle="timepicker" class="form- " style="width:100px"> 
-                診療 <input type="text" name="start" data-toggle="timepicker" class="form-" style="width:100px"> ~
-                月 <input type="checkbox" id="tag_season17" name="tag_season[]"><label for="tag_season17"></label>
-                火 <input type="checkbox" id="tag_season18" name="tag_season[]"><label for="tag_season18"></label>
-                水 <input type="checkbox" id="tag_season19" name="tag_season[]"><label for="tag_season19"></label>
-                木 <input type="checkbox" id="tag_season20" name="tag_season[]"><label for="tag_season20"></label>
-                金 <input type="checkbox" id="tag_season21" name="tag_season[]"><label for="tag_season21"></label>
-                土 <input type="checkbox" id="tag_season22" name="tag_season[]"><label for="tag_season22"></label>
-                日 <input type="checkbox" id="tag_season23" name="tag_season[]"><label for="tag_season23"></label>
-                祝 <input type="checkbox" id="tag_season24" name="tag_season[]"><label for="tag_season24"></label>
+                <input type="text" name="spfrom[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
+                <input type="text" name="spto[]" data-toggle="timepicker" class="form- " style="width:100px"> 
+                診療 <input type="text" name="spstart[]" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                月 <input type="checkbox" id="tag_season17" name="spweekdays[]"><label for="tag_season17"></label>
+                火 <input type="checkbox" id="tag_season18" name="spweekdays[]"><label for="tag_season18"></label>
+                水 <input type="checkbox" id="tag_season19" name="spweekdays[]"><label for="tag_season19"></label>
+                木 <input type="checkbox" id="tag_season20" name="spweekdays[]"><label for="tag_season20"></label>
+                金 <input type="checkbox" id="tag_season21" name="spweekdays[]"><label for="tag_season21"></label>
+                土 <input type="checkbox" id="tag_season22" name="spweekdays[]"><label for="tag_season22"></label>
+                日 <input type="checkbox" id="tag_season23" name="spweekdays[]"><label for="tag_season23"></label>
+                祝 <input type="checkbox" id="tag_season24" name="spweekdays[]"><label for="tag_season24"></label>
         </div>
     </div>
 
@@ -445,7 +448,7 @@
 
      <hr /> 
     <!-- Subheading 3-->
-    <div id="addnewdiv3"></div>
+    <!-- <div id="addnewdiv3"></div>
     <div id="addanother3">
         <div class="form-group">
             <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
@@ -456,13 +459,12 @@
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
             </div>
-        </div>
+        </div> -->
 
         <!-- Text of Subheading 3-->
-        <div class="form-group editor">
+        <!-- <div class="form-group editor">
             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
             <div class="cols-6">   
-                <!-- add new textarea here -->
                 <div id="addanother1">
                     <div class="cols-10">        
                         <textarea class="form-control" name="feature_text_subheading_hospital[0]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
@@ -471,20 +473,20 @@
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck3"><span class="lnr lnr-plus-circle"></span></button></div> 
             </div>
-        </div>
+        </div> -->
 
         <!-- Buttons -->
-        <div class="form-group">
+        <!-- <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-btn-wrapper">
                     <button class="bton" id="show_img"></button>
                     <input type="file" name="subject_image" name="insert_img_subject" />
-                </div>
+                </div> -->
                 <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
-            </div>
+            <!-- </div>
         </div>
-    </div>
+    </div> -->
         
 
      
@@ -601,16 +603,18 @@
         <div class="cols-8 rad-buttons">
             <div class="cols-2 left">
                 <label for="med1">項目 </label>
-                <input type="text" id="med1" name="med" placeholder="例)予防接種 インフルエンザ">
+                <input type="text" id="med1" name="med_item" placeholder="例)予防接種 インフルエンザ"> 
             </div>
             <div class="cols-2 left">
                 <label for="med2">費用</label>
-                <input type="text" id="med2" name="med" placeholder="例)3,500円">
+                <input type="text" id="med2" name="med_cost" placeholder="例)3,500円"> 
             </div>
             <div class="cols-2 left">
                 <label for="med3">診療科</label>
-                <select class="form-control" name="medi">
-                    <option>選択してください</option>
+                <select class="form-control" name="free_med_exp">
+                    <option value="">選択してください</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
                 </select>
             </div>
         </div>	
@@ -654,21 +658,21 @@
         <div class="control-label cols-15">駐車場<br><span>Parking</span></div>
         <div class="cols-18 rad-buttons">
             料金
-            <input type="radio" id="park1a" name="p_radio" value="監修">
+            <input type="radio" id="park1a" name="p_radio[]" value="監修">
             <label for="park1a">無料</label>
-            <input type="radio" id="park2a" name="p_radio" value="取材協力">
+            <input type="radio" id="park2a" name="p_radio[]" value="取材協力">
             <label for="park2a">有料</label>
             
         </div>	
         <div class="cols-4">
-            <input class="form-control" type="text" id="cc" name="pres" placeholder="例)最初の30分無料、以降30分ごとに100円、1日最大1,600円">  
+            <input class="form-control" type="text" id="cc" name="parking_text[]" placeholder="例)最初の30分無料、以降30分ごとに100円、1日最大1,600円">  
         </div> 
     </div>
     <div class="form-group">
         <div class="control-label cols-15"></div>
         <div class="cols-05"><label>台数</label></div>    
         <div class="cols-2">
-            <input class="form-control" type="text" id="cc" name="pres" placeholder="例)000台"> 
+            <input class="form-control" type="text" id="cc" name="parking_units" placeholder="例)000台"> 
         </div>
     </div>
 
@@ -676,13 +680,13 @@
     <div class="form-group">
         <div class="control-label cols-15">入院可否<br><span>Hospitalization</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="hosp1" name="hosp" value="監修">
+            <input type="radio" id="hosp1" name="hospitalization" value="監修">
             <label for="hosp1">可</label>
-            <input type="radio" id="hosp2" name="hosp" value="取材協力">
+            <input type="radio" id="hosp2" name="hospitalization" value="取材協力">
             <label for="hosp2">否</label>
         </div>
         <div class="cols-5">
-            <input class="form-control" type="text" placeholder="※注意書き自由に">
+            <input class="form-control" type="text" name="hospitalization_text" placeholder="※注意書き自由に">
         </div>	
     </div>
 
@@ -694,15 +698,17 @@
             <label>種別</label>
         </div>
         <div class="cols-2">
-            <select class="form-control">
+            <select class="form-control" name="bed_type[]">
                 <option>選択してください</option>
+                <option value="bed one">Bed One</option>
+                    <option value="bed two">Bed Two</option>
             </select>
         </div>
         <div class="cols-05">
             <label>種別</label>
         </div>
         <div class="cols-3">
-            <input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"> 
+            <input class="form-control" type="text" id="cc" name="no_of_beds[]" placeholder="例)10床"> 
         </div>
         <div class="cols-1 relative"><button type="button" class="btn btn-success addnumbed"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
@@ -713,24 +719,46 @@
     <div class="form-group check fix">
         <div class="control-label cols-15">面会可能日・時間<br><span>Possible date of visit</span></div>
         <div class="cols-1">
-            <select class="form-control">
-                <option>14:30</option>
+            <select class="form-control" name="visit_from[]">
+                <option>01:00</option>
+                <option>02:00</option>
+                <option>03:00</option>
+                <option>04:00</option>
+                <option>05:00</option>
+                <option>06:00</option>
+                <option>07:00</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
             </select>
         </div>
         <div class="cols-1">
-            <select class="form-control">
-                <option>15:30</option>
+            <select class="form-control" name="visit_to[]">
+                <option>01:00</option>
+                <option>02:00</option>
+                <option>03:00</option>
+                <option>04:00</option>
+                <option>05:00</option>
+                <option>06:00</option>
+                <option>07:00</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
             </select>
         </div>
         <div class="cols-4">
-            月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>
-            火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>
-            水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>
-            木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>
-            金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>
-            土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>
-            日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>
-            祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label>
+            月 <input type="checkbox" id="visit1" name="visit[]" value="月"><label for="visit1"></label>
+            火 <input type="checkbox" id="visit2" name="visit[]" value="火"><label for="visit2"></label>
+            水 <input type="checkbox" id="visit3" name="visit[]" value="水"><label for="visit3"></label>
+            木 <input type="checkbox" id="visit4" name="visit[]" value="木"><label for="visit4"></label>
+            金 <input type="checkbox" id="visit5" name="visit[]" value="金"><label for="visit5"></label>
+            土 <input type="checkbox" id="visit6" name="visit[]" value="土"><label for="visit6"></label>
+            日 <input type="checkbox" id="visit7" name="visit[]" value="日"><label for="visit7"></label>
+            祝 <input type="checkbox" id="visit8" name="visit[]" value="祝"><label for="visit8"></label>
         </div>
         <div class="cols-1 relative"><button type="button" class="btn btn-success addvisits"><span class="lnr lnr-plus-circle"></span></button></div> 
     </div>
@@ -772,7 +800,7 @@
             <label for="card2">否</label>
         </div>
         <div class="cols-4">
-            <input class="form-control" type="text" placeholder="※注意書き自由に">
+            <input class="form-control" type="text" name="credit_card" placeholder="※注意書き自由に">
         </div>	
         <div class="sidediv cols-3">
             <div class="sidebots">
@@ -825,4 +853,3 @@
     <div id="tobottom" class="float-btn"></div>
  {!! Form::close() !!}
 @endsection
-

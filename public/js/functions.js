@@ -2517,6 +2517,105 @@ $.ajaxSetup({
 
     // hospital ckEditor (first)
 
+    // $('.add-ck1').on('click', addfields1);
+    // var i=0;
+    // function addfields1(e) {
+    //   e.preventDefault();
+    //     var copy = $('#addanother').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //   $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+    //   $('#addnewdiv').append($(copy).html()+ '<br>');
+    //   CKEDITOR.replace('textheading_lead['+oneplus+']');
+    //   i++;  
+
+    // }
+
+    // // hospital department ckEditor (second)
+
+    // $('.add-ck2').on('click', addfields2);
+    // var i=0;
+    // function addfields2(e) {
+    //   e.preventDefault();
+    //   var copy = $('#addanother4').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
+
+    //   $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
+    //     CKEDITOR.replace('med_subj_text_subheading_hospital['+oneplus+']');
+    //   i++;  
+    // }
+
+    // // hospital subject ckEditor (third)
+
+    // $('.add-ck3').on('click', addfields3);
+    // var i=0;
+    // function addfields3(e) {
+    //   e.preventDefault();
+    //   var copy = $('#addanother3').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=feature_text_subheading_hospital\\[0\\]]').attr('name', 'feature_text_subheading_hospital['+oneplus+']');
+
+    //   $('#addnewdiv3').append($(copy).html()+ '<br>');
+    //     CKEDITOR.replace('feature_text_subheading_hospital['+oneplus+']');
+    //   i++;  
+
+    // }
+
+    // // hospital equipment ckEditor (fourth)
+
+    // $('.add-ck4').on('click', addfields4);
+    // var i=0;
+    // function addfields4(e) {
+    //   e.preventDefault();
+    //   var copy = $('#addanother5').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=equipment_subheading2\\[0\\]]').attr('name', 'equipment_subheading2['+oneplus+']');
+
+    //   $('#addnewdiv5').append($(copy).html()+ '<br>');
+    //     CKEDITOR.replace('equipment_subheading2['+oneplus+']');
+    //   i++;  
+
+    // }
+
+    // // hospital staff ckEditor (fourth)
+
+    // $('.add-ck5').on('click', addfields5);
+    // var i = 0;
+    // function addfields5(e) {
+    //     e.preventDefault();
+    //     var copy = $('#addanother6').clone();
+
+    //     var oneplus = i + 1;
+
+    //     $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //     $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=staff_comment_hospital\\[0\\]]').attr('name', 'staff_comment_hospital[' + oneplus + ']');
+
+    //     $('#addnewdiv6').append($(copy).html() + '<br>');
+    //     CKEDITOR.replace('staff_comment_hospital[' + oneplus + ']');
+    //     i++;
+
+    // }
+
+    // hospital ckEditor (first)
+
     $('.add-ck1').on('click', addfields1);
     var i=0;
     function addfields1(e) {
@@ -2547,7 +2646,7 @@ $.ajaxSetup({
 
       $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
-        $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
+      $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
 
       $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
         CKEDITOR.replace('med_subj_text_subheading_hospital['+oneplus+']');
