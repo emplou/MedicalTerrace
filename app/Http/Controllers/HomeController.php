@@ -127,6 +127,9 @@ class HomeController extends Controller
         $resp = array();
         foreach($access_trans as $key => $access_tran)
         {
+        $response[$key]['access_tran'] = $access_tran;
+        $response[$key]['access_from'] = $access_from[$key];
+        $response[$key]['access_mins'] = $access_mins[$key];
         $resp[$key]['access_tran'] = $access_tran;
         $resp[$key]['access_from'] = $access_from[$key];
         $resp[$key]['access_mins'] = $access_mins[$key];
@@ -162,6 +165,83 @@ class HomeController extends Controller
         $branchresp[$key]['branch_address_eng']   = $branch_address_eng[$key];
         }
         $branch_json = json_encode($branchresp);
+
+        //parking json
+        $p_radio                = $details['p_radio']; 
+        $parking_text           = $details['parking_text']; 
+        $parking_units          = $details['parking_units'];
+        $parkresp = array();
+        foreach($p_radio as $key => $park)
+        {
+        $parkresp[$key]['p_radio']            = $park;
+        $parkresp[$key]['parking_text']       = $parking_text[$key];
+        $parkresp[$key]['parking_units']      = $parking_units[$key];
+        }
+        $parking_json = json_encode($parkresp);
+
+        //hospitalization json
+        $hospitalization        = $details['hospitalization']; 
+        $parking_text           = $details['hospitalization_text']; 
+        $hospresp = array();
+        foreach($hospitalization as $key => $hosp)
+        {
+        $hospresp[$key]['hosp']            = $hosp;
+        $hospresp[$key]['hosp_text']       = $parking_text[$key];
+        }
+        $hosp_json = json_encode($hospresp);
+
+        //free medical expenses json
+        $med_item                   = $details['med_item']; 
+        $med_cost                   = $details['med_cost']; 
+        $free_med_exp               = $details['free_med_exp'];
+        $medresp = array();
+        foreach($med_item as $key => $med)
+        {
+        $medresp[$key]['med_item']              = $med;
+        $medresp[$key]['med_cost']              = $med_cost[$key];
+        $medresp[$key]['free_med_exp']          = $free_med_exp[$key];
+        }
+        $med_json = json_encode($medresp);
+
+        //Number of beds json
+        $bed_type               = $details['bed_type']; 
+        $no_of_beds             = $details['no_of_beds']; 
+        $bedresp = array();
+        foreach($bed_type as $key => $bed)
+        {
+        $bedresp[$key]['bed_type']              = $bed;
+        $bedresp[$key]['no_of_beds']            = $no_of_beds[$key];
+        }
+        $bed_json = json_encode($bedresp);
+
+        //visit time json
+
+        $a = $details['visit'];
+        $vis = implode(',',$a);
+
+        $visit_from          = $details['visit_from']; 
+        $visit_to            = $details['visit_to']; 
+        $visit               = $vis;
+        $visitresp = array();
+        foreach($visit_from as $key => $visit_hosp)
+        {
+        $visitresp[$key]['visit_from']                = $visit_hosp;
+        $visitresp[$key]['visit_to']                  = $med_cost[$key];
+        $visitresp[$key]['visit_days']                = $free_med_exp[$key];
+        }
+        $visit_json = json_encode($visitresp);
+
+        //Credit card json
+        $card                   = $details['card']; 
+        $card_text              = $details['credit_card']; 
+        $cardresp = array();
+        foreach($card as $key => $c)
+        {
+        $cardresp[$key]['card']                  = $c;
+        $cardresp[$key]['card_text']             = $card_text[$key];
+        }
+        $bed_json = json_encode($cardresp);
+
         
 
         $hospital = new Hospital;
@@ -175,7 +255,7 @@ class HomeController extends Controller
         $hospital->address_eng      = $details['address_english']; 
         $hospital->branch_address_w_eng      = $branch_json; // branch address
         $hospital->access           = $access;
-        $hospital->parking          = $details['p_radio'];
+        $hospital->parking          = $parking_json;
         $hospital->phone_no         = $details['phone_no'].'-'.$details['phone_no_one'].'-'.$details['phone_no_two'];
         $hospital->fax              = $details['fax'].'-'.$details['fax_one'].'-'.$details['fax_two'];
         $hospital->email            = $details['email'];
@@ -190,14 +270,14 @@ class HomeController extends Controller
 
         $hospital->url_hosp         = $details['url_hosp'];
         $hospital->in_hospital_pres = $details['pres'];
-        $hospital->free_med_exp     = $details['pres']; //json
-        $hospital->hospitalization  = $details['pres']; //json
-        $hospital->no_of_beds       = $details['pres']; //json
-        $hospital->possible_date_of_visit = $details['pres']; //json
+        $hospital->free_med_exp     = $med_json; //json
+        $hospital->hospitalization  = $hosp_json; //json
+        $hospital->no_of_beds       = $bed_json; //json
+        $hospital->possible_date_of_visit = $visit_json; //json
         $hospital->in_hospital_services   = $details['hosp_service']; 
         $hospital->support_lang     = $details['support_lang'];
         $hospital->shop_dining_room = $details['shop_dining_room']; 
-        $hospital->credit_card_payment    = $details['pres']; //json
+        $hospital->credit_card_payment    = $bed_json; //json
         $hospital->save();
 
         $department = new Department;
@@ -214,6 +294,38 @@ class HomeController extends Controller
         $filenamedpt        = str_random(6) . '_' . $file_dpt->getClientOriginalName();
         $uploadSuccess   = $file_dpt->move($destinationPath, $filenamedpt);
         /* end of department image */
+
+        //examintation per department json
+        $department                             = $details['department']; 
+        $ex_med_subj_subheading                 = $details['ex_med_subj_subheading']; 
+        $med_subj_text_subheading_hospital      = $details['med_subj_text_subheading_hospital'];
+        $from                                   = $details['from'];
+        $to                                     = $details['to'];
+        $start                                  = $details['start'];
+        $weekdays                               = $details['weekdays'];
+        $from2                                  = $details['from2'];
+        $to2                                    = $details['to2'];
+        $start2                                 = $details['start2'];
+        $weekdays2                              = $details['weekdays2'];
+        $special_hours                          = $details['special_hours'];
+        $spfrom                                 = $details['spfrom'];
+        $spto                                   = $details['spto'];
+        $spstart                                = $details['spstart'];
+        $spweekdays                             = $details['spweekdays'];
+        $cardresp = array();
+        foreach($card as $key => $c)
+        {
+        $cardresp[$key]['card']                  = $c;
+        $cardresp[$key]['card_text']             = $card_text[$key];
+        }
+        $bed_json = json_encode($cardresp);
+
+    //     foreach ($metas as $meta =>$value){
+    //         $m = new MyModel();
+    //         $m->Meta_col = $meta;
+    //         $m->Value_col = $value;
+    //         $m->save();
+    //  }
 
         
         $dpt_exam = new DepartmentExam;
@@ -273,7 +385,7 @@ class HomeController extends Controller
         $staff->hospital_id            = $hospital_id;
         $staff->title                  = $details['staff_subheading_hospital'];
         $staff->text                   = $details['staff_comment_hospital'];
-        $staff->image                  = $filename_staff;
+        $staff->image                   = $filename_staff;
         $staff->save();
         
         // return redirect::back()->with('message','Successfully Encoded');
