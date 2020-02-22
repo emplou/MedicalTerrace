@@ -615,7 +615,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('sp-id');
-            alert(id);
+            //alert(id);
 
             $.ajax({
                 url: '/modal_edit_special/'+id,
@@ -2525,7 +2525,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
       $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
 
@@ -2545,7 +2545,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
         $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
 
@@ -2564,7 +2564,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
         $(copy).find('textarea[name=feature_text_subheading_hospital\\[0\\]]').attr('name', 'feature_text_subheading_hospital['+oneplus+']');
 
@@ -2584,7 +2584,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
         $(copy).find('textarea[name=equipment_subheading2\\[0\\]]').attr('name', 'equipment_subheading2['+oneplus+']');
 
@@ -2604,7 +2604,7 @@ $.ajaxSetup({
 
         var oneplus = i + 1;
 
-        $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+        $(copy).find('div#cke_textheading_lead').remove();
         $(copy).find('script').remove();
         $(copy).find('textarea[name=staff_comment_hospital\\[0\\]]').attr('name', 'staff_comment_hospital[' + oneplus + ']');
 
@@ -2639,10 +2639,6 @@ $.ajaxSetup({
     $(".addaccess").click(function () {
         $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
     });
-
-    // $(".addbranch").click(function () {
-    //     $("#branch").append('<div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div><div class="cols-1 relative"><button type="button" class="btn btn-success addbranch"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
-    // });
 
     $(".addbranch").click(function () {
         $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box

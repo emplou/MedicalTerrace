@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- modal_copy_add_illness -->
 <div id="copyAddillness" class="modal fade" role="dialog" data-keyboard="true">
     <div class="modal-dialog edit">
         <meta name="csrf-token" content="{{ csrf_token() }}">

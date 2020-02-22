@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- modal_edit_special -->
 <div id="editspecial" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog edit">
   <meta name="csrf-token" content="{{ csrf_token() }}">

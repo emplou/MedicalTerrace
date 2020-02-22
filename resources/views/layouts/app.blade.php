@@ -515,70 +515,70 @@ $(document).ready(function() {
 });
 </script>
 <script>
-	CKEDITOR.replace( 'text_of_heading[]' );
+	CKEDITOR.replace( 'text_of_heading[0]' );
 	CKEDITOR.add
 </script>
 
 <script>
-	CKEDITOR.replace( 'Text_of_Subheading_special[]' );
+	CKEDITOR.replace( 'Text_of_Subheading_special[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'Text_of_Subheading_two_special[]' );
+	CKEDITOR.replace( 'Text_of_Subheading_two_special[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'text_subheading_hospital[]' );
+	CKEDITOR.replace( 'text_subheading_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'textheading_lead[]' );
+	CKEDITOR.replace( 'textheading_lead[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'equipment_subheading[]' );
+	CKEDITOR.replace( 'equipment_subheading[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'equipment_subheading2[]' );
+	CKEDITOR.replace( 'equipment_subheading2[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'med_text_subheading[]' );
-	CKEDITOR.add 
-</script>
-
-<script>
-	CKEDITOR.replace( 'feature_text_subheading_hospital[]' ); 
-	CKEDITOR.add 
-</script>
-<script>
-	CKEDITOR.replace( 'equipment_text_subheading_hospital[]' );
-	CKEDITOR.add 
-</script>
-<script>
-	CKEDITOR.replace( 'staff_comment_hospital[]' );
-	CKEDITOR.add 
-</script>
-<script>
-	CKEDITOR.replace( 'med_subj_text_subheading_hospital[]' );
+	CKEDITOR.replace( 'med_text_subheading[0]' );
 	CKEDITOR.add 
 </script>
 
 <script>
-	CKEDITOR.replace( 'feature_text_subheading_hospital[]' ); 
+	CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'equipment_text_subheading_hospital[]' );
+	CKEDITOR.replace( 'equipment_text_subheading_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'staff_comment_hospital[]' );
+	CKEDITOR.replace( 'staff_comment_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'med_subj_text_subheading_hospital[]' );
+	CKEDITOR.replace( 'med_subj_text_subheading_hospital[0]' );
+	CKEDITOR.add 
+</script>
+
+<script>
+	CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
+	CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'equipment_text_subheading_hospital[0]' );
+	CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'staff_comment_hospital[0]' );
+	CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'med_subj_text_subheading_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
