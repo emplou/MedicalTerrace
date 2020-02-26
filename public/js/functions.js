@@ -615,11 +615,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('sp-id');
-<<<<<<< HEAD
             // alert(id);
-=======
-            //alert(id);
->>>>>>> 1cd04c733f5fbf8b058b3c473f431eb8466b1d7e
 
             $.ajax({
                 url: '/modal_edit_special/'+id,
