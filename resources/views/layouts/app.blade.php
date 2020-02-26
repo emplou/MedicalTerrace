@@ -691,6 +691,8 @@ $(adddept7_button).click(function(e){ //on add input button click
 
 
 
+
+
 $('#totop.float-btn').click(function() { 
 // When arrow is clicked
 $('body,html').animate({
