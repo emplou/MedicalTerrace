@@ -373,10 +373,14 @@
     <div class="form-group">
         <div class="cols-15"></div>
         <div class="cols-55">
-            <div class="upload-btn-wrapper">
+            <div class="upload-image blue">        
+                <input type="file" name="dpt_subject_image" id="file-8" class="inputfile2"  required>
+                <label for="file-8"><span class="archive-name2"></span><span class="btn-inputfile"> </span></label>
+            </div>
+            <!-- <div class="upload-btn-wrapper">
                 <button class="bton"></button>
                 <input type="file" name="dpt_subject_image" />
-            </div>
+            </div> -->
             
         </div>
     </div>
@@ -479,10 +483,14 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
-                <div class="upload-btn-wrapper">
+                <div class="upload-image blue">        
+                    <input type="file" name="feature_image[]" id="file-9" class="inputfile3"  required>
+                    <label for="file-9"><span class="archive-name3"></span><span class="btn-inputfile"> </span></label>
+                </div>
+                <!-- <div class="upload-btn-wrapper">
                     <button class="bton" id="show_img"></button>
                     <input type="file" name="feature_image[]"  />
-                </div>
+                </div> -->
                 <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
             </div>
         </div>
@@ -525,10 +533,14 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
-                <div class="upload-btn-wrapper">
+                <div class="upload-image blue">        
+                    <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4"  required>
+                    <label for="file-10"><span class="archive-name4"></span><span class="btn-inputfile"> </span></label>
+                </div>
+                <!-- <div class="upload-btn-wrapper">
                     <button class="bton"></button>
                     <input type="file" name="equipment_image[]" name="insert_equipment_subject" />
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -575,10 +587,14 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
-            <div class="upload-btn-wrapper">
+                <div class="upload-image blue">        
+                    <input type="file" name="staff_image[]" id="file-11" class="inputfile5"  required>
+                    <label for="file-11"><span class="archive-name5"></span><span class="btn-inputfile"> </span></label>
+                </div>
+                 <!-- <div class="upload-btn-wrapper">
                     <button class="bton"></button>
                     <input type="file" name="staff_image[]" />
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -873,6 +873,143 @@ function countChar(val) {
 	});
 })( jQuery, window, document );
 </script>
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile2' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name2' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile3' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name3' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile4' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name4' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile5' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name5' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMuK0OUZEPym74iWarEiCnudUSkuA9I6k&libraries=places&region=JP"></script>
        
