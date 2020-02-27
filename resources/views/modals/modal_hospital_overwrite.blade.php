@@ -18,7 +18,7 @@
             URL自動生成名<br>URL generation
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="url_gen" id="url_gen" style="width:500px">
+            <input type="text" class="form-control" name="url_gen" id="url_gen" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -27,7 +27,7 @@
             医療機関名<br>Medical institution
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="medical_ins" id="medical_ins" style="width:500px">
+            <input type="text" class="form-control" name="medical_ins" id="medical_ins" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -36,7 +36,7 @@
             医療機関英語名<br>Medical institution English
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="medical_ins_eng" id="medical_ins_eng" style="width:500px">
+            <input type="text" class="form-control" name="medical_ins_eng" id="medical_ins_eng" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -45,7 +45,7 @@
             Common name
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="common_name" id="common_name" style="width:500px">
+            <input type="text" class="form-control" name="common_name" id="common_name" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -54,7 +54,7 @@
             郵便番号<br>Postal code
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="postal_code" id="postal_code" style="width:500px">
+            <input type="text" class="form-control" name="postal_code" id="postal_code" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -63,7 +63,7 @@
             住所<br>Address
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="address" id="address" style="width:500px">
+            <input type="text" class="form-control" name="address" id="address" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -72,7 +72,7 @@
             住所英語表記<br>Address English
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="address_english" id="address_english" style="width:500px">
+            <input type="text" class="form-control" name="address_english" id="address_english" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -130,7 +130,7 @@
             Email<br>Email address
             </div>
             <div class="col-10">
-            <input type="text" class="form- " name="email" id="email" style="width:500px">
+            <input type="text" class="form- " name="email" id="email" style="width:500px" required>
             <input type="checkbox"> 非表示 | Not show
             </div>
         </div>
@@ -141,9 +141,9 @@
             </div>
             <div class="col-10">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="clinic_image_field">
+                    <input type="text" class="form-control" name="clinic_image_field" required>
                     <span class="input-group-btn">
-                        <input type="file" value="参照... " class="btn btn-search" name="clinic_image">
+                        <input type="file" value="参照... " class="btn btn-search" name="clinic_image" required>
                     </span>
                 </div>
             </div>
@@ -154,7 +154,7 @@
             画像キャプション<br>Image Caption 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_caption" id="img_caption" style="width:500px">
+            <input type="text" class="form-control" name="img_caption" id="img_caption" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -163,7 +163,7 @@
             画像alt<br>Image alt
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_alt" id="img_alt" style="width:500px">
+            <input type="text" class="form-control" name="img_alt" id="img_alt" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -172,7 +172,7 @@
             医療機関キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="hosp_subheading" id="hosp_subheading" style="width:500px">
+                <input type="text" class="form-control" name="hosp_subheading" id="hosp_subheading" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -181,7 +181,7 @@
             本文<br>Text of Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="text_subheading_hospital" id="text_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="text_subheading_hospital" id="text_subheading_hospital" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -190,7 +190,7 @@
             区分<br>Division
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="division" id="division" style="width:500px">
+                <input type="text" class="form-control" name="division" id="division" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -261,7 +261,7 @@
             診療科目別キャッチ<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="med_subj_subheading" id="med_subj_subheading" style="width:500px">
+                <input type="text" class="form-control" name="med_subj_subheading" id="med_subj_subheading" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -326,7 +326,7 @@
             特徴タイトル<br>Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="feature_title" id="feature_title" style="width:500px">
+                <input type="text" class="form-control" name="feature_title" id="feature_title" style="width:500px" required>
             </div>
         </div>
         <br>
@@ -360,7 +360,7 @@
             スタッフリード<br>Staff Subheading
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="staff_subheading_hospital" id="staff_subheading_hospital" style="width:500px">
+                <input type="text" class="form-control" name="staff_subheading_hospital" id="staff_subheading_hospital" style="width:500px" required>
             </div>
         </div>
         <br>
