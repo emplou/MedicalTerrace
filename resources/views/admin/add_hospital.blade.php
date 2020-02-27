@@ -22,7 +22,7 @@
     <div class="form-group">
         <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" placeholder="例)medical_terrace_clinic" name="url_gen">
+            <input type="text" class="form-control" placeholder="例)medical_terrace_clinic" name="url_gen" required>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
     <div class="form-group">
         <label class="control-label cols-15">医療機関名<br><span>Medical institution</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック" name="medical_ins">
+            <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック" name="medical_ins" required>
         </div>
     </div>
 
@@ -38,7 +38,7 @@
     <div class="form-group">
         <label class="control-label cols-15">医療機関英語名<br><span>Medical institution</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="例)medical terrace clinic" name="medical_ins_eng">
+            <input type="text" class="form-control" placeholder="例)medical terrace clinic" name="medical_ins_eng" required>
         </div>
     </div>
 
@@ -46,7 +46,7 @@
     <div class="form-group">
         <label class="control-label cols-15">一般名<br><span>Common Name</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="" name="common_name">
+            <input type="text" class="form-control" placeholder="" name="common_name" required>
         </div>
     </div>
 
@@ -54,7 +54,7 @@
     <div class="form-group">
         <label class="control-label cols-15">郵便番号<br><span>Postal code</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="postal_code">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="postal_code" required>
         </div>
     </div>
 
@@ -72,7 +72,7 @@
     <div class="form-group">
         <label class="control-label cols-15">住所英語表記<br><span>Address English</span></label>
         <div class="cols-5">
-            <input id="autocomplete_search" name="address_english" type="text" class="form-control" placeholder="Search" />
+            <input id="autocomplete_search" name="address_english" type="text" class="form-control" placeholder="Search"  required/>
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -113,7 +113,7 @@
         <label class="control-label cols-15">医院外観画像<br><span>Clinic Appearance image </span></label>
         <div class="cols-5">  
             <div class="upload-image">        
-                <input type="file" name="clinic_image" id="file-7" class="inputfile" >
+                <input type="file" name="clinic_image" id="file-7" class="inputfile"  required>
                 <label for="file-7"><span class="archive-name">ドラッグ&ドロップ、または参照で画像を追加してください</span><span class="btn-inputfile"> 参照...</span></label>
             </div>
         </div>
@@ -123,7 +123,7 @@
     <div class="form-group">
         <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption" required>
         </div>
     </div>
 
@@ -131,7 +131,7 @@
     <div class="form-group">
         <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt">
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt" required>
         </div>
     </div>
 
@@ -185,7 +185,7 @@
     <div class="form-group check">
         <label class="control-label cols-15">Email<br><span>Email Address</span></label>
         <div class="cols-35">
-            <input type="text" class="form-control" placeholder="" name="email">
+            <input type="text" class="form-control" placeholder="" name="email" required>
         </div>
          <div class="cols-2 check3">
             <input type="checkbox" id="non3" name="asn" value="0"> 
@@ -197,7 +197,7 @@
     <div class="form-group check">
         <label class="control-label cols-15">URL<br><span>URL</span></label>
         <div class="cols-35">
-            <input type="text" class="form-control" placeholder="" name="url_hosp">
+            <input type="text" class="form-control" placeholder="" name="url_hosp" required>
         </div>
          <div class="cols-2 check3">
             <input type="checkbox" id="non4" name="asn" value="0"> 
