@@ -220,6 +220,7 @@ input.form-  {
     </style>
 </head>
 <body>
+
 @if (Request::is('doctor_list') OR Request::is('add_doctor'))  
 <div class="content-container illness_container">
 	<header>
@@ -1000,7 +1001,13 @@ function countChar(val) {
 })( jQuery, window, document );
 </script>
 
-
+@if (Request::is('home'))
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#list_wrapper").addClass("haha");
+});
+</script>
+@endif
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMuK0OUZEPym74iWarEiCnudUSkuA9I6k&libraries=places&region=JP"></script>
        
@@ -1035,4 +1042,5 @@ function countChar(val) {
 
 
 </body>
+
 </html>

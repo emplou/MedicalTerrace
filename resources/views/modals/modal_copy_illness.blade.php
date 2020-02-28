@@ -166,11 +166,12 @@
             <!-- Buttons -->
             @if (Request::is('illness_list'))  
             <div class="modal-buts"><br>
-                <input type="submit" class="btn-prime approval" id="show_img">
+                <input type="submit" class="btn btn-primary approval" id="show_img" value="Approve">
                 <!-- <button type="button" class="btn-prime backedit" id="show_img"></button> -->
             </div>
             @endif
-        </div>
         {!! Form::close() !!}
+        </div>
+        
     </div>
 </div>

@@ -23,6 +23,7 @@ use MedicalTerrace\ApprovalRequest;
 use MedicalTerrace\Approved;
 use MedicalTerrace\ReleaseReservation;
 use MedicalTerrace\Release;
+use MedicalTerrace\Archive;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -45,9 +46,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+    public function index(){
+        $doctors = DB::table('dv_doctors')->get();
+        return view('home', compact('doctors'));
     }
 
     public function add_doctor(){
@@ -854,6 +855,7 @@ class HomeController extends Controller
         $illness->ill_shoulder          = $details['ill_shldr'];
         $illness->ill_name              = $details['ill'];
         $illness->ill_ph                = $details['ill_ph'];
+        $illness->ill_magazine          = $details['magazine'];
         $illness->ill_doc               = $details['doctor'];
         $illness->ill_doc_role          = $details['role'];
         $illness->ill_doc_cmt           = $details['doc_cmt']; 
@@ -875,7 +877,7 @@ class HomeController extends Controller
         $illness->ill_tag_season        = $jsons_list; // added division and medical subject list and field
         $illness->ill_tag_season_txt    = $jsonstxt_list; // added division and medical subject list and field
         $illness->ill_tag_free          = $jsonf_list; // added division and medical subject list and field
-        $illness->tracking_status      = '1';
+        $illness->tracking_status      = '2';
         $illness->save();
 
         $now = date('Y-m-d'); //Fomat Date and time
@@ -948,9 +950,9 @@ class HomeController extends Controller
         $jsoncr_list = json_encode($response11); 
 
         //Risk Assessment
-        if($details['subheading-chck'] === 1){
+        if($details['subheading-chck'] == 1){
             $risk_assess = new Risk_assessment;
-            $risk_assess->ra_ill_id           = $illness_id;
+            $risk_assess->ra_ill_id           = $illness->id;
             $risk_assess->ra_title            = $details['subheading-chck'];
             $risk_assess->ra_text             = $jsonrskTxt;
             $risk_assess->ra_result           = $jsoncr_list;  
@@ -980,7 +982,7 @@ class HomeController extends Controller
 
         if($details['subheading-chck2'] == 1){
             $risk_assess = new Risk_assessment;
-            $risk_assess->ra_ill_id           = $illness_id;
+            $risk_assess->ra_ill_id           = $illness->id;
             $risk_assess->ra_title            = $details['subheading-chck2'];
             $risk_assess->ra_text             = $jsonrskTxt2;
             $risk_assess->ra_result           = $jsoncr_list2;  
@@ -1247,6 +1249,9 @@ class HomeController extends Controller
         $value['arch'] = DB::table('dv_archive')->where('type_id','=',$id)
                                                     ->where('type','=','3')
                                                     ->get();
+        
+        //$value['auth'] = DB::table('users')->where('id','=',$authorID)->get();
+        
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
@@ -1264,7 +1269,9 @@ class HomeController extends Controller
                                                     ->get();                                                 
         $value['arch'] = DB::table('dv_archive')->where('type','=','4')
                                                 ->where('type_id','=',$id)
-                                                ->get();                                       
+                                                ->get(); 
+        //$value['auth'] = DB::table('users')->where('id','=',$authorID)->get(); 
+
         $fetch = json_encode($value);
         return $fetch;
         // return $value;
@@ -1803,6 +1810,7 @@ class HomeController extends Controller
                                                 'ill_shoulder'          => $details['ill_shldr'],
                                                 'ill_name'              => $details['ill'],
                                                 'ill_ph'                => $details['ill_ph'],
+                                                'ill_magazine'          => $details['magazine'],
                                                 'ill_doc'               => $details['doctor'],
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],

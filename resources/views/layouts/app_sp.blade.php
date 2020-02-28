@@ -35,7 +35,7 @@
 <body>
 <div class="content-container special_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small>UI of Special table</small></h1>
+		<h1 class="dashboard">医特集 <br><small>UI of Special table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Special new registration</button>
 			<img src="../images/medical-logo.png" alt="">
@@ -104,7 +104,6 @@
  	</div>
 </div>
 
- </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

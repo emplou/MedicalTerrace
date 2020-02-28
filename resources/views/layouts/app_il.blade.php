@@ -33,26 +33,11 @@
     
 </head>
 <body>
-@if (Request::is('doctor_list') OR Request::is('add_doctor'))
-<div class="content-container">
-    <header>
-        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Doctor table</small></h1>
-        <div class="right">
-            <button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Doctor new registration</button>
-            <img src="images/medical-logo.png" alt="">
-        </div>
-    </header>   
-    <div class="sub-header">
-        <div class="red">公開速報</div>
-        <p>2019/07/18 Doctor 子どもの夏の感染症が投稿されました。</p>
-    </div>
-</div>
-@endif
-
+  
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
 <div class="content-container illness_container">
     <header>
-        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Illness table</small></h1>
+        <h1 class="dashboard">病気と知識 <br><small>UI of Illness table</small></h1>
         <div class="right">
             <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Illness new registration</button>
             <img src="images/medical-logo.png" alt="">
@@ -61,38 +46,6 @@
     <div class="sub-header">
         <div class="red">公開速報</div>
         <p>2019/07/18 Illness 子どもの夏の感染症が投稿されました。</p>
-    </div>
-</div>
-@endif
-
-@if (Request::is('special_list') OR Request::is('add_special'))  
-<div class="content-container special_container">
-    <header>
-        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Special table</small></h1>
-        <div class="right">
-            <button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Special new registration</button>
-            <img src="images/medical-logo.png" alt="">
-        </div>
-    </header>   
-    <div class="sub-header">
-        <div class="red">公開速報</div>
-        <p>2019/07/18 Special 子どもの夏の感染症が投稿されました。</p>
-    </div>
-</div>
-@endif
-
-@if (Request::is('hospital_list') OR Request::is('add_hospital'))  
-<div class="content-container hospital_container">
-    <header>
-        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Hospital table</small></h1>
-        <div class="right">
-            <button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
-            <img src="images/medical-logo.png" alt="">
-        </div>
-    </header>   
-    <div class="sub-header">
-        <!-- <div class="red">公開速報</div> -->
-        <p><h2>{!! Auth::user()->name !!}</h2></p>
     </div>
 </div>
 @endif
@@ -147,14 +100,13 @@
 </div>
 <div class="main-content add">
     <div class="main">
-        <!-- <div class="row"> -->
+        
 
- 			@yield("content")
- 		<!-- </div> -->
- 	</div>
+ 			  @yield("content")
+ 		
+ 	  </div>
 </div>
 
- </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

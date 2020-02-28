@@ -163,7 +163,7 @@
             <!-- Buttons -->
             @if (Request::is('special_list'))  
                 <div class="modal-buts"><br>
-                    <input type="submit" class="btn-prime approval" id="show_img">
+                    <input type="submit" class="btn btn-primary approval" id="show_img" value="Approve">
                     <!-- <input type="button" class="btn-prime backedit" id="show_img"> -->
                 </div>
             @endif
