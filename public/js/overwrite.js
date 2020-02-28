@@ -1082,6 +1082,156 @@ for (var i = 1; i<= 31; i++){
     select.options.add(option);
 }
 
+
+$('.editadd_dpt_doc').on('click', editadd_dpt_doc);
+var i=0;
+function editadd_dpt_doc(e) {
+//   e.preventDefault();
+
+$.ajax({
+    url: '/get_all_department/',
+    type: 'get',
+    dataType: 'json',
+    // data : { id : id },
+    success: function(response){
+        console.log(response['data']);
+
+    // if(response == "success")
+
+        /* ********** DEPARTMENT ************ */
+        var objJSONdept = JSON.stringify(response['data']);
+        // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+        // alert(objJSONdept);
+
+        var tr_str = "";
+        var len = response['data'].length;
+
+        tr_str += '<select style="width:150px" class="form- " name="department[]"><option>選択してください</option>';
+
+        for(var i=0; i<len; i++){
+            var dptname = response['data'][i].dpt_name;
+
+            tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+            }
+             tr_str += '</select>';
+            
+        $("#editdpt_div").append(tr_str);
+
+    }
+
+});
+
+}
+
+// end edit add doctor
+
+$('.addcert1').on('click', addfields);
+var i=0;
+function addfields(e) {
+  e.preventDefault();
+//   alert('yes!');
+//   var copy = $('#addanother').html();
+  $('#certificate').append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-6 addanother"><div class="cols-5"><input type="text" class="form- " id="kword1" name="certificate[]"></div><div class="cols-5"><input type="text" class="form- " id="kword2" name="certificate[]"></div></div></div>');
+}
+
+$('.addcert2').on('click', addfields22);
+var i=0;
+function addfields22(e) {
+  e.preventDefault();
+//   alert('yes!');
+  $('#addconference').append('<div class="form-group"><label class="control-label cols-15"></label><div class="sp10 cols-6"><div class="cols-5"><input type="text" class="form- " name="conference[]"></div><div class="cols-5"><input type="text" class="form- " name="conference[]"></div></div></div>');
+}
+
+$('.add3').on('click', add3);
+var i=0;
+function add3(e) {
+  e.preventDefault();
+//   alert('yes!');
+var options='';
+    for(i=1990; i <= 2020; i++){
+        options+='<option value="'+i+'">'+i+'</option>';
+    }
+  $('#c_ac').append('<div class="form-group"><div class="control-label cols-15"><span></span></div><div class="cols-12"><select id="aca_year" name="c_ac_year[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_ac_month[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc[]" class="form- " ></div></div><div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="aca_year_to" name="c_ac_year_to[]" class="form- " ><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_ac_month_to[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- " ></div>');
+}
+
+$('.add44').on('click', add44);
+var i=0;
+function add44(e) {
+  e.preventDefault();
+//   alert('yes!');
+var options='';
+    for(i=1990; i <= 2020; i++){
+        options+='<option value="'+i+'">'+i+'</option>';
+    }
+  $('#c_we').append(' <div class="form-group"><div class="control-label cols-15"><span></span></div><div class="cols-12"><select id="work_year" name="c_we_year[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_we_month[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_we_desc[]" class="form- " ></div></div><div class="field_wrap4"></div><div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="work_year_to" name="c_we_year_to[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_we_month_to[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " ></div>');
+}
+
+$('.add55').on('click', add4);
+var i=0;
+function add4(e) {
+  e.preventDefault();
+//   alert('yes!');
+var options='';
+    for(i=1990; i <= 2020; i++){
+        options+='<option value="'+i+'">'+i+'</option>';
+    }
+  $('#c_aw').append('<div class="form-group"><div class="control-label cols-15"><span></span></div><div class="cols-12"><select id="awards_year" name="c_aw_year[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_aw_month[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_aw_desc[]" class="form- " ></div><div class="field_wrap5"></div><div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="awards_year_to" name="c_aw_year_to[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_aw_month_to[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " ></div>');
+}
+
+$('.add5').on('click', add4);
+var i=0;
+function add4(e) {
+  e.preventDefault();
+//   alert('yes!');
+var options='';
+    for(i=1990; i <= 2020; i++){
+        options+='<option value="'+i+'">'+i+'</option>';
+    }
+  $('#c_aw').append('<div class="form-group"><div class="control-label cols-15"><span></span></div><div class="cols-12"><select id="awards_year" name="c_aw_year[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_aw_month[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_aw_desc[]" class="form- " ></div><div class="field_wrap5"></div><div class="form-group"><div class="cols-15"></div><div class="cols-12"><select id="awards_year_to" name="c_aw_year_to[]" class="form- "><option>----年</option>'+options+'</select></div><div class="cols-1"><select name="c_aw_month_to[]" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select></div><div class="cols-35"><input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " ></div>');
+}
+
+$('.add_dpt_doc').on('click', add_dpt_doc);
+var i=0;
+function add_dpt_doc(e) {
+//   e.preventDefault();
+
+$.ajax({
+    url: '/get_all_department/',
+    type: 'get',
+    dataType: 'json',
+    // data : { id : id },
+    success: function(response){
+        console.log(response['data']);
+
+    // if(response == "success")
+
+        /* ********** DEPARTMENT ************ */
+        var objJSONdept = JSON.stringify(response['data']);
+        // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+        // alert(objJSONdept);
+
+        var tr_str = "";
+        var len = response['data'].length;
+
+        tr_str += '<div class="cols-33"><select class="form- " name="department[]"><option>選択してください</option>';
+
+        for(var i=0; i<len; i++){
+            var dptname = response['data'][i].dpt_name;
+
+            tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+            }
+             tr_str += '</select></div>';
+            
+        $("#dpt_div").append(tr_str);
+
+    }
+
+});
+
+}
+
 //academic
 var min = 1990,
     max = 2021,
@@ -1127,6 +1277,133 @@ for (var i = min; i<=max; i++){
     opt.innerHTML = i;
     select.appendChild(opt);
 }
+
+$('.add-ck1').on('click', addfields1);
+    var i=0;
+    function addfields1(e) {
+      e.preventDefault();
+        var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital department ckEditor (second)
+
+    $('.add-ck2').on('click', addfields2);
+    var i=0;
+    function addfields2(e) {
+      e.preventDefault();
+      var copy = $('#addanother4').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
+
+      $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
+        CKEDITOR.replace('med_subj_text_subheading_hospital['+oneplus+']');
+      i++;  
+    }
+
+    // hospital subject ckEditor (third)
+
+    $('.add-ck3').on('click', addfields3);
+    var i=0;
+    function addfields3(e) {
+      e.preventDefault();
+      var copy = $('#addanother3').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead').remove();
+      $(copy).find('script').remove();
+        $(copy).find('textarea[name=feature_text_subheading_hospital\\[0\\]]').attr('name', 'feature_text_subheading_hospital['+oneplus+']');
+
+      $('#addnewdiv3').append($(copy).html()+ '<br>');
+        CKEDITOR.replace('feature_text_subheading_hospital['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital equipment ckEditor (fourth)
+
+    $('.add-ck4').on('click', addfields4);
+    var i=0;
+    function addfields4(e) {
+      e.preventDefault();
+      var copy = $('#addanother5').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead').remove();
+      $(copy).find('script').remove();
+        $(copy).find('textarea[name=equipment_subheading2\\[0\\]]').attr('name', 'equipment_subheading2['+oneplus+']');
+
+      $('#addnewdiv5').append($(copy).html()+ '<br>');
+        CKEDITOR.replace('equipment_subheading2['+oneplus+']');
+      i++;  
+
+    }
+
+    // hospital staff ckEditor (fourth)
+
+    $('.add-ck5').on('click', addfields5);
+    var i = 0;
+    function addfields5(e) {
+        e.preventDefault();
+        var copy = $('#addanother6').clone();
+
+        var oneplus = i + 1;
+
+        $(copy).find('div#cke_textheading_lead').remove();
+        $(copy).find('script').remove();
+        $(copy).find('textarea[name=staff_comment_hospital\\[0\\]]').attr('name', 'staff_comment_hospital[' + oneplus + ']');
+
+        $('#addnewdiv6').append($(copy).html() + '<br>');
+        CKEDITOR.replace('staff_comment_hospital[' + oneplus + ']');
+        i++;
+
+    }
+
+
+
+    //HOSPITAL PAGE ADD BUTTON
+    
+    $(".addmed1").click(function () {
+        $("#mednewdiv1").append('<div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select ></div ><div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select></div><div class="cols-3"><select class="form- " name="med_sbj_list[]"><option>選択してください</option><option>Medical one</option><option>Medical two</option><option>Medical three</option><option>Medical four</option></select></div>'); //add input box
+    });
+
+
+    $(".addmed2").click(function () {
+        $("#mednewdiv2").append('<div class="cols-3"><input type = "text" class= "form- " placeholder = "選択項目にない場合に入力" name = "med_sbj_list_add[]"></div ><div class="cols-3"><input type="text" class="form- " name="med_sbj_list_add[]"></div><div class="cols-3"><input type="text" class="form- " name="med_sbj_list_add[]"></div>'); //add input box
+    });
+
+
+    $(".addnumbed").click(function () {
+        $("#numbed").append('<div class="form-group"><div class="control-label cols-15"></div><div class= "cols-05"><label>種別</label></div><div class="cols-2"><select class="form-control"><option>選択してください</option></select></div><div class="cols-05"><label>種別</label></div><div class="cols-3"><input class="form-control" type="text" id="cc" name="pres" placeholder="例)10床"></div></div>'); //add input box
+    });
+
+    $(".addvisits").click(function () {
+        $("#visit").append('<div class="form-group check fix"><div class="control-label cols-15" ></div><div class="cols-1"><select class="form-control"><option>14:30</option></select></div><div class="cols-1"><select class="form-control"><option>15:30</option></select></div><div class="cols-4">月 <input type="checkbox" id="visit1" name="tag_season[]"><label for="visit1"></label>火 <input type="checkbox" id="visit2" name="tag_season[]"><label for="visit2"></label>水 <input type="checkbox" id="visit3" name="tag_season[]"><label for="visit3"></label>木 <input type="checkbox" id="visit4" name="tag_season[]"><label for="visit4"></label>金 <input type="checkbox" id="visit5" name="tag_season[]"><label for="visit5"></label>土 <input type="checkbox" id="visit6" name="tag_season[]"><label for="visit6"></label>日 <input type="checkbox" id="visit7" name="tag_season[]"><label for="visit7"></label>祝 <input type="checkbox" id="visit8" name="tag_season[]"><label for="visit8"></label></div></div>'); //add input box
+    });
+
+    $(".addaccess").click(function () {
+        $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
+    });
+
+    $(".addbranch").click(function () {
+        $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box
+    });
 
 //awards 
 var min = 1990,
@@ -1259,6 +1536,113 @@ for (var i = min; i<=max; i++){
       i++;  
 
     }
+
+    $('.sp_release1').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('sp-id');
+            
+            $.ajax({
+                url: '/release_reservation_special',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+    
+            });
+            // location.reload();
+        });
+    });
+    
+    $('.sp_release2').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('sp-id');
+            
+            $.ajax({
+                url: '/release_special',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+    
+            });
+            // location.reload();
+        });
+    });
+    
+    $('.overwrite_hospital').each(function(e){
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+          });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('hosp-id');
+            alert(id);
+    
+            $.ajax({
+                url: '/modal_edit_hospital/'+id,
+                type: 'get',
+                dataType: 'json',
+                // data : { id : id },
+                success: function(response){
+                    console.log(response['data']);
+                    console.log(response['dpt_exam']);
+                    console.log(response['hosp_feature']);
+                if(response == "success")
+    
+                  console.log(response['data']); 
+    
+                  $("#edithospital").modal('show');
+                  $("#url_gen").val(response['data'][0].url);
+                  $("#medical_ins").val(response['data'][0].medical_ins);
+                  $("#medical_ins_eng").val(response['data'][0].name_phonic);
+                  $("#common_name").val(response['data'][0].common_name);
+                  $("#postal_code").val(response['data'][0].postal_code);
+                  $("#address").val(response['data'][0].address);
+                  $("#address_english").val(response['data'][0].address_eng);
+                  //access not yet
+                  //parking not yet
+                  $("#phone_no").val(response['data'][0].phone_no);
+                  $("#fax").val(response['data'][0].fax);
+                  $("#email").val(response['data'][0].email);
+                  //image not yet
+                  $("#img_caption").val(response['data'][0].image_caption);
+                  $("#img_alt").val(response['data'][0].image_alt);
+                  $("#hosp_subheading").val(response['data'][0].hosp_subheading);
+                  $("#text_subheading_hospital").val(response['data'][0].hosp_text_subheading);
+                  // division dropdown
+                //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
+                  $("#division").val(response['data'][0].division);
+                    
+    
+                },
+                    error: function(response){
+                    alert('Error'+response);
+       
+                }
+    
+              });
+    
+            // location.reload();
+        });
+    });
 
 
 
@@ -1544,6 +1928,173 @@ $('.overwrite_illness').each(function(e){
                 error: function(response){
                 alert('Error'+response);
    
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.copyaddcert1').on('click', copyaddcert1);
+  var i=0;
+  function copyaddcert1(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  //   var copy = $('#addanother').html();
+    $('#copycertificate').append('<input type="text" class="form- " id="kword1" name="certificate[]" style="width:300px"></div><input type="text" class="form- " id="kword2" name="certificate[]" style="width:300px">');
+  }
+
+  $('.copyaddconf2').on('click', copyaddconf2);
+  var i=0;
+  function copyaddconf2(e) {
+    e.preventDefault();
+  //   alert('yes!');
+    $('#copyaddconference').append('<input type="text" class="form- " name="conference[]" style="width:300px"><input type="text" class="form- " name="conference[]" style="width:300px">');
+  }
+
+  $('.copyadd3').on('click', copyadd3);
+  var i=0;
+  function copyadd3(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  var options='';
+      for(i=1990; i <= 2020; i++){
+          options+='<option value="'+i+'">'+i+'</option>';
+      }
+    $('#copyc_ac').append('<select id="aca_year" name="c_ac_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month[]" style="width:100px" class="form- "><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc[]" class="form- " style="width:100px"><br><select id="aca_year_to" name="c_ac_year_to[]" class="form- "  style="width:100px"><option>----年</option>'+options+'</select><select name="c_ac_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  style="width:100px"><br>');
+  }
+
+  $('.copyadd44').on('click', copyadd44);
+  var i=0;
+  function copyadd44(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  var options='';
+      for(i=1990; i <= 2020; i++){
+          options+='<option value="'+i+'">'+i+'</option>';
+      }
+    $('#copyc_we').append(' <select id="work_year" name="c_we_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_we_desc[]" class="form- " style="width:100px"><br><select id="work_year_to" name="c_we_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_we_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">Decmber</option></select><input type="text" id="form-control" name="c_we_desc_to[]" class="form- " style="width:100px"><br>');
+  }
+
+  $('.copyadd55').on('click', copyadd55);
+  var i=0;
+  function copyadd55(e) {
+    e.preventDefault();
+  //   alert('yes!');
+  var options='';
+      for(i=1990; i <= 2020; i++){
+          options+='<option value="'+i+'">'+i+'</option>';
+      }
+    $('#copyc_aw').append('<select id="awards_year" name="c_aw_year[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc[]" class="form- "  style="width:100px"><br><select id="awards_year_to" name="c_aw_year_to[]" class="form- " style="width:100px"><option>----年</option>'+options+'</select><select name="c_aw_month_to[]" class="form- " style="width:100px"><option value="">--月</option><option value="January">January</option><option value="February">February</option><option value="March">March</option><option value="April">April</option><option value="May">May</option><option value="June">June</option><option value="July">July</option><option value="August">August</option><option value="September">September</option><option value="October">October</option><option value="November">November</option><option value="December">December</option></select><input type="text" id="form-control" name="c_aw_desc_to[]" class="form- "  style="width:100px"><br>');
+  }
+
+  $('.copyadd_dpt_doc').on('click', copyadd_dpt_doc);
+  var i=0;
+  function copyadd_dpt_doc(e) {
+  //   e.preventDefault();
+
+  $.ajax({
+      url: '/get_all_department/',
+      type: 'get',
+      dataType: 'json',
+      // data : { id : id },
+      success: function(response){
+          console.log(response['data']);
+
+      // if(response == "success")
+
+          /* ********** DEPARTMENT ************ */
+          var objJSONdept = JSON.stringify(response['data']);
+          // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+          // alert(objJSONdept);
+
+          var tr_str = "";
+          var len = response['data'].length;
+
+          tr_str += '<select style="width:150px" class="form- " name="department[]"><option>選択してください</option>';
+
+          for(var i=0; i<len; i++){
+              var dptname = response['data'][i].dpt_name;
+
+              tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+              }
+               tr_str += '</select>';
+              
+          $("#copydpt_div").append(tr_str);
+
+      }
+
+  });
+
+  }
+  //end copy edit doctor modal details
+
+  $('.release2').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('il-id');
+        
+        $.ajax({
+            url: '/release_illness',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.sp_release1').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('sp-id');
+        
+        $.ajax({
+            url: '/release_reservation_special',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.sp_release2').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('sp-id');
+        
+        $.ajax({
+            url: '/release_special',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
             }
 
         });
@@ -2364,6 +2915,247 @@ $(document).ready(function(){
 
     //copy edit doctor modal
 
+
+    $('.sp_preview').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            sp_iD = $("#sp_iD").val(); // ID
+            $("#id_sp").val($("#sp_iD").val());
+            $("#sp_iD").html(sp_iD);
+           
+        });
+    });
+
+    $('.sp_preview_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            sp_iD_two = $("#sp_iD_two").val(); // ID
+            $("#id_sp_two").val($("#sp_iD_two").val());
+            $("#sp_iD_two").html(sp_iD_two);
+           
+        });
+    });
+
+    $('.preview').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            
+            iD = $("#iD").val(); // ID
+            $("#id_ill").val($("#iD").val());
+            $("#iD").html(iD);
+            ill_cat = $(".ill_cat").val(); // Illness Category
+            $(".ill_cat").html(ill_cat);
+            ill_name = $("#ill").val(); // Illness Name
+            $(".ill_name").html(ill_name);
+            ill_sh = $("#ill_shldr").val(); // Illness SHoulder
+            $(".ill_sh").html(ill_sh);
+
+            //Keywords
+            var key_value = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value").html(key_value);
+
+            //Summarize
+            var sum_value = "";
+            $("textarea[name='sm[]']").each(function() {
+                sum_value += '<li>'+ $(this).val() +'</li>';
+            });
+            $("#summary").html(sum_value);
+
+            //Risk Assessment
+            var z = 0;
+            if($("#a1").is(':checked')) {
+
+                var input_risk = "";
+                input_risk += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
+                $("textarea[name='sh[]']").each(function() {
+                    var zplus=z+1;
+
+                    if($(this).val() != '') {
+                        input_risk += '<li><input class="styled-checkbox" id="a'+zplus+'" type="checkbox" name="check1[]" ><label for="a'+zplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    z++;
+                });
+                input_risk += '</ul></div></div>';
+                $("#input_risk_one").html(input_risk);
+            }
+
+            //Risk Assessment 2
+            var x = 0;
+            if($("#a2").is(':checked')) {
+
+                var input_risk_two = "";
+                input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
+                $("textarea[name='sh2[]']").each(function() {
+                    var xplus=x+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two += '<li><input class="styled-checkbox" id="b'+xplus+'" type="checkbox" name="check2[]" ><label for="b'+xplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    x++;
+                });
+                input_risk_two += '</ul></div></div>';
+                $("#input_risk_two").html(input_risk_two);
+            }
+            
+            //Sub head and Text
+            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
+             
+            var sub_value = "";
+            //var cnt_value = "";
+            // $.each(objJSONcontent, function (i, v) { 
+            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
+            //     cnt_value += 'p'+ v.text +'p';
+            // });
+            $("select[name='sub_head1a[]']").each(function() {
+                sub_value += '<h3>'+ $(this).val() +'</h3>';
+                $("textarea[name='txt_ckeditor[]']").each(function() {
+                    sub_value += '<p>'+ $(this).val() +'</p>';
+                });
+            });
+            $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.preview_copy').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            //$("#previewAddIllness").modal('show');
+            iD = $("#iD_two").val(); // ID
+            $("#id_ill_two").val($("#iD_two").val());
+            $("#iD_two").html(iD_two);
+
+            ill_cat_two = $(".ill_cat_two").val(); // Illness Category
+            $(".ill_cat").html(ill_cat_two);
+            ill_name = $("#ill_two").val(); // Illness Name
+            $(".ill_name").html(ill_name);
+            ill_sh = $("#ill_shldr_two").val(); // Illness SHoulder
+            $(".ill_sh").html(ill_sh);
+
+            //Keywords
+            var key_value_two = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value_two += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value_two").html(key_value_two);
+
+            //Summarize
+            var sum_value_two = "";
+            $("textarea[name='sm[]']").each(function() {
+                sum_value_two += '<li>'+ $(this).val() +'</li>';
+            });
+            $("#summary_two").html(sum_value_two);
+
+            //Risk Assessment
+            var z = 0;
+            if($("#a1_two").is(':checked')) {
+
+                var input_risk_two = "";
+                input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
+                $("textarea[name='sh[]']").each(function() {
+                    var zplus=z+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two += '<li><input class="styled-checkbox" id="a'+zplus+'" type="checkbox" name="check1[]" ><label for="a'+zplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    z++;
+                });
+                input_risk_two += '</ul></div></div>';
+                $("#input_risk_one_a").html(input_risk_two);
+            }
+
+            //Risk Assessment 2
+            var x = 0;
+            if($("#b1_two").is(':checked')) {
+
+                var input_risk_two_b = "";
+                input_risk_two_b += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
+                $("textarea[name='sh2[]']").each(function() {
+                    var xplus=x+1;
+
+                    if($(this).val() != '') {
+                        input_risk_two_b += '<li><input class="styled-checkbox" id="b'+xplus+'" type="checkbox" name="check2[]" ><label for="b'+xplus+'" style="font-weight:500;">'+ $(this).val() +'</label></li>';
+                    }
+                    x++;
+                });
+                input_risk_two_b += '</ul></div></div>';
+                $("#input_risk_two_b").html(input_risk_two_b);
+            }
+            
+            //Sub head and Text
+            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
+             
+            var sub_value = "";
+            //var cnt_value = "";
+            // $.each(objJSONcontent, function (i, v) { 
+            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
+            //     cnt_value += 'p'+ v.text +'p';
+            // });
+            $("select[name='sub_head1a[]']").each(function() {
+                sub_value += '<h3>'+ $(this).val() +'</h3>';
+                $("textarea[name='txt_ckeditor[]']").each(function() {
+                    sub_value += '<p>'+ $(this).val() +'</p>';
+                });
+            });
+            $(".input_content").html(sub_value);
+        });
+    });
+
+    $('.release1').each(function(e){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('il-id');
+            
+            $.ajax({
+                url: '/release_reservation_illness',
+                type: 'POST',
+                data : { id : id },
+                success: function(response){
+                    //console.log(response['data']);
+                    location.reload();
+                }
+
+            });
+            // location.reload();
+        });
+    });
+
   $('.copyaddcert1').on('click', copyaddcert1);
   var i=0;
   function copyaddcert1(e) {
@@ -2458,3 +3250,75 @@ $(document).ready(function(){
 
   }
   //end copy edit doctor modal details
+
+  $('.release2').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('il-id');
+        
+        $.ajax({
+            url: '/release_illness',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.sp_release1').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('sp-id');
+        
+        $.ajax({
+            url: '/release_reservation_special',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+$('.sp_release2').each(function(e){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('sp-id');
+        
+        $.ajax({
+            url: '/release_special',
+            type: 'POST',
+            data : { id : id },
+            success: function(response){
+                //console.log(response['data']);
+                location.reload();
+            }
+
+        });
+        // location.reload();
+    });
+});

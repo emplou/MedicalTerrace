@@ -63,3 +63,18 @@ $(function () {
 
 
 
+$(function () {
+	$('input[placeholder], textarea[placeholder]').placeholder();
+	$('#serMemdd').change(function () {
+		var k = $(this).val();
+		if (k == 1) {
+			$("#serMemtb").attr("placeholder", "Type a name (Lastname, Firstname)").placeholder();
+		}
+		else if (k == 2) {
+			$("#serMemtb").attr("placeholder", "Type an ID").placeholder();
+		}
+		else if (k == 3) {
+			$("#serMemtb").attr("placeholder", "Type a Location").placeholder();
+		}
+	});
+});

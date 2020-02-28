@@ -1,3 +1,4 @@
+<!-- modal_copy_special -->
 <div id="previewCopySpecial" class="modalDialog">
 <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	

@@ -1,29 +1,6 @@
 @extends('layouts.app_il')
 @section('content')
 @include('modals.modal_add_illness')
-<!-- <h2>Add Illness</h2> -->
-<!-- <div class="header-wrapper">
-    <div class="left">
-        <h2>手足口病<span>ID番号:I00000</span></h2>
-        
-    </div>
-    <div class="right">
-        <div>作成日<span>Date</span></div>
-        <div class="select">
-            <select>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-            </select>
-        </div>
-        <div>最終更新日<span>Update</span></div>
-        <div class="select">0000/00/00</div>
-    </div>
-    
-</div>
-<hr /> -->
     <div class="form-container add">
         <div class="form-progress">
             <ul>
@@ -141,7 +118,7 @@
             <div class="form-group full">
                 <label class="control-label cols-15">医師コメント<br><span>Doctor Comment</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control cmt" name="doc_cmt" rows="5" maxlength="200">この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <textarea class="form-control cmt" name="doc_cmt" rows="5" maxlength="200" placeholder="この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。">
 					</textarea>
                 </div>
                 <div class="cols-2">          
@@ -260,7 +237,7 @@
                     <div class="cols-6">   
                        
                         <div class="cols-10">        
-                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
+                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ckeditor" placeholder=""></textarea>
                         </div>
                         
                     </div>
@@ -982,7 +959,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">メモ<br><span>Note</span></label>
                 <div class="cols-5">   
-                    <textarea class="form-control" rows="10" name="note"></textarea>
+                    <textarea class="form-control" rows="10" name="note" required></textarea>
                 </div>
             </div>
         </div>

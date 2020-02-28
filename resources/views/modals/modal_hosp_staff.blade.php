@@ -14,14 +14,7 @@
 
         <br>
         <!-- Staff Area -->
-        <div class="row">
-            <div class="col-2">
-            スタッフリード<br>Staff Subheading
-            </div>
-            <div class="col-10">
-                <input type="text" class="form-control" name="staff_subheading_hospital" style="width:500px">
-            </div>
-        </div>
+        
         <br>
         <div class="row">
             <div class="col-2">

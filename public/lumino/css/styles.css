@@ -2123,7 +2123,7 @@ table#list {
   background-image: url(../../images/icon-relreserve.png);
 }
 .btn-prime.released {
-  background-image: url(../../images/icon-release.png);
+  background-image: url(../../images/icon-release2.png);
 }
 .btn-prime.release1 {
   background-image: url(../../images/icon-relreserve.png);
@@ -2852,7 +2852,8 @@ ul.blk-bullet img {
 }
 
 
-.upload-image input[type="file"] {
+.upload-image input[type="file"],
+.upload-image.blue input[type="file"] {
   display: none;
 }
 
@@ -2880,6 +2881,24 @@ ul.blk-bullet img {
   border-radius:8px;
 }
 
+.upload-image.blue .inputfile2 + label,
+.upload-image.blue .inputfile3 + label,
+.upload-image.blue .inputfile4 + label,
+.upload-image.blue .inputfile5 + label   {
+  max-width: 100%;
+  width: 100%;
+  font-size: 12px;
+  /* 20px */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+  border-radius:8px;
+}
+
 .no-js .inputfile + label {
   display: none;
 }
@@ -2896,14 +2915,35 @@ ul.blk-bullet img {
   padding: 0;
 }
 
+.inputfile2 + label,
+.inputfile3 + label,
+.inputfile4 + label,
+.inputfile5 + label {
+  background-color: transparent;
+  position: relative;
+  margin-top: 0;
+}
+
 .inputfile + label .archive-name,
-.inputfile + label .btn-inputfile {
+.inputfile + label .btn-inputfile,
+.inputfile2 + label .archive-name2,
+.inputfile2 + label .btn-inputfile2,
+.inputfile3 + label .archive-name3,
+.inputfile3 + label .btn-inputfile3
+.inputfile4 + label .archive-name4,
+.inputfile4 + label .btn-inputfile4,
+.inputfile5 + label .archive-name5,
+.inputfile5 + label .btn-inputfile5 {
   padding: 10px;
-  height: 35px;
+  height: 38px;
   font-style: normal;
 }
 
-.inputfile + label .archive-name {
+.inputfile + label .archive-name,
+.inputfile2 + label .archive-name2,
+.inputfile3 + label .archive-name3
+.inputfile4 + label .archive-name4,
+.inputfile5 + label .archive-name5 {
   width: 85%;
   display: inline-block;
   text-overflow: ellipsis;
@@ -2913,7 +2953,25 @@ ul.blk-bullet img {
   color: #808080;
 }
 
-.inputfile + label .btn-inputfile {
+.upload-image.blue .inputfile2 + label .archive-name2,
+.upload-image.blue .inputfile3 + label .archive-name3,
+.upload-image.blue .inputfile4 + label .archive-name4,
+.upload-image.blue .inputfile5 + label .archive-name5 {
+  width: 100%;
+  padding-left: 170px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  color: #808080;
+}
+
+.inputfile + label .btn-inputfile,
+.inputfile2 + label .btn-inputfile,
+.inputfile3 + label .btn-inputfile,
+.inputfile4 + label .btn-inputfile,
+.inputfile5 + label .btn-inputfile {
   color: #fff;
   background-color: #404040;
   display: inline-block;
@@ -2923,9 +2981,31 @@ ul.blk-bullet img {
   text-align: center;
 }
 
+.upload-image.blue .inputfile2 + label .btn-inputfile,
+.upload-image.blue .inputfile3 + label .btn-inputfile,
+.upload-image.blue .inputfile4 + label .btn-inputfile,
+.upload-image.blue .inputfile5 + label .btn-inputfile {
+  color: #fff;
+  background-color: transparent;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 165px;
+  text-align: center;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #c1bebe;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../images/icon-insertimage.png);
+}
+
 .inputfile:focus + label .btn-inputfile,
 .inputfile.has-focus + label .btn-inputfile,
-.inputfile + label:hover .btn-inputfile {
+.inputfile + label:hover .btn-inputfile,
+.inputfile2:focus + label .btn-inputfile,
+.inputfile2.has-focus + label .btn-inputfile,
+.inputfile2 + label:hover .btn-inputfile {
   background-color: #808080;
 }
 
@@ -3044,9 +3124,6 @@ ul.blk-bullet img {
   opacity: 0;
 }
 
-.upload-btn-wrapper .custom-file-upload {
-  /* display: none; */
-}
 
 #list .overwrite_hospital,
 #list .overwrite,
@@ -3079,15 +3156,18 @@ ul.blk-bullet img {
 }
 
 
-.modal-dialog.edit {
+.modal-dialog.edit,
+.modal-dialog.modal-lg {
   width: 1000px;
   max-width: 1000px;
 }
 
-.modal-dialog.edit .form-progress {
+.modal-dialog.edit .form-progress,
+.modal-dialog.modal-lg .form-progress {
   max-width: 450px;
 }
-.modal-dialog.edit .modal-body {
+.modal-dialog.edit .modal-body,
+.modal-dialog.modal-lg .modal-body {
   padding: 0 15px;
 }
 .modal-dialog.edit .main-content .header-wrapper {

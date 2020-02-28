@@ -1,11 +1,10 @@
-<!-- Modal -->
+<!-- modal_edit_illness -->
 <div id="editillness" class="modal fade" role="dialog" data-keyboard="true">
     <div class="modal-dialog edit">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 				
         <!-- Modal content Starts-->
         <div class="modal-content">
-            
             <div class="modal-header" style="color: black; background-color: #7CD5FF">
                 <h4 class="modal-title"><b>Edit Illness</b></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -13,13 +12,18 @@
             <div class="modal-body">
             <div class="header-wrapper">
                 <div class="left">
+<<<<<<< HEAD
                     <div id="authorID"></div>
                     <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
                     
+=======
+                    <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+                    <div id="authorID"></div>
+>>>>>>> 4446455a2172362ff2f2086b615ca10c0580b6d1
                 </div>
                 <div class="right">
                     <div>作成日<span>Date</span></div>
-                    <div class="select" id="input_arch">
+                    <div class="select mod" id="input_arch">
                         <!-- <select>
                             <option>0000/00/00</option>
                             <option>0000/00/00</option>
@@ -65,7 +69,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                             <div class="cols-4">          
-                                <div id="input_ill"></div>
+                                <div  class="mod" id="input_ill"></div>
                             </div>
                         </div>
                         <!-- Illness Shoulder -->
@@ -103,7 +107,7 @@
                                 <div id="input_doc"></div>
                             </div>
                             <div class="cols-3 rad-buttons">
-                                <div id="input_rad"></div>
+                                <div class="mod" id="input_rad"></div>
                             </div>	
                         </div>
                         <!-- Doctor Comment -->
@@ -122,7 +126,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
                             <div class="cols-5">          
-                                <div id="input_sum"></div>
+                                <div class="mod" id="input_sum"></div>
                             </div>
                             <div class="cols-2">          
                                 
@@ -185,7 +189,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                             <div class="cols-8">  
-                                <div id="input_ra_txt"></div>
+                                <div class="mod" id="input_ra_txt"></div>
                                 
                             </div>
                         </div>
@@ -194,7 +198,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                             <div class="cols-6">
-                                <div id="input_cr"></div>
+                                <div class="mod" id="input_cr"></div>
                             </div>
                             <div class="sidediv cols-3">
                                 <div class="sidebots">
@@ -221,7 +225,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                             <div class="cols-8">  
-                                <div id="input_ra_txt2"></div>
+                                <div class="mod" id="input_ra_txt2"></div>
                                 
                             </div>
                         </div>
@@ -230,7 +234,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                             <div class="cols-6">
-                                <div id="input_cr2"></div>
+                                <div class="mod" id="input_cr2"></div>
                             </div>
                             
                         </div>
@@ -240,7 +244,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
                             <div class="cols-7">
-                                <div id="input_kwords"></div>
+                                <div class="mod" id="input_kwords"></div>
                             </div>
                         </div>
 
@@ -297,7 +301,7 @@
                         <br>
                             <label class="control-label cols-15">h1</label>
                             <div class="cols-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                                <div id="input_h1"></div>
+                                <div class="mod" id="input_h1"></div>
                             </div>
                         </div>
                         
@@ -305,7 +309,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">h2</label>
                             <div class="cols-7">
-                                <div id="input_h2"></div>
+                                <div class="mod" id="input_h2"></div>
                                 
                             </div>
                         </div>
@@ -314,7 +318,7 @@
                         <div class="form-group check">
                             <label class="control-label cols-15">タグ（キーワード<br><span>Tag(key word)</label>
                             <div class="col-sm-9" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
-                                <div id="input_kw"></div>
+                                <div class="mod" id="input_kw"></div>
                                 
                             </div>
                         </div>
@@ -335,14 +339,14 @@
                         <div class="form-group">
                             <label class="control-label cols-15">タグ<br>(診療科・所属科)<br><span>Tag(department)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_dpt"></div>
+                                <div class="mod" id="input_dpt"></div>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="control-label cols-15">タグ（症状）<br><span>Tag(Symptoms)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_sy"></div>
+                                <div class="mod" id="input_sy"></div>
                             </div>
                         </div>
 
@@ -420,7 +424,7 @@
                             <label class="control-label cols-15"></span></label>
                             <div class="cols-7"> 
                                 
-                                <div id="input_tst"></div>
+                                <div class="mod" id="input_tst"></div>
                                 
                             </div>
                         </div>
@@ -428,7 +432,7 @@
                         <div class="form-group">
                             <label class="control-label cols-15">タグ（フリー入力)<br><span>Tag(free)</span></label>
                             <div class="cols-7"> 
-                                <div id="input_free"></div>
+                                <div class="mod" id="input_free"></div>
                                 
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+<!-- modal_add_illness -->
 <div id="previewAddIllness" class="modalDialog">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	
@@ -165,7 +166,6 @@
            
             @if (Request::is('illness_list'))  
             <!-- Buttons -->
-<<<<<<< HEAD
             <div class="modal-buts one">
                 <button type="button" class="btn-prime approval" id="show_img"></button>
             </div>
@@ -180,14 +180,6 @@
             </div>
             @endif
     
-=======
-            @if (Request::is('illness_list'))  
-                <div class="modal-buts"><br>
-                    <input type="submit" class="btn-prime approval" id="show_img">
-                    <!-- <input type="button" class="btn-prime backedit" id="show_img"> -->
-                </div>
-            @endif
->>>>>>> 6921c0be4f62c3c2f7a2403a022e657c82d040e2
         </div>
         {!! Form::close() !!}
     </div>

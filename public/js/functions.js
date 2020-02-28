@@ -58,7 +58,7 @@ $.ajaxSetup({
                   $("#url_generation").val(response['data'][0].url_generation);
                   $("#status").val(response['data'][0].status);
                   
-                  author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                  var author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
                   $("#authorID").html(author);
 
                 var objJSON = JSON.parse(response['data'][0].certificate);
@@ -556,7 +556,7 @@ $.ajaxSetup({
         // e.preventDefault();
         $(this).on('click', function(){
             var id = $(this).attr('hosp-id');
-            alert(id);
+            // alert(id);
 
             $.ajax({
                 url: '/modal_edit_hospital/'+id,
@@ -623,7 +623,7 @@ $.ajaxSetup({
                 dataType: 'json',
                 // data : { id : id },
                 success: function(response){
-                    console.log(response['data']);
+                    console.log('asd'+response);
                 
                     if(response == "success")
 
@@ -1019,7 +1019,7 @@ $.ajaxSetup({
                         input_doc += '<select name="doctor" class="form-control"><option value="'+ response['data'][0].ill_doc +'">'+ response['data'][0].ill_doc +'</option>';
                         
                         $.each(response['doc'], function (i, b) {
-                            console.log('doc '+ b.name)
+                            console.log('doc ' + b.name);
                             input_doc += '<option value="'+ b.name +'">'+ b.name +'</option>';
         
                         });
@@ -1085,14 +1085,16 @@ $.ajaxSetup({
                         }
 
                         // Subheading and Risk Level
-                        var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
-                        var input_risk = "";
+                    var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
+                    console.log('yeahbaywega' + response['ra']);
+                        var input_risk = '';
                         $.each(objJSONrskCnt, function (i, v) {
 
-                            input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            // input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            input_risk += '<input type="text">';
                             
                         });
-                        $("#input_ra_txt").html(input_risk);
+                    $("#input_ra_txt").html(input_risk);
 
                         // Check Results
                         var objJSONcr = JSON.parse(response['ra'][0].ra_result);
@@ -2523,6 +2525,105 @@ $.ajaxSetup({
 
     // hospital ckEditor (first)
 
+    // $('.add-ck1').on('click', addfields1);
+    // var i=0;
+    // function addfields1(e) {
+    //   e.preventDefault();
+    //     var copy = $('#addanother').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //   $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+    //   $('#addnewdiv').append($(copy).html()+ '<br>');
+    //   CKEDITOR.replace('textheading_lead['+oneplus+']');
+    //   i++;  
+
+    // }
+
+    // // hospital department ckEditor (second)
+
+    // $('.add-ck2').on('click', addfields2);
+    // var i=0;
+    // function addfields2(e) {
+    //   e.preventDefault();
+    //   var copy = $('#addanother4').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
+
+    //   $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
+    //     CKEDITOR.replace('med_subj_text_subheading_hospital['+oneplus+']');
+    //   i++;  
+    // }
+
+    // // hospital subject ckEditor (third)
+
+    // $('.add-ck3').on('click', addfields3);
+    // var i=0;
+    // function addfields3(e) {
+    //   e.preventDefault();
+    //   var copy = $('#addanother3').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=feature_text_subheading_hospital\\[0\\]]').attr('name', 'feature_text_subheading_hospital['+oneplus+']');
+
+    //   $('#addnewdiv3').append($(copy).html()+ '<br>');
+    //     CKEDITOR.replace('feature_text_subheading_hospital['+oneplus+']');
+    //   i++;  
+
+    // }
+
+    // // hospital equipment ckEditor (fourth)
+
+    // $('.add-ck4').on('click', addfields4);
+    // var i=0;
+    // function addfields4(e) {
+    //   e.preventDefault();
+    //   var copy = $('#addanother5').clone();
+
+    //   var oneplus=i+1;
+
+    //   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //   $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=equipment_subheading2\\[0\\]]').attr('name', 'equipment_subheading2['+oneplus+']');
+
+    //   $('#addnewdiv5').append($(copy).html()+ '<br>');
+    //     CKEDITOR.replace('equipment_subheading2['+oneplus+']');
+    //   i++;  
+
+    // }
+
+    // // hospital staff ckEditor (fourth)
+
+    // $('.add-ck5').on('click', addfields5);
+    // var i = 0;
+    // function addfields5(e) {
+    //     e.preventDefault();
+    //     var copy = $('#addanother6').clone();
+
+    //     var oneplus = i + 1;
+
+    //     $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+    //     $(copy).find('script').remove();
+    //     $(copy).find('textarea[name=staff_comment_hospital\\[0\\]]').attr('name', 'staff_comment_hospital[' + oneplus + ']');
+
+    //     $('#addnewdiv6').append($(copy).html() + '<br>');
+    //     CKEDITOR.replace('staff_comment_hospital[' + oneplus + ']');
+    //     i++;
+
+    // }
+
+    // hospital ckEditor (first)
+
     $('.add-ck1').on('click', addfields1);
     var i=0;
     function addfields1(e) {
@@ -2531,7 +2632,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
       $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
 
@@ -2551,9 +2652,9 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
-        $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
+      $(copy).find('textarea[name=med_subj_text_subheading_hospital\\[0\\]]').attr('name', 'med_subj_text_subheading_hospital['+oneplus+']');
 
       $('#addnewdiv4').append('<hr />'+$(copy).html()+ '<br>');
         CKEDITOR.replace('med_subj_text_subheading_hospital['+oneplus+']');
@@ -2570,7 +2671,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
         $(copy).find('textarea[name=feature_text_subheading_hospital\\[0\\]]').attr('name', 'feature_text_subheading_hospital['+oneplus+']');
 
@@ -2590,7 +2691,7 @@ $.ajaxSetup({
 
       var oneplus=i+1;
 
-      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('div#cke_textheading_lead').remove();
       $(copy).find('script').remove();
         $(copy).find('textarea[name=equipment_subheading2\\[0\\]]').attr('name', 'equipment_subheading2['+oneplus+']');
 
@@ -2610,7 +2711,7 @@ $.ajaxSetup({
 
         var oneplus = i + 1;
 
-        $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+        $(copy).find('div#cke_textheading_lead').remove();
         $(copy).find('script').remove();
         $(copy).find('textarea[name=staff_comment_hospital\\[0\\]]').attr('name', 'staff_comment_hospital[' + oneplus + ']');
 
@@ -2645,10 +2746,6 @@ $.ajaxSetup({
     $(".addaccess").click(function () {
         $("#access").append('<div class="form-group check"><label class= "control-label cols-15"></label ><div class="cols-5"><div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px"><input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label></div></div></div>'); //add input box
     });
-
-    // $(".addbranch").click(function () {
-    //     $("#branch").append('<div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div><div class="cols-1 relative"><button type="button" class="btn btn-success addbranch"><span class="lnr lnr-plus-circle"></span></button></div></div>'); //add input box
-    // });
 
     $(".addbranch").click(function () {
         $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box

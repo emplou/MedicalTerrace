@@ -1,3 +1,4 @@
+<!-- modal_add_hospital -->
 <div id="previewAddHospital" class="modalDialog">
     <div>	
         <a href="#close" title="Close" class="close">X</a>

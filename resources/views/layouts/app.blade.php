@@ -515,71 +515,80 @@ $(document).ready(function() {
 });
 </script>
 <script>
-	CKEDITOR.replace( 'text_of_heading[]' );
+	CKEDITOR.replace( 'text_of_heading[0]' );
 	CKEDITOR.add
 </script>
 
 <script>
-	CKEDITOR.replace( 'Text_of_Subheading_special[]' );
+	CKEDITOR.replace( 'Text_of_Subheading_special[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'Text_of_Subheading_two_special[]' );
+	CKEDITOR.replace( 'Text_of_Subheading_two_special[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'text_subheading_hospital[]' );
+	CKEDITOR.replace( 'text_subheading_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'textheading_lead[]' );
+	CKEDITOR.replace( 'textheading_lead' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'equipment_subheading[]' );
+	CKEDITOR.replace( 'equipment_subheading[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'equipment_subheading2[]' );
+	CKEDITOR.replace( 'equipment_subheading2[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'med_text_subheading[]' );
-	CKEDITOR.add 
-</script>
-
-<script>
-	CKEDITOR.replace( 'feature_text_subheading_hospital[]' ); 
-	CKEDITOR.add 
-</script>
-<script>
-	CKEDITOR.replace( 'equipment_text_subheading_hospital[]' );
-	CKEDITOR.add 
-</script>
-<script>
-	CKEDITOR.replace( 'staff_comment_hospital[]' );
-	CKEDITOR.add 
-</script>
-<script>
-	CKEDITOR.replace( 'med_subj_text_subheading_hospital[]' );
+	CKEDITOR.replace( 'med_text_subheading[0]' );
 	CKEDITOR.add 
 </script>
 
 <script>
-	CKEDITOR.replace( 'feature_text_subheading_hospital[]' ); 
+	CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'equipment_text_subheading_hospital[]' );
+	CKEDITOR.replace( 'equipment_text_subheading_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'staff_comment_hospital[]' );
+	CKEDITOR.replace( 'staff_comment_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
-	CKEDITOR.replace( 'med_subj_text_subheading_hospital[]' );
+	CKEDITOR.replace( 'med_subj_text_subheading_hospital[0]' );
 	CKEDITOR.add 
+</script>
+
+<script>
+	// CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
+	// CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'equipment_text_subheading_hospital[0]' );
+	CKEDITOR.add 
+</script>
+<script>
+<<<<<<< HEAD
+	CKEDITOR.replace( 'staff_comment_hospital[0]' );
+	CKEDITOR.add 
+</script>
+<script>
+	CKEDITOR.replace( 'med_subj_text_subheading_hospital[0]' );
+	CKEDITOR.add 
+=======
+	// CKEDITOR.replace( 'staff_comment_hospital[]' );
+	// CKEDITOR.add 
+</script>
+<script>
+	// CKEDITOR.replace( 'med_subj_text_subheading_hospital[]' );
+	// CKEDITOR.add 
+>>>>>>> 6c14a3315b8a77ee03fa5d737697a64aef0c96ce
 </script>
 <script>
 	        document.addEventListener("DOMContentLoaded", function(event)
@@ -679,6 +688,8 @@ $(adddept7_button).click(function(e){ //on add input button click
 	e.preventDefault();
 	$(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-5"><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div><div class="cols-5"><select class="form- " name="department[]"><option>選択してください</option><option>industry two</option><option>industry three</option><option>industry four</option></select></div></div><div class="cols-1 relative"></div></div>'); //add input box
 });
+
+
 
 
 
@@ -862,6 +873,143 @@ function countChar(val) {
 	});
 })( jQuery, window, document );
 </script>
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile2' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name2' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile3' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name3' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile4' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name4' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+<script type="text/javascript">
+'use strict';
+
+;( function( $, window, document, undefined )
+{
+	$( '.inputfile5' ).each( function()
+	{
+		var $input	 = $( this ),
+			$label	 = $input.next( 'label' ),
+			labelVal = $label.html();
+
+		$input.on( 'change', function( e )
+		{
+			var fileName = '';
+
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else if( e.target.value )
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				$label.find( '.archive-name5' ).html( fileName );
+			else
+				$label.html( labelVal );
+		});
+
+		// Firefox bug fix
+		$input
+		.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+		.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+	});
+})( jQuery, window, document );
+</script>
+
+
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMuK0OUZEPym74iWarEiCnudUSkuA9I6k&libraries=places&region=JP"></script>
        

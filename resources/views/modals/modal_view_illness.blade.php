@@ -3,11 +3,6 @@
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
-            <ul class="breadcrumb">
-                <li><a href="#"><img src="images/icon-home-green.png"></a></li>
-                <li><a href="#">感染症・寄生虫  </a></li>
-                <li>手足口病</a></li>
-            </ul>
             
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
@@ -20,14 +15,7 @@
                         <span>夏</span>
                     </div>
 
-                    <div class="tooltips">この記事をまとめると</div>
-                    <ul class="checks">
-                        <li>石けんでの手洗い、うがいをして予防します。</li>
-                        <li>手と足、口に赤い発疹や水ぶくれができます。</li>
-                        <li>７月に流行のピークを迎えます。</li>
-                        <li>高熱はあまり出ません。</li>
-                        <li>乳幼児、特に集団生活をしている子どもは注意。</li>
-                    </ul>
+                    
                     <h3>手足口病の基礎知識</h3>
                     </p>主に夏に流行する感染症で、3〜6日の潜伏期の後、手足などに赤い発疹や水ぶくれ、口内炎ができます。高熱が出ることは少なく、1週間ほどで自然に治ります。かかりやすい年齢は5歳以下。毎年、5月頃から患者数が増え、7月に流行のピークを迎えます。一般的には夏風邪と呼ばれることもあります。全身状態が改善すれば、登園・登校が可能になります。<p>
 
@@ -51,25 +39,6 @@
                     </p>有効なワクチンはありません。発病を予防する薬もありません。接触感染を予防するために、しっかり手洗いをすること、うがいをすることなどが基本の対策になります。手洗いは石けんを使い、流水で洗いましょう。治った後も2〜4週間ほど、ウイルスが便中に排泄されることがあるため、感染を広げないために、排泄物を適切に処理することが必要です。おむつ交換をする時は特に気をつけ、しっかり手を洗います。タオルの共用もしません。家庭では兄弟への感染に気をつけること、乳幼児の保育施設などの集団生活では、職員と子どもがしっかり対策をすることが大切です。<p>
                 </div>   
                 
-                <div class="panel-pink">
-                    
-                        <strong>下記のような症状はありますか？</strong>
-                        <ul>
-                            <li>
-                                <input class="styled-checkbox" id="4b" type="checkbox" name="4b" >
-                                <label for="4b" style="font-weight:500;">手のひらや足の裏に赤い湿疹、または水ぶくれができている</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="5b" type="checkbox" name="5b" >
-                                <label for="5b" style="font-weight:500;">口内炎がある</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="6b" type="checkbox" name="6b" >
-                                <label for="6b" style="font-weight:500;">全身がだるい</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="panel-blue">
                     <div class="id-tag">
                         監修・取材協力<br>
@@ -78,8 +47,6 @@
                         医学博士 浅野 勉<br>
                         <a href="">詳しくはこちら</a>
                     </div>
-
-                    
                     <p></p>
                 </div>
             </div>

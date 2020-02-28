@@ -145,7 +145,7 @@
             <div class="form-group full">
                 <label class="control-label cols-15">医師コメント<br><span>Doctor Comment</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control cmt" name="cmt" rows="5" maxlength="200" required>この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                    <textarea class="form-control cmt" name="cmt" rows="5" maxlength="200" placeholder="この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。" required>
 					</textarea>
                 </div>
                 <div class="cols-2">          
@@ -186,7 +186,7 @@
                     <div class="field_wrap2"></div>
                     <div id="addanother1">
                         <div class="cols-10">        
-                            <textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor" required>メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                            <textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。" required>
 
                             </textarea>
                         </div>
@@ -222,7 +222,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7"> 
                          
-                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor" required>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor" placeholder="" required>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
 
                         </textarea>
                     </div>
@@ -342,7 +342,7 @@
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-5">   
-                    <textarea class="form-control seo" name="seo_txt" maxlength="35" required>タイトルタグをカスタマイズする場合はこちらに入力ください<br><span>Meta description for SEO</span></textarea>
+                    <textarea class="form-control seo" name="seo_txt" maxlength="35"  placeholder="タイトルタグをカスタマイズする場合はこちらに入力ください<br><span>Meta description for SEO" required></span></textarea>
                 </div>
                 <div class="cols-1">   
 					<br>
@@ -354,8 +354,8 @@
             <div class="form-group">
                 <label class="control-label cols-15">ディスクリプション<br><span>Meta description for SEO</span></label>
                 <div class="cols-5">   
-                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50" required>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
-時分学校の。</textarea>
+                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50" placeholder="親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る
+時分学校の。" required></textarea>
                 </div>
                 <div class="cols-2">   
 				スマホ・PC用 重要文章 <br>       
@@ -365,7 +365,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">   
-                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70" required>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
+                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70" placeholder="親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。" required></textarea><br>
 				</div>
 				<div class="cols-1">   
 					PC用補足文章 <br>       
@@ -397,7 +397,6 @@
                 <div class="cols-7">
                     <!-- add h2 fields -->
                     <div class="field_wrap5"></div>
-
                     <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]" required></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]" required></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]" required></div>
