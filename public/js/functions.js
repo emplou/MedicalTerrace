@@ -623,7 +623,7 @@ $.ajaxSetup({
                 dataType: 'json',
                 // data : { id : id },
                 success: function(response){
-                    console.log('asd'+response);
+                    //console.log('asd'+response);
                 
                     if(response == "success")
 
@@ -643,8 +643,8 @@ $.ajaxSetup({
                         sp_arch+= '</select>'; 
                         $("#sp_arch").html(sp_arch);  
 
-                        author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
-                        $("#authorID").html(author);
+                        // author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                        // $("#authorID").html(author);
 
                         //Tracking
                         track = response['data'][0].tracking_status; 
@@ -658,24 +658,34 @@ $.ajaxSetup({
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#sp_appreq" ).addClass("rel");
                         } else if(track == '3') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#sp_appreq" ).addClass("rel");
+                            $( "li#sp_appreq" ).addClass("active");
+                            $( "li#sp_approve" ).addClass("rel");
                         } else if(track == '4') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#sp_approve" ).addClass("rel");
+                            $( "li#sp_appreq" ).addClass("active");
+                            $( "li#sp_approve" ).addClass("active");
+                            $( "li#sp_relres" ).addClass("rel");
                         } else if(track == '5') {
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
-                            $( "li#sp_relres" ).addClass("rel");
-                        } else if(track == '6') {
+                            $( "li#sp_appreq" ).addClass("active");
+                            $( "li#sp_approve" ).addClass("active");
+                            $( "li#sp_relres" ).addClass("active");
                             $( "li#sp_release" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#sp_appreq" ).addClass("active");
+                            $( "li#sp_approve" ).addClass("active");
+                            $( "li#sp_relres" ).addClass("active");
+                            $( "li#sp_release" ).addClass("active");
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
                         } else { }
@@ -973,24 +983,34 @@ $.ajaxSetup({
                             $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#appreq" ).addClass("rel");
                         } else if(track == '3') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#appreq" ).addClass("rel");
+                            $( "li#appreq" ).addClass("active");
+                            $( "li#approve" ).addClass("rel");
                         } else if(track == '4') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#approve" ).addClass("rel");
+                            $( "li#appreq" ).addClass("active");
+                            $( "li#approve" ).addClass("active");
+                            $( "li#relres" ).addClass("rel");
                         } else if(track == '5') {
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
-                            $( "li#relres" ).addClass("rel");
-                        } else if(track == '6') {
+                            $( "li#appreq" ).addClass("active");
+                            $( "li#approve" ).addClass("active");
+                            $( "li#relres" ).addClass("active");
                             $( "li#release" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#appreq" ).addClass("active");
+                            $( "li#approve" ).addClass("active");
+                            $( "li#relres" ).addClass("active");
+                            $( "li#release" ).addClass("active");
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
                         } else { }
@@ -1003,6 +1023,7 @@ $.ajaxSetup({
                         $("#illID").val(response['data'][0].id);
                         $("#track_stat").val(response['data'][0].tracking_status);
                         $("#url").val(response['data'][0].ill_url); 
+                        $("#ill_mag").val(response['data'][0].ill_magazine); 
 
                         // Illness Category
                         input_ill = '<select class="form-control ill_cat" id="ill_cat" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
@@ -1077,56 +1098,6 @@ $.ajaxSetup({
                         // image
                         $("#img_cap").val(response['data'][0].ill_img_cap); // image caption
                         $("#img_alt").val(response['data'][0].ill_img_alt); // image alt
-
-                        // Risk Assessment SubTitle
-                        var ra_title = response['ra'][0].ra_title;
-                        if(ra_title == "1"){
-                            $("#a1").attr( "checked", true );
-                        }
-
-                        // Subheading and Risk Level
-                    var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
-                    console.log('yeahbaywega' + response['ra']);
-                        var input_risk = '';
-                        $.each(objJSONrskCnt, function (i, v) {
-
-                            // input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
-                            input_risk += '<input type="text">';
-                            
-                        });
-                    $("#input_ra_txt").html(input_risk);
-
-                        // Check Results
-                        var objJSONcr = JSON.parse(response['ra'][0].ra_result);
-                        var input_cr = "";
-                        $.each(objJSONcr, function (i, v) {
-                            input_cr += '<div class="cols-5"><input type="text" class="form-control" name="cr[]" value="'+v.cr+'"></div>';
-                        });
-                        $("#input_cr").html(input_cr);
-
-                        // Risk Assessment SubTitle 2
-                        var ra_title2 = response['ra2'][0].ra_title;
-                        if(ra_title2 == "1"){
-                            $("#b1").attr( "checked", true );
-                        }
-
-                        // Subheading and Risk Level 2
-                        var objJSONrskCnt2 = JSON.parse(response['ra2'][0].ra_text);
-                        var input_risk2 = "";
-                        $.each(objJSONrskCnt2, function (i, v) {
-
-                            input_risk2 += '<div class="cols-5"><textarea class="form-control sh" name="sh2[]" maxlength="30">'+v.sh2+'</textarea></div><div class="cols-2"> リスク度 <select name="rl2[]"><option value="'+ v.rl2 +'">'+ v.rl2 +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
-                            
-                        });
-                        $("#input_ra_txt2").html(input_risk2);
-
-                        // Check Results 2
-                        var objJSONcr2 = JSON.parse(response['ra2'][0].ra_result);
-                        var input_cr2 = "";
-                        $.each(objJSONcr2, function (i, v) {
-                            input_cr2 += '<div class="cols-5"><input type="text" class="form-control" name="cr2[]" value="'+v.cr2+'"></div>';
-                        });
-                        $("#input_cr2").html(input_cr2);
 
                         // Search Keywords
                         var objJSON = JSON.parse(response['data'][0].ill_kwords);
@@ -1243,6 +1214,66 @@ $.ajaxSetup({
                             z++;
                         });
 
+                        // Risk Assessment SubTitle
+                        var ra_title = response['ra'][0].ra_title;
+                        if(ra_title == "1"){
+                            $("#a1").attr( "checked", true );
+                        }
+
+                        // Subheading and Risk Level
+                        var objJSONrskCnt = JSON.parse(response['ra'][0].ra_text);
+                        var input_risk = '';
+                        $.each(objJSONrskCnt, function (i, v) {
+
+                            input_risk += '<div class="cols-5"><textarea class="form-control sh" name="sh[]" maxlength="30">'+v.sh+'</textarea></div><div class="cols-2"> リスク度 <select name="rl[]"><option value="'+ v.rl +'">'+ v.rl +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            //input_risk += '<input type="text">';
+                            
+                        });
+                        $("#input_ra_txt").html(input_risk);
+
+                        // Subheading and Risk Level 2
+                        var objJSONrskCnt2 = JSON.parse(response['ra2'][0].ra_text);
+                        var input_risk2 = "";
+                        $.each(objJSONrskCnt2, function (i, v) {
+
+                            input_risk2 += '<div class="cols-5"><textarea class="form-control sh" name="sh2[]" maxlength="30">'+v.sh2+'</textarea></div><div class="cols-2"> リスク度 <select name="rl2[]"><option value="'+ v.rl2 +'">'+ v.rl2 +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            
+                        });
+                        $("#input_ra_txt2").html(input_risk2);
+
+
+                        // Check Results
+                        var objJSONcr = JSON.parse(response['ra'][0].ra_result);
+                        var input_cr = "";
+                        $.each(objJSONcr, function (i, v) {
+                            input_cr += '<div class="cols-5"><input type="text" class="form-control" name="cr[]" value="'+v.cr+'"></div>';
+                        });
+                        $("#input_cr").html(input_cr);
+
+                        // Risk Assessment SubTitle 2
+                        var ra_title2 = response['ra2'][0].ra_title;
+                        if(ra_title2 == "1"){
+                            $("#b1").attr( "checked", true );
+                        }
+
+                        // Subheading and Risk Level 2
+                        var objJSONrskCnt2 = JSON.parse(response['ra2'][0].ra_text);
+                        var input_risk2 = "";
+                        $.each(objJSONrskCnt2, function (i, v) {
+
+                            input_risk2 += '<div class="cols-5"><textarea class="form-control sh" name="sh2[]" maxlength="30">'+v.sh2+'</textarea></div><div class="cols-2"> リスク度 <select name="rl2[]"><option value="'+ v.rl2 +'">'+ v.rl2 +'</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><br></div><div class="clear"></div>';
+                            
+                        });
+                        $("#input_ra_txt2").html(input_risk2);
+
+                        // Check Results 2
+                        var objJSONcr2 = JSON.parse(response['ra2'][0].ra_result);
+                        var input_cr2 = "";
+                        $.each(objJSONcr2, function (i, v) {
+                            input_cr2 += '<div class="cols-5"><input type="text" class="form-control" name="cr2[]" value="'+v.cr2+'"></div>';
+                        });
+                        $("#input_cr2").html(input_cr2);
+
 
                     },
                     error: function(response){
@@ -1289,11 +1320,12 @@ $.ajaxSetup({
                             sp_arch_two += '<option value="'+ b.archived_date +'">'+ b.archived_date +'</option>';
         
                         });
-                        author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
-                        $("#authorID").html(author); 
-
+                        
                         sp_arch_two+= '</select>'; 
-                        $("#sp_arch_two").html(sp_arch_two);  
+                        $("#sp_arch_two").html(sp_arch_two); 
+                        
+                        // author = '<h2>'+response['auth'][0].name+'<span>ID番号:S00000'+response['auth'][0].id+'</span></h2>'
+                        // $("#authorID").html(author); 
 
                         //Tracking
                         track = response['data'][0].tracking_status; 
@@ -1307,24 +1339,34 @@ $.ajaxSetup({
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#sp_appreq_two" ).addClass("rel");
                         } else if(track == '3') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#sp_appreq_two" ).addClass("rel");
+                            $( "li#sp_appreq_two" ).addClass("active");
+                            $( "li#sp_approve_two" ).addClass("rel");
                         } else if(track == '4') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#sp_approve_two" ).addClass("rel");
+                            $( "li#sp_appreq_two" ).addClass("active");
+                            $( "li#sp_approve_two" ).addClass("active");
+                            $( "li#sp_relres_two" ).addClass("rel");
                         } else if(track == '5') {
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
-                            $( "li#sp_relres_two" ).addClass("rel");
-                        } else if(track == '6') {
+                            $( "li#sp_appreq_two" ).addClass("active");
+                            $( "li#sp_approve_two" ).addClass("active");
+                            $( "li#sp_relres_two" ).addClass("active");
                             $( "li#sp_release_two" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#sp_appreq_two" ).addClass("active");
+                            $( "li#sp_approve_two" ).addClass("active");
+                            $( "li#sp_relres_two" ).addClass("active");
+                            $( "li#sp_release_two" ).addClass("active");
                             $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
                         } else { }
@@ -1606,24 +1648,34 @@ $.ajaxSetup({
                             $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
+                            $( "li#appreq_two" ).addClass("rel");
                         } else if(track == '3') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#appreq_two" ).addClass("rel");
+                            $( "li#appreq_two" ).addClass("active");
+                            $( "li#approve_two" ).addClass("rel");
                         } else if(track == '4') {
                             //$(".release1").attr("disabled", "disabled");
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
-                            $( "li#approve_two" ).addClass("rel");
+                            $( "li#appreq_two" ).addClass("active");
+                            $( "li#approve_two" ).addClass("active");
+                            $( "li#relres_two" ).addClass("rel");
                         } else if(track == '5') {
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
-                            $( "li#relres_two" ).addClass("rel");
-                        } else if(track == '6') {
+                            $( "li#appreq_two" ).addClass("active");
+                            $( "li#approve_two" ).addClass("active");
+                            $( "li#relres_two" ).addClass("active");
                             $( "li#release_two" ).addClass("rel");
+                        } else if(track == '6') {
+                            $( "li#appreq_two" ).addClass("active");
+                            $( "li#approve_two" ).addClass("active");
+                            $( "li#relres_two" ).addClass("active");
+                            $( "li#release_two" ).addClass("active");
                             $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
                             $(".release2").attr("style", "background-image: url(../images/icon-pink-release.png);");
                         } else { }
@@ -1636,6 +1688,8 @@ $.ajaxSetup({
                         $("#twourl").val(response['data'][0].ill_url); // url
 
                         $("#track_stat_two").val(response['data'][0].tracking_status);
+
+                        $("#two_ill_mag").val(response['data'][0].ill_magazine); 
 
                         // Illness Category
                         input_ill_two = '<select class="form-control ill_cat_two" name="ill_cat"><option value="'+ response['data'][0].ill_cat +'">'+ response['data'][0].ill_cat +'</option> <option value="選択してください">選択してください</option><option value="選択してください">選択してください</option><option value="感染症・寄生虫症">感染症・寄生虫症</option><option value="女性特有のがん＊">女性特有のがん＊</option><option value="男性特有のがん">男性特有のがん</option><option value="消化管のがん">消化管のがん</option><option value="胸部のがん">胸部のがん</option><option value="肝臓・胆のう・膵臓のがん">肝臓・胆のう・膵臓のがん</option><option value="泌尿器のがん">泌尿器のがん</option><option value="口・のど・鼻・耳のがん">口・のど・鼻・耳のがん</option><option value="脳・神経・眼のがん">脳・神経・眼のがん</option><option value="その他の腹部のがん">その他の腹部のがん</option><option value="皮膚のがん">皮膚のがん</option><option value="骨・筋肉のがん">骨・筋肉のがん</option><option value="血液・リンパ（白血病）のがん">血液・リンパ（白血病）のがん</option><option value="血液・リンパ（悪性リンパ種）のがん">血液・リンパ（悪性リンパ種）のがん</option><option value="血液・リンパ（その他）のがん">血液・リンパ（その他）のがん</option><option value="血液・リンパの病気">血液・リンパの病気</option><option value="内分泌や代謝の病気">内分泌や代謝の病気</option><option value="こころ・精神の病気">こころ・精神の病気</option><option value="脳・神経系の病気">脳・神経系の病気</option><option value="眼の病気">眼の病気</option><option value="耳・鼻・のどの病気">耳・鼻・のどの病気</option><option value="循環器系の病気">循環器系の病気</option><option value="呼吸器系の病気">呼吸器系の病気</option><option value="消化器系の病気">消化器系の病気</option><option value="歯科・口腔疾患">歯科・口腔疾患</option><option value="皮膚の病気">皮膚の病気</option><option value="骨や関節の病気">骨や関節の病気</option><option value="腎臓、尿路、生殖器の病気">腎臓、尿路、生殖器の病気</option><option value="妊娠・出産・女性（婦人）の病気">妊娠・出産・女性（婦人）の病気</option><option value="胎児と新生児に関わる障害">胎児と新生児に関わる障害</option><option value="先天奇形・変形及び染色体異常">先天奇形・変形及び染色体異常</option><option value="そのほかの病気">そのほかの病気</option><option value="ケガ・中毒・火傷など外因による傷病">ケガ・中毒・火傷など外因による傷病</option></select>';
@@ -1923,7 +1977,7 @@ $.ajaxSetup({
             iD = $("#iD").val(); // ID
             $("#id_ill").val($("#iD").val());
             $("#iD").html(iD);
-            ill_cat = $(".ill_cat").val(); // Illness Category
+            ill_cat = $("#ill_cat").val(); // Illness Category
             $(".ill_cat").html(ill_cat);
             ill_name = $("#ill").val(); // Illness Name
             $(".ill_name").html(ill_name);
