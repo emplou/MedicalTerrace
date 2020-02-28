@@ -1428,6 +1428,7 @@ header .dashboard small {
   font-size: 16px;
   font-weight: 400;
   display: block;
+  color: #404040;
 }
 header h1 {
   margin: 0;
@@ -3088,11 +3089,9 @@ ul.blk-bullet img {
     border-left-color: #7fbd00;
 }
 
-
 .editor .cols-1.relative {
   height: 310px;
 }
-
 
 .upload-btn-wrapper {
   width: 100%;
@@ -3177,4 +3176,54 @@ ul.blk-bullet img {
 
 .modal-dialog.edit label {
   margin-top:0;
+}
+
+.content-container.home {
+  margin-left: -20px;
+  width: 100%;
+}
+
+.second-heading {
+  display: table;
+}
+.second-heading h1{
+  width: 55%;
+  float: left;
+  font-size: 30px;
+}
+.second-heading .add-buts {
+  width: 45%;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.add-buts .buts {
+  width: 28.3%;
+  float: left;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 8px;
+  margin: 4px 8px;
+  line-height: 15px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #46a9a9;
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-image: url(../../images/bg-btn.jpg);
+}
+
+.add-buts .buts span {
+  font-size: 12px;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: 400px !important;
+    border-radius: 20px !important;
+    padding: 10px !important;
 }
