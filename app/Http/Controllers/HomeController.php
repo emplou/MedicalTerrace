@@ -706,7 +706,7 @@ class HomeController extends Controller
         $special->sp_ill_img           = $jsonpos_list;//it should be json script when added
         $special->sp_sum2              = $jsoncontent2; //it should be json script when added
         $special->sp_seo_kwords        = $jsonk_list; //it should be json script when added
-        $special->seo_title            = $details['seo'];
+        $special->seo_title            = isset($details['seo']) ? 1 : 0;
         $special->sp_seo_txt           = $details['seo_txt'];
         $special->sp_seo_desc          = $details['meta_txt1'];
         $special->sp_seo_desc2         = $details['meta_txt2'];
@@ -719,7 +719,7 @@ class HomeController extends Controller
         $special->sp_tag_season        = $jsons_list; //it should be json script when added
         $special->sp_ta_season_txt     = $jsontxt_list; //it should be json script when added
         $special->sp_tag_free          = $jsonf_list; //it should be json script when added$illness->status    
-        $special->tracking_status      = '1';
+        $special->tracking_status      = '3';
         $special->save();
 
         $now = date('Y-m-d H:i'); //Fomat Date and time
@@ -812,7 +812,7 @@ class HomeController extends Controller
         $jsonsy_list = json_encode($response5);
 
         // tag season
-        $s_list = $details['tag_s']; 
+        $s_list = $details['tag_s'];
         $response6 = array();
         foreach($s_list as $key6 => $cert6)
         {
@@ -865,10 +865,11 @@ class HomeController extends Controller
         $illness->ill_img_alt           = $details['img_alt'];
         $illness->ill_sub_txt           = $jsoncontent; //it should be json script when added
         $illness->ill_kwords            = $jsonk_list;
-        $illness->ill_seo               = $details['seo'];
+        $illness->ill_seo               = isset($details['seo']) ? 1 : 0;
         $illness->ill_seo_txt           = $details['seo_txt'];
         $illness->ill_meta_a            = $details['meta_txt1'];
         $illness->ill_meta_b            = $details['meta_txt2'];
+        $illness->ill_tag_name          = isset($details['tag_b']) ? 1 : 0;
         $illness->ill_h1                = $details['h1'];
         $illness->ill_h2                = $jsonh2_list; //it should be json script when added
         $illness->ill_tag_kw            = $jsontag_list; //it should be json script when added
@@ -877,7 +878,7 @@ class HomeController extends Controller
         $illness->ill_tag_season        = $jsons_list; // added division and medical subject list and field
         $illness->ill_tag_season_txt    = $jsonstxt_list; // added division and medical subject list and field
         $illness->ill_tag_free          = $jsonf_list; // added division and medical subject list and field
-        $illness->tracking_status      = '2';
+        $illness->tracking_status      = '3';
         $illness->save();
 
         $now = date('Y-m-d'); //Fomat Date and time
@@ -885,7 +886,7 @@ class HomeController extends Controller
         $archive = new Archive;
         $archive->type              = '4';
         $archive->type_id           = $illness->id;
-        $archive->tracking_type     = '1';
+        $archive->tracking_type     = '3';
         $archive->archived_date     = $now;  
         $archive->save();
 
@@ -1697,15 +1698,14 @@ class HomeController extends Controller
     public function overwrite_illness(Request $request){
         $details = Input::all();
 
-
         /* illness image */
-        // $destinationPath = '';
-        // $filename        = '';
-        // $file            = $request->file('img');
+        $destinationPath = '';
+        $filename        = '';
+        $file            = $request->file('img');
 
-        // $destinationPath = public_path().'/illness';
-        // $filename        = str_random(6) . '_' . $file->getClientOriginalName();
-        // $uploadSuccess   = $file->move($destinationPath, $filename);
+        $destinationPath = public_path().'/illness';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
         /* end of illness image */
 
         // description summary
@@ -1815,15 +1815,16 @@ class HomeController extends Controller
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
                                                 'ill_summary'           => $jsonsum_list,
-                                                //'ill_img'               => $details['img'],
+                                                'ill_img'               => '/img/'.$filename,
                                                 'ill_img_cap'           => $details['img_cap'],
                                                 'ill_img_alt'           => $details['img_alt'],
                                                 'ill_sub_txt'           => $jsoncontent,
                                                 'ill_kwords'            => $jsonk_list,
-                                                //'ill_seo'               => $details['seo'],
+                                                'ill_seo'               => isset($details['seo']) ? 1 : 0,
                                                 'ill_seo_txt'           => $details['seo_txt'],
                                                 'ill_meta_a'            => $details['meta_txt1'],
                                                 'ill_meta_b'            => $details['meta_txt2'],
+                                                'ill_tag_name'          => isset($details['tag_b']) ? 1 : 0,
                                                 'ill_h1'                => $details['h1'],
                                                 'ill_h2'                => $jsonh2_list,
                                                 'ill_tag_kw'            => $jsontag_list,
@@ -2255,6 +2256,7 @@ class HomeController extends Controller
 
     //Overwrite Special
     public function overwrite_special(Request $request){
+
         $details = Input::all();
 
         /* special image */
@@ -2266,6 +2268,7 @@ class HomeController extends Controller
         // $filename        = str_random(6) . '_' . $file->getClientOriginalName();
         // $uploadSuccess   = $file->move($destinationPath, $filename);
         /* end of special image */
+        
 
         // lead ckeditor
         $lead_list = $details['lead_ckeditor']; 
@@ -2330,11 +2333,11 @@ class HomeController extends Controller
         $jsonh2_list = json_encode($response4); 
 
         // tag
-        $tag_list = $details['tag']; 
+        $tag_list = $details['tag_ch']; 
         $response5 = array();
         foreach($tag_list as $key5 => $cert5)
         {
-            $response5[$key5]['tag'] = $cert5;
+            $response5[$key5]['tag_ch'] = isset($cert5) ? 1 : 0;
         }
         $jsontag_list = json_encode($response5); 
 
@@ -2343,7 +2346,7 @@ class HomeController extends Controller
         $response6 = array();
         foreach($till_list as $key6 => $cert6)
         {
-            $response6[$key6]['tag_ill'] = $cert6;
+            $response6[$key6]['tag_ill'] = isset($cert6) ? 1 : 0;
         }
         $jsontill_list = json_encode($response6); 
 
@@ -2413,7 +2416,7 @@ class HomeController extends Controller
                                                 'sp_ill_img'            => $jsonpos_list,
                                                 'sp_sum2'               => $jsoncontent2,
                                                 'sp_seo_kwords'         => $jsonk_list,
-                                                'seo_title'             => $details['seo'],
+                                                'seo_title'             => isset($details['seo']) ? 1 : 0,
                                                 'sp_seo_txt'            => $details['seo_txt'],
                                                 'sp_seo_desc'           => $details['meta_txt1'],
                                                 'sp_seo_desc2'          => $details['meta_txt2'],

@@ -680,7 +680,7 @@ $(document).ready(function(){
     });
     $("#ill").keyup(function(){
         // Getting the current value of textarea
-        ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
+        ill = '<input type="checkbox" id="tag9" name="tag_b" value="1"><label for="tag9">'+ $(this).val()+'</label>';
         ill2 = ''+ $(this).val()+'';
         ill3 = ''+ $(this).val()+'';
         

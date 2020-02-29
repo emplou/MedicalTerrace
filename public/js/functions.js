@@ -660,8 +660,8 @@ $.ajaxSetup({
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#sp_appreq" ).addClass("rel");
                         } else if(track == '3') {
-                            //$(".release1").attr("disabled", "disabled");
-                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#sp_appreq" ).addClass("active");
@@ -740,18 +740,18 @@ $.ajaxSetup({
                         }   
 
                         // Subheading 1
-                        input_sub1 = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
-                        $("#input_sub1").html(input_sub1);
+                        // input_sub1 = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                        // $("#input_sub1").html(input_sub1);
 
-                        $("#sub_head1b").val(response['data'][0].sp_sub2);
-                        $("#txt_ckeditor").val(response['data'][0].sp_sum);
+                        // $("#sub_head1b").val(response['data'][0].sp_sub2);
+                        // $("#txt_ckeditor").val(response['data'][0].sp_sum);
 
                         // Subheading 2
-                        input_sub1_b = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
-                        $("#input_sub1_b").html(input_sub1_b);
+                        // input_sub1_b = '<select name="sub_head2a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                        // $("#input_sub1_b").html(input_sub1_b);
 
-                        $("#sub2_head1b").val(response['data'][0].sp_sub4);
-                        $("#txt2_ckeditor").val(response['data'][0].sp_sum2);
+                        // $("#sub2_head1b").val(response['data'][0].sp_sub4);
+                        // $("#txt2_ckeditor").val(response['data'][0].sp_sum2);
 
                         // SEO Title
                         var seo_title = response['data'][0].seo_title;
@@ -769,7 +769,7 @@ $.ajaxSetup({
                         $.each(objJSON, function (i, v) {
                             var xplus=x+1;
                             input_seo += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" id="kword" value="'+v.kword+'"></div>';
-                            input_kw += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag'+xplus+'"> '+v.kword+'</label></div>';
+                            input_kw += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag_ch[]" value="1" /><label for="tag'+xplus+'"> '+v.kword+'</label></div>';
                         
                             x++;
                         });
@@ -900,16 +900,64 @@ $.ajaxSetup({
                             input_free += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
                         });
                         $("#input_free").html(input_free);
+
+                        // Tag Illness
+                        // var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
+                        // var z = 0;
+                        // $.each(objJSONts, function (i, v) {
+                        //     var zplus=z+1;
+                        //     if(v.tag_s == 1){
+                        //         $("#tag_s"+zplus).attr( "checked", true );
+                        //     }
+                        //     z++;
+                        // });
                         
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
-                        var z = 0;
+                        // var z = 0;
+                        // $.each(objJSONts, function (i, v) {
+                        //     var zplus=z+1;
+                        //     if(v.tag_s == 1){
+                        //         $("#tag_s"+zplus).attr( "checked", true );
+                        //     }
+                        //     z++;
+                        // });
                         $.each(objJSONts, function (i, v) {
-                            var zplus=z+1;
-                            if(v.tag_s == 1){
-                                $("#tag_s"+zplus).attr( "checked", true );
-                            }
-                            z++;
+                            //var zplus=z+1;
+                            if(v.tag_s == "春"){
+                                $("#tag_s1").attr( "checked", true );
+                            } else if(v.tag_s == "夏"){
+                                $("#tag_s2").attr( "checked", true );
+                            } else if(v.tag_s == "秋"){
+                                $("#tag_s3").attr( "checked", true );
+                            } else if(v.tag_s == "冬"){
+                                $("#tag_s4").attr( "checked", true );
+                            } else if(v.tag_s == "4月"){
+                                $("#tag_s5").attr( "checked", true );
+                            } else if(v.tag_s == "5月"){
+                                $("#tag_s6").attr( "checked", true );
+                            } else if(v.tag_s == "6月"){
+                                $("#tag_s7").attr( "checked", true );
+                            } else if(v.tag_s == "7月"){
+                                $("#tag_s8").attr( "checked", true );
+                            } else if(v.tag_s == "8月"){
+                                $("#tag_s9").attr( "checked", true );
+                            } else if(v.tag_s == "9月"){
+                                $("#tag_s10").attr( "checked", true );
+                            } else if(v.tag_s == "10月"){
+                                $("#tag_s11").attr( "checked", true );
+                            } else if(v.tag_s == "11月"){
+                                $("#tag_s12").attr( "checked", true );
+                            } else if(v.tag_s == "12月"){
+                                $("#tag_s13").attr( "checked", true );
+                            } else if(v.tag_s == "1月"){
+                                $("#tag_s14").attr( "checked", true );
+                            } else if(v.tag_s == "2月"){
+                                $("#tag_s15").attr( "checked", true );
+                            } else if(v.tag_s == "3月"){
+                                $("#tag_s16").attr( "checked", true );
+                            } else { } 
+                            //z++;
                         });
 
                         //Tag Keywords
@@ -985,8 +1033,8 @@ $.ajaxSetup({
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#appreq" ).addClass("rel");
                         } else if(track == '3') {
-                            //$(".release1").attr("disabled", "disabled");
-                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#appreq" ).addClass("active");
@@ -1068,7 +1116,9 @@ $.ajaxSetup({
                         var objJSON = JSON.parse(response['data'][0].ill_summary);
                         var inputs = "";
                         $.each(objJSON, function (i, v) {
-                            inputs += '<textarea class="form-control sm" name="sm[]" rows="3" id="sm" maxlength="200">'+v.sm+'</textarea><br>';
+                            //if(v.sm != "null"){
+                                inputs += '<textarea class="form-control sm" name="sm[]" rows="3" id="sm" maxlength="200">'+v.sm+'</textarea><br>';
+                            //}
                         });
                         $("#input_sum").html(inputs);
 
@@ -1142,7 +1192,7 @@ $.ajaxSetup({
                             
                             input_kwords += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
 
-                            input_kw += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag'+xplus+'">'+v.kword+'</label></div>';
+                            input_kw += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" value="1" /><label for="tag'+xplus+'">'+v.kword+'</label></div>';
                         
                             x++; 
                         });
@@ -1203,15 +1253,60 @@ $.ajaxSetup({
                             y++;
                         });
 
+                        // Tag Illness
+                        var chk_illname = response['data'][0].ill_tag_name;
+                        var illname = response['data'][0].ill_name;
+                        if(chk_illname == "1"){
+                            $("#tag9").attr( "checked", true );
+                        }
+                        $(".tag9_name").html(illname);
+
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
-                        var z = 0;
+                        //var z = 0;
+                        // $.each(objJSONts, function (i, v) {
+                        //     var zplus=z+1;
+                        //     if(v.tag_s == 1){
+                        //         $("#taga"+zplus).attr( "checked", true );
+                        //     }
+                        //     z++;
+                        // });
                         $.each(objJSONts, function (i, v) {
-                            var zplus=z+1;
-                            if(v.tag_s == 1){
-                                $("#taga"+zplus).attr( "checked", true );
-                            }
-                            z++;
+                            //var zplus=z+1;
+                            if(v.tag_s == "春"){
+                                $("#taga1").attr( "checked", true );
+                            } else if(v.tag_s == "夏"){
+                                $("#taga2").attr( "checked", true );
+                            } else if(v.tag_s == "秋"){
+                                $("#taga3").attr( "checked", true );
+                            } else if(v.tag_s == "冬"){
+                                $("#taga4").attr( "checked", true );
+                            } else if(v.tag_s == "4月"){
+                                $("#taga5").attr( "checked", true );
+                            } else if(v.tag_s == "5月"){
+                                $("#taga6").attr( "checked", true );
+                            } else if(v.tag_s == "6月"){
+                                $("#taga7").attr( "checked", true );
+                            } else if(v.tag_s == "7月"){
+                                $("#taga8").attr( "checked", true );
+                            } else if(v.tag_s == "8月"){
+                                $("#taga9").attr( "checked", true );
+                            } else if(v.tag_s == "9月"){
+                                $("#taga10").attr( "checked", true );
+                            } else if(v.tag_s == "10月"){
+                                $("#taga11").attr( "checked", true );
+                            } else if(v.tag_s == "11月"){
+                                $("#taga12").attr( "checked", true );
+                            } else if(v.tag_s == "12月"){
+                                $("#taga13").attr( "checked", true );
+                            } else if(v.tag_s == "1月"){
+                                $("#taga14").attr( "checked", true );
+                            } else if(v.tag_s == "2月"){
+                                $("#taga15").attr( "checked", true );
+                            } else if(v.tag_s == "3月"){
+                                $("#taga16").attr( "checked", true );
+                            } else { } 
+                            //z++;
                         });
 
                         // Risk Assessment SubTitle
@@ -1341,8 +1436,8 @@ $.ajaxSetup({
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#sp_appreq_two" ).addClass("rel");
                         } else if(track == '3') {
-                            //$(".release1").attr("disabled", "disabled");
-                            $(".sp_release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".sp_release1").attr("disabled", "disabled");
+                            $(".sp_release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".sp_release2").attr("disabled", "disabled");
                             $(".sp_release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#sp_appreq_two" ).addClass("active");
@@ -1568,13 +1663,50 @@ $.ajaxSetup({
 
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
-                        var z = 0;
+                        // var z = 0;
+                        // $.each(objJSONts, function (i, v) {
+                        //     var zplus=z+1;
+                        //     if(v.tag_s == 1){
+                        //         $("#tag_s_two"+zplus).attr( "checked", true );
+                        //     }
+                        //     z++;
+                        // });
                         $.each(objJSONts, function (i, v) {
-                            var zplus=z+1;
-                            if(v.tag_s == 1){
-                                $("#tag_s_two"+zplus).attr( "checked", true );
-                            }
-                            z++;
+                            //var zplus=z+1;
+                            if(v.tag_s == "春"){
+                                $("#tag_s_two1").attr( "checked", true );
+                            } else if(v.tag_s == "夏"){
+                                $("#tag_s_two2").attr( "checked", true );
+                            } else if(v.tag_s == "秋"){
+                                $("#tag_s_two3").attr( "checked", true );
+                            } else if(v.tag_s == "冬"){
+                                $("#tag_s_two4").attr( "checked", true );
+                            } else if(v.tag_s == "4月"){
+                                $("#tag_s_two5").attr( "checked", true );
+                            } else if(v.tag_s == "5月"){
+                                $("#tag_s_two6").attr( "checked", true );
+                            } else if(v.tag_s == "6月"){
+                                $("#tag_s_two7").attr( "checked", true );
+                            } else if(v.tag_s == "7月"){
+                                $("#tag_s_two8").attr( "checked", true );
+                            } else if(v.tag_s == "8月"){
+                                $("#tag_s_two9").attr( "checked", true );
+                            } else if(v.tag_s == "9月"){
+                                $("#tag_s_two10").attr( "checked", true );
+                            } else if(v.tag_s == "10月"){
+                                $("#tag_s_two11").attr( "checked", true );
+                            } else if(v.tag_s == "11月"){
+                                $("#tag_s_two12").attr( "checked", true );
+                            } else if(v.tag_s == "12月"){
+                                $("#tag_s_two13").attr( "checked", true );
+                            } else if(v.tag_s == "1月"){
+                                $("#tag_s_two14").attr( "checked", true );
+                            } else if(v.tag_s == "2月"){
+                                $("#tag_s_two15").attr( "checked", true );
+                            } else if(v.tag_s == "3月"){
+                                $("#tag_s_two16").attr( "checked", true );
+                            } else { } 
+                            //z++;
                         });
 
                         //Tag Keywords
@@ -1650,8 +1782,8 @@ $.ajaxSetup({
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#appreq_two" ).addClass("rel");
                         } else if(track == '3') {
-                            //$(".release1").attr("disabled", "disabled");
-                            $(".release1").attr("style", "background-image: url(../images/icon-pink-relreserve.png);");
+                            $(".release1").attr("disabled", "disabled");
+                            $(".release1").attr("style", "background-image: url(../images/icon-half-relreserve.png);");
                             $(".release2").attr("disabled", "disabled");
                             $(".release2").attr("style", "background-image: url(../images/icon-half-release.png);");
                             $( "li#appreq_two" ).addClass("active");
@@ -1822,7 +1954,7 @@ $.ajaxSetup({
                             
                             input_kwords_two += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
 
-                            input_kw_two += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'_two" name="tag[]" /><label for="tag'+xplus+'_two">'+v.kword+'</label></div>';
+                            input_kw_two += '<div class="cols-3"><input type="checkbox" id="twotag'+xplus+'" name="tag[]" value="1" /><label for="tag'+xplus+'_two">'+v.kword+'</label></div>';
                         
                             x++; 
                         });
@@ -1902,20 +2034,66 @@ $.ajaxSetup({
                         $.each(objJSONitk, function (i, v) {
                             var yplus=y+1;
                             if(v.tag == 1){
-                                $("#tag"+yplus).attr( "checked", true );
+                                $("#twotag"+yplus).attr( "checked", true );
                             }
                             y++;
                         });
 
+                        // Tag Illness
+                        var chk_illname = response['data'][0].ill_tag_name;
+                        var illname = response['data'][0].ill_name;
+                        if(chk_illname == "1"){
+                            $("#tag9_two").attr( "checked", true );
+                        }
+                        $(".tag9_two_name").html(illname);
+
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
-                        var z = 0;
+                        // var z = 0;
+                        // $.each(objJSONts, function (i, v) {
+                        //     var zplus=z+1;
+                        //     if(v.tag_s == 1){
+                        //         $("#twotaga"+zplus).attr( "checked", true );
+                        //     }
+                        //     z++;
+                        // });
+
                         $.each(objJSONts, function (i, v) {
-                            var zplus=z+1;
-                            if(v.tag_s == 1){
-                                $("#twotaga"+zplus).attr( "checked", true );
-                            }
-                            z++;
+                            //var zplus=z+1;
+                            if(v.tag_s == "春"){
+                                $("#twotaga1").attr( "checked", true );
+                            } else if(v.tag_s == "夏"){
+                                $("#twotaga2").attr( "checked", true );
+                            } else if(v.tag_s == "秋"){
+                                $("#twotaga3").attr( "checked", true );
+                            } else if(v.tag_s == "冬"){
+                                $("#twotaga4").attr( "checked", true );
+                            } else if(v.tag_s == "4月"){
+                                $("#twotaga5").attr( "checked", true );
+                            } else if(v.tag_s == "5月"){
+                                $("#twotaga6").attr( "checked", true );
+                            } else if(v.tag_s == "6月"){
+                                $("#twotaga7").attr( "checked", true );
+                            } else if(v.tag_s == "7月"){
+                                $("#twotaga8").attr( "checked", true );
+                            } else if(v.tag_s == "8月"){
+                                $("#twotaga9").attr( "checked", true );
+                            } else if(v.tag_s == "9月"){
+                                $("#twotaga10").attr( "checked", true );
+                            } else if(v.tag_s == "10月"){
+                                $("#twotaga11").attr( "checked", true );
+                            } else if(v.tag_s == "11月"){
+                                $("#twotaga12").attr( "checked", true );
+                            } else if(v.tag_s == "12月"){
+                                $("#twotaga13").attr( "checked", true );
+                            } else if(v.tag_s == "1月"){
+                                $("#twotaga14").attr( "checked", true );
+                            } else if(v.tag_s == "2月"){
+                                $("#twotaga15").attr( "checked", true );
+                            } else if(v.tag_s == "3月"){
+                                $("#twotaga16").attr( "checked", true );
+                            } else { } 
+                            //z++;
                         });
                         
                   
