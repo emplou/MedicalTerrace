@@ -575,21 +575,12 @@ $(document).ready(function() {
 	CKEDITOR.add 
 </script>
 <script>
-<<<<<<< HEAD
 	CKEDITOR.replace( 'staff_comment_hospital[0]' );
 	CKEDITOR.add 
 </script>
 <script>
 	CKEDITOR.replace( 'med_subj_text_subheading_hospital[0]' );
 	CKEDITOR.add 
-=======
-	// CKEDITOR.replace( 'staff_comment_hospital[]' );
-	// CKEDITOR.add 
-</script>
-<script>
-	// CKEDITOR.replace( 'med_subj_text_subheading_hospital[]' );
-	// CKEDITOR.add 
->>>>>>> 6c14a3315b8a77ee03fa5d737697a64aef0c96ce
 </script>
 <script>
 	        document.addEventListener("DOMContentLoaded", function(event)
