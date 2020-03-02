@@ -110,7 +110,7 @@
                      <select name="doctor" class="form-control" required>
                         <option value="">選択してください</option>
                         @foreach($doctors as $doc)
-                            <option value="{!! $doc->id !!}">{!! $doc->name !!}</option>
+                            <option value="{!! $doc->name !!}">{!! $doc->name !!}</option>
                         @endforeach
                     </select>
                 </div>
@@ -151,7 +151,7 @@
                     <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
-					<span id="rchars4">0</span>/46
+					<span id="rchars5">0</span>/46
 				</div>
             </div>
             <div class="form-group">
@@ -160,7 +160,7 @@
                     <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
-					<span id="rchars4">0</span>/46
+					<span id="rchars6">0</span>/46
 				</div>
             </div>
             <div class="form-group">
@@ -169,20 +169,25 @@
                     <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
-					<span id="rchars4">0</span>/46
+					<span id="rchars7">0</span>/46
 				</div>
             </div>
+            
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
                     <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
-                <div class="cols-2 relative">          
-                    <span id="rchars4">0</span>/46
+                <div class="cols-2">          
+                    <!-- <span id="rchars8">0</span>/46 -->
                     <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div>
        
 				</div>
             </div>
+
+            <!-- Add new fiends in this wrapper -->
+            <div class="wrapper"></div>
+            
              <!-- Main Image -->
             <div class="form-group">
                 <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>
@@ -246,7 +251,7 @@
                     <div class="cols-6">   
                        
                         <div class="cols-10">        
-                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ckeditor" placeholder=""></textarea>
+                            <textarea class="form-control ck" name="txt_ckeditor[]" placeholder=""></textarea>
                         </div>
                         
                     </div>
@@ -295,7 +300,7 @@
                             <option value="5">5</option>
 
                         </select><br>         
-                        <span id="rchars8">0</span>/46
+                        <span id="rchars9">0</span>/46
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
@@ -311,7 +316,7 @@
                             <option value="5">5</option>
 
                         </select><br>                
-                        <span id="rchars9">0</span>/46
+                        <span id="rchars10">0</span>/46
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
@@ -327,7 +332,7 @@
                             <option value="5">5</option>
 
                         </select><br>                
-                        <span id="rchars9">0</span>/46
+                        <span id="rchars11">0</span>/46
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
@@ -343,7 +348,7 @@
                             <option value="5">5</option>
 
                         </select><br>                
-                        <span id="rchars9">0</span>/46
+                        <span id="rchars12">0</span>/46
                     </div>
                     <div class="clear"></div>
                     <div class="cols-5">          
@@ -359,7 +364,7 @@
                             <option value="5">5</option>
 
                         </select><br>                
-                        <span id="rchars9">0</span>/46
+                        <span id="rchars13">0</span>/46
                         <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
                     </div>
                 </div>
@@ -400,7 +405,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-8">  
                         <div class="cols-5">          
-                            <textarea class="form-control sh" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度 
@@ -412,11 +417,11 @@
                                 <option value="5">5</option>
 
                             </select><br>         
-                            <span id="rchars8">0</span>/46
+                            <span id="rchars14">0</span>/46
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh2" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh2_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -428,11 +433,11 @@
                                 <option value="5">5</option>
 
                             </select><br>                
-                            <span id="rchars9">0</span>/46
+                            <span id="rchars15">0</span>/46
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh3" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh3_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -444,11 +449,11 @@
                                 <option value="5">5</option>
 
                             </select><br>                
-                            <span id="rchars9">0</span>/46
+                            <span id="rchars16">0</span>/46
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh4" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh4_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -460,11 +465,11 @@
                                 <option value="5">5</option>
 
                             </select><br>                
-                            <span id="rchars9">0</span>/46
+                            <span id="rchars17">0</span>/46
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh5" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh5_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -476,7 +481,7 @@
                                 <option value="5">5</option>
 
                             </select><br>                
-                            <span id="rchars9">0</span>/46
+                            <span id="rchars18">0</span>/46
                             <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
                         </div>
                     </div>
@@ -539,10 +544,10 @@
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-45">   
-                    <textarea class="form-control seo" name="seo_txt" maxlength="35">タイトルタグをカスタマイズする場合はこちらに入力ください</textarea>
+                    <textarea class="form-control seo" name="seo_txt" maxlength="35" placeholder="タイトルタグをカスタマイズする場合はこちらに入力ください"></textarea>
                 </div>
                 <div class="cols-1">         
-                    <span id="rchars16">0</span>/35
+                    <span id="rchars19">0</span>/35
                 </div>
             </div>
 
@@ -550,21 +555,21 @@
             <div class="form-group">
                 <label class="control-label cols-15">ディスクリプション<br><span>Meta description for SEO</span></label>
                 <div class="cols-45">   
-                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50">親譲りの無鉄砲で小供の時から 損ばかりしている。小学校に居る時分学校の。</textarea>
+                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50" placeholder="親譲りの無鉄砲で小供の時から 損ばかりしている。小学校に居る時分学校の。"></textarea>
                 </div>
                 <div class="cols-3">  
                     スマホ・PC用 重要文章<br>        
-                    <span id="rchars17">35</span>/50
+                    <span id="rchars20">35</span>/50
                 </div>
             </div>
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-45">   
-                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
+                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70" placeholder="親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。"></textarea><br>
                 </div>
                 <div class="cols-3">     
                     PC用補足文章<br>      
-                    <span id="rchars18">0</span>/70
+                    <span id="rchars21">0</span>/70
                 </div>
             </div>
             <div class="form-group">
@@ -728,67 +733,67 @@
                 <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                 <div class="cols-6">   
                     <div class="cols-12">
-                        <input type="checkbox" id="taga1" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga1" name="tag_s[]" value="春"> 
                         <label for="taga1">春</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga2" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga2" name="tag_s[]" value="夏"> 
                         <label for="taga2">夏</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga3" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga3" name="tag_s[]" value="秋"> 
                         <label for="taga3">秋</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga4" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga4" name="tag_s[]" value="冬">
                         <label for="taga4"> 冬</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga5" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga5" name="tag_s[]" value="4月">
                         <label for="taga5">4月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga6" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga6" name="tag_s[]" value="5月">
                         <label for="taga6">5月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga7" name="tag_s[]" value="1">
+                        <input type="checkbox" id="taga7" name="tag_s[]" value="6月">
                         <label for="taga7">6月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga8" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga8" name="tag_s[]" value="7月"> 
                         <label for="taga8">7月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga9" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga9" name="tag_s[]" value="8月"> 
                         <label for="taga9">8月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga10" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga10" name="tag_s[]" value="9月"> 
                         <label for="taga10">9月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga11" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga11" name="tag_s[]" value="10月"> 
                         <label for="taga11">10月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga12" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga12" name="tag_s[]" value="11月"> 
                         <label for="taga12">11月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga13" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga13" name="tag_s[]" value="12月"> 
                         <label for="taga13">12月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga14" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga14" name="tag_s[]" value="1月"> 
                         <label for="taga14">1月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga15" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga15" name="tag_s[]" value="2月"> 
                         <label for="taga15">2月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga16" name="tag_s[]" value="1"> 
+                        <input type="checkbox" id="taga16" name="tag_s[]" value="3月"> 
                         <label for="taga16">3月</label>
                     </div>
                 

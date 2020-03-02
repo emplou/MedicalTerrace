@@ -5,7 +5,7 @@
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
-        {!! Form::open(['url' => '/approve_request_special', 'method' => 'post', 'files' => true]) !!}
+        {!! Form::open(['url' => '/approve_special', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
                 <li><a href="#">感染症・寄生虫</a></li>
@@ -163,7 +163,7 @@
             <!-- Buttons -->
             @if (Request::is('special_list'))  
                 <div class="modal-buts"><br>
-                    <input type="submit" class="btn-prime approval">
+                    <input type="submit" class="btn btn-primary approval" value="Approve">
                     <!-- <input type="button" class="btn-prime backedit" id="show_img"> -->
                 </div>
             @endif

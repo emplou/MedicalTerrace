@@ -3226,4 +3226,16 @@ div.dataTables_wrapper div.dataTables_filter input {
     width: 400px !important;
     border-radius: 20px !important;
     padding: 10px !important;
+} 
+
+.illness-table, .special-table {
+    width: 82%;
+    float: right;
+    padding: 12px;
+    background-color: #f2f2f2;
+}
+
+.dataTable > thead > tr > th {
+  height: 25px !important;
+  background-color: #ccc;
 }

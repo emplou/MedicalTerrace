@@ -6,7 +6,7 @@
 @include('modals.modal_copy_illness')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
-
+<div class="illness-table">
     <table id="list" class="table table-striped table-bordered" width="100%">
         <thead>
             <th>Image</th>
@@ -43,5 +43,5 @@
         @endforeach
         </tbody>
     </table>
-
+</div>
 @endsection

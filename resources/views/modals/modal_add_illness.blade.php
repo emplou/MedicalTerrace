@@ -5,7 +5,7 @@
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
-        {!! Form::open(['url' => '/approve_request_illness', 'method' => 'post', 'files' => true]) !!}
+        {!! Form::open(['url' => '/approve_illness', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
                 <li><a href="#" class="ill_cat"><!-- 感染症・寄生虫 --></a></li>

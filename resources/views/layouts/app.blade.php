@@ -238,7 +238,7 @@ input.form-  {
 @endif
 
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
-<div class="content-container illness_container">
+<!-- <div class="content-container illness_container">
 	<header>
 		<h1 class="dashboard">医師・医療従事者 <br><small> Illness table</small></h1>
 		<div class="right">
@@ -250,7 +250,7 @@ input.form-  {
 		<div class="red">公開速報</div>
 		<p>2019/07/18 Illness 子どもの夏の感染症が投稿されました。</p>
 	</div>
-</div>
+</div> -->
 @endif
 
 @if (Request::is('special_list') OR Request::is('add_special'))  
@@ -319,9 +319,9 @@ input.form-  {
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					@csrf
+				</form>
 						</li>
 					</ul>
 				</div>
@@ -351,14 +351,11 @@ input.form-  {
 </div>
 <div class="main-content">
     <div class="main">
-        <!-- <div class="row"> -->
-
  			@yield("content")
- 		<!-- </div> -->
  	</div>
 </div>
 
- </div>
+</div>
 
  	<script src="lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="lumino/js/bootstrap.min.js"></script>
@@ -411,10 +408,7 @@ $(document).on('click', '#close-preview', function(){
     );    
 });
 
-$(document).ready(function() {
-	
 
-});
 // $(document).on('click', 'illness_menu', function(e){ 
 // 	alert('hoy!');
 // 	 $('.illness_container').css('display','block');
@@ -846,7 +840,7 @@ function countChar(val) {
 
 
 	  
-	  /* **************** END **************** */
+	 
 </script>
 <script type="text/javascript">
 'use strict';

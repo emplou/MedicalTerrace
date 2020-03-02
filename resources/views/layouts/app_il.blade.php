@@ -39,7 +39,7 @@
     <header>
         <h1 class="dashboard">病気と知識 <br><small>UI of Illness table</small></h1>
         <div class="right">
-            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Illness new registration</button>
+            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">病気と知識 新規登録 <br> Illness new registration</button>
             <img src="images/medical-logo.png" alt="">
         </div>
     </header>   
@@ -107,6 +107,8 @@
  	  </div>
 </div>
 
+</div>
+
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -137,7 +139,7 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('txt_ckeditor');
+    CKEDITOR.replace('txt_ckeditor[]');
     CKEDITOR.add 
 </script>
 
@@ -172,49 +174,61 @@
       var textlen = cnt + $(this).val().length;
       $('#rchars7').text(textlen);
     });
-    $('textarea.sh').keyup(function() {
+    $('textarea.sm5').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars8').text(textlen);
     });
-    $('textarea.sh2').keyup(function() {
+    $('textarea.sh').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars9').text(textlen);
     });
-    $('textarea.sh3').keyup(function() {
+    $('textarea.sh2').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars10').text(textlen);
     });
-    $('textarea.sh4').keyup(function() {
+    $('textarea.sh3').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars11').text(textlen);
     });
-    $('textarea.sh_b').keyup(function() {
+    $('textarea.sh4').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars12').text(textlen);
     });
-    $('textarea.sh2_b').keyup(function() {
+    $('textarea.sh5').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars13').text(textlen);
     });
-    $('textarea.sh3_b').keyup(function() {
+    $('textarea.sh_b').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars14').text(textlen);
     });
-    $('textarea.sh4_b').keyup(function() {
+    $('textarea.sh2_b').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars15').text(textlen);
     });
-    $('textarea.seo').keyup(function() {
+    $('textarea.sh3_b').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars16').text(textlen);
     });
-    $('textarea.mt1').keyup(function() {
+    $('textarea.sh4_b').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars17').text(textlen);
     });
-    $('textarea.mt2').keyup(function() {
+    $('textarea.sh5_b').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars18').text(textlen);
+    });
+    $('textarea.seo').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars19').text(textlen);
+    });
+    $('textarea.mt1').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars20').text(textlen);
+    });
+    $('textarea.mt2').keyup(function() {
+      var textlen = cnt + $(this).val().length;
+      $('#rchars21').text(textlen);
     });
 </script>
 <!-- Count character ends -->
@@ -238,7 +252,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         var wrapper         = $(".wrapper"); //Fields wrapper
-        var add_button      = $(".sm-btn"); //Add button ID
+        var add_button      = $(".addsum1"); //Add button ID
         var wrapper2         = $(".wrapper2"); //Fields wrapper
         var add_button3      = $(".sh-btn"); //Add button ID
         var wrapper3         = $(".wrapper3"); //Fields wrapper
@@ -254,7 +268,7 @@
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
-            $(wrapper).append('<div class="col-sm-10"><textarea class="form-control sm" name="sm[]" maxlength="46"></textarea></div><div class="col-sm-1"></div><div class="clear"></div>'); //add input box            
+            $(wrapper).append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-5"><textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea></div><div class="cols-2"></div></div><div class="clear"></div>'); //add input box            
         });
 
         $('.add-ck').on('click', add_ck);
@@ -265,9 +279,9 @@
 
             var lplus=i+1;
 
-            $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
-            $(copy).find('script').remove();
-            $(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
+            // $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
+            // $(copy).find('script').remove();
+            //$(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
 
             $(copy).find('.add-ck').remove();
             $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
@@ -680,7 +694,7 @@ $(document).ready(function(){
     });
     $("#ill").keyup(function(){
         // Getting the current value of textarea
-        ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
+        ill = '<input type="checkbox" id="tag9" name="tag_b" value="1"><label for="tag9">'+ $(this).val()+'</label>';
         ill2 = ''+ $(this).val()+'';
         ill3 = ''+ $(this).val()+'';
         
