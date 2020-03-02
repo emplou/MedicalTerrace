@@ -398,8 +398,8 @@
                     <!-- add h2 fields -->
                     <div class="field_wrap5"></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]" required></div>
-                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]" required></div>
-                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]" required></div>
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
@@ -422,11 +422,17 @@
             <div class="form-group check">
                 <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
                 <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
-                    <div class="cols-4">
-						<input type="checkbox" id="tag1b" name="tag_ill[]" value="考えられる病気より" > 
-						<label for="tag1b">考えられる病気より</label>
-                    </div>
-                    <div class="cols-4">
+                    
+                    @foreach($illness as $ill_ch)
+                        
+                        <div class="cols-3">
+                            <input type="checkbox" id="tagb{{$ill_ch->id}}" name="tag_ill[]" value="{!! $ill_ch->id !!}" > 
+                            <label for="tagb{{$ill_ch->id}}">{!! $ill_ch->ill_name !!}</label>
+                        </div>
+                        
+                    @endforeach
+                    
+                    <!-- <div class="cols-4">
 						<input type="checkbox" id="tag2b" name="tag_ill[]" value="考えられる病気より"> 
 						<label for="tag2b">考えられる病気より</label>
                     </div>
@@ -446,7 +452,7 @@
                     <div class="cols-4">
 						<input type="checkbox" id="tag6b" name="tag_ill[]" value="考えられる病気より"> 
 						<label for="tag6b">考えられる病気より</label>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>

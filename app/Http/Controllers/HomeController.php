@@ -542,7 +542,8 @@ class HomeController extends Controller
 
     public function special_list(){
         $special = DB::table('special')->get();
-        return view('admin.special_list', compact('special'));
+        $illness = DB::table('illness')->get();
+        return view('admin.special_list', compact('special', 'illness'));
     }
 
     public function save_special(Request $request){
@@ -1246,6 +1247,7 @@ class HomeController extends Controller
     public function modal_edit_special($id){
         $value['data'] = DB::table('special')->where('id','=',$id)->get();
         $value['doc'] = DB::table('dv_doctors')->get();
+        $value['ill'] = DB::table('illness')->get();
         $value['dpt'] = DB::table('hospital_departments')->get();
         $value['arch'] = DB::table('dv_archive')->where('type_id','=',$id)
                                                     ->where('type','=','3')
@@ -2346,7 +2348,7 @@ class HomeController extends Controller
         $response6 = array();
         foreach($till_list as $key6 => $cert6)
         {
-            $response6[$key6]['tag_ill'] = isset($cert6) ? 1 : 0;
+            $response6[$key6]['tag_ill'] = $cert6;
         }
         $jsontill_list = json_encode($response6); 
 

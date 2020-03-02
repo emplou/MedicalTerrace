@@ -971,6 +971,22 @@ $.ajaxSetup({
                             y++;
                         });
 
+                        // Tag Illness
+                        var objJSONsti = JSON.parse(response['data'][0].sp_tag_ill);
+                        //var input_tag_ill = "";
+
+                        $.each(response['ill'], function (i, b) {
+                            
+                            //input_tag_ill += '<div class="cols-3"><input type="checkbox" id="tagb'+ b.id +'" name="tag_ill[]" value="'+ b.ill_name +'" ><label for="tagb'+ b.id +'">'+ b.ill_name +'</label></div>';
+                                
+                            $.each(objJSONsti, function (i, v) {
+                                if(b.id == v.tag_ill){
+                                    $("#tagb"+ b.id).attr( "checked", true );
+                                }
+                            });
+                        });
+                        //$("#input_tag_ill").html(input_tag_ill);                         
+
                 },
                     error: function(response){
                     alert('Error'+response);
@@ -1718,6 +1734,21 @@ $.ajaxSetup({
                                 $("#tag_two"+yplus).attr( "checked", true );
                             }
                             y++;
+                        });
+
+                        // Tag Illness
+                        var objJSONsti = JSON.parse(response['data'][0].sp_tag_ill);
+                        //var input_tag_ill = "";
+
+                        $.each(response['ill'], function (i, b) {
+                            
+                            //input_tag_ill += '<div class="cols-3"><input type="checkbox" id="tagb'+ b.id +'" name="tag_ill[]" value="'+ b.ill_name +'" ><label for="tagb'+ b.id +'">'+ b.ill_name +'</label></div>';
+                                
+                            $.each(objJSONsti, function (i, v) {
+                                if(b.id == v.tag_ill){
+                                    $("#tagc"+ b.id).attr( "checked", true );
+                                }
+                            });
                         });
                   
                 },

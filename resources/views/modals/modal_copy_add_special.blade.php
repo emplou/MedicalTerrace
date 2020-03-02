@@ -292,7 +292,17 @@
                             <div class="form-group check">
                                 <label class="control-label cols-15">タグ(病名) <br><span>Tag(illness name)</span></label>
                                 <div class="cols-7" style="border: 1px solid #CCC; border-radius: 5px; padding: 5px; color: #F00;">   
-                                    <div class="cols-4">
+                                    
+                                @foreach($illness as $ill_ch)
+                        
+                                    <div class="cols-3">
+                                        <input type="checkbox" id="tagc{{$ill_ch->id}}" name="tag_ill[]" value="{!! $ill_ch->id !!}" > 
+                                        <label for="tagc{{$ill_ch->id}}">{!! $ill_ch->ill_name !!}</label>
+                                    </div>
+                                    
+                                @endforeach
+
+                                    <!-- <div class="cols-4">
                                         <input type="checkbox" id="tag1b_two" name="tag_ill[]" value="1"> 
                                         <label for="tag1b_two">考えられる病気より</label>
                                     </div>
@@ -316,7 +326,7 @@
                                     <div class="cols-4">
                                         <input type="checkbox" id="tag6b_two" name="tag_ill[]" value="1"> 
                                         <label for="tag6b_two">考えられる病気より</label>
-                                    </div>
+                                    </div> -->
                                     
                                 </div>
                             </div>
