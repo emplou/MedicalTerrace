@@ -23,12 +23,12 @@
     <div class="second-heading">
         <h1>Medical T.編集部 A.Ito 執筆一覧</h1>
         <div class="add-buts">
-            <div class="buts">特集 新規<br><span>Special new</span></div>
-            <div class="buts">病名 新規<br><span>Illness new</span></div>
-            <div class="buts">トピックス  新規<br><span>Topics new</span></div>
-            <div class="buts">医師 新規<br><span>Doctor new</span></div>
-            <div class="buts">病院 新規<br><span>Hospital new</span></div>
-            <div class="buts">ピックアップ新規<br><span>Choose new</span></div>
+            <a class="buts" href="/add_special">特集 新規<br><span>Special new</span></a>
+            <a class="buts" href="/add_illness">病名 新規<br><span>Illness new</span></a>
+            <a class="buts" href="/add_topics">トピックス  新規<br><span>Topics new</span></a>
+            <a class="buts" href="/add_doctor">医師 新規<br><span>Doctor new</span></a>
+            <a class="buts" href="/add_hospital">病院 新規<br><span>Hospital new</span></a>
+            <a class="buts" href="">ピックアップ新規<br><span>Choose new</span></a>
         </div>
     </div>
     <table class="table" id="list" width="100%">

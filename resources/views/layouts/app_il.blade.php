@@ -39,7 +39,7 @@
     <header>
         <h1 class="dashboard">病気と知識 <br><small>UI of Illness table</small></h1>
         <div class="right">
-            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Illness new registration</button>
+            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">病気と知識 新規登録 <br> Illness new registration</button>
             <img src="images/medical-logo.png" alt="">
         </div>
     </header>   
@@ -105,6 +105,8 @@
  			  @yield("content")
  		
  	  </div>
+</div>
+
 </div>
 
 
