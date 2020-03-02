@@ -86,7 +86,14 @@ class HomeController extends Controller
     }
     public function hospital_list(){
         $hospitals = DB::table('dv_hospital')->get();
-        return view('admin.hospital_list', compact('hospitals'));
+        $department = DB::table('hospital_departments')->get();
+        return view('admin.hospital_list', compact('hospitals', 'department'));
+    }
+
+    public function topics_list(){
+        $hospitals = DB::table('dv_hospital')->get();
+        $department = DB::table('hospital_departments')->get();
+        return view('admin.topics_list', compact('hospitals', 'department'));
     }
 
     public function save_hospital(Request $request){

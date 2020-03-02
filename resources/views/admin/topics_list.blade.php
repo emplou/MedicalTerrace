@@ -6,9 +6,7 @@
     <table class="table" id="list"  width="100%">
         <thead>
             <th>Image</th>
-            <th>Medical Institution</th>
-            <th>Medical institution English</th>
-            <th>Common Name</th>
+            <th>Topics Name</th>
             <th>ID</th>
             <th>Date Added</th>
             <th>Action</th>
@@ -17,8 +15,6 @@
         @foreach($hospitals as $hosp)
             <tr>
                 <td><img src="{!! $hosp->image !!}" style="width:80px;height:80px;"></td>
-                <td>{!! $hosp->medical_ins !!}</td>
-                <td>{!! $hosp->name_phonic !!}</td>
                 <td>{!! $hosp->common_name !!}</td>
                 <td>{!! $hosp->hospital_id !!}</td>
                 <td>{!! $hosp->created_at !!}</td>
