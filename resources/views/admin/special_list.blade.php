@@ -6,7 +6,7 @@
 @include('modals.modal_copy_special')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
-
+<div class="special-table">
     <table id="list" class="table table-striped table-bordered" width="100%">
         <thead>
             <th>特集タイトル</th>
@@ -27,5 +27,5 @@
         @endforeach
         </tbody>
     </table>
-
+</div>
 @endsection
