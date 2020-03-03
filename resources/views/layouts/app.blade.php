@@ -226,7 +226,7 @@ input.form-  {
 	<header>
 		<h1 class="dashboard">医師・医療従事者 <br><small> Doctor table</small></h1>
 		<div class="right">
-			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録<br> Doctor new registration</button>
+			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link" id="adddoctorbut">医師・医療従事者 新規登録<br> Doctor new registration</button>
 			<img src="images/medical-logo.png" alt="">
 		</div>
 	</header>	
@@ -272,9 +272,25 @@ input.form-  {
 @if (Request::is('hospital_list') OR Request::is('add_hospital'))  
 <div class="content-container hospital_container">
 	<header>
-		<h1 class="dashboard">医師・医療従事者 <br><small> Hospital table</small></h1>
+		<h1 class="dashboard">医療機関 <br><small> Hospital table</small></h1>
 		<div class="right">
 			<button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
+			<img src="images/medical-logo.png" alt="">
+		</div>
+	</header>	
+	<div class="sub-header">
+		<!-- <div class="red">公開速報</div> -->
+		<!-- <p><h2>{!! Auth::user()->name !!}</h2></p> -->
+	</div>
+</div>
+@endif
+
+@if (Request::is('topics_list'))  
+<div class="content-container hospital_container">
+	<header>
+		<h1 class="dashboard">最新トピックス <br><small> Topics</small></h1>
+		<div class="right">
+			<button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 最新トピックス <br> Add Topics</button>
 			<img src="images/medical-logo.png" alt="">
 		</div>
 	</header>	
@@ -290,7 +306,7 @@ input.form-  {
 		<div class="nav-photo-container">
 			<div class="nav-photo wow bounceIn" data-wow-delay="0.5s" onclick="" style="background-image: url(images/admin-avatar.png);"></div>
 			<a href="my-account" title="My Account">Editor</a><br>
-			Medical T. 編集部<br>A.Ito<br><a class="push-btn">ログアウト<span class="lnr lnr-chevron-down"></span></a>
+			{!! Auth::user()->name !!}<br><a class="push-btn">ログアウト<span class="lnr lnr-chevron-down"></span></a>
 			<div class="accnt-container">
 				<div class="accnt-box">
 					<div class="accnt-arrow"></div>
@@ -320,10 +336,10 @@ input.form-  {
 				<li><small></small><a class="home_menu" href="home"><span class="icon"><img src="images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
 				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br> Illness</span></a></li>
 				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="images/icon-special.png"></span><span>特集<br> Special</span></a></li>
-				<li><small class="yellow"></small><a class="yellow"href=""><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
+				<li><small class="yellow"></small><a class="yellow"href="topics_list"><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
 				<li><small class="yellow"></small><a class="yellow" href=""><span class="icon"><img src="images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
-				<li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="images/icon-doctable.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
-				<li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
+				<li id="doctorli"><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="images/icon-doctable.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
+				<li id="hospitalli"><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
 				<li><small class="sky"></small><a class="sky" href=""><span class="icon"><img src="images/icon-column.png"></span><span>コラム<br>Column</span></a></li>
 				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="images/icon-medequipment.png"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
 				<li><small class="violet"></small><a class="violet" href=""><span class="icon"><img src="images/icon-medicine.png"></span><span>薬情報<br>Medicine</span></a></li>
@@ -492,6 +508,7 @@ $(document).ready(function() {
 // 	$('#timepicker').datetimepicker({
 //     datepicker: true
 // });
+
 } );
 
 

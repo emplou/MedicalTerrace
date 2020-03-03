@@ -10,6 +10,36 @@ $(document).ready(function() {
     } );
 } );
 
+$(document).ready(function() {
+	var selector = '.sidebar-nav li';
+    var url = window.location.href;
+    var target = url.split('/');
+     $(selector).each(function(){
+        if($(this).find('a').attr('href')===(target[target.length-1])){
+          $(selector).removeClass('active');
+          $(this).removeClass('active').addClass('active');
+		//   $(this).css("filter", "brightness(60%)");
+		//   console.log('yeah');
+        }
+     });
+});
+
+$(document).ready(function() {
+// $('#adddoctorbut').click(function() {
+//     $('#doctorli').removeClass();
+//     $('#doctorli').addClass('active');
+// });
+var APPURL = $('#urlid').val();
+if (APPURL == '/add_doctor'){
+        $('#doctorli').removeClass();
+        $('#doctorli').addClass('active');
+}
+if(APPURL == '/add_hospital'){
+    $('#hospitalli').removeClass();
+    $('#hospitalli').addClass('active');
+}
+} );
+
 $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -64,7 +94,7 @@ $.ajaxSetup({
                 var objJSON = JSON.parse(response['data'][0].certificate);
                 var inputs = "";
                 $.each(objJSON, function (i, v) {
-                    inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:300px" value="'+v.med_sbj_list+'">';
+                    inputs += '<input type="text" class="form- " name="certificate[]" id="certificate" style="width:200px" value="'+v.med_sbj_list+'">';
                 });
                 $("#input_container").html(inputs);
                     

@@ -6,6 +6,7 @@
     <div class="left">
         <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
         <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2>
+        <input type="hidden" value="/add_doctor" id="urlid">
         
     </div>
     <div class="right">

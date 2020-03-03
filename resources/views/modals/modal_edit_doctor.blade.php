@@ -14,7 +14,7 @@
     <div class="modal-body">
     <div class="header-wrapper">
         <div class="left">
-            <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+            <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
             <!-- <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2> -->
             <div id="copyauthorID"></div>
             
@@ -51,53 +51,47 @@
       <input type="hidden" name="docID" id="docID" value="">
       <input type="hidden" name="statusAuth" id="statusAuth" value="">
       <div class="form-group">
-            <div class="cols-2">
-            URL自動生成名<br>URL generation
-            </div>
-            <div class="cols-5">
-            <input type="text" class="form-control" name="url_generation" id="url_generation"  >
+        <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
+            <div class="cols-4">
+            <input type="text" class="form-control" name="url_generation" id="url_generation"   style="width:300px">
             </div>
         </div>
-        <br>
+        
         <div class="form-group">
-            <div class="cols-2">
-            職位<br>Status
-            </div>
-            <div class="cols-5">
-            <input type="text" class="form-control" name="status" id="status"  >
+            <label class="control-label cols-15">職位<br><span>Position</span></label>
+            <div class="cols-4">  
+            <input type="text" class="form-control" name="status" id="status"   style="width:300px">
             </div>
         </div>
-        <br>
         <div class="form-group">
-            <div class="cols-2">
-            専門医・認定医<br>（取得資格）<br>Certificate
+            <label class="control-label cols-15"></label>
+            <div class="sp10 cols-4">          
+                <input type="text" class="form-control" id="sub_head1b two" placeholder="選択項目にない場合に入力" name="sub_position">
             </div>
-            <div class="cols-5">
+        </div>
+        <div class="form-group">
+            <label class="control-label cols-15">専門医・認定医<br>(取得資格)<br><span>Certificate</span></label>
+            <div class="sp10 cols-6">
                 <div id="input_container"></div>
                 <div id="editcertificate"></div>
                 <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
             
             </div>
         </div>
-        <br>
+        
         <div class="form-group">
-            <div class="cols-2">
-            氏名<br>Name
-            </div>
-            <div class="cols-5">
+            <label class="control-label cols-15">氏名<br><span>Name</span></label>
+            <div class="cols-4">
             <input type="text" class="form-control" name="name" id="name"  >
             </div>
         </div>
-        <br>
         <div class="form-group">
-            <div class="cols-2">
-            ローマ字（名・氏）<br>Alphabet Name 
-            </div>
-            <div class="cols-5">
+            <label class="control-label cols-15">ローマ字（名・氏<br><span>Alphabet Name </span></label>
+            <div class="cols-4">
             <input type="text" class="form-control" name="alphabet_name" id="alpha_name"  >
             </div>
         </div>
-        <br>
+        <!-- <br>
         <div class="form-group">
             <div class="cols-2">
             プロフィール画像<br>Profile image 
@@ -106,45 +100,48 @@
                 <div class="input-group">
                     <input type="text" class="form-control" name="profile_image_field" id="profile_image_field">
                     <span class="input-group-btn">
-                        <!-- <button class="btn btn-search" type="button"> 参照... </button> -->
                         <input type="file" value="参照... " class="btn btn-search" name="profile_image">
                     </span>
                 </div>
             </div>
-        </div>
-        <br>
+        </div> -->
+
         <div class="form-group">
-            <div class="cols-2">
-            画像キャプション<br>Image Caption 
+            <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
+            <div class="cols-45">          
+                <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image">
+                <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
+                </div>
+
             </div>
-            <div class="cols-5">
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="control-label cols-15"> 画像キャプション<br><span>Image Caption </span></label>
+            <div class="cols-4">
             <input type="text" class="form-control" name="img_caption" id="img_caption"  >
             </div>
         </div>
-        <br>
+        
         <div class="form-group">
-            <div class="cols-2">
-            画像alt<br>Image alt
-            </div>
-            <div class="cols-5">
+            <label class="control-label cols-15"> 画像alt<br><span>Image Alt </span></label>
+            <div class="cols-4">
             <input type="text" class="form-control" name="img_alt" id="img_alt"  >
             </div>
         </div>
-        <br>
         <div class="form-group">
-            <div class="cols-2">
-            業種<br>Industry
-            </div>
-            <div class="cols-5">
+            <label class="control-label cols-15">業種<br><span>Industry</span></label>
+            <div class="sp10 cols-4">    
                 <div id="input_industry"></div>
             </div>
         </div>
         <br>
         <div class="form-group">
-            <div class="cols-2">
-            所属学会<br>Conference
-            </div>
-            <div class="cols-5">
+            <label class="control-label cols-15">所属学会<br><span>Conference</span></label>
+            <div class="sp10 cols-6">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
                 <div id="input_conference"></div>
                 <div id="editaddconference"></div>
