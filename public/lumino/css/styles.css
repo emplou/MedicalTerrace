@@ -1041,7 +1041,7 @@ p.back-link {
 
 
 header .right {
-    width: 450px;
+    width: 500px;
 }
 .doc-link {
     float: left;
@@ -1403,14 +1403,13 @@ nav li a img {
 
 
 header {
-  width: 82%;
+  width: 100%;
   height: 60px;
   top: 0;
   left: 0;
   z-index: 15;
   position: fixed;
-  padding-left: 15px;
-  margin-left: 230px;
+  padding-left: 240px;
   padding-top: 10px;
   background-color: #fff;
   border-bottom: 1px solid #dbcecf;
@@ -1467,8 +1466,8 @@ header a img.no-round {
   padding-top: 10px;
 }
 .content-container {
-  width: 85%;
-  max-width: 1150px;
+  width: 100%;
+  /* max-width: 1150px; */
   float: left;
   margin-left: 230px;
   padding: 70px 0px 0;
@@ -1502,8 +1501,8 @@ header img {
 }
 
 .main-content {
-    width: 80%;
-    max-width: 1150px;
+    width: 88%;
+    /* max-width: 1150px; */
     float: left;
     padding-left: 20px;
     margin-left: 230px;
@@ -1933,7 +1932,7 @@ input.form-control {
   width: 100%;
 }
 .main-content {
-  width: 85%;
+  width: 88%;
   padding: 0 20px!important;
   background: #ededed;
 }
@@ -2504,7 +2503,7 @@ textarea {
 #list_wrapper {
   width: 100%;
   padding: 0;
-  max-width: 1020px;
+  /* max-width: 1020px; */
 }
 
 .form-control.sm  {
@@ -3229,13 +3228,37 @@ div.dataTables_wrapper div.dataTables_filter input {
 } 
 
 .illness-table, .special-table {
-    width: 82%;
-    float: right;
-    padding: 12px;
-    background-color: #f2f2f2;
+    width: 100%;
+    float: left;
+    min-height: 750px;
+    margin-left: 230px;
+    padding: 12px 12px 0 12px;
+    background-color: #ededed;
 }
 
 .dataTable > thead > tr > th {
   height: 25px !important;
   background-color: #ccc;
+}
+
+
+
+@media(max-width: 2000px) {
+
+}
+
+
+@media(max-width: 1300px) {
+  .illness-table, .special-table {
+    width: 82%;
+  }
+  table#list {
+    width: 100% !important;
+  }
+  .main-content {
+    width: 83%;
+  }
+  header .right {
+    width: 450px;
+  }
 }
