@@ -33,19 +33,66 @@
     
 </head>
 <body>
-  
+@if (Request::is('doctor_list') OR Request::is('add_doctor'))
+<div class="content-container">
+    <header>
+        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Doctor table</small></h1>
+        <div class="right">
+            <button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Doctor new registration</button>
+            <img src="images/medical-logo.png" alt="">
+        </div>
+    </header>   
+    <div class="sub-header">
+        <div class="red">公開速報</div>
+        <p>2019/07/18 Doctor 子どもの夏の感染症が投稿されました。</p>
+    </div>
+</div>
+@endif
+
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
 <div class="content-container illness_container">
     <header>
-        <h1 class="dashboard">病気と知識 <br><small>UI of Illness table</small></h1>
+        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Illness table</small></h1>
         <div class="right">
-            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">病気と知識 新規登録 <br> Illness new registration</button>
+            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Illness new registration</button>
             <img src="images/medical-logo.png" alt="">
         </div>
     </header>   
     <div class="sub-header">
         <div class="red">公開速報</div>
         <p>2019/07/18 Illness 子どもの夏の感染症が投稿されました。</p>
+    </div>
+</div>
+@endif
+
+@if (Request::is('special_list') OR Request::is('add_special'))  
+<div class="content-container special_container">
+    <header>
+        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Special table</small></h1>
+        <div class="right">
+            <button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Special new registration</button>
+            <img src="images/medical-logo.png" alt="">
+        </div>
+    </header>   
+    <div class="sub-header">
+        <div class="red">公開速報</div>
+        <p>2019/07/18 Special 子どもの夏の感染症が投稿されました。</p>
+    </div>
+</div>
+@endif
+
+@if (Request::is('hospital_list') OR Request::is('add_hospital'))  
+<div class="content-container hospital_container">
+    <header>
+        <h1 class="dashboard">医師・医療従事者 <br><small>UI of Hospital table</small></h1>
+        <div class="right">
+            <button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
+            <img src="images/medical-logo.png" alt="">
+        </div>
+    </header>   
+    <div class="sub-header">
+        <!-- <div class="red">公開速報</div> -->
+        <p><h2>{!! Auth::user()->name !!}</h2></p>
     </div>
 </div>
 @endif
@@ -100,15 +147,14 @@
 </div>
 <div class="main-content add">
     <div class="main">
-        
+        <!-- <div class="row"> -->
 
- 			  @yield("content")
- 		
- 	  </div>
+ 			@yield("content")
+ 		<!-- </div> -->
+ 	</div>
 </div>
 
-</div>
-
+ </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -124,7 +170,7 @@
 	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
   <script src="lumino/js/custom.js"></script>
-  <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
   <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
@@ -139,7 +185,7 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('txt_ckeditor[]');
+    CKEDITOR.replace('txt_ckeditor');
     CKEDITOR.add 
 </script>
 
@@ -158,7 +204,7 @@
       var textlen = cnt + $(this).val().length;
       $('#rchars3').text(textlen);
     });
-    $('textarea.sm1').keyup(function() {
+    $('textarea.sm').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars4').text(textlen);
     });
@@ -279,9 +325,9 @@
 
             var lplus=i+1;
 
-            // $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
-            // $(copy).find('script').remove();
-            //$(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
+            $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
+            $(copy).find('script').remove();
+            $(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
 
             $(copy).find('.add-ck').remove();
             $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
@@ -361,9 +407,6 @@
                 scrollTop: $(document).height() 
             }, 1000);
         });
-
-        
-        $("#tx2illness").attr("placeholder", "この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。").val('').focus().blur();
 
     });
 
@@ -694,7 +737,7 @@ $(document).ready(function(){
     });
     $("#ill").keyup(function(){
         // Getting the current value of textarea
-        ill = '<input type="checkbox" id="tag9" name="tag_b" value="1"><label for="tag9">'+ $(this).val()+'</label>';
+        ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
         ill2 = ''+ $(this).val()+'';
         ill3 = ''+ $(this).val()+'';
         
@@ -704,7 +747,19 @@ $(document).ready(function(){
         $("#output_ill3").html(ill3);
     });
 });
+
+$(document).ready(function() {
+    $('#list').DataTable();
+
+	// $('.timepicker').wickedpicker();
+
+// 	$('#timepicker').datetimepicker({
+//     datepicker: true
+// });
+} );
 </script>
+
+
 
 </body>
 </html>

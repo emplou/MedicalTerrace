@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">病気カテゴリー<br><span>Illness Category</span></label>
                 <div class="cols-4">          
-                    <select name="ill_cat" id="ill_cat" class="form-control ill_cat">
+                    <select name="ill_cat" id="ill_cat" class="form-control ill_cat" required>
                         <option value="">選択してください</option>
                         <option value="感染症・寄生虫症">感染症・寄生虫症</option>
                         <option value="女性特有のがん＊">女性特有のがん＊</option>
@@ -71,7 +71,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集ショルダー<br><span>Illness Shoulder</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill_shldr" id="ill_sh" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20" required>
+                    <input type="text" class="form-control ill_shldr" id="ill_sh" placeholder="例)手・足・ 口に赤い発疹や水ぶくれが出ます" name="ill_shldr" maxlength="20"  required>
                 </div>
                 <div class="cols-2">          
                     <span id="rchars">20</span>/20
@@ -90,7 +90,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集タイトル<br><span>Illness</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control ill" id="ill" placeholder="例)手足口病" name="ill" maxlength="14" required>
+                    <input type="text" class="form-control ill" id="ill" placeholder="例)手足口病" name="ill" maxlength="14"  required>
                 </div>
                 <div class="cols-2">          
                     <span id="rchars2">0</span>/14
@@ -100,14 +100,14 @@
             <div class="form-group">
                 <label class="control-label cols-15">病名ふりがな<br><span>Illness Phonetic</span></label>
                 <div class="cols-5">          
-                    <input type="text" class="form-control" placeholder="例)てあしくちびょう"  name="ill_ph" maxlength="14" required>
+                    <input type="text" class="form-control" placeholder="例)てあしくちびょう"  name="ill_ph" maxlength="14"  required>
                 </div>
             </div>
              <!-- Doctor -->
             <div class="form-group">
                 <label class="control-label cols-15">監修・協力医師<br><span>Doctor</span></label>
                 <div class="cols-5">          
-                     <select name="doctor" class="form-control" required>
+                     <select name="doctor" class="form-control">
                         <option value="">選択してください</option>
                         @foreach($doctors as $doc)
                             <option value="{!! $doc->name !!}">{!! $doc->name !!}</option>
@@ -115,7 +115,7 @@
                     </select>
                 </div>
                 <div class="cols-3 rad-buttons">
-					<input type="radio" id="sprvsn" name="role" value="監修" required>
+					<input type="radio" id="sprvsn" name="role" value="監修"  required>
 					<label for="sprvsn">監修</label>
 					<input type="radio" id="cc" name="role" value="取材協力" required>
 					<label for="cc">取材協力</label>
@@ -127,8 +127,7 @@
             <div class="form-group full">
                 <label class="control-label cols-15">医師コメント<br><span>Doctor Comment</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control cmt" name="doc_cmt" rows="5" maxlength="200" placeholder="この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。" required>
-					</textarea>
+                    <textarea class="form-control cmt" name="doc_cmt" rows="5" maxlength="200" placeholder="この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars3">0</span>/200
@@ -138,7 +137,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm1" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
+                    <textarea class="form-control sm" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -148,7 +147,7 @@
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
+                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars5">0</span>/46
@@ -172,14 +171,13 @@
 					<span id="rchars7">0</span>/46
 				</div>
             </div>
-            
             <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
                     <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
-                <div class="cols-2">          
-                    <!-- <span id="rchars8">0</span>/46 -->
+                <div class="cols-2 relative">          
+                    <!-- <span id="rchars4">0</span>/46 -->
                     <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div>
        
 				</div>
@@ -187,7 +185,7 @@
 
             <!-- Add new fiends in this wrapper -->
             <div class="wrapper"></div>
-            
+
              <!-- Main Image -->
             <div class="form-group">
                 <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>
@@ -218,7 +216,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
                     <div class="cols-4">          
-                    <select name="sub_head1a[]" class="form-control">
+                    <select name="sub_head1a[]" class="form-control" required>
                         <option value="">選択してください</option>
                         <option value="基礎知識">基礎知識</option>
                         <option value="近年の動向">近年の動向</option>
@@ -251,7 +249,7 @@
                     <div class="cols-6">   
                        
                         <div class="cols-10">        
-                            <textarea class="form-control ck" name="txt_ckeditor[]" placeholder=""></textarea>
+                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                         </div>
                         
                     </div>
@@ -275,7 +273,7 @@
                 <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                 <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                        <input type="checkbox" id="a1" name="subheading-chck" value="1" />
+                        <input type="checkbox" id="a1" name="subheading-chck" value="1" required/>
                         <label for="a1" style="color:red;" id="output_ill2"></label>
                         <div class="clear"></div>
 					</div>    
@@ -288,7 +286,7 @@
                 <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                 <div class="cols-8">  
                     <div class="cols-5">          
-                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度 
@@ -393,7 +391,7 @@
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">   
                         <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                            <input type="checkbox" id="a2" name="subheading-chck2" value="1"/>
+                            <input type="checkbox" id="a2" name="subheading-chck2" value="1" required/>
                             <label for="a2" style="color:red;" id="output_ill3"></label>
                             <div class="clear"></div>
                         </div>    
@@ -405,7 +403,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-8">  
                         <div class="cols-5">          
-                            <textarea class="form-control sh_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確" required></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度 
@@ -421,7 +419,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh2_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh2" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -437,7 +435,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh3_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh3" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -453,7 +451,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh4_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh4" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -469,7 +467,7 @@
                         </div>
                         <div class="clear"></div>
                         <div class="cols-5">          
-                            <textarea class="form-control sh5_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh5" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度
@@ -508,7 +506,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
                 <div class="cols-7">
-                    <div class="cols-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword[]" required></div>
                     <div class="cols-3"><input type="text" class="form-control" id="kword2" placeholder="例）子どもの病気" name="kword[]"></div>
                     <div class="cols-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword[]"></div>
                 </div>
@@ -536,7 +534,7 @@
                 <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
                 <div class="cols-45">   
                     <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;">
-                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" ><label for="styled-checkbox-1" style="color: #F00;font-weight:500;">子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
+                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="seo" ><label for="styled-checkbox-1" style="color: #F00;font-weight:500;" required>子どもの夏の感染症の症状・原因・治療と予防法｜メディカルテラス</label>
 					</div>    
                 </div>
             </div>
@@ -544,7 +542,7 @@
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-45">   
-                    <textarea class="form-control seo" name="seo_txt" maxlength="35" placeholder="タイトルタグをカスタマイズする場合はこちらに入力ください"></textarea>
+                    <textarea class="form-control seo" name="seo_txt" maxlength="35" required>タイトルタグをカスタマイズする場合はこちらに入力ください</textarea>
                 </div>
                 <div class="cols-1">         
                     <span id="rchars19">0</span>/35
@@ -555,7 +553,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">ディスクリプション<br><span>Meta description for SEO</span></label>
                 <div class="cols-45">   
-                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50" placeholder="親譲りの無鉄砲で小供の時から 損ばかりしている。小学校に居る時分学校の。"></textarea>
+                    <textarea class="form-control mt1" name="meta_txt1" maxlength="50" required>親譲りの無鉄砲で小供の時から 損ばかりしている。小学校に居る時分学校の。</textarea>
                 </div>
                 <div class="cols-3">  
                     スマホ・PC用 重要文章<br>        
@@ -565,7 +563,7 @@
             <div class="form-group">
                 <div class="cols-15"></div>
                 <div class="cols-45">   
-                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70" placeholder="親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。"></textarea><br>
+                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70" required>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
                 </div>
                 <div class="cols-3">     
                     PC用補足文章<br>      
@@ -594,7 +592,7 @@
                 <div class="cols-7">
                     <!-- add h2 fields -->
                     <div class="wrapper5"></div>
-                    <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]" required></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
                     <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
                     <div class="cols-1 relative"><button type="button" class="btn add5"><span class="lnr lnr-plus-circle"></span></button></div>
@@ -635,7 +633,7 @@
                 <div class="cols-7"> 
                     <div id="addanother2">
                         <div class="cols-3">
-                            <select name="tag_dep[]" class="form-control">
+                            <select name="tag_dep[]" class="form-control" required>
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
                                     <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -700,7 +698,7 @@
                 <div class="cols-7"> 
                     <div id="addanother3">
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
+                            <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状" required>
                         </div>
                         <div class="cols-3">
                             <input type="text" class="form-control" name="tag_sy[]" placeholder="">
@@ -806,7 +804,7 @@
                         <div id="addanother4">
                             
                             <div class="cols-3">
-                                <input type="text" class="form-control" name="tag_txt[]" placeholder="">
+                                <input type="text" class="form-control" name="tag_txt[]" placeholder="" required>
                             </div>
                             <div class="cols-3">
                                 <input type="text" class="form-control" name="tag_txt[]" placeholder="">
@@ -852,9 +850,9 @@
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-pink-release.png);">Release</button> -->
 
                             <!-- Half buttons -->
-                            <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
-                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
-                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
+                            <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(images/icon-half-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(images/icon-half-relreserve.png);" disabled>Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(images/icon-half-release.png);" disabled>Release</button>
                         
                         </div>
                     </div>
@@ -916,7 +914,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">グラフキャプション:</label>
                     <div class="col-sm-9">          
-                        <input type="text" class="form-control" placeholder="例）※1グラフの説明...などもここで記載出来ます" name="g_cap">
+                        <input type="text" class="form-control" placeholder="例）※1グラフの説明...などもここで記載出来ます" name="g_cap" >
                     </div>
                 </div>
 

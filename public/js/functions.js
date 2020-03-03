@@ -1131,12 +1131,20 @@ $.ajaxSetup({
                         // Summarize
                         var objJSON = JSON.parse(response['data'][0].ill_summary);
                         var inputs = "";
+                        //var a = 3;
+                        var b = 0;
                         $.each(objJSON, function (i, v) {
+                            //var aplus=a+1;
+                            var bplus=b+1;
+
+                            $(".sm"+bplus).val(v.sm); 
                             //if(v.sm != "null"){
-                                inputs += '<textarea class="form-control sm" name="sm[]" rows="3" id="sm" maxlength="200">'+v.sm+'</textarea><br>';
+                                //inputs += ' <div class="cols-7"><textarea class="form-control sm'+bplus+'" name="sm[]" rows="3" id="sm" maxlength="200">'+v.sm+'</textarea></div><div class="cols-2"><span id="rchars'+aplus+'">0</span>/46</div><div class="clear"></div>';
                             //}
+                            //a++;
+                            b++;
                         });
-                        $("#input_sum").html(inputs);
+                        //$("#input_sum").html(inputs);
 
                         // Subheading and Content
                         var objJSONtxtCnt = JSON.parse(response['data'][0].ill_sub_txt);
@@ -1145,7 +1153,7 @@ $.ajaxSetup({
 
                             input_content += '<div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"> ';
                             //from heading
-                            input_content += '<select name="sub_head1a[]" class="form-control"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                            input_content += '<select name="sub_head1a[]" class="form-control ill_sh"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
                             input_content += '</div></div>';
 
                             input_content += '<div class="form-group"><label class="control-label cols-15"></label><div class="cols-4">';
@@ -1896,10 +1904,21 @@ $.ajaxSetup({
                         // Summarize
                         var objJSONsum = JSON.parse(response['data'][0].ill_summary);
                         var inputs = "";
-                        $.each(objJSONsum, function (i, v) {
-                            inputs += '<textarea class="form-control sm" name="sm[]" rows="3" maxlength="200">'+v.sm+'</textarea><br>';
+                        //var a = 3;
+                        var b = 0;
+                        $.each(objJSON, function (i, v) {
+                            //var aplus=a+1;
+                            var bplus=b+1;
+
+                            $(".sm"+bplus).val(v.sm); 
+                            //if(v.sm != "null"){
+                                //inputs += ' <div class="cols-7"><textarea class="form-control sm'+bplus+'" name="sm[]" rows="3" id="sm" maxlength="200">'+v.sm+'</textarea></div><div class="cols-2"><span id="rchars'+aplus+'">0</span>/46</div><div class="clear"></div>';
+                            //}
+                            //a++;
+                            b++;
                         });
-                        $("#input_sum_two").html(inputs);
+                        
+                        //$("#input_sum_two").html(inputs);
 
                         // Subheading and Content
                         var objJSONtxtCnt = JSON.parse(response['data'][0].ill_sub_txt);
@@ -2254,13 +2273,23 @@ $.ajaxSetup({
             //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
             //     cnt_value += 'p'+ v.text +'p';
             // });
-            $("select[name='sub_head1a[]']").each(function() {
-                sub_value += '<h3>'+ $(this).val() +'</h3>';
-                $("textarea[name='txt_ckeditor[]']").each(function() {
-                    sub_value += '<p>'+ $(this).val() +'</p>';
+            //$("select[name='sub_head1a[]']").each(function() {
+                $("select[name='sub_head1a[]']").each(function() {
+                // $(".ill_sh").each(function() {
+                    sub_value += '<h3>'+ $(this).val() +'</h3>';
+                    $("textarea[name='txt_ckeditor[]']").each(function() {
+                        sub_value += '<p>'+ $(this).val() +'</p>';
+                    });
                 });
-            });
+            //});
             $(".input_content").html(sub_value);
+            // $.each(objJSONitk, function (i, v) {
+            //     var yplus=y+1;
+            //     if(v.tag == 1){
+            //         $("#twotag"+yplus).attr( "checked", true );
+            //     }
+            //     y++;
+            // });
         });
     });
 

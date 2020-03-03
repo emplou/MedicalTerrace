@@ -131,11 +131,58 @@
                             <!-- Summarize -->
                             <div class="form-group">
                                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
-                                <div class="cols-5">          
+                                <!-- <div class="cols-7">         
                                     <div class="mod" id="input_sum"></div>
+                                </div> -->
+                                <div class="cols-5">          
+                                    <textarea class="form-control sm1" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                                 </div>
                                 <div class="cols-2">          
-                                    
+                                    <span id="rchars4">0</span>/46
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label cols-15"></label>
+                                <div class="cols-5">          
+                                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
+                                </div>
+                                <div class="cols-2">          
+                                    <span id="rchars5">0</span>/46
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label cols-15"></label>
+                                <div class="cols-5">          
+                                    <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                                </div>
+                                <div class="cols-2">          
+                                    <span id="rchars6">0</span>/46
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label cols-15"></label>
+                                <div class="cols-5">          
+                                    <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                                </div>
+                                <div class="cols-2">          
+                                    <span id="rchars7">0</span>/46
+                                </div>
+                            </div>
+
+                            <!-- Add new fiends in this wrapper -->
+                            <div class="wrapper"></div>
+                            
+                            <div class="form-group">
+                                <label class="control-label cols-15"></label>
+                                <div class="cols-5">          
+                                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                                </div>
+                                <div class="cols-2">          
+                                    <!-- <span id="rchars8">0</span>/46 -->
+                                    <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div>
+                    
                                 </div>
                             </div>
 
