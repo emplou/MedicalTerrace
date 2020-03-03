@@ -17,6 +17,7 @@
     </div>
 <div class="form-pads">
     {!! Form::open(['url' => '/save_hospital', 'method' => 'post', 'files' => true]) !!}
+    <input type="hidden" value="/add_hospital" id="urlid">
 
     <!-- URL Generator -->
     <div class="form-group">
