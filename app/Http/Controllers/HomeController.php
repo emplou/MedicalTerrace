@@ -706,7 +706,7 @@ class HomeController extends Controller
         $special->sp_doc               = $details['doctor'];
         $special->sp_doc_tsk           = $details['role'];
         $special->sp_doc_cmt           = $details['cmt']; 
-        $special->sp_img               = '/img/'.$filename; //special image
+        $special->sp_img               = '/special/'.$filename; //special image
         $special->sp_img_cap           = $details['img_cap'];
         $special->sp_img_alt           = $details['img_alt'];
         $special->sp_txt               = $jsonlead_list; //it should be json script when added
@@ -868,7 +868,7 @@ class HomeController extends Controller
         $illness->ill_doc_role          = $details['role'];
         $illness->ill_doc_cmt           = $details['doc_cmt']; 
         $illness->ill_summary           = $jsonsum_list; //it should be json script when added
-        $illness->ill_img               = '/img/'.$filename; //illness image
+        $illness->ill_img               = '/illness/'.$filename; //illness image
         $illness->ill_img_cap           = $details['img_cap'];
         $illness->ill_img_alt           = $details['img_alt'];
         $illness->ill_sub_txt           = $jsoncontent; //it should be json script when added
@@ -1824,7 +1824,7 @@ class HomeController extends Controller
                                                 'ill_doc_role'          => $details['role'],
                                                 'ill_doc_cmt'           => $details['doc_cmt'],
                                                 'ill_summary'           => $jsonsum_list,
-                                                'ill_img'               => '/img/'.$filename,
+                                                'ill_img'               => '/illness/'.$filename,
                                                 'ill_img_cap'           => $details['img_cap'],
                                                 'ill_img_alt'           => $details['img_alt'],
                                                 'ill_sub_txt'           => $jsoncontent,
@@ -2395,7 +2395,7 @@ class HomeController extends Controller
         }
         $jsontxt_list = json_encode($response10);
 
-        // tag text
+        // tag free
         $f_list = $details['tag_f']; 
         $response11 = array();
         foreach($f_list as $key11 => $cert11)
@@ -2417,7 +2417,7 @@ class HomeController extends Controller
                                                 'sp_doc'                => $details['doctor'],
                                                 'sp_doc_tsk'            => $details['role'],
                                                 'sp_doc_cmt'            => $details['cmt'],
-                                                //'sp_img'                => '/img/'.$filename,
+                                                //'sp_img'                => '/special/'.$filename,
                                                 'sp_img_cap'            => $details['img_cap'],
                                                 'sp_img_alt'            => $details['img_alt'],
                                                 'sp_txt'                => $jsonlead_list,

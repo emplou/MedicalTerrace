@@ -1,0 +1,276 @@
+@extends('layouts.app')
+@section('content')
+
+<!-- <h2>Add Illness</h2> -->
+<br>
+{!! Form::open(array('url' => '/', 'method' => 'post')) !!}
+
+<table class="table">
+<tr>
+    <td>URL自動生成名</td>
+    <td>{!! Form::text('url_generation', null , ['class' => 'form-control']) !!}</td>
+</tr>
+
+<tr>
+    <td>病気カテゴリー</td>
+    <td>
+    {!! Form::select('illness_category', $items ,null ,['class' => 'form-control']) !!}
+    
+    </td>
+</tr>
+<!-- <tr>
+    <td>特集カテゴリー</td>
+    <td>{!! Form::select('special_category', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>特集タイトル</td>
+    <td>{!! Form::select('special_title', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+</tr> -->
+<tr>
+    <td>病名ショルダー</td>
+    <td>{!! Form::text('illness_shoulder', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>病名</td>
+    <td>{!! Form::text('illness', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>病名ふりがな</td>
+    <td>{!! Form::text('illness_phonetic', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>監修・協力医師</td>
+    <td>{!! Form::select('doctor', $doctors ,null ,['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>医師コメント</td>
+    <td>{!! Form::textarea('doctor_comment', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>まとめ</td>
+    <td><div id="academic">
+        {!! Form::textarea('summarize', null , ['class' => 'form-control']) !!}
+    </div>
+    <div id="new_chq"></div>
+    <a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
+</tr>
+<tr>
+    <td>メイン画像</td>
+    <td>{!! Form::file('main_image', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>画像キャプション</td>
+    <td>{!! Form::text('img_caption', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>画像alt</td>
+    <td>{!! Form::text('img_alt', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<div id="academic">
+<tr>
+    <td>小見出し</td>
+    <td>{!! Form::text('subheading', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>本文</td>
+    <td>{!! Form::textarea('summarize', null , ['class' => 'form-control']) !!}</td>
+</tr>
+</div>
+<tr>
+    <td></td>
+    <td align="right"><div id="new_chq"></div>
+    <a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
+</tr>
+<tr>
+    <td>小見出し</td>
+    <td>{!! Form::text('subheading_two', null , ['class' => 'form-control']) !!}</td>
+    <td>リスク度</td>
+    <td>{!! Form::selectRange('risk_level', 1, 5,null, ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td align="right"><div id="new_chq"></div>
+    <a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
+</tr>
+<tr>
+    <td>チェック結果</td>
+    <td>
+        <table class="table">
+            <tr>
+                <td>{!! Form::text('check_result', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('check_result', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+            <tr>
+                <td>{!! Form::text('check_result', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('check_result', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>検索キーワード</td>
+    <td>
+        <table class="table">
+            <tr>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+            <tr>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+            <tr>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('keyword', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>タイトルタグ</td>
+    <td>{!! Form::checkbox('check_title_tag', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td></td>
+    <td>{!! Form::textarea('check_title_tag_text', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>ディスクリプション</td>
+    <td>{!! Form::textarea('meta_desc', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>h2</td>
+    <td>{!! Form::text('h2', null , ['class' => 'form-control']) !!}</td>
+    <td>{!! Form::text('h2', null , ['class' => 'form-control']) !!}</td>
+    <td>{!! Form::text('h2', null , ['class' => 'form-control']) !!}</td>
+</tr>
+<tr>
+    <td>タグ（キーワード）</td>
+    <td colspan="2">
+        <table class="table">
+            <tr>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+            </tr>
+            <tr>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+            </tr>
+            <tr>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+                <td>{!! Form::checkbox('tag_keyword', null , ['class' => 'form-control']) !!} 検索キーワド入力より</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>タグ（病名）</td>
+    <td>{!! Form::checkbox('tag_illness_name', null , ['class' => 'form-control']) !!} 病名より自動生成</td>
+</tr>
+<tr>
+    <td>タグ（診療科・所属科）</td>
+    <td colspan="2">
+        <table class="table">
+            <tr>
+                <td>{!! Form::select('tag_dpmt', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+                <td>{!! Form::select('tag_dpmt', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+                <td>{!! Form::select('tag_dpmt', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+            </tr>
+            <tr>
+                <td>{!! Form::select('tag_dpmt', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+                <td>{!! Form::select('tag_dpmt', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+                <td>{!! Form::select('tag_dpmt', array('L' => 'Large', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>タグ（症状）</td>
+    <td colspan="2">
+        <table class="table">
+            <tr>
+                <td>{!! Form::text('tag_symptoms', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('tag_symptoms', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('tag_symptoms', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+            <tr>
+                <td>{!! Form::text('tag_symptoms', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('tag_symptoms', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('tag_symptoms', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>タグ（季節）</td>
+    <td colspan="2">
+        <table class="table">
+            <tr>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+            </tr>
+            <tr>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+                <td>{!! Form::checkbox('tag_season', null , ['class' => 'form-control']) !!} aaa</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>タグ（フリー入力）</td>
+    <td colspan="2">
+        <table class="table">
+            <tr>
+                <td>{!! Form::text('tag_free', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('tag_free', null , ['class' => 'form-control']) !!}</td>
+                <td>{!! Form::text('tag_free', null , ['class' => 'form-control']) !!}</td>
+            </tr>
+        </table>
+    </td>
+    <td>
+			<table class="table">
+				<tr>
+					<td>{!! Form::button('プレビュー', ['class' => 'btn btn-success']) !!}</td>
+				</tr>
+				<tr>
+					<td>{!! Form::button('公開予約', ['class' => 'btn btn-warning']) !!}</td>
+				</tr>
+				<tr>
+					<td>{!! Form::button('公開', ['class' => 'btn btn-info']) !!}</td>
+				</tr>
+			</table>
+		</td>
+</tr>
+<!-- <tr>
+    <td></td>
+    <td>{!! Form::button('preview') !!}
+    {!! Form::button('release_one') !!}
+    {!! Form::button('release_two') !!}</td>
+</tr> -->
+
+    
+</table>
+
+{!! Form::close() !!}
+
+@endsection

@@ -138,7 +138,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
                 <div class="cols-5">          
-                    <textarea class="form-control sm" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
+                    <textarea class="form-control sm1" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
                 </div>
                 <div class="cols-2">          
 					<span id="rchars4">0</span>/46
@@ -218,7 +218,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
                     <div class="cols-4">          
-                    <select name="sub_head1a[]" class="form-control">
+                    <select id="head1" name="sub_head1a[]" class="form-control">
                         <option value="">選択してください</option>
                         <option value="基礎知識">基礎知識</option>
                         <option value="近年の動向">近年の動向</option>
@@ -241,7 +241,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15"></label>
                     <div class="cols-4">
-                        <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required>
+                        <input type="text" id="s_head1" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required>
                     </div>
                 </div>
 
@@ -251,7 +251,7 @@
                     <div class="cols-6">   
                        
                         <div class="cols-10">        
-                            <textarea class="form-control ck" name="txt_ckeditor[]" placeholder=""></textarea>
+                            <textarea class="form-control ck" name="txt_ckeditor[0]" placeholder=""></textarea>
                         </div>
                         
                     </div>

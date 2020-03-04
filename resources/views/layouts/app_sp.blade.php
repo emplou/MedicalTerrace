@@ -129,29 +129,18 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('lead_ckeditor');
+    CKEDITOR.replace('lead_ckeditor[0]');
     CKEDITOR.add 
 </script>
 <script>
-    CKEDITOR.replace('txt_ckeditor');
+    CKEDITOR.replace('txt_ckeditor[0]');
     CKEDITOR.add 
 </script>
 <script>
-    CKEDITOR.replace('txt2_ckeditor');
+    CKEDITOR.replace('txt2_ckeditor[0]');
     CKEDITOR.add 
 </script>
-<script>
-    CKEDITOR.replace('lead_ckeditor_two');
-    CKEDITOR.add 
-</script>
-<script>
-    CKEDITOR.replace('txt_ckeditor_two');
-    CKEDITOR.add 
-</script>
-<script>
-    CKEDITOR.replace('txt2_ckeditor_two');
-    CKEDITOR.add 
-</script>
+
 
 <!-- Count character starts -->
 <script type="text/javascript">
@@ -343,6 +332,9 @@ $('input[type=file]').customFile();
     $(document).ready(function() {
         var wrapper         = $(".field_wrap1"); //Fields wrapper
         var add_button      = $(".add1"); //Add button ID
+        var add_lc          = $(".add2"); //Add button ID
+        var add_tc          = $(".add3"); //Add button ID
+        var add_tc2          = $(".add4"); //Add button ID
         var wrapper2         = $(".field_wrap2"); //Fields wrapper
         var wrapper3         = $(".field_wrap3"); //Fields wrapper
         var wrapper4         = $(".field_wrap4"); //Fields wrapper
@@ -364,51 +356,78 @@ $('input[type=file]').customFile();
             $(wrapper).append('<div class="form-group"><div class="control-label cols-15"></div><div class="cols-15"><button type="button" class="btn-prime image"></button></div><div class="cols-4"><input type="text" class="form-control" placeholder="選ばれた記事の病名が入る" name="pos_ill[]"></div><div class="cols-1"></div></div>'); //add input box
         });
 
-        $('.add2').on('click', add2);
-        var i=0;
-        function add2(e) {
+        // lead ckeditor
+        // $('.add2').on('click', add2);
+        // var i=0;
+        // function add2(e) {
+        //     e.preventDefault();
+        //     var copy = $('#addanother1').clone();
+
+        //     var lplus=i+1;
+
+        //     $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+        //     CKEDITOR.replace('lead_ckeditor['+lplus+']');
+        //     i++;  
+
+        // }
+        var lc=0;
+        $(add_lc).click(function(e){ //on add input button click
             e.preventDefault();
-            var copy = $('#addanother1').clone();
+            lc++;
+            $(wrapper2).append('<div class="cols-10"><textarea class="form-control" name="lead_ckeditor['+lc+']" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="clear"></div>'); //add input box
+            CKEDITOR.replace('lead_ckeditor['+lc+']');
+            CKEDITOR.add 
+        });
 
-            var lplus=i+1;
+        // text ckeditor
+        // $('.add3').on('click', add3);
+        // var j=0;
+        // function add3(e) {
+        //     e.preventDefault();
+        //     var copy2 = $('#addanother2').clone();
 
-            $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
-            CKEDITOR.replace('lead_ckeditor['+lplus+']');
-            i++;  
+        //     var tplus=j+1;
 
-        }
 
-        $('.add3').on('click', add3);
-        var j=0;
-        function add3(e) {
+        //     $(copy2).find('.add3').remove();
+        //     $(wrapper3).append($(copy2).html()+ '<div class="clear"></div>');
+        //     CKEDITOR.replace('txt_ckeditor['+tplus+']');
+        //     j++;  
+
+        // }
+        var tc=0;
+        $(add_tc).click(function(e){ //on add input button click
             e.preventDefault();
-            var copy2 = $('#addanother2').clone();
+            tc++;
+            $(wrapper3).append('<div class="form-group"><label class="control-label cols-15">小見出し<br><span>Subheading</span></label><div class="cols-5"><select name="sub_head1a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div><div class="cols-15"></div><div class="cols-5"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-7"><textarea class="form-control" name="txt_ckeditor['+tc+']" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="cols-1"></div> </div><div class="clear"></div>'); //add input box
+            CKEDITOR.replace('txt_ckeditor['+tc+']');
+            CKEDITOR.add 
+        });
 
-            var tplus=j+1;
+        // text 2 CKeditor
+        // $('.add4').on('click', add4);
+        // var k=0;
+        // function add4(e) {
+        //     e.preventDefault();
+        //     var copy3 = $('#addanother3').clone();
+
+        //     var kplus=k+1;
 
 
-            $(copy2).find('.add3').remove();
-            $(wrapper3).append($(copy2).html()+ '<div class="clear"></div>');
-            CKEDITOR.replace('txt_ckeditor['+tplus+']');
-            j++;  
+        //     $(copy3).find('.add4').remove();
+        //     $(wrapper4).append($(copy3).html()+ '<div class="clear"></div>');
+        //     CKEDITOR.replace('txt2_ckeditor['+kplus+']');
+        //     k++;  
 
-        }
-
-        $('.add4').on('click', add4);
-        var k=0;
-        function add4(e) {
+        // }
+        var tc2=0;
+        $(add_tc2).click(function(e){ //on add input button click
             e.preventDefault();
-            var copy3 = $('#addanother3').clone();
-
-            var kplus=k+1;
-
-
-            $(copy3).find('.add4').remove();
-            $(wrapper4).append($(copy3).html()+ '<div class="clear"></div>');
-            CKEDITOR.replace('txt2_ckeditor['+kplus+']');
-            k++;  
-
-        }
+            tc2++;
+            $(wrapper4).append('<div class="form-group"><label class="control-label cols-15">小見出し<br><span>Subheading</span></label><div class="cols-5"><select name="sub_head2a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div><div class="cols-15"></div><div class="cols-5"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head2b[]"></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-7"><textarea class="form-control" name="txt2_ckeditor['+tc2+']" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="cols-1"></div> </div><div class="clear"></div>'); //add input box
+            CKEDITOR.replace('txt2_ckeditor['+tc2+']');
+            CKEDITOR.add 
+        });
 
         $('.add6').on('click', add6);
         function add6(e) {

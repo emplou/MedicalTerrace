@@ -20,7 +20,7 @@
         <tbody>
         @foreach($illness as $ill)
             <tr>
-                <td><img src="{!! $ill->ill_img !!} style="width:80px;height:80px;"></td>
+                <td><img src="{!! $ill->ill_img !!}" style="width:80px;height:80px;"></td>
                 <td>{!! $ill->ill_name !!}</td>
                 <td>{!! $ill->ill_cat !!}</td>
                 <td>{!! $ill->ill_magazine !!}</td>
