@@ -139,7 +139,7 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('txt_ckeditor[]');
+    CKEDITOR.replace('txt_ckeditor[0]');
     CKEDITOR.add 
 </script>
 
@@ -253,6 +253,7 @@
     $(document).ready(function() {
         var wrapper         = $(".wrapper"); //Fields wrapper
         var add_button      = $(".addsum1"); //Add button ID
+        var add_ck          = $(".add-ck"); //Add button ID
         var wrapper2         = $(".wrapper2"); //Fields wrapper
         var add_button3      = $(".sh-btn"); //Add button ID
         var wrapper3         = $(".wrapper3"); //Fields wrapper
@@ -264,31 +265,46 @@
         var wrapper7         = $(".wrapper7"); //Fields wrapper
         var wrapper8         = $(".wrapper8"); //Fields wrapper
         var wrapper9         = $(".wrapper9"); //Fields wrapper
-    
+        var i=0;
+        
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
-            $(wrapper).append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-5"><textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea></div><div class="cols-2"></div></div><div class="clear"></div>'); //add input box            
+            i++;
+            $(wrapper).append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-5"><textarea class="form-control sm5" id="sm'+i+'" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea></div><div class="cols-2"></div></div><div class="clear"></div>'); //add input box            
+             
         });
 
-        $('.add-ck').on('click', add_ck);
-        var i=0;
-        function add_ck(e) {
+        // $('.add-ck').on('click', add_ck);
+        // var i=0;
+        // function add_ck(e) {
+        //     e.preventDefault();
+        //     var copy = $('#addanother').clone();
+
+        //     var lplus=i+1;
+
+        //     // $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
+        //     // $(copy).find('script').remove();
+        //     //$(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
+        //     $(copy).find('select[name=sub_head1a\\[0\\]').attr('id', 'head'+lplus);
+        //     $(copy).find('input[name=sub_head1b\\[0\\]]').attr('id', 's_head'+lplus);
+        //     //$(copy).find('textarea[name=txt_ckeditor[]]').attr('id', 'txt_ckeditor'+lplus);
+
+        //     $(copy).find('.add-ck').remove();
+        //     $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+        //     CKEDITOR.replace('txt_ckeditor['+lplus+']');
+        //     i++;  
+
+        // }
+        var ck=0;
+        $(add_ck).click(function(e){ //on add input button click
             e.preventDefault();
-            var copy = $('#addanother').clone();
-
-            var lplus=i+1;
-
-            // $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
-            // $(copy).find('script').remove();
-            //$(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
-
-            $(copy).find('.add-ck').remove();
-            $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
-            CKEDITOR.replace('txt_ckeditor['+lplus+']');
-            i++;  
-
-        }
+            
+            ck++;
+            $(wrapper2).append('<div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"><select name="sub_head1a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select></div></div><div class="form-group"><label class="control-label cols-15"></label><div class="cols-4"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control ck" name="txt_ckeditor['+ck+']" placeholder=""></textarea></div></div><div class="cols-1 relative"></div></div><div class="clear"></div>'); //add input box            
+            CKEDITOR.replace('txt_ckeditor['+ck+']');
+            CKEDITOR.add 
+        });
 
         $(add_button3).click(function(e){ //on add input button click
             e.preventDefault();

@@ -182,22 +182,19 @@
             <div class="form-group editor">
 				<label class="control-label cols-15">リード<br><span>Text of Subheading</span></label>
                 <div class="cols-7">   
+                    
+                    <!-- <div id="addanother1"> -->
+                    <div class="cols-10">        
+                        <textarea class="form-control" name="lead_ckeditor[0]" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea><br>
+                        
+                    </div>
+                    <!-- </div> -->
                     <!-- add new textarea here -->
                     <div class="field_wrap2"></div>
-                    <div id="addanother1">
-                        <div class="cols-10">        
-                            <textarea class="form-control" name="lead_ckeditor[]" id="lead_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。">
-
-                            </textarea>
-                        </div>
-                    </div>
                 </div>
                 <div class="cols-1"><button type="button" class="btn btn-success add2"><span class="lnr lnr-plus-circle"></span></button></div> 
             </div>
             <hr>
-
-            <!-- add new form here -->
-            <div class="field_wrap3"></div>
 
             <div id="addanother2">
                 <div class="form-group">
@@ -222,14 +219,15 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7"> 
                          
-                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor" placeholder="">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
-
-                        </textarea>
+                        <textarea class="form-control" name="txt_ckeditor[0]" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
                     
                 </div>
             </div>
+
+            <!-- add new form here -->
+            <div class="field_wrap3"></div>
 
             
             <div class="form-group">
@@ -266,9 +264,6 @@
             <!-- <span>Insert image</span> with add field ends -->
             <hr>
 
-            <!-- add new form here -->
-            <div class="field_wrap4"></div>
-
             <div id="addanother3">
                 <div class="form-group">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
@@ -290,13 +285,16 @@
                 <div class="form-group editor">
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7">          
-                        <textarea class="form-control" name="txt2_ckeditor[]" id="txt2_ckeditor">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+                        <textarea class="form-control" name="txt2_ckeditor[0]" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。">
 
                         </textarea>
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add4"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
+
+            <!-- add new form here -->
+            <div class="field_wrap4"></div>
 
             <div class="form-group">
                 <div class="cols-15"></div>
