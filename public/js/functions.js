@@ -607,8 +607,8 @@ $.ajaxSetup({
                   $("#medical_ins_eng").val(response['data'][0].name_phonic);
                   $("#common_name").val(response['data'][0].common_name);
                   $("#postal_code").val(response['data'][0].postal_code);
-                  $("#address").val(response['data'][0].address);
-                  $("#address_english").val(response['data'][0].address_eng);
+                  $(".address").val(response['data'][0].address);
+                  $(".address_english").val(response['data'][0].address_eng);
                   //access not yet
                   //parking not yet
                   $("#phone_no").val(response['data'][0].phone_no);
