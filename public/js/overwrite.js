@@ -590,6 +590,65 @@ function addfields3(e) {
 
 }
 
+$('.overwrite_hospital').each(function(e){
+    $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('hosp-id');
+        // alert(id);
+
+        $.ajax({
+            url: '/modal_edit_hospital/'+id,
+            type: 'get',
+            dataType: 'json',
+            // data : { id : id },
+            success: function(response){
+                console.log(response['data']);
+                console.log(response['dpt_exam']);
+                console.log(response['hosp_feature']);
+            if(response == "success")
+
+              console.log(response['data']); 
+
+              $("#edithospital").modal('show');
+              $("#url_gen").val(response['data'][0].url);
+              $("#medical_ins").val(response['data'][0].medical_ins);
+              $("#medical_ins_eng").val(response['data'][0].name_phonic);
+              $("#common_name").val(response['data'][0].common_name);
+              $("#postal_code").val(response['data'][0].postal_code);
+              $(".address").val(response['data'][0].address);
+              $(".address_english").val(response['data'][0].address_eng);
+              //access not yet
+              //parking not yet
+              $("#phone_no").val(response['data'][0].phone_no);
+              $("#fax").val(response['data'][0].fax);
+              $("#email").val(response['data'][0].email);
+              //image not yet
+              $("#img_caption").val(response['data'][0].image_caption);
+              $("#img_alt").val(response['data'][0].image_alt);
+              $("#hosp_subheading").val(response['data'][0].hosp_subheading);
+              $("#text_subheading_hospital").val(response['data'][0].hosp_text_subheading);
+              // division dropdown
+            //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
+              $("#division").val(response['data'][0].division);
+                
+
+            },
+                error: function(response){
+                alert('Error'+response);
+   
+            }
+
+          });
+
+        // location.reload();
+    });
+});
+
 // hospital staff ckEditor (fourth)
 
 $('.add-ck4').on('click', addfields4);
@@ -799,6 +858,65 @@ $('.overwrite_special').each(function(e){
             }
 
         });
+        // location.reload();
+    });
+});
+
+$('.copy_add_hospital').each(function(e){
+    $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+    // e.preventDefault();
+    $(this).on('click', function(){
+        var id = $(this).attr('hosp-id');
+        // alert(id);
+
+        $.ajax({
+            url: '/modal_edit_hospital/'+id,
+            type: 'get',
+            dataType: 'json',
+            // data : { id : id },
+            success: function(response){
+                console.log(response['data']);
+                console.log(response['dpt_exam']);
+                console.log(response['hosp_feature']);
+            if(response == "success")
+
+              console.log(response['data']); 
+
+              $("#edithospital").modal('show');
+              $("#url_gen").val(response['data'][0].url);
+              $("#medical_ins").val(response['data'][0].medical_ins);
+              $("#medical_ins_eng").val(response['data'][0].name_phonic);
+              $("#common_name").val(response['data'][0].common_name);
+              $("#postal_code").val(response['data'][0].postal_code);
+              $(".address").val(response['data'][0].address);
+              $(".address_english").val(response['data'][0].address_eng);
+              //access not yet
+              //parking not yet
+              $("#phone_no").val(response['data'][0].phone_no);
+              $("#fax").val(response['data'][0].fax);
+              $("#email").val(response['data'][0].email);
+              //image not yet
+              $("#img_caption").val(response['data'][0].image_caption);
+              $("#img_alt").val(response['data'][0].image_alt);
+              $("#hosp_subheading").val(response['data'][0].hosp_subheading);
+              $("#text_subheading_hospital").val(response['data'][0].hosp_text_subheading);
+              // division dropdown
+            //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
+              $("#division").val(response['data'][0].division);
+                
+
+            },
+                error: function(response){
+                alert('Error'+response);
+   
+            }
+
+          });
+
         // location.reload();
     });
 });

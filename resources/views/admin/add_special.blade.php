@@ -184,8 +184,8 @@
                 <div class="cols-7">   
                     
                     <!-- <div id="addanother1"> -->
-                    <div class="cols-10">        
-                        <textarea class="form-control" name="lead_ckeditor[0]" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea><br>
+                    <div class="cols-10 lead_edtr">        
+                        <textarea class="form-control" name="lead_ckeditor[0]" id="lead_edtr1" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea><br>
                         
                     </div>
                     <!-- </div> -->

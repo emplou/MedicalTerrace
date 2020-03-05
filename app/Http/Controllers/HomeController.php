@@ -1287,10 +1287,29 @@ class HomeController extends Controller
         // return $value;
     }
 
+    public function modal_preview_special($id){
+        $value['data'] = DB::table('special')->where('id','=',$id)->get();
+        $value['ill'] = DB::table('illness')->get();
+        
+        $fetch = json_encode($value);
+        return $fetch;
+    }
+
+    public function modal_preview_illness($id){
+        $value['data'] = DB::table('illness')->where('id','=',$id)->get();
+        $value['ra'] = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
+                                                    ->where('ra_status','=','1')
+                                                    ->get();
+        $value['ra2'] = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
+                                                    ->where('ra_status','=','2')
+                                                    ->get();   
+
+        $fetch = json_encode($value);
+        return $fetch;
+    }
+
     public function save_edit_doctor(Request $request){
         $details = Input::all();
-
-        // dd($request->all());
 
         $doctors = DB::table('dv_doctors')->where('id','=',$details['docID'])->get();
         foreach($doctors as $doc){
