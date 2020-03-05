@@ -546,6 +546,11 @@ $(document).ready(function() {
 <script>
 	CKEDITOR.replace( 'textheading_lead' );
 	CKEDITOR.add 
+
+
+// var config = {};
+// config.placeholder = 'メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。'; 
+// CKEDITOR.replace("textheading_lead" , config );
 </script>
 <script>
 	CKEDITOR.replace( 'equipment_subheading[0]' );

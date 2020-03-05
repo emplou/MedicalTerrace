@@ -2,6 +2,7 @@ body {
   background: #f1f4f7;
   font-size: 14px;
   color: #444444;
+  overflow-x: hidden;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 p {
@@ -2340,11 +2341,12 @@ label:hover:before {
 
 .form-progress {
   width: 100%;
-  max-width: 550px;
+  max-width: 500px;
   top:20px;
-  right: 0;
+  float: left;
   height: 80px;
   display: block;
+  margin-left: 43%;
   position: absolute;
   clear: both;
 }
@@ -2501,7 +2503,7 @@ textarea {
 }
 
 #list_wrapper {
-  width: 100%;
+  width: 96%;
   padding: 0;
   /* max-width: 1020px; */
 }
@@ -3163,6 +3165,8 @@ ul.blk-bullet img {
 .modal-dialog.edit .form-progress,
 .modal-dialog.modal-lg .form-progress {
   max-width: 450px;
+  float: right;
+  right: 0;
 }
 .modal-dialog.edit .modal-body,
 .modal-dialog.modal-lg .modal-body {
@@ -3184,6 +3188,7 @@ ul.blk-bullet img {
 
 .second-heading {
   display: table;
+  width: 100%;
 }
 .second-heading h1{
   width: 55%;
@@ -3193,6 +3198,7 @@ ul.blk-bullet img {
 .second-heading .add-buts {
   width: 45%;
   float: right;
+  padding-right: 10px;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -3244,13 +3250,20 @@ div.dataTables_wrapper div.dataTables_filter input {
 
 
 @media(max-width: 2000px) {
-
+  .illness-table, .special-table {
+    width: 90%;
+    padding-right: 150px;
+  }
 }
 
 
 @media(max-width: 1300px) {
+  #list_wrapper {
+    width: 99%;
+  }
   .illness-table, .special-table {
     width: 82%;
+    padding-right: 10px;
   }
   table#list {
     width: 100% !important;
@@ -3261,4 +3274,14 @@ div.dataTables_wrapper div.dataTables_filter input {
   header .right {
     width: 450px;
   }
-}
+  .form-progress {
+    margin-left: 50%;
+  }
+  .add-buts .buts {
+    width: 29.3%;
+  }
+  .content-container.home {
+    margin-left: -20px;
+    width: 103%;
+  }
+}  
