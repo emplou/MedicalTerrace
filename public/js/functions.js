@@ -1179,22 +1179,23 @@ $.ajaxSetup({
                         // Subheading and Content
                         var objJSONtxtCnt = JSON.parse(response['data'][0].ill_sub_txt);
                         var input_content = "";
+                        var c = 0;
                         $.each(objJSONtxtCnt, function (i, v) {
-
-                            input_content += '<div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"> ';
+                            c++;
+                            input_content += '<div class="txt_edtr"><div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"> ';
                             //from heading
-                            input_content += '<select name="sub_head1a[]" class="form-control ill_sh"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                            input_content += '<select id="head'+c+'" name="sub_head1a[]" class="form-control ill_sh"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
                             input_content += '</div></div>';
 
                             input_content += '<div class="form-group"><label class="control-label cols-15"></label><div class="cols-4">';
                             //from subheading
-                            input_content += '<input type="text" class="form-control" name="sub_head1b[]" value="'+ v.sub +'">';
+                            input_content += '<input type="text" id="s_head'+c+'" class="form-control" name="sub_head1b[]" value="'+ v.sub +'">';
                             input_content += '</div></div>';
 
                             input_content += '<div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10">  ';
                             //to content
-                            input_content += '<textarea class="form-control" name="txt_ckeditor[]" id="txt_ckeditor">'+ v.txt_ckeditor +'</textarea>';
-                            input_content += '</div></div></div>';
+                            input_content += '<textarea class="form-control" name="txt_ckeditor[]" id="txt_ck'+c+'">'+ v.txt_ckeditor +'</textarea>';
+                            input_content += '</div></div></div></div>';
                         });
                         $(".input_content").html(input_content);
 
@@ -1957,12 +1958,12 @@ $.ajaxSetup({
 
                             input_content_two += '<div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"> ';
                             //from heading
-                            input_content_two += '<select name="sub_head1a[]" class="form-control"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
+                            input_content_two += '<select id="head" name="sub_head1a[]" class="form-control"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
                             input_content_two += '</div></div>';
 
                             input_content_two+= '<div class="form-group"><label class="control-label cols-15"></label><div class="cols-4">';
                             //from subheading
-                            input_content_two += '<input type="text" class="form-control" name="sub_head1b[]" value="'+ v.sub +'">';
+                            input_content_two += '<input type="text" id="s_head" class="form-control" name="sub_head1b[]" value="'+ v.sub +'">';
                             input_content_two += '</div></div>';
 
                             input_content_two += '<div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10">  ';
@@ -2201,6 +2202,41 @@ $.ajaxSetup({
             sp_iD = $("#sp_iD").val(); // ID
             $("#id_sp").val($("#sp_iD").val());
             $("#sp_iD").html(sp_iD);
+            sp_cat = $("#sp_cat").val(); // Illness Category
+            $(".sp_cat").html(sp_cat);
+            sp_name = $("#sp_title").val(); // Illness Name
+            $(".sp_name").html(sp_name);
+            sp_sh = $("#sts").val(); // Illness SHoulder
+            $(".sp_sh").html(sp_sh);
+
+            //Keywords
+            var key_value = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value").html(key_value);
+
+            var lead_value = "";
+            var lead_cnt = 0;
+            $(".lead_edtr").each(function() {
+                lead_cnt++;
+                lead_value += '<p>'+ $("textarea#lead_edtr"+lead_cnt+"").val() +'</p>';
+                
+            });
+            $(".input_lead").html(lead_value);
+
+            var sp_sub_value = "";
+            var txt_cnt = 0;
+            $(".txt_edtr").each(function() {
+                txt_cnt++;
+                head = $("#ill_cat").val(); 
+                sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
+                sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
+                
+            });
+            $(".input_txt_ck").html(sp_sub_value);
            
         });
     });
@@ -2218,6 +2254,41 @@ $.ajaxSetup({
             sp_iD_two = $("#sp_iD_two").val(); // ID
             $("#id_sp_two").val($("#sp_iD_two").val());
             $("#sp_iD_two").html(sp_iD_two);
+            sp_cat = $("#sp_cat_two").val(); // Illness Category
+            $(".sp_cat").html(sp_cat);
+            sp_name = $("#sp_title_two").val(); // Illness Name
+            $(".sp_name").html(sp_name);
+            sp_sh = $("#sts_two").val(); // Illness SHoulder
+            $(".sp_sh").html(sp_sh);
+
+            //Keywords
+            var key_value = "";
+            $("input[name='kword[]']").each(function() {
+                if($(this).val() != '') {
+                    key_value += '<span>'+ $(this).val() +'</span>';
+                }
+            });
+            $("#tag_value").html(key_value);
+
+            var lead_value = "";
+            var lead_cnt = 0;
+            $(".lead_edtr").each(function() {
+                lead_cnt++;
+                lead_value += '<p>'+ $("textarea#lead_edtr_two"+lead_cnt+"").val() +'</p>';
+                
+            });
+            $(".input_lead").html(lead_value);
+
+            var sp_sub_value = "";
+            var txt_cnt = 0;
+            $(".txt_edtr").each(function() {
+                txt_cnt++;
+                head = $("#ill_cat").val(); 
+                sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
+                sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
+                
+            });
+            $(".input_txt_ck").html(sp_sub_value);
            
         });
     });
@@ -2298,21 +2369,30 @@ $.ajaxSetup({
             //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
              
             var sub_value = "";
+            var cnt = 0;
+            $(".txt_edtr").each(function() {
+                cnt++;
+                head = $("#ill_cat").val(); 
+                sub_value += '<h3>'+ $("#head"+cnt).val() +'</h3>';
+                sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+cnt+"]']").val() +'</p>';
+                
+            });
+            $(".input_content").html(sub_value);
             //var cnt_value = "";
             // $.each(objJSONcontent, function (i, v) { 
             //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
             //     cnt_value += 'p'+ v.text +'p';
             // });
             //$("select[name='sub_head1a[]']").each(function() {
-                $("select[name='sub_head1a[]']").each(function() {
-                // $(".ill_sh").each(function() {
-                    sub_value += '<h3>'+ $(this).val() +'</h3>';
-                    $("textarea[name='txt_ckeditor[]']").each(function() {
-                        sub_value += '<p>'+ $(this).val() +'</p>';
-                    });
-                });
+                // $("select[name='sub_head1a[]']").each(function() {
+                // // $(".ill_sh").each(function() {
+                //     sub_value += '<h3>'+ $(this).val() +'</h3>';
+                //     $("textarea[name='txt_ckeditor[]']").each(function() {
+                //         sub_value += '<p>'+ $(this).val() +'</p>';
+                //     });
+                // });
             //});
-            $(".input_content").html(sub_value);
+            // $(".input_content").html(sub_value);
             // $.each(objJSONitk, function (i, v) {
             //     var yplus=y+1;
             //     if(v.tag == 1){
@@ -2404,11 +2484,18 @@ $.ajaxSetup({
             //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
             //     cnt_value += 'p'+ v.text +'p';
             // });
-            $("select[name='sub_head1a[]']").each(function() {
-                sub_value += '<h3>'+ $(this).val() +'</h3>';
-                $("textarea[name='txt_ckeditor[]']").each(function() {
-                    sub_value += '<p>'+ $(this).val() +'</p>';
-                });
+            // $("select[name='sub_head1a[]']").each(function() {
+            //     sub_value += '<h3>'+ $(this).val() +'</h3>';
+            //     $("textarea[name='txt_ckeditor[]']").each(function() {
+            //         sub_value += '<p>'+ $(this).val() +'</p>';
+            //     });
+            // });
+            var cnt = 0;
+            $(".txt_edtr").each(function() {
+                cnt++;
+                sub_value += '<h3>'+ $("#head"+cnt).val(); +'</h3>';
+                sub_value += '<p>'+ $("#txt_ck"+cnt).val(); +'</p>';
+                
             });
             $(".input_content").html(sub_value);
         });

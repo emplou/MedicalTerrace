@@ -214,7 +214,7 @@
             <br>
             
             <!-- Subheading -->
-            <div id="addanother">
+            <div class="txt_edtr">
                 <div class="form-group">
                     <label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label>
                     <div class="cols-4">          
@@ -251,9 +251,9 @@
                     <div class="cols-6">   
                        
                         <div class="cols-10">        
-                            <textarea class="form-control ck" name="txt_ckeditor[0]" placeholder=""></textarea>
+                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ck1" placeholder=""></textarea>
                         </div>
-                        
+                         
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
                 </div>
