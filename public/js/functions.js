@@ -3087,6 +3087,18 @@ $.ajaxSetup({
          });
     });
 
+
+
+    var table = $('#filter').DataTable();
+    table.columns().every(function() {
+        var that = this;
+        $('#editable-usage_filter input').on('keyup change', function() {
+            if (that.search() == this.value) {
+                that.search(this.value).draw();
+            }
+        });
+    });
+
     
     
 

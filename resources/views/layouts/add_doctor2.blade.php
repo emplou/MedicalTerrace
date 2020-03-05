@@ -36,23 +36,7 @@
         </tr>
 
         <table class="table" style="background-color:#aee4e4;">
-	<tr>
-		<td>エディター担当者<br>Editor</td>
-		<td>{!! Form::text('Editor', null , ['class' => 'form-control']) !!}</td>
-		<td>{!! Form::button('エディター変更申請', ['class' => 'btn btn-success']) !!}</td>
-	</tr>
-	<tr>
-		<td>アポイント履歴<br>Appointment History</td>
-		<td>{!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}</td>
-	</tr>
-	<tr>
-		<td>会話メモ<br>Conversation Note</td>
-		<td>{!! Form::textarea('Honorarium', null , ['class' => 'form-control']) !!}</td>
-	</tr>
-	<tr>
-		<td>エディターの所見<br>Editor Opinion</td>
-		<td>{!! Form::textarea('Note', null , ['class' => 'form-control']) !!}</td>
-	</tr>
+	
 </table>
         <tr>
             <td>画像alt<br>Image alt</td>
