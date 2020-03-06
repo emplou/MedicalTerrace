@@ -96,6 +96,31 @@ class HomeController extends Controller
         return view('admin.topics_list', compact('hospitals', 'department'));
     }
 
+    public function column_list(){
+        $columns = DB::table('dv_column')->get();
+        return view('admin.column_list', compact('columns'));
+    }
+
+    public function daily_list(){
+        $daily = DB::table('dv_daily')->get();
+        return view('admin.daily_list', compact('daily'));
+    }
+
+    public function medicine_list(){
+        $medicine = DB::table('dv_medicine')->get();
+        return view('admin.medicine_list', compact('hospitals'));
+    }
+
+    public function equipment_list(){
+        $equipment = DB::table('dv_equipment')->get();
+        return view('admin.equipment_list', compact('equipment'));
+    }
+
+    public function magazine_list(){
+        $magazine = DB::table('dv_hospital')->get();
+        return view('admin.magazine_list', compact('hospitals'));
+    }
+
     public function save_hospital(Request $request){
 
         $details = Input::all();

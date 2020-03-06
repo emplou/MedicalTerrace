@@ -16,15 +16,7 @@
         </thead>
         <tbody>
         @foreach($hospitals as $hosp)
-            <tr>
-                <td><img src="{!! $hosp->image !!}" style="width:80px;height:80px;"></td>
-                <td>{!! $hosp->medical_ins !!}</td>
-                <td>{!! $hosp->name_phonic !!}</td>
-                <td>{!! $hosp->common_name !!}</td>
-                <td>{!! $hosp->hospital_id !!}</td>
-                <td>{!! $hosp->created_at !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_hospital" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success ">コピーと新しい編集<br>Copy and new edit</a></td>
-            </tr>
+           
         @endforeach
         </tbody>
     </table>

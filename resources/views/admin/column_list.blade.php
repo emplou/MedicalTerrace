@@ -7,20 +7,18 @@
 
     <table id="list" class="table table-striped table-bordered" style="width:100%">
         <thead>
-            <th>Column</th>
-            <th>Column Category</th>
-            <th>Column Shoulder</th>
-            <th>Column Phonetic</th>
+            <th>Column Name</th>
+            <th>Column Id</th>
+            <th>Column Desc</th>
             <th>Action</th>
         </thead>
         <tbody>
-        @foreach($illness as $ill)
+        @foreach($columns as $col)
             <tr>
-                <td>{!! $ill->ill_name !!}</td>
-                <td>{!! $ill->ill_cat !!}</td>
-                <td>{!! $ill->ill_shoulder !!}</td>
-                <td>{!! $ill->ill_ph !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_illness" style="background-color:#FCB0BC;border-color:#FCB0BC;" il-id="{!! $ill->ill_id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->ill_id !!}" style="background-color:#6ebaba;border-color:#6ebaba;">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td>{!! $col->column_name !!}</td>
+                <td>{!! $col->id !!}</td>
+                <td>{!! $col->column_desc !!}</td>
+                <td><a href="#" class="btn btn-info overwrite_illness" style="background-color:#FCB0BC;border-color:#FCB0BC;" il-id="{!! $col->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $col->id !!}" style="background-color:#6ebaba;border-color:#6ebaba;">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>
