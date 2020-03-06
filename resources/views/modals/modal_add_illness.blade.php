@@ -28,8 +28,8 @@
                     <ul class="checks" id="summary">
                         
                     </ul>
-                    <ol class="link">
-                        <li><a href="">手足口病の基礎知識</a></li>
+                    <ol class="link input_link">
+                        <!-- <li><a href="">手足口病の基礎知識</a></li>
                         <li><a href="">手足口病の近年の動向</a></li>
                         <li><a href="">手足口病の症状</a></li>
                         <li><a href="">手足口病の原因</a></li>
@@ -38,7 +38,7 @@
                         <li><a href="">手足口病の自宅療法（療養方法、再発防止など)</a></li>
                         <li><a href="">手足口病の予防・対策方法</a></li>
                         <li><a href="">手足口病のリスク度チェック</a></li>
-                        <li><a href="">手足口病のセルフチェック</a></li>
+                        <li><a href="">手足口病のセルフチェック</a></li> -->
                     </ol>
 
                     <div class="input_content"></div>

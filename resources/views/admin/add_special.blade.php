@@ -185,7 +185,7 @@
                     
                     <!-- <div id="addanother1"> -->
                     <div class="cols-10 lead_edtr">        
-                        <textarea class="form-control" name="lead_ckeditor[0]" id="lead_edtr1" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea><br>
+                        <textarea class="form-control" name="lead_ckeditor[]" id="lead_edtr1" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea><br>
                         
                     </div>
                     <!-- </div> -->
@@ -200,7 +200,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">          
-                        <select name="sub_head1a[]" class="form-control">
+                        <select id="head1" name="sub_head1a[]" class="form-control">
                             <option value="">選択してください</option>
                             <option value="基礎知識">基礎知識</option>
                             <option value="近年の動向">近年の動向</option>
@@ -210,7 +210,7 @@
 					</div>
 					<div class="cols-15"></div>
 					<div class="cols-5">          
-                        <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
+                        <input type="text" class="form-control" id="s_head1" placeholder="選択項目にない場合に入力" name="sub_head1b[]">
                     </div>
                 </div>
 
@@ -219,7 +219,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7"> 
                          
-                        <textarea class="form-control" name="txt_ckeditor[0]" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                        <textarea class="form-control" name="txt_ckeditor[0]" id="txt_ck1" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
                     
@@ -268,7 +268,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">          
-                        <select name="sub_head2a[]" class="form-control">
+                        <select name="sub_head2a[]" id="head_b1" class="form-control">
                             <option value="">選択してください</option>
                             <option value="基礎知識">基礎知識</option>
                             <option value="近年の動向">近年の動向</option>
@@ -277,7 +277,7 @@
                         </select>
 					</div>
 					<div class="cols-5">          
-                        <input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head2b[]">
+                        <input type="text" id="s_head_b1" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head2b[]">
                     </div>
                 </div>
 
@@ -285,7 +285,7 @@
                 <div class="form-group editor">
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7">          
-                        <textarea class="form-control" name="txt2_ckeditor[0]" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。">
+                        <textarea class="form-control" name="txt2_ckeditor" id="txt_b_ck1" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。">
 
                         </textarea>
                     </div>

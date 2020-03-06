@@ -1182,6 +1182,10 @@ $.ajaxSetup({
                         var c = 0;
                         $.each(objJSONtxtCnt, function (i, v) {
                             c++;
+                            // CKEDITOR.replace('txt_ck'+c+'');
+                            // CKEDITOR.add
+                            var editor = $("textarea#txt_ck"+c).ckeditor();
+
                             input_content += '<div class="txt_edtr"><div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"> ';
                             //from heading
                             input_content += '<select id="head'+c+'" name="sub_head1a[]" class="form-control ill_sh"><option value="'+ v.heading +'">'+ v.heading +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
@@ -1196,8 +1200,11 @@ $.ajaxSetup({
                             //to content
                             input_content += '<textarea class="form-control" name="txt_ckeditor[]" id="txt_ck'+c+'">'+ v.txt_ckeditor +'</textarea>';
                             input_content += '</div></div></div></div>';
+                            //CKEDITOR.instances['txt_ck'+c+''].insertHtml(input_content);
+                             
                         });
                         $(".input_content").html(input_content);
+                        
 
 
                         // image
@@ -2227,16 +2234,34 @@ $.ajaxSetup({
             });
             $(".input_lead").html(lead_value);
 
+            // var sp_sub_value = "";
+            // var txt_cnt = 0;
+            // $(".txt_edtr").each(function() {
+            //     txt_cnt++;
+            //     head = $("#ill_cat").val(); 
+            //     sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
+            //     sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
+                
+            // });
+            // $(".input_txt_ck").html(sp_sub_value);
+
+            var sp_link_value = "";
+            var cnt_link = 0;
             var sp_sub_value = "";
-            var txt_cnt = 0;
+            var cnt = 0;
             $(".txt_edtr").each(function() {
-                txt_cnt++;
-                head = $("#ill_cat").val(); 
-                sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
-                sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
+                cnt++;
+                cnt_link++;
+                var getValue = CKEDITOR.instances["txt_ck"+cnt].getData();
+                
+                sp_sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
+                sp_sub_value += '<p>'+ getValue +'</p>';
+
+                sp_link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
                 
             });
-            $(".input_txt_ck").html(sp_sub_value);
+            $(".input_content_ck").html(sub_value);
+            $(".input_link_ck").html(link_value);
            
         });
     });
@@ -2279,16 +2304,34 @@ $.ajaxSetup({
             });
             $(".input_lead").html(lead_value);
 
+            // var sp_sub_value = "";
+            // var txt_cnt = 0;
+            // $(".txt_edtr").each(function() {
+            //     txt_cnt++;
+            //     head = $("#ill_cat").val(); 
+            //     sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
+            //     sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
+                
+            // });
+            // $(".input_txt_ck").html(sp_sub_value);
+
+            var sp_link_value = "";
+            var cnt_link = 0;
             var sp_sub_value = "";
-            var txt_cnt = 0;
+            var cnt = 0;
             $(".txt_edtr").each(function() {
-                txt_cnt++;
-                head = $("#ill_cat").val(); 
-                sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
-                sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
+                cnt++;
+                cnt_link++;
+                var getValue = CKEDITOR.instances["txt_ck"+cnt].getData();
+                
+                sp_sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
+                sp_sub_value += '<p>'+ getValue +'</p>';
+
+                sp_link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
                 
             });
-            $(".input_txt_ck").html(sp_sub_value);
+            $(".input_content_ck").html(sub_value);
+            $(".input_link_ck").html(link_value);
            
         });
     });
@@ -2310,7 +2353,7 @@ $.ajaxSetup({
             $(".ill_cat").html(ill_cat);
             ill_name = $("#ill").val(); // Illness Name
             $(".ill_name").html(ill_name);
-            ill_sh = $("#ill_shldr").val(); // Illness SHoulder
+            ill_sh = $(".ill_shldr").val(); // Illness SHoulder
             $(".ill_sh").html(ill_sh);
 
             //Keywords
@@ -2331,7 +2374,7 @@ $.ajaxSetup({
 
             //Risk Assessment
             var z = 0;
-            if($("#a1").is(':checked')) {
+            if($("#a1").is(":checked")) {
 
                 var input_risk = "";
                 input_risk += '<div class="panel-pink"><h3>リスクアセスメント</h3><div class="form-group check"><ul>';
@@ -2349,7 +2392,7 @@ $.ajaxSetup({
 
             //Risk Assessment 2
             var x = 0;
-            if($("#a2").is(':checked')) {
+            if($("#a2").is(":checked")) {
 
                 var input_risk_two = "";
                 input_risk_two += '<div class="panel-pink"><h3>リスクアセスメント</h3><strong>予防・対策はしっかりできていますか？</strong><div class="form-group check"><ul>';
@@ -2364,42 +2407,37 @@ $.ajaxSetup({
                 input_risk_two += '</ul></div></div>';
                 $("#input_risk_two").html(input_risk_two);
             }
-            
-            //Sub head and Text
-            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
-             
+            // links
+            // var link_value = "";
+            // var cnt_link = 0;
+            // $(".txt_edtr").each(function() {
+            //     cnt++;
+                
+            //     sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
+            //     sub_value += '<p>'+ getValue +'</p>';
+                
+            // });
+            // $(".input_content").html(sub_value);
+
+            // links and content 
+            var link_value = "";
+            var cnt_link = 0;
             var sub_value = "";
             var cnt = 0;
             $(".txt_edtr").each(function() {
                 cnt++;
-                head = $("#ill_cat").val(); 
-                sub_value += '<h3>'+ $("#head"+cnt).val() +'</h3>';
-                sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+cnt+"]']").val() +'</p>';
+                cnt_link++;
+                var getValue = CKEDITOR.instances["txt_ck"+cnt].getData();
+                
+                sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
+                sub_value += '<p>'+ getValue +'</p>';
+
+                link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
                 
             });
             $(".input_content").html(sub_value);
-            //var cnt_value = "";
-            // $.each(objJSONcontent, function (i, v) { 
-            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
-            //     cnt_value += 'p'+ v.text +'p';
-            // });
-            //$("select[name='sub_head1a[]']").each(function() {
-                // $("select[name='sub_head1a[]']").each(function() {
-                // // $(".ill_sh").each(function() {
-                //     sub_value += '<h3>'+ $(this).val() +'</h3>';
-                //     $("textarea[name='txt_ckeditor[]']").each(function() {
-                //         sub_value += '<p>'+ $(this).val() +'</p>';
-                //     });
-                // });
-            //});
-            // $(".input_content").html(sub_value);
-            // $.each(objJSONitk, function (i, v) {
-            //     var yplus=y+1;
-            //     if(v.tag == 1){
-            //         $("#twotag"+yplus).attr( "checked", true );
-            //     }
-            //     y++;
-            // });
+            $(".input_link").html(link_value);
+
         });
     });
 
@@ -2478,7 +2516,7 @@ $.ajaxSetup({
             //Sub head and Text
             //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
              
-            var sub_value = "";
+            //var sub_value = "";
             //var cnt_value = "";
             // $.each(objJSONcontent, function (i, v) { 
             //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
@@ -2490,14 +2528,31 @@ $.ajaxSetup({
             //         sub_value += '<p>'+ $(this).val() +'</p>';
             //     });
             // });
+            // var cnt = 0;
+            // $(".txt_edtr").each(function() {
+            //     cnt++;
+            //     sub_value += '<h3>'+ $("#head"+cnt).val(); +'</h3>';
+            //     sub_value += '<p>'+ $("#txt_ck"+cnt).val(); +'</p>';
+                
+            // });
+            // $(".input_content").html(sub_value);
+            var link_value = "";
+            var cnt_link = 0;
+            var sub_value = "";
             var cnt = 0;
             $(".txt_edtr").each(function() {
                 cnt++;
-                sub_value += '<h3>'+ $("#head"+cnt).val(); +'</h3>';
-                sub_value += '<p>'+ $("#txt_ck"+cnt).val(); +'</p>';
+                cnt_link++;
+                var getValue = CKEDITOR.instances["txt_ck"+cnt].getData();
+                
+                sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
+                sub_value += '<p>'+ getValue +'</p>';
+
+                link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
                 
             });
             $(".input_content").html(sub_value);
+            $(".input_link").html(link_value);
         });
     });
 

@@ -128,6 +128,7 @@
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
   <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.9/adapters/jquery.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
@@ -139,7 +140,7 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('txt_ckeditor[]');
+    CKEDITOR.replace('txt_ck1');
     CKEDITOR.add 
 </script>
 
@@ -301,8 +302,8 @@
             e.preventDefault();
             
             ck++;
-            $(wrapper2).append('<div class="txt_edtr"><div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"><select name="sub_head1a[]" id="head'+ck+'" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select></div></div><div class="form-group"><label class="control-label cols-15"></label><div class="cols-4"><input type="text" class="form-control" id="s_head'+ck+'" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control ck" name="txt_ckeditor['+ck+']" id="txt_ck'+ck+'" placeholder=""></textarea></div></div><div class="cols-1 relative"></div></div><div class="clear"></div></div>'); //add input box            
-            CKEDITOR.replace('txt_ckeditor['+ck+']');
+            $(wrapper2).append('<div class="txt_edtr"><div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"><select name="sub_head1a[]" id="head'+ck+'" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select></div></div><div class="form-group"><label class="control-label cols-15"></label><div class="cols-4"><input type="text" class="form-control" id="s_head'+ck+'" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ck'+ck+'" placeholder=""></textarea></div></div><div class="cols-1 relative"></div></div><div class="clear"></div></div>'); //add input box            
+            CKEDITOR.replace('txt_ck'+ck+'');
             CKEDITOR.add 
         });
 

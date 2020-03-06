@@ -209,13 +209,14 @@
                                     <input type="text" class="form-control" id="img_alt" name="img_alt">
                                 </div>
                             </div>
+
                             <br>
                             <!-- Subheading -->
-                            <div id="addanother">
+                            <!-- <div id="addanother"> -->
+                            <!-- Text and Subheading -->
+                            <div class="input_content"></div>
                                 
-                                <div class="input_content"></div>
-                                
-                            </div>
+                            <!-- </div> -->
 
                             <!-- Add subheading form -->
                             <div class="wrapper2"></div>

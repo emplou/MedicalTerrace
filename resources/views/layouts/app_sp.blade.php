@@ -129,15 +129,15 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('lead_ckeditor[0]');
+    CKEDITOR.replace('lead_edtr1');
     CKEDITOR.add 
 </script>
 <script>
-    CKEDITOR.replace('txt_ckeditor[0]');
+    CKEDITOR.replace('txt_ck1');
     CKEDITOR.add 
 </script>
 <script>
-    CKEDITOR.replace('txt2_ckeditor[0]');
+    CKEDITOR.replace('txt_b_ck1');
     CKEDITOR.add 
 </script>
 
@@ -370,12 +370,12 @@ $('input[type=file]').customFile();
         //     i++;  
 
         // }
-        var lc=0;
+        var lc=1;
         $(add_lc).click(function(e){ //on add input button click
             e.preventDefault();
             lc++;
-            $(wrapper2).append('<div class="cols-10"><textarea class="form-control" name="lead_ckeditor['+lc+']" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="clear"></div>'); //add input box
-            CKEDITOR.replace('lead_ckeditor['+lc+']');
+            $(wrapper2).append('<div class="cols-10"><textarea class="form-control" id="lead_edtr'+lc+'" name="lead_ckeditor[]" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="clear"></div>'); //add input box
+            CKEDITOR.replace('lead_edtr'+lc+'');
             CKEDITOR.add 
         });
 
@@ -395,12 +395,12 @@ $('input[type=file]').customFile();
         //     j++;  
 
         // }
-        var tc=0;
+        var tc=1;
         $(add_tc).click(function(e){ //on add input button click
             e.preventDefault();
             tc++;
-            $(wrapper3).append('<div class="form-group"><label class="control-label cols-15">小見出し<br><span>Subheading</span></label><div class="cols-5"><select name="sub_head1a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div><div class="cols-15"></div><div class="cols-5"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-7"><textarea class="form-control" name="txt_ckeditor['+tc+']" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="cols-1"></div> </div><div class="clear"></div>'); //add input box
-            CKEDITOR.replace('txt_ckeditor['+tc+']');
+            $(wrapper3).append('<div class="form-group"><label class="control-label cols-15">小見出し<br><span>Subheading</span></label><div class="cols-5"><select id="head'+tc+'" name="sub_head1a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div><div class="cols-15"></div><div class="cols-5"><input type="text" id="s_head'+tc+'" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]"></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-7"><textarea class="form-control" name="txt_ckeditor[]" id="txt_ck'+tc+'" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="cols-1"></div> </div><div class="clear"></div>'); //add input box
+            CKEDITOR.replace('txt_ck'+tc+'');
             CKEDITOR.add 
         });
 
@@ -420,12 +420,12 @@ $('input[type=file]').customFile();
         //     k++;  
 
         // }
-        var tc2=0;
+        var tc2=1;
         $(add_tc2).click(function(e){ //on add input button click
             e.preventDefault();
             tc2++;
-            $(wrapper4).append('<div class="form-group"><label class="control-label cols-15">小見出し<br><span>Subheading</span></label><div class="cols-5"><select name="sub_head2a[]" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div><div class="cols-15"></div><div class="cols-5"><input type="text" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head2b[]"></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-7"><textarea class="form-control" name="txt2_ckeditor['+tc2+']" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="cols-1"></div> </div><div class="clear"></div>'); //add input box
-            CKEDITOR.replace('txt2_ckeditor['+tc2+']');
+            $(wrapper4).append('<div class="form-group"><label class="control-label cols-15">小見出し<br><span>Subheading</span></label><div class="cols-5"><select name="sub_head2a[]" id="head_b'+tc2+'" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="注意した方がよい人">注意した方がよい人</option><option value="出やすい症状">出やすい症状</option></select></div><div class="cols-15"></div><div class="cols-5"><input type="text" id="s_head_b'+tc2+'" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head2b[]"></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-7"><textarea class="form-control" name="txt2_ckeditor[]" id="txt_b_ck'+tc2+'" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea></div><div class="cols-1"></div> </div><div class="clear"></div>'); //add input box
+            CKEDITOR.replace('txt_b_ck'+tc2+'');
             CKEDITOR.add 
         });
 
