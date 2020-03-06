@@ -6,7 +6,7 @@
     <table class="table" id="list"  width="100%">
         <thead>
             <th>Image</th>
-            <th>Magazine Name</th>
+            <th>Medicine Name</th>
             <th>ID</th>
             <th>Date Added</th>
             <th>Action</th>

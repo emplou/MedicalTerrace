@@ -37,6 +37,11 @@ Route::get('/doctor_list','HomeController@doctor_list');
 Route::get('/hospital_list','HomeController@hospital_list');
 Route::get('/special_list','HomeController@special_list');
 Route::get('/topics_list','HomeController@topics_list');
+Route::get('/column_list','HomeController@column_list');
+Route::get('/daily_list','HomeController@daily_list');
+Route::get('/medicine_list','HomeController@medicine_list');
+Route::get('/equipment_list','HomeController@equipment_list');
+Route::get('/magazine_list','HomeController@magazine_list');
 
 //edit
 Route::get('/save_edit_hospital','HomeController@save_edit_hospital');
