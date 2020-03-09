@@ -1,54 +1,22 @@
 <!-- Modal -->
-<div id="edithospital" class="modal fade" role="dialog" data-keyboard="true">
-  <div class="modal-dialog edit">
+<div id="overwritehospital" class="modal fade" role="dialog" data-keyboard="true">
+  <div class="modal-dialog modal-lg">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 				
 <!-- Modal content-->
     <div class="modal-content">
     
 <div class="modal-header" style="color: black; background-color: #7CD5FF">
-    <h4 class="modal-title"><b>Edit and Overwrite Hospital Detailsss</b></h4>
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><b>Edit Doctor</b></h4>
 </div>
       <div class="modal-body">
-        <div class="header-wrapper">
-            <div class="left">
-                <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
-                
-            </div>
-            <div class="right">
-                <div>作成日<span>Date</span></div>
-                <div class="select">
-                    <select>
-                        <option>0000/00/00</option>
-                        <option>0000/00/00</option>
-                        <option>0000/00/00</option>
-                        <option>0000/00/00</option>
-                        <option>0000/00/00</option>
-                    </select>
-                </div>
-                <div>最終更新日<span>Update</span></div>
-                <div class="select">0000/00/00</div>
-            </div>
-        </div>
-        <hr />
-        <!-- URL Generator -->
-<div class="form-container add">
-    <div class="form-progress">
-        <ul>
-            <li class="active">下書き<br><span>Draft</span></li>
-            <li class="active">プレビュー<br><span>Preview</span></li>
-            <li>承認依頼<br><span>Approval Request</span></li>
-            <li>承認済<br><span>Approved</span></li>
-            <li class="rel">公開予約<br><span>Release reservation</span></li>
-            <li>公開中<br><span>Release</span></li>
-        </ul>
-    </div>
-<div class="form-pads">
+
+      <!-- URL Generator -->
     <div class="form-group">
         <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" placeholder="例)medical_terrace_clinic" name="url_gen" id="url_gen" required>
+            <input type="text" class="form-control" placeholder="例)medical_terrace_clinic" name="url_gen" required>
         </div>
     </div>
 
@@ -56,7 +24,7 @@
     <div class="form-group">
         <label class="control-label cols-15">医療機関名<br><span>Medical institution</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック" id="medical_ins" name="medical_ins" required>
+            <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック" name="medical_ins" required>
         </div>
     </div>
 
@@ -64,7 +32,7 @@
     <div class="form-group">
         <label class="control-label cols-15">医療機関英語名<br><span>Medical institution</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="例)medical terrace clinic" id="medical_ins_eng" name="medical_ins_eng" required>
+            <input type="text" class="form-control" placeholder="例)medical terrace clinic" name="medical_ins_eng" required>
         </div>
     </div>
 
@@ -72,7 +40,7 @@
     <div class="form-group">
         <label class="control-label cols-15">一般名<br><span>Common Name</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="" id="common_name" name="common_name" required>
+            <input type="text" class="form-control" placeholder="" name="common_name" required>
         </div>
     </div>
 
@@ -80,7 +48,7 @@
     <div class="form-group">
         <label class="control-label cols-15">郵便番号<br><span>Postal code</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" id="postal_code" name="postal_code" required>
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="postal_code" required>
         </div>
     </div>
 
@@ -88,7 +56,7 @@
     <div class="form-group">
         <label class="control-label cols-15">住所<br><span>Address</span></label>
         <div class="cols-5">
-            <input id="autocomplete_search" name="address" type="text" class="form-control address"  placeholder="Search" />
+            <input id="autocomplete_search" name="address" type="text" class="form-control" placeholder="Search" />
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -98,7 +66,7 @@
     <div class="form-group">
         <label class="control-label cols-15">住所英語表記<br><span>Address English</span></label>
         <div class="cols-5">
-            <input id="autocomplete_search" name="address_english" type="text" class="form-control address_english" placeholder="Search"  required/>
+            <input id="autocomplete_search" name="address_english" type="text" class="form-control" placeholder="Search"  required/>
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -149,7 +117,7 @@
     <div class="form-group">
         <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption"  id="img_caption" required>
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption" required>
         </div>
     </div>
 
@@ -157,7 +125,7 @@
     <div class="form-group">
         <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt" id="img_alt" required>
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt" required>
         </div>
     </div>
 
@@ -211,7 +179,7 @@
     <div class="form-group check">
         <label class="control-label cols-15">Email<br><span>Email Address</span></label>
         <div class="cols-35">
-            <input type="text" class="form-control" placeholder="" name="email"  id="email" required>
+            <input type="text" class="form-control" placeholder="" name="email" required>
         </div>
          <div class="cols-2 check3">
             <input type="checkbox" id="non3" name="asn" value="0"> 
@@ -237,7 +205,8 @@
         <div class="form-group">
             <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="hosp_subheading" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                <textarea class="form-control sm2" name="hosp_subheading" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                </textarea>
             </div>
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
@@ -250,7 +219,7 @@
             <div class="cols-6">   
                 <!-- add new textarea here -->
                 <div class="cols-10">        
-                    <textarea class="form-control ck" name="textheading_lead" id="textheading_lead" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                    <textarea class="form-control ck" name="textheading_lead" id="textheading_lead">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck1"><span class="lnr lnr-plus-circle"></span></button></div> 
@@ -371,7 +340,8 @@
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-6">          
-            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+            </textarea>
         </div>
         <div class="cols-2">          
             <span id="rchars4">0</span>/46
@@ -387,7 +357,7 @@
             
             <div id="addanother1">
                 <div class="cols-10">        
-                    <textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                    <textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                 </div>
             </div>
         </div>
@@ -397,14 +367,10 @@
     <div class="form-group">
         <div class="cols-15"></div>
         <div class="cols-55">
-            <div class="upload-image blue">        
-                <input type="file" name="dpt_subject_image" id="file-8" class="inputfile2"  required>
-                <label for="file-8"><span class="archive-name2"></span><span class="btn-inputfile"> </span></label>
-            </div>
-            <!-- <div class="upload-btn-wrapper">
+            <div class="upload-btn-wrapper">
                 <button class="bton"></button>
                 <input type="file" name="dpt_subject_image" />
-            </div> -->
+            </div>
             
         </div>
     </div>
@@ -481,7 +447,8 @@
         <div class="form-group">
             <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                <textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                </textarea>
             </div>
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
@@ -494,7 +461,7 @@
             <div class="cols-6">   
                 <div id="addanother1">
                     <div class="cols-10">        
-                        <textarea class="form-control" name="feature_text_subheading_hospital[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                        <textarea class="form-control" name="feature_text_subheading_hospital[0]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                     </div>
                 </div>
             </div>
@@ -506,14 +473,10 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
-                <div class="upload-image blue">        
-                    <input type="file" name="feature_image[]" id="file-9" class="inputfile3"  required>
-                    <label for="file-9"><span class="archive-name3"></span><span class="btn-inputfile"> </span></label>
-                </div>
-                <!-- <div class="upload-btn-wrapper">
+                <div class="upload-btn-wrapper">
                     <button class="bton" id="show_img"></button>
                     <input type="file" name="feature_image[]"  />
-                </div> -->
+                </div>
                 <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
             </div>
         </div>
@@ -529,7 +492,8 @@
         <div class="form-group">
             <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                </textarea>
             </div>
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
@@ -544,7 +508,7 @@
                 
                 <div id="addanother1">
                     <div class="cols-10">        
-                        <textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                        <textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                     </div>
                 </div>
             </div>
@@ -555,14 +519,10 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
-                <div class="upload-image blue">        
-                    <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4"  required>
-                    <label for="file-10"><span class="archive-name4"></span><span class="btn-inputfile"> </span></label>
-                </div>
-                <!-- <div class="upload-btn-wrapper">
+                <div class="upload-btn-wrapper">
                     <button class="bton"></button>
                     <input type="file" name="equipment_image[]" name="insert_equipment_subject" />
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
@@ -587,7 +547,8 @@
         <div class="form-group">
             <label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                <textarea class="form-control sm2" name="med_subj_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
+                </textarea>
             </div>
         </div>
     
@@ -598,7 +559,7 @@
                 <!-- add new textarea here -->
                 
                     <div class="cols-10">        
-                        <textarea class="form-control" name="staff_comment_hospital[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                        <textarea class="form-control" name="staff_comment_hospital[0]" id="txt_ckeditor">メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。</textarea>
                     </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck5"><span class="lnr lnr-plus-circle"></span></button></div> 
@@ -608,14 +569,10 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
-                <div class="upload-image blue">        
-                    <input type="file" name="staff_image[]" id="file-11" class="inputfile5"  required>
-                    <label for="file-11"><span class="archive-name5"></span><span class="btn-inputfile"> </span></label>
-                </div>
-                 <!-- <div class="upload-btn-wrapper">
+            <div class="upload-btn-wrapper">
                     <button class="bton"></button>
                     <input type="file" name="staff_image[]" />
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
@@ -848,11 +805,51 @@
         </div>
     </div>
 
+    
 
 
-    <input type="submit" value="Save hospital" class="btn btn-danger">
+
+
+
+
+
+   
 </div>
-</div>
+
+<div class="form-nopads">
+        <!-- Editor Page -->
+        <div class="editor-page">
+            <div class="form-group">
+                <label class="control-label cols-15">エディター担当者<br><span>Editor</span></label>
+                <div class="cols-5">   
+                    <input type="text" name="editor" class="form-control green" placeholder="Medical T. 編集部 A.Ito">&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="cols-2"><button type="button" class="btn-prime editor"></button></div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">会話メモ<br><span>Conversation Note</span></label>
+                <div class="cols-5">   
+                    <textarea class="form-control" rows="10" name="note"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label cols-15">エディターの所見<br><span>Editor Opinion</span></label>
+                <div class="cols-5">   
+                    <textarea class="form-control" rows="10" name="note"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="submit" name="save" value="" class="save-btn">
+    <div id="totop" class="float-btn"></div>
+    <div id="tobottom" class="float-btn"></div>
+
+
+
+    <input type="submit" value="Save hospital">
+
     </div>
 </div>
 
