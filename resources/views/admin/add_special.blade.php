@@ -1,6 +1,6 @@
 @extends('layouts.app_sp')
 @section('content')
-@include('modals.modal_add_special')
+@include('modals.modal_preview_special')
 
     
 	<!-- <div class="header-wrapper">
@@ -669,7 +669,7 @@
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-pink-release.png);">Release</button> -->
 
                             <!-- Half buttons -->
-                            <a class="prevbutton btn-prime sp_preview" type="button" href="#previewAddSpecial" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
+                            <a class="prevbutton btn-prime sp_preview" type="button" href="#previewSpecial" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
                             <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
                         

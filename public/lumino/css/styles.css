@@ -2667,6 +2667,7 @@ textarea {
 }
 .modalDialog .tags span {
   padding: 5px 10px;
+  margin: 2px;
   float: left;
   color: #2E58BD;
   font-weight: 300;
@@ -3245,6 +3246,104 @@ div.dataTables_wrapper div.dataTables_filter input {
 .dataTable > thead > tr > th {
   height: 25px !important;
   background-color: #ccc;
+}
+
+.modal-panel.previewSpecial {
+  width: 420px;
+}
+.modal-panel.previewSpecial fieldset {
+  border: 1px solid #808080;
+  margin-bottom: 10px;
+}
+.modal-panel.previewSpecial .img-sp {
+  margin-top: 10px;
+}
+.modal-panel.previewSpecial .img-sp img{
+  width: 100%;
+}
+.modal-panel.previewSpecial .img-caption {
+  padding: 10px;
+  background-color: #ebf6fd;
+}
+.modal-panel.previewSpecial fieldset {
+  margin-top: 10px;
+  border: 1px solid #808080;
+}
+.modal-panel.previewSpecial fieldset legend {
+    font-size: 14px;
+    background: transparent;
+    width: 223px;
+    padding-left: 7px;
+    margin: 0;
+}
+
+.modal-panel.previewSpecial fieldset ol{
+  padding-left: 10px;
+  counter-reset: number;
+}
+.modal-panel.previewSpecial fieldset ol li {
+  list-style: none;
+}
+.modal-panel.previewSpecial fieldset ol li:before {
+  list-style: none;
+    counter-increment: number;
+    content: counters(number,"-")".";
+}
+.stripe-bg {
+  color: #fff;
+  padding: 10px;
+
+  font-size: 18px;
+  background: repeating-linear-gradient(-45deg, #a0d2d3 0%, #a0d2d3 2%, #86c7c8 2%, #86c7c8 4%);
+}
+
+.stripe-btn {
+  color: #000;
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px auto 20px;
+  display: block;
+  text-align: center;
+  border: 2px solid #e0f0f0;
+  background: linear-gradient(to bottom, #ffffff 0%,#ffffff 50%,#eef7fc 50%,#eef7fc 100%);
+}
+
+.stripe-bg.pink {
+  color: #000;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 18px;
+  background: repeating-linear-gradient(-45deg, #fdf2f8 0%, #fdf2f8 2%, #fbe4f0 2%, #fbe4f0 4%);
+}
+.stripe-bg.pink span {
+  position: relative;
+  padding-left: 40px;
+}
+.stripe-bg.pink big {
+  padding-left: 40px;
+}
+.stripe-bg.pink span:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 37px;
+    height: 45px;
+    content: "";
+    background: url(../../images/icn-prevention.png) no-repeat;
+    background-size: 37px auto;
+}
+
+.pink-list span{
+  color: red;
+  font-weight: 600;
+}
+
+.tags.special div {
+    width: 92%;
+}
+
+.modal-panel.previewSpecial label:before {
+  display: none;
 }
 
 
