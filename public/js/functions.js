@@ -828,20 +828,6 @@ $.ajaxSetup({
                             $("#input_rad").html(input_rad);
                         }   
 
-                        // Subheading 1
-                        // input_sub1 = '<select name="sub_head1a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
-                        // $("#input_sub1").html(input_sub1);
-
-                        // $("#sub_head1b").val(response['data'][0].sp_sub2);
-                        // $("#txt_ckeditor").val(response['data'][0].sp_sum);
-
-                        // Subheading 2
-                        // input_sub1_b = '<select name="sub_head2a" class="form-control"><option value="">選択してください</option><option value="'+ response['data'][0].sp_sub1 +'">'+ response['data'][0].sp_sub1 +'</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select>';
-                        // $("#input_sub1_b").html(input_sub1_b);
-
-                        // $("#sub2_head1b").val(response['data'][0].sp_sub4);
-                        // $("#txt2_ckeditor").val(response['data'][0].sp_sum2);
-
                         // SEO Title
                         var seo_title = response['data'][0].seo_title;
                         var illness_cat = response['data'][0].sp_ill_cat;
@@ -990,27 +976,11 @@ $.ajaxSetup({
                         });
                         $("#input_free").html(input_free);
 
-                        // Tag Illness
-                        // var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
-                        // var z = 0;
-                        // $.each(objJSONts, function (i, v) {
-                        //     var zplus=z+1;
-                        //     if(v.tag_s == 1){
-                        //         $("#tag_s"+zplus).attr( "checked", true );
-                        //     }
-                        //     z++;
-                        // });
+                        
                         
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
-                        // var z = 0;
-                        // $.each(objJSONts, function (i, v) {
-                        //     var zplus=z+1;
-                        //     if(v.tag_s == 1){
-                        //         $("#tag_s"+zplus).attr( "checked", true );
-                        //     }
-                        //     z++;
-                        // });
+                        
                         $.each(objJSONts, function (i, v) {
                             //var zplus=z+1;
                             if(v.tag_s == "春"){
@@ -1384,14 +1354,7 @@ $.ajaxSetup({
 
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
-                        //var z = 0;
-                        // $.each(objJSONts, function (i, v) {
-                        //     var zplus=z+1;
-                        //     if(v.tag_s == 1){
-                        //         $("#taga"+zplus).attr( "checked", true );
-                        //     }
-                        //     z++;
-                        // });
+                        
                         $.each(objJSONts, function (i, v) {
                             //var zplus=z+1;
                             if(v.tag_s == "春"){
@@ -1784,14 +1747,7 @@ $.ajaxSetup({
 
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].sp_tag_season);
-                        // var z = 0;
-                        // $.each(objJSONts, function (i, v) {
-                        //     var zplus=z+1;
-                        //     if(v.tag_s == 1){
-                        //         $("#tag_s_two"+zplus).attr( "checked", true );
-                        //     }
-                        //     z++;
-                        // });
+                        
                         $.each(objJSONts, function (i, v) {
                             //var zplus=z+1;
                             if(v.tag_s == "春"){
@@ -2196,15 +2152,7 @@ $.ajaxSetup({
 
                         // Season
                         var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
-                        // var z = 0;
-                        // $.each(objJSONts, function (i, v) {
-                        //     var zplus=z+1;
-                        //     if(v.tag_s == 1){
-                        //         $("#twotaga"+zplus).attr( "checked", true );
-                        //     }
-                        //     z++;
-                        // });
-
+                        
                         $.each(objJSONts, function (i, v) {
                             //var zplus=z+1;
                             if(v.tag_s == "春"){
@@ -2293,17 +2241,7 @@ $.ajaxSetup({
             });
             $(".input_lead").html(lead_value);
 
-            // var sp_sub_value = "";
-            // var txt_cnt = 0;
-            // $(".txt_edtr").each(function() {
-            //     txt_cnt++;
-            //     head = $("#ill_cat").val(); 
-            //     sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
-            //     sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
-                
-            // });
-            // $(".input_txt_ck").html(sp_sub_value);
-
+           
             var sp_link_value = "";
             var cnt_link = 0;
             var sp_sub_value = "";
@@ -2363,16 +2301,6 @@ $.ajaxSetup({
             });
             $(".input_lead").html(lead_value);
 
-            // var sp_sub_value = "";
-            // var txt_cnt = 0;
-            // $(".txt_edtr").each(function() {
-            //     txt_cnt++;
-            //     head = $("#ill_cat").val(); 
-            //     sp_sub_value += '<h3>'+ $("#head"+txt_cnt).val() +'</h3>';
-            //     sp_sub_value += '<p>'+ $("textarea[name='txt_ckeditor["+txt_cnt+"]']").val() +'</p>';
-                
-            // });
-            // $(".input_txt_ck").html(sp_sub_value);
 
             var sp_link_value = "";
             var cnt_link = 0;
@@ -2466,17 +2394,7 @@ $.ajaxSetup({
                 input_risk_two += '</ul></div></div>';
                 $("#input_risk_two").html(input_risk_two);
             }
-            // links
-            // var link_value = "";
-            // var cnt_link = 0;
-            // $(".txt_edtr").each(function() {
-            //     cnt++;
-                
-            //     sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
-            //     sub_value += '<p>'+ getValue +'</p>';
-                
-            // });
-            // $(".input_content").html(sub_value);
+           
 
             // links and content 
             var link_value = "";
@@ -2573,28 +2491,7 @@ $.ajaxSetup({
             }
             
             //Sub head and Text
-            //var objJSONcontent = JSON.parse('{ "sub": "select[name="sub_head1a[]"]", "text": "textarea[name="txt_ckeditor[]"]" }');
-             
-            //var sub_value = "";
-            //var cnt_value = "";
-            // $.each(objJSONcontent, function (i, v) { 
-            //     cnt_value += '<h3>'+ v.sub +'</h3>'; 
-            //     cnt_value += 'p'+ v.text +'p';
-            // });
-            // $("select[name='sub_head1a[]']").each(function() {
-            //     sub_value += '<h3>'+ $(this).val() +'</h3>';
-            //     $("textarea[name='txt_ckeditor[]']").each(function() {
-            //         sub_value += '<p>'+ $(this).val() +'</p>';
-            //     });
-            // });
-            // var cnt = 0;
-            // $(".txt_edtr").each(function() {
-            //     cnt++;
-            //     sub_value += '<h3>'+ $("#head"+cnt).val(); +'</h3>';
-            //     sub_value += '<p>'+ $("#txt_ck"+cnt).val(); +'</p>';
-                
-            // });
-            // $(".input_content").html(sub_value);
+            
             var link_value = "";
             var cnt_link = 0;
             var sub_value = "";

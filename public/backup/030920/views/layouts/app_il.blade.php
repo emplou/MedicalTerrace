@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Medical administrator - Illness Page</title>
+	<title>Medical administrator - Special Page</title>
 	<!-- <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('lumino/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('lumino/css/datepicker3.css') }}" rel="stylesheet">
@@ -33,19 +33,66 @@
     
 </head>
 <body>
-  
+@if (Request::is('doctor_list') OR Request::is('add_doctor'))
+<div class="content-container">
+    <header>
+        <h1 class="dashboard">医師・医療従事者 <br><small>  Doctor table</small></h1>
+        <div class="right">
+            <button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Doctor new registration</button>
+            <img src="images/medical-logo.png" alt="">
+        </div>
+    </header>   
+    <div class="sub-header">
+        <div class="red">公開速報</div>
+        <p>2019/07/18 Doctor 子どもの夏の感染症が投稿されました。</p>
+    </div>
+</div>
+@endif
+
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
 <div class="content-container illness_container">
     <header>
-        <h1 class="dashboard">病気と知識 <br><small>UI of Illness table</small></h1>
+        <h1 class="dashboard">医病気と知識 <br><small>  Illness table</small></h1>
         <div class="right">
-            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">病気と知識 新規登録 <br> Illness new registration</button>
+            <button onclick="window.location='{{ url("add_illness") }}'" class="doc-link">医病気と知識 <br> Illness new registration</button>
             <img src="images/medical-logo.png" alt="">
         </div>
     </header>   
     <div class="sub-header">
         <div class="red">公開速報</div>
         <p>2019/07/18 Illness 子どもの夏の感染症が投稿されました。</p>
+    </div>
+</div>
+@endif
+
+@if (Request::is('special_list') OR Request::is('add_special'))  
+<div class="content-container special_container">
+    <header>
+        <h1 class="dashboard">特集 <br><small>  Special table</small></h1>
+        <div class="right">
+            <button onclick="window.location='{{ url("add_special") }}'" class="doc-link">特集 <br> Special new registration</button>
+            <img src="images/medical-logo.png" alt="">
+        </div>
+    </header>   
+    <div class="sub-header">
+        <div class="red">公開速報</div>
+        <p>2019/07/18 Special 子どもの夏の感染症が投稿されました。</p>
+    </div>
+</div>
+@endif
+
+@if (Request::is('hospital_list') OR Request::is('add_hospital'))  
+<div class="content-container hospital_container">
+    <header>
+        <h1 class="dashboard">医師・医療従事者 <br><small>  Hospital table</small></h1>
+        <div class="right">
+            <button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
+            <img src="images/medical-logo.png" alt="">
+        </div>
+    </header>   
+    <div class="sub-header">
+        <!-- <div class="red">公開速報</div> -->
+        <p><h2>{!! Auth::user()->name !!}</h2></p>
     </div>
 </div>
 @endif
@@ -83,16 +130,16 @@
         <div class="navy">
             <ul class="sidebar-nav">
                 <li class=""><small></small><a class="home_menu" href="home"><span class="icon"><img src="images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
-                <li class="active" id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br>UI of Illness</span></a></li>
-                <li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="images/icon-special.png"></span><span>特集<br>UI of Special</span></a></li>
-                <li><small class="yellow"></small><a class="yellow"href="topics/list"><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
+                <li class="active" id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br>Illness</span></a></li>
+                <li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="images/icon-special.png"></span><span>特集<br>Special</span></a></li>
+                <li><small class="yellow"></small><a class="yellow" href="topics_list"><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
                 <li><small class="yellow"></small><a class="yellow" href="daily_list"><span class="icon"><img src="images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
-                <li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="images/icon-doctable.png"></span><span>医師・医療従事者<br>UI of Doctor Table</span></a></li>
-                <li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="images/icon-hosptable.png"></span><span>医療機関<br>UI of Hospital Table</span></a></li>
+                <li><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="images/icon-doctable.png"></span><span>医師・医療従事者<br>  Doctor Table</span></a></li>
+                <li><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="images/icon-hosptable.png"></span><span>医療機関<br>  Hospital Table</span></a></li>
                 <li><small class="sky"></small><a class="sky" href="column_list"><span class="icon"><img src="images/icon-column.png"></span><span>コラム<br>Column</span></a></li>
                 <li><small class="violet"></small><a class="violet" href="equipment_list"><span class="icon"><img src="images/icon-medequipment.png"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
                 <li><small class="violet"></small><a class="violet" href="medicine_list"><span class="icon"><img src="images/icon-medicine.png"></span><span>薬情報<br>Medicine</span></a></li>
-                <li><small class="green"></small><a class="green" href="magazine-list"><span class="icon"><img src="images/icon-sakuramagazine.png"></span><span>誌面紹介<br>Sakura Magazine</span></a></li>
+                <li><small class="green"></small><a class="green" href="magazine_list"><span class="icon"><img src="images/icon-sakuramagazine.png"></span><span>誌面紹介<br>Sakura Magazine</span></a></li>
                 <li><small></small><a href=""><span class="icon"><img src="images/icon-settings.png"></span><span>設定<br>Settings</span></a></li>
             </ul>
         </div>
@@ -100,15 +147,14 @@
 </div>
 <div class="main-content add">
     <div class="main">
-        
+        <!-- <div class="row"> -->
 
- 			  @yield("content")
- 		
- 	  </div>
+ 			@yield("content")
+ 		<!-- </div> -->
+ 	</div>
 </div>
 
-</div>
-
+ </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -124,11 +170,10 @@
 	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
   <script src="lumino/js/custom.js"></script>
-  <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
   <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.9/adapters/jquery.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
@@ -140,7 +185,7 @@
 
 <!-- CKeditor -->
 <script>
-    CKEDITOR.replace('txt_ck1');
+    CKEDITOR.replace('txt_ckeditor');
     CKEDITOR.add 
 </script>
 
@@ -159,7 +204,7 @@
       var textlen = cnt + $(this).val().length;
       $('#rchars3').text(textlen);
     });
-    $('textarea.sm1').keyup(function() {
+    $('textarea.sm').keyup(function() {
       var textlen = cnt + $(this).val().length;
       $('#rchars4').text(textlen);
     });
@@ -254,7 +299,6 @@
     $(document).ready(function() {
         var wrapper         = $(".wrapper"); //Fields wrapper
         var add_button      = $(".addsum1"); //Add button ID
-        var add_ck          = $(".add-ck"); //Add button ID
         var wrapper2         = $(".wrapper2"); //Fields wrapper
         var add_button3      = $(".sh-btn"); //Add button ID
         var wrapper3         = $(".wrapper3"); //Fields wrapper
@@ -266,46 +310,31 @@
         var wrapper7         = $(".wrapper7"); //Fields wrapper
         var wrapper8         = $(".wrapper8"); //Fields wrapper
         var wrapper9         = $(".wrapper9"); //Fields wrapper
-        var i=0;
-        
+    
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             
-            i++;
-            $(wrapper).append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-5"><textarea class="form-control sm5" id="sm'+i+'" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea></div><div class="cols-2"></div></div><div class="clear"></div>'); //add input box            
-             
+            $(wrapper).append('<div class="form-group"><label class="control-label cols-15"></label><div class="cols-5"><textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea></div><div class="cols-2"></div></div><div class="clear"></div>'); //add input box            
         });
 
-        // $('.add-ck').on('click', add_ck);
-        // var i=0;
-        // function add_ck(e) {
-        //     e.preventDefault();
-        //     var copy = $('#addanother').clone();
-
-        //     var lplus=i+1;
-
-        //     // $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
-        //     // $(copy).find('script').remove();
-        //     //$(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
-        //     $(copy).find('select[name=sub_head1a\\[0\\]').attr('id', 'head'+lplus);
-        //     $(copy).find('input[name=sub_head1b\\[0\\]]').attr('id', 's_head'+lplus);
-        //     //$(copy).find('textarea[name=txt_ckeditor[]]').attr('id', 'txt_ckeditor'+lplus);
-
-        //     $(copy).find('.add-ck').remove();
-        //     $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
-        //     CKEDITOR.replace('txt_ckeditor['+lplus+']');
-        //     i++;  
-
-        // }
-        var ck=1;
-        $(add_ck).click(function(e){ //on add input button click
+        $('.add-ck').on('click', add_ck);
+        var i=0;
+        function add_ck(e) {
             e.preventDefault();
-            
-            ck++;
-            $(wrapper2).append('<div class="txt_edtr"><div class="form-group"><label class="control-label cols-15">病気カテゴリー<br><span>Subheading</span></label><div class="cols-4"><select name="sub_head1a[]" id="head'+ck+'" class="form-control"><option value="">選択してください</option><option value="基礎知識">基礎知識</option><option value="近年の動向">近年の動向</option><option value="症状">症状</option><option value="原因">原因</option><option value="検査方法">検査方法</option><option value="検診体験記">検診体験記</option><option value="検診から治療まで">検診から治療まで</option><option value="治療方法">治療方法</option><option value="療養と副作用">療養と副作用</option><option value="合併症<">合併症</option><option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option><option value="体験記">体験記</option><option value="FAQ">FAQ</option><option value="予防・対策方法">予防・対策方法</option></select></div></div><div class="form-group"><label class="control-label cols-15"></label><div class="cols-4"><input type="text" class="form-control" id="s_head'+ck+'" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required></div></div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ck'+ck+'" placeholder=""></textarea></div></div><div class="cols-1 relative"></div></div><div class="clear"></div></div>'); //add input box            
-            CKEDITOR.replace('txt_ck'+ck+'');
-            CKEDITOR.add 
-        });
+            var copy = $('#addanother').clone();
+
+            var lplus=i+1;
+
+            $(copy).find('div#cke_txt_ckeditor\\[0\\]').remove();
+            $(copy).find('script').remove();
+            $(copy).find('textarea[name=txt_ckeditor\\[0\\]]').attr('id', 'txt_ckeditor'+lplus);
+
+            $(copy).find('.add-ck').remove();
+            $(wrapper2).append($(copy).html()+ '<div class="clear"></div>');
+            CKEDITOR.replace('txt_ckeditor['+lplus+']');
+            i++;  
+
+        }
 
         $(add_button3).click(function(e){ //on add input button click
             e.preventDefault();
@@ -378,9 +407,6 @@
                 scrollTop: $(document).height() 
             }, 1000);
         });
-
-        
-        $("#tx2illness").attr("placeholder", "この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。").val('').focus().blur();
 
     });
 
@@ -711,7 +737,7 @@ $(document).ready(function(){
     });
     $("#ill").keyup(function(){
         // Getting the current value of textarea
-        ill = '<input type="checkbox" id="tag9" name="tag_b" value="1"><label for="tag9">'+ $(this).val()+'</label>';
+        ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
         ill2 = ''+ $(this).val()+'';
         ill3 = ''+ $(this).val()+'';
         
@@ -721,7 +747,19 @@ $(document).ready(function(){
         $("#output_ill3").html(ill3);
     });
 });
+
+$(document).ready(function() {
+    $('#list').DataTable();
+
+	// $('.timepicker').wickedpicker();
+
+// 	$('#timepicker').datetimepicker({
+//     datepicker: true
+// });
+} );
 </script>
+
+
 
 </body>
 </html>

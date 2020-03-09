@@ -1,10 +1,10 @@
-<!-- modal_copy_special -->
-<div id="previewCopySpecial" class="modalDialog">
+<!-- modal_add_special -->
+<div id="previewSpecial" class="modalDialog">
 <meta name="csrf-token" content="{{ csrf_token() }}">
     <div>	
 
         <a href="#close" title="Close" class="close">X</a>
-        <div class="modal-panel">
+        <div class="modal-panel previewSpecial">
         {!! Form::open(['url' => '/approve_special', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
@@ -140,12 +140,12 @@
                     <span>水いぼ</span>
                 </div>
             </div>
-           <input type="hidden" id="id_sp_two" name="id_sp" />
+           <input type="hidden" id="id_sp" name="id_sp" />
            
             <!-- Buttons -->
             @if (Request::is('special_list'))  
                 <div class="modal-buts"><br>
-                    <input type="submit" class="btn btn-primary approval" value="Approve">
+                    <input type="submit" class="btn btn-primary approval" id="show_img" value="Approve">
                     <!-- <input type="button" class="btn-prime backedit" id="show_img"> -->
                 </div>
             @endif
