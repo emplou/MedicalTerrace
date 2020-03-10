@@ -115,6 +115,52 @@
         <br>
         <div class="row">
             <div class="col-2">
+            診療科目一覧<br>Medical Subject List
+            </div>
+            <div class="col-10">
+                <select class="form- " name="med_sbj_list[]" style="width:200px">
+                    <option>Medical one</option>
+                    <option>Medical two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select>
+                <select class="form- " name="med_sbj_list[]" style="width:200px">
+                    <option>Medical one</option>
+                    <option>Medical two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select>
+                <select class="form- " name="med_sbj_list[]" style="width:200px">
+                    <option>Medical one</option>
+                    <option>induMedicalstry two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select><br>
+                <select class="form- " name="med_sbj_list[]" style="width:200px">
+                    <option>Medical one</option>
+                    <option>Medical two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select>
+                <select class="form- " name="med_sbj_list[]" style="width:200px">
+                    <option>Medical one</option>
+                    <option>Medical two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select>
+                <select class="form- " name="med_sbj_list[]" style="width:200px">
+                    <option>Medical one</option>
+                    <option>Medical two</option>
+                    <option>Medical three</option>
+                    <option>Medical four</option>
+                </select><br>
+                <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
+                <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
+                <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
             FAX<br>Facsimile
             </div>
             <div class="col-10">
@@ -194,52 +240,7 @@
             </div>
         </div>
         <br>
-        <div class="row">
-            <div class="col-2">
-            診療科目一覧<br>Medical Subject List
-            </div>
-            <div class="col-10">
-                <select class="form- " name="med_sbj_list[]" style="width:200px">
-                    <option>Medical one</option>
-                    <option>Medical two</option>
-                    <option>Medical three</option>
-                    <option>Medical four</option>
-                </select>
-                <select class="form- " name="med_sbj_list[]" style="width:200px">
-                    <option>Medical one</option>
-                    <option>Medical two</option>
-                    <option>Medical three</option>
-                    <option>Medical four</option>
-                </select>
-                <select class="form- " name="med_sbj_list[]" style="width:200px">
-                    <option>Medical one</option>
-                    <option>induMedicalstry two</option>
-                    <option>Medical three</option>
-                    <option>Medical four</option>
-                </select><br>
-                <select class="form- " name="med_sbj_list[]" style="width:200px">
-                    <option>Medical one</option>
-                    <option>Medical two</option>
-                    <option>Medical three</option>
-                    <option>Medical four</option>
-                </select>
-                <select class="form- " name="med_sbj_list[]" style="width:200px">
-                    <option>Medical one</option>
-                    <option>Medical two</option>
-                    <option>Medical three</option>
-                    <option>Medical four</option>
-                </select>
-                <select class="form- " name="med_sbj_list[]" style="width:200px">
-                    <option>Medical one</option>
-                    <option>Medical two</option>
-                    <option>Medical three</option>
-                    <option>Medical four</option>
-                </select><br>
-                <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
-                <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
-                <input type="text" class="form- " name="med_sbj_list_add[]" style="width:200px">
-            </div>
-        </div>
+        
         <!-- Department area -->
         <br>
         <div class="row">

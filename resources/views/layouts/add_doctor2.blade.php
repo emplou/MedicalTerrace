@@ -27,6 +27,17 @@
             <td>{!! Form::file('profile_img', null , ['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
+            <td>出生地<br>Place of birth</td>
+            <td>{!! Form::text('place_of_birth', null , ['class' => 'form-control']) !!}</td>
+            <td>出身地</td>
+            <td>{!! Form::text('birthday_place', null , ['class' => 'form-control']) !!}</td>
+            <td>表示</td>
+            <td>{!! Form::checkbox('place_of_birth_ok', null , ['class' => 'form-control']) !!} 出生地可</td>
+            <td>{!! Form::checkbox('birthday_place_ok', null , ['class' => 'form-control']) !!} 出身地可</td>
+            <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
+        </tr>
+        
+        <tr>
             <td>{!! Form::text('img_caption', null , ['class' => 'form-control']) !!}</td>
             <td>{!! Form::file('mini_profile_img', null , ['class' => 'form-control']) !!}</td>
         </tr>
@@ -59,16 +70,6 @@
             <td>{!! Form::checkbox('ok', null , ['class' => 'form-control']) !!} 可</td>
             <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
             <td>{!! Form::checkbox('birthday_ok', null , ['class' => 'form-control']) !!} 生まれ年のみ可</td>
-        </tr>
-        <tr>
-            <td>出生地<br>Place of birth</td>
-            <td>{!! Form::text('place_of_birth', null , ['class' => 'form-control']) !!}</td>
-            <td>出身地</td>
-            <td>{!! Form::text('birthday_place', null , ['class' => 'form-control']) !!}</td>
-            <td>表示</td>
-            <td>{!! Form::checkbox('place_of_birth_ok', null , ['class' => 'form-control']) !!} 出生地可</td>
-            <td>{!! Form::checkbox('birthday_place_ok', null , ['class' => 'form-control']) !!} 出身地可</td>
-            <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
         </tr>
         
         <tr>
