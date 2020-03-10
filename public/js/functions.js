@@ -797,7 +797,7 @@ $.ajaxSetup({
                         $("#input_ill").html(input_ill);
 
                         // special Category
-                        input_cat = '<select class="form-control" name="sp_cat"><option value="'+ response['data'][0].sp_cat +'">'+ response['data'][0].sp_cat +'</option><option value="がん">がん</option><option value="生活習慣病">生活習慣病</option><option value="子どもの病気">子どもの病気</option><option value="女性の病気">女性の病気</option><option value="老年性の病気">老年性の病気</option><option value="アレルギー">アレルギー</option><option value="食中毒（食あたり）">食中毒（食あたり）</option><option value="春特有の病気">春特有の病気</option><option value="夏特有の病気">夏特有の病気</option><option value="秋特有の病気">秋特有の病気</option><option value="冬特有の病気">冬特有の病気</option><option value="内臓の病気">内臓の病気</option><option value="脳・神経の病気">脳・神経の病気</option><option value="免疫システム">免疫システム</option><option value="運動機能の病気">運動機能の病気</option><option value="こころの病気">こころの病気</option><option value="部位別の病気">部位別の病気</option><option value="怪我・応急処置">怪我・応急処置</option><option value="救急・救命・緊急">救急・救命・緊急</option><option value="スポーツ障害">スポーツ障害</option><option value="リハビリテーション">リハビリテーション</option><option value="歯と健康">歯と健康</option><option value="妊娠と出産">妊娠と出産</option><option value="美容と健康">美容と健康</option></select>';
+                        input_cat = '<select class="form-control sp_cat" name="sp_cat"><option value="'+ response['data'][0].sp_cat +'">'+ response['data'][0].sp_cat +'</option><option value="がん">がん</option><option value="生活習慣病">生活習慣病</option><option value="子どもの病気">子どもの病気</option><option value="女性の病気">女性の病気</option><option value="老年性の病気">老年性の病気</option><option value="アレルギー">アレルギー</option><option value="食中毒（食あたり）">食中毒（食あたり）</option><option value="春特有の病気">春特有の病気</option><option value="夏特有の病気">夏特有の病気</option><option value="秋特有の病気">秋特有の病気</option><option value="冬特有の病気">冬特有の病気</option><option value="内臓の病気">内臓の病気</option><option value="脳・神経の病気">脳・神経の病気</option><option value="免疫システム">免疫システム</option><option value="運動機能の病気">運動機能の病気</option><option value="こころの病気">こころの病気</option><option value="部位別の病気">部位別の病気</option><option value="怪我・応急処置">怪我・応急処置</option><option value="救急・救命・緊急">救急・救命・緊急</option><option value="スポーツ障害">スポーツ障害</option><option value="リハビリテーション">リハビリテーション</option><option value="歯と健康">歯と健康</option><option value="妊娠と出産">妊娠と出産</option><option value="美容と健康">美容と健康</option></select>';
                         $("#input_cat").html(input_cat);
 
                         // Doctor
@@ -2218,10 +2218,12 @@ $.ajaxSetup({
             $("#sp_iD").html(sp_iD);
             sp_cat = $("#sp_cat").val(); // Illness Category
             $(".sp_cat").html(sp_cat);
-            sp_name = $("#sp_title").val(); // Illness Name
+            sp_name = $(".st").val(); // Illness Name
             $(".sp_name").html(sp_name);
-            sp_sh = $("#sts").val(); // Illness SHoulder
+            sp_sh = $(".sts").val(); // Illness SHoulder
             $(".sp_sh").html(sp_sh);
+            img_cap = $("#img_cap").val(); // Image Caption
+            $(".img-caption").html(img_cap);
 
             //Keywords
             var key_value = "";
@@ -2230,35 +2232,36 @@ $.ajaxSetup({
                     key_value += '<span>'+ $(this).val() +'</span>';
                 }
             });
-            $("#tag_value").html(key_value);
+            $(".tags").html(key_value);
 
-            var lead_value = "";
-            var lead_cnt = 0;
-            $(".lead_edtr").each(function() {
-                lead_cnt++;
-                lead_value += '<p>'+ $("textarea#lead_edtr"+lead_cnt+"").val() +'</p>';
+            // var lead_value = "";
+            // var lead_cnt = 0;
+            // $(".lead_edtr").each(function() {
+            //     lead_cnt++;
+            //     var getValue = CKEDITOR.instances["lead_edtr"+lead_cnt].getData();
+            //     lead_value += '<p>'+ $("textarea#lead_edtr"+lead_cnt+"").val() +'</p>';
                 
-            });
-            $(".input_lead").html(lead_value);
+            // });
+            // $(".input_lead").html(lead_value);
 
-           
-            var sp_link_value = "";
-            var cnt_link = 0;
+            //COntent and Sub heading
+            //var sp_link_value = "";
+            //var cnt_link = 0;
             var sp_sub_value = "";
             var cnt = 0;
             $(".txt_edtr").each(function() {
                 cnt++;
-                cnt_link++;
+                //cnt_link++;
                 var getValue = CKEDITOR.instances["txt_ck"+cnt].getData();
                 
                 sp_sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
                 sp_sub_value += '<p>'+ getValue +'</p>';
 
-                sp_link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
+                //sp_link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
                 
             });
-            $(".input_content_ck").html(sub_value);
-            $(".input_link_ck").html(link_value);
+            $(".input_content_ck").html(sp_sub_value);
+            // $(".input_link_ck").html(link_value);
            
         });
     });
@@ -2276,12 +2279,14 @@ $.ajaxSetup({
             sp_iD_two = $("#sp_iD_two").val(); // ID
             $("#id_sp_two").val($("#sp_iD_two").val());
             $("#sp_iD_two").html(sp_iD_two);
-            sp_cat = $("#sp_cat_two").val(); // Illness Category
+            sp_cat = $("#sp_cat_two").val(); // Special Category
             $(".sp_cat").html(sp_cat);
-            sp_name = $("#sp_title_two").val(); // Illness Name
+            sp_name = $(".st").val(); // Illness Name
             $(".sp_name").html(sp_name);
-            sp_sh = $("#sts_two").val(); // Illness SHoulder
+            sp_sh = $(".sts").val(); // Illness SHoulder
             $(".sp_sh").html(sp_sh);
+            img_cap = $("#img_cap_two").val(); // Image Caption
+            $(".img-caption").html(img_cap);
 
             //Keywords
             var key_value = "";
@@ -2292,33 +2297,34 @@ $.ajaxSetup({
             });
             $("#tag_value").html(key_value);
 
-            var lead_value = "";
-            var lead_cnt = 0;
-            $(".lead_edtr").each(function() {
-                lead_cnt++;
-                lead_value += '<p>'+ $("textarea#lead_edtr_two"+lead_cnt+"").val() +'</p>';
+            // var lead_value = "";
+            // var lead_cnt = 0;
+            // $(".lead_edtr").each(function() {
+            //     lead_cnt++;
+            //     lead_value += '<p>'+ $("textarea#lead_edtr_two"+lead_cnt+"").val() +'</p>';
                 
-            });
-            $(".input_lead").html(lead_value);
+            // });
+            // $(".input_lead").html(lead_value);
 
 
-            var sp_link_value = "";
-            var cnt_link = 0;
+            //COntent and Sub heading
+            //var sp_link_value = "";
+            //var cnt_link = 0;
             var sp_sub_value = "";
             var cnt = 0;
             $(".txt_edtr").each(function() {
                 cnt++;
-                cnt_link++;
+                //cnt_link++;
                 var getValue = CKEDITOR.instances["txt_ck"+cnt].getData();
                 
                 sp_sub_value += '<h3>'+ $("#s_head"+cnt).val() +'</h3>';
                 sp_sub_value += '<p>'+ getValue +'</p>';
 
-                sp_link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
+                //sp_link_value += '<li><a href="">'+$("#s_head"+cnt_link).val()+'</a></li>';
                 
             });
-            $(".input_content_ck").html(sub_value);
-            $(".input_link_ck").html(link_value);
+            $(".input_content_ck").html(sp_sub_value);
+            // $(".input_link_ck").html(link_value);
            
         });
     });

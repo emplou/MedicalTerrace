@@ -163,7 +163,7 @@
                             <hr>
 
                             <!-- Subheading -->
-                            <div id="addanother">
+                            <div class="txt_edtr">
                                         
                                 <div class="input_content"></div>
                                 
@@ -460,7 +460,7 @@
                                 </div>
                                 <div class="sidediv cols-3">
                                     <div class="sidebots">
-                                        <a class="prevbutton btn-prime sp_preview" type="button" href="#previewAddSpecial">Preview</a>
+                                        <a class="prevbutton btn-prime sp_preview" type="button" href="#previewSpecial">Preview</a>
                                         <button type="button" class="btn-prime relservhalf1 sp_release1" id="myBtn">Reserve</button>
                                         <button type="button" class="btn-prime relservehalf2 sp_release2" id="myBtn">Release</button>
                                     </div>

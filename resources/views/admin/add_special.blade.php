@@ -72,7 +72,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集カテゴリー<br><span>Special Category</span></label>
                 <div class="cols-5">          
-                    <select name="sp_cat" class="form-control"  required>
+                    <select name="sp_cat" class="form-control" id="sp_cat" required>
                         <option value="">選択してください</option>
                         <option value="がん">がん</option>
                         <option value="生活習慣病">生活習慣病</option>
@@ -196,7 +196,7 @@
             </div>
             <hr>
 
-            <div id="addanother2">
+            <div class="txt_edtr">
                 <div class="form-group">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">          
@@ -219,7 +219,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7"> 
                          
-                        <textarea class="form-control" name="txt_ckeditor[0]" id="txt_ck1" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ck1" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
                     

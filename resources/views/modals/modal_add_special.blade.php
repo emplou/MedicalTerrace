@@ -8,12 +8,12 @@
         {!! Form::open(['url' => '/approve_special', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
-                <li><a href="#">感染症・寄生虫</a></li>
-                <li>手足口病</a></li>
+                <li class="sp_cat"><a href="#"><!-- 感染症・寄生虫 --></a></li>
+                <li class="sp_name"><!-- 手足口病 --></li>
             </ul>
             <div class="panel-head">Special</div>
             <div class="div-bg">
-                <div class="heading1">いわゆる夏風邪は7月がピーク！<br> 子どもの夏の感染症<br></div>
+                <div class="heading1 sp_sh"><!-- いわゆる夏風邪は7月がピーク！<br> 子どもの夏の感染症<br> --></div>
                 
             </div>
             
