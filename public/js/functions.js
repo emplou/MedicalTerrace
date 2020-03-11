@@ -1057,7 +1057,7 @@ $.ajaxSetup({
         });
     });
 
-    $('.overwrite_illness').each(function(e){
+    $('.overwrite_illness_a').each(function(e){
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

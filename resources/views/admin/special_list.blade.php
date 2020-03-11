@@ -9,19 +9,22 @@
 <div class="special-table">
     <table id="list" class="table table-striped table-bordered" width="100%">
         <thead>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Illness Category</th>
-            <th>Magazine</th>
+            <th>イメージ</th>
+            <th>タイトル</th>
+            <th>フォルダ</th>
+            <th>カテゴリー</th>
+            <th>掲載誌</th>
             <th>ID</th>
-            <th>Status Update</th>
-            <th>Action</th>
+            <th>ステイタス更新日</th>
+            <th>編集</th>
         </thead>
         <tbody>
         @foreach($special as $sp)
             <tr>
                 <td><img src="{!! $sp->sp_img !!}" style="width:80px;height:80px;"></td>
                 <td>{!! $sp->sp_title !!}</td>
+                <td>{!! $sp->sp_ill_cat !!}</td>
+                <td>{!! $sp->sp_cat !!}</td>
                 <td>{!! $sp->sp_mag !!}</td>
                 <td>{!! $sp->sp_id !!}</td>
                 @if ($sp->tracking_status == "1")

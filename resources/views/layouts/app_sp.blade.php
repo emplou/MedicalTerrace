@@ -29,6 +29,197 @@
             clear: both;
             margin-bottom: 10px;
         }
+        .container{
+	    margin-top:20px;
+	}
+	.image-preview-input {
+	    position: relative;
+		overflow: hidden;
+		margin: 0px;    
+	    color: #333;
+	    background-color: #fff;
+	    border-color: #ccc;    
+	}
+	.image-preview-input input[type=file] {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		cursor: pointer;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+	.image-preview-input-title {
+	    margin-left:2px;
+	}
+	.push-btn {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    padding: 7px 5px;
+    margin: 5px auto 0;
+    border-radius: 10px;
+    border: 1px solid #c4eaea;
+}
+.accnt-container {
+    width: 100%;
+    position: absolute;
+}
+.accnt-box {
+    display: none;
+    width: 90px;
+    height: 80px;
+    color: grey;
+    background: #fff;
+    margin: 0 auto;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+}
+
+.main-content{
+	font-family: Serif;
+	/* padding: 3%; */
+}
+div.container {
+        width: 100%;
+    }
+
+	.btn-search {
+	  background: #424242;
+	  border-radius: 0;
+	  color: #fff;
+	  border-width: 1px;
+	  border-style: solid;
+	  border-color: #1c1c1c;
+	}
+	.btn-search:link, .btn-search:visited {
+	  color: #fff;
+	}
+	.btn-search:active, .btn-search:hover {
+	  background: #1c1c1c;
+	  color: #fff;
+	}
+
+	.container{
+    margin-top:20px;
+}
+.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;    
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;    
+}
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.image-preview-input-title {
+    margin-left:2px;
+}
+
+.form- {
+	width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input.form-  {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    height: 46px;
+}
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 30px;
+}
+.custom-file-upload label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.custom-file-upload.doc {
+  margin-top: 0;
+}
+.custom-file-upload.doc .file-upload-input{
+	width: 70%;
+	height: 35px;
+}
+
+.file-upload-input {
+  width: 83%;
+  color: #808080;
+  font-size: 14px;
+  outline: 0;
+  padding: 6px 10px;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  background-color: #ffffff;
+
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left;
+}
+
+
+.file-upload-button {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  content: "参照...";
+  font-size: 16px;
+  text-transform: none;
+  padding: 5px 20px;
+  border: none;
+  margin-left: -1px;
+  background-color: #6f6d6d;
+  float: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
     </style>
     
 </head>
@@ -37,7 +228,7 @@
 	<header>
 		<h1 class="dashboard">医特集 <br><small>UI of Special table</small></h1>
 		<div class="right">
-			<button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医師・医療従事者 新規登録 <br> Special new registration</button>
+			<button onclick="window.location='{{ url("add_special") }}'" class="doc-link">医特集 <br> Special new registration</button>
 			<img src="../images/medical-logo.png" alt="">
 		</div>
 	</header>	
@@ -50,9 +241,9 @@
 <div class="nav-container">
 	<nav class="clearfix">
 		<div class="nav-photo-container">
-			<div class="nav-photo wow bounceIn" data-wow-delay="0.5s" onclick="" style="background-image: url(../images/admin-avatar.png);"></div>
+			<div class="nav-photo wow bounceIn" data-wow-delay="0.5s" onclick="" style="background-image: url(images/admin-avatar.png);"></div>
 			<a href="my-account" title="My Account">Editor</a><br>
-			Medical T. 編集部<br>A.Ito<br><a class="push-btn">ログアウト<span class="lnr lnr-chevron-down"></span></a>
+			{!! Auth::user()->name !!}<br><a class="push-btn">ログアウト<span class="lnr lnr-chevron-down"></span></a>
 			<div class="accnt-container">
 				<div class="accnt-box">
 					<div class="accnt-arrow"></div>
@@ -60,14 +251,14 @@
 						<li><a href="viewall-admin">View Profile</a></li>
 						<li>
 						<!-- <a href="../index.html">Logout</a> -->
-						<a href="#"
+						<a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <!-- {{ __('Logout') }} -->
+                                        {{ __('Logout') }}
                                     </a>
-									<form id="logout-form" action="#" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					@csrf
+				</form>
 						</li>
 					</ul>
 				</div>

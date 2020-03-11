@@ -43,13 +43,16 @@ Route::get('/medicine_list','HomeController@medicine_list');
 Route::get('/equipment_list','HomeController@equipment_list');
 Route::get('/magazine_list','HomeController@magazine_list');
 
-//edit
+//modal edit
 Route::get('/save_edit_hospital','HomeController@save_edit_hospital');
 Route::get('/modal_edit_doctor/{id}','HomeController@modal_edit_doctor');
 Route::get('/modal_edit_hospital/{id}','HomeController@modal_edit_hospital');
 Route::get('/modal_edit_special/{id}','HomeController@modal_edit_special');
 Route::get('/modal_edit_illness/{id}','HomeController@modal_edit_illness');
 Route::get('/modal_preview_illness','HomeController@modal_preview_illness');
+
+//edit
+Route::get('/edit_illness/{id}','HomeController@edit_illness');
 
 //post
 Route::post('/save_hospital','HomeController@save_hospital');
