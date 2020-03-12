@@ -38,11 +38,10 @@
                     <div class="form-progress">
                         <ul>
                             <li class="active">下書き<br><span>Draft</span></li>
-                            <li class="active">プレビュー<br><span>Preview</span></li>
                             <li id="sp_appreq">承認依頼<br><span>Approval Request</span></li>
                             <li id="sp_approve">承認済<br><span>Approved</span></li>
-                            <li id="sp_relres">公開予約<br><span>Release reservation</span></li>
-                            <li id="sp_release">公開中<br><span>Release</span></li>
+                            <li id="sp_relres">公開予約<br><span>Post reservation</span></li>
+                            <li id="sp_release">公開中<br><span>Posted Complete</span></li>
                         </ul>
                     </div>
                     {!! Form::open(['url' => '/overwrite_special', 'method' => 'post', 'files' => true]) !!}

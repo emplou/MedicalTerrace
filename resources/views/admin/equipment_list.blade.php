@@ -5,10 +5,14 @@
 <br>
     <table class="table" id="list"  width="100%">
         <thead>
-            <th>Equipment Name</th>
+            <th>イメージ</th>
+            <th>タイトル</th>
+            <th>フォルダ</th>
+            <th>カテゴリー</th>
+            <th>掲載誌</th>
             <th>ID</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th>ステイタス更新日</th>
+            <th>編集</th>
         </thead>
         <tbody>
         @foreach($equipment as $eq)

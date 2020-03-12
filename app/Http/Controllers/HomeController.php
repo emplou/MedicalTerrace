@@ -108,7 +108,7 @@ class HomeController extends Controller
 
     public function medicine_list(){
         $medicine = DB::table('dv_medicine')->get();
-        return view('admin.medicine_list', compact('hospitals'));
+        return view('admin.medicine_list', compact('medicine'));
     }
 
     public function equipment_list(){

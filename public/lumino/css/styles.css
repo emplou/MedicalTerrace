@@ -3129,27 +3129,41 @@ ul.blk-bullet img {
 #list .overwrite_hospital,
 #list .overwrite,
 #list .overwrite_illness,
-#list .overwrite_special {
-  background-color: #FCB0BC;
-  border-color: #FCB0BC;
+#list .overwrite_special,
+.dataTable .overwrite {
   padding: 10px 0;
   width: 100px;
-  height: 50px;
+  height: 60px;
+  color: transparent;
   font-size: 11px;
-  margin-top: 3px;
+  border-color: transparent;
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url(../../images/overwrite-btn.png);
+}
+
+#list .overwrite_hospital br,
+#list .overwrite br,
+#list .overwrite_illness br,
+#list .overwrite_special br {
+  display: none;
 }
 
 #list .btn-success,
 #list .overwrite_add,
 #list .overwrite_illness_copy,
 #list .overwrite_add_special {
-  background-color: #6ebaba;
-  border-color: #6ebaba;
   padding: 10px 0;
-  width: 110px;
-  height: 50px;
+  width: 100px;
+  height: 60px;
+  color: transparent;
   font-size: 11px;
-  margin-top: 3px;
+  border-color: transparent;
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url(../../images/copynew-btn.png);
 }
 
 .table>tbody>tr>td {
@@ -3245,6 +3259,7 @@ div.dataTables_wrapper div.dataTables_filter input {
 
 .dataTable > thead > tr > th {
   height: 25px !important;
+  font-size: 12px;
   background-color: #ccc;
 }
 
@@ -3345,6 +3360,9 @@ div.dataTables_wrapper div.dataTables_filter input {
 .modal-panel.previewSpecial label:before {
   display: none;
 }
+
+
+
 
 
 

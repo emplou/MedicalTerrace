@@ -7,18 +7,24 @@
 <br>
     <table class="table" id="list" width="100%">
         <thead>
-            <th>Image</th>
-            <th>Alphabet Name</th>
-            <th>Status</th>
-            <th>Industry</th>
-            <th>Action</th>
+            <th>イメージ</th>
+            <th>タイトル</th>
+            <th>フォルダ</th>
+            <th>カテゴリー</th>
+            <th>掲載誌</th>
+            <th>ID</th>
+            <th>ステイタス更新日</th>
+            <th>編集</th>
         </thead>
         <tbody>
         @foreach($doctors as $doc)
             <tr>
                 <td><img src="{!! $doc->image !!}" style="width:80px;height:80px;"></td>
                 <td>{!! $doc->alphabet_name !!}</td>
+                <td></td>
+                <td></td>
                 <td>{!! $doc->status !!}</td>
+                <td>{!! $doc->id !!}</td>
                 <td>{!! $doc->industry !!}</td>
                 <td><a href="#" class="btn btn-info overwrite" doc-id="{!! $doc->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_add" doc-id="{!! $doc->id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>

@@ -39,11 +39,10 @@
         <div class="form-progress" width="100px">
             <ul>
                 <li class="active">下書き<br><span>Draft</span></li>
-                <li class="active">プレビュー<br><span>Preview</span></li>
                 <li>承認依頼<br><span>Approval Request</span></li>
                 <li>承認済<br><span>Approved</span></li>
-                <li class="rel">公開予約<br><span>Release reservation</span></li>
-                <li>公開中<br><span>Release</span></li>
+                <li class="rel">公開予約<br><span>Post reservation</span></li>
+                <li>公開中<br><span>Posted Complete</span></li>
             </ul>
         </div>
     <div class="form-pads">
