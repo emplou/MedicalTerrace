@@ -53,6 +53,7 @@ Route::get('/modal_preview_illness','HomeController@modal_preview_illness');
 
 //edit
 Route::get('/edit_illness/{id}','HomeController@edit_illness');
+Route::get('/edit_special/{id}','HomeController@edit_special');
 
 //post
 Route::post('/save_hospital','HomeController@save_hospital');
