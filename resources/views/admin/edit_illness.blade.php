@@ -136,15 +136,30 @@
              <!-- Summarize -->
             <div class="form-group">
                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
-                <div class="cols-5">          
-                    <textarea class="form-control sm1" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
+                
+                <div class="cols-8">
+                    <?php $x = 0; $z = 3; ?>
+                    @foreach (json_decode($illness->ill_summary) as $sum) 
+                        <?php $x++; $z++; ?>
+                        
+                        <div class="cols-6">    
+                            <textarea class="form-control sm{!! $x !!}" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required>{!! $sum->sm !!}</textarea>
+                    
+                        </div>
+                        
+                        <div class="cols-2">          
+                            <span id="rchars{!! $z !!}">0</span>/46
+                            <!-- <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div> -->
+            
+                        </div>
+                        <div class="clear"></div>
+                    @endforeach
                 </div>
-                <div class="cols-2">          
-					<span id="rchars4">0</span>/46
-				</div>
-            </div>
+            </div>      
+                
+            
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label cols-15"></label>
                 <div class="cols-5">          
                     <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
@@ -178,11 +193,11 @@
                     <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
                 </div>
                 <div class="cols-2">          
-                    <!-- <span id="rchars8">0</span>/46 -->
+                    
                     <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div>
        
 				</div>
-            </div>
+            </div> -->
 
             <!-- Add new fiends in this wrapper -->
             <div class="wrapper"></div>
@@ -212,6 +227,7 @@
             </div>
             <br>
             
+            @foreach (json_decode($illness->ill_sub_txt) as $key) 
             <!-- Subheading -->
             <div class="txt_edtr">
                 <div class="form-group">
@@ -219,20 +235,20 @@
                     <div class="cols-4">          
                     <select id="head1" name="sub_head1a[]" class="form-control">
                         <option value="">選択してください</option>
-                        <option value="基礎知識">基礎知識</option>
-                        <option value="近年の動向">近年の動向</option>
-                        <option value="症状">症状</option>
-                        <option value="原因">原因</option>
-                        <option value="検査方法">検査方法</option>
-                        <option value="検診体験記">検診体験記</option>
-                        <option value="検診から治療まで">検診から治療まで</option>
-                        <option value="治療方法">治療方法</option>
-                        <option value="療養と副作用">療養と副作用</option>
-                        <option value="合併症<">合併症</option>
-                        <option value="自宅療法（療養方法・再発防止など）">自宅療法（療養方法・再発防止など）</option>
-                        <option value="体験記">体験記</option>
-                        <option value="FAQ">FAQ</option>
-                        <option value="予防・対策方法">予防・対策方法</option>
+                        <option value="基礎知識" @if($key->heading == '基礎知識') selected @endif>基礎知識</option>
+                        <option value="近年の動向" @if($key->heading == '近年の動向') selected @endif>近年の動向</option>
+                        <option value="症状" @if($key->heading == '症状') selected @endif>症状</option>
+                        <option value="原因" @if($key->heading == '原因') selected @endif>原因</option>
+                        <option value="検査方法" @if($key->heading == '検査方法') selected @endif>検査方法</option>
+                        <option value="検診体験記" @if($key->heading == '検診体験記') selected @endif>検診体験記</option>
+                        <option value="検診から治療まで" @if($key->heading == '検診から治療まで') selected @endif>検診から治療まで</option>
+                        <option value="治療方法" @if($key->heading == '治療方法') selected @endif>治療方法</option>
+                        <option value="療養と副作用" @if($key->heading == '療養と副作用') selected @endif>療養と副作用</option>
+                        <option value="合併症<" @if($key->heading == '合併症<') selected @endif>合併症</option>
+                        <option value="自宅療法（療養方法・再発防止など）" @if($key->heading == '自宅療法（療養方法・再発防止など）') selected @endif>自宅療法（療養方法・再発防止など）</option>
+                        <option value="体験記" @if($key->heading == '体験記') selected @endif>体験記</option>
+                        <option value="FAQ" @if($key->heading == 'FAQ') selected @endif>FAQ</option>
+                        <option value="予防・対策方法" @if($key->heading == '予防・対策方法') selected @endif>予防・対策方法</option>
                     </select>
                     </div>
                 </div>
@@ -240,7 +256,7 @@
                 <div class="form-group">
                     <label class="control-label cols-15"></label>
                     <div class="cols-4">
-                        <input type="text" id="s_head1" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]" required>
+                        <input type="text" id="s_head1" class="form-control" placeholder="選択項目にない場合に入力" name="sub_head1b[]" value="{!! $key->sub !!}">
                     </div>
                 </div>
 
@@ -250,13 +266,15 @@
                     <div class="cols-6">   
                        
                         <div class="cols-10">        
-                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ck1" placeholder=""></textarea>
+                            <textarea class="form-control ck" name="txt_ckeditor[]" id="txt_ck1" placeholder="">{!! $key->txt_ckeditor !!}</textarea>
                         </div>
                          
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck"><span class="lnr lnr-plus-circle"></span></button></div> 
                 </div>
             </div>
+
+            @endforeach
 
             <!-- Add subheading form -->
             <div class="wrapper2"></div>
@@ -507,13 +525,15 @@
             <div class="form-group">
                 <label class="control-label cols-15">検索キーワード<br><span>Search Key word</span></label>
                 <div class="cols-7">
-                    <div class="cols-3"><input type="text" class="form-control" id="kword1" placeholder="例）夏の感染症" name="kword[]"></div>
-                    <div class="cols-3"><input type="text" class="form-control" id="kword2" placeholder="例）子どもの病気" name="kword[]"></div>
-                    <div class="cols-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword[]"></div>
+                @foreach (json_decode($illness->ill_kwords) as $key) 
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="例）夏の感染症" value="{!! $key->kword !!}" name="kword[]"></div>
+                    <!-- <div class="cols-3"><input type="text" class="form-control" id="kword2" placeholder="例）子どもの病気" name="kword[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" id="kword3" placeholder="例）手足口病" name="kword[]"></div> -->
+                @endforeach
                 </div>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <div class="control-label cols-15"></div>
                 <div class="cols-7">
                     <div class="cols-3"><input type="text" class="form-control" id="kword4" placeholder="例）ヘルパンギーナ" name="kword[]"></div>
@@ -529,7 +549,7 @@
                     <div class="cols-3"><input type="text" class="form-control" id="kword8" placeholder="" name="kword[]"></div>
                     <div class="cols-3">※裏設定。検索させたい関連ワードを表記</div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-group check">
                 <label class="control-label cols-15">タイトルタグ<br><span>Title Tag for SEO</span></label>
@@ -583,7 +603,7 @@
                 <label class="control-label cols-15">h1</label>
                 <div class="cols-4" style="border: 1px solid #CCC; padding: 5px; color: #F00;">   
                     子どもの夏の感染症 いわゆる夏風邪は7月がピーク！
-                    <input type="hidden" name="h1" value="Sample">
+                    <input type="hidden" name="h1" value="1">
                 </div>
             </div>
             
@@ -592,10 +612,13 @@
                 <label class="control-label cols-15">h2</label>
                 <div class="cols-7">
                     <!-- add h2 fields -->
+                    @foreach (json_decode($illness->ill_h2) as $key) 
+                        <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" value="{!! $key->h2 !!}" name="h2[]"></div>
+                    @endforeach
+
                     <div class="wrapper5"></div>
-                    <div class="cols-3"><input type="text" class="form-control" placeholder="必要に応じて記載" name="h2[]"></div>
-                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
-                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
+                    <!-- <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div>
+                    <div class="cols-3"><input type="text" class="form-control" placeholder="" name="h2[]"></div> -->
                     <div class="cols-1 relative"><button type="button" class="btn add5"><span class="lnr lnr-plus-circle"></span></button></div>
                 </div>
             </div>
@@ -632,8 +655,18 @@
             <div class="form-group">
                 <label class="control-label cols-15">タグ<br>(診療科・所属科)<br><span>Tag(department)</span></label>
                 <div class="cols-7"> 
-                    <div id="addanother2">
+                    <!-- <div id="addanother2"> -->
+                    @foreach (json_decode($illness->ill_tag_dep) as $key) 
                         <div class="cols-3">
+                            <select name="tag_dep[]" class="form-control">
+                                <option value="">選択してください</option>
+                                @foreach($department as $dpt)
+                                    <option @if($key->tag_dep == $dpt->dpt_name) selected @endif value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    @endforeach
+                        <!-- <div class="cols-3">
                             <select name="tag_dep[]" class="form-control">
                                 <option value="">選択してください</option>
                                 @foreach($department as $dpt)
@@ -648,23 +681,15 @@
                                     <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                                 @endforeach
                             </select>
-                        </div>
-                        <div class="cols-3">
-                            <select name="tag_dep[]" class="form-control">
-                                <option value="">選択してください</option>
-                                @foreach($department as $dpt)
-                                    <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-sm-1"></div>
-                    </div>
+                        </div> -->
+                        <!-- <div class="col-sm-1"></div> -->
+                    <!-- </div> -->
 
                     <div class="clear"></div>
 
                     <div class="wrapper6"></div>
 
-                    <div class="cols-3">
+                    <!-- <div class="cols-3">
                         <select name="tag_dep[]" class="form-control">
                             <option value="">選択してください</option>
                             @foreach($department as $dpt)
@@ -687,33 +712,35 @@
                                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                             @endforeach
                         </select>
-                    </div>
-                    <div class="col-sm-1">
+                    </div> -->
+                    <!-- <div class="col-sm-1">
                         <button type="button" class="btn btn-success add6"><span class="lnr lnr-plus-circle"></span></button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label cols-15">タグ（症状）<br><span>Tag(Symptoms)</span></label>
                 <div class="cols-7"> 
-                    <div id="addanother3">
+                    <!-- <div id="addanother3"> -->
+                    @foreach (json_decode($illness->ill_tag_symp) as $key) 
                         <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_sy[]" placeholder="擬音や検索されやすい症状">
+                            <input type="text" class="form-control" name="tag_sy[]" value="{!! $key->tag_sy !!}">
                         </div>
-                        <div class="cols-3">
+                    @endforeach
+                        <!-- <div class="cols-3">
                             <input type="text" class="form-control" name="tag_sy[]" placeholder="">
                         </div>
                         <div class="cols-3">
                             <input type="text" class="form-control" name="tag_sy[]" placeholder="">
                         </div>
-                        <div class="col-sm-1"></div>
-                    </div>
-                    <div class="clear"></div>
+                        <div class="col-sm-1"></div> -->
+                    <!-- </div> -->
+                    <!-- <div class="clear"></div> -->
 
                     <div class="wrapper7"></div>
 
-                    <div class="cols-3">
+                    <!-- <div class="cols-3">
                         <input type="text" class="form-control" name="tag_sy[]" placeholder="">
                     </div>
                     <div class="cols-3">
@@ -721,78 +748,78 @@
                     </div>
                     <div class="cols-3">
                         <input type="text" class="form-control" name="tag_sy[]" placeholder="">
-                    </div>
+                    </div> -->
                     <div class="col-sm-1">
                         <button type="button" class="btn btn-success add7"><span class="lnr lnr-plus-circle"></span></button>
                     </div>
                 </div>
             </div>
-
+            <?php $tag_season = json_decode($illness->ill_tag_season); ?>
             <div class="form-group check">
                 <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                 <div class="cols-6">   
                     <div class="cols-12">
-                        <input type="checkbox" id="taga1" name="tag_s[]" value="春"> 
+                        <input type="checkbox" id="taga1" name="tag_s[]" value="春" {{ in_array('春', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga1">春</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga2" name="tag_s[]" value="夏"> 
+                        <input type="checkbox" id="taga2" name="tag_s[]" value="夏" {{ in_array('夏', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga2">夏</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga3" name="tag_s[]" value="秋"> 
+                        <input type="checkbox" id="taga3" name="tag_s[]" value="秋" {{ in_array('秋', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga3">秋</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga4" name="tag_s[]" value="冬">
+                        <input type="checkbox" id="taga4" name="tag_s[]" value="冬" {{ in_array('冬', $tag_season) ? 'checked' : '' }}>
                         <label for="taga4"> 冬</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga5" name="tag_s[]" value="4月">
+                        <input type="checkbox" id="taga5" name="tag_s[]" value="4月" {{ in_array('4月', $tag_season) ? 'checked' : '' }}>
                         <label for="taga5">4月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga6" name="tag_s[]" value="5月">
+                        <input type="checkbox" id="taga6" name="tag_s[]" value="5月" {{ in_array('5月', $tag_season) ? 'checked' : '' }}>
                         <label for="taga6">5月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga7" name="tag_s[]" value="6月">
+                        <input type="checkbox" id="taga7" name="tag_s[]" value="6月" {{ in_array('6月', $tag_season) ? 'checked' : '' }}>
                         <label for="taga7">6月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga8" name="tag_s[]" value="7月"> 
+                        <input type="checkbox" id="taga8" name="tag_s[]" value="7月" {{ in_array('7月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga8">7月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga9" name="tag_s[]" value="8月"> 
+                        <input type="checkbox" id="taga9" name="tag_s[]" value="8月" {{ in_array('8月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga9">8月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga10" name="tag_s[]" value="9月"> 
+                        <input type="checkbox" id="taga10" name="tag_s[]" value="9月" {{ in_array('9月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga10">9月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga11" name="tag_s[]" value="10月"> 
+                        <input type="checkbox" id="taga11" name="tag_s[]" value="10月" {{ in_array('10月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga11">10月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga12" name="tag_s[]" value="11月"> 
+                        <input type="checkbox" id="taga12" name="tag_s[]" value="11月" {{ in_array('11月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga12">11月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga13" name="tag_s[]" value="12月"> 
+                        <input type="checkbox" id="taga13" name="tag_s[]" value="12月" {{ in_array('12月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga13">12月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga14" name="tag_s[]" value="1月"> 
+                        <input type="checkbox" id="taga14" name="tag_s[]" value="1月" {{ in_array('1月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga14">1月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga15" name="tag_s[]" value="2月"> 
+                        <input type="checkbox" id="taga15" name="tag_s[]" value="2月" {{ in_array('2月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga15">2月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga16" name="tag_s[]" value="3月"> 
+                        <input type="checkbox" id="taga16" name="tag_s[]" value="3月" {{ in_array('3月', $tag_season) ? 'checked' : '' }}> 
                         <label for="taga16">3月</label>
                     </div>
                 
@@ -802,19 +829,20 @@
                 <label class="control-label cols-15"></span></label>
                 <div class="cols-7"> 
                 <div class="wrapper8"></div>
-                        <div id="addanother4">
-                            
+                        <!-- <div id="addanother4"> -->
+                        @foreach (json_decode($illness->ill_tag_season_txt) as $key)     
                             <div class="cols-3">
+                                <input type="text" class="form-control" name="tag_txt[]" value="{!! $key->tag_txt !!}">
+                            </div>
+                        @endforeach
+                            <!-- <div class="cols-3">
                                 <input type="text" class="form-control" name="tag_txt[]" placeholder="">
                             </div>
                             <div class="cols-3">
                                 <input type="text" class="form-control" name="tag_txt[]" placeholder="">
-                            </div>
-                            <div class="cols-3">
-                                <input type="text" class="form-control" name="tag_txt[]" placeholder="">
-                            </div>
+                            </div> -->
                             <div class="cols-1 relative"><button type="button" class="btn btn-success add8"><span class="lnr lnr-plus-circle"></span></button></div>
-                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -824,20 +852,22 @@
                 <div class="cols-7"> 
                     <div class="wrapper9"></div>
 
-                    <div id="addanother5">
+                    <!-- <div id="addanother5"> -->
+                    @foreach (json_decode($illness->ill_tag_free) as $key)  
                         <div class="cols-3">
+                            <input type="text" class="form-control" name="tag_f[]" value="{!! $key->tag_f !!}">
+                        </div>
+                    @endforeach
+                        <!-- <div class="cols-3">
                             <input type="text" class="form-control" name="tag_f[]" placeholder="">
                         </div>
                         <div class="cols-3">
                             <input type="text" class="form-control" name="tag_f[]" placeholder="">
-                        </div>
-                        <div class="cols-3">
-                            <input type="text" class="form-control" name="tag_f[]" placeholder="">
-                        </div>
+                        </div> -->
                         <div class="cols-1 relative"><button type="button" class="btn btn-success add9"><span class="lnr lnr-plus-circle"></span></button></div>
                     </div>
                     
-                </div>
+                <!-- </div> -->
                 <div class="sidediv cols-3">
                         <div class="sidebots">
                             <!-- Full buttons -->

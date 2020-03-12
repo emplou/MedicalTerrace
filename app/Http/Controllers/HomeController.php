@@ -2329,6 +2329,24 @@ class HomeController extends Controller
         return redirect('/doctor_list');
     }
 
+    // Edit Special
+    public function edit_special($id){
+        $special = DB::table('special')->where('id','=',$id)->get();
+        $doctors = DB::table('dv_doctors')->get();
+        $illness = DB::table('illness')->get();
+        $department = DB::table('hospital_departments')->get();
+        $archive = DB::table('dv_archive')->where('type_id','=',$id)
+                                                    ->where('type','=','3')
+                                                    ->get();
+        
+        //$value['auth'] = DB::table('users')->where('id','=',$authorID)->get();
+        
+        // $fetch = json_encode($value);
+        // return $fetch;
+        // return $value;
+        return view('admin.edit_special', compact('special', 'doctors', 'illness', 'department', 'archive'));
+    }
+
     //Overwrite Special
     public function overwrite_special(Request $request){
 
