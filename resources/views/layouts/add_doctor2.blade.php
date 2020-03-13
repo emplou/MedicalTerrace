@@ -18,6 +18,10 @@
             <td>氏名<br>Name</td>
             <td>{!! Form::text('name', null , ['class' => 'form-control']) !!}</td>
         </tr>
+         <tr>
+            <td>所属診療科・所属科<br>Department</td>
+            <td>{!! Form::select('department', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
+        </tr>
         <tr>
             <td>ローマ字(名・氏)<br>Alphabet Name</td>
             <td>{!! Form::text('alpha_name', null , ['class' => 'form-control']) !!}</td>
@@ -53,10 +57,7 @@
             <td>画像alt<br>Image alt</td>
             <td>{!! Form::text('img_alt', null , ['class' => 'form-control']) !!}</td>
         </tr>
-        <tr>
-            <td>業種<br>Job-type</td>
-            <td>{!! Form::select('industry', array('L' => 'industry', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
+        
         <tr>
             <td>所属学会<br>Conference</td>
             <td>{!! Form::text('conference', null , ['class' => 'form-control']) !!}</td>
@@ -85,10 +86,7 @@
             <td>{!! Form::select('Prefectures', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
             <td>{!! Form::select('Prefectures', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
         </tr>
-        <tr>
-            <td>所属診療科・所属科<br>Department</td>
-            <td>{!! Form::select('department', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
+       
 
         <tr>
             <td>医師コメント<br>Doctor Comment</td>
