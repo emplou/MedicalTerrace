@@ -3228,7 +3228,7 @@ $('.overwrite_edit_doctor').each(function(e){
             if(response == "success")
 
               console.log(response['data']); 
-            //   console.log(response['dpt']); 
+            //   console.log(response['dpt']);
 
             //   $("#editdoctor").modal('show');
               $("#url_generation").val(response['data'][0].url_generation);
