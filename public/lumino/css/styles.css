@@ -2360,7 +2360,7 @@ label:hover:before {
 .form-progress li {
   position: relative;
   float: left;
-  width: 15%;
+  width: 18%;
   font-size: 12px;
   line-height: 15px;
   text-align: center;
@@ -3257,10 +3257,11 @@ div.dataTables_wrapper div.dataTables_filter input {
     background-color: #ededed;
 }
 
-.dataTable > thead > tr > th {
-  height: 25px !important;
-  font-size: 12px;
-  background-color: #ccc;
+  .dataTable > thead > tr > th {
+    height: 25px !important;
+    font-size: 11px;
+    font-weight: 600;
+    background-color: #ccc;
 }
 
 .modal-panel.previewSpecial {
@@ -3358,7 +3359,47 @@ div.dataTables_wrapper div.dataTables_filter input {
 }
 
 .modal-panel.previewSpecial label:before {
-  display: none;
+  display: none!;
+}
+
+
+
+table.dataTable thead .sorting_asc:after {
+    display: none!important;
+}
+
+table.dataTable thead .sorting_desc:after {
+    display: none!important;
+}
+
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before, 
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc:after {
+  display: none !important;
+}
+
+table.dataTable thead .sorting {
+   background-image: url(../../images/arrows.png);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center right;
+}
+
+table.dataTable thead .sorting_asc {
+   background-image: url(../../images/arrows-up.png);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center right;
+}
+
+table.dataTable thead .sorting_desc {
+   background-image: url(../../images/arrows-down.png);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center right;
 }
 
 

@@ -341,6 +341,7 @@
 					</div>    
                 </div>
             </div>
+            
 
             <div class="form-group">
                 <div class="cols-15"></div>
@@ -365,27 +366,8 @@
                     <span id="rchars5">0</span>/50
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label cols-15"></label>
-                <div class="cols-5">   
-                    <textarea class="form-control mt2" name="meta_txt2" maxlength="70">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をした。</textarea><br>
-				</div>
-				<div class="cols-1">   
-					PC用補足文章 <br>       
-                    <span id="rchars5">70</span>/70
-                </div>
-			</div>
-			<div class="form-group">
-				<label class="control-label cols-15"></label>
-				<div class="cols-7"> 
-					<div style="border: 1px solid #CCC; padding: 5px; color: #ff335a;">
-						ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原 稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ, や本文の原稿, との重複NG。 ページ内の, 頻出単語30語程度, を自動表記。 コピーライティング, をサポート。タイトルタグ
-					</div>
-				</div>
-                <div class="cols-1">          
-                    <span id="rchars6">0</span>/70
-                </div>
-            </div>
+            
+			
 
             <div class="form-group">
                 <label class="control-label cols-15">h1</label>

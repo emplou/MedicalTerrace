@@ -968,7 +968,7 @@ $.ajaxSetup({
                         
                             x++; 
                         });
-                        $("#input_kwords").html(input_kwords_two);
+                        
                         $("#input_kw").html(input_kw_two);
 
                         // Tag Department Retrieval
@@ -998,12 +998,7 @@ $.ajaxSetup({
                         });
                         $("#input_sy").html(input_sy);
 
-                        // Tag Season Text Retrieval
-                        var objJSONconf = JSON.parse(response['data'][0].ill_tag_season_txt);
-                        var input_tst = "";
-                        $.each(objJSONconf, function (i, v) {
-                            input_tst += '<div class="cols-3"><input type="text" class="form-control" name="tag_txt[]" id="tag_txt" value="'+v.tag_txt+'"></div>';
-                        });
+                        
                         $("#input_tst").html(input_tst);
                         // SEO Keywords
                         var objJSON = JSON.parse(response['data'][0].sp_seo_kwords);

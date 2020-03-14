@@ -33,6 +33,15 @@
                     </p>まれですが、髄膜炎、小脳失調症、脳炎などの中枢神経系の症状のほか、心筋炎、神経原性肺水腫、急性弛緩性麻痺など、さまざまな合併症が起こる場合があります。<p>
 
                     </div>   
+                     <div class="tags">
+                        <div>
+                            <span>感染症</span>
+                            <span>夏風邪</span>
+                            <span>手足口病</span>
+                            <span>子ども</span>
+                            <span>夏</span>
+                        </div>
+                    </div>
                 
                 <div class="panel-blue">
                     <div class="id-tag">
@@ -45,28 +54,20 @@
                     <p></p>
                 </div>
             </div>
-            <div class="tags">
-                <div>
-                    <span>感染症</span>
-                    <span>夏風邪</span>
-                    <span>手足口病</span>
-                    <span>子ども</span>
-                    <span>夏</span>
-                </div>
-            </div>
            
-            <!-- Buttons -->
-            <div class="modal-buts">
-                <button type="button" class="btn-prime approval2" id="show_img"></button>
-                <button type="button" class="btn-prime backedit2" id="show_img"></button>
-            </div>
+           
+            
     
         </div>
     </div>
 </div>
 
 
-
+<!-- Buttons -->
+<div class="modal-buts">
+    <button type="button" class="btn-prime approval2" id="show_img"></button>
+    <button type="button" class="btn-prime backedit2" id="show_img"></button>
+</div>
   </div>
 </div>
 </div>
