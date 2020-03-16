@@ -1754,6 +1754,28 @@ class HomeController extends Controller
         $department = DB::table('hospital_departments')->get();
         $risk1 = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
                                                     ->where('ra_status','=','1')
+                                                    ->first();
+        $risk2 = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
+                                                    ->where('ra_status','=','2')
+                                                    ->first();                                                 
+        $archive = DB::table('dv_archive')->where('type','=','4')
+                                                ->where('type_id','=',$id)
+                                                ->get(); 
+        //$value['auth'] = DB::table('users')->where('id','=',$authorID)->get(); 
+
+        //$fetch = json_encode($value);
+        // return $value;
+
+        return view('admin.edit_illness', compact('illness', 'doctors', 'department', 'risk1', 'risk2', 'archive'));
+    }
+
+    //Copy Add Illness
+    public function copy_illness($id){
+        $illness = DB::table('illness')->where('id','=',$id)->first();
+        $doctors = DB::table('dv_doctors')->get();
+        $department = DB::table('hospital_departments')->get();
+        $risk1 = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
+                                                    ->where('ra_status','=','1')
                                                     ->get();
         $risk2 = DB::table('risk_assessment')->where('ra_ill_id','=',$id)
                                                     ->where('ra_status','=','2')

@@ -12,7 +12,7 @@
                 <li>公開中<br><span>Posted Complete</span></li>
             </ul>
         </div>
-        {!! Form::open(array('url' => '/save_illness', 'method' => 'post', 'files' => true)) !!}
+        {!! Form::open(array('url' => '/overwrite_illness/$illness->id', 'method' => 'post', 'files' => true)) !!}
 
     <div class="form-horizontal">
 
@@ -285,14 +285,14 @@
                 <div class="cols-55"><button type="button" class="btn-prime image" id="show_img"></button><button type="button" class="btn-prime graph" id="show_graph"></button></div>
             </div>
 
+            @if(!empty($risk1))
             
-             <!-- Subheading -->
-
+            <!-- Subheading -->
             <div class="form-group check">
                 <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                 <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                        <input type="checkbox" id="a1" name="subheading-chck" value="1" />
+                        <input type="checkbox" id="a1" name="subheading-chck" value="1" @if($risk1->ra_title == '1') checked @endif />
                         <label for="a1" style="color:red;" id="output_ill2"></label>
                         <div class="clear"></div>
 					</div>    
@@ -304,23 +304,25 @@
             <div class="form-group">
                 <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                 <div class="cols-8">  
+                @foreach (json_decode($risk1->ra_text) as $key) 
                     <div class="cols-5">          
-                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確">{!! $key->sh !!}</textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度 
                         <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1" @if($key->rl == '1') selected @endif>1</option>
+                            <option value="2" @if($key->rl == '2') selected @endif>2</option>
+                            <option value="3" @if($key->rl == '3') selected @endif>3</option>
+                            <option value="4" @if($key->rl == '4') selected @endif>4</option>
+                            <option value="5" @if($key->rl == '5') selected @endif>5</option>
 
                         </select><br>         
                         <span id="rchars9">0</span>/46
                     </div>
                     <div class="clear"></div>
-                    <div class="cols-5">          
+                @endforeach
+                    <!-- <div class="cols-5">          
                         <textarea class="form-control sh2" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                     </div>
                     <div class="cols-2"> 
@@ -383,61 +385,70 @@
                         </select><br>                
                         <span id="rchars13">0</span>/46
                         <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- Check Result -->
                 <div class="form-group">
                     <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                     <div class="cols-6">
-                        <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
-                        <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div>
+                    @foreach (json_decode($risk1->ra_result) as $key) 
+                        <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]" value="{!! $key->cr !!}"></div>
+                        <!-- <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div> -->
+                    @endforeach
                     </div>
                     
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <div class="cols-15"></div>
                     <div class="cols-6">
                         <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr[]"></div>
                         <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr[]"></div>
                     </div>
-                </div>
+                </div> -->
 
+                @endif
+
+                @if(!empty($risk2))
                 <!-- Subheading -->
-
+                
                 <div class="form-group check2">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">   
                         <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                            <input type="checkbox" id="a2" name="subheading-chck2" value="1"/>
+                            <input type="checkbox" id="a2" name="subheading-chck2" value="1" @if($risk2->ra_title == '1') checked @endif/>
                             <label for="a2" style="color:red;" id="output_ill3"></label>
                             <div class="clear"></div>
                         </div>    
                     </div>
                 </div>
 
+                
                 <!-- Text of the subheading -->
                 <div class="form-group">
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-8">  
+                    @foreach (json_decode($risk2->ra_text) as $key) 
                         <div class="cols-5">          
-                            <textarea class="form-control sh_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確">{!! $key->sh2 !!}</textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度 
                             <select name="rl2[]">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                            <option value="1" @if($key->rl2 == '1') selected @endif>1</option>
+                            <option value="2" @if($key->rl2 == '2') selected @endif>2</option>
+                            <option value="3" @if($key->rl2 == '3') selected @endif>3</option>
+                            <option value="4" @if($key->rl2 == '4') selected @endif>4</option>
+                            <option value="5" @if($key->rl2 == '5') selected @endif>5</option>
+
 
                             </select><br>         
                             <span id="rchars14">0</span>/46
                         </div>
                         <div class="clear"></div>
-                        <div class="cols-5">          
+                    @endforeach
+                        <!-- <div class="cols-5">          
                             <textarea class="form-control sh2_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
@@ -500,25 +511,29 @@
                             </select><br>                
                             <span id="rchars18">0</span>/46
                             <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <!-- Check Result -->
                     <div class="form-group">
                         <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                         <div class="cols-6">
-                            <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr2[]"></div>
-                            <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr2[]"></div>
+                        @foreach (json_decode($risk2->ra_result) as $key) 
+                            <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr2[]" value="{!! $key->cr2 !!}"></div>
+                            <!-- <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr2[]"></div> -->
+                        @endforeach
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="cols-15"></div>
                         <div class="cols-6">
                             <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr2[]"></div>
                             <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr2[]"></div>
                         </div>
-                    </div>
+                    </div> -->
+                
+                @endif
 
                 <hr>
             <!-- Search Keywords -->
@@ -768,67 +783,67 @@
                 <label class="control-label cols-15">タグ（季節)<br><span>Tag(season)</span></label>
                 <div class="cols-6">   
                     <div class="cols-12">
-                        <input type="checkbox" id="taga1" name="tag_s[]" value="春" {{ in_array('春', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga1" name="tag_s[]" value="春"> 
                         <label for="taga1">春</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga2" name="tag_s[]" value="夏" {{ in_array('夏', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga2" name="tag_s[]" value="夏"> 
                         <label for="taga2">夏</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga3" name="tag_s[]" value="秋" {{ in_array('秋', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga3" name="tag_s[]" value="秋"> 
                         <label for="taga3">秋</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga4" name="tag_s[]" value="冬" {{ in_array('冬', $tag_season) ? 'checked' : '' }}>
+                        <input type="checkbox" id="taga4" name="tag_s[]" value="冬">
                         <label for="taga4"> 冬</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga5" name="tag_s[]" value="4月" {{ in_array('4月', $tag_season) ? 'checked' : '' }}>
+                        <input type="checkbox" id="taga5" name="tag_s[]" value="4月">
                         <label for="taga5">4月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga6" name="tag_s[]" value="5月" {{ in_array('5月', $tag_season) ? 'checked' : '' }}>
+                        <input type="checkbox" id="taga6" name="tag_s[]" value="5月">
                         <label for="taga6">5月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga7" name="tag_s[]" value="6月" {{ in_array('6月', $tag_season) ? 'checked' : '' }}>
+                        <input type="checkbox" id="taga7" name="tag_s[]" value="6月">
                         <label for="taga7">6月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga8" name="tag_s[]" value="7月" {{ in_array('7月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga8" name="tag_s[]" value="7月"> 
                         <label for="taga8">7月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga9" name="tag_s[]" value="8月" {{ in_array('8月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga9" name="tag_s[]" value="8月"> 
                         <label for="taga9">8月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga10" name="tag_s[]" value="9月" {{ in_array('9月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga10" name="tag_s[]" value="9月"> 
                         <label for="taga10">9月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga11" name="tag_s[]" value="10月" {{ in_array('10月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga11" name="tag_s[]" value="10月"> 
                         <label for="taga11">10月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga12" name="tag_s[]" value="11月" {{ in_array('11月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga12" name="tag_s[]" value="11月"> 
                         <label for="taga12">11月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga13" name="tag_s[]" value="12月" {{ in_array('12月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga13" name="tag_s[]" value="12月"> 
                         <label for="taga13">12月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga14" name="tag_s[]" value="1月" {{ in_array('1月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga14" name="tag_s[]" value="1月"> 
                         <label for="taga14">1月</label>
                     </div>  
                     <div class="cols-12">
-                        <input type="checkbox" id="taga15" name="tag_s[]" value="2月" {{ in_array('2月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga15" name="tag_s[]" value="2月"> 
                         <label for="taga15">2月</label>
                     </div>
                     <div class="cols-12">
-                        <input type="checkbox" id="taga16" name="tag_s[]" value="3月" {{ in_array('3月', $tag_season) ? 'checked' : '' }}> 
+                        <input type="checkbox" id="taga16" name="tag_s[]" value="3月"> 
                         <label for="taga16">3月</label>
                     </div>
                 
@@ -1021,5 +1036,47 @@
     <div id="tobottom" class="float-btn"></div>
 
 {!! Form::close() !!}
+
+<script>
+    // Season
+    var objJSONts = @json($illness->ill_tag_season);
+    $.each(objJSONts, function (i, v) {
+        //var zplus=z+1;
+        if(v.tag_s == "春"){
+            $("input#taga1").attr( "checked", true );
+        } else if(v.tag_s == "夏"){
+            $("input#taga2").attr( "checked", true );
+        } else if(v.tag_s == "秋"){
+            $("input#taga3").attr( "checked", true );
+        } else if(v.tag_s == "冬"){
+            $("input#taga4").attr( "checked", true );
+        } else if(v.tag_s == "4月"){
+            $("input#taga5").attr( "checked", true );
+        } else if(v.tag_s == "5月"){
+            $("input#taga6").attr( "checked", true );
+        } else if(v.tag_s == "6月"){
+            $("input#taga7").attr( "checked", true );
+        } else if(v.tag_s == "7月"){
+            $("input#taga8").attr( "checked", true );
+        } else if(v.tag_s == "8月"){
+            $("input#taga9").attr( "checked", true );
+        } else if(v.tag_s == "9月"){
+            $("input#taga10").attr( "checked", true );
+        } else if(v.tag_s == "10月"){
+            $("input#taga11").attr( "checked", true );
+        } else if(v.tag_s == "11月"){
+            $("input#taga12").attr( "checked", true );
+        } else if(v.tag_s == "12月"){
+            $("input#taga13").attr( "checked", true );
+        } else if(v.tag_s == "1月"){
+            $("input#taga14").attr( "checked", true );
+        } else if(v.tag_s == "2月"){
+            $("input#taga15").attr( "checked", true );
+        } else if(v.tag_s == "3月"){
+            $("input#taga16").attr( "checked", true );
+        } else { } 
+        //z++;
+    });
+</script>
 
 @endsection

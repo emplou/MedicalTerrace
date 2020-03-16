@@ -286,13 +286,14 @@
             </div>
 
             
-             <!-- Subheading -->
-
+            @if(!empty($risk1))
+            
+            <!-- Subheading -->
             <div class="form-group check">
                 <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                 <div class="cols-5">   
                     <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                        <input type="checkbox" id="a1" name="subheading-chck" value="1" />
+                        <input type="checkbox" id="a1" name="subheading-chck" value="1" @if($risk1->ra_title == '1') checked @endif />
                         <label for="a1" style="color:red;" id="output_ill2"></label>
                         <div class="clear"></div>
 					</div>    
@@ -304,23 +305,25 @@
             <div class="form-group">
                 <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                 <div class="cols-8">  
+                @foreach (json_decode($risk1->ra_text) as $key) 
                     <div class="cols-5">          
-                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                        <textarea class="form-control sh" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確">{!! $key->sh !!}</textarea>
                     </div>
                     <div class="cols-2"> 
                         リスク度 
                         <select name="rl[]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="1" @if($key->rl == '1') selected @endif>1</option>
+                            <option value="2" @if($key->rl == '2') selected @endif>2</option>
+                            <option value="3" @if($key->rl == '3') selected @endif>3</option>
+                            <option value="4" @if($key->rl == '4') selected @endif>4</option>
+                            <option value="5" @if($key->rl == '5') selected @endif>5</option>
 
                         </select><br>         
                         <span id="rchars9">0</span>/46
                     </div>
                     <div class="clear"></div>
-                    <div class="cols-5">          
+                @endforeach
+                    <!-- <div class="cols-5">          
                         <textarea class="form-control sh2" name="sh[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                     </div>
                     <div class="cols-2"> 
@@ -383,61 +386,70 @@
                         </select><br>                
                         <span id="rchars13">0</span>/46
                         <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <!-- Check Result -->
                 <div class="form-group">
                     <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                     <div class="cols-6">
-                        <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]"></div>
-                        <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div>
+                    @foreach (json_decode($risk1->ra_result) as $key) 
+                        <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr[]" value="{!! $key->cr !!}"></div>
+                        <!-- <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr[]"></div> -->
+                    @endforeach
                     </div>
                     
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <div class="cols-15"></div>
                     <div class="cols-6">
                         <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr[]"></div>
                         <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr[]"></div>
                     </div>
-                </div>
+                </div> -->
 
+                @endif
+
+                @if(!empty($risk2))
                 <!-- Subheading -->
-
+                
                 <div class="form-group check2">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">   
                         <div style="border: 1px solid #CCC; padding: 0px 5px 5px; margin-bottom: 10px;">
-                            <input type="checkbox" id="a2" name="subheading-chck2" value="1"/>
+                            <input type="checkbox" id="a2" name="subheading-chck2" value="1" @if($risk2->ra_title == '1') checked @endif/>
                             <label for="a2" style="color:red;" id="output_ill3"></label>
                             <div class="clear"></div>
                         </div>    
                     </div>
                 </div>
 
+                
                 <!-- Text of the subheading -->
                 <div class="form-group">
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-8">  
+                    @foreach (json_decode($risk2->ra_text) as $key) 
                         <div class="cols-5">          
-                            <textarea class="form-control sh_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
+                            <textarea class="form-control sh_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確">{!! $key->sh2 !!}</textarea>
                         </div>
                         <div class="cols-2"> 
                             リスク度 
                             <select name="rl2[]">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                            <option value="1" @if($key->rl2 == '1') selected @endif>1</option>
+                            <option value="2" @if($key->rl2 == '2') selected @endif>2</option>
+                            <option value="3" @if($key->rl2 == '3') selected @endif>3</option>
+                            <option value="4" @if($key->rl2 == '4') selected @endif>4</option>
+                            <option value="5" @if($key->rl2 == '5') selected @endif>5</option>
+
 
                             </select><br>         
                             <span id="rchars14">0</span>/46
                         </div>
                         <div class="clear"></div>
-                        <div class="cols-5">          
+                    @endforeach
+                        <!-- <div class="cols-5">          
                             <textarea class="form-control sh2_b" name="sh2[]" maxlength="30" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確"></textarea>
                         </div>
                         <div class="cols-2"> 
@@ -500,25 +512,29 @@
                             </select><br>                
                             <span id="rchars18">0</span>/46
                             <div class="cols-1 relative"><button type="button" class="btn btn-success addsub sh-btn"><span class="lnr lnr-plus-circle"></span></button></div>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <!-- Check Result -->
                     <div class="form-group">
                         <label class="control-label cols-15">チェック結果<br><span>Check result</span></label>
                         <div class="cols-6">
-                            <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr2[]"></div>
-                            <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr2[]"></div>
+                        @foreach (json_decode($risk2->ra_result) as $key) 
+                            <div class="cols-5"><input type="text" class="form-control" placeholder="5〜10点=この文章はダミーです" name="cr2[]" value="{!! $key->cr2 !!}"></div>
+                            <!-- <div class="cols-5"><input type="text" class="form-control" placeholder="11〜15点=この文章はダミーです" name="cr2[]"></div> -->
+                        @endforeach
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="cols-15"></div>
                         <div class="cols-6">
                             <div class="cols-5"><input type="text" class="form-control" placeholder="16〜20点=この文章はダミーです" name="cr2[]"></div>
                             <div class="cols-5"><input type="text" class="form-control" placeholder="21〜25点=この文章はダミーです" name="cr2[]"></div>
                         </div>
-                    </div>
+                    </div> -->
+                
+                @endif
 
                 <hr>
             <!-- Search Keywords -->
