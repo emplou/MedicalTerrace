@@ -938,10 +938,7 @@ $.ajaxSetup({
                         $("#input_seo_title").html(illness_name);
                         
 
-                        $("#seo_txt").val(response['data'][0].ill_seo_txt); // seo text
-                        $("#meta_txt1").val(response['data'][0].ill_meta_a);
-                        $("#meta_txt2").val(response['data'][0].ill_meta_b);
-
+                       
                         // Illness h1
                         input_h1 = ''+ response['data'][0].ill_shoulder +'<input type="hidden" name="h1" value="'+ response['data'][0].ill_name +'">';
                         $("#input_h1").html(input_h1);

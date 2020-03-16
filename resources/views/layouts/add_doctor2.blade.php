@@ -11,10 +11,6 @@
             <td>病気カテゴリー<br>Position</td>
             <td>{!! Form::select('position', array('L' => 'Illness_category', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
         </tr>
-        <tr>
-            <td></td>
-            <td>{!! Form::text('position', null , ['class' => 'form-control']) !!}</td>
-        <tr>
             <td>氏名<br>Name</td>
             <td>{!! Form::text('name', null , ['class' => 'form-control']) !!}</td>
         </tr>
@@ -41,10 +37,7 @@
             <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
         </tr>
         
-        <tr>
-            <td>{!! Form::text('img_caption', null , ['class' => 'form-control']) !!}</td>
-            <td>{!! Form::file('mini_profile_img', null , ['class' => 'form-control']) !!}</td>
-        </tr>
+      
         <tr>
             <td>画像キャプション<br>Image Caption</td>
             
