@@ -12,11 +12,7 @@
 </div>
       <div class="modal-body">
       {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
-<<<<<<< HEAD
       <input type="hidden" name="docID" id="twodocID" value=" ">
-=======
-      <input type="text" name="docID" id="twodocID" value=" ">
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation

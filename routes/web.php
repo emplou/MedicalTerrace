@@ -64,11 +64,7 @@ Route::get('/copy_illness/{id}','IllnessController@copy_illness');
 
 //edit post
 Route::post('/save_edit_doctor','DoctorController@save_edit_doctor');
-<<<<<<< HEAD
 Route::post('/save_copy_doctor', 'DoctorController@save_copy_doctor');
-=======
-Route::post('/save_copy_doctor', 'HomeController@save_copy_doctor');
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 Route::post('/overwrite_special', 'SpecialController@overwrite_special');
 Route::post('/overwrite_illness', 'IllnessController@overwrite_illness');
 
@@ -90,8 +86,4 @@ Route::post('/release_reservation_special','SpecialController@release_reservatio
 
 //release
 Route::post('/release_illness','IllnessController@release_illness');
-<<<<<<< HEAD
 Route::post('/release_special','SpecialController@release_special');
-=======
-Route::post('/release_special','SpecialController@release_special');
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
