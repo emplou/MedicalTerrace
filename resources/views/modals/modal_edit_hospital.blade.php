@@ -236,7 +236,7 @@
         <div class="form-group">
             <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="hosp_subheading" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                <textarea class="form-control sm2" name="hosp_subheading" id="hosp_subheading" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
             </div>
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
@@ -249,7 +249,7 @@
             <div class="cols-6">   
                 <!-- add new textarea here -->
                 <div class="cols-10">        
-                    <textarea class="form-control ck" name="textheading_lead" id="textheading_lead" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
+                    <textarea class="form-control ck" name="textheading_lead" id="textheading_lead"></textarea>
                 </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck1"><span class="lnr lnr-plus-circle"></span></button></div> 

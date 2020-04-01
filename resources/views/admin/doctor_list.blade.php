@@ -5,7 +5,7 @@
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 <br>
-    <table class="table" id="list" width="100%">
+    <table class="table" id="list"  width="100%">
         <thead>
             <th>イメージ</th>
             <th>タイトル</th>
@@ -25,6 +25,7 @@
                 <td>{!! $doc->industry !!}</td>
                 <td>{!! $doc->industry !!}</td>
                 <td>{!! $doc->id !!}</td>
+                <td></td>
                 <td><a href="#" class="btn btn-info overwrite" doc-id="{!! $doc->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_add" doc-id="{!! $doc->id !!}" >コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach

@@ -184,7 +184,7 @@
             最後の行に現在に至る　<br>最後の行に現在に至る
             </div>
             <div class="col-10">
-                <input type="checkbox" name="n_order" id="n_order_one" value="1"> OK <input type="checkbox" id="n_order" name="n_order" value="0"> NO 
+                <input type="checkbox" name="n_order" id="n_order_one" value="1" checked> OK <input type="checkbox" id="n_order" name="n_order" value="0"> NO 
             </div>
         </div>
         <br>

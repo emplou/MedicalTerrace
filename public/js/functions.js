@@ -73,7 +73,7 @@ $.ajaxSetup({
             // alert(id);
 
             $.ajax({
-                url: '/medicalterrace/public/modal_edit_doctor/'+id,
+                url: '/modal_edit_doctor/'+id,
                 type: 'get',
                 dataType: 'json',
                 // data : { id : id },
@@ -328,7 +328,7 @@ $.ajaxSetup({
             // alert(id);
 
             $.ajax({
-                url: '/medicalterrace/public/modal_edit_doctor/'+id,
+                url: '/modal_edit_doctor/'+id,
                 type: 'get',
                 dataType: 'json',
                 // data : { id : id },
@@ -589,7 +589,7 @@ $.ajaxSetup({
             // alert(id);
 
             $.ajax({
-                url: '/medicalterrace/public/modal_edit_hospital/'+id,
+                url: '/modal_edit_hospital/'+id,
                 type: 'get',
                 dataType: 'json',
                 // data : { id : id },
@@ -618,7 +618,7 @@ $.ajaxSetup({
                   $("#img_caption").val(response['data'][0].image_caption);
                   $("#img_alt").val(response['data'][0].image_alt);
                   $("#hosp_subheading").val(response['data'][0].hosp_subheading);
-                  $("#text_subheading_hospital").val(response['data'][0].hosp_text_subheading);
+                  $("#textheading_lead").val(response['data'][0].hosp_text_subheading);
                   // division dropdown
                 //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
                   $("#division").val(response['data'][0].division);
@@ -648,7 +648,7 @@ $.ajaxSetup({
             // alert(id);
 
             $.ajax({
-                url: '/medicalterrace/public/modal_edit_special/'+id,
+                url: '/modal_edit_special/'+id,
                 type: 'get',
                 dataType: 'json',
                 // data : { id : id },
@@ -1040,7 +1040,7 @@ $.ajaxSetup({
     //         // alert(id);
 
     //         $.ajax({
-    //             url: '/medicalterrace/public/modal_edit_illness/'+id,
+    //             url: '/modal_edit_illness/'+id,
     //             type: 'get',
     //             dataType: 'json',
     //             // data : { id : id },
@@ -1456,7 +1456,7 @@ $.ajaxSetup({
             // alert(id);
 
             $.ajax({
-                url: '/medicalterrace/public/modal_edit_special/'+id,
+                url: '/modal_edit_special/'+id,
                 type: 'get',
                 dataType: 'json',
                 // data : { id : id },
@@ -1822,7 +1822,7 @@ $.ajaxSetup({
     //         // alert(id);
 
     //         $.ajax({
-    //             url: '/medicalterrace/public/modal_edit_illness/'+id,
+    //             url: '/modal_edit_illness/'+id,
     //             type: 'get',
     //             dataType: 'json',
     //             // data : { id : id },
@@ -2413,7 +2413,7 @@ $.ajaxSetup({
             var id = $(this).attr('il-id');
             
             $.ajax({
-                url: '/medicalterrace/public/release_reservation_illness',
+                url: '/release_reservation_illness',
                 type: 'POST',
                 data : { id : id },
                 success: function(response){
@@ -2437,7 +2437,7 @@ $.ajaxSetup({
             var id = $(this).attr('il-id');
             
             $.ajax({
-                url: '/medicalterrace/public/release_illness',
+                url: '/release_illness',
                 type: 'POST',
                 data : { id : id },
                 success: function(response){
@@ -2461,7 +2461,7 @@ $.ajaxSetup({
             var id = $(this).attr('sp-id');
             
             $.ajax({
-                url: '/medicalterrace/public/release_reservation_special',
+                url: '/release_reservation_special',
                 type: 'POST',
                 data : { id : id },
                 success: function(response){
@@ -2485,7 +2485,7 @@ $.ajaxSetup({
             var id = $(this).attr('sp-id');
             
             $.ajax({
-                url: '/medicalterrace/public/release_special',
+                url: '/release_special',
                 type: 'POST',
                 data : { id : id },
                 success: function(response){
@@ -2592,7 +2592,7 @@ $.ajaxSetup({
     //   e.preventDefault();
 
     $.ajax({
-        url: '/medicalterrace/public/get_all_department/',
+        url: '/get_all_department/',
         type: 'get',
         dataType: 'json',
         // data : { id : id },
@@ -2690,7 +2690,7 @@ $.ajaxSetup({
     //   e.preventDefault();
 
     $.ajax({
-        url: '/medicalterrace/public/get_all_department/',
+        url: '/get_all_department/',
         type: 'get',
         dataType: 'json',
         // data : { id : id },
@@ -2798,7 +2798,7 @@ $.ajaxSetup({
     //   e.preventDefault();
 
     $.ajax({
-        url: '/medicalterrace/public/get_all_department/',
+        url: '/get_all_department/',
         type: 'get',
         dataType: 'json',
         // data : { id : id },
