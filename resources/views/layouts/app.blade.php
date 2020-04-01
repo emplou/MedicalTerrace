@@ -19,11 +19,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css"/>
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-<<<<<<< HEAD
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-=======
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
->>>>>>> e849eef... separate per page
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
@@ -224,20 +220,12 @@ input.form-  {
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-
-=======
->>>>>>> e849eef... separate per page
 @if (Request::is('doctor_list') OR Request::is('add_doctor'))  
 <div class="content-container illness_container">
 	<header>
 		<h1 class="dashboard">医師・医療従事者 <br><small> Doctor table</small></h1>
 		<div class="right">
-<<<<<<< HEAD
-			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link" id="adddoctorbut">医師・医療従事者 新規登録<br> Doctor new registration</button>
-=======
 			<button onclick="window.location='{{ url("add_doctor") }}'" class="doc-link">医師・医療従事者 新規登録<br> Doctor new registration</button>
->>>>>>> e849eef... separate per page
 			<img src="images/medical-logo.png" alt="">
 		</div>
 	</header>	
@@ -249,11 +237,7 @@ input.form-  {
 @endif
 
 @if (Request::is('illness_list') OR Request::is('add_illness'))  
-<<<<<<< HEAD
-<!-- <div class="content-container illness_container">
-=======
 <div class="content-container illness_container">
->>>>>>> e849eef... separate per page
 	<header>
 		<h1 class="dashboard">医師・医療従事者 <br><small> Illness table</small></h1>
 		<div class="right">
@@ -265,11 +249,7 @@ input.form-  {
 		<div class="red">公開速報</div>
 		<p>2019/07/18 Illness 子どもの夏の感染症が投稿されました。</p>
 	</div>
-<<<<<<< HEAD
-</div> -->
-=======
 </div>
->>>>>>> e849eef... separate per page
 @endif
 
 @if (Request::is('special_list') OR Request::is('add_special'))  
@@ -291,11 +271,7 @@ input.form-  {
 @if (Request::is('hospital_list') OR Request::is('add_hospital'))  
 <div class="content-container hospital_container">
 	<header>
-<<<<<<< HEAD
-		<h1 class="dashboard">医療機関 <br><small> Hospital table</small></h1>
-=======
 		<h1 class="dashboard">医師・医療従事者 <br><small> Hospital table</small></h1>
->>>>>>> e849eef... separate per page
 		<div class="right">
 			<button onclick="window.location='{{ url("add_hospital") }}'" class="doc-link"> 病院登録 <br> Hospital new registration</button>
 			<img src="images/medical-logo.png" alt="">
@@ -307,10 +283,6 @@ input.form-  {
 	</div>
 </div>
 @endif
-<<<<<<< HEAD
-
-=======
->>>>>>> e849eef... separate per page
 @if (Request::is('topics_list'))  
 <div class="content-container hospital_container">
 	<header>
@@ -345,15 +317,9 @@ input.form-  {
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-<<<<<<< HEAD
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-					@csrf
-				</form>
-=======
 									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
->>>>>>> e849eef... separate per page
 						</li>
 					</ul>
 				</div>
@@ -368,11 +334,7 @@ input.form-  {
 				<li><small></small><a class="home_menu" href="home"><span class="icon"><img src="images/icon-home.png"></span><span>ホーム<br>Home</span></a></li>
 				<li id="illness_menu"><small class="pink"></small><a class="pink" href="illness_list"><span class="icon"><img src="images/icon-illness.png"></span><span>病気と知識<br> Illness</span></a></li>
 				<li><small class="pink"></small><a class="pink" href="special_list"><span class="icon"><img src="images/icon-special.png"></span><span>特集<br> Special</span></a></li>
-<<<<<<< HEAD
-				<li><small class="yellow"></small><a class="yellow"href="topics_list"><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
-=======
 				<li><small class="yellow"></small><a class="yellow" href="topics_list"><span class="icon"><img src="images/icon-topics.png"></span><span>最新トピックス<br>Topics</span></a></li>
->>>>>>> e849eef... separate per page
 				<li><small class="yellow"></small><a class="yellow" href="daily_list"><span class="icon"><img src="images/icon-select.png"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
 				<li id="doctorli"><small class="blue"></small><a class="blue" href="doctor_list"><span class="icon"><img src="images/icon-doctable.png"></span><span>医師・医療従事者<br> Doctor </span></a></li>
 				<li id="hospitalli"><small class="sky"></small><a class="sky" href="hospital_list"><span class="icon"><img src="images/icon-hosptable.png"></span><span>医療機関<br> Hospital </span></a></li>
@@ -387,16 +349,6 @@ input.form-  {
 </div>
 <div class="main-content">
     <div class="main">
-<<<<<<< HEAD
- 			@yield("content")
- 	</div>
-</div>
-
-</div>
-
- 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-=======
         <!-- <div class="row"> -->
 
  			@yield("content")
@@ -408,7 +360,6 @@ input.form-  {
 
  	<script src="lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="lumino/js/bootstrap.min.js"></script>
->>>>>>> e849eef... separate per page
  	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="{{ asset('lumino/dist/timepicker.min.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
@@ -558,10 +509,6 @@ $(document).ready(function() {
 // 	$('#timepicker').datetimepicker({
 //     datepicker: true
 // });
-<<<<<<< HEAD
-
-=======
->>>>>>> e849eef... separate per page
 } );
 
 
@@ -599,14 +546,6 @@ $(document).ready(function() {
 <script>
 	CKEDITOR.replace( 'textheading_lead' );
 	CKEDITOR.add 
-<<<<<<< HEAD
-
-
-// var config = {};
-// config.placeholder = 'メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。'; 
-// CKEDITOR.replace("textheading_lead" , config );
-=======
->>>>>>> e849eef... separate per page
 </script>
 <script>
 	CKEDITOR.replace( 'equipment_subheading[0]' );
@@ -1111,12 +1050,5 @@ $(document).ready(function(){
 </script>
 
 
-<<<<<<< HEAD
-
-
 </body>
-
-=======
-</body>
->>>>>>> e849eef... separate per page
 </html>

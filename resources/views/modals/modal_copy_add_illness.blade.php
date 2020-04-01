@@ -35,18 +35,10 @@
                     <div class="form-progress">
                         <ul>
                             <li class="active">下書き<br><span>Draft</span></li>
-<<<<<<< HEAD
-                            <li class="active">プレビュー<br><span>Preview</span></li>
-                            <li id="appreq_two">承認依頼<br><span>Approval Request</span></li>
-                            <li id="approve_two">承認済<br><span>Approved</span></li>
-                            <li id="relres_two">公開予約<br><span>Release reservation</span></li>
-                            <li id="release_two">公開中<br><span>Release</span></li>
-=======
                             <li id="appreq_two">承認依頼<br><span>Approval Request</span></li>
                             <li id="approve_two">承認済<br><span>Approved</span></li>
                             <li id="relres_two">公開予約<br><span>Post reservation</span></li>
                             <li id="release_two">公開中<br><span>Posted Complete</span></li>
->>>>>>> e849eef... separate per page
                         </ul>
                     </div>
                     {!! Form::open(['url' => '/save_illness', 'method' => 'post', 'files' => true]) !!}
@@ -136,62 +128,6 @@
                             <!-- Summarize -->
                             <div class="form-group">
                                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
-<<<<<<< HEAD
-                                <!-- <div class="cols-7">          
-                                    <div id="input_sum_two"></div>
-                                </div> -->
-                                <div class="cols-5">          
-                                    <textarea class="form-control sm1" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
-                                </div>
-                                <div class="cols-2">          
-                                    <span id="rchars4">0</span>/46
-                                </div>
-                                
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label cols-15"></label>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sm2" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は" required></textarea>
-                                </div>
-                                <div class="cols-2">          
-                                    <span id="rchars5">0</span>/46
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label cols-15"></label>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sm3" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
-                                </div>
-                                <div class="cols-2">          
-                                    <span id="rchars6">0</span>/46
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label cols-15"></label>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sm4" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
-                                </div>
-                                <div class="cols-2">          
-                                    <span id="rchars7">0</span>/46
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="control-label cols-15"></label>
-                                <div class="cols-5">          
-                                    <textarea class="form-control sm5" name="sm[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
-                                </div>
-                                <div class="cols-2">          
-                                    <!-- <span id="rchars8">0</span>/46 -->
-                                    <div class=" relative"><button type="button" class="btn btn-success addsum1"><span class="lnr lnr-plus-circle"></span></button></div>
-                    
-                                </div>
-                            </div>
-
-                            <!-- Add new fiends in this wrapper -->
-                            <div class="wrapper"></div>
-
-=======
                                 <div class="cols-5">          
                                     <div id="input_sum_two"></div>
                                 </div>
@@ -200,7 +136,6 @@
                                 </div>
                             </div>
 
->>>>>>> e849eef... separate per page
                             <!-- Main Image -->
                             <div class="form-group">
                                 <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>

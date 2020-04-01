@@ -199,9 +199,6 @@
             <!-- add new form here -->
             <div class="wrapper2"></div>
 
-<<<<<<< HEAD
-            
-=======
             <div id="addanother">
                 <!-- Subheading -->
                 <div class="form-group">
@@ -228,7 +225,6 @@
 
                     </div>
                 </div>
->>>>>>> e849eef... separate per page
                 <!-- Text of the Subheading -->
                 <div class="form-group">
                     <label class="control-label col-sm-2">画像alt:</label>
@@ -331,9 +327,6 @@
                         <a href="#">詳しく見る</a>
                     </div>
                 </div>
-<<<<<<< HEAD
-               
-=======
                 <div class="form-group">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-7">          
@@ -341,7 +334,6 @@
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
->>>>>>> e849eef... separate per page
                 <!-- Graph Alt -->
                 <div class="form-group">
                     <label class="control-label col-sm-2">グラフalt:</label>

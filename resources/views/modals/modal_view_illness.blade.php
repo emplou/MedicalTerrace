@@ -3,9 +3,6 @@
 
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-panel">
-<<<<<<< HEAD
-            
-=======
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
                 <li><a href="#">感染症・寄生虫  </a></li>
@@ -16,7 +13,6 @@
                 <div class="heading1">手・足・口に赤い発疹やみずぶくれが出ます<br>
                 <span>てあしくちびょう</span><br>手足口病</div>
             </div>
->>>>>>> e849eef... separate per page
             <div class="panel-pads">
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 
@@ -28,9 +24,6 @@
                         <span>夏</span>
                     </div>
 
-<<<<<<< HEAD
-                    
-=======
                     <div class="tooltips">この記事をまとめると</div>
                     <ul class="checks">
                         <li>石けんでの手洗い、うがいをして予防します。</li>
@@ -39,7 +32,6 @@
                         <li>高熱はあまり出ません。</li>
                         <li>乳幼児、特に集団生活をしている子どもは注意。</li>
                     </ul>
->>>>>>> e849eef... separate per page
                     <h3>手足口病の基礎知識</h3>
                     </p>主に夏に流行する感染症で、3〜6日の潜伏期の後、手足などに赤い発疹や水ぶくれ、口内炎ができます。高熱が出ることは少なく、1週間ほどで自然に治ります。かかりやすい年齢は5歳以下。毎年、5月頃から患者数が増え、7月に流行のピークを迎えます。一般的には夏風邪と呼ばれることもあります。全身状態が改善すれば、登園・登校が可能になります。<p>
 
@@ -56,19 +48,6 @@
                     <h3>手足口病の合併症</h3>
                     </p>まれですが、髄膜炎、小脳失調症、脳炎などの中枢神経系の症状のほか、心筋炎、神経原性肺水腫、急性弛緩性麻痺など、さまざまな合併症が起こる場合があります。<p>
 
-<<<<<<< HEAD
-                    </div>   
-                     <div class="tags">
-                        <div>
-                            <span>感染症</span>
-                            <span>夏風邪</span>
-                            <span>手足口病</span>
-                            <span>子ども</span>
-                            <span>夏</span>
-                        </div>
-                    </div>
-                
-=======
                     <h3>手足口病の自宅療法（療養方法、再発防止など）</h3>
                     </p>口内炎があってうまく食事ができない場合は柔らかく、味の薄い、冷たい食事にします。食欲が落ちている時はこまめに水分をとるようにしましょう。<p>
 
@@ -110,7 +89,6 @@
                         </ul>
                     </div>
                 </div>
->>>>>>> e849eef... separate per page
                 <div class="panel-blue">
                     <div class="id-tag">
                         監修・取材協力<br>
@@ -119,14 +97,6 @@
                         医学博士 浅野 勉<br>
                         <a href="">詳しくはこちら</a>
                     </div>
-<<<<<<< HEAD
-                    <p></p>
-                </div>
-            </div>
-           
-           
-            
-=======
 
                     
                     <p></p>
@@ -147,20 +117,12 @@
                 <button type="button" class="btn-prime approval2" id="show_img"></button>
                 <button type="button" class="btn-prime backedit2" id="show_img"></button>
             </div>
->>>>>>> e849eef... separate per page
     
         </div>
     </div>
 </div>
 
 
-<<<<<<< HEAD
-<!-- Buttons -->
-<div class="modal-buts">
-    <button type="button" class="btn-prime approval2" id="show_img"></button>
-    <button type="button" class="btn-prime backedit2" id="show_img"></button>
-</div>
-=======
 <div id="container">
   <div id="sideMenu">
     <h1>Sales Report</h1>
@@ -254,7 +216,6 @@
       </table>
     </div>
 
->>>>>>> e849eef... separate per page
   </div>
 </div>
 </div>

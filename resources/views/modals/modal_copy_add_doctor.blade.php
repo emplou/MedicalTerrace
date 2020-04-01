@@ -1,10 +1,6 @@
 <!-- Modal -->
 <div id="copyAdddoctor" class="modal fade" role="dialog" data-keyboard="true">
-<<<<<<< HEAD
-  <div class="modal-dialog edit">
-=======
   <div class="modal-dialog modal-lg">
->>>>>>> e849eef... separate per page
   <meta name="csrf-token" content="{{ csrf_token() }}">
 				
 <!-- Modal content-->
@@ -15,91 +11,31 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
-<<<<<<< HEAD
-      <div class="header-wrapper">
-      <div class="left">
-        <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
-        <div id="authorID"></div>
-        
-    </div>
-    <div class="right">
-        <div>作成日<span>Date</span></div>
-        <div class="select">
-            <select>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-                <option>0000/00/00</option>
-            </select>
-        </div>
-        <div>最終更新日<span>Update</span></div>
-        <div class="select">0000/00/00</div>
-    </div>
-</div>
-<hr />
-<div class="form-container">
-    <div class="form-progress">
-        <ul>
-            <li class="active">下書き<br><span>Draft</span></li>
-            <li class="active">プレビュー<br><span>Preview</span></li>
-            <li>承認依頼<br><span>Approval Request</span></li>
-            <li>承認済<br><span>Approved</span></li>
-            <li class="rel">公開予約<br><span>Release reservation</span></li>
-            <li>公開中<br><span>Release</span></li>
-        </ul>
-    </div>
       {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
       <input type="hidden" name="docID" id="twodocID" value=" ">
-      <input type="hidden" name="statusAuth" id="statusAuth" value="">
-      <div  class="form-group">
-            <div class="cols-2">
-            URL自動生成名<br>URL generation
-            </div>
-            <div class="cols-5">
-=======
-      {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
-      <input type="text" name="docID" id="twodocID" value=" ">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
             <input type="text" class="form-control" name="url_generation" id="twourl_generation" style="width:500px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            職位<br>Status
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             職位<br>Status
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
             <input type="text" class="form-control" name="status" id="twostatus" style="width:500px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            専門医・認定医<br>（取得資格）<br>Certificate
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             専門医・認定医<br>（取得資格）<br>Certificate
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <!-- <input type="text" class="form- " name="certificate[]" id="certificate00" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate01" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate02" style="width:300px">
@@ -107,18 +43,6 @@
                 <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
                 <div id="twoinput_container"></div>
-<<<<<<< HEAD
-                <div id="copycertificate"></div>
-                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
-            </div>
-        </div>
-        <br>
-        <div  class="form-group">
-            <div class="cols-2">
-            氏名<br>Name
-            </div>
-            <div class="cols-5">
-=======
             </div>
         </div>
         <br>
@@ -127,41 +51,24 @@
             氏名<br>Name
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
             <input type="text" class="form-control" name="name" id="twoname" style="width:500px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            ローマ字（名・氏）<br>Alphabet Name 
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             ローマ字（名・氏）<br>Alphabet Name 
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
             <input type="text" class="form-control" name="alphabet_name" id="twoalpha_name" style="width:500px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            プロフィール画像<br>Profile image 
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             プロフィール画像<br>Profile image 
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <div class="input-group">
                     <input type="text" class="form-control" name="profile_image_field" id="profile_image_field">
                     <span class="input-group-btn">
@@ -172,76 +79,33 @@
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            画像キャプション<br>Image Caption 
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             画像キャプション<br>Image Caption 
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
             <input type="text" class="form-control" name="img_caption" id="twoimg_caption" style="width:500px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            画像alt<br>Image alt
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             画像alt<br>Image alt
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
             <input type="text" class="form-control" name="img_alt" id="twoimg_alt" style="width:500px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            業種<br>Industry
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             業種<br>Industry
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <div id="twoinput_industry"></div>
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            所属学会<br>Conference
-            </div>
-            <div class="cols-5">
-                <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
-                <div id="twoinput_conference"></div>
-                <div id="copyaddconference"></div>
-                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyaddconf2"><span class="lnr lnr-plus-circle"></span></button></div>
-            </div>
-        </div>
-        <br>
-        <div  class="form-group">
-            <div class="cols-2">
-            生年月日<br>Birthday
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             所属学会<br>Conference
@@ -257,7 +121,6 @@
             生年月日<br>Birthday
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <!-- <select id="b_year" name="b_year" class="form- " style="width:100px"></select>
                 <select id="b_month" name="b_month" class="form- " style="width:100px">
                         <option value="January">January</option>
@@ -278,65 +141,17 @@
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            出生地<br>Place of birth
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             出生地<br>Place of birth
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <input type="text" class="form- " name="place_birth" id="twoplace_birth" style="width:200px">
                 出身地 | Birthplace
                 <input type="text" class="form- " name="" style="width:200px">
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            経歴（学歴）<br>Career（学歴）
-            </div>
-            <div class="cols-5">
-                    <div id="twoinput_career_one"></div>
-                    <div id="copyc_ac"></div>
-                    <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd3"><span class="lnr lnr-plus-circle"></span></button></div>
-            </div>
-        </div>
-        <br>
-        <div  class="form-group">
-            <div class="cols-2">
-            経歴（職歴）<br>Career（職歴）
-            </div>
-            <div class="cols-5">
-                <div id="twoinput_career_two"></div>
-                <div id="copyc_we"></div>
-                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd44"><span class="lnr lnr-plus-circle"></span></button></div>
-            </div>
-        </div>
-        <br>
-        <div  class="form-group">
-            <div class="cols-2">
-            経歴（賞・表彰）<br>Career（賞・表彰）
-            </div>
-            <div class="cols-5">
-                <div id="twoinput_career_three"></div>
-                <div id="copyc_aw"></div>
-                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd55"><span class="lnr lnr-plus-circle"></span></button></div>
-            </div>
-        </div>
-        <br>
-        <div  class="form-group">
-            <div class="cols-2">
-            最後の行に現在に至る　<br>最後の行に現在に至る
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             経歴（学歴）<br>Career（学歴）
@@ -369,24 +184,15 @@
             最後の行に現在に至る　<br>最後の行に現在に至る
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <input type="checkbox" name="n_order" id="twon_order_one" value="1"> OK <input type="checkbox" id="twon_order" name="n_order" value="0"> NO 
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            所属病院・勤務先<br>Hospital・Office
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             所属病院・勤務先<br>Hospital・Office
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <!-- <select class="form-control" name="hospital_office" id="hospital_office" style="width:500px">
                     <option>industry one</option>
                     <option>industry two</option>
@@ -397,24 +203,6 @@
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-            <div class="cols-2">
-            所属診療科・所属科<br>Department
-            </div>
-            <div class="cols-5">
-                <div id="twoinput_department"></div>
-                <div id="copydpt_div"></div>
-                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
-            </div>
-        </div>
-        <br>
-        <div  class="form-group">
-            <div class="cols-2">
-            医師コメント<br>Doctor Comment
-            </div>
-            <div class="cols-5">
-=======
         <div class="row">
             <div class="col-2">
             所属診療科・所属科<br>Department
@@ -429,17 +217,12 @@
             医師コメント<br>Doctor Comment
             </div>
             <div class="col-10">
->>>>>>> e849eef... separate per page
                 <textarea class="form- " id="twodoc_comment" name="doc_comment" onkeyup="countChar(this)" style="width:90%;height:100%;"></textarea>
                 <div style="float:right;"><b id="charNum">200</b> <b> / 200 </b> </div>
             </div>
         </div>
         <br>
-<<<<<<< HEAD
-        <div  class="form-group">
-=======
         <div class="row">
->>>>>>> e849eef... separate per page
             <div class="col-12" align="center">
                 <input type="submit" value="保存 | UPDATE" class="btn btn-danger">
             </div>
@@ -452,8 +235,3 @@
 </div>
   </div>
 </div>
-<<<<<<< HEAD
-</div>
-</div>
-=======
->>>>>>> e849eef... separate per page

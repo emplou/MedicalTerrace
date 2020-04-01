@@ -3,11 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-	<title>Medical administrator - Illness Page</title>
-=======
 	<title>Medical administrator - Special Page</title>
->>>>>>> e849eef... separate per page
 	<!-- <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('lumino/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('lumino/css/datepicker3.css') }}" rel="stylesheet">
@@ -34,198 +30,6 @@
             margin-bottom: 10px;
         }
         .container{
-<<<<<<< HEAD
-            margin-top:20px;
-        }
-        .image-preview-input {
-            position: relative;
-          overflow: hidden;
-          margin: 0px;    
-            color: #333;
-            background-color: #fff;
-            border-color: #ccc;    
-        }
-        .image-preview-input input[type=file] {
-          position: absolute;
-          top: 0;
-          right: 0;
-          margin: 0;
-          padding: 0;
-          font-size: 20px;
-          cursor: pointer;
-          opacity: 0;
-          filter: alpha(opacity=0);
-        }
-        .image-preview-input-title {
-            margin-left:2px;
-        }
-        .push-btn {
-            color: #fff;
-            cursor: pointer;
-            display: block;
-            width: 100px;
-            padding: 7px 5px;
-            margin: 5px auto 0;
-            border-radius: 10px;
-            border: 1px solid #c4eaea;
-        }
-        .accnt-container {
-            width: 100%;
-            position: absolute;
-        }
-        .accnt-box {
-            display: none;
-            width: 90px;
-            height: 80px;
-            color: grey;
-            background: #fff;
-            margin: 0 auto;
-            z-index: 10;
-            overflow: hidden;
-            position: relative;
-            border-radius: 3px;
-        }
-
-        .main-content{
-          font-family: Serif;
-          /* padding: 3%; */
-        }
-        div.container {
-                width: 100%;
-            }
-
-          .btn-search {
-            background: #424242;
-            border-radius: 0;
-            color: #fff;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #1c1c1c;
-          }
-          .btn-search:link, .btn-search:visited {
-            color: #fff;
-          }
-          .btn-search:active, .btn-search:hover {
-            background: #1c1c1c;
-            color: #fff;
-          }
-
-          .container{
-            margin-top:20px;
-        }
-        .image-preview-input {
-            position: relative;
-          overflow: hidden;
-          margin: 0px;    
-            color: #333;
-            background-color: #fff;
-            border-color: #ccc;    
-        }
-        .image-preview-input input[type=file] {
-          position: absolute;
-          top: 0;
-          right: 0;
-          margin: 0;
-          padding: 0;
-          font-size: 20px;
-          cursor: pointer;
-          opacity: 0;
-          filter: alpha(opacity=0);
-        }
-        .image-preview-input-title {
-            margin-left:2px;
-        }
-
-        .form- {
-          width: 100%;
-            height: calc(1.5em + .75rem + 2px);
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #495057;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            border-radius: .25rem;
-            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-
-        input.form-  {
-            border: 1px solid #ddd;
-            box-shadow: none;
-            height: 46px;
-        }
-
-        .custom-file-upload-hidden {
-          display: none;
-          visibility: hidden;
-          position: absolute;
-          left: -9999px;
-        }
-
-        .custom-file-upload {
-          display: block;
-          width: auto;
-          font-size: 16px;
-          margin-top: 30px;
-        }
-        .custom-file-upload label {
-          display: block;
-          margin-bottom: 5px;
-        }
-
-        .file-upload-wrapper {
-          position: relative;
-          margin-bottom: 5px;
-        }
-
-        .custom-file-upload.doc {
-          margin-top: 0;
-        }
-        .custom-file-upload.doc .file-upload-input{
-          width: 70%;
-          height: 35px;
-        }
-
-        .file-upload-input {
-          width: 83%;
-          color: #808080;
-          font-size: 14px;
-          outline: 0;
-          padding: 6px 10px;
-          border: 1px solid #ededed;
-          border-radius: 5px;
-          background-color: #ffffff;
-
-          -moz-transition: all 0.2s ease-in;
-          -o-transition: all 0.2s ease-in;
-          -webkit-transition: all 0.2s ease-in;
-          transition: all 0.2s ease-in;
-          float: left;
-        }
-
-
-        .file-upload-button {
-          cursor: pointer;
-          display: inline-block;
-          color: #fff;
-          content: "参照...";
-          font-size: 16px;
-          text-transform: none;
-          padding: 5px 20px;
-          border: none;
-          margin-left: -1px;
-          background-color: #6f6d6d;
-          float: left;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          -moz-transition: all 0.2s ease-in;
-          -o-transition: all 0.2s ease-in;
-          -webkit-transition: all 0.2s ease-in;
-          transition: all 0.2s ease-in;
-        }
-=======
 		    margin-top:20px;
 		}
 		.image-preview-input {
@@ -416,15 +220,10 @@
 		  -webkit-transition: all 0.2s ease-in;
 		  transition: all 0.2s ease-in;
 		}
->>>>>>> e849eef... separate per page
     </style>
     
 </head>
 <body>
-<<<<<<< HEAD
-  
-=======
->>>>>>> e849eef... separate per page
 <div class="content-container illness_container">
     <header>
         <h1 class="dashboard">病気と知識 <br><small>UI of Illness table</small></h1>
@@ -440,21 +239,6 @@
 </div>
 
 <div class="nav-container">
-<<<<<<< HEAD
-	<nav class="clearfix">
-		<div class="nav-photo-container">
-			<div class="nav-photo wow bounceIn" data-wow-delay="0.5s" onclick="" style="background-image: url(images/admin-avatar.png);"></div>
-			<a href="my-account" title="My Account">Editor</a><br>
-			{!! Auth::user()->name !!}<br><a class="push-btn">ログアウト<span class="lnr lnr-chevron-down"></span></a>
-			<div class="accnt-container">
-				<div class="accnt-box">
-					<div class="accnt-arrow"></div>
-					<ul>
-						<li><a href="viewall-admin">View Profile</a></li>
-						<li>
-						<!-- <a href="../index.html">Logout</a> -->
-						<a href="{{ route('logout') }}"
-=======
     <nav class="clearfix">
         <div class="nav-photo-container">
             <div class="nav-photo wow bounceIn" data-wow-delay="0.5s" onclick="" style="background-image: url(images/admin-avatar.png);"></div>
@@ -468,39 +252,10 @@
                         <li>
                         <!-- <a href="../index.html">Logout</a> -->
                         <a href="{{ route('logout') }}"
->>>>>>> e849eef... separate per page
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-<<<<<<< HEAD
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-					@csrf
-				</form>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="searchContainer">
-		  <i class="fa fa-search searchIcon"></i>
-		  <input class="searchBox" type="search" name="search" placeholder="Search">
-		</div>
-        <div class="navy">
-            <ul class="sidebar-nav">
-                <li class=""><small></small><a class="home_menu" href="{{url('home')}}"><span class="icon"><img src="{{url('images/icon-home.png')}}"></span><span>ホーム<br>Home</span></a></li>
-                <li class="active" id="illness_menu"><small class="pink"></small><a class="pink" href="{{url('illness_list')}}"><span class="icon"><img src="{{url('images/icon-illness.png')}}"></span><span>病気と知識<br>UI of Illness</span></a></li>
-                <li><small class="pink"></small><a class="pink" href="{{url('special_list')}}"><span class="icon"><img src="{{url('images/icon-special.png')}}"></span><span>特集<br>UI of Special</span></a></li>
-                <li><small class="yellow"></small><a class="yellow"href="{{url('topics/list')}}"><span class="icon"><img src="{{url('images/icon-topics.png')}}"></span><span>最新トピックス<br>Topics</span></a></li>
-                <li><small class="yellow"></small><a class="yellow" href="{{url('daily_list')}}"><span class="icon"><img src="{{url('images/icon-select.png')}}"></span><span>デイリーピックアップ<br>Daily Select</span></a></li>
-                <li><small class="blue"></small><a class="blue" href="{{url('doctor_list')}}"><span class="icon"><img src="{{url('images/icon-doctable.png')}}"></span><span>医師・医療従事者<br>UI of Doctor Table</span></a></li>
-                <li><small class="sky"></small><a class="sky" href="{{url('hospital_list')}}"><span class="icon"><img src="{{url('images/icon-hosptable.png')}}"></span><span>医療機関<br>UI of Hospital Table</span></a></li>
-                <li><small class="sky"></small><a class="sky" href="{{url('column_list')}}"><span class="icon"><img src="{{url('images/icon-column.png')}}"></span><span>コラム<br>Column</span></a></li>
-                <li><small class="violet"></small><a class="violet" href="{{url('equipment_list')}}"><span class="icon"><img src="{{url('images/icon-medequipment.png')}}"></span><span>医療機器情報<br>Medical Equipment</span></a></li>
-                <li><small class="violet"></small><a class="violet" href="{{url('medicine_list')}}"><span class="icon"><img src="{{url('images/icon-medicine.png')}}"></span><span>薬情報<br>Medicine</span></a></li>
-                <li><small class="green"></small><a class="green" href="{{url('magazine-list')}}"><span class="icon"><img src="{{url('images/icon-sakuramagazine.png')}}"></span><span>誌面紹介<br>Sakura Magazine</span></a></li>
-                <li><small></small><a href="#"><span class="icon"><img src="{{url('images/icon-settings.png')}}"></span><span>設定<br>Settings</span></a></li>
-=======
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -527,24 +282,12 @@
                 <li><small class="violet"></small><a class="violet" href="{{url('medicine_list')}}"><span class="icon"><img src="{{url('images/icon-medicine.png')}}"></span><span>薬情報<br>Medicine</span></a></li>
                 <li><small class="green"></small><a class="green" href="{{url('magazine_list')}}"><span class="icon"><img src="{{url('images/icon-sakuramagazine.png')}}"></span><span>誌面紹介<br>Sakura Magazine</span></a></li>
                 <li><small></small><a href=""><span class="icon"><img src="{{url('images/icon-settings.png')}}"></span><span>設定<br>Settings</span></a></li>
->>>>>>> e849eef... separate per page
             </ul>
         </div>
     </nav>
 </div>
 <div class="main-content add">
     <div class="main">
-<<<<<<< HEAD
-        
-
- 			  @yield("content")
- 		
- 	  </div>
-</div>
-
-</div>
-
-=======
         <!-- <div class="row"> -->
 
  			@yield("content")
@@ -553,7 +296,6 @@
 </div>
 
  </div>
->>>>>>> e849eef... separate per page
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -569,18 +311,10 @@
 	<script src="lumino/js/easypiechart-data.js"></script>
 	<script src="lumino/js/bootstrap-datepicker.js"></script>
   <script src="lumino/js/custom.js"></script>
-<<<<<<< HEAD
-  <script type="text/javascript" src="https://cdn.datas.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
-  <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.9/adapters/jquery.js"></script>
-=======
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script> 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script> 
   <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
->>>>>>> e849eef... separate per page
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
@@ -831,12 +565,6 @@
             }, 1000);
         });
 
-<<<<<<< HEAD
-        
-        $("#tx2illness").attr("placeholder", "この特集内容に関する先生からのコメントをお願いします。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。").val('').focus().blur();
-
-=======
->>>>>>> e849eef... separate per page
     });
 
 // CKEDITOR.replace( 'text_of_heading' );
@@ -1166,11 +894,7 @@ $(document).ready(function(){
     });
     $("#ill").keyup(function(){
         // Getting the current value of textarea
-<<<<<<< HEAD
-        ill = '<input type="checkbox" id="tag9" name="tag_b" value="1"><label for="tag9">'+ $(this).val()+'</label>';
-=======
         ill = '<input type="checkbox" id="tag9" name="tag_b[]" value="1"><label for="tag9">'+ $(this).val()+'</label>';
->>>>>>> e849eef... separate per page
         ill2 = ''+ $(this).val()+'';
         ill3 = ''+ $(this).val()+'';
         
@@ -1180,10 +904,6 @@ $(document).ready(function(){
         $("#output_ill3").html(ill3);
     });
 });
-<<<<<<< HEAD
-</script>
-
-=======
 
 $(document).ready(function() {
     $('#list').DataTable();
@@ -1198,6 +918,5 @@ $(document).ready(function() {
 
 
 
->>>>>>> e849eef... separate per page
 </body>
 </html>

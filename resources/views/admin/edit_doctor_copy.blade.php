@@ -80,9 +80,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-       
-=======
         <div class="form-group">
             <label class="control-label cols-15">氏名<br><span>Name</span></label>
             <div class="cols-4">
@@ -96,7 +93,6 @@
                 <input type="text" class="form-control" name="alpha_name" placeholder="例)Taro Yamada">
             </div>
         </div>
->>>>>>> e849eef... separate per page
 
         <div class="form-group">
             <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
@@ -127,15 +123,12 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-=======
         <div class="form-group">
             <label class="control-label cols-15"> 画像alt<br><span>Image Alt </span></label>
             <div class="cols-5">
                 <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_alt">
             </div>
         </div>
->>>>>>> e849eef... separate per page
         
 
         <div class="form-group">
@@ -199,13 +192,9 @@
                     <option value="12">December</option>
                 </select>
             </div>
-<<<<<<< HEAD
-           
-=======
             <div class="cols-5">
                 <select id="length" name="b_day" class="form- " style="width:100px"></select>
             </div>
->>>>>>> e849eef... separate per page
         </div>
         <div class="form-group">
             <div class="control-label cols-15">

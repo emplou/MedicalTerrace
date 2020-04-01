@@ -8,14 +8,10 @@
             <td>URL自動生成名<br>URL generation</td>
             <td>{!! Form::text('url_generation', null , ['class' => 'form-control']) !!}</td>
         </tr>
-<<<<<<< HEAD
-       
-=======
         <tr>
             <td>病気カテゴリー<br>Position</td>
             <td>{!! Form::select('position', array('L' => 'Illness_category', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
         </tr>
->>>>>>> e849eef... separate per page
         <tr>
             <td></td>
             <td>{!! Form::text('position', null , ['class' => 'form-control']) !!}</td>
@@ -41,19 +37,6 @@
             <td>{!! Form::file('profile_img', null , ['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
-<<<<<<< HEAD
-            <td>出生地<br>Place of birth</td>
-            <td>{!! Form::text('place_of_birth', null , ['class' => 'form-control']) !!}</td>
-            <td>出身地</td>
-            <td>{!! Form::text('birthday_place', null , ['class' => 'form-control']) !!}</td>
-            <td>表示</td>
-            <td>{!! Form::checkbox('place_of_birth_ok', null , ['class' => 'form-control']) !!} 出生地可</td>
-            <td>{!! Form::checkbox('birthday_place_ok', null , ['class' => 'form-control']) !!} 出身地可</td>
-            <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
-        </tr>
-        <tr>
-=======
->>>>>>> e849eef... separate per page
             <td>プロフィール ミニ<br>Mini Profile image</td>
             <td>{!! Form::file('mini_profile_img', null , ['class' => 'form-control']) !!}</td>
         </tr>
@@ -87,9 +70,6 @@
             <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
             <td>{!! Form::checkbox('birthday_ok', null , ['class' => 'form-control']) !!} 生まれ年のみ可</td>
         </tr>
-<<<<<<< HEAD
-        
-=======
         <tr>
             <td>出生地<br>Place of birth</td>
             <td>{!! Form::text('place_of_birth', null , ['class' => 'form-control']) !!}</td>
@@ -100,7 +80,6 @@
             <td>{!! Form::checkbox('birthday_place_ok', null , ['class' => 'form-control']) !!} 出身地可</td>
             <td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 否</td>
         </tr>
->>>>>>> e849eef... separate per page
         <tr>
             <td>経歴(学歴)<br>Alma mater</td>
             <td colspan="3">
@@ -167,13 +146,6 @@
                 </table>
             </td>
         </tr>
-<<<<<<< HEAD
-         <tr>
-            <td>病気カテゴリー<br>Position</td>
-            <td>{!! Form::select('position', array('L' => 'Illness_category', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
-        </tr>
-=======
->>>>>>> e849eef... separate per page
         <tr>
             <td>最後の行に現在に至る<br>Add“現在に至る”at line end</td>
 			<td>{!! Form::checkbox('no', null , ['class' => 'form-control']) !!} 無<br>No</td>
@@ -192,13 +164,10 @@
             <td>{!! Form::select('department', array('L' => '選択してください', 'S' => 'Small'),null ,['class' => 'form-control']) !!}</td>
         </tr>
         <tr>
-<<<<<<< HEAD
-=======
             <td></td>
             <td align="right"><a href="" class="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></td>
         </tr>
         <tr>
->>>>>>> e849eef... separate per page
             <td>医師コメント<br>Doctor Comment</td>
             <td colspan="3">{!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}</td>
             <td colspan="3">
@@ -223,13 +192,10 @@
 		<td>{!! Form::button('エディター変更申請', ['class' => 'btn btn-success']) !!}</td>
 	</tr>
 	<tr>
-<<<<<<< HEAD
-=======
 		<td>アポイント履歴<br>Appointment History</td>
 		<td>{!! Form::textarea('doc_comment', null , ['class' => 'form-control']) !!}</td>
 	</tr>
 	<tr>
->>>>>>> e849eef... separate per page
 		<td>会話メモ<br>Conversation Note</td>
 		<td>{!! Form::textarea('Honorarium', null , ['class' => 'form-control']) !!}</td>
 	</tr>

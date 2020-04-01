@@ -4,13 +4,7 @@
 
 <div class="header-wrapper">
     <div class="left">
-<<<<<<< HEAD
-        <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
-        <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2>
-        <input type="hidden" value="/add_doctor" id="urlid">
-=======
         <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2>
->>>>>>> e849eef... separate per page
         
     </div>
     <div class="right">
@@ -43,33 +37,20 @@
 
 <!-- {!! Form::open(array('url' => '/save_doctor', 'method' => 'post', 'files' => true)) !!} -->
 {!! Form::open(['url' => '/save_doctor', 'method' => 'post', 'files' => true]) !!}
-<<<<<<< HEAD
-=======
 <input type="hidden" value="/add_doctor" id="urlid">
->>>>>>> e849eef... separate per page
 
     <div class="form-pads">
         <div class="form-group">
             <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
-<<<<<<< HEAD
-            <div class="cols-4">
-                <input type="text" class="form-control" id="url one" placeholder="例)yamada_taro" name="url_generation">
-=======
             <div class="cols-3">
                 <input type="text" class="form-control" id="url" placeholder="例)yamada_taro" name="url_generation" required>
->>>>>>> e849eef... separate per page
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15">職位<br><span>Position</span></label>
-<<<<<<< HEAD
-            <div class="cols-4">          
-                <select name="status" class="form-control">
-=======
             <div class="cols-3">          
                 <select name="status" class="form-control" required>
->>>>>>> e849eef... separate per page
                     <option value="">選択してください</option>
                     <option value="Position One">Position One</option>
                     <option value="Position two">Position two</option>
@@ -79,14 +60,9 @@
         </div>
         <div class="form-group">
             <label class="control-label cols-15"></label>
-<<<<<<< HEAD
-            <div class="sp10 cols-4">          
-                <input type="text" class="form-control" id="sub_head1b two" placeholder="選択項目にない場合に入力" name="sub_position">
-=======
             <div class="sp10 cols-3">          
             <!-- no column yet -->
                 <input type="text" class="form-control" id="sub_head1b" placeholder="選択項目にない場合に入力" name="sub_position">
->>>>>>> e849eef... separate per page
             </div>
         </div>
 
@@ -116,22 +92,14 @@
         <div class="form-group">
             <label class="control-label cols-15">氏名<br><span>Name</span></label>
             <div class="cols-4">
-<<<<<<< HEAD
-                <input type="text" class="form-control" id="name three" placeholder="例)山田 太郎" name="name">
-=======
                 <input type="text" class="form-control" id="url" placeholder="例)山田 太郎" name="name" required>
->>>>>>> e849eef... separate per page
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15">ローマ字（名・氏<br><span>Alphabet Name </span></label>
             <div class="cols-4">
-<<<<<<< HEAD
-                <input type="text" class="form-control" name="alpha_name" id="alpha_name" placeholder="例)Taro Yamada">
-=======
                 <input type="text" class="form-control" name="alpha_name" placeholder="例)Taro Yamada" required>
->>>>>>> e849eef... separate per page
             </div>
         </div>
 
@@ -139,11 +107,7 @@
             <label class="control-label cols-15">プロフィール画像<br><span>Profile image </span></label>
             <div class="cols-45">          
                 <div class="custom-file">
-<<<<<<< HEAD
-                <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image">
-=======
                 <input type="file" class="custom-file-input" id="customFileLang" lang="pl-Pl" name="profile_image" required>
->>>>>>> e849eef... separate per page
                 <label class="custom-file-label" for="customFileLang">ドラッグ&ドロップ、または参照で画像を追加してください</label>
                 </div>
 
@@ -163,22 +127,14 @@
         <div class="form-group">
             <label class="control-label cols-15"> 画像キャプション<br><span>Image Caption </span></label>
             <div class="cols-4">
-<<<<<<< HEAD
-                <input type="text" class="form-control" placeholder="院長 山田太郎" id="img_caption" name="img_caption">
-=======
                 <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_caption" required>
->>>>>>> e849eef... separate per page
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label cols-15"> 画像alt<br><span>Image Alt </span></label>
             <div class="cols-4">
-<<<<<<< HEAD
-                <input type="text" class="form-control" placeholder="院長 山田太郎" id="img_alt" name="img_alt">
-=======
                 <input type="text" class="form-control" placeholder="院長 山田太郎" name="img_alt" required>
->>>>>>> e849eef... separate per page
             </div>
         </div>
         
@@ -278,22 +234,14 @@
             出生地<br>Place of birth
             </div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <input type="text" id="form-control place_birth" name="place_birth" class="form- " >
-=======
                 <input type="text" id="form-control" name="place_birth" class="form- " required>
->>>>>>> e849eef... separate per page
             </div>
             <div class="tcenter cols-1">
                 <span>出身地 <br>Birthplace</span>
             </div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <input type="text" id="form-control birthplace" name="birthplace" class="form- " >
-=======
             <!-- no column yet -->
                 <input type="text" id="form-control" name="birthplace" class="form- " >
->>>>>>> e849eef... separate per page
             </div>
             <div class="form-divide cols-4">
                 <div class="formdiv">
@@ -318,20 +266,12 @@
             経歴（学歴）<br><span>Career（学歴）</span>
             </div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <select id="aca_year" name="c_ac_year[]" class="form- ">
-=======
                 <select id="aca_year" name="c_ac_year[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option>----年</option>
                 </select>
             </div>
             <div class="cols-1">
-<<<<<<< HEAD
-                <select name="c_ac_month[]" class="form- ">
-=======
                 <select name="c_ac_month[]" class="form- " required>
->>>>>>> e849eef... separate per page
                         <option value="">--月</option>
                         <option value="January">January</option>
                         <option value="February">February</option>
@@ -348,31 +288,19 @@
                 </select>
             </div>
             <div class="cols-35">
-<<<<<<< HEAD
-                <input type="text" id="form-control" name="c_ac_desc[]" class="form- " >
-=======
                 <input type="text" id="form-control" name="c_ac_desc[]" class="form- "  required>
->>>>>>> e849eef... separate per page
             </div>
         </div>
         <div class="field_wrap3"></div>
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <select id="aca_year_to" name="c_ac_year_to[]" class="form- " >
-=======
                 <select id="aca_year_to" name="c_ac_year_to[]" class="form- "  required>
->>>>>>> e849eef... separate per page
                     <option>----年</option>
                 </select>
             </div>
             <div class="cols-1">
-<<<<<<< HEAD
-                <select name="c_ac_month_to[]" class="form- ">
-=======
                 <select name="c_ac_month_to[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option value="">--月</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -389,11 +317,7 @@
                 </select>
             </div>
             <div class="cols-35">
-<<<<<<< HEAD
-                <input type="text" id="form-control c_ac_desc_to" name="c_ac_desc_to[]" class="form- " >
-=======
                 <input type="text" id="form-control" name="c_ac_desc_to[]" class="form- "  required>
->>>>>>> e849eef... separate per page
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div>
             <div id="c_ac"></div>
@@ -403,20 +327,12 @@
             経歴（職歴）<br><span>Career（職歴）</span>
             </div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <select id="work_year" name="c_we_year[]" class="form- ">
-=======
                 <select id="work_year" name="c_we_year[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option>----年</option>
                 </select>
             </div>
             <div class="cols-1">
-<<<<<<< HEAD
-                <select name="c_we_month[]" class="form- ">
-=======
                 <select name="c_we_month[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option value="">--月</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -433,11 +349,7 @@
                 </select>
             </div>
             <div class="cols-35">
-<<<<<<< HEAD
-                <input type="text" id="form-control" name="c_we_desc[]" class="form- " >
-=======
                 <input type="text" id="form-control" name="c_we_desc[]" class="form- "  required>
->>>>>>> e849eef... separate per page
             </div>
             
         </div>
@@ -445,20 +357,12 @@
         <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <select id="work_year_to" name="c_we_year_to[]" class="form- ">
-=======
                 <select id="work_year_to" name="c_we_year_to[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option>----年</option>
                 </select>
             </div>
             <div class="cols-1">
-<<<<<<< HEAD
-                <select name="c_we_month_to[]" class="form- ">
-=======
                 <select name="c_we_month_to[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option value="">--月</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -475,11 +379,7 @@
                 </select>
             </div>
             <div class="cols-35">
-<<<<<<< HEAD
-                <input type="text" id="form-control c_we_desc_to" name="c_we_desc_to[]" class="form- " >
-=======
                 <input type="text" id="form-control" name="c_we_desc_to[]" class="form- "  required>
->>>>>>> e849eef... separate per page
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add44"><span class="lnr lnr-plus-circle"></span></button></div>
             <div id="c_we"></div>
@@ -490,20 +390,12 @@
             経歴（賞・表彰）<br><span>Career（賞・表彰）</span>
             </div>
             <div class="cols-12">
-<<<<<<< HEAD
-                <select id="awards_year" name="c_aw_year[]" class="form- ">
-=======
                 <select id="awards_year" name="c_aw_year[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option>----年</option>
                 </select>
             </div>
             <div class="cols-1">
-<<<<<<< HEAD
-                <select name="c_aw_month[]" class="form- ">
-=======
                 <select name="c_aw_month[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option value="">--月</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -520,30 +412,18 @@
                 </select>
             </div>
             <div class="cols-35">
-<<<<<<< HEAD
-                <input type="text" id="form-control" name="c_aw_desc[]" class="form- " >
-=======
                 <input type="text" id="form-control" name="c_aw_desc[]" class="form- "  required>
->>>>>>> e849eef... separate per page
             </div>
             <div class="field_wrap5"></div>
             <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-12">
-<<<<<<< HEAD
-               <select id="awards_year_to" name="c_aw_year_to[]" class="form- ">
-=======
                <select id="awards_year_to" name="c_aw_year_to[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option>----年</option>
                 </select>
             </div>   
             <div class="cols-1">
-<<<<<<< HEAD
-                <select name="c_aw_month_to[]" class="form- ">
-=======
                 <select name="c_aw_month_to[]" class="form- " required>
->>>>>>> e849eef... separate per page
                     <option value="">--月</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -560,15 +440,9 @@
                 </select>
             </div>
             <div class="cols-35">
-<<<<<<< HEAD
-                    <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- " >
-            </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success add55"><span class="lnr lnr-plus-circle"></span></button></div>
-=======
                     <input type="text" id="form-control" name="c_aw_desc_to[]" class="form- "  required>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add5"><span class="lnr lnr-plus-circle"></span></button></div>
->>>>>>> e849eef... separate per page
             <div id="c_aw"></div>
         </div>
         </div>
@@ -579,21 +453,12 @@
             </div>
             <div class="cols-5">
                 <div class="formdiv cols-11">
-<<<<<<< HEAD
-                    <input type="checkbox" id="yes n_order"  name="n_order" value="1"> 
-                    <label for="yes n_order">有<br><span>OK<span></label>
-                </div>
-                <div class="formdiv cols-11">
-                    <input type="checkbox" id="no n_order" name="n_order" value="0"> 
-                    <label for="no n_order">無<br><span>NO</span></label>
-=======
                     <input type="checkbox" id="yes"  name="n_order" value="1" checked> 
                     <label for="yes">有<br><span>OK<span></label>
                 </div>
                 <div class="formdiv cols-11">
                     <input type="checkbox" id="no" name="n_order" value="0"> 
                     <label for="no">無<br><span>NO</span></label>
->>>>>>> e849eef... separate per page
                 </div>
             </div>
         </div>
@@ -603,11 +468,7 @@
             </div>
             <div class="cols-65">
                 <div class="cols-6">
-<<<<<<< HEAD
-                    <select class="form-control" name="hospital_office" id="hospital_office">
-=======
                     <select class="form-control" name="hospital_office" required>
->>>>>>> e849eef... separate per page
                         <option>山田太郎クリニック</option>
                         <option value="Hospital office one">Hospital office one</option>
                         <option value="Hospital office one">Hospital office two</option>
@@ -615,11 +476,7 @@
                         <option value="Hospital office one">Hospital office four</option>
                     </select>
                 </div>
-<<<<<<< HEAD
-                <div class="cols-2"><button type="button" class="btn-prime hospital"></button></div>
-=======
                 <div class="cols-2"><button type="button" class="btn-prime hospital_edit_from_doctor"></button></div>
->>>>>>> e849eef... separate per page
             </div>
         </div>
         <div class="form-group">
@@ -680,11 +537,7 @@
             <div class="control-label cols-15"></div>
             <div class="cols-65">
                 <div class="cols-33">
-<<<<<<< HEAD
-                    <select class="form- " id="department" name="department[]">
-=======
                     <select class="form- " name="department[]">
->>>>>>> e849eef... separate per page
                         <option>選択してください</option>
                         @foreach($department as $dpt)
                         <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
@@ -714,18 +567,6 @@
             <div class="control-label cols-15"></div>
             <div class="cols-65">
                 <div class="cols-33">
-<<<<<<< HEAD
-                    <select class="form- " id="department" name="department[]">
-=======
-                    <select class="form- " name="department[]">
->>>>>>> e849eef... separate per page
-                        <option>選択してください</option>
-                        @foreach($department as $dpt)
-                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="cols-33">
                     <select class="form- " name="department[]">
                         <option>選択してください</option>
                         @foreach($department as $dpt)
@@ -741,16 +582,17 @@
                         @endforeach
                     </select>
                 </div>
-<<<<<<< HEAD
-                <div id="dpt_div"></div>
-            </div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success add_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
-            
-=======
+                <div class="cols-33">
+                    <select class="form- " name="department[]">
+                        <option>選択してください</option>
+                        @foreach($department as $dpt)
+                        <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
             <div id="dpt_div"></div>
->>>>>>> e849eef... separate per page
         </div>
             <!-- <br>
             <input type="text" class="form- " name="department" style="width:200px">
@@ -762,17 +604,10 @@
             医師コメント<br><span>Doctor Comment</span>
             </div>
             <div class="cols-5">
-<<<<<<< HEAD
-                <textarea class="" rows="5" cols="70" id="doc_comment" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。"></textarea>
-            </div>
-            <div class="sidediv cols-35">
-                <div class="maxnum"><b id="charNum">&emsp;200</b> <b> / 200 </b> </div>
-=======
                 <textarea class="" rows="5" cols="70" name="doc_comment" maxlength="200" onkeyup="countChar(this)" placeholder="医師プロフィールページに掲載されるコメントをお願いします。こ の文章はダミーです。文字の大きさ、量、字間、行間等を確認する ために入れています。この文章はダミーです。文字の大きさ、量、字 間、行間等を確認するために入れています。この文章はダミーで す。文字の大きさ、量、字間、行間等を確認するために入れていま す。この文章はダミーです。" required></textarea>
             </div>
             <div class="sidediv cols-35">
                 <div class="maxnum"><b id="charNum">200</b> <b> / 200 </b> </div>
->>>>>>> e849eef... separate per page
                 <div class="sidebots">
                     <a class="prevbutton" type="button" class="btn-prime preview" href="#previewAddDoctor">Preview</a>
                     <button type="button" class="btn-prime release1">Release</button>

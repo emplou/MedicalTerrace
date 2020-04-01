@@ -21,25 +21,16 @@
                     <div class="date">2019.06.21　Medical T. 編集部 A.Ito</div>
 
                     <div class="tags" id="tag_value">
-<<<<<<< HEAD
-=======
                         <!-- <span>子ども</span>
                         <span>夏</span>
                         <span>感染症</span>
                         <span>夏風邪</span>
                         <span>手足口病</span> -->
->>>>>>> e849eef... separate per page
                         
                     </div>
 
                     <div class="tooltips">この記事をまとめると</div>
                     <ul class="checks" id="summary">
-<<<<<<< HEAD
-                        
-                    </ul>
-                    <ol class="link input_link">
-                        <!-- <li><a href="">手足口病の基礎知識</a></li>
-=======
                         <!-- <li>乳幼児、特に集団生活をしている子どもは注意。</li>
                         <li>手と足、口に赤い発疹や水ぶくれができます。</li>
                         <li>７月に流行のピークを迎えます。</li>
@@ -49,7 +40,6 @@
                     </ul>
                     <ol class="link">
                         <li><a href="">手足口病の基礎知識</a></li>
->>>>>>> e849eef... separate per page
                         <li><a href="">手足口病の近年の動向</a></li>
                         <li><a href="">手足口病の症状</a></li>
                         <li><a href="">手足口病の原因</a></li>
@@ -58,13 +48,6 @@
                         <li><a href="">手足口病の自宅療法（療養方法、再発防止など)</a></li>
                         <li><a href="">手足口病の予防・対策方法</a></li>
                         <li><a href="">手足口病のリスク度チェック</a></li>
-<<<<<<< HEAD
-                        <li><a href="">手足口病のセルフチェック</a></li> -->
-                    </ol>
-
-                    <div class="input_content"></div>
-                    
-=======
                         <li><a href="">手足口病のセルフチェック</a></li>
                     </ol>
 
@@ -94,7 +77,6 @@
 
                     <h3>手足口病の予防・対策方法</h3>
                     </p>有効なワクチンはありません。発病を予防する薬もありません。接触感染を予防するために、しっかり手洗いをすること、うがいをすることなどが基本の対策になります。手洗いは石けんを使い、流水で洗いましょう。治った後も2〜4週間ほど、ウイルスが便中に排泄されることがあるため、感染を広げないために、排泄物を適切に処理することが必要です。おむつ交換をする時は特に気をつけ、しっかり手を洗います。タオルの共用もしません。家庭では兄弟への感染に気をつけること、乳幼児の保育施設などの集団生活では、職員と子どもがしっかり対策をすることが大切です。<p> -->
->>>>>>> e849eef... separate per page
                 </div>  
                 
                 <div id="input_risk_one"></div>

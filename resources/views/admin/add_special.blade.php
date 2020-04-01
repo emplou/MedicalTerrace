@@ -72,11 +72,7 @@
             <div class="form-group">
                 <label class="control-label cols-15">特集カテゴリー<br><span>Special Category</span></label>
                 <div class="cols-5">          
-<<<<<<< HEAD
-                    <select name="sp_cat" class="form-control" id="sp_cat" required>
-=======
                     <select name="sp_cat" class="form-control"  required>
->>>>>>> e849eef... separate per page
                         <option value="">選択してください</option>
                         <option value="がん">がん</option>
                         <option value="生活習慣病">生活習慣病</option>
@@ -200,11 +196,7 @@
             </div>
             <hr>
 
-<<<<<<< HEAD
-            <div class="txt_edtr">
-=======
             <div id="addanother2">
->>>>>>> e849eef... separate per page
                 <div class="form-group">
                     <label class="control-label cols-15">小見出し<br><span>Subheading</span></label>
                     <div class="cols-5">          
@@ -227,11 +219,7 @@
                     <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
                     <div class="cols-7"> 
                          
-<<<<<<< HEAD
-                        <textarea class="form-control" name="txt_ckeditor[]" id="txt_ck1" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
-=======
                         <textarea class="form-control" name="txt_ckeditor[0]" id="txt_ck1" placeholder="この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
->>>>>>> e849eef... separate per page
                     </div>
                     <div class="cols-1 relative"><button type="button" class="btn btn-success add3"><span class="lnr lnr-plus-circle"></span></button></div> 
                     
@@ -681,15 +669,9 @@
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-pink-release.png);">Release</button> -->
 
                             <!-- Half buttons -->
-<<<<<<< HEAD
-                            <a class="prevbutton btn-prime sp_preview" type="button" href="#previewSpecial" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
-                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
-                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
-=======
                             <a class="prevbutton btn-prime sp_preview" type="button" href="#previewSpecial" style="background-image: url(images/icon-half-preview.png);">Preview</a>
                             <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(images/icon-half-relreserve.png);" disabled>Release</button>
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(images/icon-half-release.png);" disabled>Release</button>
->>>>>>> e849eef... separate per page
                         
                         </div>
                     </div>

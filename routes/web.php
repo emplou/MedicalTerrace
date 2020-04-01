@@ -43,33 +43,6 @@ Route::get('/medicine_list','HomeController@medicine_list');
 Route::get('/equipment_list','HomeController@equipment_list');
 Route::get('/magazine_list','HomeController@magazine_list');
 
-<<<<<<< HEAD
-//modal edit
-Route::get('/save_edit_hospital','HomeController@save_edit_hospital');
-Route::get('/modal_edit_doctor/{id}','HomeController@modal_edit_doctor');
-Route::get('/modal_edit_hospital/{id}','HomeController@modal_edit_hospital');
-Route::get('/modal_edit_special/{id}','HomeController@modal_edit_special');
-Route::get('/modal_edit_illness/{id}','HomeController@modal_edit_illness');
-Route::get('/modal_preview_illness','HomeController@modal_preview_illness');
-
-//edit
-Route::get('/edit_illness/{id}','HomeController@edit_illness');
-Route::get('/edit_special/{id}','HomeController@edit_special');
-Route::get('/copy_illness/{id}','HomeController@copy_illness');
-
-//post
-Route::post('/save_hospital','HomeController@save_hospital');
-Route::post('/save_illness','HomeController@save_illness');
-Route::post('/save_doctor','HomeController@save_doctor');
-Route::post('/save_special','HomeController@save_special');
-
-//edit post
-Route::post('/save_edit_doctor','HomeController@save_edit_doctor');
-Route::post('/save_copy_doctor', 'HomeController@save_copy_doctor');
-Route::post('/overwrite_special', 'HomeController@overwrite_special');
-Route::post('/overwrite_illness', 'HomeController@overwrite_illness');
-Route::post('/save_overwrite_hospital', 'HomeController@save_overwrite_hospital');
-=======
 //edit
 Route::get('/save_edit_hospital','HospitalController@save_edit_hospital');
 Route::get('/modal_edit_doctor/{id}','DoctorController@modal_edit_doctor');
@@ -91,32 +64,15 @@ Route::get('/copy_illness/{id}','IllnessController@copy_illness');
 
 //edit post
 Route::post('/save_edit_doctor','DoctorController@save_edit_doctor');
-Route::post('/save_copy_doctor', 'HomeController@save_copy_doctor');
+Route::post('/save_copy_doctor', 'DoctorController@save_copy_doctor');
 Route::post('/overwrite_special', 'SpecialController@overwrite_special');
 Route::post('/overwrite_illness', 'IllnessController@overwrite_illness');
->>>>>>> e849eef... separate per page
 
 //get data
 Route::get('/get_all_department','HomeController@get_all_department');
 
 //approval request
 Route::post('/doc_approve_request','HomeController@doc_approve_request');
-<<<<<<< HEAD
-Route::post('/approve_request_illness','HomeController@approve_request_illness');
-Route::post('/approve_request_special','HomeController@approve_request_special');
-
-//approve
-Route::post('/approve_illness','HomeController@approve_illness');
-Route::post('/approve_special','HomeController@approve_special');
-
-//release reservation
-Route::post('/release_reservation_illness','HomeController@release_reservation_illness');
-Route::post('/release_reservation_special','HomeController@release_reservation_special');
-
-//release
-Route::post('/release_illness','HomeController@release_illness');
-Route::post('/release_special','HomeController@release_special');
-=======
 Route::post('/approve_request_illness','IllnessController@approve_request_illness');
 Route::post('/approve_request_special','SpecialController@approve_request_special');
 
@@ -131,4 +87,3 @@ Route::post('/release_reservation_special','SpecialController@release_reservatio
 //release
 Route::post('/release_illness','IllnessController@release_illness');
 Route::post('/release_special','SpecialController@release_special');
->>>>>>> e849eef... separate per page

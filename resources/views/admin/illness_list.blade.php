@@ -41,11 +41,7 @@
                 <td>Release</td>
                 @endif
                 <!-- <td><a href="#" class="btn btn-info overwrite_illness" il-id="{!! $ill->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->id !!}">コピーと新しい編集<br>Copy and new edit</a></td> -->
-<<<<<<< HEAD
-                <td><a href="edit_illness/{!! $ill->id !!}" class="btn btn-info overwrite_illness">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
-=======
                 <td><a href="edit_illness/{!! $ill->id !!}" class="btn btn-info overwrite_illness">病院登録<br>Overwrite Editing</a> <a href="copy_illness/{!! $ill->id !!}" class="btn btn-success overwrite_illness_copy" il-id="{!! $ill->id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
->>>>>>> e849eef... separate per page
             
             </tr>
         @endforeach
