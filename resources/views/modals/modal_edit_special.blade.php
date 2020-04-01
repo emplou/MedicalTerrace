@@ -162,7 +162,11 @@
                             <hr>
 
                             <!-- Subheading -->
+<<<<<<< HEAD
                             <div class="txt_edtr">
+=======
+                            <div id="addanother">
+>>>>>>> e849eef... separate per page
                                         
                                 <div class="input_content"></div>
                                 
@@ -459,7 +463,11 @@
                                 </div>
                                 <div class="sidediv cols-3">
                                     <div class="sidebots">
+<<<<<<< HEAD
                                         <a class="prevbutton btn-prime sp_preview" type="button" href="#previewSpecial">Preview</a>
+=======
+                                        <a class="prevbutton btn-prime sp_preview" type="button" href="#previewAddSpecial">Preview</a>
+>>>>>>> e849eef... separate per page
                                         <button type="button" class="btn-prime relservhalf1 sp_release1" id="myBtn">Reserve</button>
                                         <button type="button" class="btn-prime relservehalf2 sp_release2" id="myBtn">Release</button>
                                     </div>

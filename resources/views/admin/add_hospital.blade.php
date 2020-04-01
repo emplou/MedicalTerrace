@@ -375,7 +375,11 @@
         <div class="cols-15"></div>
         <div class="cols-55">
             <div class="upload-image blue">        
+<<<<<<< HEAD
                 <input type="file" name="dpt_subject_image" id="file-8" class="inputfile2"  required>
+=======
+                <input type="file" name="dpt_subject_image" id="file-8" class="inputfile2">
+>>>>>>> e849eef... separate per page
                 <label for="file-8"><span class="archive-name2"></span><span class="btn-inputfile"> </span></label>
             </div>
             <!-- <div class="upload-btn-wrapper">
@@ -485,7 +489,11 @@
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-image blue">        
+<<<<<<< HEAD
                     <input type="file" name="feature_image[]" id="file-9" class="inputfile3"  required>
+=======
+                    <input type="file" name="feature_image[]" id="file-9" class="inputfile3" >
+>>>>>>> e849eef... separate per page
                     <label for="file-9"><span class="archive-name3"></span><span class="btn-inputfile"> </span></label>
                 </div>
                 <!-- <div class="upload-btn-wrapper">
@@ -535,7 +543,11 @@
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-image blue">        
+<<<<<<< HEAD
                     <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4"  required>
+=======
+                    <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4">
+>>>>>>> e849eef... separate per page
                     <label for="file-10"><span class="archive-name4"></span><span class="btn-inputfile"> </span></label>
                 </div>
                 <!-- <div class="upload-btn-wrapper">
@@ -589,7 +601,11 @@
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-image blue">        
+<<<<<<< HEAD
                     <input type="file" name="staff_image[]" id="file-11" class="inputfile5"  required>
+=======
+                    <input type="file" name="staff_image[]" id="file-11" class="inputfile5" >
+>>>>>>> e849eef... separate per page
                     <label for="file-11"><span class="archive-name5"></span><span class="btn-inputfile"> </span></label>
                 </div>
                  <!-- <div class="upload-btn-wrapper">

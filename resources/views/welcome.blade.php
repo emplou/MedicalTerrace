@@ -35,7 +35,11 @@
             }
 
             .top-right {
+<<<<<<< HEAD
                 position: absolute;  
+=======
+                position: absolute;
+>>>>>>> e849eef... separate per page
                 right: 10px;
                 top: 18px;
             }

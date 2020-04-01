@@ -900,6 +900,7 @@ $('.overwrite_hospital').each(function(e){
     });
 });
 
+<<<<<<< HEAD
 $('.overwrite_hospital').each(function(e){
     $.ajaxSetup({
         headers: {
@@ -1758,6 +1759,8 @@ $('.overwrite_special').each(function(e){
 });
 
 
+=======
+>>>>>>> e849eef... separate per page
 
 //illness overwrite
 $('.overwrite_special').each(function(e){
@@ -1949,6 +1952,7 @@ $('.overwrite_special').each(function(e){
         });
         // location.reload();
     });
+<<<<<<< HEAD
 });
 
 var min = 1990,
@@ -2123,3 +2127,6 @@ $.ajax({
 });
 
 }
+=======
+});
+>>>>>>> e849eef... separate per page

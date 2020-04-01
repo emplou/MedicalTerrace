@@ -5,6 +5,7 @@
 <br>
     <table class="table" id="list"  width="100%">
         <thead>
+<<<<<<< HEAD
             <th>イメージ</th>
             <th>タイトル</th>
             <th>フォルダ</th>
@@ -13,6 +14,12 @@
             <th>ID</th>
             <th>ステイタス更新日</th>
             <th>編集</th>
+=======
+            <th>Equipment Name</th>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Action</th>
+>>>>>>> e849eef... separate per page
         </thead>
         <tbody>
         @foreach($equipment as $eq)

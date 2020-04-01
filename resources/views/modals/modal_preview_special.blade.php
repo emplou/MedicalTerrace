@@ -8,12 +8,21 @@
         {!! Form::open(['url' => '/approve_special', 'method' => 'post', 'files' => true]) !!}
             <ul class="breadcrumb">
                 <li><a href="#"><img src="images/icon-home-green.png"></a></li>
+<<<<<<< HEAD
                 <li class="sp_cat"><a href="#"><!-- 感染症・寄生虫 --></a></li>
                 <li class="sp_name"><!-- 手足口病 --></li>
             </ul>
             <div class="panel-head">Special</div>
             <div class="div-bg">
                 <div class="heading1 sp_sh"><!-- いわゆる夏風邪は7月がピーク！<br> 子どもの夏の感染症<br> --></div>
+=======
+                <li><a href="#">感染症・寄生虫</a></li>
+                <li>手足口病</a></li>
+            </ul>
+            <div class="panel-head">Special</div>
+            <div class="div-bg">
+                <div class="heading1">いわゆる夏風邪は7月がピーク！<br> 子どもの夏の感染症<br></div>
+>>>>>>> e849eef... separate per page
                 
             </div>
             
@@ -22,7 +31,11 @@
                     <div class="date"><span class="lnr lnr-clock"></span> 2019.04.17　Medical T. 編集部 A.Ito</div>
 
                     <div class="tags">
+<<<<<<< HEAD
                         <!-- <span>子ども</span>
+=======
+                        <span>子ども</span>
+>>>>>>> e849eef... separate per page
                         <span>夏</span>
                         <span>感染症</span>
                         <span>夏風邪</span>
@@ -30,11 +43,19 @@
                         <span>ヘルパンギーナ</span>
                         <span>咽頭結膜熱</span>
                         <span>プール熱</span>
+<<<<<<< HEAD
                         <span>水いぼ</span> -->
                     </div>
 
                     <div class="img-sp"><img src="images/img-special.jpg" alt="alt"></div>
                     <div class="img-caption"><!-- 5歳以下の小さな子どもがかかりやすい夏風邪。6月上旬に、西日本で流行の兆しを見せているとの報告もありました。まずは保護者が予防を心がけて、気になる症状が現れたら病院で診断を仰ぎ、対症療法で症状を和らげましょう。--></div>
+=======
+                        <span>水いぼ</span>
+                    </div>
+
+                    <div class="img-sp"><img src="images/img-special.jpg" alt="alt"></div>
+                    <div class="img-caption">5歳以下の小さな子どもがかかりやすい夏風邪。6月上旬に、西日本で流行の兆しを見せているとの報告もありました。まずは保護者が予防を心がけて、気になる症状が現れたら病院で診断を仰ぎ、対症療法で症状を和らげましょう。</div>
+>>>>>>> e849eef... separate per page
                     <!-- <div class="tooltips">この記事をまとめると</div> -->
 
                     
@@ -58,9 +79,13 @@
                         </ol>
                     </fieldset>
 
+<<<<<<< HEAD
                     <div class="input_content_ck"></div>
 
                     <!-- <h3>子どもの夏の感染症-基礎知識</h3>
+=======
+                    <h3>子どもの夏の感染症-基礎知識</h3>
+>>>>>>> e849eef... separate per page
                     <p>夏に日常的に多くみられる感染症として、手足口病、ヘルパンギーナ、咽頭結膜熱があげられ、5月頃から発症が始まり、7月に流行のピークを迎えます。かかる方の90%以上が5歳以下の乳幼児です。冬の風邪と違い、鼻水、咳の症状はあまり出ません。<br><br>ウイルスに直接効く薬がないので、熱やのどの痛みなどの症状を和らげる対症療法をして病気が治るのを待ちます。食欲がおちている場合はこまめに水分補給をしてください。<br><br>病院では、解熱剤やのどの痛みをとる薬などを必要に応じて処方します。ぐったりしたり、脱水がみられる場合は点滴が必要になる場合もあります。<br>また、予防接種がないので、これらの感染症を予防するためには、手洗いやうがいなどの一般的な予防をするほかありません。回復してもウイルスは2〜4週ほど便中に排泄されることもあるので、適正な処理を行いましょう。<br>夏は水いぼなどの皮膚感染症も流行しやすくなります。</p>
 
                     <h3>子どもの夏の感染症-近年の動向</h3>
@@ -73,7 +98,11 @@
                     </p>
 
                     <h3>子どもの夏の感染症-出やすい症状</h3>
+<<<<<<< HEAD
                     <p>感染するウイルスによって異なりますが、手足や口に赤い発疹や水ぶくれが出ます。喉の痛み、目の充血、高熱が出ることもあります。冬の風邪とは異なり、鼻水、咳の症状はあまり出ません。</p> -->
+=======
+                    <p>感染するウイルスによって異なりますが、手足や口に赤い発疹や水ぶくれが出ます。喉の痛み、目の充血、高熱が出ることもあります。冬の風邪とは異なり、鼻水、咳の症状はあまり出ません。</p>
+>>>>>>> e849eef... separate per page
 
                     <h3>子どもの夏の感染症-考えられる病気</h3>
                     <div class="stripe-bg">

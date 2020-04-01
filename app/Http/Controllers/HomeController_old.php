@@ -61,6 +61,7 @@ class HomeController extends Controller
     public function special_list(){
         return view('admin.special_list');
     }
+<<<<<<< HEAD
 
     public function save_hospital(){
 
@@ -102,4 +103,6 @@ class HomeController extends Controller
         $hospital->credit_card              = $details['status'];
         $hospital->save();
     }
+=======
+>>>>>>> e849eef... separate per page
 }

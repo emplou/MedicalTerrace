@@ -16,7 +16,11 @@
         </thead>
         <tbody>
         @foreach($hospitals as $hosp)
+<<<<<<< HEAD
             <!-- <tr>
+=======
+            <tr>
+>>>>>>> e849eef... separate per page
                 <td><img src="{!! $hosp->image !!}" style="width:80px;height:80px;"></td>
                 <td>{!! $hosp->medical_ins !!}</td>
                 <td>{!! $hosp->name_phonic !!}</td>
@@ -24,7 +28,11 @@
                 <td>{!! $hosp->hospital_id !!}</td>
                 <td>{!! $hosp->created_at !!}</td>
                 <td><a href="#" class="btn btn-info overwrite_hospital" style="background-color:#FCB0BC;border-color:#FCB0BC;min-width:130px;height:70px;" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
+<<<<<<< HEAD
             </tr> -->
+=======
+            </tr>
+>>>>>>> e849eef... separate per page
         @endforeach
         </tbody>
     </table>

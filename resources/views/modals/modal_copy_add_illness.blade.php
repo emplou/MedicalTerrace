@@ -35,11 +35,18 @@
                     <div class="form-progress">
                         <ul>
                             <li class="active">下書き<br><span>Draft</span></li>
+<<<<<<< HEAD
                             <li class="active">プレビュー<br><span>Preview</span></li>
                             <li id="appreq_two">承認依頼<br><span>Approval Request</span></li>
                             <li id="approve_two">承認済<br><span>Approved</span></li>
                             <li id="relres_two">公開予約<br><span>Release reservation</span></li>
                             <li id="release_two">公開中<br><span>Release</span></li>
+=======
+                            <li id="appreq_two">承認依頼<br><span>Approval Request</span></li>
+                            <li id="approve_two">承認済<br><span>Approved</span></li>
+                            <li id="relres_two">公開予約<br><span>Post reservation</span></li>
+                            <li id="release_two">公開中<br><span>Posted Complete</span></li>
+>>>>>>> e849eef... separate per page
                         </ul>
                     </div>
                     {!! Form::open(['url' => '/save_illness', 'method' => 'post', 'files' => true]) !!}
@@ -129,6 +136,7 @@
                             <!-- Summarize -->
                             <div class="form-group">
                                 <label class="control-label cols-15">まとめ<br><span>Summarize</span></label>
+<<<<<<< HEAD
                                 <!-- <div class="cols-7">          
                                     <div id="input_sum_two"></div>
                                 </div> -->
@@ -183,6 +191,16 @@
                             <!-- Add new fiends in this wrapper -->
                             <div class="wrapper"></div>
 
+=======
+                                <div class="cols-5">          
+                                    <div id="input_sum_two"></div>
+                                </div>
+                                <div class="cols-2">          
+                                    
+                                </div>
+                            </div>
+
+>>>>>>> e849eef... separate per page
                             <!-- Main Image -->
                             <div class="form-group">
                                 <label class="control-label cols-15">メイン画像<br><span>Main image </span></label>

@@ -336,6 +336,7 @@ function countChar(val) {
         } else {
           $('#charNum').text(200 - len);
         }
+<<<<<<< HEAD
       };
       
       $('.overwrite_special').each(function(e){
@@ -699,6 +700,9 @@ function countChar(val) {
             // location.reload();
         });
     });
+=======
+	  };
+>>>>>>> e849eef... separate per page
 
 $('.overwrite_hospital').each(function(e){
     $.ajaxSetup({
@@ -952,6 +956,7 @@ function addfields3(e) {
 
 }
 
+<<<<<<< HEAD
 $('.overwrite_hospital').each(function(e){
     $.ajaxSetup({
         headers: {
@@ -1011,6 +1016,8 @@ $('.overwrite_hospital').each(function(e){
     });
 });
 
+=======
+>>>>>>> e849eef... separate per page
 // hospital staff ckEditor (fourth)
 
 $('.add-ck4').on('click', addfields4);
@@ -1224,6 +1231,7 @@ $('.overwrite_special').each(function(e){
     });
 });
 
+<<<<<<< HEAD
 $('.copy_add_hospital').each(function(e){
     $.ajaxSetup({
         headers: {
@@ -1996,6 +2004,17 @@ function addfields1(e) {
     var copy = $('#addanother').clone();
 
   var oneplus=i+1;
+=======
+// hospital ckEditor (first)
+
+$('.add-ck1').on('click', addfields1);
+var i=0;
+function addfields1(e) {
+  e.preventDefault();
+    var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+>>>>>>> e849eef... separate per page
 
   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
   $(copy).find('script').remove();
@@ -2266,6 +2285,7 @@ for (var i = 1; i<= 31; i++){
     select.options.add(option);
 }
 
+<<<<<<< HEAD
 
 $('.editadd_dpt_doc').on('click', editadd_dpt_doc);
 var i=0;
@@ -2416,6 +2436,8 @@ $.ajax({
 
 }
 
+=======
+>>>>>>> e849eef... separate per page
 //academic
 var min = 1990,
     max = 2021,
@@ -2430,6 +2452,7 @@ for (var i = min; i<=max; i++){
 
 var min = 1990,
     max = 2021,
+<<<<<<< HEAD
     select = document.getElementById('aca_year_to');
 
 for (var i = min; i<=max; i++){
@@ -2588,6 +2611,39 @@ $('.add-ck1').on('click', addfields1);
     $(".addbranch").click(function () {
         $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box
     });
+=======
+    select = document.getElementById('aca_year_to');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+//work exp 
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('work_year');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('work_year_to');
+
+for (var i = min; i<=max; i++){
+    var opt = document.createElement('option');
+    opt.value = i;
+    opt.innerHTML = i;
+    select.appendChild(opt);
+}
+>>>>>>> e849eef... separate per page
 
 //awards 
 var min = 1990,
@@ -2721,6 +2777,7 @@ for (var i = min; i<=max; i++){
 
     }
 
+<<<<<<< HEAD
     $('.sp_release1').each(function(e){
         $.ajaxSetup({
             headers: {
@@ -2828,6 +2885,8 @@ for (var i = min; i<=max; i++){
         });
     });
 
+=======
+>>>>>>> e849eef... separate per page
 
 
       $('.add_dpt_doc').on('click', add4);
@@ -3055,6 +3114,7 @@ $('.overwrite_illness').each(function(e){
                                 console.log('dpt '+ b.department_name)
                                 input_dpt += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
 
+<<<<<<< HEAD
                             });
                                
                             input_dpt += '</select></div>';
@@ -3279,6 +3339,65 @@ $('.sp_release2').each(function(e){
             success: function(response){
                 //console.log(response['data']);
                 location.reload();
+=======
+                            });
+                               
+                            input_dpt += '</select></div>';
+                          
+                    }); //end of department json
+                    $("#input_dpt").html(input_dpt);
+
+                    // Tag Symptoms Retrieval
+                    var objJSONsy = JSON.parse(response['data'][0].ill_tag_symp);
+                    var input_sy = "";
+                    $.each(objJSONsy, function (i, v) {
+                        input_sy += '<div class="cols-3"><input type="text" class="form-control" name="tag_sy[]" id="tag_sy" value="'+v.tag_sy+'"></div>';
+                    });
+                    $("#input_sy").html(input_sy);
+
+                    // Tag Season Text Retrieval
+                    var objJSONconf = JSON.parse(response['data'][0].ill_tag_season_txt);
+                    var input_tst = "";
+                    $.each(objJSONconf, function (i, v) {
+                        input_tst += '<div class="cols-3"><input type="text" class="form-control" name="tag_txt[]" id="tag_txt" value="'+v.tag_txt+'"></div>';
+                    });
+                    $("#input_tst").html(input_tst);
+
+                    // Tag Free
+                    var objJSONconf = JSON.parse(response['data'][0].ill_tag_free);
+                    var input_free = "";
+                    $.each(objJSONconf, function (i, v) {
+                        input_free += '<div class="cols-3"><input type="text" class="form-control" name="tag_f[]" id="tag_f" value="'+v.tag_f+'"></div>';
+                    });
+                    $("#input_free").html(input_free);
+
+                    //Tag Keywords
+                    var objJSONitk = JSON.parse(response['data'][0].ill_tag_kw);
+                    var y = 0;
+                    $.each(objJSONitk, function (i, v) {
+                        var yplus=y+1;
+                        if(v.tag == 1){
+                            $("#tag"+yplus).attr( "checked", true );
+                        }
+                        y++;
+                    });
+
+                    // Season
+                    var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
+                    var z = 0;
+                    $.each(objJSONts, function (i, v) {
+                        var zplus=z+1;
+                        if(v.tag_s == 1){
+                            $("#taga"+zplus).attr( "checked", true );
+                        }
+                        z++;
+                    });
+
+                },
+                error: function(response){
+                alert('Error'+response);
+   
+>>>>>>> e849eef... separate per page
             }
 
         });
@@ -4099,6 +4218,7 @@ $(document).ready(function(){
 
     //copy edit doctor modal
 
+<<<<<<< HEAD
 
     $('.sp_preview').each(function(e){
         $.ajaxSetup({
@@ -4340,6 +4460,8 @@ $(document).ready(function(){
         });
     });
 
+=======
+>>>>>>> e849eef... separate per page
   $('.copyaddcert1').on('click', copyaddcert1);
   var i=0;
   function copyaddcert1(e) {
@@ -4434,6 +4556,7 @@ $(document).ready(function(){
 
   }
   //end copy edit doctor modal details
+<<<<<<< HEAD
 
   $('.release2').each(function(e){
     $.ajaxSetup({
@@ -4506,3 +4629,5 @@ $('.sp_release2').each(function(e){
         // location.reload();
     });
 });
+=======
+>>>>>>> e849eef... separate per page

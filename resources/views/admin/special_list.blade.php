@@ -24,8 +24,13 @@
                 <td><img src="{!! $sp->sp_img !!}" style="width:80px;height:80px;"></td>
                 <td>{!! $sp->sp_title !!}</td>
                 <td>{!! $sp->sp_ill_cat !!}</td>
+<<<<<<< HEAD
                 <td>{!! $sp->sp_cat !!}</td>
                 <td>{!! $sp->sp_mag !!}</td>
+=======
+                <td>{!! $sp->sp_mag !!}</td>
+                <td></td>
+>>>>>>> e849eef... separate per page
                 <td>{!! $sp->sp_id !!}</td>
                 @if ($sp->tracking_status == "1")
                 <td>Draft</td>

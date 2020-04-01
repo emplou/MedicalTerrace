@@ -852,9 +852,15 @@
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-pink-release.png);">Release</button> -->
 
                             <!-- Half buttons -->
+<<<<<<< HEAD
                             <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(../../images/icon-half-preview.png);">Preview</a>
                             <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(../../images/icon-half-relreserve.png);" disabled>Release</button>
                             <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(../../images/icon-half-release.png);" disabled>Release</button>
+=======
+                            <a class="prevbutton btn-prime preview" type="button" href="#previewAddIllness" style="background-image: url(images/icon-half-preview.png);">Preview</a>
+                            <button type="button" class="btn-prime relservhalf1" id="myBtn" style="background-image: url(images/icon-half-relreserve.png);" disabled>Release</button>
+                            <button type="button" class="btn-prime relservehalf2" id="myBtn" style="background-image: url(images/icon-half-release.png);" disabled>Release</button>
+>>>>>>> e849eef... separate per page
                         
                         </div>
                     </div>
