@@ -2,16 +2,22 @@
 
 namespace MedicalTerrace\Http\Controllers;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 use Illuminate\Http\Request;
 // use App\Illness_Category;
 =======
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
 use Illuminate\Http\Request;
 // use App\Illness_Category;
 use Auth;
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 use MedicalTerrace\Doctor;
 use MedicalTerrace\Hospital;
 use MedicalTerrace\Department;
@@ -25,7 +31,10 @@ use MedicalTerrace\Ill_graph;
 use MedicalTerrace\Risk_assessment;
 use MedicalTerrace\Special;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 use MedicalTerrace\Illness_archive;
 use MedicalTerrace\Drafts;
 use MedicalTerrace\ApprovalRequest;
@@ -33,11 +42,15 @@ use MedicalTerrace\Approved;
 use MedicalTerrace\ReleaseReservation;
 use MedicalTerrace\Release;
 use MedicalTerrace\Archive;
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 class HospitalController extends Controller
@@ -51,11 +64,16 @@ class HospitalController extends Controller
 class HospitalController extends Controller
 {
 >>>>>>> e849eef... separate per page
+=======
+class HospitalController extends Controller
+{
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     /**
      * Show the application dashboard.
@@ -373,6 +391,8 @@ class HospitalController extends Controller
     //     return redirect('/hospital_list');
     // }
 
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
     public function save_hospital(Request $request){
 
         $details = Input::all();
@@ -393,6 +413,7 @@ class HospitalController extends Controller
         $filename        = '';
         $file            = $request->file('clinic_image');
 
+<<<<<<< HEAD
         $destinationPath = public_path().'/clinic_image';
         $filename        = str_random(6) . '_' . $file->getClientOriginalName();
         $uploadSuccess   = $file->move($destinationPath, $filename);
@@ -1764,6 +1785,199 @@ class HospitalController extends Controller
 
     public function save_copy_hospital(Request $request){
 =======
+=======
+        $destinationPath = public_path().'/clinic_image';
+        $filename        = str_random(6) . '_' . $file->getClientOriginalName();
+        $uploadSuccess   = $file->move($destinationPath, $filename);
+        /* end of clinic image */
+
+        $subj_list = $details['med_sbj_list']; 
+        $response = array();
+        foreach($subj_list as $key => $cert)
+        {
+            $response[$key]['med_sbj_list'] = $cert;
+        }
+        $jsonsubj_list = json_encode($response); 
+
+        // access
+        $access_trans   = $details['access_trans']; 
+        $access_from    = $details['access_from']; 
+        $access_mins    = $details['access_mins']; 
+        $resp = array();
+        foreach($access_trans as $key => $access_tran)
+        {
+        $response[$key]['access_tran'] = $access_tran;
+        $response[$key]['access_from'] = $access_from[$key];
+        $response[$key]['access_mins'] = $access_mins[$key];
+        $resp[$key]['access_tran'] = $access_tran;
+        $resp[$key]['access_from'] = $access_from[$key];
+        $resp[$key]['access_mins'] = $access_mins[$key];
+        }
+        $access = json_encode($resp);
+
+        // branch address with english
+        $branch_name            = $details['branch_name']; 
+        $branch_address         = $details['branch_address']; 
+        $branch_name_eng        = $details['branch_name_eng']; 
+        $branch_address_eng     = $details['branch_address_eng'];
+        $branchresp = array();
+        foreach($branch_name as $key => $branch)
+        {
+        $branchresp[$key]['branch_name']          = $branch;
+        $branchresp[$key]['branch_address']       = $branch_address[$key];
+        $branchresp[$key]['branch_name_eng']      = $branch_name_eng[$key];
+        $branchresp[$key]['branch_address_eng']   = $branch_address_eng[$key];
+        }
+        $branch_json = json_encode($branchresp);
+
+        // branch address with english
+        $branch_name            = $details['branch_name']; 
+        $branch_address         = $details['branch_address']; 
+        $branch_name_eng        = $details['branch_name_eng']; 
+        $branch_address_eng     = $details['branch_address_eng'];
+        $branchresp = array();
+        foreach($branch_name as $key => $branch)
+        {
+        $branchresp[$key]['branch_name']          = $branch;
+        $branchresp[$key]['branch_address']       = $branch_address[$key];
+        $branchresp[$key]['branch_name_eng']      = $branch_name_eng[$key];
+        $branchresp[$key]['branch_address_eng']   = $branch_address_eng[$key];
+        }
+        $branch_json = json_encode($branchresp);
+
+        //parking json
+        $p_radio                = $details['p_radio']; 
+        $parking_text           = $details['parking_text']; 
+        $parking_units          = $details['parking_units'];
+        $parkresp = array();
+        foreach($p_radio as $key => $park)
+        {
+        $parkresp[$key]['p_radio']            = $park;
+        $parkresp[$key]['parking_text']       = $parking_text[$key];
+        $parkresp[$key]['parking_units']      = $parking_units[$key];
+        }
+        $parking_json = json_encode($parkresp);
+
+        //hospitalization json
+        $hospitalization        = $details['hospitalization']; 
+        $parking_text           = $details['hospitalization_text']; 
+        $hospresp = array();
+        foreach($hospitalization as $key => $hosp)
+        {
+        $hospresp[$key]['hosp']            = $hosp;
+        $hospresp[$key]['hosp_text']       = $parking_text[$key];
+        }
+        $hosp_json = json_encode($hospresp);
+
+        //free medical expenses json
+        $med_item                   = $details['med_item']; 
+        $med_cost                   = $details['med_cost']; 
+        $free_med_exp               = $details['free_med_exp'];
+        $medresp = array();
+        foreach($med_item as $key => $med)
+        {
+        $medresp[$key]['med_item']              = $med;
+        $medresp[$key]['med_cost']              = $med_cost[$key];
+        $medresp[$key]['free_med_exp']          = $free_med_exp[$key];
+        }
+        $med_json = json_encode($medresp);
+
+        //Number of beds json
+        $bed_type               = $details['bed_type']; 
+        $no_of_beds             = $details['no_of_beds']; 
+        $bedresp = array();
+        foreach($bed_type as $key => $bed)
+        {
+        $bedresp[$key]['bed_type']              = $bed;
+        $bedresp[$key]['no_of_beds']            = $no_of_beds[$key];
+        }
+        $bed_json = json_encode($bedresp);
+
+        //visit time json
+
+        $a = $details['visit'];
+        $vis = implode(',',$a);
+
+        $visit_from          = $details['visit_from']; 
+        $visit_to            = $details['visit_to']; 
+        $visit               = $vis;
+        $visitresp = array();
+        foreach($visit_from as $key => $visit_hosp)
+        {
+        $visitresp[$key]['visit_from']                = $visit_hosp;
+        $visitresp[$key]['visit_to']                  = $med_cost[$key];
+        $visitresp[$key]['visit_days']                = $free_med_exp[$key];
+        }
+        $visit_json = json_encode($visitresp);
+
+        //Credit card json
+        $card                   = $details['card']; 
+        $card_text              = $details['credit_card']; 
+        $cardresp = array();
+        foreach($card as $key => $c)
+        {
+        $cardresp[$key]['card']                  = $c;
+        $cardresp[$key]['card_text']             = $card_text[$key];
+        }
+        $bed_json = json_encode($cardresp);
+
+        
+        $author = Auth::user()->id;
+
+        $hospital = new Hospital;
+        $hospital->hospital_id      = $hospital_id;
+        $hospital->url              = $details['url_gen'];
+        $hospital->medical_ins      = $details['medical_ins'];
+        $hospital->name_phonic      = $details['medical_ins_eng'];
+        $hospital->common_name      = $details['common_name'];
+        $hospital->postal_code      = $details['postal_code'];
+        $hospital->address          = $details['address'];
+        $hospital->address_eng      = $details['address_english']; 
+        $hospital->branch_address_w_eng      = $branch_json; // branch address
+        $hospital->access           = $access;
+        $hospital->parking          = $parking_json;
+        $hospital->phone_no         = $details['phone_no'].'-'.$details['phone_no_one'].'-'.$details['phone_no_two'];
+        $hospital->fax              = $details['fax'].'-'.$details['fax_one'].'-'.$details['fax_two'];
+        $hospital->email            = $details['email'];
+        $hospital->image            = '/medicalterrace/public/clinic_image/'.$filename; //clinic image / hospital image
+        $hospital->image_caption    = $details['img_caption'];
+        $hospital->image_alt        = $details['img_alt'];
+        $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
+        $hospital->hosp_text_subheading  = $details['textheading_lead']; //it should be json script when added
+        //$hospital->medinscatchtext  = $medinscatchtext; //should be json
+        $hospital->division         = $details['division']; // added division and medical subject list and field
+        $hospital->medsublist       = $jsonsubj_list; // should be json | dropdown and input field
+
+        $hospital->url_hosp         = $details['url_hosp'];
+        $hospital->in_hospital_pres = $details['pres'];
+        $hospital->free_med_exp     = $med_json; //json
+        $hospital->hospitalization  = $hosp_json; //json
+        $hospital->no_of_beds       = $bed_json; //json
+        $hospital->possible_date_of_visit = $visit_json; //json
+        $hospital->in_hospital_services   = $details['hosp_service']; 
+        $hospital->support_lang     = $details['support_lang'];
+        $hospital->shop_dining_room = $details['shop_dining_room']; 
+        $hospital->credit_card_payment    = $bed_json; //json
+        $hospital->tracking_status    = '1'; 
+        $hospital->author           = $author; 
+        $hospital->save();
+
+        // $department = new Department;
+        // $department->dpt_name        = $details['med_subj_subheading'];
+        // $department->save();
+
+        
+        /* department image */
+        $destinationPath = '';
+        $filenamedpt        = '';
+        $file_dpt            = $request->file('dpt_subject_image');
+
+        $destinationPath = public_path().'/department_photos';
+        $filenamedpt        = str_random(6) . '_' . $file_dpt->getClientOriginalName();
+        $uploadSuccess   = $file_dpt->move($destinationPath, $filenamedpt);
+        /* end of department image */
+
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         //examintation per department json
         $department                             = $details['department'];
         $departmentresp = array();
@@ -2057,7 +2271,10 @@ class HospitalController extends Controller
     }
 
     public function save_overwrite_hospital(Request $request){
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
         $details = Input::all();
 
@@ -2069,12 +2286,18 @@ class HospitalController extends Controller
         $dpt_exam_id = rand();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         // $medinscatchtext = "testing";
         $medsublist = "testing med sub list"; // input name med_sbj_list
 
 
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         /* clinic image */
         $destinationPath = '';
         $filename        = '';
@@ -2127,9 +2350,13 @@ class HospitalController extends Controller
         $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
         $hospital->hosp_text_subheading  = $details['text_subheading_hospital']; //it should be json script when added
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         //$hospital->medinscatchtext  = $medinscatchtext; //should be json
 >>>>>>> e849eef... separate per page
+=======
+        //$hospital->medinscatchtext  = $medinscatchtext; //should be json
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         $hospital->division         = $details['division']; // added division and medical subject list and field
         $hospital->medsublist       = $jsonsubj_list; // should be json | dropdown and input field
         $hospital->save();
@@ -2140,7 +2367,10 @@ class HospitalController extends Controller
 
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         /* department image */
         $destinationPath = '';
         $filenamedpt        = '';
@@ -2152,17 +2382,24 @@ class HospitalController extends Controller
         /* end of department image */
 
         
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         $dpt_exam = new DepartmentExam;
         $dpt_exam->hospital_id              = $hospital_id;
         $dpt_exam->department_id            = $details['department'];
         $dpt_exam->subheading               = $details['med_subj_subheading'];
         $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
 <<<<<<< HEAD
+<<<<<<< HEAD
         $dpt_exam->image                    = $details['department_image'];
 =======
         $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
 >>>>>>> e849eef... separate per page
+=======
+        $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
         $dpt_exam->start                    = $details['start'];
@@ -2216,6 +2453,7 @@ class HospitalController extends Controller
         $staff->text                   = $details['staff_comment_hospital'];
         $staff->image                   = $filename_staff;
         $staff->save();
+<<<<<<< HEAD
 <<<<<<< HEAD
         //     return redirect('/hospital_list');
         // }
@@ -2262,13 +2500,18 @@ class HospitalController extends Controller
 
     public function save_overwrite_hospital(Request $request){
 =======
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
     }
 
     public function save_copy_hospital(Request $request){
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
         $details = Input::all();
 
@@ -2280,12 +2523,15 @@ class HospitalController extends Controller
         $dpt_exam_id = rand();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // $medinscatchtext = "testing";
         $medsublist = "testing med sub list"; // input name med_sbj_list
 
 
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         /* clinic image */
         $destinationPath = '';
         $filename        = '';
@@ -2338,9 +2584,12 @@ class HospitalController extends Controller
         $hospital->hosp_subheading  = $details['hosp_subheading']; //it should be json script when added
         $hospital->hosp_text_subheading  = $details['text_subheading_hospital']; //it should be json script when added
 <<<<<<< HEAD
+<<<<<<< HEAD
         //$hospital->medinscatchtext  = $medinscatchtext; //should be json
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         $hospital->division         = $details['division']; // added division and medical subject list and field
         $hospital->medsublist       = $jsonsubj_list; // should be json | dropdown and input field
         $hospital->save();
@@ -2350,6 +2599,7 @@ class HospitalController extends Controller
         $department->save();
 
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         /* department image */
         $destinationPath = '';
@@ -2364,16 +2614,22 @@ class HospitalController extends Controller
         
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         $dpt_exam = new DepartmentExam;
         $dpt_exam->hospital_id              = $hospital_id;
         $dpt_exam->department_id            = $details['department'];
         $dpt_exam->subheading               = $details['med_subj_subheading'];
         $dpt_exam->text_subheading          = $details['med_subj_text_subheading_hospital'];
 <<<<<<< HEAD
+<<<<<<< HEAD
         $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
 =======
         $dpt_exam->image                    = $details['department_image'];
 >>>>>>> e849eef... separate per page
+=======
+        $dpt_exam->image                    = $details['department_image'];
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         $dpt_exam->from                     = $details['from'];
         $dpt_exam->to                       = $details['to'];
         $dpt_exam->start                    = $details['start'];
@@ -2428,6 +2684,7 @@ class HospitalController extends Controller
         $staff->image                   = $filename_staff;
         $staff->save();
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         // return redirect::back()->with('message','Successfully Encoded');
         return redirect('/hospital_list');
@@ -2438,6 +2695,8 @@ class HospitalController extends Controller
 
        
 =======
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         //     return redirect('/hospital_list');
         // }
 
@@ -2583,4 +2842,7 @@ class HospitalController extends Controller
         return redirect('/hospital_list');
     }
 }
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892

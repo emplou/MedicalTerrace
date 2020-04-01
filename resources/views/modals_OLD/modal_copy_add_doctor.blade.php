@@ -11,12 +11,42 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
+      <div class="header-wrapper">
+      <div class="left">
+        <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+        <div id="authorID"></div>
+        
+    </div>
+    <div class="right">
+        <div>作成日<span>Date</span></div>
+        <div class="select">
+            <select>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+                <option>0000/00/00</option>
+            </select>
+        </div>
+        <div>最終更新日<span>Update</span></div>
+        <div class="select">0000/00/00</div>
+    </div>
+</div>
+<hr />
+<div class="form-container">
+    <div class="form-progress">
+        <ul>
+            <li class="active">下書き<br><span>Draft</span></li>
+            <li class="active">プレビュー<br><span>Preview</span></li>
+            <li>承認依頼<br><span>Approval Request</span></li>
+            <li>承認済<br><span>Approved</span></li>
+            <li class="rel">公開予約<br><span>Release reservation</span></li>
+            <li>公開中<br><span>Release</span></li>
+        </ul>
+    </div>
       {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
-<<<<<<< HEAD
       <input type="hidden" name="docID" id="twodocID" value=" ">
-=======
-      <input type="text" name="docID" id="twodocID" value=" ">
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
+      <input type="hidden" name="statusAuth" id="statusAuth" value="">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
@@ -47,6 +77,8 @@
                 <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
                 <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
                 <div id="twoinput_container"></div>
+                <div id="copycertificate"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -117,6 +149,8 @@
             <div class="col-10">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
                 <div id="twoinput_conference"></div>
+                <div id="copyaddconference"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyaddconf2"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -162,6 +196,8 @@
             </div>
             <div class="col-10">
                     <div id="twoinput_career_one"></div>
+                    <div id="copyc_ac"></div>
+                    <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd3"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -171,6 +207,8 @@
             </div>
             <div class="col-10">
                 <div id="twoinput_career_two"></div>
+                <div id="copyc_we"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd44"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -180,6 +218,8 @@
             </div>
             <div class="col-10">
                 <div id="twoinput_career_three"></div>
+                <div id="copyc_aw"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd55"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -213,6 +253,8 @@
             </div>
             <div class="col-10">
                 <div id="twoinput_department"></div>
+                <div id="copydpt_div"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success copyadd_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -238,4 +280,6 @@
       {!! Form::close() !!}
 </div>
   </div>
+</div>
+</div>
 </div>

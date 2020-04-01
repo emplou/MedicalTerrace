@@ -1,4 +1,4 @@
-@extends('layouts.app_hospital')
+@extends('layouts.app')
 @section('content')
 @include('modals.modal_edit_hospital')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -16,31 +16,15 @@
         </thead>
         <tbody>
         @foreach($hospitals as $hosp)
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <!-- <tr>
-=======
             <tr>
->>>>>>> e849eef... separate per page
-=======
-            <tr>
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
                 <td><img src="{!! $hosp->image !!}" style="width:80px;height:80px;"></td>
                 <td>{!! $hosp->medical_ins !!}</td>
                 <td>{!! $hosp->name_phonic !!}</td>
                 <td>{!! $hosp->common_name !!}</td>
                 <td>{!! $hosp->hospital_id !!}</td>
                 <td>{!! $hosp->created_at !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_hospital" style="background-color:#FCB0BC;border-color:#FCB0BC;min-width:130px;height:70px;" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" style="background-color:#6ebaba;border-color:#6ebaba;width:130px;height:70px;">コピーと新しい編集<br>Copy and new edit</a></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            </tr> -->
-=======
+                <td><a href="#" class="btn btn-info overwrite_hospital" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success ">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
->>>>>>> e849eef... separate per page
-=======
-            </tr>
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
         @endforeach
         </tbody>
     </table>

@@ -337,6 +337,7 @@ function countChar(val) {
           $('#charNum').text(200 - len);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
       };
       
       $('.overwrite_special').each(function(e){
@@ -703,6 +704,9 @@ function countChar(val) {
 =======
 	  };
 >>>>>>> e849eef... separate per page
+=======
+	  };
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
 $('.overwrite_hospital').each(function(e){
     $.ajaxSetup({
@@ -957,6 +961,7 @@ function addfields3(e) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 $('.overwrite_hospital').each(function(e){
     $.ajaxSetup({
         headers: {
@@ -1018,6 +1023,8 @@ $('.overwrite_hospital').each(function(e){
 
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 // hospital staff ckEditor (fourth)
 
 $('.add-ck4').on('click', addfields4);
@@ -1231,6 +1238,7 @@ $('.overwrite_special').each(function(e){
     });
 });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 $('.copy_add_hospital').each(function(e){
     $.ajaxSetup({
@@ -2015,6 +2023,17 @@ function addfields1(e) {
 
   var oneplus=i+1;
 >>>>>>> e849eef... separate per page
+=======
+// hospital ckEditor (first)
+
+$('.add-ck1').on('click', addfields1);
+var i=0;
+function addfields1(e) {
+  e.preventDefault();
+    var copy = $('#addanother').clone();
+
+  var oneplus=i+1;
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
   $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
   $(copy).find('script').remove();
@@ -2231,6 +2250,7 @@ function addfields3(e) {
 
                     //Tag Keywords
                     var objJSONitk = JSON.parse(response['data'][0].ill_tag_kw);
+<<<<<<< HEAD
                     var y = 0;
                     $.each(objJSONitk, function (i, v) {
                         var yplus=y+1;
@@ -2442,6 +2462,42 @@ $.ajax({
 var min = 1990,
     max = 2021,
     select = document.getElementById('aca_year');
+=======
+                    var y = 0;
+                    $.each(objJSONitk, function (i, v) {
+                        var yplus=y+1;
+                        if(v.tag == 1){
+                            $("#tag"+yplus).attr( "checked", true );
+                        }
+                        y++;
+                    });
+
+                    // Season
+                    var objJSONts = JSON.parse(response['data'][0].ill_tag_season);
+                    var z = 0;
+                    $.each(objJSONts, function (i, v) {
+                        var zplus=z+1;
+                        if(v.tag_s == 1){
+                            $("#taga"+zplus).attr( "checked", true );
+                        }
+                        z++;
+                    });
+
+                },
+                error: function(response){
+                alert('Error'+response);
+   
+            }
+
+        });
+        // location.reload();
+    });
+});
+
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('b_year');
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
 for (var i = min; i<=max; i++){
     var opt = document.createElement('option');
@@ -2450,6 +2506,7 @@ for (var i = min; i<=max; i++){
     select.appendChild(opt);
 }
 
+<<<<<<< HEAD
 var min = 1990,
     max = 2021,
 <<<<<<< HEAD
@@ -2477,6 +2534,24 @@ for (var i = min; i<=max; i++){
 var min = 1990,
     max = 2021,
     select = document.getElementById('work_year_to');
+=======
+select.value = new Date().getFullYear();
+
+var select = document.getElementById('length');    
+
+for (var i = 1; i<= 31; i++){
+
+    var option = document.createElement('option');
+    option.value = i;
+    option.innerHTML = i;
+    select.options.add(option);
+}
+
+//academic
+var min = 1990,
+    max = 2021,
+    select = document.getElementById('aca_year');
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
 for (var i = min; i<=max; i++){
     var opt = document.createElement('option');
@@ -2485,6 +2560,7 @@ for (var i = min; i<=max; i++){
     select.appendChild(opt);
 }
 
+<<<<<<< HEAD
 $('.add-ck1').on('click', addfields1);
     var i=0;
     function addfields1(e) {
@@ -2612,6 +2688,10 @@ $('.add-ck1').on('click', addfields1);
         $("#branch").append('<!-- Branch Address --><div class= "form-group"><label class="control-label cols-15">住所<br><span>Branch Address</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)メディテラ診療所" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_branch" type="text" class="form-control" placeholder="Search" /><input type="hidden" name="lat"><input type="hidden" name="long"></div></div><div class="form-group"><label class= "control-label cols-15" > 住所英語表記 <br><span>Branch Address English</span></label><div class="cols-2"><input type="text" class="form-control" placeholder="例)mediterra clinic" name="postal_code"></div><div class="cols-4"><input id="autocomplete_search" name="address_english_branch" type="text" class="form-control" placeholder="Search"/><input type="hidden" name="lat"><input type="hidden" name="long"></div></div>'); //add input box
     });
 =======
+=======
+var min = 1990,
+    max = 2021,
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
     select = document.getElementById('aca_year_to');
 
 for (var i = min; i<=max; i++){
@@ -2643,7 +2723,10 @@ for (var i = min; i<=max; i++){
     opt.innerHTML = i;
     select.appendChild(opt);
 }
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
 //awards 
 var min = 1990,
@@ -2730,6 +2813,7 @@ for (var i = min; i<=max; i++){
             console.log(response['data']);
 
         // if(response == "success")
+<<<<<<< HEAD
 
             /* ********** DEPARTMENT ************ */
             var objJSONdept = JSON.stringify(response['data']);
@@ -2887,6 +2971,55 @@ for (var i = min; i<=max; i++){
 
 =======
 >>>>>>> e849eef... separate per page
+=======
+
+            /* ********** DEPARTMENT ************ */
+            var objJSONdept = JSON.stringify(response['data']);
+            // var objJSONdept = JSON.parse(JSON.stringify(response['data'])); 
+
+            // alert(objJSONdept);
+
+            var tr_str = "";
+            var len = response['data'].length;
+
+            tr_str += '<div class="cols-33"><select class="form- " name="department[]"><option>選択してください</option>';
+
+            for(var i=0; i<len; i++){
+                var dptname = response['data'][i].dpt_name;
+
+                tr_str += '<option value="'+dptname+'">'+dptname+'</option>'
+                }
+                 tr_str += '</select></div>';
+                
+            $("#dpt_div").append(tr_str);
+
+        }
+
+    });
+
+    }
+
+    // hospital ckEditor (first)
+
+    $('.add-ck1').on('click', addfields1);
+    var i=0;
+    function addfields1(e) {
+      e.preventDefault();
+        var copy = $('#addanother').clone();
+
+      var oneplus=i+1;
+
+      $(copy).find('div#cke_textheading_lead\\[0\\]').remove();
+      $(copy).find('script').remove();
+      $(copy).find('textarea[name=textheading_lead\\[0\\]]').attr('name', 'textheading_lead['+oneplus+']');
+
+      $('#addnewdiv').append($(copy).html()+ '<br>');
+      CKEDITOR.replace('textheading_lead['+oneplus+']');
+      i++;  
+
+    }
+
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 
 
       $('.add_dpt_doc').on('click', add4);
@@ -3057,6 +3190,7 @@ $('.overwrite_illness').each(function(e){
                     var input_kwords = "";
                     $.each(objJSON, function (i, v) {
                         input_kwords += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
+<<<<<<< HEAD
                     });
                     $("#input_kwords").html(input_kwords);
 
@@ -3340,6 +3474,65 @@ $('.sp_release2').each(function(e){
                 //console.log(response['data']);
                 location.reload();
 =======
+=======
+                    });
+                    $("#input_kwords").html(input_kwords);
+
+                    // SEO Title
+                    var seo_title = response['data'][0].ill_seo;
+                    var illness_name = response['data'][0].ill_name;
+                    if(seo_title == "1"){
+                        $("#tts").attr( "checked", true );
+                    }
+                    $("#input_seo_title").html(illness_name);
+                    
+
+                    $("#seo_txt").val(response['data'][0].ill_seo_txt); // seo text
+                    $("#meta_txt1").val(response['data'][0].ill_meta_a);
+                    $("#meta_txt2").val(response['data'][0].ill_meta_b);
+
+                    // Illness h1
+                    input_h1 = ''+ response['data'][0].ill_shoulder +'<input type="hidden" name="h1" value="'+ response['data'][0].ill_name +'">';
+                    $("#input_h1").html(input_h1);
+                    
+                    // H2 Retrieval
+                    var objJSON = JSON.parse(response['data'][0].ill_h2);
+                    var input_h2 = "";
+                    $.each(objJSON, function (i, v) {
+                        input_h2 += '<div class="cols-3"><input type="text" class="form-control" placeholder="" value="'+v.h2+'" name="h2[]"></div>';
+                    });
+                    $("#input_h2").html(input_h2);
+
+                    // Search Keywords
+                    var objJSONkw = JSON.parse(response['data'][0].ill_kwords);
+                    var input_kwords_two = "";
+                    var input_kw_two = "";
+                    var x = 0;
+                    $.each(objJSONkw, function (i, v) {
+                        var xplus=x+1;
+                        
+                        input_kwords_two += '<div class="cols-3"><input type="text" class="form-control" name="kword[]" value="'+v.kword+'"></div>';
+
+                        input_kw_two += '<div class="cols-3"><input type="checkbox" id="tag'+xplus+'" name="tag[]" /><label for="tag">'+v.kword+'</label></div>';
+                    
+                        x++; 
+                    });
+                    $("#input_kwords").html(input_kwords_two);
+                    $("#input_kw").html(input_kw_two);
+
+                    // Tag Department Retrieval
+                    var objJSONdpt = JSON.parse(response['data'][0].ill_tag_dep);
+                    var input_dpt = "";
+                    $.each(objJSONdpt, function (i, v) {
+                        console.log(objJSONdpt);
+
+                            input_dpt += '<div class="cols-3"><select class="form-control" name="tag_dep[]"><option value="'+ v.tag_dep +'">'+ v.tag_dep +'</option>';
+
+                            $.each(response['dpt'], function (i, b) {
+                                console.log('dpt '+ b.department_name)
+                                input_dpt += '<option value="'+ b.department_name +'">'+ b.department_name +'</option>';
+
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
                             });
                                
                             input_dpt += '</select></div>';
@@ -3397,7 +3590,10 @@ $('.sp_release2').each(function(e){
                 error: function(response){
                 alert('Error'+response);
    
+<<<<<<< HEAD
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
             }
 
         });
@@ -4219,6 +4415,7 @@ $(document).ready(function(){
     //copy edit doctor modal
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     $('.sp_preview').each(function(e){
         $.ajaxSetup({
@@ -4462,6 +4659,8 @@ $(document).ready(function(){
 
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
   $('.copyaddcert1').on('click', copyaddcert1);
   var i=0;
   function copyaddcert1(e) {
@@ -4557,6 +4756,7 @@ $(document).ready(function(){
   }
   //end copy edit doctor modal details
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   $('.release2').each(function(e){
     $.ajaxSetup({
@@ -4631,3 +4831,5 @@ $('.sp_release2').each(function(e){
 });
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892

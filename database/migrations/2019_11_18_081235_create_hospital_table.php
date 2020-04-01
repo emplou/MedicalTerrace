@@ -43,12 +43,17 @@ class CreateHospitalTable extends Migration
             $table->longText('no_of_beds');
             $table->longText('possible_date_of_visit');
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->integer('support_lang');
             $table->integer('shop_dining_room');
 =======
             $table->string('support_lang');
             $table->string('shop_dining_room');
 >>>>>>> e849eef... separate per page
+=======
+            $table->string('support_lang');
+            $table->string('shop_dining_room');
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
             $table->longText('credit_card_payment');
             $table->integer('tracking_status');
             $table->integer('author');

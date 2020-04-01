@@ -36,10 +36,14 @@
 
             .top-right {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 position: absolute;  
 =======
                 position: absolute;
 >>>>>>> e849eef... separate per page
+=======
+                position: absolute;
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
                 right: 10px;
                 top: 18px;
             }

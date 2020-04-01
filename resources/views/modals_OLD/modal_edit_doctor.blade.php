@@ -1,28 +1,61 @@
+@include('modals.modal_add_doctor')
 <!-- Modal -->
-<div id="copyAdddoctor" class="modal fade" role="dialog" data-keyboard="true">
+<div id="editdoctor" class="modal fade" role="dialog" data-keyboard="true">
   <div class="modal-dialog modal-lg">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 				
 <!-- Modal content-->
     <div class="modal-content">
     
-<div class="modal-header" style="color: white; background-color: #046C9D">
-<h4 class="modal-title"><b>Copy Add Doctor</b></h4>
+<div class="modal-header" style="color: black; background-color: #7CD5FF">
+<h4 class="modal-title"><b>Edit Doctor</b></h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
-      <div class="modal-body">
-      {!! Form::open(['url' => '/save_copy_doctor', 'method' => 'post', 'files' => true]) !!}
-<<<<<<< HEAD
-      <input type="hidden" name="docID" id="twodocID" value=" ">
-=======
-      <input type="text" name="docID" id="twodocID" value=" ">
->>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
+    <div class="modal-body">
+    <div class="header-wrapper">
+        <div class="left">
+            <!-- <h2>子どもの夏の感染症<span>ID番号:S00000</span></h2> -->
+            <!-- <h2>{!! Auth::user()->name !!}<span>ID番号:S00000{!! Auth::user()->id !!}</span></h2> -->
+            <div id="copyauthorID"></div>
+            
+        </div>
+        <div class="right">
+            <div>作成日<span>Date</span></div>
+            <div class="select">
+                <select>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                    <option>0000/00/00</option>
+                </select>
+            </div>
+            <div>最終更新日<span>Update</span></div>
+            <div class="select">0000/00/00</div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-container  add">
+        <div class="form-progress" width="100px">
+            <ul>
+                <li class="active">下書き<br><span>Draft</span></li>
+                <li class="active">プレビュー<br><span>Preview</span></li>
+                <li>承認依頼<br><span>Approval Request</span></li>
+                <li>承認済<br><span>Approved</span></li>
+                <li class="rel">公開予約<br><span>Release reservation</span></li>
+                <li>公開中<br><span>Release</span></li>
+            </ul>
+        </div>
+    <div class="form-pads">
+      {!! Form::open(['url' => '/save_edit_doctor', 'method' => 'post', 'files' => true]) !!}
+      <input type="hidden" name="docID" id="docID" value="">
+      <input type="hidden" name="statusAuth" id="statusAuth" value="">
       <div class="row">
             <div class="col-2">
             URL自動生成名<br>URL generation
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="url_generation" id="twourl_generation" style="width:500px">
+            <input type="text" class="form-control" name="url_generation" id="url_generation" style="width:500px">
             </div>
         </div>
         <br>
@@ -31,7 +64,7 @@
             職位<br>Status
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="status" id="twostatus" style="width:500px">
+            <input type="text" class="form-control" name="status" id="status" style="width:500px">
             </div>
         </div>
         <br>
@@ -40,13 +73,10 @@
             専門医・認定医<br>（取得資格）<br>Certificate
             </div>
             <div class="col-10">
-                <!-- <input type="text" class="form- " name="certificate[]" id="certificate00" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate01" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate02" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate03" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate04" style="width:300px">
-                <input type="text" class="form- " name="certificate[]" id="certificate05" style="width:300px"> -->
-                <div id="twoinput_container"></div>
+                <div id="input_container"></div>
+                <div id="editcertificate"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddcert1"><span class="lnr lnr-plus-circle"></span></button></div>
+            
             </div>
         </div>
         <br>
@@ -55,7 +85,7 @@
             氏名<br>Name
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="name" id="twoname" style="width:500px">
+            <input type="text" class="form-control" name="name" id="name" style="width:500px">
             </div>
         </div>
         <br>
@@ -64,7 +94,7 @@
             ローマ字（名・氏）<br>Alphabet Name 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="alphabet_name" id="twoalpha_name" style="width:500px">
+            <input type="text" class="form-control" name="alphabet_name" id="alpha_name" style="width:500px">
             </div>
         </div>
         <br>
@@ -88,7 +118,7 @@
             画像キャプション<br>Image Caption 
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_caption" id="twoimg_caption" style="width:500px">
+            <input type="text" class="form-control" name="img_caption" id="img_caption" style="width:500px">
             </div>
         </div>
         <br>
@@ -97,7 +127,7 @@
             画像alt<br>Image alt
             </div>
             <div class="col-10">
-            <input type="text" class="form-control" name="img_alt" id="twoimg_alt" style="width:500px">
+            <input type="text" class="form-control" name="img_alt" id="img_alt" style="width:500px">
             </div>
         </div>
         <br>
@@ -106,7 +136,7 @@
             業種<br>Industry
             </div>
             <div class="col-10">
-                <div id="twoinput_industry"></div>
+                <div id="input_industry"></div>
             </div>
         </div>
         <br>
@@ -116,7 +146,9 @@
             </div>
             <div class="col-10">
                 <!-- <input type="text" class="form- " name="conference[]" id="conference" style="width:300px"> -->
-                <div id="twoinput_conference"></div>
+                <div id="input_conference"></div>
+                <div id="editaddconference"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editaddconf2"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -141,7 +173,7 @@
                         <option value="December">December</option>
                     </select>
                     <select id="length b_day" name="b_day" class="form- " style="width:100px"></select> -->
-                    <div id="twobday_input"></div>
+                    <div id="bday_input"></div>
             </div>
         </div>
         <br>
@@ -150,7 +182,7 @@
             出生地<br>Place of birth
             </div>
             <div class="col-10">
-                <input type="text" class="form- " name="place_birth" id="twoplace_birth" style="width:200px">
+                <input type="text" class="form- " name="place_birth" id="place_birth" style="width:200px">
                 出身地 | Birthplace
                 <input type="text" class="form- " name="" style="width:200px">
             </div>
@@ -161,7 +193,9 @@
             経歴（学歴）<br>Career（学歴）
             </div>
             <div class="col-10">
-                    <div id="twoinput_career_one"></div>
+                    <div id="input_career_one"></div>
+                    <div id="editc_ac"></div>
+                    <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd3"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -170,7 +204,9 @@
             経歴（職歴）<br>Career（職歴）
             </div>
             <div class="col-10">
-                <div id="twoinput_career_two"></div>
+                <div id="input_career_two"></div>
+                <div id="editc_we"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd44"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -179,7 +215,9 @@
             経歴（賞・表彰）<br>Career（賞・表彰）
             </div>
             <div class="col-10">
-                <div id="twoinput_career_three"></div>
+                <div id="input_career_three"></div>
+                <div id="editc_aw"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd55"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -188,7 +226,16 @@
             最後の行に現在に至る　<br>最後の行に現在に至る
             </div>
             <div class="col-10">
-                <input type="checkbox" name="n_order" id="twon_order_one" value="1"> OK <input type="checkbox" id="twon_order" name="n_order" value="0"> NO 
+                <input type="checkbox" name="n_order" id="n_order_one" value="1"> OK <input type="checkbox" id="n_order" name="n_order" value="0"> NO 
+            </div>
+
+            <div class="sidediv cols-35">
+                <!-- <div class="maxnum"><b id="charNum">&emsp;200</b> <b> / 200 </b> </div> -->
+                <div class="sidebots">
+                    <a class="prevbutton previewEditDoc" type="button" class="btn-prime" href="#previewAddDoctor">Preview</a>
+                    <button type="button" class="btn-prime release1">Release</button>
+                    <button type="button" class="btn-prime release2">Release</button>
+                </div>
             </div>
         </div>
         <br>
@@ -203,7 +250,7 @@
                     <option>industry three</option>
                     <option>industry four</option>
                 </select> -->
-                <div id="hospital_off_field_two"></div>
+                <div id="hospital_off_field"></div>
             </div>
         </div>
         <br>
@@ -212,7 +259,9 @@
             所属診療科・所属科<br>Department
             </div>
             <div class="col-10">
-                <div id="twoinput_department"></div>
+                <div id="input_department"></div>
+                <div id="editdpt_div"></div>
+                <div class="cols-1 relative" style="float:right;"><button type="button" class="btn btn-success editadd_dpt_doc"><span class="lnr lnr-plus-circle"></span></button></div>
             </div>
         </div>
         <br>
@@ -221,7 +270,7 @@
             医師コメント<br>Doctor Comment
             </div>
             <div class="col-10">
-                <textarea class="form- " id="twodoc_comment" name="doc_comment" onkeyup="countChar(this)" style="width:90%;height:100%;"></textarea>
+                <textarea class="form- " id="doc_comment" name="doc_comment" onkeyup="countChar(this)" style="width:90%;height:100%;"></textarea>
                 <div style="float:right;"><b id="charNum">200</b> <b> / 200 </b> </div>
             </div>
         </div>
@@ -236,6 +285,8 @@
         </div>
       <!-- Modal -->
       {!! Form::close() !!}
+      </div>
 </div>
   </div>
+</div>
 </div>

@@ -62,6 +62,7 @@ class HomeController extends Controller
         return view('admin.special_list');
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public function save_hospital(){
 
@@ -105,4 +106,6 @@ class HomeController extends Controller
     }
 =======
 >>>>>>> e849eef... separate per page
+=======
+>>>>>>> e849eef808f74fa713956ba8f1bff8fa29fbe892
 }
