@@ -222,7 +222,7 @@
     <div class="form-group check">
         <label class="control-label cols-15">URL<br><span>URL</span></label>
         <div class="cols-35">
-            <input type="text" class="form-control" placeholder="" name="url_hosp" required>
+            <input type="text" class="form-control" placeholder="" name="url_hosp" id="url_hosp" required>
         </div>
          <div class="cols-2 check3">
             <input type="checkbox" id="non4" name="asn" value="0"> 
@@ -271,68 +271,13 @@
     <div class="form-group">
         <label class="control-label cols-15">タグ<br> 診療科目一覧<br><span>Medical Subject List</span></label>
         <div class="cols-7"> 
-            <div id="addanother2">
-                <div class="cols-3">
-                    <select class="form- " name="med_sbj_list[]">
-                        <option>選択してください</option>
-                        <option>Medical one</option>
-                        <option>Medical two</option>
-                        <option>Medical three</option>
-                        <option>Medical four</option>
-                    </select>
-                </div>
-                <div class="cols-3">
-                    <select class="form- " name="med_sbj_list[]">
-                        <option>選択してください</option>
-                        <option>Medical one</option>
-                        <option>Medical two</option>
-                        <option>Medical three</option>
-                        <option>Medical four</option>
-                    </select>
-                </div>
-                <div class="cols-3">
-                    <select class="form- " name="med_sbj_list[]">
-                        <option>選択してください</option>
-                        <option>Medical one</option>
-                        <option>Medical two</option>
-                        <option>Medical three</option>
-                        <option>Medical four</option>
-                    </select>
-                </div>
-                <div id="mednewdiv1"></div>
-                <div id="addanothermed1">
-                    <div class="cols-3">
-                        <select class="form- " name="med_sbj_list[]">
-                            <option>選択してください</option>
-                            <option>Medical one</option>
-                            <option>Medical two</option>
-                            <option>Medical three</option>
-                            <option>Medical four</option>
-                        </select>
-                    </div>
-                    <div class="cols-3">
-                        <select class="form- " name="med_sbj_list[]">
-                            <option>選択してください</option>
-                            <option>Medical one</option>
-                            <option>Medical two</option>
-                            <option>Medical three</option>
-                            <option>Medical four</option>
-                        </select>
-                    </div>
-                    <div class="cols-3">
-                        <select class="form- " name="med_sbj_list[]">
-                            <option>選択してください</option>
-                            <option>Medical one</option>
-                            <option>Medical two</option>
-                            <option>Medical three</option>
-                            <option>Medical four</option>
-                        </select>
-                    </div>
-                </div>
+                <div id="med_sbj_list_field"></div>
                 <div class="cols-1 relative">
                     <button type="button" class="btn btn-success addmed1"><span class="lnr lnr-plus-circle"></span></button>
                 </div>
+
                  <div id="mednewdiv2"></div>
+                 
                 <div id="addanothermed2">
                     <div class="cols-3">
                         <input type="text" class="form- " placeholder="選択項目にない場合に入力" name="med_sbj_list_add[]">
@@ -635,22 +580,23 @@
     <div class="form-group">
         <div class="control-label cols-15">自由診療費用<br><span>Free medical Expenses</span></div>
         <div class="cols-8 rad-buttons">
-            <div class="cols-2 left">
+            <!-- <div class="cols-2 left">
                 <label for="med1">項目 </label>
-                <input type="text" id="med1" name="med_item[]" placeholder="例)予防接種 インフルエンザ"> 
+                <input type="text" id="med1" name="med_item[]" id="med_item" placeholder="例)予防接種 インフルエンザ"> 
             </div>
             <div class="cols-2 left">
                 <label for="med2">費用</label>
-                <input type="text" id="med2" name="med_cost[]" placeholder="例)3,500円"> 
+                <input type="text" id="med2" name="med_cost[]" id="med_cost" placeholder="例)3,500円"> 
             </div>
             <div class="cols-2 left">
                 <label for="med3">診療科</label>
-                <select class="form-control" name="free_med_exp[]">
+                <select class="form-control" name="free_med_exp[]" id="free_med_exp">
                     <option value="">選択してください</option>
                     <option value="one">One</option>
                     <option value="two">Two</option>
                 </select>
-            </div>
+            </div> -->
+            <div id="free_med_exp"></div>
         </div>	
     </div>
 
