@@ -618,10 +618,16 @@ $.ajaxSetup({
                   $("#img_caption").val(response['data'][0].image_caption);
                   $("#img_alt").val(response['data'][0].image_alt);
                   $("#hosp_subheading").val(response['data'][0].hosp_subheading);
-                  $("#textheading_lead").val(response['data'][0].hosp_text_subheading);
+                //   $("#textheading_lead").val('yeah');
+                //   $("#textheading_lead").val(response['data'][0].hosp_text_subheading);
+                  CKEDITOR.instances['textheading_lead'].setData(response['data'][0].hosp_text_subheading);
                   // division dropdown
                 //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
-                  $("#division").val(response['data'][0].division);
+                //   $("#division").val(response['data'][0].division);
+
+                  /* ********** division ************ */
+                  input_ins = '<select class="form-control" name="division" style="width:500px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option><option value="division one">division one</option><option value="division two">division two</option><option value="division three">division three</option><option value="division four">division four</option></select>';
+                  $("#input_division").html(input_ins);
                     
 
                 },

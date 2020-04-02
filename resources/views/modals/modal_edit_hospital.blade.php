@@ -263,9 +263,7 @@
     <div class="form-group">
         <label class="control-label cols-15">区分<br><span>Division</span></label>
         <div class="cols-4">
-            <select class="form-control" name="division">
-                <option value="0">選択してください</option>
-            </select>
+            <div id="input_division"></div>
         </div>
     </div>
 

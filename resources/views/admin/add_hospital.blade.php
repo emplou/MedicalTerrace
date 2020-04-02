@@ -242,6 +242,9 @@
         <div class="cols-4">
             <select class="form-control" name="division">
                 <option value="0">選択してください</option>
+                <option value="division one">division one</option>
+                <option value="division two">division two</option>
+                <option value="division three">division three</option>
             </select>
         </div>
     </div>
