@@ -814,9 +814,9 @@
     <div class="form-group">
         <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="card1" name="card[]" value="監修">
+            <input type="radio" id="card1" name="card[]" value="1">
             <label for="card1">可</label>
-            <input type="radio" id="card2" name="card[]" value="取材協力">
+            <input type="radio" id="card2" name="card[]" value="0">
             <label for="card2">否</label>
         </div>
         <div class="cols-4">

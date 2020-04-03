@@ -314,6 +314,131 @@ $.ajaxSetup({
         });
     });
 
+    //hospital page
+
+    $('.overwrite_update').each(function(e){
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+          });
+        // e.preventDefault();
+        $(this).on('click', function(){
+            var id = $(this).attr('hosp-id');
+            // alert(id);
+
+            $.ajax({
+                url: '/modal_edit_hospital/'+id,
+                type: 'get',
+                dataType: 'json',
+                // data : { id : id },
+                success: function(response){
+                    console.log(response['data']);
+                    console.log(response['dpt_exam']);
+                    console.log(response['hosp_feature']);
+                if(response == "success")
+
+                  console.log(response['data']); 
+
+                  $("#edithospital").modal('show');
+                  $("#url_gen").val(response['data'][0].url);
+                  $("#medical_ins").val(response['data'][0].medical_ins);
+                  $("#medical_ins_eng").val(response['data'][0].name_phonic);
+                  $("#common_name").val(response['data'][0].common_name);
+                  $("#postal_code").val(response['data'][0].postal_code);
+                  $("#address").val(response['data'][0].address);
+                  $("#address_english").val(response['data'][0].address_eng);
+                  //access not yet
+                  //parking not yet
+                  $("#phone_no").val(response['data'][0].phone_no);
+                  $("#fax").val(response['data'][0].fax);
+                  $("#email").val(response['data'][0].email);
+                  //image not yet
+                  $("#img_caption").val(response['data'][0].image_caption);
+                  $("#img_alt").val(response['data'][0].image_alt);
+                  $("#hosp_subheading").val(response['data'][0].hosp_subheading);
+                //   $("#textheading_lead").val('yeah');
+                //   $("#textheading_lead").val(response['data'][0].hosp_text_subheading);
+                  CKEDITOR.instances['textheading_lead'].setData(response['data'][0].hosp_text_subheading);
+                  // division dropdown
+                //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
+                //   $("#division").val(response['data'][0].division);
+
+                  /* ********** division ************ */
+                  input_ins = '<select class="form-control" name="division" style="width:500px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option><option value="division one">division one</option><option value="division two">division two</option><option value="division three">division three</option><option value="division four">division four</option></select>';
+                  $("#input_division").html(input_ins);
+
+                  /* ********** Medical Subject List ************ */
+                  var objJSONdpt = JSON.parse(response['data'][0].medsublist);
+                  var input_med = "";
+                  $.each(objJSONdpt, function (i, v) {
+                      console.log(objJSONdpt);
+
+                    input_med += '<div class="cols-3"><select class="form- " name="department[]" style="width:150px;"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
+                    input_med += '<option value="Medical one">Medical one</option>';
+                    input_med += '<option value="Medical two">Medical two</option>';
+                    input_med += '<option value="Medical three">Medical three</option>';
+                    input_med += '</select></div>';
+                          
+                  }); //end of Medical Subject json
+                  $("#med_sbj_list_field").html(input_med);
+
+                  $("#url_hosp").val(response['data'][0].url_hosp);
+
+
+                   /* ********** Free medical Expenses ************ */
+                   var free_med = JSON.parse(response['data'][0].free_med_exp);
+                   var input_free_med = "";
+                   $.each(free_med, function (i, v) {
+                       console.log(free_med);
+ 
+                       input_free_med += '<div class="cols-2 left"><input type="text" id="med1" name="med_item[]" id="med_item" value="'+ v.med_item +'"></div>';
+                       input_free_med += '<div class="cols-2 left"><input type="text" id="med2" name="med_cost[]" id="med_cost" value="'+ v.med_cost +'"></div>';
+                       input_free_med += '<div class="cols-2 left"><select class="form- " name="free_med_exp[]" id="free_med_exp"><option value="'+ v.free_med_exp +'">'+ v.free_med_exp +'</option><option value="One">One</option><option value="Two">Two</option></div>';
+                           
+                   }); //end of Free medical Expenses json
+                   $("#free_med_exp").html(input_free_med);
+
+                   $("#hosp_service").val(response['data'][0].in_hospital_services);
+                   $("#support_lang").val(response['data'][0].support_lang);
+                   $("#shop_dining_room").val(response['data'][0].shop_dining_room);
+
+                   /* ********** Credit Card ************ */
+                  var objJSONdpt = JSON.parse(response['data'][0].credit_card_payment);
+                  var input = "";
+                  $.each(objJSONdpt, function (i, v) {
+                      console.log(objJSONdpt);
+
+                      check_box = v.card;
+                    //   $('#card').each(function(e){
+                        if(v.card == "1"){
+                            $('#one').attr('checked', 'checked');
+                            // alert('yeah');
+                        }else{
+                            $('#zero').attr('checked', 'checked');
+                        }
+                    // });
+
+                    // input += '';
+                    $("#credit_card").val(v.card_text);
+                          
+                  }); //end of credit card json
+                //   $("#med_sbj_list_field").html(input);
+                   
+                    
+
+                },
+                    error: function(response){
+                    alert('Error'+response);
+       
+                }
+
+              });
+
+            // location.reload();
+        });
+    });
+
 
     //copy and add another data to database
     $('.overwrite_add').each(function(e){
@@ -659,6 +784,33 @@ $.ajaxSetup({
                            
                    }); //end of Free medical Expenses json
                    $("#free_med_exp").html(input_free_med);
+
+                   $("#hosp_service").val(response['data'][0].in_hospital_services);
+                   $("#support_lang").val(response['data'][0].support_lang);
+                   $("#shop_dining_room").val(response['data'][0].shop_dining_room);
+
+                   /* ********** Credit Card ************ */
+                  var objJSONdpt = JSON.parse(response['data'][0].credit_card_payment);
+                  var input = "";
+                  $.each(objJSONdpt, function (i, v) {
+                      console.log(objJSONdpt);
+
+                      check_box = v.card;
+                    //   $('#card').each(function(e){
+                        if(v.card == "1"){
+                            $('#one').attr('checked', 'checked');
+                            // alert('yeah');
+                        }else{
+                            $('#zero').attr('checked', 'checked');
+                        }
+                    // });
+
+                    // input += '';
+                    $("#credit_card").val(v.card_text);
+                          
+                  }); //end of credit card json
+                //   $("#med_sbj_list_field").html(input);
+                   
                     
 
                 },

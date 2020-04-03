@@ -7,7 +7,7 @@
     <div class="modal-content">
     
 <div class="modal-header" style="color: black; background-color: #7CD5FF">
-    <h4 class="modal-title"><b>Edit and Overwrite Hospital Detailsss</b></h4>
+    <h4 class="modal-title"><b>Edit and Overwrite Hospital Detailsssssssss</b></h4>
     <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
@@ -750,7 +750,7 @@
     <div class="form-group">
         <label class="control-label cols-15">院内サービス<br><span>In-hospital service</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="hosp_service">
+            <input type="text" class="form-control" name="hosp_service" id="hosp_service">
         </div>
     </div>
 
@@ -758,7 +758,7 @@
     <div class="form-group">
         <label class="control-label cols-15">対応可能な外国語<br><span>Support Languages</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="support_lang">
+            <input type="text" class="form-control" name="support_lang" id="support_lang">
         </div>
     </div>
 
@@ -766,7 +766,7 @@
     <div class="form-group">
         <label class="control-label cols-15">売店・食堂の有無<br><span>Shop, dining room</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="shop_dining_room">
+            <input type="text" class="form-control" name="shop_dining_room" id="shop_dining_room">
         </div>
     </div>
 
@@ -774,13 +774,13 @@
     <div class="form-group">
         <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="card1" name="card[]" value="監修">
+            <input type="radio" id="card1 one" name="card[]" value="1">
             <label for="card1">可</label>
-            <input type="radio" id="card2" name="card[]" value="取材協力">
+            <input type="radio" id="card2 two" name="card[]" value="0">
             <label for="card2">否</label>
         </div>
         <div class="cols-4">
-            <input class="form-control" type="text" name="credit_card[]" placeholder="※注意書き自由に">
+            <input class="form-control" type="text" name="credit_card[]" id="credit_card">
         </div>	
         <div class="sidediv cols-3">
             <div class="sidebots">
