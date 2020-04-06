@@ -300,12 +300,13 @@
     <div class="form-group">
         <label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label>
         <div class="cols-4">
-            <select class="form-control" name="department[]">
+            <!-- <select class="form-control" name="department[]">
                 <option value="0">選択してください</option>
                 @foreach($department as $dpt)
                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                 @endforeach
-            </select>
+            </select> -->
+            <div id="departmentfield"></div>
         </div>
     </div>
 
@@ -774,9 +775,9 @@
     <div class="form-group">
         <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="card1 one" name="card[]" value="1">
+            <input type="radio" id="card1" name="card[]" value="1">
             <label for="card1">可</label>
-            <input type="radio" id="card2 two" name="card[]" value="0">
+            <input type="radio" id="card2" name="card[]" value="0">
             <label for="card2">否</label>
         </div>
         <div class="cols-4">
