@@ -314,7 +314,8 @@
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-6">          
-            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+            <!-- <textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
+            <div id="departmentsubheading"></div>
         </div>
         <div class="cols-2">          
             <span id="rchars4">0</span>/46
@@ -470,27 +471,29 @@
     <div id="addnewdiv5">
     <div id="addanother5">
         <div class="form-group">
-            <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
-            <div class="cols-5">          
-                <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
-            </div>
-            <div class="cols-2">          
+            <!-- <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
+            <div class="cols-5">           -->
+                <!-- <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
+
+                <div id="equipment"></div>
+            <!-- </div> -->
+            <!-- <div class="cols-2">          
                 <span id="rchars4">0</span>/46
             </div>
-        </div>
+        </div> -->
 
         <!-- Text of Subheading 4-->
-        <div class="form-group editor">
+        <!-- <div class="form-group editor">
             <label class="control-label cols-15"> </label>
-            <div class="cols-6">   
+            <div class="cols-6">    -->
                 <!-- add new textarea here -->
                 
-                <div id="addanother1">
+                <!-- <div id="addanother1">
                     <div class="cols-10">        
                         <textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck4"><span class="lnr lnr-plus-circle"></span></button></div> 
         </div>
 

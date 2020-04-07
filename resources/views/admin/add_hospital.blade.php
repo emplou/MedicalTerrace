@@ -350,8 +350,7 @@
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-6">          
-            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は
-            </textarea>
+            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200">この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は </textarea>
         </div>
         <div class="cols-2">          
             <span id="rchars4">0</span>/46

@@ -7,7 +7,7 @@
     <div class="modal-content">
     
 <div class="modal-header" style="color: black; background-color: #7CD5FF">
-    <h4 class="modal-title"><b>Edit and Overwrite Hospital Detailsss</b></h4>
+    <h4 class="modal-title"><b>Edit and Overwrite Hospital Detailsssssssss</b></h4>
     <button type="button" class="close" data-dismiss="modal">&times;</button>
 </div>
       <div class="modal-body">
@@ -300,12 +300,13 @@
     <div class="form-group">
         <label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label>
         <div class="cols-4">
-            <select class="form-control" name="department[]">
+            <!-- <select class="form-control" name="department[]">
                 <option value="0">選択してください</option>
                 @foreach($department as $dpt)
                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                 @endforeach
-            </select>
+            </select> -->
+            <div id="departmentfield"></div>
         </div>
     </div>
 
@@ -313,7 +314,8 @@
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-6">          
-            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+            <!-- <textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
+            <div id="departmentsubheading"></div>
         </div>
         <div class="cols-2">          
             <span id="rchars4">0</span>/46
@@ -452,36 +454,46 @@
                     <input type="file" name="feature_image[]" id="file-9" class="inputfile3"  required>
                     <label for="file-9"><span class="archive-name3"></span><span class="btn-inputfile"> </span></label>
                 </div>
+                <!-- <div class="upload-btn-wrapper">
+                    <button class="bton" id="show_img"></button>
+                    <input type="file" name="feature_image[]"  />
+                </div> -->
+                <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
             </div>
         </div>
     </div>
+        
+
+     
 
     <hr />
     <!-- Subheading 4-->
     <div id="addnewdiv5">
     <div id="addanother5">
         <div class="form-group">
-            <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
-            <div class="cols-5">          
-                <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
-            </div>
-            <div class="cols-2">          
+            <!-- <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
+            <div class="cols-5">           -->
+                <!-- <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
+
+                <div id="equipment"></div>
+            <!-- </div> -->
+            <!-- <div class="cols-2">          
                 <span id="rchars4">0</span>/46
             </div>
-        </div>
+        </div> -->
 
         <!-- Text of Subheading 4-->
-        <div class="form-group editor">
+        <!-- <div class="form-group editor">
             <label class="control-label cols-15"> </label>
-            <div class="cols-6">   
+            <div class="cols-6">    -->
                 <!-- add new textarea here -->
                 
-                <div id="addanother1">
+                <!-- <div id="addanother1">
                     <div class="cols-10">        
                         <textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck4"><span class="lnr lnr-plus-circle"></span></button></div> 
         </div>
 
@@ -493,10 +505,25 @@
                     <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4"  required>
                     <label for="file-10"><span class="archive-name4"></span><span class="btn-inputfile"> </span></label>
                 </div>
+                <!-- <div class="upload-btn-wrapper">
+                    <button class="bton"></button>
+                    <input type="file" name="equipment_image[]" name="insert_equipment_subject" />
+                </div> -->
             </div>
         </div>
     </div>
     </div>
+
+    <!-- Image Alt -->
+    <!-- <div class="form-group">
+        <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
+        <div class="cols-5">
+            <div class="upload-image">        
+                <input type="file" name="image-alt" id="file-7" class="inputfile" >
+                <label for="file-7"><span class="archive-name">ドラッグ&ドロップ、または参照で画像を追加してください</span><span class="btn-inputfile"> 参照...</span></label>
+            </div>
+        </div>
+    </div> -->
 
     <hr />
 
@@ -531,6 +558,10 @@
                     <input type="file" name="staff_image[]" id="file-11" class="inputfile5"  required>
                     <label for="file-11"><span class="archive-name5"></span><span class="btn-inputfile"> </span></label>
                 </div>
+                 <!-- <div class="upload-btn-wrapper">
+                    <button class="bton"></button>
+                    <input type="file" name="staff_image[]" />
+                </div> -->
             </div>
         </div>
     </div>
@@ -553,6 +584,22 @@
     <div class="form-group">
         <div class="control-label cols-15">自由診療費用<br><span>Free medical Expenses</span></div>
         <div class="cols-8 rad-buttons">
+            <!-- <div class="cols-2 left">
+                <label for="med1">項目 </label>
+                <input type="text" id="med1" name="med_item[]" id="med_item" placeholder="例)予防接種 インフルエンザ"> 
+            </div>
+            <div class="cols-2 left">
+                <label for="med2">費用</label>
+                <input type="text" id="med2" name="med_cost[]" id="med_cost" placeholder="例)3,500円"> 
+            </div>
+            <div class="cols-2 left">
+                <label for="med3">診療科</label>
+                <select class="form-control" name="free_med_exp[]" id="free_med_exp">
+                    <option value="">選択してください</option>
+                    <option value="one">One</option>
+                    <option value="two">Two</option>
+                </select>
+            </div> -->
             <div id="free_med_exp"></div>
         </div>	
     </div>
@@ -707,7 +754,7 @@
     <div class="form-group">
         <label class="control-label cols-15">院内サービス<br><span>In-hospital service</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="hosp_service">
+            <input type="text" class="form-control" name="hosp_service" id="hosp_service">
         </div>
     </div>
 
@@ -715,7 +762,7 @@
     <div class="form-group">
         <label class="control-label cols-15">対応可能な外国語<br><span>Support Languages</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="support_lang">
+            <input type="text" class="form-control" name="support_lang" id="support_lang">
         </div>
     </div>
 
@@ -723,7 +770,7 @@
     <div class="form-group">
         <label class="control-label cols-15">売店・食堂の有無<br><span>Shop, dining room</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="shop_dining_room">
+            <input type="text" class="form-control" name="shop_dining_room" id="shop_dining_room">
         </div>
     </div>
 
@@ -731,13 +778,13 @@
     <div class="form-group">
         <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="card1" name="card[]" value="監修">
+            <input type="radio" id="card1" name="card[]" value="1">
             <label for="card1">可</label>
-            <input type="radio" id="card2" name="card[]" value="取材協力">
+            <input type="radio" id="card2" name="card[]" value="0">
             <label for="card2">否</label>
         </div>
         <div class="cols-4">
-            <input class="form-control" type="text" name="credit_card[]" placeholder="※注意書き自由に">
+            <input class="form-control" type="text" name="credit_card[]" id="credit_card">
         </div>	
         <div class="sidediv cols-3">
             <div class="sidebots">

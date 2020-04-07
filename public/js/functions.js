@@ -635,33 +635,80 @@ $.ajaxSetup({
                    }); //end of Free medical Expenses json
                    $("#free_med_exp").html(input_free_med);
 
+                //    var dpt = $.parseJSON(response['hospdpt'][0].id);
+                // console.log('department list '+ JSON.stringify(response['hospdpt'])); 
+                //    $.each(dpt, function (i, v) {
+                //         console.log('department list '+ v.dpt_name);
+
+                // });
+
                    /* ********** DEPARTMENT ************ */
-                   var objJSONdpt = JSON.parse(response['data'][0].department);
+                   var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                   var dpt_hosp = JSON.parse(response['dpt_exam'][0].department_id);
+                   console.log(objJSON_dpt);
+                  
                    var input_dpt = "";
                    var input_dpt_list = "";
-                   $.each(objJSONdpt, function (i, v) {
-                       console.log(objJSONdpt);
-
-                       // input_dpt += '<input type="text" class="form- " name="conference[]" id="sample_one" style="width:100px" value="'+v.med_sbj_list+'">';
+                   $.each(dpt_hosp, function (i, v) {
+                       console.log(dpt_hosp);
 
 
-                           input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.med_sbj_list +'">'+ v.med_sbj_list +'</option>';
 
-   
-                               $.each(response['dpt'], function (i, b) {
-                                   console.log('dpt '+ b.dpt_name)
-                                   input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
-   
-                               });
-                                 
+                           input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.department +'">'+ v.department +'</option>';
+
+                            //    $.each(objJSON_dpt, function (i, b) {
+                            //     //    console.log('dpt '+ b.dpt_name)
+                            //        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+                            //    });
+                            // $(objJSON_dpt, function (e) {
+                            //     $.each(e, function (key, entry) {
+                            //       input_dpt += '<option value="'+ entry.dpt_name +'">'+ entry.dpt_name +'</option>';
+                            //     })
+                            //   });
+
+                            console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
+
+                            res = JSON.parse(objJSON_dpt);
+                            $.each(res, function (a, b) {
+                                input_dpt += '<option value="'+ b.id +'">'+ b.dpt_name +'</option>';
+                            });
+
                            input_dpt += '</select>';
-                           
-                       
 
                    }); //end of department json
                    $("#departmentfield").html(input_dpt);
 
+                   /* ********** DEPARTMENT subheading ************ */
+                   var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                   var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
+                   console.log(objJSON_dpt);
+                  
+                   var input_dpt_sub = "";
+                   var input_dpt_list = "";
+                   $.each(dpt_hosp, function (i, v) {
+                    //    console.log(dpt_hosp);
 
+                       input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
+
+                   }); //end of department subheading json
+                   $("#departmentsubheading").html(input_dpt_sub);
+
+                   /* ********** EQUIPMENT ************ */
+                   var dpt_hosp = JSON.parse(response['equip'][0].title);
+                   var eq_text = JSON.parse(response['equip'][0].text);
+                   console.log('equip '+ dpt_hosp);
+                  
+                   var eq = "";
+                   var input_dpt_list = "";
+                   $.each(dpt_hosp, function (a, b) {
+                    $.each(eq_text, function (c, d) {
+
+                       eq += '<div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"> <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">'+ b.equipment_subheading +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor">'+ d.equipment_text +'</textarea></div></div></div>';
+
+                    });
+
+                   }); //end of EQUIPMENT json
+                   $("#equipment").html(eq);
 
                    $("#hosp_service").val(response['data'][0].in_hospital_services);
                    $("#support_lang").val(response['data'][0].support_lang);
@@ -782,6 +829,89 @@ $.ajaxSetup({
                            
                    }); //end of Free medical Expenses json
                    $("#free_med_exp").html(input_free_med);
+
+
+                    /* ********** DEPARTMENT ************ */
+                    var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                    var dpt_hosp = JSON.parse(response['dpt_exam'][0].department_id);
+                    console.log(objJSON_dpt);
+                   
+                    var input_dpt = "";
+                    var input_dpt_list = "";
+                    $.each(dpt_hosp, function (i, v) {
+                        console.log(dpt_hosp);
+ 
+                            input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.department +'">'+ v.department +'</option>';
+ 
+                             console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
+ 
+                             res = JSON.parse(objJSON_dpt);
+                             $.each(res, function (a, b) {
+                                 input_dpt += '<option value="'+ b.id +'">'+ b.dpt_name +'</option>';
+                             });
+ 
+                            input_dpt += '</select>';
+ 
+                    }); //end of department json
+                    $("#departmentfield").html(input_dpt);
+ 
+                    /* ********** DEPARTMENT subheading ************ */
+                    var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                    var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
+                    console.log(objJSON_dpt);
+                   
+                    var input_dpt_sub = "";
+                    var input_dpt_list = "";
+                    $.each(dpt_hosp, function (i, v) {
+                     //    console.log(dpt_hosp);
+ 
+                        input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
+ 
+                    }); //end of department subheading json
+                    $("#departmentsubheading").html(input_dpt_sub);
+ 
+                    /* ********** EQUIPMENT ************ */
+                    var dpt_hosp = JSON.parse(response['equip'][0].title);
+                    var eq_text = JSON.parse(response['equip'][0].text);
+                    console.log('equip '+ dpt_hosp);
+                   
+                    var eq = "";
+                    var input_dpt_list = "";
+                    $.each(dpt_hosp, function (a, b) {
+                     $.each(eq_text, function (c, d) {
+ 
+                        eq += '<div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"> <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">'+ b.equipment_subheading +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor">'+ d.equipment_text +'</textarea></div></div></div>';
+ 
+                     });
+ 
+                    }); //end of EQUIPMENT json
+                    $("#equipment").html(eq);
+ 
+ 
+ 
+                    $("#hosp_service").val(response['data'][0].in_hospital_services);
+                    $("#support_lang").val(response['data'][0].support_lang);
+                    $("#shop_dining_room").val(response['data'][0].shop_dining_room);
+ 
+                    /* ********** Credit Card ************ */
+                   var objJSONdpt = JSON.parse(response['data'][0].credit_card_payment);
+                   var input = "";
+                   $.each(objJSONdpt, function (i, v) {
+                       console.log(objJSONdpt);
+ 
+                       check_box = v.card;
+                     //   $('#card').each(function(e){
+                         if(v.card == 1){
+                             $('#card1').attr('checked', 'checked');
+                             // alert('yeah');
+                         }else{
+                             $('#card2').attr('checked', 'checked');
+                         }
+                     // });
+                     $("#credit_card").val(v.card_text);
+                           
+                   }); //end of credit card json
+                    
                     
 
                 },

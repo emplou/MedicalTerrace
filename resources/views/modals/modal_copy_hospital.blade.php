@@ -300,12 +300,13 @@
     <div class="form-group">
         <label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label>
         <div class="cols-4">
-            <select class="form-control" name="department[]">
+            <!-- <select class="form-control" name="department[]">
                 <option value="0">選択してください</option>
                 @foreach($department as $dpt)
                 <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
                 @endforeach
-            </select>
+            </select> -->
+            <div id="departmentfield"></div>
         </div>
     </div>
 
@@ -313,7 +314,8 @@
     <div class="form-group">
         <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
         <div class="cols-6">          
-            <textarea class="form-control sm2" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+            <!-- <textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
+            <div id="departmentsubheading"></div>
         </div>
         <div class="cols-2">          
             <span id="rchars4">0</span>/46
@@ -469,27 +471,29 @@
     <div id="addnewdiv5">
     <div id="addanother5">
         <div class="form-group">
-            <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
-            <div class="cols-5">          
-                <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
-            </div>
-            <div class="cols-2">          
+            <!-- <label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label>
+            <div class="cols-5">           -->
+                <!-- <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
+
+                <div id="equipment"></div>
+            <!-- </div> -->
+            <!-- <div class="cols-2">          
                 <span id="rchars4">0</span>/46
             </div>
-        </div>
+        </div> -->
 
         <!-- Text of Subheading 4-->
-        <div class="form-group editor">
+        <!-- <div class="form-group editor">
             <label class="control-label cols-15"> </label>
-            <div class="cols-6">   
+            <div class="cols-6">    -->
                 <!-- add new textarea here -->
                 
-                <div id="addanother1">
+                <!-- <div id="addanother1">
                     <div class="cols-10">        
                         <textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck4"><span class="lnr lnr-plus-circle"></span></button></div> 
         </div>
 
@@ -774,9 +778,9 @@
     <div class="form-group">
         <div class="control-label cols-15">クレジットカードに<br>よる支払いの可否<br><span>Credit Card Payment</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="card1 one" name="card[]" value="1">
+            <input type="radio" id="card1" name="card[]" value="1">
             <label for="card1">可</label>
-            <input type="radio" id="card2 two" name="card[]" value="0">
+            <input type="radio" id="card2" name="card[]" value="0">
             <label for="card2">否</label>
         </div>
         <div class="cols-4">

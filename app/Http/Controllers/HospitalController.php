@@ -1051,11 +1051,16 @@ class HospitalController extends Controller
             $hosp_id = $hosp->hospital_id;
         }
 
-        $value['hosp_dpt'] = DB::table('hospital_departments')->get();
+        $value['hospdpt'] = DB::table('hospital_departments')->get();
         $value['dpt_exam'] = DB::table('hospital_departments_exam')->where('hospital_id','=',$hosp_id)->get();
         $value['hosp_feature'] = DB::table('hospital_feature')->where('hospital_id','=',$hosp_id)->get();
         $value['equip'] = DB::table('equipments')->where('hospital_id','=',$hosp_id)->get();
         $value['staff'] = DB::table('hospital_staff')->where('hospital_id','=',$hosp_id)->get();
+
+        $value['dpt_exam_new'] = DB::table('hospital_departments_exam')
+                                        // ->join('hospital_departments')
+                                        ->join('hospital_departments','hospital_departments.id',DB::Raw("CAST(hospital_departments_exam.department_id AS UNSIGNED)"))
+                                        ->where('hospital_id','=',$hosp_id)->get();
 
         $fetch = json_encode($value);
 
