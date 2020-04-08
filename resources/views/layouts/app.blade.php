@@ -572,10 +572,6 @@ $(document).ready(function() {
 	CKEDITOR.replace( 'staff_comment_hospital[0]' );
 	CKEDITOR.add 
 </script>
-<script>
-	CKEDITOR.replace( 'med_subj_text_subheading_hospital[0]' );
-	CKEDITOR.add 
-</script>
 
 <script>
 	// CKEDITOR.replace( 'feature_text_subheading_hospital[0]' ); 
