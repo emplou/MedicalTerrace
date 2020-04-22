@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
 @include('modals.modal_edit_hospital')
+@include('modals.modal_copy_add_hospital')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
-<br>
+<br><div style="margin-left:250px;">
     <table class="table" id="list"  width="100%">
         <thead>
             <th>イメージ</th>
@@ -25,10 +26,12 @@
                 <td></td>
                 <td>{!! $hosp->hospital_id !!}</td>
                 <td>{!! $hosp->created_at !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_hospital" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success" >コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite_hospital" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success copy_add_hospital"  hosp-id="{!! $hosp->id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
             </tr>
         @endforeach
         </tbody>
     </table>
+
+    </div>
 
 @endsection

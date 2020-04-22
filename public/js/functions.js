@@ -581,6 +581,7 @@ $.ajaxSetup({
                   console.log(response['data']); 
 
                   $("#edithospital").modal('show');
+                  $("#hospital_id").val(response['data'][0].hospital_id);
                   $("#url_gen").val(response['data'][0].url);
                   $("#medical_ins").val(response['data'][0].medical_ins);
                   $("#medical_ins_eng").val(response['data'][0].name_phonic);
@@ -617,7 +618,7 @@ $.ajaxSetup({
                     input_med += '</select></div>';
                           
                   }); //end of Medical Subject json
-                  $("#med_sbj_list_field").html(input_med);
+                //   $("#med_sbj_list_field").html(input_med);
 
                   $("#url_hosp").val(response['data'][0].url_hosp);
 
@@ -643,56 +644,61 @@ $.ajaxSetup({
                 // });
 
                    /* ********** DEPARTMENT ************ */
-                   var objJSON_dpt = JSON.stringify(response['hospdpt']);
-                   var dpt_hosp = JSON.parse(response['dpt_exam'][0].department_id);
-                   console.log(objJSON_dpt);
+                //    var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                //    var dpt_hosp = JSON.parse(response['dpt_exam'][0].department_id);
+                //    console.log(objJSON_dpt);
                   
-                   var input_dpt = "";
-                   var input_dpt_list = "";
-                   $.each(dpt_hosp, function (i, v) {
-                       console.log(dpt_hosp);
+                //    var input_dpt = "";
+                //    var input_dpt_list = "";
+                //    $.each(dpt_hosp, function (i, v) {
+                //        console.log(dpt_hosp);
 
 
 
-                           input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.department +'">'+ v.department +'</option>';
+                //            input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.department +'">'+ v.department +'</option>';
 
-                            //    $.each(objJSON_dpt, function (i, b) {
-                            //     //    console.log('dpt '+ b.dpt_name)
-                            //        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
-                            //    });
-                            // $(objJSON_dpt, function (e) {
-                            //     $.each(e, function (key, entry) {
-                            //       input_dpt += '<option value="'+ entry.dpt_name +'">'+ entry.dpt_name +'</option>';
-                            //     })
-                            //   });
+                //             //    $.each(objJSON_dpt, function (i, b) {
+                //             //     //    console.log('dpt '+ b.dpt_name)
+                //             //        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+                //             //    });
+                //             // $(objJSON_dpt, function (e) {
+                //             //     $.each(e, function (key, entry) {
+                //             //       input_dpt += '<option value="'+ entry.dpt_name +'">'+ entry.dpt_name +'</option>';
+                //             //     })
+                //             //   });
 
-                            console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
+                //             console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
 
-                            res = JSON.parse(objJSON_dpt);
-                            $.each(res, function (a, b) {
-                                input_dpt += '<option value="'+ b.id +'">'+ b.dpt_name +'</option>';
-                            });
+                //             res = JSON.parse(objJSON_dpt);
+                //             $.each(res, function (a, b) {
+                //                 input_dpt += '<option value="'+ b.id +'">'+ b.dpt_name +'</option>';
+                //             });
 
-                           input_dpt += '</select>';
+                //            input_dpt += '</select>';
 
-                   }); //end of department json
-                   $("#departmentfield").html(input_dpt);
+                //    }); //end of department json
+                //    $("#departmentfield").html(input_dpt);
 
-                   /* ********** DEPARTMENT subheading ************ */
-                   var objJSON_dpt = JSON.stringify(response['hospdpt']);
-                   var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
-                   console.log(objJSON_dpt);
+                //    /* ********** DEPARTMENT subheading ************ */
+                //    var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                //    var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
+                //    var twoo = JSON.parse(response['dpt_exam'][0].text_subheading);
+                //    console.log(objJSON_dpt);
                   
-                   var input_dpt_sub = "";
-                   var input_dpt_list = "";
-                   $.each(dpt_hosp, function (i, v) {
-                    //    console.log(dpt_hosp);
+                //    var input_dpt_sub = "";
+                //    var input_dpt_list = "";
+                //    var two = "";
+                //    $.each(dpt_hosp, function (i, v) {
+                //     //    console.log(dpt_hosp);
+                //     $.each(twoo, function (a, b) {
+                //        input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
+                      
+                //         input_dpt_sub += '<textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor">'+ b.department +'</textarea>';
+                //        });
 
-                       input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
-
-                   }); //end of department subheading json
-                   $("#departmentsubheading").html(input_dpt_sub);
-
+                //    }); //end of department subheading json
+                //    $("#departmentsubheading").html(input_dpt_sub);
+                // //    $("#two").html(two);
 
                    /* ********** FEATURE ************ */
                    var feat = JSON.parse(response['hosp_feature'][0].title);
@@ -703,7 +709,7 @@ $.ajaxSetup({
                    $.each(feat, function (a, b) {
                     $.each(feat_text, function (c, d) {
 
-                        fe += '<div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200">'+ b.feature_title +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div id="addanother1"><textarea class="form-control" name="feature_text_subheading_hospital[0]" id="txt_ckeditor">'+ d.feature_text +'</textarea></div></div>';
+                        fe += '<div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200">'+ b.feature_title +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div id="addanother1"><textarea class="form-control" name="feature_text_subheading_hospital[]" id="txt_ckeditor">'+ d.feature_text +'</textarea></div></div>';
 
                     });
 
@@ -721,13 +727,12 @@ $.ajaxSetup({
                    $.each(dpt_hosp, function (a, b) {
                     $.each(eq_text, function (c, d) {
 
-                       eq += '<div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"> <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">'+ b.equipment_subheading +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor">'+ d.equipment_text +'</textarea></div></div>';
-
+                       eq += '<div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"> <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">'+ b.equipment_subheading +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2[]" id="txt_ckeditor">'+ d.equipment_text +'</textarea></div></div>';
+                       
                     });
 
                    }); //end of EQUIPMENT json
                    $("#equipment").html(eq);
-
                    /* ********** STAFF ************ */
                    var staff = JSON.parse(response['staff'][0].title);
                    var staff_text = JSON.parse(response['staff'][0].text);
@@ -737,7 +742,7 @@ $.ajaxSetup({
                    $.each(staff, function (a, b) {
                     $.each(staff_text, function (c, d) {
 
-                        st += '<div class="form-group"><label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label><div class="cols-5"> <textarea class="form-control sm2" name="med_subj_subheading[]" rows="3" maxlength="200">'+ b.staff_subheading +'</textarea></div></div><div class="form-group editor"><label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control" name="staff_comment_hospital[0]" id="txt_ckeditor">'+ d.staff_comment +'</textarea></div></div>';
+                        st += '<div class="form-group"><label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label><div class="cols-5"> <textarea class="form-control sm2" name="staff_subheading[]" rows="3" maxlength="200">'+ b.staff_subheading +'</textarea></div></div><div class="form-group editor"><label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control" name="staff_comment_hospital[]" id="txt_ckeditor">'+ d.staff_comment +'</textarea></div></div>';
 
                     });
 
@@ -747,6 +752,8 @@ $.ajaxSetup({
                    $("#hosp_service").val(response['data'][0].in_hospital_services);
                    $("#support_lang").val(response['data'][0].support_lang);
                    $("#shop_dining_room").val(response['data'][0].shop_dining_room);
+
+                //    $('#aaa').val(response['data'][0].hospitalization);
 
                    /* ********** Credit Card ************ */
                   var objJSONdpt = JSON.parse(response['data'][0].credit_card_payment);
@@ -766,8 +773,6 @@ $.ajaxSetup({
                     $("#credit_card").val(v.card_text);
                           
                   }); //end of credit card json
-                   
-                    
 
                 },
                     error: function(response){
@@ -805,7 +810,8 @@ $.ajaxSetup({
 
                   console.log(response['data']); 
 
-                  $("#edithospital").modal('show');
+                  $("#copyaddhospital").modal('show');
+                  $("#hospital_id").val(response['data'][0].hospital_id);
                   $("#url_gen").val(response['data'][0].url);
                   $("#medical_ins").val(response['data'][0].medical_ins);
                   $("#medical_ins_eng").val(response['data'][0].name_phonic);
@@ -822,12 +828,8 @@ $.ajaxSetup({
                   $("#img_caption").val(response['data'][0].image_caption);
                   $("#img_alt").val(response['data'][0].image_alt);
                   $("#hosp_subheading").val(response['data'][0].hosp_subheading);
-                //   $("#textheading_lead").val('yeah');
-                //   $("#textheading_lead").val(response['data'][0].hosp_text_subheading);
                   CKEDITOR.instances['textheading_lead'].setData(response['data'][0].hosp_text_subheading);
                   // division dropdown
-                //   input_careertwo += '<select id="aca_year_from" class="form- " name="c_we_year_to[]" style="width:100px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option>';
-                //   $("#division").val(response['data'][0].division);
 
                   /* ********** division ************ */
                   input_ins = '<select class="form-control" name="division" style="width:500px"><option value="'+ response['data'][0].division +'">'+ response['data'][0].division +'</option><option value="division one">division one</option><option value="division two">division two</option><option value="division three">division three</option><option value="division four">division four</option></select>';
@@ -846,7 +848,7 @@ $.ajaxSetup({
                     input_med += '</select></div>';
                           
                   }); //end of Medical Subject json
-                  $("#med_sbj_list_field").html(input_med);
+                //   $("#med_sbj_list_field").html(input_med);
 
                   $("#url_hosp").val(response['data'][0].url_hosp);
 
@@ -864,47 +866,71 @@ $.ajaxSetup({
                    }); //end of Free medical Expenses json
                    $("#free_med_exp").html(input_free_med);
 
+                //    var dpt = $.parseJSON(response['hospdpt'][0].id);
+                // console.log('department list '+ JSON.stringify(response['hospdpt'])); 
+                //    $.each(dpt, function (i, v) {
+                //         console.log('department list '+ v.dpt_name);
 
-                    /* ********** DEPARTMENT ************ */
-                    var objJSON_dpt = JSON.stringify(response['hospdpt']);
-                    var dpt_hosp = JSON.parse(response['dpt_exam'][0].department_id);
-                    console.log(objJSON_dpt);
-                   
-                    var input_dpt = "";
-                    var input_dpt_list = "";
-                    $.each(dpt_hosp, function (i, v) {
-                        console.log(dpt_hosp);
- 
-                            input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.department +'">'+ v.department +'</option>';
- 
-                             console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
- 
-                             res = JSON.parse(objJSON_dpt);
-                             $.each(res, function (a, b) {
-                                 input_dpt += '<option value="'+ b.id +'">'+ b.dpt_name +'</option>';
-                             });
- 
-                            input_dpt += '</select>';
- 
-                    }); //end of department json
-                    $("#departmentfield").html(input_dpt);
- 
-                    /* ********** DEPARTMENT subheading ************ */
-                    var objJSON_dpt = JSON.stringify(response['hospdpt']);
-                    var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
-                    console.log(objJSON_dpt);
-                   
-                    var input_dpt_sub = "";
-                    var input_dpt_list = "";
-                    $.each(dpt_hosp, function (i, v) {
-                     //    console.log(dpt_hosp);
- 
-                        input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
- 
-                    }); //end of department subheading json
-                    $("#departmentsubheading").html(input_dpt_sub);
- 
-                    /* ********** FEATURE ************ */
+                // });
+
+                   /* ********** DEPARTMENT ************ */
+                //    var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                //    var dpt_hosp = JSON.parse(response['dpt_exam'][0].department_id);
+                //    console.log(objJSON_dpt);
+                  
+                //    var input_dpt = "";
+                //    var input_dpt_list = "";
+                //    $.each(dpt_hosp, function (i, v) {
+                //        console.log(dpt_hosp);
+
+
+
+                //            input_dpt += '<select class="form-" name="department[]" style="width:150px"><option value="'+ v.department +'">'+ v.department +'</option>';
+
+                //             //    $.each(objJSON_dpt, function (i, b) {
+                //             //     //    console.log('dpt '+ b.dpt_name)
+                //             //        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+                //             //    });
+                //             // $(objJSON_dpt, function (e) {
+                //             //     $.each(e, function (key, entry) {
+                //             //       input_dpt += '<option value="'+ entry.dpt_name +'">'+ entry.dpt_name +'</option>';
+                //             //     })
+                //             //   });
+
+                //             console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
+
+                //             res = JSON.parse(objJSON_dpt);
+                //             $.each(res, function (a, b) {
+                //                 input_dpt += '<option value="'+ b.id +'">'+ b.dpt_name +'</option>';
+                //             });
+
+                //            input_dpt += '</select>';
+
+                //    }); //end of department json
+                //    $("#departmentfield").html(input_dpt);
+
+                //    /* ********** DEPARTMENT subheading ************ */
+                //    var objJSON_dpt = JSON.stringify(response['hospdpt']);
+                //    var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
+                //    var twoo = JSON.parse(response['dpt_exam'][0].text_subheading);
+                //    console.log(objJSON_dpt);
+                  
+                //    var input_dpt_sub = "";
+                //    var input_dpt_list = "";
+                //    var two = "";
+                //    $.each(dpt_hosp, function (i, v) {
+                //     //    console.log(dpt_hosp);
+                //     $.each(twoo, function (a, b) {
+                //        input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
+                      
+                //         input_dpt_sub += '<textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor">'+ b.department +'</textarea>';
+                //        });
+
+                //    }); //end of department subheading json
+                //    $("#departmentsubheading").html(input_dpt_sub);
+                // //    $("#two").html(two);
+
+                   /* ********** FEATURE ************ */
                    var feat = JSON.parse(response['hosp_feature'][0].title);
                    var feat_text = JSON.parse(response['hosp_feature'][0].text);
                    console.log('feat '+ feat);
@@ -913,7 +939,7 @@ $.ajaxSetup({
                    $.each(feat, function (a, b) {
                     $.each(feat_text, function (c, d) {
 
-                        fe += '<div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200">'+ b.feature_title +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div id="addanother1"><textarea class="form-control" name="feature_text_subheading_hospital[0]" id="txt_ckeditor">'+ d.feature_text +'</textarea></div></div>';
+                        fe += '<div class="form-group"><label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label><div class="cols-5"><textarea class="form-control sm2" name="feature_title[]" rows="3" maxlength="200">'+ b.feature_title +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div><div class="form-group editor"><label class="control-label cols-15">本文<br><span>Text of Subheading</span></label><div class="cols-6"><div id="addanother1"><textarea class="form-control" name="feature_text_subheading_hospital[]" id="txt_ckeditor">'+ d.feature_text +'</textarea></div></div>';
 
                     });
 
@@ -931,13 +957,12 @@ $.ajaxSetup({
                    $.each(dpt_hosp, function (a, b) {
                     $.each(eq_text, function (c, d) {
 
-                       eq += '<div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"> <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">'+ b.equipment_subheading +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2[0]" id="txt_ckeditor">'+ d.equipment_text +'</textarea></div></div>';
-
+                       eq += '<div class="form-group"><label class="control-label cols-15"> 設備・機器<br><span>Equipment</span></label><div class="cols-5"> <textarea class="form-control sm2" name="text_equipment_subheading[]" rows="3" maxlength="200">'+ b.equipment_subheading +'</textarea></div><div class="cols-2"><span id="rchars4">0</span>/46</div></div><div class="form-group editor"><label class="control-label cols-15"> </label><div class="cols-6"><div id="addanother1"><div class="cols-10"><textarea class="form-control" name="equipment_subheading2[]" id="txt_ckeditor">'+ d.equipment_text +'</textarea></div></div>';
+                       
                     });
 
                    }); //end of EQUIPMENT json
                    $("#equipment").html(eq);
-
                    /* ********** STAFF ************ */
                    var staff = JSON.parse(response['staff'][0].title);
                    var staff_text = JSON.parse(response['staff'][0].text);
@@ -947,7 +972,7 @@ $.ajaxSetup({
                    $.each(staff, function (a, b) {
                     $.each(staff_text, function (c, d) {
 
-                        st += '<div class="form-group"><label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label><div class="cols-5"> <textarea class="form-control sm2" name="med_subj_subheading[]" rows="3" maxlength="200">'+ b.staff_subheading +'</textarea></div></div><div class="form-group editor"><label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control" name="staff_comment_hospital[0]" id="txt_ckeditor">'+ d.staff_comment +'</textarea></div></div>';
+                        st += '<div class="form-group"><label class="control-label cols-15"> スタッフリード<br><span>Staff subheading</span></label><div class="cols-5"> <textarea class="form-control sm2" name="staff_subheading[]" rows="3" maxlength="200">'+ b.staff_subheading +'</textarea></div></div><div class="form-group editor"><label class="control-label cols-15"> スタッフコメント<br><span>Staff Comment</span></label><div class="cols-6"><div class="cols-10"><textarea class="form-control" name="staff_comment_hospital[]" id="txt_ckeditor">'+ d.staff_comment +'</textarea></div></div>';
 
                     });
 
@@ -957,6 +982,8 @@ $.ajaxSetup({
                    $("#hosp_service").val(response['data'][0].in_hospital_services);
                    $("#support_lang").val(response['data'][0].support_lang);
                    $("#shop_dining_room").val(response['data'][0].shop_dining_room);
+
+                //    $('#aaa').val(response['data'][0].hospitalization);
 
                    /* ********** Credit Card ************ */
                   var objJSONdpt = JSON.parse(response['data'][0].credit_card_payment);
@@ -976,7 +1003,6 @@ $.ajaxSetup({
                     $("#credit_card").val(v.card_text);
                           
                   }); //end of credit card json
-                    
 
                 },
                     error: function(response){

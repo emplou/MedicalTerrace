@@ -701,6 +701,27 @@ class HospitalController extends Controller
         $department_json = json_encode($departmentresp);
 
 
+        //image
+        $dptimage                             = $request->file('dpt_subject_image');
+        $dptimage_det                             = $details('dpt_subject_image');
+        $departmentimage = array();
+        foreach($departmentimage as $key => $dptimage)
+        {
+            $destinationPath = '';
+            $filenamedpt        = '';
+            // $file_dpt            = $request->file('dpt_subject_image');
+    
+            $destinationPath = public_path().'/department_photos';
+            $filenamedpt        = str_random(6) . '_' . $dptimage->getClientOriginalName();
+            $uploadSuccess   = $dptimage->move($destinationPath, $filenamedpt);
+
+            $departmentimage[$key]['department']                         = $filenamedpt;
+        }
+        $departmentimage_json = json_encode($departmentimage);
+        //end of image
+
+
+
         $ex_med_subj_subheading                 = $details['ex_med_subj_subheading']; 
         $ex_med_subj_subheadingresp = array();
         foreach($ex_med_subj_subheading as $key => $ex_med_subj)
@@ -777,7 +798,7 @@ class HospitalController extends Controller
         $dpt_exam->department_id            = $department_json;
         $dpt_exam->subheading               = $ex_med_subj_subheading_json;
         $dpt_exam->text_subheading          = $med_subj_text_subheading_hospital_json;
-        $dpt_exam->image                    = '/department_photos/'.$filenamedpt;
+        $dpt_exam->image                    = '/department_photos/'.$departmentimage_json;
         $dpt_exam->from                     = $from_json;
         $dpt_exam->to                       = $to_json;
         $dpt_exam->start                    = $start_json;
@@ -912,135 +933,285 @@ class HospitalController extends Controller
 
         $details = Input::all();
 
+        // dd($details);
+
+        //hospitalization json
+        $hospitalization        = $details['hospitalization']; 
+        $parking_text           = $details['hospitalization_text']; 
+        $hospresp = array();
+        foreach($hospitalization as $key => $hosp)
+        {
+        $hospresp[$key]['hosp']            = $hosp;
+        $hospresp[$key]['hosp_text']       = $parking_text[$key];
+        }
+        $hosp_json = json_encode($hospresp);
+
+        //free medical expenses json
+        $med_item                   = $details['med_item']; 
+        $med_cost                   = $details['med_cost']; 
+        $free_med_exp               = $details['free_med_exp'];
+        $medresp = array();
+        foreach($med_item as $key => $med)
+        {
+        $medresp[$key]['med_item']              = $med;
+        $medresp[$key]['med_cost']              = $med_cost[$key];
+        $medresp[$key]['free_med_exp']          = $free_med_exp[$key];
+        }
+        $med_json = json_encode($medresp);
+
+        //Number of beds json
+        $bed_type               = $details['bed_type']; 
+        $no_of_beds             = $details['no_of_beds']; 
+        $bedresp = array();
+        foreach($bed_type as $key => $bed)
+        {
+        $bedresp[$key]['bed_type']              = $bed;
+        $bedresp[$key]['no_of_beds']            = $no_of_beds[$key];
+        }
+        $bed_json = json_encode($bedresp);
+
+        //visit time json
+
+        // $a = $details['visit'];
+        // $vis = implode(',',$a);
+
+        $visit_from          = $details['visit_from']; 
+        $visit_to            = $details['visit_to']; 
+        // $visit               = $vis;
+        $visitresp = array();
+        foreach($visit_from as $key => $visit_hosp)
+        {
+        $visitresp[$key]['visit_from']                = $visit_hosp;
+        $visitresp[$key]['visit_to']                  = $med_cost[$key];
+        // $visitresp[$key]['visit_days']                = $visit[$key];
+        }
+        $visit_json = json_encode($visitresp);
+
+        //Credit card json
+        $card                   = $details['card']; 
+        $card_text              = $details['credit_card']; 
+        $cardresp = array();
+        foreach($card as $key => $c)
+        {
+        $cardresp[$key]['card']                  = $c;
+        $cardresp[$key]['card_text']             = $card_text[$key];
+        }
+        $bed_json = json_encode($cardresp);
+
+        $park                   = $details['p_radio']; 
+        $parking_text              = $details['parking_text']; 
+        $parking_units             = $details['parking_units'];
+        $parking = array();
+        foreach($park as $key => $p)
+        {
+        $parking[$key]['p_radio']                  = $p;
+        $parking[$key]['parking_text']             = $parking_text[$key];
+        $parking[$key]['parking_units']            = $parking_units[$key];
+        }
+        $jsonparking = json_encode($parking);
+
         $hospital = DB::table('dv_hospital')
-                            ->where('hospital_id','=', $details['hospitalID'])
+                            ->where('hospital_id','=', $details['hospital_id'])
                             ->update([
                                         'url'          => $details['url_gen'],
-                                        'name'         => $details['medical_ins'],
+                                        'medical_ins'  => $details['medical_ins'],
                                         'name_phonic'  => $details['medical_ins_eng'],
                                         'common_name'  => $details['common_name'],
                                         'postal_code'  => $details['postal_code'],
                                         'address'      => $details['address'],
                                         'address_eng'  => $details['address_english'],
-                                        'parking'      => $details['p_radio'],
-                                        'img_caption'  => $details['img_caption'],
-                                        'img_alt'      => $details['img_alt'],
+                                        'parking'      => $jsonparking,
+                                        'image_caption'=> $details['img_caption'],
+                                        'image_alt'    => $details['img_alt'],
                                         'phone_no'     => $details['phone_no'].$details['phone_no_one'].$details['phone_no_two'],
                                         'fax'          => $details['fax'].$details['fax_one'].$details['fax_two'],
                                         'email'        => $details['email'],
                                         'url_hosp'                  => $details['url_hosp'], //new
-                                        'in_hospital_pres'          => $details['in_hospital_pres'],
-                                        'free_med_exp'              => $details['free_med_exp'],
-                                        'hospitalization'           => $details['hospitalization'],
-                                        'no_of_beds'                => $details['no_of_beds'],
-                                        'possible_date_of_visit'    => $details['possible_date_of_visit'],
-                                        'in_hospital_services'      => $details['in_hospital_services'],
+                                        'in_hospital_pres'          => $details['pres'],
+                                        'free_med_exp'              => $med_json,
+                                        'hospitalization'           => $hosp_json,
+                                        'no_of_beds'                => $bed_json,
+                                        'possible_date_of_visit'    => $visit_json,
+                                        'in_hospital_services'      => $details['hosp_service'],
                                         'support_lang'              => $details['support_lang'],
                                         'shop_dining_room'          => $details['shop_dining_room'],
-                                        'credit_card_payment'       => $details['credit_card_payment'],
-                                        'tracking_status'           => $details['tracking_status'],
+                                        'credit_card_payment'       => $bed_json,
+                                        'tracking_status'           => '1',
                                         'author'                    => '1',
-
                                         
                                     ]);
 
+            //                         $department                             = $details['department'];
+            //                         $departmentresp = array();
+            //                         foreach($department as $key => $depart)
+            //                         {
+            //                         $departmentresp[$key]['department']                         = $depart;
+            //                         }
+            //                         $department_json = json_encode($departmentresp);
+                            
+                            
+            //                         $ex_med_subj_subheading                 = $details['ex_med_subj_subheading']; 
+            //                         $ex_med_subj_subheadingresp = array();
+            //                         foreach($ex_med_subj_subheading as $key => $ex_med_subj)
+            //                         {
+            //                         $ex_med_subj_subheadingresp[$key]['department']                         = $ex_med_subj;
+            //                         }
+            //                         $ex_med_subj_subheading_json = json_encode($ex_med_subj_subheadingresp);
+                            
+                            
+            //                         $med_subj_text_subheading_hospital      = $details['med_subj_text_subheading_hospital'];
+            //                         $med_subj_text_subheading_hospitalresp = array();
+            //                         foreach($med_subj_text_subheading_hospital as $key => $med_subj_text_subheading)
+            //                         {
+            //                         $med_subj_text_subheading_hospitalresp[$key]['department']                         = $med_subj_text_subheading;
+            //                         }
+            //                         $med_subj_text_subheading_hospital_json = json_encode($med_subj_text_subheading_hospitalresp);
+                            
+                            
+                            
+            //                         $from                                   = $details['from'];
+            //                         $fromresp = array();
+            //                         foreach($from as $key => $f)
+            //                         {
+            //                         $fromresp[$key]['from']                         = $f;
+            //                         }
+            //                         $from_json = json_encode($fromresp);
+                            
+                            
+            //                         $to                                     = $details['to'];
+            //                         $toresp = array();
+            //                         foreach($from as $key => $t)
+            //                         {
+            //                         $toresp[$key]['to']                         = $t;
+            //                         }
+            //                         $to_json = json_encode($toresp);
+                            
+                            
+            //                         $start                                  = $details['start'];
+            //                         $startresp = array();
+            //                         foreach($start as $key => $s)
+            //                         {
+            //                         $startresp[$key]['to']                         = $s;
+            //                         }
+            //                         $start_json = json_encode($startresp);
+                            
+                            
+            //                         $weekdays                               = $details['weekdays'];
+            //                         $weekdaysresp = array();
+            //                         foreach($weekdays as $key => $w)
+            //                         {
+            //                         $weekdaysresp[$key]['to']                         = $w;
+            //                         }
+            //                         $weekdays_json = json_encode($startresp);
+                            
+            //                         $special_hours                          = $details['special_hours'];
+            //                         $spfrom                                 = $details['spfrom'];
+            //                         $spto                                   = $details['spto'];
+            //                         $spstart                                = $details['spstart'];
+            //                         $spweekdays                             = $details['spweekdays'];
+                            
+            //                         $specialresp = array();
+            //                         foreach($special_hours as $key => $spe)
+            //                         {
+            //                         $specialresp[$key]['special_hours']                     = $spe;
+            //                         $specialresp[$key]['spfrom']                            = $spfrom[$key];
+            //                         $specialresp[$key]['spto']                              = $spto[$key];
+            //                         $specialresp[$key]['spstart']                           = $spstart[$key];
+            //                         $specialresp[$key]['spweekdays']                        = $spweekdays[$key];
+            //                         }
+            //                         $special_json = json_encode($specialresp);
 
-                                    $department                             = $details['department'];
-                                    $departmentresp = array();
-                                    foreach($department as $key => $depart)
-                                    {
-                                    $departmentresp[$key]['department']                         = $depart;
-                                    }
-                                    $department_json = json_encode($departmentresp);
-                            
-                            
-                                    $ex_med_subj_subheading                 = $details['ex_med_subj_subheading']; 
-                                    $ex_med_subj_subheadingresp = array();
-                                    foreach($ex_med_subj_subheading as $key => $ex_med_subj)
-                                    {
-                                    $ex_med_subj_subheadingresp[$key]['department']                         = $ex_med_subj;
-                                    }
-                                    $ex_med_subj_subheading_json = json_encode($ex_med_subj_subheadingresp);
-                            
-                            
-                                    $med_subj_text_subheading_hospital      = $details['med_subj_text_subheading_hospital'];
-                                    $med_subj_text_subheading_hospitalresp = array();
-                                    foreach($med_subj_text_subheading_hospital as $key => $med_subj_text_subheading)
-                                    {
-                                    $med_subj_text_subheading_hospitalresp[$key]['department']                         = $med_subj_text_subheading;
-                                    }
-                                    $med_subj_text_subheading_hospital_json = json_encode($med_subj_text_subheading_hospitalresp);
-                            
-                            
-                            
-                                    $from                                   = $details['from'];
-                                    $fromresp = array();
-                                    foreach($from as $key => $f)
-                                    {
-                                    $fromresp[$key]['from']                         = $f;
-                                    }
-                                    $from_json = json_encode($fromresp);
-                            
-                            
-                                    $to                                     = $details['to'];
-                                    $toresp = array();
-                                    foreach($from as $key => $t)
-                                    {
-                                    $toresp[$key]['to']                         = $t;
-                                    }
-                                    $to_json = json_encode($toresp);
-                            
-                            
-                                    $start                                  = $details['start'];
-                                    $startresp = array();
-                                    foreach($start as $key => $s)
-                                    {
-                                    $startresp[$key]['to']                         = $s;
-                                    }
-                                    $start_json = json_encode($startresp);
-                            
-                            
-                                    $weekdays                               = $details['weekdays'];
-                                    $weekdaysresp = array();
-                                    foreach($weekdays as $key => $w)
-                                    {
-                                    $weekdaysresp[$key]['to']                         = $w;
-                                    }
-                                    $weekdays_json = json_encode($startresp);
-                            
-                                    $special_hours                          = $details['special_hours'];
-                                    $spfrom                                 = $details['spfrom'];
-                                    $spto                                   = $details['spto'];
-                                    $spstart                                = $details['spstart'];
-                                    $spweekdays                             = $details['spweekdays'];
-                            
-                                    $specialresp = array();
-                                    foreach($special_hours as $key => $spe)
-                                    {
-                                    $specialresp[$key]['special_hours']                     = $spe;
-                                    $specialresp[$key]['spfrom']                            = $spfrom[$key];
-                                    $specialresp[$key]['spto']                              = $spto[$key];
-                                    $specialresp[$key]['spstart']                           = $spstart[$key];
-                                    $specialresp[$key]['spweekdays']                        = $spweekdays[$key];
-                                    }
-                                    $special_json = json_encode($specialresp);
-
-            $department_exam = DB::table('hospital_departments_exam')
-                                    ->where('hospital_id','=', $details['hospitalID'])
-                                    ->update([
-                                                'subheading'                => $department_json,
-                                                'text_subheading'           => $ex_med_subj_subheading_json,
-                                                'image'                     => $details['image'],
-                                                'from'                      => $from_json,
-                                                'to'                        => $to_json,
-                                                'start'                     => $start_json,
-                                                'weekdays'                  => $weekdays_json,
-                                                'special_exam'              => $special_json
+            // $department_exam = DB::table('hospital_departments_exam')
+            //                         ->where('hospital_id','=', $details['hospitalID'])
+            //                         ->update([
+            //                                     'subheading'                => $department_json,
+            //                                     'text_subheading'           => $ex_med_subj_subheading_json,
+            //                                     'image'                     => $details['image'],
+            //                                     'from'                      => $from_json,
+            //                                     'to'                        => $to_json,
+            //                                     'start'                     => $start_json,
+            //                                     'weekdays'                  => $weekdays_json,
+            //                                     'special_exam'              => $special_json
         
                                                 
+            //                                 ]);
+
+            $equipment = $details['text_equipment_subheading'];
+            $equipmentresp = array();
+            foreach($equipment as $key => $equip)
+            {
+            $equipmentresp[$key]['equipment_subheading']                     = $equip;
+            }
+            $equipment_json = json_encode($equipmentresp);
+    
+    
+            $equipment_text = $details['equipment_subheading2'];
+            $equipment_textresp = array();
+            foreach($equipment_text as $key => $equip_text)
+            {
+            $equipment_textresp[$key]['equipment_text']                     = $equip_text;
+            }
+            $equip_text_json = json_encode($equipment_textresp);
+    
+            $equipments = DB::table('equipments')
+                            ->where('hospital_id','=', $details['hospital_id'])
+                            ->update([
+                                        'title'             => $equipment_json,
+                                        'text'              => $equip_text_json,
+
+                                    ]);
+
+                                    $feature_title = $details['feature_title'];
+                                    $featuretitleresp = array();
+                                    foreach($feature_title as $key => $title)
+                                    {
+                                    $featuretitleresp[$key]['feature_title']                     = $title;
+                                    }
+                                    $feature_title_json = json_encode($featuretitleresp);
+                            
+                            
+                                    $feature_text = $details['feature_text_subheading_hospital'];
+                                    $feature_textresp = array();
+                                    foreach($feature_text as $key => $feat_text)
+                                    {
+                                    $feature_textresp[$key]['feature_text']                     = $feat_text;
+                                    }
+                                    $feature_text_json = json_encode($feature_textresp);
+
+                                    $hospital_feature = DB::table('hospital_feature')
+                                    ->where('hospital_id','=', $details['hospital_id'])
+                                    ->update([
+                                                'title'             => $feature_title_json,
+                                                'text'              => $feature_text_json,
+
                                             ]);
 
-        return view('admin.edit_hospital');
+                                            $staff_subheading = $details['staff_subheading'];
+                                            $staff_subheadingresp = array();
+                                            foreach($staff_subheading as $key => $staff)
+                                            {
+                                            $staff_subheadingresp[$key]['staff_subheading']                     = $staff;
+                                            }
+                                            $staff_subheading_json = json_encode($staff_subheadingresp);
+                                    
+                                    
+                                            $staff_comment = $details['staff_comment_hospital'];
+                                            $staff_commentresp = array();
+                                            foreach($staff_comment as $key => $staff_com)
+                                            {
+                                            $staff_commentresp[$key]['staff_comment']                     = $staff_com;
+                                            }
+                                            $staff_comment_json = json_encode($staff_commentresp);
+
+                                            $hospital_staff = DB::table('hospital_staff')
+                                            ->where('hospital_id','=', $details['hospital_id'])
+                                            ->update([
+                                                        'title'             => $staff_subheading_json,
+                                                        'text'              => $staff_comment_json,
+
+                                                    ]);
+
+        return redirect('/hospital_list');
     }
 
     public function modal_edit_hospital($id){

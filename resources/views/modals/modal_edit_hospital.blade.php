@@ -43,6 +43,8 @@
             <li>公開中<br><span>Posted Complete</span></li>
         </ul>
     </div>
+    {!! Form::open(['url' => '/save_edit_hospital', 'method' => 'post', 'files' => true]) !!}
+    <input type="hidden" id="hospital_id" name="hospital_id">
 <div class="form-pads">
     <div class="form-group">
         <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
@@ -107,10 +109,10 @@
     <div class="form-group">
         <label class="control-label cols-15">住所<br><span>Branch Address</span></label>
         <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="branch_name[]">
+            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="branch_name">
         </div>
         <div class="cols-4">
-            <input id="autocomplete_search" name="branch_address[]" type="text" class="form-control" placeholder="Search" />
+            <input id="autocomplete_search" name="branch_address" type="text" class="form-control" placeholder="Search" />
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -120,10 +122,10 @@
     <div class="form-group">
         <label class="control-label cols-15">住所英語表記<br><span>Branch Address English</span></label>
         <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="branch_name_eng[]">
+            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="branch_name_eng">
         </div>
         <div class="cols-4">
-            <input id="autocomplete_search" name="branch_address_eng[]" type="text" class="form-control" placeholder="Search" />
+            <input id="autocomplete_search" name="branch_address_eng" type="text" class="form-control" placeholder="Search" />
             <input type="hidden" name="lat">
             <input type="hidden" name="long">
         </div> 
@@ -134,15 +136,15 @@
     <hr />
 
     <!-- Clinic Appearance image -->
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label class="control-label cols-15">医院外観画像<br><span>Clinic Appearance image </span></label>
         <div class="cols-5">  
             <div class="upload-image">        
-                <input type="file" name="clinic_image" id="file-7" class="inputfile"  required>
+                <input type="file" name="clinic_image" id="file-7" class="inputfile">
                 <label for="file-7"><span class="archive-name">ドラッグ&ドロップ、または参照で画像を追加してください</span><span class="btn-inputfile"> 参照...</span></label>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Image Caption -->
     <div class="form-group">
@@ -259,192 +261,9 @@
 
     <hr />
 
-    <!-- Division -->
-    <div class="form-group">
-        <label class="control-label cols-15">区分<br><span>Division</span></label>
-        <div class="cols-4">
-            <div id="input_division"></div>
-        </div>
-    </div>
-
-    <!-- Tag(department) -->
-    <div class="form-group">
-        <label class="control-label cols-15">タグ<br> 診療科目一覧<br><span>Medical Subject List</span></label>
-        <div class="cols-7"> 
-                <div id="med_sbj_list_field"></div>
-                <div class="cols-1 relative">
-                    <button type="button" class="btn btn-success addmed1"><span class="lnr lnr-plus-circle"></span></button>
-                </div>
-
-                 <div id="mednewdiv2"></div>
-                 
-                <div id="addanothermed2">
-                    <div class="cols-3">
-                        <input type="text" class="form- " placeholder="選択項目にない場合に入力" name="med_sbj_list_add[]">
-                    </div>
-                    <div class="cols-3">
-                        <input type="text" class="form- " name="med_sbj_list_add[]">
-                    </div>
-                    <div class="cols-3">
-                        <input type="text" class="form- " name="med_sbj_list_add[]">
-                    </div>
-                </div>
-                <div class="cols-1 relative">
-                    <button type="button" class="btn btn-success addmed2"><span class="lnr lnr-plus-circle"></span></button>
-                </div>
-        </div>
-    </div>
-
-    <div id="addanother4">
-    <!-- Medical Subject -->
-    <div class="form-group">
-        <label class="control-label cols-15">診療科目<br><span>Medical Subject</span></label>
-        <div class="cols-4">
-            <!-- <select class="form-control" name="department[]">
-                <option value="0">選択してください</option>
-                @foreach($department as $dpt)
-                <option value="{!! $dpt->dpt_name !!}">{!! $dpt->dpt_name !!}</option>
-                @endforeach
-            </select> -->
-            <div id="departmentfield"></div>
-        </div>
-    </div>
-
-    <!-- Subheading 2-->
-    <div class="form-group">
-        <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
-        <div class="cols-6">          
-            <!-- <textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea> -->
-            <div id="departmentsubheading"></div>
-        </div>
-        <div class="cols-2">          
-            <span id="rchars4">0</span>/46
-        </div>
-    </div>
-
-
-    <!-- Text of Subheading 2-->
-    <div class="form-group editor">
-        <label class="control-label cols-15">本文<br><span>Text of Subheading</span></label>
-        <div class="cols-6">   
-            <!-- add new textarea here -->
-            
-            <div id="addanother1">
-                <div class="cols-10">        
-                    <textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor" placeholder="メイン写真の直下に入るリードの部分です。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-
-     <!-- Buttons -->
-    <div class="form-group">
-        <div class="cols-15"></div>
-        <div class="cols-55">
-            <div class="upload-image blue">        
-                <input type="file" name="dpt_subject_image" id="file-8" class="inputfile2"  required>
-                <label for="file-8"><span class="archive-name2"></span><span class="btn-inputfile"> </span></label>
-            </div>
-            <!-- <div class="upload-btn-wrapper">
-                <button class="bton"></button>
-                <input type="file" name="dpt_subject_image" />
-            </div> -->
-            
-        </div>
-    </div>
-
-   
-    <div class="form-group check fix">
-        <div class="control-label cols-15">
-        診療科目別<br>外来受付時間<br><span>Examination date</span>
-        </div>
-        <div class="cols-8">
-            <input type="text" name="from[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start[]" data-toggle="timepicker" class="form-" style="width:100px"> ~
-            月 <input type="checkbox" id="tag_season1" name="weekdays[]"><label for="tag_season1"></label>
-            火 <input type="checkbox" id="tag_season2" name="weekdays[]"><label for="tag_season2"></label>
-            水 <input type="checkbox" id="tag_season3" name="weekdays[]"><label for="tag_season3"></label>
-            木 <input type="checkbox" id="tag_season4" name="weekdays[]"><label for="tag_season4"></label>
-            金 <input type="checkbox" id="tag_season5" name="weekdays[]"><label for="tag_season5"></label>
-            土 <input type="checkbox" id="tag_season6" name="weekdays[]"><label for="tag_season6"></label>
-            日 <input type="checkbox" id="tag_season7" name="weekdays[]"><label for="tag_season7"></label>
-            祝 <input type="checkbox" id="tag_season8" name="weekdays[]"><label for="tag_season8"></label>
-        </div>
-        <div class="cols-8">
-            <input type="text" name="from[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start[]" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
-            月 <input type="checkbox" id="tag_season9" name="weekdays[]"><label for="tag_season9"></label>
-            火 <input type="checkbox" id="tag_season10" name="weekdays[]"><label for="tag_season10"></label>
-            水 <input type="checkbox" id="tag_season11" name="weekdays[]"><label for="tag_season11"></label>
-            木 <input type="checkbox" id="tag_season12" name="weekdays[]"><label for="tag_season12"></label>
-            金 <input type="checkbox" id="tag_season13" name="weekdays[]"><label for="tag_season13"></label>
-            土 <input type="checkbox" id="tag_season14" name="weekdays[]"><label for="tag_season14"></label>
-            日 <input type="checkbox" id="tag_season15"name="weekdays[]"><label for="tag_season15"></label>
-            祝 <input type="checkbox" id="tag_season16"name="weekdays[]"><label for="tag_season16"></label>
-            </div>
-            <div class="cols-15"></div>
-            <div class="cols-8">
-                
-            <div class="cols-6"><input type="text" class="form- " name="special_hours[]"> </div>
-            <div class="cols-3">    
-            ※受診内容により日・時間が異なる場合に記載
-            </div>
-                <input type="text" name="spfrom[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-                <input type="text" name="spto[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-                診療 <input type="text" name="spstart[]" data-toggle="timepicker" class="form-" style="width:100px"> ~
-                月 <input type="checkbox" id="tag_season17" name="spweekdays[]"><label for="tag_season17"></label>
-                火 <input type="checkbox" id="tag_season18" name="spweekdays[]"><label for="tag_season18"></label>
-                水 <input type="checkbox" id="tag_season19" name="spweekdays[]"><label for="tag_season19"></label>
-                木 <input type="checkbox" id="tag_season20" name="spweekdays[]"><label for="tag_season20"></label>
-                金 <input type="checkbox" id="tag_season21" name="spweekdays[]"><label for="tag_season21"></label>
-                土 <input type="checkbox" id="tag_season22" name="spweekdays[]"><label for="tag_season22"></label>
-                日 <input type="checkbox" id="tag_season23" name="spweekdays[]"><label for="tag_season23"></label>
-                祝 <input type="checkbox" id="tag_season24" name="spweekdays[]"><label for="tag_season24"></label>
-        </div>
-    </div>
-
-     <!-- Buttons -->
-    <div class="form-group">
-        <div class="cols-15"></div>
-        <div class="cols-75">
-            <button type="button" class="btn-prime addto"></button>
-            <button type="button" class="btn-prime add-duplicate"></button>
-        </div>
-        <div class="cols-1 relative">
-            <button type="button" class="btn btn-success add-ck2"><span class="lnr lnr-plus-circle"></span></button>
-        </div>
-    </div>
-    <div id="addnewdiv4"></div>
-
-     <hr /> 
-    <!-- Subheading 3-->
-    <div id="addnewdiv3"></div>
-    <div id="addanother3">
-            <div id="feature_field"></div>
-            <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck3"><span class="lnr lnr-plus-circle"></span></button></div> 
-            <!-- </div> -->
-        </div>
-
-        <!-- Buttons -->
-        <div class="form-group">
-            <div class="cols-15"></div>
-            <div class="cols-55">
-                <div class="upload-image blue">        
-                    <input type="file" name="feature_image[]" id="file-9" class="inputfile3"  required>
-                    <label for="file-9"><span class="archive-name3"></span><span class="btn-inputfile"> </span></label>
-                </div>
-                <!-- <div class="upload-btn-wrapper">
-                    <button class="bton" id="show_img"></button>
-                    <input type="file" name="feature_image[]"  />
-                </div> -->
-                <!-- <button type="button" class="btn-prime image" id="show_img"></button> -->
-            </div>
-        </div>
-    </div>
+<!-- department area -->
         
-
+<div id="feature_field"></div>
      
 
     <hr />
@@ -457,19 +276,15 @@
         </div>
 
         <!-- Buttons -->
-        <div class="form-group">
+        <!-- <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-image blue">        
-                    <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4"  required>
+                    <input type="file" name="insert_equipment_subject" id="file-10" class="inputfile4" >
                     <label for="file-10"><span class="archive-name4"></span><span class="btn-inputfile"> </span></label>
                 </div>
-                <!-- <div class="upload-btn-wrapper">
-                    <button class="bton"></button>
-                    <input type="file" name="equipment_image[]" name="insert_equipment_subject" />
-                </div> -->
             </div>
-        </div>
+        </div> -->
     <!-- </div> -->
     </div>
 
@@ -493,18 +308,14 @@
         </div>
 
         <!-- Buttons -->
-        <div class="form-group">
+        <!-- <div class="form-group">
             <div class="cols-15"></div>
             <div class="cols-55">
                 <div class="upload-image blue">        
-                    <input type="file" name="staff_image[]" id="file-11" class="inputfile5"  required>
+                    <input type="file" name="staff_image" id="file-11" class="inputfile5" >
                     <label for="file-11"><span class="archive-name5"></span><span class="btn-inputfile"> </span></label>
                 </div>
-                 <!-- <div class="upload-btn-wrapper">
-                    <button class="bton"></button>
-                    <input type="file" name="staff_image[]" />
-                </div> -->
-            </div>
+            </div> -->
         <!-- </div> -->
     </div>
 
@@ -513,7 +324,7 @@
     <div class="form-group">
         <div class="control-label cols-15">院内処方の有無<br><span>In-hospital prescription</span></div>
         <div class="cols-5 rad-buttons">
-            <input type="radio" id="pres1" name="pres" value="監修">
+            <input type="radio" id="pres1" name="pres" value="監修" checked>
             <label for="pres1">有 </label>
             <input type="radio" id="pres2" name="pres" value="取材協力">
             <label for="pres2">一部有</label>
@@ -546,36 +357,7 @@
         </div>	
     </div>
 
-    <!-- Access -->
-    <div class="form-group check">
-        <label class="control-label cols-15">アクセス<br><span>Access</span></label>
-        <div class="cols-5">
-            <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;background:#fff;padding: 7px;border-radius: 8px">
-                <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" name="access_trans[]" ><label for="styled-checkbox-1" style="font-weight:500;margin-top:5px"> □電車     駅     出口より徒歩   分</label>
-            </div>    
-            <!-- <input type="text" class="form-control" name="access_trans[]"> -->
-        </div>
-    </div>
-    <div class="form-group check">
-        <label class="control-label cols-15"></label>
-        <div class="cols-5">
-            <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px;background:#fff;padding: 7px;border-radius: 8px">
-                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" name="access_from[]" ><label for="styled-checkbox-2" style="font-weight:500;margin-top:5px">バス     停より徒歩   分</label>
-            </div>   
-            <!-- <input type="text" class="form-control" name="access_from[]"> -->
-        </div>
-    </div>
-    <div class="form-group check">
-        <label class="control-label cols-15"></label>
-        <div class="cols-5">
-            <div style="border: 1px solid #CCC; padding: 5px; margin-bottom: 10px; background:#fff;padding: 7px;border-radius: 8px">
-                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" name="access_mins[]" ><label for="styled-checkbox-3" style="font-weight:500;margin-top:5px">ランドマーク    より徒歩   分、車   分</label>
-            </div>  
-         </div>
-         <div class="cols-1 relative"><button type="button" class="btn btn-success addaccess"><span class="lnr lnr-plus-circle"></span></button></div> 
-       
-    </div>
-    <div id="access"></div>
+    <!-- access area -->
 
 
 
@@ -584,7 +366,7 @@
         <div class="control-label cols-15">駐車場<br><span>Parking</span></div>
         <div class="cols-18 rad-buttons">
             料金
-            <input type="radio" id="park1a" name="p_radio[]" value="監修">
+            <input type="radio" id="park1a" name="p_radio[]" value="監修" checked>
             <label for="park1a">無料</label>
             <input type="radio" id="park2a" name="p_radio[]" value="取材協力">
             <label for="park2a">有料</label>
@@ -606,7 +388,7 @@
     <div class="form-group">
         <div class="control-label cols-15">入院可否<br><span>Hospitalization</span></div>
         <div class="cols-12 rad-buttons">
-            <input type="radio" id="hosp1" name="hospitalization[]" value="監修">
+            <input type="radio" id="hosp1" name="hospitalization[]" value="監修" checked>
             <label for="hosp1">可</label>
             <input type="radio" id="hosp2" name="hospitalization[]" value="取材協力">
             <label for="hosp2">否</label>
@@ -746,6 +528,8 @@
 </div>
 
 <!-- end of body -->
-</div>
+<!-- </div> -->
   </div>
 </div>
+
+{!! Form::close() !!}

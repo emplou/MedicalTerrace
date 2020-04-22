@@ -44,7 +44,7 @@ Route::get('/equipment_list','HomeController@equipment_list');
 Route::get('/magazine_list','HomeController@magazine_list');
 
 //edit
-Route::get('/save_edit_hospital','HospitalController@save_edit_hospital');
+Route::post('/save_edit_hospital','HospitalController@save_edit_hospital');
 Route::get('/modal_edit_doctor/{id}','DoctorController@modal_edit_doctor');
 Route::get('/modal_edit_hospital/{id}','HospitalController@modal_edit_hospital');
 Route::get('/modal_edit_special/{id}','SpecialController@modal_edit_special');
@@ -56,6 +56,7 @@ Route::post('/save_hospital','HospitalController@save_hospital');
 Route::post('/save_illness','IllnessController@save_illness');
 Route::post('/save_doctor','DoctorController@save_doctor');
 Route::post('/save_special','SpecialController@save_special');
+Route::post('/copy_add_hospital','HospitalController@save_copy_add_hospital');
 
 //edit page
 Route::get('/edit_illness/{id}','IllnessController@edit_illness');
