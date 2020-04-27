@@ -49,7 +49,7 @@
     <div class="form-group">
         <label class="control-label cols-15">URL自動生成名<br><span>URL generation</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" placeholder="例)medical_terrace_clinic" name="url_gen" id="url_gen" required>
+            <input type="text" class="form-control" placeholder="例)medical_terrace_clinic" name="url_gen" id="caurl_gen" required>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
     <div class="form-group">
         <label class="control-label cols-15">医療機関名<br><span>Medical institution</span></label>
         <div class="cols-4">
-            <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック" id="medical_ins" name="medical_ins" required>
+            <input type="text" class="form-control" placeholder="例)メディカルテラスクリニック" id="camedical_ins" name="medical_ins" required>
         </div>
     </div>
 
@@ -65,7 +65,7 @@
     <div class="form-group">
         <label class="control-label cols-15">医療機関英語名<br><span>Medical institution</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="例)medical terrace clinic" id="medical_ins_eng" name="medical_ins_eng" required>
+            <input type="text" class="form-control" placeholder="例)medical terrace clinic" id="camedical_ins_eng" name="medical_ins_eng" required>
         </div>
     </div>
 
@@ -73,7 +73,7 @@
     <div class="form-group">
         <label class="control-label cols-15">一般名<br><span>Common Name</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="" id="common_name" name="common_name" required>
+            <input type="text" class="form-control" placeholder="" id="cacommon_name" name="common_name" required>
         </div>
     </div>
 
@@ -81,7 +81,7 @@
     <div class="form-group">
         <label class="control-label cols-15">郵便番号<br><span>Postal code</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" id="postal_code" name="postal_code" required>
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" id="capostal_code" name="postal_code" required>
         </div>
     </div>
 
@@ -150,7 +150,7 @@
     <div class="form-group">
         <label class="control-label cols-15">画像キャプション<br><span>Image Caption</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption"  id="img_caption" required>
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_caption"  id="caimg_caption" required>
         </div>
     </div>
 
@@ -158,7 +158,7 @@
     <div class="form-group">
         <label class="control-label cols-15">画像alt<br><span>Image Alt</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt" id="img_alt" required>
+            <input type="text" class="form-control" placeholder="ハイフンなし半角数字" name="img_alt" id="caimg_alt" required>
         </div>
     </div>
 
@@ -238,7 +238,7 @@
         <div class="form-group">
             <label class="control-label cols-15"> 医療機関キャッチ<br><span>Subheading</span></label>
             <div class="cols-5">          
-                <textarea class="form-control sm2" name="hosp_subheading" id="hosp_subheading" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
+                <textarea class="form-control sm2" name="hosp_subheading" id="cahosp_subheading" rows="3" maxlength="200" placeholder="この文章はダミーで す。文字の大きさ、量、字間 、行間 等を確認す るために入れています。この文章は"></textarea>
             </div>
             <div class="cols-2">          
                 <span id="rchars4">0</span>/46
@@ -251,7 +251,7 @@
             <div class="cols-6">   
                 <!-- add new textarea here -->
                 <div class="cols-10">        
-                    <textarea class="form-control ck" name="textheading_lead" id="textheading_lead"></textarea>
+                    <textarea class="form-control ck" name="textheading_lead" id="catextheading_lead"></textarea>
                 </div>
             </div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck1"><span class="lnr lnr-plus-circle"></span></button></div> 
@@ -263,7 +263,7 @@
 
 <!-- department area -->
         
-<div id="feature_field"></div>
+<div id="cafeature_field"></div>
      
 
     <hr />
@@ -271,7 +271,7 @@
     <div id="addnewdiv5">
     <div id="addanother5">
 
-                <div id="equipment"></div>
+                <div id="caequipment"></div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck4"><span class="lnr lnr-plus-circle"></span></button></div> 
         </div>
 
@@ -303,7 +303,7 @@
 
     <div id="addnewdiv6"></div>
     <div id="addanother6">
-            <div id="staff_field"></div>
+            <div id="castaff_field"></div>
             <div class="cols-1 relative"><button type="button" class="btn btn-success add-ck5"><span class="lnr lnr-plus-circle"></span></button></div> 
         </div>
 
@@ -353,7 +353,7 @@
                     <option value="two">Two</option>
                 </select>
             </div> -->
-            <div id="free_med_exp"></div>
+            <div id="cafree_med_exp"></div>
         </div>	
     </div>
 
@@ -478,7 +478,7 @@
     <div class="form-group">
         <label class="control-label cols-15">院内サービス<br><span>In-hospital service</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="hosp_service" id="hosp_service">
+            <input type="text" class="form-control" name="hosp_service" id="cahosp_service">
         </div>
     </div>
 
@@ -486,7 +486,7 @@
     <div class="form-group">
         <label class="control-label cols-15">対応可能な外国語<br><span>Support Languages</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="support_lang" id="support_lang">
+            <input type="text" class="form-control" name="support_lang" id="casupport_lang">
         </div>
     </div>
 
@@ -494,7 +494,7 @@
     <div class="form-group">
         <label class="control-label cols-15">売店・食堂の有無<br><span>Shop, dining room</span></label>
         <div class="cols-5">
-            <input type="text" class="form-control" name="shop_dining_room" id="shop_dining_room">
+            <input type="text" class="form-control" name="shop_dining_room" id="cashop_dining_room">
         </div>
     </div>
 

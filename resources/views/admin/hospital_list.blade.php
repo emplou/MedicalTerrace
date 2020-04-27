@@ -2,6 +2,7 @@
 @section('content')
 @include('modals.modal_edit_hospital')
 @include('modals.modal_copy_add_hospital')
+@include('modals.modal_add_edit_department')
 <link href="{{ asset('lumino/css/bootstrap.min.css') }}" rel="stylesheet">
 <script src="lumino/js/bootstrap.min.js"></script>
 <br><div style="margin-left:250px;">
@@ -26,7 +27,8 @@
                 <td></td>
                 <td>{!! $hosp->hospital_id !!}</td>
                 <td>{!! $hosp->created_at !!}</td>
-                <td><a href="#" class="btn btn-info overwrite_hospital" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success copy_add_hospital"  hosp-id="{!! $hosp->id !!}">コピーと新しい編集<br>Copy and new edit</a></td>
+                <td><a href="#" class="btn btn-info overwrite_hospital" hosp-id="{!! $hosp->id !!}">病院登録<br>Overwrite Editing</a> <a href="#" class="btn btn-success copy_add_hospital"  hosp-id="{!! $hosp->id !!}">コピーと新しい編集<br>Copy and new edit</a><a href="#" class="add_department"  hosp-id="{!! $hosp->id !!}"><button class="btn"><span class="glyphicon glyphicon-th-list"></span></button></a>
+                </td>
             </tr>
         @endforeach
         </tbody>

@@ -109,12 +109,12 @@
     <div class="form-group">
         <label class="control-label cols-15">住所<br><span>Branch Address</span></label>
         <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="branch_name">
+            <input type="text" class="form-control" placeholder="例)メディテラ診療所" name="branch_name" id="branch_name">
         </div>
         <div class="cols-4">
-            <input id="autocomplete_search" name="branch_address" type="text" class="form-control" placeholder="Search" />
-            <input type="hidden" name="lat">
-            <input type="hidden" name="long">
+            <input id="autocomplete_searchh" name="branch_address" type="text" class="form-control autocomplete_search" placeholder="Search" />
+            <!-- <input type="hidden" name="lat">
+            <input type="hidden" name="long"> -->
         </div> 
     </div>
 
@@ -122,7 +122,7 @@
     <div class="form-group">
         <label class="control-label cols-15">住所英語表記<br><span>Branch Address English</span></label>
         <div class="cols-2">
-            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="branch_name_eng">
+            <input type="text" class="form-control" placeholder="例)mediterra clinic" name="branch_name_eng" id="branch_name_eng">
         </div>
         <div class="cols-4">
             <input id="autocomplete_search" name="branch_address_eng" type="text" class="form-control" placeholder="Search" />
