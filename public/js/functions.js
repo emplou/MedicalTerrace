@@ -1067,19 +1067,19 @@ $.ajaxSetup({
 
 
                            //test
-                               $.each(objJSON_dpt, function (i, b) {
-                                //    console.log('dpt '+ b.dpt_name)
-                                   input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
-                               });
-                            $(objJSON_dpt, function (e) {
-                                $.each(e, function (key, entry) {
-                                  input_dpt += '<option value="'+ entry.dpt_name +'">'+ entry.dpt_name +'</option>';
-                                })
-                              });
+                            //    $.each(objJSON_dpt, function (i, b) {
+                            //     //    console.log('dpt '+ b.dpt_name)
+                            //        input_dpt += '<option value="'+ b.dpt_name +'">'+ b.dpt_name +'</option>';
+                            //    });
+                            // $(objJSON_dpt, function (e) {
+                            //     $.each(e, function (key, entry) {
+                            //       input_dpt += '<option value="'+ entry.dpt_name +'">'+ entry.dpt_name +'</option>';
+                            //     })
+                            //   });
 
                               //end test
 
-                            console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
+                            // console.log('yes!!!!! '+JSON.stringify(response['dpt_exam_new']));
 
                             res = JSON.parse(objJSON_dpt);
                             $.each(res, function (a, b) {
@@ -1095,22 +1095,82 @@ $.ajaxSetup({
                    var objJSON_dpt = JSON.stringify(response['hospdpt']);
                    var dpt_hosp = JSON.parse(response['dpt_exam'][0].subheading);
                    var twoo = JSON.parse(response['dpt_exam'][0].text_subheading);
+                   var weekdaysjson = JSON.parse(response['dpt_exam'][0].weekdays);
+                   var fromjson = JSON.parse(response['dpt_exam'][0].from);
+                   var tojson = JSON.parse(response['dpt_exam'][0].to);
+                   var startjson = JSON.parse(response['dpt_exam'][0].start);
                    console.log(objJSON_dpt);
                   
                    var input_dpt_sub = "";
-                   var input_dpt_list = "";
+                   var input_dpt_sub2 = "";
                    var two = "";
                    $.each(dpt_hosp, function (i, v) {
-                    //    console.log(dpt_hosp);
+                       console.log(response['dpt_exam']);
                     $.each(twoo, function (a, b) {
                        input_dpt_sub += '<textarea class="form-control sm2" id="ex_med_subj_subheading" name="ex_med_subj_subheading[]" rows="3" maxlength="200">'+ v.department +'</textarea>';
                       
-                        input_dpt_sub += '<textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor">'+ b.department +'</textarea>';
+                        // input_dpt_sub2 += '<textarea class="form-control" name="med_subj_text_subheading_hospital[0]" id="txt_ckeditor">'+ b.department +'</textarea>';
+                        CKEDITOR.instances['med_subj_text_subheading_hospital'].setData(b.department);
+
                        });
+                       $.each(fromjson, function (x, y) {
+                        $("#from").val(y.from);
+                       });
+                       $.each(tojson, function (x, y) {
+                        $("#to").val(y.to);
+                       });
+                       $.each(startjson, function (x, y) {
+                        $("#start").val(y.start);
+                       });
+
+                       /* ********** checkboxes ************ */
+                        $.each(weekdaysjson, function (c, d) {
+                            console.log(d);
+                            // check_box = d.from;
+                        //   $('#card').each(function(e){
+                            if(d.weekdays == 01){
+                                $('#tag_season1').attr('checked', 'checked');
+                                // alert('yeah');
+                            }
+                            else if(d.weekdays == 02){
+                                $('#tag_season2').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 02){
+                                $('#tag_season2').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 03){
+                                $('#tag_season3').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 04){
+                                $('#tag_season5').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 05){
+                                $('#tag_season5').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 06){
+                                $('#tag_season6').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 07){
+                                $('#tag_season7').attr('checked', 'checked');
+                            }
+                            else if(d.weekdays == 08){
+                                $('#tag_season8').attr('checked', 'checked');
+                            }
+                            // else{
+                            //     $('#tag_season8').attr('checked', 'checked');
+                            // }
+
+                        // });
+                        $("#cacredit_card").val(v.card_text);
+                                
+                        }); //end of checkboxes json
 
                    }); //end of department subheading json
                    $("#departmentsubheading").html(input_dpt_sub);
+                //    $("#departmentsubheading2").html(input_dpt_sub2);
                 //    $("#two").html(two);
+
+                
                  
                 },
                     error: function(response){

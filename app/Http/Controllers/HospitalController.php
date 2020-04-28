@@ -929,6 +929,112 @@ class HospitalController extends Controller
         return redirect('/hospital_list');
     }
 
+    public function update_department_examination(){
+
+        $details = Input::all();
+                                $department                             = $details['department'];
+                                    $departmentresp = array();
+                                    foreach($department as $key => $depart)
+                                    {
+                                    $departmentresp[$key]['department']                         = $depart;
+                                    }
+                                    $department_json = json_encode($departmentresp);
+                            
+                            
+                                    $ex_med_subj_subheading                 = $details['ex_med_subj_subheading']; 
+                                    $ex_med_subj_subheadingresp = array();
+                                    foreach($ex_med_subj_subheading as $key => $ex_med_subj)
+                                    {
+                                    $ex_med_subj_subheadingresp[$key]['department']                         = $ex_med_subj;
+                                    }
+                                    $ex_med_subj_subheading_json = json_encode($ex_med_subj_subheadingresp);
+                            
+                            
+                                    $med_subj_text_subheading_hospital      = $details['med_subj_text_subheading_hospital'];
+                                    $med_subj_text_subheading_hospitalresp = array();
+                                    foreach($med_subj_text_subheading_hospital as $key => $med_subj_text_subheading)
+                                    {
+                                    $med_subj_text_subheading_hospitalresp[$key]['department']                         = $med_subj_text_subheading;
+                                    }
+                                    $med_subj_text_subheading_hospital_json = json_encode($med_subj_text_subheading_hospitalresp);
+                            
+                            
+                            
+                                    $from                                   = $details['from'];
+                                    $fromresp = array();
+                                    foreach($from as $key => $f)
+                                    {
+                                    $fromresp[$key]['from']                         = $f;
+                                    }
+                                    $from_json = json_encode($fromresp);
+                            
+                            
+                                    $to                                     = $details['to'];
+                                    $toresp = array();
+                                    foreach($from as $key => $t)
+                                    {
+                                    $toresp[$key]['to']                         = $t;
+                                    }
+                                    $to_json = json_encode($toresp);
+                            
+                            
+                                    $start                                  = $details['start'];
+                                    $startresp = array();
+                                    foreach($start as $key => $s)
+                                    {
+                                    $startresp[$key]['to']                         = $s;
+                                    }
+                                    $start_json = json_encode($startresp);
+                            
+                            
+                                    $weekdays                               = $details['weekdays'];
+                                    $weekdaysresp = array();
+                                    foreach($weekdays as $key => $w)
+                                    {
+                                    $weekdaysresp[$key]['to']                         = $w;
+                                    }
+                                    $weekdays_json = json_encode($startresp);
+                            
+                                    $special_hours                          = $details['special_hours'];
+                                    $spfrom                                 = $details['spfrom'];
+                                    $spto                                   = $details['spto'];
+                                    $spstart                                = $details['spstart'];
+                                    $spweekdays                             = $details['spweekdays'];
+                            
+                                    $specialresp = array();
+                                    foreach($special_hours as $key => $spe)
+                                    {
+                                    $specialresp[$key]['special_hours']                     = $spe;
+                                    $specialresp[$key]['spfrom']                            = $spfrom[$key];
+                                    $specialresp[$key]['spto']                              = $spto[$key];
+                                    $specialresp[$key]['spstart']                           = $spstart[$key];
+                                    $specialresp[$key]['spweekdays']                        = $spweekdays[$key];
+                                    }
+                                    $special_json = json_encode($specialresp);
+
+            $department_exam = DB::table('hospital_departments_exam')
+                                    ->where('hospital_id','=', $details['hospitalID'])
+                                    ->update([
+                                                'subheading'                => $department_json,
+                                                'text_subheading'           => $ex_med_subj_subheading_json,
+                                                'image'                     => $details['image'],
+                                                'from'                      => $from_json,
+                                                'to'                        => $to_json,
+                                                'start'                     => $start_json,
+                                                'weekdays'                  => $weekdays_json,
+                                                'special_exam'              => $special_json,
+                                                'sp_from'                   => $sp_from,
+                                                'sp_to'                     => $sp_to,
+                                                'sp_start'                  => $sp_start,
+                                                'sp_weekdays'               => $sp_weekdays,
+                                                'sp_comment'                => $sp_comment,
+                                                
+                                            ]);
+
+        return redirect('/hospital_list');
+
+    }
+
     public function save_edit_hospital(){
 
         $details = Input::all();

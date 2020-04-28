@@ -394,9 +394,9 @@
         診療科目別<br>外来受付時間<br><span>Examination date</span>
         </div>
         <div class="cols-8">
-            <input type="text" name="from[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start[]" data-toggle="timepicker" class="form-" style="width:100px"> ~
+            <input type="text" name="from[]" class="form- " style="width:100px"> ~ 
+            <input type="text" name="to[]"class="form- " style="width:100px"> 
+            診療 <input type="text" name="start[]" class="form-" style="width:100px"> ~
             月 <input type="checkbox" id="tag_season1" name="weekdays[]"><label for="tag_season1"></label>
             火 <input type="checkbox" id="tag_season2" name="weekdays[]"><label for="tag_season2"></label>
             水 <input type="checkbox" id="tag_season3" name="weekdays[]"><label for="tag_season3"></label>
@@ -407,9 +407,9 @@
             祝 <input type="checkbox" id="tag_season8" name="weekdays[]"><label for="tag_season8"></label>
         </div>
         <div class="cols-8">
-            <input type="text" name="from[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-            <input type="text" name="to[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-            診療 <input type="text" name="start[]" data-toggle="timepicker" class="form-" style="width:100px"> ~ 
+            <input type="text" name="from[]" class="form- " style="width:100px"> ~ 
+            <input type="text" name="to[]" class="form- " style="width:100px"> 
+            診療 <input type="text" name="start[]" class="form-" style="width:100px"> ~ 
             月 <input type="checkbox" id="tag_season9" name="weekdays[]"><label for="tag_season9"></label>
             火 <input type="checkbox" id="tag_season10" name="weekdays[]"><label for="tag_season10"></label>
             水 <input type="checkbox" id="tag_season11" name="weekdays[]"><label for="tag_season11"></label>
@@ -426,9 +426,9 @@
             <div class="cols-3">    
             ※受診内容により日・時間が異なる場合に記載
             </div>
-                <input type="text" name="spfrom[]" data-toggle="timepicker" class="form- " style="width:100px"> ~ 
-                <input type="text" name="spto[]" data-toggle="timepicker" class="form- " style="width:100px"> 
-                診療 <input type="text" name="spstart[]" data-toggle="timepicker" class="form-" style="width:100px"> ~
+                <input type="text" name="spfrom[]" class="form- " style="width:100px"> ~ 
+                <input type="text" name="spto[]" class="form- " style="width:100px"> 
+                診療 <input type="text" name="spstart[]" class="form-" style="width:100px"> ~
                 月 <input type="checkbox" id="tag_season17" name="spweekdays[]"><label for="tag_season17"></label>
                 火 <input type="checkbox" id="tag_season18" name="spweekdays[]"><label for="tag_season18"></label>
                 水 <input type="checkbox" id="tag_season19" name="spweekdays[]"><label for="tag_season19"></label>
